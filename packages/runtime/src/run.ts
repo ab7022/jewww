@@ -316,6 +316,8 @@ async function runActNode(
           reason: "confirm",
           preview,
           risk: d.risk,
+          action: d.action,
+          ...(label ? { target: label } : {}),
         });
         return "suspended";
       }

@@ -164,6 +164,19 @@ try {
   await context.close();
 }
 
+// Copy shown to a person must not be a log line. These are the exact strings the
+// runtime emits, and the panel is the only place they are worded for a human.
+for (const [raw, expected] of [
+  ["a: covered by div#bottomSheet-model-close", "Something was covering it"],
+  ["a: filled 9/20, left blank: Resume, Why us", "Filled 9 of 20 fields"],
+  ["-> $.details (18204 chars from /pull/1842)", "Read 18,204 characters"],
+  ["a: page unchanged for 3 steps, giving up", "Nothing changed after a few tries"],
+  ["navigated to https://in.bookmyshow.com/explore", "Opened in.bookmyshow.com"],
+] as const) {
+  const { humanize } = await import("../src/shared/timeline.js");
+  check(`phrases: ${expected}`, humanize(raw).text.startsWith(expected), humanize(raw).text);
+}
+
 for (const r of results) {
   console.log(`  ${r.pass ? "ok  " : "FAIL"} ${r.name}${r.detail ? `  (${r.detail})` : ""}`);
 }

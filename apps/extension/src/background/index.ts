@@ -3,6 +3,7 @@ import type { RunEvent } from "@jev-browser/runtime";
 import { Api } from "./api.js";
 import { hasHostPermission, TabExecutor } from "./executor.js";
 import type { PanelState, ToWorker } from "../shared/messages.js";
+import { humanize, phrase, stepTitle, type TimelineStep } from "../shared/timeline.js";
 
 /**
  * The orchestrator.
@@ -21,7 +22,7 @@ const api = new Api(API_BASE);
 let pendingApproval: ((approved: boolean) => void) | null = null;
 let aborted = false;
 
-const empty: PanelState = { signedIn: false, running: false, log: [] };
+const empty: PanelState = { signedIn: false, running: false, steps: [] };
 
 async function getState(): Promise<PanelState> {
   const stored = await chrome.storage.local.get(STATE);
@@ -35,9 +36,9 @@ async function patch(next: Partial<PanelState>): Promise<PanelState> {
   return state;
 }
 
-async function log(line: string): Promise<void> {
+async function record(e: RunEvent): Promise<void> {
   const state = await getState();
-  await patch({ log: [...state.log, line].slice(-200) });
+  await patch({ steps: applyEvent(state.steps, e) });
 }
 
 chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch(() => {});
@@ -63,34 +64,107 @@ function describeResult(data: Record<string, unknown>): string | undefined {
   return text ? text.slice(0, 4000) : undefined;
 }
 
-function describe(e: RunEvent): string | null {
+/**
+ * Fold run events into the timeline the panel renders.
+ *
+ * Every event belongs to a step, and the panel only ever needs the current shape of
+ * those steps — so this is a reducer over the plan, not a transcript. Returning the
+ * steps array lets the worker persist exactly what the UI will draw.
+ */
+function applyEvent(steps: TimelineStep[], e: RunEvent): TimelineStep[] {
+  const next = steps.map((s) => ({ ...s, actions: [...s.actions] }));
+  const current = () => next.find((s) => s.status === "running") ?? next[next.length - 1];
+
   switch (e.type) {
-    case "node:start":
-      return `${e.kind}  ${e.intent}`;
-    case "step":
-      return `  ${e.operation}${e.target ? ` "${e.target}"` : ""}${
-        e.confidence !== undefined ? `  p=${e.confidence.toFixed(2)}` : ""
-      }${e.risk !== "none" ? `  risk=${e.risk}` : ""}`;
-    case "text":
-      return `  typed "${e.value.slice(0, 60)}"`;
+    case "node:start": {
+      const existing = next.find((s) => s.id === e.id);
+      const step: TimelineStep = {
+        id: e.id,
+        title: stepTitle(e.intent),
+        kind: e.kind,
+        status: "running",
+        actions: existing?.actions ?? [],
+        startedAt: Date.now(),
+      };
+      // A foreach re-enters the same node ids on every iteration; keep one step and
+      // let its actions accumulate rather than drawing the plan ten times over.
+      if (existing) Object.assign(existing, { ...step, actions: existing.actions });
+      else next.push(step);
+      return next;
+    }
+
+    case "node:done": {
+      const step = next.find((s) => s.id === e.id);
+      if (step) {
+        step.status = step.status === "waiting" ? "waiting" : "done";
+        step.endedAt = Date.now();
+        if (e.detail) step.actions.push(humanize(e.detail));
+      }
+      return next;
+    }
+
+    case "step": {
+      const step = current();
+      if (step && e.action.kind !== "done") {
+        step.actions.push(phrase(e.operation, e.action, e.target));
+      }
+      return next;
+    }
+
+    case "text": {
+      const step = current();
+      // Replace the bare "Typed into X" with what was actually typed: seeing the
+      // value is the entire point of watching a form being filled.
+      if (step) {
+        const last = step.actions[step.actions.length - 1];
+        const line = { kind: "type" as const, text: `Typed ${JSON.stringify(e.value.slice(0, 40))} into “${e.field}”` };
+        if (last?.kind === "type") step.actions[step.actions.length - 1] = line;
+        else step.actions.push(line);
+      }
+      return next;
+    }
+
+    case "reused": {
+      current()?.actions.push({ kind: "note", text: `Reused your earlier answer for “${e.field}”` });
+      return next;
+    }
+
+    case "queued": {
+      current()?.actions.push({ kind: "note", text: `Held back for you: ${e.preview}` });
+      return next;
+    }
+
+    case "warn": {
+      current()?.actions.push(humanize(e.message));
+      return next;
+    }
+
+    case "suspend": {
+      const step = current();
+      if (step) {
+        step.status = "waiting";
+        // Worded from the action itself where we have it, so the prompt reads like a
+        // question rather than a log line.
+        const preview = e.action ? phrase("", e.action, e.target).text : e.preview;
+        step.prompt = { preview, risk: e.risk ?? "none", reason: e.reason };
+      }
+      return next;
+    }
+
     case "escalate":
-      return `  ~~ low confidence on ${e.nodeId}`;
-    case "warn":
-      return `  !! ${e.message}`;
-    case "suspend":
-      return `SUSPENDED (${e.reason}) ${e.preview}`;
-    case "finish":
-      return `${e.status.toUpperCase()} — ${e.steps} steps in ${(e.elapsedMs / 1000).toFixed(1)}s`;
+      return next; // internal; not something a person needs to see
+
     default:
-      return null;
+      return next;
   }
 }
 
 /** Blocks the run until the user answers in the side panel. */
-function askApproval(preview: string, risk: string): Promise<boolean> {
+function askApproval(): Promise<boolean> {
+  // The prompt is rendered on the step it belongs to, which the suspend event has
+  // already marked — nothing extra to store here.
   return new Promise((resolve) => {
     pendingApproval = resolve;
-    void patch({ pending: { preview, risk } });
   });
 }
 
@@ -100,7 +174,7 @@ async function start(goal: string, tabId: number): Promise<void> {
   const url = tab.url ?? "";
   if (!/^https?:/.test(url)) throw new Error(`this tab is on ${url || "an internal page"}`);
   if (!(await hasHostPermission(url))) {
-    throw new Error(`no access to ${new URL(url).host} — grant it when asked, then run again`);
+    throw new Error(`No access to ${new URL(url).host}. Grant it when asked, then run again.`);
   }
 
   // Before anything else: the tab must be able to answer. Doing this up front turns
@@ -109,11 +183,29 @@ async function start(goal: string, tabId: number): Promise<void> {
   await executor.ensureContentScript();
 
   await chrome.alarms.create(KEEPALIVE, { periodInMinutes: 0.5 });
-  await patch({ running: true, goal, log: [`goal: ${goal}`], status: "planning", result: undefined });
+  await patch({
+    running: true,
+    goal,
+    steps: [],
+    status: "planning",
+    result: undefined,
+    error: undefined,
+    summary: undefined,
+    queued: undefined,
+  });
 
   const { runId, plan, balance } = await api.createRun(goal, url);
-  await patch({ credits: balance, status: "running" });
-  await log(`plan: ${plan.nodes.length} nodes`);
+
+  // Draw the whole plan immediately, greyed out. Seeing what it intends to do before
+  // it does any of it is most of the reassurance this interface has to provide.
+  const planned: TimelineStep[] = plan.nodes.map((n, i) => ({
+    id: n.id ?? `node-${i}`,
+    title: stepTitle(n.intent),
+    kind: n.kind,
+    status: "pending",
+    actions: [],
+  }));
+  await patch({ credits: balance, status: "running", steps: planned });
 
   const capabilities: Capabilities = {
     decide: (input) => api.decide(runId, input.subgoal, input),
@@ -129,27 +221,41 @@ async function start(goal: string, tabId: number): Promise<void> {
       executor,
       plan,
       emit: (e) => {
-        const line = describe(e);
-        if (line) void log(line);
+        void record(e);
       },
-      approve: async (preview, risk) => {
+      approve: async () => {
         if (aborted) return false;
-        return askApproval(preview, risk);
+        return askApproval();
       },
     });
     await api.finish(runId, result.status).catch(() => {});
     const me = await api.me().catch(() => null);
+    const state = await getState();
     await patch({
       running: false,
       status: result.status,
       result: describeResult(result.data),
-      ...(result.pending.length ? { pending: undefined } : {}),
+      summary: {
+        steps: result.steps,
+        credits: Math.max(0, (balance ?? 0) - (me?.credits ?? balance ?? 0)),
+        seconds: Math.round(result.elapsedMs / 100) / 10,
+      },
+      ...(result.pending.length
+        ? {
+            queued: result.pending.map((p) => ({
+              preview: `${p.operation === "CLICK" ? "Click" : p.operation.toLowerCase()} “${p.target}”`,
+              risk: p.risk,
+            })),
+          }
+        : {}),
+      // Anything still running when the loop ends did not finish.
+      steps: state.steps.map((s) => (s.status === "running" ? { ...s, status: "failed" as const } : s)),
       ...(me ? { credits: me.credits } : {}),
     });
   } finally {
     await chrome.alarms.clear(KEEPALIVE);
     pendingApproval = null;
-    await patch({ running: false, pending: undefined });
+    await patch({ running: false });
   }
 }
 
@@ -181,7 +287,22 @@ chrome.runtime.onMessage.addListener((msg: ToWorker, _sender, sendResponse) => {
       case "approve": {
         const resolve = pendingApproval;
         pendingApproval = null;
-        await patch({ pending: undefined });
+        const state = await getState();
+        await patch({
+          steps: state.steps.map((s) =>
+            s.status === "waiting"
+              ? {
+                  ...s,
+                  status: msg.approved ? ("running" as const) : ("failed" as const),
+                  prompt: undefined,
+                  actions: [
+                    ...s.actions,
+                    { kind: "note" as const, text: msg.approved ? "You approved this" : "You skipped this" },
+                  ],
+                }
+              : s,
+          ),
+        });
         resolve?.(msg.approved);
         return sendResponse({ ok: true });
       }
@@ -189,12 +310,15 @@ chrome.runtime.onMessage.addListener((msg: ToWorker, _sender, sendResponse) => {
         aborted = true;
         pendingApproval?.(false);
         pendingApproval = null;
-        await patch({ running: false, pending: undefined, status: "aborted" });
+        await patch({ running: false, status: "blocked" });
         return sendResponse({ ok: true });
       case "start":
         start(msg.goal, msg.tabId).catch(async (err: unknown) => {
-          await log(`error: ${err instanceof Error ? err.message : String(err)}`);
-          await patch({ running: false, status: "error" });
+          await patch({
+            running: false,
+            status: "error",
+            error: err instanceof Error ? err.message : String(err),
+          });
         });
         return sendResponse({ ok: true });
     }

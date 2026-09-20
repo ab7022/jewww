@@ -89,6 +89,15 @@ Then in Chrome:
 Sign in, type a goal, press Run. It works on **the tab you are looking at**, and asks
 permission for that site the first time.
 
+### Seeing the design without Chrome
+
+```bash
+pnpm preview:panel      # renders the panel in five states to .data/panel/*.png
+```
+
+The side panel can only be seen inside a real Chrome session, which is a slow loop
+for design work — and a design nobody has looked at is a design nobody has checked.
+
 ### Sign-in
 
 Google sign-in needs credentials the server does not have yet. Until then the panel

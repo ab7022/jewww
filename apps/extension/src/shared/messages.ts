@@ -1,4 +1,5 @@
 import type { Action, RawSnapshot } from "@jev-browser/shared";
+import type { TimelineStep } from "./timeline.js";
 
 /**
  * Typed messages between the three extension contexts. Every payload crosses a
@@ -46,9 +47,14 @@ export interface PanelState {
   credits?: number;
   running: boolean;
   goal?: string;
-  log: string[];
-  pending?: PendingApproval;
-  status?: string;
+  /** The plan as a timeline — what the panel actually renders. */
+  steps: TimelineStep[];
+  status?: "planning" | "running" | "done" | "blocked" | "suspended" | "budget" | "error";
   /** What the run produced, shown when it finishes. */
   result?: string;
+  error?: string;
+  /** Totals for the run, shown once it ends. */
+  summary?: { steps: number; credits: number; seconds: number };
+  /** Irreversible steps queued for review. */
+  queued?: { preview: string; risk: string }[];
 }

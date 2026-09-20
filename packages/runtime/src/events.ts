@@ -11,7 +11,16 @@ export type RunEvent =
   | { type: "step"; nodeId: string; action: Action; operation: string; target?: string; confidence?: number; risk: Risk; latencyMs: number; costUsd: number }
   | { type: "text"; field: string; value: string; latencyMs: number; costUsd: number }
   | { type: "escalate"; nodeId: string; reason: string }
-  | { type: "suspend"; nodeId: string; reason: "confirm" | "handoff"; preview: string; risk?: Risk }
+  | {
+      type: "suspend";
+      nodeId: string;
+      reason: "confirm" | "handoff";
+      preview: string;
+      risk?: Risk;
+      /** What it wanted to do, so the UI can word it rather than show internals. */
+      action?: Action;
+      target?: string;
+    }
   | { type: "queued"; nodeId: string; preview: string; risk: Risk }
   | { type: "asked"; nodeId: string; count: number; answered: number }
   | { type: "reused"; field: string; from: string }

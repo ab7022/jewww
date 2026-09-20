@@ -5,3 +5,4 @@ dist/
 eval/results/*.json
 plans/
 results/
+.data/

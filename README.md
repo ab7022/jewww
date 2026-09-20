@@ -20,6 +20,7 @@ before any Chrome code exists.
 | `packages/executor` | `Action` → a real browser. CDP today, a content script later |
 | `packages/runtime` | Interprets the node program: scratchpad, step loop, foreach, confirm |
 | `apps/runner` | Headless CLI that plans a goal and executes it end to end |
+| `apps/server` | Node + Express + MongoDB. Holds the model keys, meters credits, logs runs |
 
 ## Setup
 
@@ -43,6 +44,7 @@ pnpm eval:plans             # 50 end-to-end use cases → planner checks
 pnpm plan <slug>            # inspect one plan
 pnpm check:guards           # freshness + occlusion guards in a real browser
 
+pnpm server                 # Express API on :8787 (needs a local MongoDB)
 pnpm run-task --goal "..." --url https://...   # plan and execute, headless
 #   --headed         watch it
 #   --auto-approve   read-only tasks only; this turns the safety gate OFF
@@ -82,6 +84,17 @@ unrepresentable rather than merely unlikely.
 **Text is written at the moment of typing**, by a small fast model, not predicted at plan
 time. A search term refined from what a page showed cannot be known when the plan is
 written. Plans carry `$.ref` slots for composed prose and profile data; nothing else.
+
+## Credits (the product)
+
+1 credit = $0.001 of underlying model spend, so the numbers above make the unit
+economics concrete: a plan is ~1.4 credits, a decision ~0.2, a field-mapping call
+~0.3, a 20-step task ~13. New accounts get 500.
+
+Every model call goes through `meter()`, which checks the balance and decrements it in
+one atomic `findOneAndUpdate` — a read-then-write would let two concurrent runs both
+spend the same credits, which is the one bug you cannot ship in something that bills
+people. There is a test for exactly that.
 
 ## Credit
 

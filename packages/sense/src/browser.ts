@@ -1,5 +1,5 @@
 import type { RawSnapshot } from "@jev-browser/shared";
-import { collectSnapshot, findByFingerprint } from "./collect.js";
+import { collectSnapshot, findByFingerprint, nameOf, roleOf } from "./collect.js";
 
 /**
  * The browser-side surface, as real functions.
@@ -103,6 +103,43 @@ export function nodeGuard(node: number, fp?: string): string | null {
  * and still sit under a cookie banner — clicking its centre then hits the overlay,
  * which is how agents silently "accept" things nobody agreed to.
  */
+/**
+ * Say what is in the way in terms the decision can act on.
+ *
+ * This used to report the topmost element as `tagName#id`, which on a modern
+ * consent dialog, tour or cookie banner reads "covered by div" — a fact with no
+ * lead in it. The model cannot map a tag name onto anything in its action space,
+ * so it re-picked the same covered target and refused again. Google Forms' welcome
+ * dialog produced exactly that loop.
+ *
+ * So describe the occluder the way the snapshot describes everything else: by role
+ * and accessible name. "covered by dialog \u201cFamiliar and easier access control\u201d"
+ * names something the model can find in its own action space and dismiss.
+ *
+ * The topmost pixel is usually an anonymous backdrop, so walk up for the nearest
+ * ancestor a person would name, and failing that look for an open modal anywhere —
+ * a backdrop is often a sibling of the dialog it dims, not its parent.
+ */
+function describeOccluder(top: Element | null): string {
+  if (!top) return "nothing";
+
+  for (let el: Element | null = top; el && el !== document.body; el = el.parentElement) {
+    const role = roleOf(el);
+    const name = nameOf(el).slice(0, 80);
+    if (name) return `${role} \u201c${name}\u201d`;
+    if (role === "dialog" || role === "alertdialog") return "a dialog";
+  }
+
+  const modal = [...document.querySelectorAll('[role="dialog"],[role="alertdialog"],[aria-modal="true"],dialog[open]')]
+    .find((d) => d.getBoundingClientRect().width > 0);
+  if (modal) {
+    const name = nameOf(modal).slice(0, 80);
+    return name ? `an overlay, with the dialog \u201c${name}\u201d open` : "an overlay, with a dialog open";
+  }
+
+  return `${top.tagName.toLowerCase()}${top.id ? `#${top.id}` : ""}`;
+}
+
 export type Resolution = { x: number; y: number } | { refused: string };
 
 export function resolvePoint(
@@ -157,8 +194,7 @@ export function resolvePoint(
   // Still covered after scrolling: something is genuinely on top of it.
   const top = document.elementFromPoint(x, y);
   if (!e.contains(top)) {
-    const what = top ? `${top.tagName.toLowerCase()}${top.id ? `#${top.id}` : ""}` : "nothing";
-    return { refused: `covered by ${what}` };
+    return { refused: `covered by ${describeOccluder(top)}` };
   }
 
   if (kind === "select") {

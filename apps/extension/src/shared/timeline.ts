@@ -28,6 +28,14 @@ export function humanize(message: string): ActionLine {
   const m = message.replace(/^[a-z0-9_-]+:\s*/i, "");
 
   if (/covered by/.test(m)) {
+    // The occluder is now described by role and name, which is worth showing:
+    // "Blocked by dialog \u201cFamiliar and easier access control\u201d" tells the
+    // person watching exactly which thing to dismiss. Anonymous DOM fallbacks
+    // ("covered by div") stay behind the vaguer wording.
+    const what = /covered by (.+?)(?:,\s|$)/.exec(m)?.[1];
+    if (what && /[\u201c"]|^an? /.test(what)) {
+      return { kind: "problem", text: `Blocked by ${what}`, detail: m };
+    }
     return { kind: "problem", text: "Something was covering it — looking again", detail: m };
   }
   if (/page changed since the decision|page moved/.test(m)) {

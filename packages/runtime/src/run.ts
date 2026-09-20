@@ -36,8 +36,8 @@ export interface Capabilities {
   decide(input: DecideInput): Promise<Decision>;
   /** Text for a TYPE_TEXT step, written with the page in front of the model. */
   text(ctx: TextContext): Promise<string | null>;
-  extract(intent: string, schema: unknown, pageText: string): Promise<unknown>;
-  compose(intent: string, inputs: Record<string, unknown>): Promise<unknown>;
+  extract(intent: string, schema: unknown, pageText: string, goal: string): Promise<unknown>;
+  compose(intent: string, inputs: Record<string, unknown>, goal: string): Promise<unknown>;
   /** Maps every field of a form to a profile key in ONE call. */
   mapFields(input: {
     page: { url: string; title: string };
@@ -635,7 +635,12 @@ async function runReadNode(
 ): Promise<RunStatus> {
   const raw = await opts.executor.snapshot();
   const body = await opts.executor.pageText();
-  const value = await opts.capabilities.extract(node.intent, node.schema, `${raw.title}\n${raw.url}\n\n${body}`);
+  const value = await opts.capabilities.extract(
+    node.intent,
+    node.schema,
+    `${raw.title}\n${raw.url}\n\n${body}`,
+    opts.plan.goal,
+  );
   pad.set(node.into, value);
   opts.emit({
     type: "node:done",
@@ -651,7 +656,11 @@ async function runComposeNode(
   pad: Scratchpad,
 ): Promise<RunStatus> {
   const inputs = Object.fromEntries(node.from.map((k) => [k, pad.get(k)]));
-  pad.set(node.into, await opts.capabilities.compose(node.intent, inputs));
+  // The goal goes too. A compose node's intent routinely refers to the goal rather
+  // than restating it ("write the body from the user's goal"), and with an empty
+  // scratchpad — nothing read yet — the model had literally nothing to write from.
+  // It answered "I don't have enough information", which was true.
+  pad.set(node.into, await opts.capabilities.compose(node.intent, inputs, opts.plan.goal));
   return "done";
 }
 

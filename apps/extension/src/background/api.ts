@@ -145,8 +145,8 @@ export class Api {
     (await this.call<{ value: unknown }>(`/api/runs/${runId}/extract`, { intent, schema, pageText }))
       .value;
 
-  compose = async (runId: string, intent: string, inputs: Record<string, unknown>) =>
-    (await this.call<{ value: unknown }>(`/api/runs/${runId}/compose`, { intent, inputs })).value;
+  compose = async (runId: string, intent: string, inputs: Record<string, unknown>, goal: string) =>
+    (await this.call<{ value: unknown }>(`/api/runs/${runId}/compose`, { intent, inputs, goal })).value;
 
   mapFields = async (runId: string, input: unknown): Promise<FieldMapping[]> =>
     (await this.call<{ mappings: FieldMapping[] }>(`/api/runs/${runId}/fields`, input)).mappings;

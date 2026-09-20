@@ -679,3 +679,45 @@ describe("asking for approval", () => {
     expect(events.some((e) => e.type === "approval")).toBe(true);
   });
 });
+
+/**
+ * A node's intent routinely refers to the goal rather than restating it — the planner
+ * writes "write the body from the user's goal". With an empty scratchpad the compose
+ * call then had no goal and no data, and answered "I don't have enough information",
+ * which was the honest response to what it was sent. Both helpers get the goal now.
+ */
+describe("the user's goal reaches the text helpers", () => {
+  it("passes the goal to compose", async () => {
+    let seen: string | undefined;
+    await run(
+      plan([{ kind: "compose", id: "m", intent: "write the body from the user's goal", from: [], into: "$.body" }]),
+      fakeJev(["DONE"]),
+      fakeExecutor(["h1"]),
+      {},
+      {
+        compose: async (_intent, _inputs, goal) => {
+          seen = goal;
+          return "hi";
+        },
+      },
+    );
+    expect(seen).toBe("g");
+  });
+
+  it("passes the goal to extract", async () => {
+    let seen: string | undefined;
+    await run(
+      plan([{ kind: "read", id: "r", intent: "pull it out", schema: {}, into: "$.out" }]),
+      fakeJev(["DONE"]),
+      fakeExecutor(["h1"]),
+      {},
+      {
+        extract: async (_intent, _schema, _pageText, goal) => {
+          seen = goal;
+          return {};
+        },
+      },
+    );
+    expect(seen).toBe("g");
+  });
+});

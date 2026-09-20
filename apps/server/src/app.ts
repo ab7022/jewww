@@ -311,13 +311,14 @@ export function createApp(cfg: AppConfig): Express {
   app.post("/api/runs/:id/extract", async (req: Authed, res) => {
     const run = await ownRun(req, res);
     if (!run) return;
-    const { intent, schema, pageText } = req.body as {
+    const { intent, schema, pageText, goal } = req.body as {
       intent: string;
       schema: unknown;
       pageText: string;
+      goal?: string;
     };
     await assertBalance(store, uid(req), 1);
-    const r = await extract({ apiKey: cfg.openrouterKey, intent, schema, pageText });
+    const r = await extract({ apiKey: cfg.openrouterKey, intent, schema, pageText, goal });
     const charge = await meter(store, uid(req), "extract", r.costUsd, run._id);
     res.json({ value: r.value, balance: charge.balance });
   });
@@ -325,9 +326,13 @@ export function createApp(cfg: AppConfig): Express {
   app.post("/api/runs/:id/compose", async (req: Authed, res) => {
     const run = await ownRun(req, res);
     if (!run) return;
-    const { intent, inputs } = req.body as { intent: string; inputs: Record<string, unknown> };
+    const { intent, inputs, goal } = req.body as {
+      intent: string;
+      inputs: Record<string, unknown>;
+      goal?: string;
+    };
     await assertBalance(store, uid(req), 1);
-    const r = await compose({ apiKey: cfg.openrouterKey, intent, inputs });
+    const r = await compose({ apiKey: cfg.openrouterKey, intent, inputs, goal });
     const charge = await meter(store, uid(req), "compose", r.costUsd, run._id);
     res.json({ value: r.value, balance: charge.balance });
   });

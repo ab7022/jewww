@@ -109,7 +109,7 @@ try {
     text: async (ctx) => (await fieldText(ctx, { apiKey })).text,
     extract: async (intent, schema, pageText) =>
       (await extract({ apiKey, intent, schema, pageText })).value,
-    compose: async (intent, inputs) => (await compose({ apiKey, intent, inputs })).value,
+    compose: async (intent, inputs, goal) => (await compose({ apiKey, intent, inputs, goal })).value,
     mapFields: async (input) => {
       const r = await mapFields(jev, input);
       if (process.env.DEBUG_FIELDS) {

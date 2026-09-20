@@ -5,7 +5,7 @@
     "w": 1280,
     "h": 900,
     "scrollY": 0,
-    "maxScrollY": 3463
+    "maxScrollY": 3462
   },
   "elements": [
     {
@@ -15,23 +15,23 @@
       "fp": "link|Anthropic Logo|0",
       "rect": {
         "x": 64,
-        "y": 72,
+        "y": 74,
         "w": 64,
-        "h": 20
+        "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e2",
-      "role": "link",
+      "role": "button",
       "name": "Create alert",
       "ctx": "Open Roles",
-      "fp": "link|Create alert|0",
+      "fp": "button|Create alert|0",
       "rect": {
         "x": 149,
-        "y": 252,
-        "w": 88,
-        "h": 20
+        "y": 251,
+        "w": 84,
+        "h": 24
       },
       "fillable": false
     },
@@ -43,7 +43,7 @@
       "fp": "textbox|Search|0",
       "rect": {
         "x": 64,
-        "y": 373,
+        "y": 374,
         "w": 272,
         "h": 34
       },
@@ -57,8 +57,8 @@
       "fp": "combobox|Department|0",
       "rect": {
         "x": 368,
-        "y": 376,
-        "w": 3,
+        "y": 377,
+        "w": 4,
         "h": 22
       },
       "fillable": true
@@ -70,7 +70,7 @@
       "fp": "button|Toggle flyout|0",
       "rect": {
         "x": 592,
-        "y": 367,
+        "y": 368,
         "w": 24,
         "h": 24
       },
@@ -84,8 +84,8 @@
       "fp": "combobox|Office|0",
       "rect": {
         "x": 656,
-        "y": 376,
-        "w": 3,
+        "y": 377,
+        "w": 4,
         "h": 22
       },
       "fillable": true
@@ -97,7 +97,7 @@
       "fp": "button|Toggle flyout|1",
       "rect": {
         "x": 880,
-        "y": 367,
+        "y": 368,
         "w": 24,
         "h": 24
       },
@@ -111,7 +111,7 @@
       "fp": "link|Anthropic Fellows Program, AI Safety & Security London, UK; Ontario, CAN; Remote-Friendly, United States; San Francisco,|0",
       "rect": {
         "x": 65,
-        "y": 576,
+        "y": 577,
         "w": 1158,
         "h": 68
       },
@@ -125,7 +125,7 @@
       "fp": "link|Anthropic Fellows Program, ML Systems & Reinforcement Learning London, UK; Ontario, CAN; Remote-Friendly, United States;|0",
       "rect": {
         "x": 65,
-        "y": 647,
+        "y": 648,
         "w": 1158,
         "h": 68
       },
@@ -139,7 +139,7 @@
       "fp": "link|Anthropic Fellows Program, The Anthropic Institute (Economics & Policy) London, UK; Ontario, CAN; Remote-Friendly, Unite|0",
       "rect": {
         "x": 65,
-        "y": 718,
+        "y": 719,
         "w": 1158,
         "h": 68
       },
@@ -153,7 +153,7 @@
       "fp": "link|Data Operations Manager, Human Data San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 789,
+        "y": 790,
         "w": 1158,
         "h": 68
       },
@@ -167,7 +167,7 @@
       "fp": "link|Engineering Manager, GPU (ML Accelerator) San Francisco, CA | New York City, NY | Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 860,
+        "y": 861,
         "w": 1158,
         "h": 68
       },
@@ -181,7 +181,7 @@
       "fp": "link|Engineering Manager, Research Data Platform San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 931,
+        "y": 932,
         "w": 1158,
         "h": 68
       },
@@ -195,7 +195,7 @@
       "fp": "link|Engineering Manager, Research Productivity San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 1002,
+        "y": 1003,
         "w": 1158,
         "h": 68
       },
@@ -209,7 +209,7 @@
       "fp": "link|Engineering Manager, Search San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 1073,
+        "y": 1074,
         "w": 1158,
         "h": 68
       },
@@ -223,7 +223,7 @@
       "fp": "link|[Expression of Interest] Research Engineer / Scientist, Alignment - London London, UK|0",
       "rect": {
         "x": 65,
-        "y": 1144,
+        "y": 1145,
         "w": 1158,
         "h": 68
       },
@@ -237,7 +237,7 @@
       "fp": "link|[Expression of Interest] Research Manager, Interpretability San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 1215,
+        "y": 1216,
         "w": 1158,
         "h": 68
       },
@@ -251,7 +251,7 @@
       "fp": "link|Full-Stack Software Engineer, Reinforcement Learning San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 1286,
+        "y": 1287,
         "w": 1158,
         "h": 68
       },
@@ -265,7 +265,7 @@
       "fp": "link|Life Sciences Operator, Lead New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 1357,
+        "y": 1358,
         "w": 1158,
         "h": 68
       },
@@ -279,7 +279,7 @@
       "fp": "link|Machine Learning Infrastructure Engineer, Safeguards Research San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 1428,
+        "y": 1429,
         "w": 1158,
         "h": 68
       },
@@ -293,7 +293,7 @@
       "fp": "link|ML/Research Engineer, Safeguards San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 1499,
+        "y": 1500,
         "w": 1158,
         "h": 68
       },
@@ -307,7 +307,7 @@
       "fp": "link|Performance Engineer San Francisco, CA | New York City, NY | Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 1570,
+        "y": 1571,
         "w": 1158,
         "h": 68
       },
@@ -321,7 +321,7 @@
       "fp": "link|Performance Engineer, GPU San Francisco, CA | New York City, NY | Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 1641,
+        "y": 1642,
         "w": 1158,
         "h": 68
       },
@@ -335,7 +335,7 @@
       "fp": "link|Performance Engineer, Inference Engine San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 1712,
+        "y": 1713,
         "w": 1158,
         "h": 68
       },
@@ -349,7 +349,7 @@
       "fp": "link|Performance Engineer, Inference Systems San Francisco, CA | New York City, NY | Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 1783,
+        "y": 1784,
         "w": 1158,
         "h": 68
       },
@@ -363,7 +363,7 @@
       "fp": "link|Pre-training Data Infrastructure Engineer San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 1854,
+        "y": 1855,
         "w": 1158,
         "h": 68
       },
@@ -377,7 +377,7 @@
       "fp": "link|Pre-training Distributed Systems Tech Lead / Manager San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 1925,
+        "y": 1926,
         "w": 1158,
         "h": 68
       },
@@ -391,7 +391,7 @@
       "fp": "link|Product Manager, Claude Science San Francisco, CA | New York City, NY | Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 1996,
+        "y": 1997,
         "w": 1158,
         "h": 68
       },
@@ -405,7 +405,7 @@
       "fp": "link|Research Engineer, Chip Design RL (Reinforcement Learning) San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 2067,
+        "y": 2068,
         "w": 1158,
         "h": 68
       },
@@ -419,7 +419,7 @@
       "fp": "link|Research Engineer, Code RL (Reinforcement Learning) San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 2138,
+        "y": 2139,
         "w": 1158,
         "h": 68
       },
@@ -433,7 +433,7 @@
       "fp": "link|Research Engineer, Computer Use San Francisco, CA | New York City, NY | Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 2209,
+        "y": 2210,
         "w": 1158,
         "h": 68
       },
@@ -447,7 +447,7 @@
       "fp": "link|Research Engineer, Cybersecurity RL (Reinforcement Learning) San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 2280,
+        "y": 2281,
         "w": 1158,
         "h": 68
       },
@@ -461,7 +461,7 @@
       "fp": "link|Research Engineer, Discovery San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 2351,
+        "y": 2352,
         "w": 1158,
         "h": 68
       },
@@ -475,7 +475,7 @@
       "fp": "link|Research Engineer, Domain Scaling San Francisco, CA | New York City, NY | Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 2422,
+        "y": 2423,
         "w": 1158,
         "h": 68
       },
@@ -489,7 +489,7 @@
       "fp": "link|Research Engineer, Interpretability San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 2493,
+        "y": 2494,
         "w": 1158,
         "h": 68
       },
@@ -503,7 +503,7 @@
       "fp": "link|Research Engineer, Knowledge Team Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, N|0",
       "rect": {
         "x": 65,
-        "y": 2564,
+        "y": 2565,
         "w": 1158,
         "h": 68
       },
@@ -517,7 +517,7 @@
       "fp": "link|Research Engineer, Life Sciences San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 2635,
+        "y": 2636,
         "w": 1158,
         "h": 68
       },
@@ -531,7 +531,7 @@
       "fp": "link|Research Engineer, Machine Learning (Reinforcement Learning) London, UK|0",
       "rect": {
         "x": 65,
-        "y": 2706,
+        "y": 2707,
         "w": 1158,
         "h": 68
       },
@@ -545,7 +545,7 @@
       "fp": "link|Research Engineer, Machine Learning (Reinforcement Learning) San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 2777,
+        "y": 2778,
         "w": 1158,
         "h": 68
       },
@@ -559,7 +559,7 @@
       "fp": "link|Research Engineer, Machine Learning (RL Velocity) Remote-Friendly (Travel-Required) | San Francisco, CA | New York City,|0",
       "rect": {
         "x": 65,
-        "y": 2848,
+        "y": 2849,
         "w": 1158,
         "h": 68
       },
@@ -573,7 +573,7 @@
       "fp": "link|Research Engineer, Machine Learning (RL Velocity) London, UK|0",
       "rect": {
         "x": 65,
-        "y": 2919,
+        "y": 2920,
         "w": 1158,
         "h": 68
       },
@@ -587,7 +587,7 @@
       "fp": "link|Research Engineer, Model Evaluations Remote-Friendly (Travel-Required) | San Francisco, CA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 2990,
+        "y": 2991,
         "w": 1158,
         "h": 68
       },
@@ -601,7 +601,7 @@
       "fp": "link|Research Engineer, Performance RL (Reinforcement Learning) San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 3061,
+        "y": 3062,
         "w": 1158,
         "h": 68
       },
@@ -615,7 +615,7 @@
       "fp": "link|Research Engineer, Pretraining London, UK|0",
       "rect": {
         "x": 65,
-        "y": 3132,
+        "y": 3133,
         "w": 1158,
         "h": 68
       },
@@ -629,7 +629,7 @@
       "fp": "link|Research Engineer, Pretraining Scaling San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 3203,
+        "y": 3204,
         "w": 1158,
         "h": 68
       },
@@ -643,7 +643,7 @@
       "fp": "link|Research Engineer, Pretraining Scaling - London London, UK|0",
       "rect": {
         "x": 65,
-        "y": 3274,
+        "y": 3275,
         "w": 1158,
         "h": 68
       },
@@ -657,7 +657,7 @@
       "fp": "link|Research Engineer, Production Model Post-Training San Francisco, CA | New York City, NY | Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 3345,
+        "y": 3346,
         "w": 1158,
         "h": 68
       },
@@ -671,7 +671,7 @@
       "fp": "link|Research Engineer, Production Model Post-Training Zürich, CH|0",
       "rect": {
         "x": 65,
-        "y": 3416,
+        "y": 3417,
         "w": 1158,
         "h": 68
       },
@@ -685,7 +685,7 @@
       "fp": "link|Research Engineer/Research Scientist, Pre-training Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA ||0",
       "rect": {
         "x": 65,
-        "y": 3487,
+        "y": 3488,
         "w": 1158,
         "h": 68
       },
@@ -699,7 +699,7 @@
       "fp": "link|Research Engineer / Research Scientist, Tokens New York City, NY; New York City, NY | Seattle, WA; San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 3558,
+        "y": 3559,
         "w": 1158,
         "h": 68
       },
@@ -713,7 +713,7 @@
       "fp": "link|Research Engineer, RL Engineering San Francisco, CA | New York City, NY | Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 3629,
+        "y": 3630,
         "w": 1158,
         "h": 68
       },
@@ -727,7 +727,7 @@
       "fp": "link|Research Engineer, RL Scaling Science London, UK|0",
       "rect": {
         "x": 65,
-        "y": 3700,
+        "y": 3701,
         "w": 1158,
         "h": 68
       },
@@ -741,7 +741,7 @@
       "fp": "link|Research Engineer / Scientist, Alignment San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 3771,
+        "y": 3772,
         "w": 1158,
         "h": 68
       },
@@ -755,7 +755,7 @@
       "fp": "link|Research Engineer, Takeoff Intel Remote-Friendly (Travel Required) | San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 3842,
+        "y": 3843,
         "w": 1158,
         "h": 68
       },
@@ -769,7 +769,7 @@
       "fp": "link|Research Engineer, Universes Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY|0",
       "rect": {
         "x": 65,
-        "y": 3913,
+        "y": 3914,
         "w": 1158,
         "h": 68
       },
@@ -783,7 +783,7 @@
       "fp": "link|Research Engineer, Visual Knowledge Work New York City, NY; San Francisco, CA; Seattle, WA|0",
       "rect": {
         "x": 65,
-        "y": 3984,
+        "y": 3985,
         "w": 1158,
         "h": 68
       },
@@ -797,7 +797,7 @@
       "fp": "link|Research Scientist, Interpretability San Francisco, CA|0",
       "rect": {
         "x": 65,
-        "y": 4055,
+        "y": 4056,
         "w": 1158,
         "h": 68
       },
@@ -811,9 +811,9 @@
       "fp": "navigation|Pagination|0",
       "rect": {
         "x": 64,
-        "y": 4173,
+        "y": 4174,
         "w": 1152,
-        "h": 70
+        "h": 68
       },
       "fillable": false
     },
@@ -825,10 +825,10 @@
       "st": "disabled",
       "fp": "button|Previous page|0",
       "rect": {
-        "x": 485,
+        "x": 483,
         "y": 4201,
         "w": 7,
-        "h": 16
+        "h": 15
       },
       "fillable": false
     },
@@ -839,10 +839,10 @@
       "ctx": "nav: Pagination",
       "fp": "button|Go to page 1|0",
       "rect": {
-        "x": 508,
-        "y": 4189,
-        "w": 41,
-        "h": 38
+        "x": 506,
+        "y": 4190,
+        "w": 43,
+        "h": 36
       },
       "fillable": false
     },
@@ -854,9 +854,9 @@
       "fp": "button|Go to page 2|0",
       "rect": {
         "x": 557,
-        "y": 4190,
-        "w": 40,
-        "h": 36
+        "y": 4191,
+        "w": 41,
+        "h": 34
       },
       "fillable": false
     },
@@ -868,9 +868,9 @@
       "fp": "button|Go to page 3|0",
       "rect": {
         "x": 605,
-        "y": 4190,
+        "y": 4191,
         "w": 41,
-        "h": 36
+        "h": 34
       },
       "fillable": false
     },
@@ -881,10 +881,10 @@
       "ctx": "nav: Pagination",
       "fp": "button|Go to page 4|0",
       "rect": {
-        "x": 655,
-        "y": 4190,
-        "w": 42,
-        "h": 36
+        "x": 654,
+        "y": 4191,
+        "w": 41,
+        "h": 34
       },
       "fillable": false
     },
@@ -895,10 +895,10 @@
       "ctx": "nav: Pagination",
       "fp": "button|Go to page 13|0",
       "rect": {
-        "x": 724,
-        "y": 4190,
-        "w": 48,
-        "h": 36
+        "x": 725,
+        "y": 4191,
+        "w": 50,
+        "h": 34
       },
       "fillable": false
     },
@@ -909,10 +909,10 @@
       "ctx": "nav: Pagination",
       "fp": "button|Next page|0",
       "rect": {
-        "x": 788,
+        "x": 790,
         "y": 4201,
         "w": 7,
-        "h": 16
+        "h": 15
       },
       "fillable": false
     },
@@ -924,7 +924,7 @@
       "fp": "link|Powered by|0",
       "rect": {
         "x": 636,
-        "y": 4316,
+        "y": 4315,
         "w": 100,
         "h": 30
       },
@@ -938,7 +938,7 @@
       "fp": "img|Greenhouse logo|0",
       "rect": {
         "x": 636,
-        "y": 4316,
+        "y": 4315,
         "w": 100,
         "h": 30
       },
@@ -946,6 +946,6 @@
     }
   ],
   "text": "Open Roles Create a Job Alert Level-up your career by having opportunities at Anthropic sent directly to your inbox. Cre",
-  "contentHash": "16n7bzp",
+  "contentHash": "1y8tf7h",
   "totalCandidates": 69
 }

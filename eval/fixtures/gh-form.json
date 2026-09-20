@@ -903,22 +903,9 @@
         "h": 30
       },
       "fillable": false
-    },
-    {
-      "eid": "e64",
-      "role": "presentation",
-      "name": "reCAPTCHA",
-      "fp": "presentation|reCAPTCHA|0",
-      "rect": {
-        "x": 1210,
-        "y": 826,
-        "w": 256,
-        "h": 60
-      },
-      "fillable": false
     }
   ],
   "text": "Back to jobs Engineering Manager, GPU (ML Accelerator) San Francisco, CA | New York City, NY | Seattle, WA Apply About A",
-  "contentHash": "kbbg5j",
-  "totalCandidates": 339
+  "contentHash": "dy1vy4",
+  "totalCandidates": 337
 }

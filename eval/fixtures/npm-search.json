@@ -1,0 +1,2319 @@
+{
+  "url": "https://www.npmjs.com/search?q=playwright",
+  "title": "playwright - npm search",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 2752
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "alert",
+      "name": "npm tokens that bypass 2FA are being restricted — account changes (Aug 2026) and direct publishing (Jan 2027). Learn how",
+      "fp": "alert|npm tokens that bypass 2FA are being restricted — account changes (Aug 2026) and direct publishing (Jan 2027). Learn how|0",
+      "rect": {
+        "x": 88,
+        "y": 21,
+        "w": 908,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "Learn how to prepare for the npm bypass 2FA token deprecation",
+      "fp": "link|Learn how to prepare for the npm bypass 2FA token deprecation|0",
+      "rect": {
+        "x": 835,
+        "y": 20,
+        "w": 161,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "button",
+      "name": "Close notification",
+      "fp": "button|Close notification|0",
+      "rect": {
+        "x": 1224,
+        "y": 16,
+        "w": 24,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "link",
+      "name": "skip to content",
+      "ctx": "header",
+      "fp": "link|skip to content|0",
+      "rect": {
+        "x": 496,
+        "y": -31,
+        "w": 52,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "link",
+      "name": "skip to package search",
+      "ctx": "header",
+      "fp": "link|skip to package search|0",
+      "rect": {
+        "x": 558,
+        "y": -31,
+        "w": 103,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "link",
+      "name": "skip to sign in",
+      "ctx": "header",
+      "fp": "link|skip to sign in|0",
+      "rect": {
+        "x": 671,
+        "y": -31,
+        "w": 43,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "button",
+      "name": "Light mode — click for dark",
+      "ctx": "header",
+      "fp": "button|Light mode — click for dark|0",
+      "rect": {
+        "x": 32,
+        "y": 88,
+        "w": 28,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "Pro",
+      "ctx": "nav: Product Navigation",
+      "fp": "link|Pro|0",
+      "rect": {
+        "x": 75,
+        "y": 82,
+        "w": 43,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "Teams",
+      "ctx": "nav: Product Navigation",
+      "fp": "link|Teams|0",
+      "rect": {
+        "x": 124,
+        "y": 82,
+        "w": 69,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Pricing",
+      "ctx": "nav: Product Navigation",
+      "fp": "link|Pricing|0",
+      "rect": {
+        "x": 199,
+        "y": 82,
+        "w": 70,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "Documentation",
+      "ctx": "nav: Product Navigation",
+      "fp": "link|Documentation|0",
+      "rect": {
+        "x": 275,
+        "y": 82,
+        "w": 133,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "Npm",
+      "ctx": "header",
+      "fp": "link|Npm|0",
+      "rect": {
+        "x": 32,
+        "y": 170,
+        "w": 70,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "combobox",
+      "name": "Search packages",
+      "value": "playwright",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Search packages|0",
+      "rect": {
+        "x": 178,
+        "y": 154,
+        "w": 716,
+        "h": 40
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e14",
+      "role": "button",
+      "name": "Clear search",
+      "ctx": "form",
+      "fp": "button|Clear search|0",
+      "rect": {
+        "x": 873,
+        "y": 164,
+        "w": 20,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "button",
+      "name": "Search",
+      "ctx": "form",
+      "fp": "button|Search|0",
+      "rect": {
+        "x": 902,
+        "y": 148,
+        "w": 116,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "Sign Up",
+      "ctx": "header",
+      "fp": "link|Sign Up|0",
+      "rect": {
+        "x": 1049,
+        "y": 148,
+        "w": 112,
+        "h": 49
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "Sign In",
+      "ctx": "header",
+      "fp": "link|Sign In|0",
+      "rect": {
+        "x": 1177,
+        "y": 158,
+        "w": 55,
+        "h": 29
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "disclosure",
+      "name": "Sort by: Default. Press Enter to open dropdown",
+      "ctx": "Search results",
+      "fp": "disclosure|Sort by: Default. Press Enter to open dropdown|0",
+      "rect": {
+        "x": 1009,
+        "y": 233,
+        "w": 143,
+        "h": 35
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "listbox",
+      "name": "Sort options",
+      "ctx": "Search results",
+      "fp": "listbox|Sort options|0",
+      "rect": {
+        "x": 909,
+        "y": 270,
+        "w": 243,
+        "h": 182
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "option",
+      "name": "Default, currently selected",
+      "ctx": "Search results",
+      "fp": "option|Default, currently selected|0",
+      "rect": {
+        "x": 914,
+        "y": 275,
+        "w": 233,
+        "h": 34
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "option",
+      "name": "Most downloaded this week",
+      "ctx": "Search results",
+      "fp": "option|Most downloaded this week|0",
+      "rect": {
+        "x": 914,
+        "y": 310,
+        "w": 233,
+        "h": 34
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "option",
+      "name": "Most downloaded this month",
+      "ctx": "Search results",
+      "fp": "option|Most downloaded this month|0",
+      "rect": {
+        "x": 914,
+        "y": 344,
+        "w": 233,
+        "h": 34
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "option",
+      "name": "Most dependents",
+      "ctx": "Search results",
+      "fp": "option|Most dependents|0",
+      "rect": {
+        "x": 914,
+        "y": 378,
+        "w": 233,
+        "h": 34
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "option",
+      "name": "Recently published",
+      "ctx": "Search results",
+      "fp": "option|Recently published|0",
+      "rect": {
+        "x": 914,
+        "y": 413,
+        "w": 233,
+        "h": 34
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 304,
+        "w": 93,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|0",
+      "rect": {
+        "x": 158,
+        "y": 364,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|0",
+      "rect": {
+        "x": 1044,
+        "y": 340,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "@playwright/mcp",
+      "fp": "link|@playwright/mcp|0",
+      "rect": {
+        "x": 132,
+        "y": 421,
+        "w": 155,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|1",
+      "rect": {
+        "x": 158,
+        "y": 481,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|1",
+      "rect": {
+        "x": 1052,
+        "y": 459,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "@vitest/browser-playwright",
+      "fp": "link|@vitest/browser-playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 538,
+        "w": 242,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "browser",
+      "fp": "link|browser|0",
+      "rect": {
+        "x": 132,
+        "y": 603,
+        "w": 67,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|1",
+      "rect": {
+        "x": 206,
+        "y": 603,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "component",
+      "fp": "link|component|0",
+      "rect": {
+        "x": 295,
+        "y": 603,
+        "w": 87,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "mocks",
+      "fp": "link|mocks|0",
+      "rect": {
+        "x": 389,
+        "y": 603,
+        "w": 56,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "test",
+      "fp": "link|test|0",
+      "rect": {
+        "x": 453,
+        "y": 603,
+        "w": 39,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "testing",
+      "fp": "link|testing|0",
+      "rect": {
+        "x": 499,
+        "y": 603,
+        "w": 59,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|2",
+      "rect": {
+        "x": 158,
+        "y": 642,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|2",
+      "rect": {
+        "x": 1052,
+        "y": 598,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "allure-playwright",
+      "fp": "link|allure-playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 699,
+        "w": 150,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "allure",
+      "fp": "link|allure|0",
+      "rect": {
+        "x": 132,
+        "y": 763,
+        "w": 52,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "html",
+      "fp": "link|html|0",
+      "rect": {
+        "x": 191,
+        "y": 763,
+        "w": 45,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|2",
+      "rect": {
+        "x": 243,
+        "y": 763,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "link",
+      "name": "report",
+      "fp": "link|report|0",
+      "rect": {
+        "x": 333,
+        "y": 763,
+        "w": 55,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "reporter",
+      "fp": "link|reporter|0",
+      "rect": {
+        "x": 395,
+        "y": 763,
+        "w": 67,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "test",
+      "fp": "link|test|1",
+      "rect": {
+        "x": 469,
+        "y": 763,
+        "w": 39,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "testing",
+      "fp": "link|testing|1",
+      "rect": {
+        "x": 516,
+        "y": 763,
+        "w": 59,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "testops",
+      "fp": "link|testops|0",
+      "rect": {
+        "x": 581,
+        "y": 763,
+        "w": 62,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|3",
+      "rect": {
+        "x": 158,
+        "y": 802,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|3",
+      "rect": {
+        "x": 1060,
+        "y": 759,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "link",
+      "name": "@playwright/cli",
+      "fp": "link|@playwright/cli|0",
+      "rect": {
+        "x": 132,
+        "y": 859,
+        "w": 137,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|4",
+      "rect": {
+        "x": 158,
+        "y": 920,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|4",
+      "rect": {
+        "x": 1060,
+        "y": 898,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "link",
+      "name": "eslint-plugin-playwright",
+      "fp": "link|eslint-plugin-playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 977,
+        "w": 208,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|5",
+      "rect": {
+        "x": 158,
+        "y": 1037,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|5",
+      "rect": {
+        "x": 1052,
+        "y": 1015,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": "playwright-extra",
+      "fp": "link|playwright-extra|0",
+      "rect": {
+        "x": 132,
+        "y": 1094,
+        "w": 143,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|3",
+      "rect": {
+        "x": 132,
+        "y": 1159,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "playwright-extra",
+      "fp": "link|playwright-extra|1",
+      "rect": {
+        "x": 222,
+        "y": 1159,
+        "w": 118,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "link",
+      "name": "stealth",
+      "fp": "link|stealth|0",
+      "rect": {
+        "x": 347,
+        "y": 1159,
+        "w": 59,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "recaptcha",
+      "fp": "link|recaptcha|0",
+      "rect": {
+        "x": 413,
+        "y": 1159,
+        "w": 78,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "user-preferences",
+      "fp": "link|user-preferences|0",
+      "rect": {
+        "x": 497,
+        "y": 1159,
+        "w": 120,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": "chrome",
+      "fp": "link|chrome|0",
+      "rect": {
+        "x": 624,
+        "y": 1159,
+        "w": 63,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "link",
+      "name": "headless",
+      "fp": "link|headless|0",
+      "rect": {
+        "x": 695,
+        "y": 1159,
+        "w": 71,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "link",
+      "name": "pupeteer",
+      "fp": "link|pupeteer|0",
+      "rect": {
+        "x": 772,
+        "y": 1159,
+        "w": 72,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "link",
+      "name": "publisher berstend",
+      "fp": "link|publisher berstend|0",
+      "rect": {
+        "x": 158,
+        "y": 1198,
+        "w": 83,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|6",
+      "rect": {
+        "x": 1060,
+        "y": 1154,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "playwright-bdd",
+      "fp": "link|playwright-bdd|0",
+      "rect": {
+        "x": 132,
+        "y": 1255,
+        "w": 133,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|4",
+      "rect": {
+        "x": 132,
+        "y": 1319,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "cucumber",
+      "fp": "link|cucumber|0",
+      "rect": {
+        "x": 222,
+        "y": 1319,
+        "w": 78,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "link",
+      "name": "gherkin",
+      "fp": "link|gherkin|0",
+      "rect": {
+        "x": 307,
+        "y": 1319,
+        "w": 63,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "bdd",
+      "fp": "link|bdd|0",
+      "rect": {
+        "x": 377,
+        "y": 1319,
+        "w": 40,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "link",
+      "name": "testing",
+      "fp": "link|testing|2",
+      "rect": {
+        "x": 425,
+        "y": 1319,
+        "w": 59,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "link",
+      "name": "e2e",
+      "fp": "link|e2e|0",
+      "rect": {
+        "x": 491,
+        "y": 1319,
+        "w": 38,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|6",
+      "rect": {
+        "x": 158,
+        "y": 1358,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|7",
+      "rect": {
+        "x": 1060,
+        "y": 1314,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "playwright-lighthouse",
+      "fp": "link|playwright-lighthouse|0",
+      "rect": {
+        "x": 132,
+        "y": 1415,
+        "w": 191,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|5",
+      "rect": {
+        "x": 132,
+        "y": 1479,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "playwright-lighthouse",
+      "fp": "link|playwright-lighthouse|1",
+      "rect": {
+        "x": 222,
+        "y": 1479,
+        "w": 153,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "playwright-audit",
+      "fp": "link|playwright-audit|0",
+      "rect": {
+        "x": 382,
+        "y": 1479,
+        "w": 120,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "publisher abhinaba-ghosh",
+      "fp": "link|publisher abhinaba-ghosh|0",
+      "rect": {
+        "x": 158,
+        "y": 1519,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|8",
+      "rect": {
+        "x": 1072,
+        "y": 1475,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "link",
+      "name": "@playwright/browser-chromium",
+      "fp": "link|@playwright/browser-chromium|0",
+      "rect": {
+        "x": 132,
+        "y": 1576,
+        "w": 283,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|7",
+      "rect": {
+        "x": 158,
+        "y": 1636,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|9",
+      "rect": {
+        "x": 1060,
+        "y": 1614,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "axe-playwright",
+      "fp": "link|axe-playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 1693,
+        "w": 130,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "a11y",
+      "fp": "link|a11y|0",
+      "rect": {
+        "x": 132,
+        "y": 1757,
+        "w": 45,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "accessibility",
+      "fp": "link|accessibility|0",
+      "rect": {
+        "x": 184,
+        "y": 1757,
+        "w": 92,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "link",
+      "name": "axe",
+      "fp": "link|axe|0",
+      "rect": {
+        "x": 283,
+        "y": 1757,
+        "w": 37,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "axe-core",
+      "fp": "link|axe-core|0",
+      "rect": {
+        "x": 327,
+        "y": 1757,
+        "w": 69,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|6",
+      "rect": {
+        "x": 403,
+        "y": 1757,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "link",
+      "name": "publisher abhinaba-ghosh",
+      "fp": "link|publisher abhinaba-ghosh|1",
+      "rect": {
+        "x": 158,
+        "y": 1796,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|10",
+      "rect": {
+        "x": 1060,
+        "y": 1753,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "link",
+      "name": "@msw/playwright",
+      "fp": "link|@msw/playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 1853,
+        "w": 158,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|7",
+      "rect": {
+        "x": 132,
+        "y": 1918,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "link",
+      "name": "api",
+      "fp": "link|api|0",
+      "rect": {
+        "x": 222,
+        "y": 1918,
+        "w": 35,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "mock",
+      "fp": "link|mock|0",
+      "rect": {
+        "x": 264,
+        "y": 1918,
+        "w": 50,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "link",
+      "name": "msw",
+      "fp": "link|msw|0",
+      "rect": {
+        "x": 321,
+        "y": 1918,
+        "w": 45,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "link",
+      "name": "request",
+      "fp": "link|request|0",
+      "rect": {
+        "x": 373,
+        "y": 1918,
+        "w": 63,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|8",
+      "rect": {
+        "x": 158,
+        "y": 1957,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|11",
+      "rect": {
+        "x": 1072,
+        "y": 1913,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "playwright-qase-reporter",
+      "fp": "link|playwright-qase-reporter|0",
+      "rect": {
+        "x": 132,
+        "y": 2014,
+        "w": 218,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|9",
+      "rect": {
+        "x": 158,
+        "y": 2074,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|12",
+      "rect": {
+        "x": 1072,
+        "y": 2052,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "@playwright/browser-webkit",
+      "fp": "link|@playwright/browser-webkit|0",
+      "rect": {
+        "x": 132,
+        "y": 2131,
+        "w": 253,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|10",
+      "rect": {
+        "x": 158,
+        "y": 2192,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|13",
+      "rect": {
+        "x": 1060,
+        "y": 2170,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "link",
+      "name": "@azure/playwright",
+      "fp": "link|@azure/playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 2249,
+        "w": 165,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e109",
+      "role": "link",
+      "name": "azure",
+      "fp": "link|azure|0",
+      "rect": {
+        "x": 132,
+        "y": 2313,
+        "w": 50,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e110",
+      "role": "link",
+      "name": "cloud",
+      "fp": "link|cloud|0",
+      "rect": {
+        "x": 189,
+        "y": 2313,
+        "w": 51,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e111",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|8",
+      "rect": {
+        "x": 247,
+        "y": 2313,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e112",
+      "role": "link",
+      "name": "playwright workspaces",
+      "fp": "link|playwright workspaces|0",
+      "rect": {
+        "x": 337,
+        "y": 2313,
+        "w": 159,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e113",
+      "role": "link",
+      "name": "publisher microsoft1es",
+      "fp": "link|publisher microsoft1es|0",
+      "rect": {
+        "x": 158,
+        "y": 2352,
+        "w": 117,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e114",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|14",
+      "rect": {
+        "x": 1072,
+        "y": 2308,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
+      "role": "link",
+      "name": "@argos-ci/playwright",
+      "fp": "link|@argos-ci/playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 2409,
+        "w": 186,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e116",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|9",
+      "rect": {
+        "x": 132,
+        "y": 2474,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e117",
+      "role": "link",
+      "name": "playwright-reporter",
+      "fp": "link|playwright-reporter|0",
+      "rect": {
+        "x": 222,
+        "y": 2474,
+        "w": 139,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e118",
+      "role": "link",
+      "name": "reporter",
+      "fp": "link|reporter|1",
+      "rect": {
+        "x": 367,
+        "y": 2474,
+        "w": 67,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e119",
+      "role": "link",
+      "name": "playwright-plugin",
+      "fp": "link|playwright-plugin|0",
+      "rect": {
+        "x": 442,
+        "y": 2474,
+        "w": 127,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e120",
+      "role": "link",
+      "name": "argos",
+      "fp": "link|argos|0",
+      "rect": {
+        "x": 575,
+        "y": 2474,
+        "w": 50,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e121",
+      "role": "link",
+      "name": "testing",
+      "fp": "link|testing|3",
+      "rect": {
+        "x": 632,
+        "y": 2474,
+        "w": 59,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e122",
+      "role": "link",
+      "name": "visual testing",
+      "fp": "link|visual testing|0",
+      "rect": {
+        "x": 698,
+        "y": 2474,
+        "w": 98,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e123",
+      "role": "link",
+      "name": "regression",
+      "fp": "link|regression|0",
+      "rect": {
+        "x": 804,
+        "y": 2474,
+        "w": 81,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e124",
+      "role": "link",
+      "name": "visual regression",
+      "fp": "link|visual regression|0",
+      "rect": {
+        "x": 132,
+        "y": 2505,
+        "w": 120,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e125",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|11",
+      "rect": {
+        "x": 158,
+        "y": 2544,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e126",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|15",
+      "rect": {
+        "x": 1072,
+        "y": 2484,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e127",
+      "role": "link",
+      "name": "@reportportal/agent-js-playwright",
+      "fp": "link|@reportportal/agent-js-playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 2601,
+        "w": 299,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e128",
+      "role": "link",
+      "name": "epam",
+      "fp": "link|epam|0",
+      "rect": {
+        "x": 132,
+        "y": 2665,
+        "w": 51,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e129",
+      "role": "link",
+      "name": "reports",
+      "fp": "link|reports|0",
+      "rect": {
+        "x": 190,
+        "y": 2665,
+        "w": 61,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e130",
+      "role": "link",
+      "name": "portal",
+      "fp": "link|portal|0",
+      "rect": {
+        "x": 258,
+        "y": 2665,
+        "w": 54,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e131",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|10",
+      "rect": {
+        "x": 319,
+        "y": 2665,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e132",
+      "role": "link",
+      "name": "reporters",
+      "fp": "link|reporters|0",
+      "rect": {
+        "x": 408,
+        "y": 2665,
+        "w": 74,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e133",
+      "role": "link",
+      "name": "reportportal",
+      "fp": "link|reportportal|0",
+      "rect": {
+        "x": 489,
+        "y": 2665,
+        "w": 93,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e134",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|12",
+      "rect": {
+        "x": 158,
+        "y": 2704,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e135",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|16",
+      "rect": {
+        "x": 1060,
+        "y": 2661,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e136",
+      "role": "link",
+      "name": "@chromatic-com/playwright",
+      "fp": "link|@chromatic-com/playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 2761,
+        "w": 247,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e137",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|13",
+      "rect": {
+        "x": 158,
+        "y": 2822,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e138",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|17",
+      "rect": {
+        "x": 1072,
+        "y": 2799,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e139",
+      "role": "link",
+      "name": "playwright-teamcity-reporter",
+      "fp": "link|playwright-teamcity-reporter|0",
+      "rect": {
+        "x": 132,
+        "y": 2879,
+        "w": 252,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e140",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|11",
+      "rect": {
+        "x": 132,
+        "y": 2943,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e141",
+      "role": "link",
+      "name": "teamcity",
+      "fp": "link|teamcity|0",
+      "rect": {
+        "x": 222,
+        "y": 2943,
+        "w": 70,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e142",
+      "role": "link",
+      "name": "reporter",
+      "fp": "link|reporter|2",
+      "rect": {
+        "x": 299,
+        "y": 2943,
+        "w": 67,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e143",
+      "role": "link",
+      "name": "publisher artemrudenko",
+      "fp": "link|publisher artemrudenko|0",
+      "rect": {
+        "x": 158,
+        "y": 2982,
+        "w": 117,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e144",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|18",
+      "rect": {
+        "x": 1072,
+        "y": 2938,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e145",
+      "role": "link",
+      "name": "@currents/playwright",
+      "fp": "link|@currents/playwright|0",
+      "rect": {
+        "x": 132,
+        "y": 3039,
+        "w": 190,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e146",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|12",
+      "rect": {
+        "x": 132,
+        "y": 3128,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e147",
+      "role": "link",
+      "name": "playwright dashboard",
+      "fp": "link|playwright dashboard|0",
+      "rect": {
+        "x": 222,
+        "y": 3128,
+        "w": 152,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e148",
+      "role": "link",
+      "name": "cloud dashboard",
+      "fp": "link|cloud dashboard|0",
+      "rect": {
+        "x": 381,
+        "y": 3128,
+        "w": 121,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e149",
+      "role": "link",
+      "name": "reporter",
+      "fp": "link|reporter|3",
+      "rect": {
+        "x": 509,
+        "y": 3128,
+        "w": 67,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e150",
+      "role": "link",
+      "name": "currents",
+      "fp": "link|currents|0",
+      "rect": {
+        "x": 583,
+        "y": 3128,
+        "w": 68,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e151",
+      "role": "link",
+      "name": "tests reporter",
+      "fp": "link|tests reporter|0",
+      "rect": {
+        "x": 658,
+        "y": 3128,
+        "w": 100,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e152",
+      "role": "link",
+      "name": "sorry cypress",
+      "fp": "link|sorry cypress|0",
+      "rect": {
+        "x": 765,
+        "y": 3128,
+        "w": 98,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e153",
+      "role": "link",
+      "name": "ci",
+      "fp": "link|ci|0",
+      "rect": {
+        "x": 871,
+        "y": 3128,
+        "w": 27,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e154",
+      "role": "link",
+      "name": "publisher GitHub Actions",
+      "fp": "link|publisher GitHub Actions|14",
+      "rect": {
+        "x": 158,
+        "y": 3167,
+        "w": 134,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e155",
+      "role": "img",
+      "name": "Download statistics",
+      "fp": "img|Download statistics|19",
+      "rect": {
+        "x": 1060,
+        "y": 3111,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e156",
+      "role": "navigation",
+      "name": "Pagination Navigation",
+      "ctx": "nav: Pagination Navigation",
+      "fp": "navigation|Pagination Navigation|0",
+      "rect": {
+        "x": 128,
+        "y": 3223,
+        "w": 232,
+        "h": 41
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e157",
+      "role": "link",
+      "name": "Current page, page 1",
+      "ctx": "nav: Pagination Navigation",
+      "fp": "link|Current page, page 1|0",
+      "rect": {
+        "x": 131,
+        "y": 3223,
+        "w": 37,
+        "h": 41
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e158",
+      "role": "link",
+      "name": "Go to page 2",
+      "ctx": "nav: Pagination Navigation",
+      "fp": "link|Go to page 2|0",
+      "rect": {
+        "x": 174,
+        "y": 3224,
+        "w": 35,
+        "h": 39
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e159",
+      "role": "link",
+      "name": "Go to page 3",
+      "ctx": "nav: Pagination Navigation",
+      "fp": "link|Go to page 3|0",
+      "rect": {
+        "x": 215,
+        "y": 3224,
+        "w": 35,
+        "h": 39
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e160",
+      "role": "link",
+      "name": "Go to page 50",
+      "ctx": "nav: Pagination Navigation",
+      "fp": "link|Go to page 50|0",
+      "rect": {
+        "x": 273,
+        "y": 3224,
+        "w": 44,
+        "h": 39
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e161",
+      "role": "link",
+      "name": "Next page",
+      "ctx": "nav: Pagination Navigation",
+      "fp": "link|Next page|0",
+      "rect": {
+        "x": 323,
+        "y": 3224,
+        "w": 34,
+        "h": 39
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e162",
+      "role": "link",
+      "name": "Visit npm GitHub page",
+      "ctx": "footer",
+      "fp": "link|Visit npm GitHub page|0",
+      "rect": {
+        "x": 48,
+        "y": 3413,
+        "w": 50,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e163",
+      "role": "link",
+      "name": "GitHub",
+      "ctx": "footer",
+      "fp": "link|GitHub|0",
+      "rect": {
+        "x": 48,
+        "y": 3461,
+        "w": 50,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e164",
+      "role": "link",
+      "name": "Help",
+      "ctx": "footer",
+      "fp": "link|Help|0",
+      "rect": {
+        "x": 173,
+        "y": 3426,
+        "w": 40,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e165",
+      "role": "link",
+      "name": "Advisories",
+      "ctx": "footer",
+      "fp": "link|Advisories|0",
+      "rect": {
+        "x": 173,
+        "y": 3466,
+        "w": 85,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e166",
+      "role": "link",
+      "name": "Status",
+      "ctx": "footer",
+      "fp": "link|Status|0",
+      "rect": {
+        "x": 173,
+        "y": 3506,
+        "w": 54,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e167",
+      "role": "link",
+      "name": "Contact npm",
+      "ctx": "footer",
+      "fp": "link|Contact npm|0",
+      "rect": {
+        "x": 173,
+        "y": 3546,
+        "w": 111,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e168",
+      "role": "link",
+      "name": "About",
+      "ctx": "footer",
+      "fp": "link|About|0",
+      "rect": {
+        "x": 547,
+        "y": 3426,
+        "w": 52,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e169",
+      "role": "link",
+      "name": "Blog",
+      "ctx": "footer",
+      "fp": "link|Blog|0",
+      "rect": {
+        "x": 547,
+        "y": 3466,
+        "w": 39,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e170",
+      "role": "link",
+      "name": "Press",
+      "ctx": "footer",
+      "fp": "link|Press|0",
+      "rect": {
+        "x": 547,
+        "y": 3506,
+        "w": 46,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e171",
+      "role": "link",
+      "name": "Policies",
+      "ctx": "footer",
+      "fp": "link|Policies|0",
+      "rect": {
+        "x": 922,
+        "y": 3426,
+        "w": 63,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e172",
+      "role": "link",
+      "name": "Terms of Use",
+      "ctx": "footer",
+      "fp": "link|Terms of Use|0",
+      "rect": {
+        "x": 922,
+        "y": 3466,
+        "w": 107,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e173",
+      "role": "link",
+      "name": "Code of Conduct",
+      "ctx": "footer",
+      "fp": "link|Code of Conduct|0",
+      "rect": {
+        "x": 922,
+        "y": 3506,
+        "w": 141,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e174",
+      "role": "link",
+      "name": "Privacy",
+      "ctx": "footer",
+      "fp": "link|Privacy|0",
+      "rect": {
+        "x": 922,
+        "y": 3546,
+        "w": 62,
+        "h": 23
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Search results 1000+ packages found Sort by: Default playwright exact match A high-level API to automate web browsers Gi",
+  "contentHash": "s44bu8",
+  "totalCandidates": 174
+}

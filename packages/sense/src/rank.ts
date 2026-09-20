@@ -110,13 +110,23 @@ export function toSnapshotElement(el: RawElement): SnapshotElement {
 
 export const DEFAULT_CAP = 120;
 
-/** What actually goes to JEV: ranked, capped, geometry stripped. */
+/**
+ * What actually goes to JEV: ranked, capped, geometry stripped — then RESTORED TO
+ * DOCUMENT ORDER.
+ *
+ * Ranking decides *which* elements survive the cap. It must not decide how they are
+ * presented, because positional intents ("open the first job posting", "the top
+ * result") are extremely common and the only way the model can answer them is if the
+ * list it sees runs in the order the page does. Emitting rank order instead makes
+ * "first" unanswerable — the model would be reading our scoring, not the page.
+ */
 export function rankedSnapshot(raw: RawSnapshot, intent: string, cap = DEFAULT_CAP): Snapshot {
+  const keep = new Set(rankElements(raw, intent).slice(0, cap).map((e) => e.eid));
   return {
     url: raw.url,
     title: raw.title,
     viewport: raw.viewport,
-    elements: rankElements(raw, intent).slice(0, cap).map(toSnapshotElement),
+    elements: raw.elements.filter((e) => keep.has(e.eid)).map(toSnapshotElement),
     text: raw.text,
     contentHash: raw.contentHash,
   };

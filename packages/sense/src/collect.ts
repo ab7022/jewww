@@ -208,13 +208,21 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
   }
 
   // Collapse nested clickables: keep the OUTERMOST element carrying a given name.
-  const set = new Set(kept.map((k) => k.el));
+  //
+  // The test must be "the ancestor says the SAME thing", not "the ancestor's text
+  // contains mine". A search-result row is a container whose text contains every
+  // link inside it, so a `includes` test deletes the actual results and leaves only
+  // page chrome — which is exactly what it did to GitHub search and Stack Overflow.
+  const INTERACTIVE = /^(link|button|checkbox|radio|tab|menuitem|option|disclosure)$/;
+  const set = new Map(kept.map((k) => [k.el, k]));
   const outermost = kept.filter(({ el, name }) => {
     let p = el.parentElement;
     while (p) {
-      if (set.has(p)) {
-        const pn = nameOf(p);
-        if (pn === name || pn.includes(name)) return false;
+      const parent = set.get(p);
+      if (parent && INTERACTIVE.test(parent.role)) {
+        // Same label, or a label barely longer than ours — a wrapper, not a list.
+        if (parent.name === name) return false;
+        if (parent.name.includes(name) && parent.name.length <= name.length + 12) return false;
       }
       p = p.parentElement;
     }

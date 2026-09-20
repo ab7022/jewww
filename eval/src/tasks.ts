@@ -10,6 +10,15 @@ export interface Task {
   follow?: string[];
   /** Extra settle time for heavy SPAs. */
   settleMs?: number;
+  /**
+   * Ground truth for element selection: a case-insensitive substring that must match
+   * exactly ONE element in the fixture. Stored as a substring rather than an eid
+   * because eids shift on every re-capture while names do not.
+   *
+   * Set by hand via `pnpm eval:label`. Tasks without one are excluded from the
+   * selection benchmark rather than guessed at.
+   */
+  target?: string;
 }
 
 /**
@@ -23,7 +32,7 @@ export interface Task {
 export const TASKS: Task[] = [
   // --- ATS application forms: the field-mapping benchmark --------------------
   { slug: "gh-board", url: "https://job-boards.greenhouse.io/anthropic", kind: "nav",
-    goal: "apply to a job at this company", intent: "open the first engineering job posting" },
+    goal: "apply to a job at this company", intent: "open the first engineering job posting" , target: "Engineering Manager, GPU"},
   { slug: "gh-form", url: "https://job-boards.greenhouse.io/anthropic", kind: "form",
     goal: "apply to this job with my resume", intent: "fill in the job application form",
     follow: ["Engineer"], settleMs: 1500 },
@@ -33,7 +42,8 @@ export const TASKS: Task[] = [
     goal: "apply to this job with my resume", intent: "fill in the job application form",
     follow: ["Engineer", "Apply"], settleMs: 1500 },
   { slug: "ashby-board", url: "https://jobs.ashbyhq.com/ramp", kind: "nav",
-    goal: "apply to a job at this company", intent: "open the first engineering job posting" },
+    goal: "apply to a job at this company", intent: "open the first listed open position",
+    settleMs: 6000 , target: "AI Solutions Strategist"},
   { slug: "ashby-form", url: "https://jobs.ashbyhq.com/ramp", kind: "form",
     goal: "apply to this job with my resume", intent: "fill in the job application form",
     follow: ["Engineer", "Apply"], settleMs: 2000 },
@@ -45,33 +55,33 @@ export const TASKS: Task[] = [
 
   // --- results / search: the hardest case for ranking ------------------------
   { slug: "hn", url: "https://news.ycombinator.com/", kind: "results",
-    goal: "read the top story", intent: "open the highest ranked story" },
+    goal: "read the top story", intent: "open the highest ranked story" , target: "Qwen-Image-2.1"},
   { slug: "hn-jobs", url: "https://news.ycombinator.com/jobs", kind: "results",
-    goal: "find a job posting", intent: "open the first job posting" },
+    goal: "find a job posting", intent: "open the first job posting" , target: "Supabase (YC S20) Is Hiring for OrioleDB"},
   { slug: "wiki-search", url: "https://en.wikipedia.org/w/index.php?search=iphone+review", kind: "results",
-    goal: "research iphone reviews", intent: "open the most relevant article about the iPhone" },
-  { slug: "mdn-search", url: "https://developer.mozilla.org/en-US/search?q=fetch", kind: "results",
-    goal: "read the fetch docs", intent: "open the main documentation page for fetch" },
+    goal: "research iphone reviews", intent: "open the article about the iPhone 17 Pro" , target: "IPhone 17 Pro"},
+  { slug: "npm-search", url: "https://www.npmjs.com/search?q=playwright", kind: "results",
+    goal: "find the playwright package", intent: "open the top package result", settleMs: 3000 },
   { slug: "gh-search", url: "https://github.com/search?q=browser+agent&type=repositories", kind: "results",
-    goal: "find a browser agent library", intent: "open the top repository result", settleMs: 1500 },
+    goal: "find a browser agent library", intent: "open the top repository result", settleMs: 4000 , target: "browser-use/browser-use"},
 
   // --- content / navigation -------------------------------------------------
   { slug: "wiki-article", url: "https://en.wikipedia.org/wiki/Web_accessibility", kind: "nav",
-    goal: "check the references", intent: "jump to the references section" },
+    goal: "check the references", intent: "jump to the references section" , target: "References"},
   { slug: "mdn-article", url: "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API", kind: "nav",
-    goal: "see browser support", intent: "open the browser compatibility information" },
+    goal: "see browser support", intent: "open the browser compatibility information" , target: "Browser compatibility"},
   { slug: "vercel-pricing", url: "https://vercel.com/pricing", kind: "nav",
-    goal: "find the price of the pro plan", intent: "open the pricing details for the Pro plan",
-    settleMs: 1500 },
+    goal: "find the price of the pro plan", intent: "start a free trial of the Pro plan",
+    settleMs: 1500 , target: "Start a free Pro trial"},
   { slug: "openrouter-models", url: "https://openrouter.ai/models", kind: "results",
-    goal: "compare model prices", intent: "search the model list", settleMs: 2000 },
+    goal: "compare model prices", intent: "search the model list", settleMs: 2000 , target: "Search models"},
 
   // --- heavy SPA shells -----------------------------------------------------
   { slug: "npm-pkg", url: "https://www.npmjs.com/package/playwright", kind: "nav",
-    goal: "check the install command", intent: "copy the install command", settleMs: 1500 },
+    goal: "check the install command", intent: "copy the install command", settleMs: 1500 , target: "Copy install command line"},
   { slug: "so-question", url: "https://stackoverflow.com/questions/tagged/playwright", kind: "results",
     goal: "find an answered question", intent: "open the first question in the list",
-    settleMs: 1500 },
+    settleMs: 3000 , target: "Is it a good practice to manage Tekton"},
   { slug: "gh-repo", url: "https://github.com/microsoft/playwright", kind: "nav",
-    goal: "read the contributing guide", intent: "open the issues tab", settleMs: 1500 },
+    goal: "read the contributing guide", intent: "open the issues tab", settleMs: 1500 , target: "Issues 185"},
 ];

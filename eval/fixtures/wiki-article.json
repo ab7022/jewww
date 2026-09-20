@@ -38,6 +38,20 @@
     },
     {
       "eid": "e3",
+      "role": "button",
+      "name": "Search",
+      "ctx": "form",
+      "fp": "button|Search|0",
+      "rect": {
+        "x": 669,
+        "y": 17,
+        "w": 71,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
       "role": "link",
       "name": "Donate",
       "ctx": "nav: Personal tools",
@@ -51,7 +65,7 @@
       "fillable": false
     },
     {
-      "eid": "e4",
+      "eid": "e5",
       "role": "link",
       "name": "You are encouraged to create an account and log in; however, it is not mandatory",
       "ctx": "nav: Personal tools",
@@ -65,7 +79,7 @@
       "fillable": false
     },
     {
-      "eid": "e5",
+      "eid": "e6",
       "role": "link",
       "name": "You're encouraged to log in; however, it's not mandatory. [ctrl-option-o]",
       "ctx": "nav: Personal tools",
@@ -79,7 +93,7 @@
       "fillable": false
     },
     {
-      "eid": "e6",
+      "eid": "e7",
       "role": "link",
       "name": "Wiki Loves Monuments: Photograph a monument, help Wikipedia and win! Learn more",
       "fp": "link|Wiki Loves Monuments: Photograph a monument, help Wikipedia and win! Learn more|0",
@@ -92,7 +106,7 @@
       "fillable": false
     },
     {
-      "eid": "e7",
+      "eid": "e8",
       "role": "generic",
       "name": "Hide",
       "fp": "generic|Hide|0",
@@ -105,7 +119,7 @@
       "fillable": false
     },
     {
-      "eid": "e8",
+      "eid": "e9",
       "role": "button",
       "name": "Hide Contents",
       "ctx": "nav: Contents",
@@ -119,7 +133,7 @@
       "fillable": false
     },
     {
-      "eid": "e9",
+      "eid": "e10",
       "role": "link",
       "name": "(Top)",
       "ctx": "nav: Contents",
@@ -133,7 +147,7 @@
       "fillable": false
     },
     {
-      "eid": "e10",
+      "eid": "e11",
       "role": "link",
       "name": "Assistive technologies used for web browsing",
       "ctx": "nav: Contents",
@@ -147,7 +161,7 @@
       "fillable": false
     },
     {
-      "eid": "e11",
+      "eid": "e12",
       "role": "link",
       "name": "Guidelines on accessible web design",
       "ctx": "nav: Contents",
@@ -161,7 +175,7 @@
       "fillable": false
     },
     {
-      "eid": "e12",
+      "eid": "e13",
       "role": "button",
       "name": "Toggle Guidelines on accessible web design subsection",
       "ctx": "nav: Contents",
@@ -176,7 +190,7 @@
       "fillable": false
     },
     {
-      "eid": "e13",
+      "eid": "e14",
       "role": "link",
       "name": "Guidelines for different components",
       "ctx": "nav: Contents",
@@ -190,7 +204,7 @@
       "fillable": false
     },
     {
-      "eid": "e14",
+      "eid": "e15",
       "role": "button",
       "name": "Toggle Guidelines for different components subsection",
       "ctx": "nav: Contents",
@@ -205,7 +219,7 @@
       "fillable": false
     },
     {
-      "eid": "e15",
+      "eid": "e16",
       "role": "link",
       "name": "Web accessibility legislation",
       "ctx": "nav: Contents",
@@ -219,7 +233,7 @@
       "fillable": false
     },
     {
-      "eid": "e16",
+      "eid": "e17",
       "role": "button",
       "name": "Toggle Web accessibility legislation subsection",
       "ctx": "nav: Contents",
@@ -234,7 +248,7 @@
       "fillable": false
     },
     {
-      "eid": "e17",
+      "eid": "e18",
       "role": "link",
       "name": "Website accessibility audits",
       "ctx": "nav: Contents",
@@ -248,7 +262,7 @@
       "fillable": false
     },
     {
-      "eid": "e18",
+      "eid": "e19",
       "role": "link",
       "name": "Accessible Web applications and WAI-ARIA",
       "ctx": "nav: Contents",
@@ -262,7 +276,7 @@
       "fillable": false
     },
     {
-      "eid": "e19",
+      "eid": "e20",
       "role": "link",
       "name": "See also",
       "ctx": "nav: Contents",
@@ -276,7 +290,7 @@
       "fillable": false
     },
     {
-      "eid": "e20",
+      "eid": "e21",
       "role": "link",
       "name": "References",
       "ctx": "nav: Contents",
@@ -290,7 +304,7 @@
       "fillable": false
     },
     {
-      "eid": "e21",
+      "eid": "e22",
       "role": "link",
       "name": "Further reading",
       "ctx": "nav: Contents",
@@ -304,7 +318,7 @@
       "fillable": false
     },
     {
-      "eid": "e22",
+      "eid": "e23",
       "role": "link",
       "name": "External links",
       "ctx": "nav: Contents",
@@ -318,7 +332,7 @@
       "fillable": false
     },
     {
-      "eid": "e23",
+      "eid": "e24",
       "role": "button",
       "name": "Toggle External links subsection",
       "ctx": "nav: Contents",
@@ -333,7 +347,7 @@
       "fillable": false
     },
     {
-      "eid": "e24",
+      "eid": "e25",
       "role": "link",
       "name": "View the content page [ctrl-option-c]",
       "ctx": "nav: Namespaces",
@@ -347,7 +361,7 @@
       "fillable": false
     },
     {
-      "eid": "e25",
+      "eid": "e26",
       "role": "link",
       "name": "Discuss improvements to the content page [ctrl-option-t]",
       "ctx": "nav: Namespaces",
@@ -361,7 +375,7 @@
       "fillable": false
     },
     {
-      "eid": "e26",
+      "eid": "e27",
       "role": "link",
       "name": "Read",
       "ctx": "nav: Views",
@@ -375,7 +389,7 @@
       "fillable": false
     },
     {
-      "eid": "e27",
+      "eid": "e28",
       "role": "link",
       "name": "Edit this page [ctrl-option-e]",
       "ctx": "nav: Views",
@@ -389,7 +403,7 @@
       "fillable": false
     },
     {
-      "eid": "e28",
+      "eid": "e29",
       "role": "link",
       "name": "Past revisions of this page [ctrl-option-h]",
       "ctx": "nav: Views",
@@ -403,7 +417,7 @@
       "fillable": false
     },
     {
-      "eid": "e29",
+      "eid": "e30",
       "role": "button",
       "name": "Hide Appearance",
       "ctx": "nav: Appearance",
@@ -417,7 +431,7 @@
       "fillable": false
     },
     {
-      "eid": "e30",
+      "eid": "e31",
       "role": "note",
       "name": "For Wikipedia's accessibility guidelines, see Wikipedia:Accessibility.",
       "fp": "note|For Wikipedia's accessibility guidelines, see Wikipedia:Accessibility.|0",
@@ -430,7 +444,20 @@
       "fillable": false
     },
     {
-      "eid": "e31",
+      "eid": "e32",
+      "role": "link",
+      "name": "Wikipedia:Accessibility",
+      "fp": "link|Wikipedia:Accessibility|0",
+      "rect": {
+        "x": 604,
+        "y": 335,
+        "w": 160,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
       "role": "navigation",
       "name": "Disability show Theory and models show Education show Legislation show Societal implications show Personal assistance sh",
       "fp": "navigation|Disability show Theory and models show Education show Legislation show Societal implications show Personal assistance sh|0",
@@ -443,7 +470,34 @@
       "fillable": false
     },
     {
-      "eid": "e32",
+      "eid": "e34",
+      "role": "link",
+      "name": "Disability",
+      "fp": "link|Disability|0",
+      "rect": {
+        "x": 816,
+        "y": 378,
+        "w": 91,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|0",
+      "rect": {
+        "x": 962,
+        "y": 416,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
       "role": "link",
       "name": "Curb cut effect",
       "fp": "link|Curb cut effect|0",
@@ -456,7 +510,7 @@
       "fillable": false
     },
     {
-      "eid": "e33",
+      "eid": "e37",
       "role": "link",
       "name": "Disability studies",
       "fp": "link|Disability studies|0",
@@ -469,7 +523,7 @@
       "fillable": false
     },
     {
-      "eid": "e34",
+      "eid": "e38",
       "role": "link",
       "name": "Ableism",
       "fp": "link|Ableism|0",
@@ -482,7 +536,7 @@
       "fillable": false
     },
     {
-      "eid": "e35",
+      "eid": "e39",
       "role": "link",
       "name": "Audism",
       "fp": "link|Audism|0",
@@ -495,7 +549,7 @@
       "fillable": false
     },
     {
-      "eid": "e36",
+      "eid": "e40",
       "role": "link",
       "name": "Medical model of disability",
       "fp": "link|Medical model of disability|0",
@@ -508,7 +562,7 @@
       "fillable": false
     },
     {
-      "eid": "e37",
+      "eid": "e41",
       "role": "link",
       "name": "Social model of disability",
       "fp": "link|Social model of disability|0",
@@ -521,7 +575,7 @@
       "fillable": false
     },
     {
-      "eid": "e38",
+      "eid": "e42",
       "role": "link",
       "name": "Models of disability",
       "fp": "link|Models of disability|0",
@@ -534,7 +588,21 @@
       "fillable": false
     },
     {
-      "eid": "e39",
+      "eid": "e43",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|1",
+      "rect": {
+        "x": 962,
+        "y": 446,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
       "role": "link",
       "name": "Mainstreaming (education)",
       "fp": "link|Mainstreaming (education)|0",
@@ -547,7 +615,7 @@
       "fillable": false
     },
     {
-      "eid": "e40",
+      "eid": "e45",
       "role": "link",
       "name": "Individualized Education Program",
       "fp": "link|Individualized Education Program|0",
@@ -560,7 +628,7 @@
       "fillable": false
     },
     {
-      "eid": "e41",
+      "eid": "e46",
       "role": "link",
       "name": "Special needs",
       "fp": "link|Special needs|0",
@@ -573,7 +641,7 @@
       "fillable": false
     },
     {
-      "eid": "e42",
+      "eid": "e47",
       "role": "link",
       "name": "Special education",
       "fp": "link|Special education|0",
@@ -586,7 +654,7 @@
       "fillable": false
     },
     {
-      "eid": "e43",
+      "eid": "e48",
       "role": "link",
       "name": "Special education",
       "fp": "link|Special education|1",
@@ -599,7 +667,7 @@
       "fillable": false
     },
     {
-      "eid": "e44",
+      "eid": "e49",
       "role": "link",
       "name": "Learning disability",
       "fp": "link|Learning disability|0",
@@ -612,7 +680,21 @@
       "fillable": false
     },
     {
-      "eid": "e45",
+      "eid": "e50",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|2",
+      "rect": {
+        "x": 962,
+        "y": 475,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
       "role": "link",
       "name": "Convention on the Rights of Persons with Disabilities",
       "fp": "link|Convention on the Rights of Persons with Disabilities|0",
@@ -625,7 +707,7 @@
       "fillable": false
     },
     {
-      "eid": "e46",
+      "eid": "e52",
       "role": "link",
       "name": "Inter-American Convention on the Elimination of all Forms of Discrimination Against Persons with Disabilities",
       "fp": "link|Inter-American Convention on the Elimination of all Forms of Discrimination Against Persons with Disabilities|0",
@@ -638,7 +720,7 @@
       "fillable": false
     },
     {
-      "eid": "e47",
+      "eid": "e53",
       "role": "link",
       "name": "European Accessibility Act",
       "fp": "link|European Accessibility Act|0",
@@ -651,7 +733,7 @@
       "fillable": false
     },
     {
-      "eid": "e48",
+      "eid": "e54",
       "role": "link",
       "name": "Disability Discrimination Act 1992",
       "fp": "link|Disability Discrimination Act 1992|0",
@@ -664,7 +746,7 @@
       "fillable": false
     },
     {
-      "eid": "e49",
+      "eid": "e55",
       "role": "link",
       "name": "Accessible Canada Act",
       "fp": "link|Accessible Canada Act|0",
@@ -677,7 +759,7 @@
       "fillable": false
     },
     {
-      "eid": "e50",
+      "eid": "e56",
       "role": "link",
       "name": "Promotion of Equality and Prevention of Unfair Discrimination Act, 2000",
       "fp": "link|Promotion of Equality and Prevention of Unfair Discrimination Act, 2000|0",
@@ -690,7 +772,7 @@
       "fillable": false
     },
     {
-      "eid": "e51",
+      "eid": "e57",
       "role": "link",
       "name": "Disability Discrimination Act (Switzerland)",
       "fp": "link|Disability Discrimination Act (Switzerland)|0",
@@ -703,7 +785,7 @@
       "fillable": false
     },
     {
-      "eid": "e52",
+      "eid": "e58",
       "role": "link",
       "name": "Disability Discrimination Act 1995",
       "fp": "link|Disability Discrimination Act 1995|0",
@@ -716,7 +798,7 @@
       "fillable": false
     },
     {
-      "eid": "e53",
+      "eid": "e59",
       "role": "link",
       "name": "Section 504 of the Rehabilitation Act",
       "fp": "link|Section 504 of the Rehabilitation Act|0",
@@ -729,7 +811,7 @@
       "fillable": false
     },
     {
-      "eid": "e54",
+      "eid": "e60",
       "role": "link",
       "name": "Americans with Disabilities Act of 1990",
       "fp": "link|Americans with Disabilities Act of 1990|0",
@@ -742,7 +824,21 @@
       "fillable": false
     },
     {
-      "eid": "e55",
+      "eid": "e61",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|3",
+      "rect": {
+        "x": 962,
+        "y": 504,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
       "role": "link",
       "name": "Disability rights movement",
       "fp": "link|Disability rights movement|0",
@@ -755,7 +851,7 @@
       "fillable": false
     },
     {
-      "eid": "e56",
+      "eid": "e63",
       "role": "link",
       "name": "Disability justice",
       "fp": "link|Disability justice|0",
@@ -768,7 +864,7 @@
       "fillable": false
     },
     {
-      "eid": "e57",
+      "eid": "e64",
       "role": "link",
       "name": "Inclusion (disability rights)",
       "fp": "link|Inclusion (disability rights)|0",
@@ -781,7 +877,7 @@
       "fillable": false
     },
     {
-      "eid": "e58",
+      "eid": "e65",
       "role": "link",
       "name": "Neurodiversity",
       "fp": "link|Neurodiversity|0",
@@ -794,7 +890,7 @@
       "fillable": false
     },
     {
-      "eid": "e59",
+      "eid": "e66",
       "role": "link",
       "name": "Normalization (people with disabilities)",
       "fp": "link|Normalization (people with disabilities)|0",
@@ -807,7 +903,7 @@
       "fillable": false
     },
     {
-      "eid": "e60",
+      "eid": "e67",
       "role": "link",
       "name": "People-first language",
       "fp": "link|People-first language|0",
@@ -820,7 +916,7 @@
       "fillable": false
     },
     {
-      "eid": "e61",
+      "eid": "e68",
       "role": "link",
       "name": "List of disability-related terms with negative connotations",
       "fp": "link|List of disability-related terms with negative connotations|0",
@@ -833,7 +929,7 @@
       "fillable": false
     },
     {
-      "eid": "e62",
+      "eid": "e69",
       "role": "link",
       "name": "Public transport accessibility level",
       "fp": "link|Public transport accessibility level|0",
@@ -846,7 +942,7 @@
       "fillable": false
     },
     {
-      "eid": "e63",
+      "eid": "e70",
       "role": "link",
       "name": "Right to mobility",
       "fp": "link|Right to mobility|0",
@@ -859,7 +955,7 @@
       "fillable": false
     },
     {
-      "eid": "e64",
+      "eid": "e71",
       "role": "link",
       "name": "Sexuality and disability",
       "fp": "link|Sexuality and disability|0",
@@ -872,7 +968,7 @@
       "fillable": false
     },
     {
-      "eid": "e65",
+      "eid": "e72",
       "role": "link",
       "name": "Transport divide",
       "fp": "link|Transport divide|0",
@@ -885,7 +981,7 @@
       "fillable": false
     },
     {
-      "eid": "e66",
+      "eid": "e73",
       "role": "link",
       "name": "Disability and women's health",
       "fp": "link|Disability and women's health|0",
@@ -898,7 +994,21 @@
       "fillable": false
     },
     {
-      "eid": "e67",
+      "eid": "e74",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|4",
+      "rect": {
+        "x": 962,
+        "y": 533,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
       "role": "link",
       "name": "Accessibility",
       "fp": "link|Accessibility|0",
@@ -911,7 +1021,7 @@
       "fillable": false
     },
     {
-      "eid": "e68",
+      "eid": "e76",
       "role": "link",
       "name": "Unlicensed assistive personnel",
       "fp": "link|Unlicensed assistive personnel|0",
@@ -924,7 +1034,7 @@
       "fillable": false
     },
     {
-      "eid": "e69",
+      "eid": "e77",
       "role": "link",
       "name": "Activities of daily living",
       "fp": "link|Activities of daily living|0",
@@ -937,7 +1047,7 @@
       "fillable": false
     },
     {
-      "eid": "e70",
+      "eid": "e78",
       "role": "link",
       "name": "Accessible housing",
       "fp": "link|Accessible housing|0",
@@ -950,7 +1060,7 @@
       "fillable": false
     },
     {
-      "eid": "e71",
+      "eid": "e79",
       "role": "link",
       "name": "Accessible toilet",
       "fp": "link|Accessible toilet|0",
@@ -963,7 +1073,7 @@
       "fillable": false
     },
     {
-      "eid": "e72",
+      "eid": "e80",
       "role": "link",
       "name": "Assistive technology",
       "fp": "link|Assistive technology|0",
@@ -976,7 +1086,7 @@
       "fillable": false
     },
     {
-      "eid": "e73",
+      "eid": "e81",
       "role": "link",
       "name": "Assisted living",
       "fp": "link|Assisted living|0",
@@ -989,7 +1099,7 @@
       "fillable": false
     },
     {
-      "eid": "e74",
+      "eid": "e82",
       "role": "link",
       "name": "Autism-friendly",
       "fp": "link|Autism-friendly|0",
@@ -1002,7 +1112,7 @@
       "fillable": false
     },
     {
-      "eid": "e75",
+      "eid": "e83",
       "role": "link",
       "name": "Caregiver",
       "fp": "link|Caregiver|0",
@@ -1015,7 +1125,7 @@
       "fillable": false
     },
     {
-      "eid": "e76",
+      "eid": "e84",
       "role": "link",
       "name": "Empathic design",
       "fp": "link|Empathic design|0",
@@ -1028,7 +1138,7 @@
       "fillable": false
     },
     {
-      "eid": "e77",
+      "eid": "e85",
       "role": "link",
       "name": "Game accessibility",
       "fp": "link|Game accessibility|0",
@@ -1041,7 +1151,7 @@
       "fillable": false
     },
     {
-      "eid": "e78",
+      "eid": "e86",
       "role": "link",
       "name": "Inclusive design",
       "fp": "link|Inclusive design|0",
@@ -1054,7 +1164,7 @@
       "fillable": false
     },
     {
-      "eid": "e79",
+      "eid": "e87",
       "role": "link",
       "name": "Mobility aid",
       "fp": "link|Mobility aid|0",
@@ -1067,7 +1177,7 @@
       "fillable": false
     },
     {
-      "eid": "e80",
+      "eid": "e88",
       "role": "link",
       "name": "Orthotics",
       "fp": "link|Orthotics|0",
@@ -1080,7 +1190,7 @@
       "fillable": false
     },
     {
-      "eid": "e81",
+      "eid": "e89",
       "role": "link",
       "name": "Accessibility",
       "fp": "link|Accessibility|1",
@@ -1093,7 +1203,7 @@
       "fillable": false
     },
     {
-      "eid": "e82",
+      "eid": "e90",
       "role": "link",
       "name": "Prosthesis",
       "fp": "link|Prosthesis|0",
@@ -1106,7 +1216,7 @@
       "fillable": false
     },
     {
-      "eid": "e83",
+      "eid": "e91",
       "role": "link",
       "name": "Sensory friendly",
       "fp": "link|Sensory friendly|0",
@@ -1119,7 +1229,7 @@
       "fillable": false
     },
     {
-      "eid": "e84",
+      "eid": "e92",
       "role": "link",
       "name": "Universal design",
       "fp": "link|Universal design|0",
@@ -1132,7 +1242,7 @@
       "fillable": false
     },
     {
-      "eid": "e85",
+      "eid": "e93",
       "role": "link",
       "name": "Universal design for instruction",
       "fp": "link|Universal design for instruction|0",
@@ -1145,7 +1255,7 @@
       "fillable": false
     },
     {
-      "eid": "e86",
+      "eid": "e94",
       "role": "link",
       "name": "Web accessibility",
       "fp": "link|Web accessibility|0",
@@ -1158,7 +1268,21 @@
       "fillable": false
     },
     {
-      "eid": "e87",
+      "eid": "e95",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|5",
+      "rect": {
+        "x": 962,
+        "y": 563,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
       "role": "link",
       "name": "Physical therapy",
       "fp": "link|Physical therapy|0",
@@ -1171,7 +1295,7 @@
       "fillable": false
     },
     {
-      "eid": "e88",
+      "eid": "e97",
       "role": "link",
       "name": "Occupational therapy",
       "fp": "link|Occupational therapy|0",
@@ -1184,7 +1308,7 @@
       "fillable": false
     },
     {
-      "eid": "e89",
+      "eid": "e98",
       "role": "link",
       "name": "Speech–language pathology",
       "fp": "link|Speech–language pathology|0",
@@ -1197,7 +1321,21 @@
       "fillable": false
     },
     {
-      "eid": "e90",
+      "eid": "e99",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|6",
+      "rect": {
+        "x": 962,
+        "y": 592,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
       "role": "link",
       "name": "Assured Income for the Severely Handicapped",
       "fp": "link|Assured Income for the Severely Handicapped|0",
@@ -1210,7 +1348,7 @@
       "fillable": false
     },
     {
-      "eid": "e91",
+      "eid": "e101",
       "role": "link",
       "name": "Disability benefits",
       "fp": "link|Disability benefits|0",
@@ -1223,7 +1361,7 @@
       "fillable": false
     },
     {
-      "eid": "e92",
+      "eid": "e102",
       "role": "link",
       "name": "Disability insurance",
       "fp": "link|Disability insurance|0",
@@ -1236,7 +1374,7 @@
       "fillable": false
     },
     {
-      "eid": "e93",
+      "eid": "e103",
       "role": "link",
       "name": "Disability Living Allowance",
       "fp": "link|Disability Living Allowance|0",
@@ -1249,7 +1387,7 @@
       "fillable": false
     },
     {
-      "eid": "e94",
+      "eid": "e104",
       "role": "link",
       "name": "Disability pension",
       "fp": "link|Disability pension|0",
@@ -1262,7 +1400,7 @@
       "fillable": false
     },
     {
-      "eid": "e95",
+      "eid": "e105",
       "role": "link",
       "name": "Disabled Persons Railcard",
       "fp": "link|Disabled Persons Railcard|0",
@@ -1275,7 +1413,7 @@
       "fillable": false
     },
     {
-      "eid": "e96",
+      "eid": "e106",
       "role": "link",
       "name": "Disabled Students' Allowance",
       "fp": "link|Disabled Students' Allowance|0",
@@ -1288,7 +1426,7 @@
       "fillable": false
     },
     {
-      "eid": "e97",
+      "eid": "e107",
       "role": "link",
       "name": "Free travel pass",
       "fp": "link|Free travel pass|0",
@@ -1301,7 +1439,7 @@
       "fillable": false
     },
     {
-      "eid": "e98",
+      "eid": "e108",
       "role": "link",
       "name": "Freedom Pass",
       "fp": "link|Freedom Pass|0",
@@ -1314,7 +1452,7 @@
       "fillable": false
     },
     {
-      "eid": "e99",
+      "eid": "e109",
       "role": "link",
       "name": "Ontario Disability Support Program",
       "fp": "link|Ontario Disability Support Program|0",
@@ -1327,7 +1465,7 @@
       "fillable": false
     },
     {
-      "eid": "e100",
+      "eid": "e110",
       "role": "link",
       "name": "Registered disability savings plan",
       "fp": "link|Registered disability savings plan|0",
@@ -1340,7 +1478,7 @@
       "fillable": false
     },
     {
-      "eid": "e101",
+      "eid": "e111",
       "role": "link",
       "name": "Social Security Disability Insurance",
       "fp": "link|Social Security Disability Insurance|0",
@@ -1353,7 +1491,7 @@
       "fillable": false
     },
     {
-      "eid": "e102",
+      "eid": "e112",
       "role": "link",
       "name": "Supplemental Security Income",
       "fp": "link|Supplemental Security Income|0",
@@ -1366,7 +1504,7 @@
       "fillable": false
     },
     {
-      "eid": "e103",
+      "eid": "e113",
       "role": "link",
       "name": "Ticket to Work",
       "fp": "link|Ticket to Work|0",
@@ -1379,7 +1517,21 @@
       "fillable": false
     },
     {
-      "eid": "e104",
+      "eid": "e114",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|7",
+      "rect": {
+        "x": 962,
+        "y": 621,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
       "role": "link",
       "name": "Autistic Self Advocacy Network",
       "fp": "link|Autistic Self Advocacy Network|0",
@@ -1392,7 +1544,7 @@
       "fillable": false
     },
     {
-      "eid": "e105",
+      "eid": "e116",
       "role": "link",
       "name": "Center for Independent Living",
       "fp": "link|Center for Independent Living|0",
@@ -1405,7 +1557,7 @@
       "fillable": false
     },
     {
-      "eid": "e106",
+      "eid": "e117",
       "role": "link",
       "name": "Deaf rights movement",
       "fp": "link|Deaf rights movement|0",
@@ -1418,7 +1570,7 @@
       "fillable": false
     },
     {
-      "eid": "e107",
+      "eid": "e118",
       "role": "link",
       "name": "Disabled in Action",
       "fp": "link|Disabled in Action|0",
@@ -1431,7 +1583,7 @@
       "fillable": false
     },
     {
-      "eid": "e108",
+      "eid": "e119",
       "role": "link",
       "name": "Disabled Peoples' International",
       "fp": "link|Disabled Peoples' International|0",
@@ -1444,7 +1596,7 @@
       "fillable": false
     },
     {
-      "eid": "e109",
+      "eid": "e120",
       "role": "link",
       "name": "Disability Rights Education and Defense Fund",
       "fp": "link|Disability Rights Education and Defense Fund|0",
@@ -1457,7 +1609,7 @@
       "fillable": false
     },
     {
-      "eid": "e110",
+      "eid": "e121",
       "role": "link",
       "name": "DisAbled Women's Network Canada",
       "fp": "link|DisAbled Women's Network Canada|0",
@@ -1470,7 +1622,7 @@
       "fillable": false
     },
     {
-      "eid": "e111",
+      "eid": "e122",
       "role": "link",
       "name": "Inclusion Europe (page does not exist)",
       "fp": "link|Inclusion Europe (page does not exist)|0",
@@ -1483,7 +1635,7 @@
       "fillable": false
     },
     {
-      "eid": "e112",
+      "eid": "e123",
       "role": "link",
       "name": "International Disability and Development Consortium",
       "fp": "link|International Disability and Development Consortium|0",
@@ -1496,7 +1648,7 @@
       "fillable": false
     },
     {
-      "eid": "e113",
+      "eid": "e124",
       "role": "link",
       "name": "National Black Disability Coalition (page does not exist)",
       "fp": "link|National Black Disability Coalition (page does not exist)|0",
@@ -1509,7 +1661,7 @@
       "fillable": false
     },
     {
-      "eid": "e114",
+      "eid": "e125",
       "role": "link",
       "name": "National Telecommuting Institute",
       "fp": "link|National Telecommuting Institute|0",
@@ -1522,7 +1674,7 @@
       "fillable": false
     },
     {
-      "eid": "e115",
+      "eid": "e126",
       "role": "link",
       "name": "Society for Disability Studies",
       "fp": "link|Society for Disability Studies|0",
@@ -1535,7 +1687,7 @@
       "fillable": false
     },
     {
-      "eid": "e116",
+      "eid": "e127",
       "role": "link",
       "name": "World Federation of the Deaf",
       "fp": "link|World Federation of the Deaf|0",
@@ -1548,7 +1700,7 @@
       "fillable": false
     },
     {
-      "eid": "e117",
+      "eid": "e128",
       "role": "link",
       "name": "World Federation of Deafblind (page does not exist)",
       "fp": "link|World Federation of Deafblind (page does not exist)|0",
@@ -1561,7 +1713,7 @@
       "fillable": false
     },
     {
-      "eid": "e118",
+      "eid": "e129",
       "role": "link",
       "name": "World Institute on Disability (page does not exist)",
       "fp": "link|World Institute on Disability (page does not exist)|0",
@@ -1574,7 +1726,7 @@
       "fillable": false
     },
     {
-      "eid": "e119",
+      "eid": "e130",
       "role": "link",
       "name": "Visitability",
       "fp": "link|Visitability|0",
@@ -1587,7 +1739,7 @@
       "fillable": false
     },
     {
-      "eid": "e120",
+      "eid": "e131",
       "role": "link",
       "name": "WeThe15",
       "fp": "link|WeThe15|0",
@@ -1600,7 +1752,21 @@
       "fillable": false
     },
     {
-      "eid": "e121",
+      "eid": "e132",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|8",
+      "rect": {
+        "x": 962,
+        "y": 651,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e133",
       "role": "link",
       "name": "Parasports",
       "fp": "link|Parasports|0",
@@ -1613,7 +1779,7 @@
       "fillable": false
     },
     {
-      "eid": "e122",
+      "eid": "e134",
       "role": "link",
       "name": "Special Olympics",
       "fp": "link|Special Olympics|0",
@@ -1626,7 +1792,7 @@
       "fillable": false
     },
     {
-      "eid": "e123",
+      "eid": "e135",
       "role": "link",
       "name": "Paralympic Games",
       "fp": "link|Paralympic Games|0",
@@ -1639,7 +1805,7 @@
       "fillable": false
     },
     {
-      "eid": "e124",
+      "eid": "e136",
       "role": "link",
       "name": "Deaflympics",
       "fp": "link|Deaflympics|0",
@@ -1652,7 +1818,7 @@
       "fillable": false
     },
     {
-      "eid": "e125",
+      "eid": "e137",
       "role": "link",
       "name": "Invictus Games",
       "fp": "link|Invictus Games|0",
@@ -1665,7 +1831,21 @@
       "fillable": false
     },
     {
-      "eid": "e126",
+      "eid": "e138",
+      "role": "button",
+      "name": "show",
+      "st": "collapsed",
+      "fp": "button|show|9",
+      "rect": {
+        "x": 962,
+        "y": 680,
+        "w": 46,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e139",
       "role": "link",
       "name": "Disability culture",
       "fp": "link|Disability culture|0",
@@ -1678,7 +1858,7 @@
       "fillable": false
     },
     {
-      "eid": "e127",
+      "eid": "e140",
       "role": "link",
       "name": "Disability in the arts",
       "fp": "link|Disability in the arts|0",
@@ -1691,7 +1871,7 @@
       "fillable": false
     },
     {
-      "eid": "e128",
+      "eid": "e141",
       "role": "link",
       "name": "Disability art",
       "fp": "link|Disability art|0",
@@ -1704,7 +1884,7 @@
       "fillable": false
     },
     {
-      "eid": "e129",
+      "eid": "e142",
       "role": "link",
       "name": "Disability in the media",
       "fp": "link|Disability in the media|0",
@@ -1717,7 +1897,7 @@
       "fillable": false
     },
     {
-      "eid": "e130",
+      "eid": "e143",
       "role": "link",
       "name": "Category:Disability",
       "fp": "link|Category:Disability|0",
@@ -1730,7 +1910,7 @@
       "fillable": false
     },
     {
-      "eid": "e131",
+      "eid": "e144",
       "role": "link",
       "name": "Category:Disability-related lists",
       "fp": "link|Category:Disability-related lists|0",
@@ -1743,7 +1923,7 @@
       "fillable": false
     },
     {
-      "eid": "e132",
+      "eid": "e145",
       "role": "link",
       "name": "Template:Disability sidebar",
       "fp": "link|Template:Disability sidebar|0",
@@ -1756,7 +1936,7 @@
       "fillable": false
     },
     {
-      "eid": "e133",
+      "eid": "e146",
       "role": "link",
       "name": "Template talk:Disability sidebar",
       "fp": "link|Template talk:Disability sidebar|0",
@@ -1769,7 +1949,7 @@
       "fillable": false
     },
     {
-      "eid": "e134",
+      "eid": "e147",
       "role": "link",
       "name": "Special:EditPage/Template:Disability sidebar",
       "fp": "link|Special:EditPage/Template:Disability sidebar|0",
@@ -1782,7 +1962,7 @@
       "fillable": false
     },
     {
-      "eid": "e135",
+      "eid": "e148",
       "role": "link",
       "name": "[1]",
       "fp": "link|[1]|0",
@@ -1795,7 +1975,7 @@
       "fillable": false
     },
     {
-      "eid": "e136",
+      "eid": "e149",
       "role": "link",
       "name": "Inclusion (disability rights)",
       "fp": "link|Inclusion (disability rights)|1",
@@ -1808,7 +1988,7 @@
       "fillable": false
     },
     {
-      "eid": "e137",
+      "eid": "e150",
       "role": "link",
       "name": "Website",
       "fp": "link|Website|0",
@@ -1821,7 +2001,7 @@
       "fillable": false
     },
     {
-      "eid": "e138",
+      "eid": "e151",
       "role": "link",
       "name": "World Wide Web",
       "fp": "link|World Wide Web|0",
@@ -1834,10 +2014,10 @@
       "fillable": false
     },
     {
-      "eid": "e139",
+      "eid": "e152",
       "role": "link",
       "name": "Disability",
-      "fp": "link|Disability|0",
+      "fp": "link|Disability|1",
       "rect": {
         "x": 408,
         "y": 447,
@@ -1847,7 +2027,7 @@
       "fillable": false
     },
     {
-      "eid": "e140",
+      "eid": "e153",
       "role": "link",
       "name": "Physical disability",
       "fp": "link|Physical disability|0",
@@ -1860,7 +2040,7 @@
       "fillable": false
     },
     {
-      "eid": "e141",
+      "eid": "e154",
       "role": "link",
       "name": "Mental disability",
       "fp": "link|Mental disability|0",
@@ -1873,7 +2053,7 @@
       "fillable": false
     },
     {
-      "eid": "e142",
+      "eid": "e155",
       "role": "link",
       "name": "Curb cut effect",
       "fp": "link|Curb cut effect|1",
@@ -1886,7 +2066,7 @@
       "fillable": false
     },
     {
-      "eid": "e143",
+      "eid": "e156",
       "role": "link",
       "name": "Bandwidth (computing)",
       "fp": "link|Bandwidth (computing)|0",
@@ -1899,7 +2079,7 @@
       "fillable": false
     },
     {
-      "eid": "e144",
+      "eid": "e157",
       "role": "link",
       "name": "Access to information",
       "fp": "link|Access to information|0",
@@ -1912,7 +2092,7 @@
       "fillable": false
     },
     {
-      "eid": "e145",
+      "eid": "e158",
       "role": "link",
       "name": "HTML",
       "fp": "link|HTML|0",
@@ -1925,7 +2105,7 @@
       "fillable": false
     },
     {
-      "eid": "e146",
+      "eid": "e159",
       "role": "link",
       "name": "Color blind",
       "fp": "link|Color blind|0",
@@ -1938,7 +2118,7 @@
       "fillable": false
     },
     {
-      "eid": "e147",
+      "eid": "e160",
       "role": "link",
       "name": "Clickable",
       "fp": "link|Clickable|0",
@@ -1951,7 +2131,7 @@
       "fillable": false
     },
     {
-      "eid": "e148",
+      "eid": "e161",
       "role": "link",
       "name": "Computer mouse",
       "fp": "link|Computer mouse|0",
@@ -1964,7 +2144,7 @@
       "fillable": false
     },
     {
-      "eid": "e149",
+      "eid": "e162",
       "role": "link",
       "name": "Computer keyboard",
       "fp": "link|Computer keyboard|0",
@@ -1977,7 +2157,7 @@
       "fillable": false
     },
     {
-      "eid": "e150",
+      "eid": "e163",
       "role": "link",
       "name": "Switch access",
       "fp": "link|Switch access|0",
@@ -1990,7 +2170,7 @@
       "fillable": false
     },
     {
-      "eid": "e151",
+      "eid": "e164",
       "role": "link",
       "name": "Closed caption",
       "fp": "link|Closed caption|0",
@@ -2003,7 +2183,7 @@
       "fillable": false
     },
     {
-      "eid": "e152",
+      "eid": "e165",
       "role": "link",
       "name": "Video chapter",
       "fp": "link|Video chapter|0",
@@ -2016,7 +2196,7 @@
       "fillable": false
     },
     {
-      "eid": "e153",
+      "eid": "e166",
       "role": "link",
       "name": "Sign language",
       "fp": "link|Sign language|0",
@@ -2029,7 +2209,7 @@
       "fillable": false
     },
     {
-      "eid": "e154",
+      "eid": "e167",
       "role": "link",
       "name": "Seizure",
       "fp": "link|Seizure|0",
@@ -2042,7 +2222,7 @@
       "fillable": false
     },
     {
-      "eid": "e155",
+      "eid": "e168",
       "role": "link",
       "name": "Dyslexia",
       "fp": "link|Dyslexia|0",
@@ -2055,7 +2235,7 @@
       "fillable": false
     },
     {
-      "eid": "e156",
+      "eid": "e169",
       "role": "link",
       "name": "Learning disabilities",
       "fp": "link|Learning disabilities|0",
@@ -2068,7 +2248,7 @@
       "fillable": false
     },
     {
-      "eid": "e157",
+      "eid": "e170",
       "role": "link",
       "name": "Webnode",
       "fp": "link|Webnode|0",
@@ -2081,7 +2261,7 @@
       "fillable": false
     },
     {
-      "eid": "e158",
+      "eid": "e171",
       "role": "link",
       "name": "[2]",
       "fp": "link|[2]|0",
@@ -2094,7 +2274,7 @@
       "fillable": false
     },
     {
-      "eid": "e159",
+      "eid": "e172",
       "role": "link",
       "name": "[3]",
       "fp": "link|[3]|0",
@@ -2107,7 +2287,7 @@
       "fillable": false
     },
     {
-      "eid": "e160",
+      "eid": "e173",
       "role": "link",
       "name": "Usability",
       "fp": "link|Usability|0",
@@ -2120,7 +2300,7 @@
       "fillable": false
     },
     {
-      "eid": "e161",
+      "eid": "e174",
       "role": "link",
       "name": "Visual impairment",
       "fp": "link|Visual impairment|0",
@@ -2133,7 +2313,7 @@
       "fillable": false
     },
     {
-      "eid": "e162",
+      "eid": "e175",
       "role": "link",
       "name": "Blindness",
       "fp": "link|Blindness|0",
@@ -2146,7 +2326,7 @@
       "fillable": false
     },
     {
-      "eid": "e163",
+      "eid": "e176",
       "role": "link",
       "name": "Low vision",
       "fp": "link|Low vision|0",
@@ -2159,7 +2339,7 @@
       "fillable": false
     },
     {
-      "eid": "e164",
+      "eid": "e177",
       "role": "link",
       "name": "Color blindness",
       "fp": "link|Color blindness|0",
@@ -2172,7 +2352,7 @@
       "fillable": false
     },
     {
-      "eid": "e165",
+      "eid": "e178",
       "role": "link",
       "name": "Parkinson's disease",
       "fp": "link|Parkinson's disease|0",
@@ -2185,7 +2365,7 @@
       "fillable": false
     },
     {
-      "eid": "e166",
+      "eid": "e179",
       "role": "link",
       "name": "Muscular dystrophy",
       "fp": "link|Muscular dystrophy|0",
@@ -2198,7 +2378,7 @@
       "fillable": false
     },
     {
-      "eid": "e167",
+      "eid": "e180",
       "role": "link",
       "name": "Cerebral palsy",
       "fp": "link|Cerebral palsy|0",
@@ -2211,7 +2391,7 @@
       "fillable": false
     },
     {
-      "eid": "e168",
+      "eid": "e181",
       "role": "link",
       "name": "Stroke",
       "fp": "link|Stroke|0",
@@ -2224,7 +2404,7 @@
       "fillable": false
     },
     {
-      "eid": "e169",
+      "eid": "e182",
       "role": "link",
       "name": "Deafness",
       "fp": "link|Deafness|0",
@@ -2237,7 +2417,7 @@
       "fillable": false
     },
     {
-      "eid": "e170",
+      "eid": "e183",
       "role": "link",
       "name": "Hearing impairment",
       "fp": "link|Hearing impairment|0",
@@ -2250,7 +2430,7 @@
       "fillable": false
     },
     {
-      "eid": "e171",
+      "eid": "e184",
       "role": "link",
       "name": "Seizure",
       "fp": "link|Seizure|1",
@@ -2263,7 +2443,7 @@
       "fillable": false
     },
     {
-      "eid": "e172",
+      "eid": "e185",
       "role": "link",
       "name": "Developmental disabilities",
       "fp": "link|Developmental disabilities|0",
@@ -2276,7 +2456,7 @@
       "fillable": false
     },
     {
-      "eid": "e173",
+      "eid": "e186",
       "role": "link",
       "name": "Learning disability",
       "fp": "link|Learning disability|1",
@@ -2289,7 +2469,7 @@
       "fillable": false
     },
     {
-      "eid": "e174",
+      "eid": "e187",
       "role": "link",
       "name": "Dyslexia",
       "fp": "link|Dyslexia|1",
@@ -2302,7 +2482,7 @@
       "fillable": false
     },
     {
-      "eid": "e175",
+      "eid": "e188",
       "role": "link",
       "name": "Dyscalculia",
       "fp": "link|Dyscalculia|0",
@@ -2315,7 +2495,7 @@
       "fillable": false
     },
     {
-      "eid": "e176",
+      "eid": "e189",
       "role": "link",
       "name": "Cognitive disabilities",
       "fp": "link|Cognitive disabilities|0",
@@ -2328,7 +2508,7 @@
       "fillable": false
     },
     {
-      "eid": "e177",
+      "eid": "e190",
       "role": "link",
       "name": "Post-traumatic stress disorder",
       "fp": "link|Post-traumatic stress disorder|0",
@@ -2341,7 +2521,7 @@
       "fillable": false
     },
     {
-      "eid": "e178",
+      "eid": "e191",
       "role": "link",
       "name": "Alzheimer's disease",
       "fp": "link|Alzheimer's disease|0",
@@ -2354,7 +2534,7 @@
       "fillable": false
     },
     {
-      "eid": "e179",
+      "eid": "e192",
       "role": "link",
       "name": "[4]",
       "fp": "link|[4]|0",
@@ -2367,7 +2547,7 @@
       "fillable": false
     },
     {
-      "eid": "e180",
+      "eid": "e193",
       "role": "link",
       "name": "WebAIM",
       "fp": "link|WebAIM|0",
@@ -2380,7 +2560,7 @@
       "fillable": false
     },
     {
-      "eid": "e181",
+      "eid": "e194",
       "role": "link",
       "name": "[5]",
       "fp": "link|[5]|0",
@@ -2393,7 +2573,7 @@
       "fillable": false
     },
     {
-      "eid": "e182",
+      "eid": "e195",
       "role": "link",
       "name": "Assistive technology",
       "fp": "link|Assistive technology|1",
@@ -2406,7 +2586,7 @@
       "fillable": false
     },
     {
-      "eid": "e183",
+      "eid": "e196",
       "role": "link",
       "name": "Screen reader",
       "fp": "link|Screen reader|0",
@@ -2419,7 +2599,7 @@
       "fillable": false
     },
     {
-      "eid": "e184",
+      "eid": "e197",
       "role": "link",
       "name": "Refreshable braille display",
       "fp": "link|Refreshable braille display|0",
@@ -2432,7 +2612,7 @@
       "fillable": false
     },
     {
-      "eid": "e185",
+      "eid": "e198",
       "role": "link",
       "name": "Braille",
       "fp": "link|Braille|0",
@@ -2445,7 +2625,7 @@
       "fillable": false
     },
     {
-      "eid": "e186",
+      "eid": "e199",
       "role": "link",
       "name": "Screen magnifier",
       "fp": "link|Screen magnifier|0",
@@ -2458,7 +2638,7 @@
       "fillable": false
     },
     {
-      "eid": "e187",
+      "eid": "e200",
       "role": "link",
       "name": "Speech recognition",
       "fp": "link|Speech recognition|0",
@@ -2471,7 +2651,7 @@
       "fillable": false
     },
     {
-      "eid": "e188",
+      "eid": "e201",
       "role": "link",
       "name": "Sign language",
       "fp": "link|Sign language|1",
@@ -2484,7 +2664,7 @@
       "fillable": false
     },
     {
-      "eid": "e189",
+      "eid": "e202",
       "role": "note",
       "name": "Main article: Web Content Accessibility Guidelines",
       "fp": "note|Main article: Web Content Accessibility Guidelines|0",
@@ -2497,7 +2677,20 @@
       "fillable": false
     },
     {
-      "eid": "e190",
+      "eid": "e203",
+      "role": "link",
+      "name": "Web Content Accessibility Guidelines",
+      "fp": "link|Web Content Accessibility Guidelines|0",
+      "rect": {
+        "x": 380,
+        "y": 2181,
+        "w": 264,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e204",
       "role": "link",
       "name": "Web Accessibility Initiative",
       "fp": "link|Web Accessibility Initiative|0",
@@ -2510,7 +2703,7 @@
       "fillable": false
     },
     {
-      "eid": "e191",
+      "eid": "e205",
       "role": "link",
       "name": "World Wide Web Consortium",
       "fp": "link|World Wide Web Consortium|0",
@@ -2523,10 +2716,10 @@
       "fillable": false
     },
     {
-      "eid": "e192",
+      "eid": "e206",
       "role": "link",
       "name": "Web Content Accessibility Guidelines",
-      "fp": "link|Web Content Accessibility Guidelines|0",
+      "fp": "link|Web Content Accessibility Guidelines|1",
       "rect": {
         "x": 559,
         "y": 2241,
@@ -2536,10 +2729,10 @@
       "fillable": false
     },
     {
-      "eid": "e193",
+      "eid": "e207",
       "role": "link",
       "name": "Web Content Accessibility Guidelines",
-      "fp": "link|Web Content Accessibility Guidelines|1",
+      "fp": "link|Web Content Accessibility Guidelines|2",
       "rect": {
         "x": 587,
         "y": 2283,
@@ -2549,7 +2742,7 @@
       "fillable": false
     },
     {
-      "eid": "e194",
+      "eid": "e208",
       "role": "link",
       "name": "[6]",
       "fp": "link|[6]|0",
@@ -2562,7 +2755,7 @@
       "fillable": false
     },
     {
-      "eid": "e195",
+      "eid": "e209",
       "role": "link",
       "name": "[7]",
       "fp": "link|[7]|0",
@@ -2575,7 +2768,7 @@
       "fillable": false
     },
     {
-      "eid": "e196",
+      "eid": "e210",
       "role": "link",
       "name": "[8]",
       "fp": "link|[8]|0",
@@ -2588,7 +2781,7 @@
       "fillable": false
     },
     {
-      "eid": "e197",
+      "eid": "e211",
       "role": "link",
       "name": "[9]",
       "fp": "link|[9]|0",
@@ -2601,7 +2794,7 @@
       "fillable": false
     },
     {
-      "eid": "e198",
+      "eid": "e212",
       "role": "link",
       "name": "Lisa Seeman",
       "fp": "link|Lisa Seeman|0",
@@ -2614,7 +2807,7 @@
       "fillable": false
     },
     {
-      "eid": "e199",
+      "eid": "e213",
       "role": "link",
       "name": "[10]",
       "fp": "link|[10]|0",
@@ -2627,7 +2820,7 @@
       "fillable": false
     },
     {
-      "eid": "e200",
+      "eid": "e214",
       "role": "link",
       "name": "[11]",
       "fp": "link|[11]|0",
@@ -2640,7 +2833,7 @@
       "fillable": false
     },
     {
-      "eid": "e201",
+      "eid": "e215",
       "role": "link",
       "name": "[12]",
       "fp": "link|[12]|0",
@@ -2653,7 +2846,7 @@
       "fillable": false
     },
     {
-      "eid": "e202",
+      "eid": "e216",
       "role": "link",
       "name": "[13]",
       "fp": "link|[13]|0",
@@ -2666,7 +2859,7 @@
       "fillable": false
     },
     {
-      "eid": "e203",
+      "eid": "e217",
       "role": "link",
       "name": "Web Accessibility Initiative",
       "fp": "link|Web Accessibility Initiative|1",
@@ -2679,7 +2872,7 @@
       "fillable": false
     },
     {
-      "eid": "e204",
+      "eid": "e218",
       "role": "link",
       "name": "[14]",
       "fp": "link|[14]|0",
@@ -2692,7 +2885,7 @@
       "fillable": false
     },
     {
-      "eid": "e205",
+      "eid": "e219",
       "role": "note",
       "name": "Main article: Web Content Accessibility Guidelines",
       "fp": "note|Main article: Web Content Accessibility Guidelines|1",
@@ -2705,7 +2898,20 @@
       "fillable": false
     },
     {
-      "eid": "e206",
+      "eid": "e220",
+      "role": "link",
+      "name": "Web Content Accessibility Guidelines",
+      "fp": "link|Web Content Accessibility Guidelines|3",
+      "rect": {
+        "x": 380,
+        "y": 3065,
+        "w": 264,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e221",
       "role": "link",
       "name": "[15]",
       "fp": "link|[15]|0",
@@ -2718,7 +2924,7 @@
       "fillable": false
     },
     {
-      "eid": "e207",
+      "eid": "e222",
       "role": "link",
       "name": "[16]",
       "fp": "link|[16]|0",
@@ -2731,7 +2937,7 @@
       "fillable": false
     },
     {
-      "eid": "e208",
+      "eid": "e223",
       "role": "link",
       "name": "[17]",
       "fp": "link|[17]|0",
@@ -2744,7 +2950,7 @@
       "fillable": false
     },
     {
-      "eid": "e209",
+      "eid": "e224",
       "role": "link",
       "name": "UAAG",
       "fp": "link|UAAG|0",
@@ -2757,7 +2963,7 @@
       "fillable": false
     },
     {
-      "eid": "e210",
+      "eid": "e225",
       "role": "link",
       "name": "[18]",
       "fp": "link|[18]|0",
@@ -2770,7 +2976,7 @@
       "fillable": false
     },
     {
-      "eid": "e211",
+      "eid": "e226",
       "role": "link",
       "name": "[19]",
       "fp": "link|[19]|0",
@@ -2783,7 +2989,7 @@
       "fillable": false
     },
     {
-      "eid": "e212",
+      "eid": "e227",
       "role": "link",
       "name": "[20]",
       "fp": "link|[20]|0",
@@ -2796,7 +3002,7 @@
       "fillable": false
     },
     {
-      "eid": "e213",
+      "eid": "e228",
       "role": "link",
       "name": "[21]",
       "fp": "link|[21]|0",
@@ -2809,7 +3015,7 @@
       "fillable": false
     },
     {
-      "eid": "e214",
+      "eid": "e229",
       "role": "link",
       "name": "[22]",
       "fp": "link|[22]|0",
@@ -2822,7 +3028,7 @@
       "fillable": false
     },
     {
-      "eid": "e215",
+      "eid": "e230",
       "role": "link",
       "name": "[23]",
       "fp": "link|[23]|0",
@@ -2835,7 +3041,7 @@
       "fillable": false
     },
     {
-      "eid": "e216",
+      "eid": "e231",
       "role": "link",
       "name": "[24]",
       "fp": "link|[24]|0",
@@ -2848,7 +3054,7 @@
       "fillable": false
     },
     {
-      "eid": "e217",
+      "eid": "e232",
       "role": "link",
       "name": "National Congress of Argentina",
       "fp": "link|National Congress of Argentina|0",
@@ -2861,7 +3067,7 @@
       "fillable": false
     },
     {
-      "eid": "e218",
+      "eid": "e233",
       "role": "link",
       "name": "[25]",
       "fp": "link|[25]|0",
@@ -2874,7 +3080,7 @@
       "fillable": false
     },
     {
-      "eid": "e219",
+      "eid": "e234",
       "role": "link",
       "name": "[26]",
       "fp": "link|[26]|0",
@@ -2887,7 +3093,7 @@
       "fillable": false
     },
     {
-      "eid": "e220",
+      "eid": "e235",
       "role": "link",
       "name": "Australians",
       "fp": "link|Australians|0",
@@ -2900,7 +3106,7 @@
       "fillable": false
     },
     {
-      "eid": "e221",
+      "eid": "e236",
       "role": "link",
       "name": "Sydney Organising Committee for the Olympic Games",
       "fp": "link|Sydney Organising Committee for the Olympic Games|0",
@@ -2913,7 +3119,7 @@
       "fillable": false
     },
     {
-      "eid": "e222",
+      "eid": "e237",
       "role": "link",
       "name": "[27]",
       "fp": "link|[27]|0",
@@ -2926,7 +3132,7 @@
       "fillable": false
     },
     {
-      "eid": "e223",
+      "eid": "e238",
       "role": "link",
       "name": "Disability Discrimination Act 1992",
       "fp": "link|Disability Discrimination Act 1992|1",
@@ -2939,7 +3145,7 @@
       "fillable": false
     },
     {
-      "eid": "e224",
+      "eid": "e239",
       "role": "link",
       "name": "Sydney Olympic Games",
       "fp": "link|Sydney Olympic Games|0",
@@ -2952,7 +3158,7 @@
       "fillable": false
     },
     {
-      "eid": "e225",
+      "eid": "e240",
       "role": "link",
       "name": "Australian Human Rights Commission",
       "fp": "link|Australian Human Rights Commission|0",
@@ -2965,7 +3171,7 @@
       "fillable": false
     },
     {
-      "eid": "e226",
+      "eid": "e241",
       "role": "link",
       "name": "[28]",
       "fp": "link|[28]|0",
@@ -2978,7 +3184,7 @@
       "fillable": false
     },
     {
-      "eid": "e227",
+      "eid": "e242",
       "role": "link",
       "name": "Brazil",
       "fp": "link|Brazil|0",
@@ -2991,7 +3197,7 @@
       "fillable": false
     },
     {
-      "eid": "e228",
+      "eid": "e243",
       "role": "link",
       "name": "Ministry of Planning, Budget, and Management",
       "fp": "link|Ministry of Planning, Budget, and Management|0",
@@ -3004,7 +3210,7 @@
       "fillable": false
     },
     {
-      "eid": "e229",
+      "eid": "e244",
       "role": "link",
       "name": "[29]",
       "fp": "link|[29]|0",
@@ -3017,7 +3223,7 @@
       "fillable": false
     },
     {
-      "eid": "e230",
+      "eid": "e245",
       "role": "link",
       "name": "Web standards",
       "fp": "link|Web standards|0",
@@ -3030,7 +3236,7 @@
       "fillable": false
     },
     {
-      "eid": "e231",
+      "eid": "e246",
       "role": "link",
       "name": "[30]",
       "fp": "link|[30]|0",
@@ -3043,10 +3249,10 @@
       "fillable": false
     },
     {
-      "eid": "e232",
+      "eid": "e247",
       "role": "link",
       "name": "Web Content Accessibility Guidelines",
-      "fp": "link|Web Content Accessibility Guidelines|2",
+      "fp": "link|Web Content Accessibility Guidelines|4",
       "rect": {
         "x": 595,
         "y": 4803,
@@ -3056,7 +3262,7 @@
       "fillable": false
     },
     {
-      "eid": "e233",
+      "eid": "e248",
       "role": "link",
       "name": "[31]",
       "fp": "link|[31]|0",
@@ -3069,7 +3275,7 @@
       "fillable": false
     },
     {
-      "eid": "e234",
+      "eid": "e249",
       "role": "link",
       "name": "[32]",
       "fp": "link|[32]|0",
@@ -3082,7 +3288,7 @@
       "fillable": false
     },
     {
-      "eid": "e235",
+      "eid": "e250",
       "role": "link",
       "name": "WET toolkit is open source",
       "fp": "link|WET toolkit is open source|0",
@@ -3095,7 +3301,7 @@
       "fillable": false
     },
     {
-      "eid": "e236",
+      "eid": "e251",
       "role": "link",
       "name": "[33]",
       "fp": "link|[33]|0",
@@ -3108,7 +3314,7 @@
       "fillable": false
     },
     {
-      "eid": "e237",
+      "eid": "e252",
       "role": "link",
       "name": "[34]",
       "fp": "link|[34]|0",
@@ -3121,7 +3327,7 @@
       "fillable": false
     },
     {
-      "eid": "e238",
+      "eid": "e253",
       "role": "link",
       "name": "[35]",
       "fp": "link|[35]|0",
@@ -3134,7 +3340,7 @@
       "fillable": false
     },
     {
-      "eid": "e239",
+      "eid": "e254",
       "role": "link",
       "name": "Government of Canada",
       "fp": "link|Government of Canada|0",
@@ -3147,7 +3353,7 @@
       "fillable": false
     },
     {
-      "eid": "e240",
+      "eid": "e255",
       "role": "link",
       "name": "Accessible Canada Act",
       "fp": "link|Accessible Canada Act|1",
@@ -3160,7 +3366,7 @@
       "fillable": false
     },
     {
-      "eid": "e241",
+      "eid": "e256",
       "role": "link",
       "name": "Accessibility for Ontarians with Disabilities Act, 2005",
       "fp": "link|Accessibility for Ontarians with Disabilities Act, 2005|0",
@@ -3173,7 +3379,7 @@
       "fillable": false
     },
     {
-      "eid": "e242",
+      "eid": "e257",
       "role": "link",
       "name": "The Accessibility for Manitobans Act",
       "fp": "link|The Accessibility for Manitobans Act|0",
@@ -3186,7 +3392,7 @@
       "fillable": false
     },
     {
-      "eid": "e243",
+      "eid": "e258",
       "role": "link",
       "name": "Nova Scotia Accessibility Act",
       "fp": "link|Nova Scotia Accessibility Act|0",
@@ -3199,7 +3405,7 @@
       "fillable": false
     },
     {
-      "eid": "e244",
+      "eid": "e259",
       "role": "link",
       "name": "European Parliament",
       "fp": "link|European Parliament|0",
@@ -3212,7 +3418,7 @@
       "fillable": false
     },
     {
-      "eid": "e245",
+      "eid": "e260",
       "role": "link",
       "name": "[36]",
       "fp": "link|[36]|0",
@@ -3225,7 +3431,7 @@
       "fillable": false
     },
     {
-      "eid": "e246",
+      "eid": "e261",
       "role": "link",
       "name": "European Commission",
       "fp": "link|European Commission|0",
@@ -3238,7 +3444,7 @@
       "fillable": false
     },
     {
-      "eid": "e247",
+      "eid": "e262",
       "role": "link",
       "name": "[1]",
       "fp": "link|[1]|1",
@@ -3251,7 +3457,7 @@
       "fillable": false
     },
     {
-      "eid": "e248",
+      "eid": "e263",
       "role": "link",
       "name": "Government procurement",
       "fp": "link|Government procurement|0",
@@ -3264,7 +3470,7 @@
       "fillable": false
     },
     {
-      "eid": "e249",
+      "eid": "e264",
       "role": "link",
       "name": "[37]",
       "fp": "link|[37]|0",
@@ -3277,7 +3483,7 @@
       "fillable": false
     },
     {
-      "eid": "e250",
+      "eid": "e265",
       "role": "link",
       "name": "[38]",
       "fp": "link|[38]|0",
@@ -3290,7 +3496,7 @@
       "fillable": false
     },
     {
-      "eid": "e251",
+      "eid": "e266",
       "role": "link",
       "name": "[39]",
       "fp": "link|[39]|0",
@@ -3303,7 +3509,7 @@
       "fillable": false
     },
     {
-      "eid": "e252",
+      "eid": "e267",
       "role": "link",
       "name": "Procurement",
       "fp": "link|Procurement|0",
@@ -3316,7 +3522,7 @@
       "fillable": false
     },
     {
-      "eid": "e253",
+      "eid": "e268",
       "role": "link",
       "name": "[39]",
       "fp": "link|[39]|1",
@@ -3329,7 +3535,7 @@
       "fillable": false
     },
     {
-      "eid": "e254",
+      "eid": "e269",
       "role": "link",
       "name": "Web Accessibility Directive",
       "fp": "link|Web Accessibility Directive|0",
@@ -3342,7 +3548,7 @@
       "fillable": false
     },
     {
-      "eid": "e255",
+      "eid": "e270",
       "role": "link",
       "name": "EN 301 549",
       "fp": "link|EN 301 549|0",
@@ -3355,7 +3561,7 @@
       "fillable": false
     },
     {
-      "eid": "e256",
+      "eid": "e271",
       "role": "link",
       "name": "ETSI",
       "fp": "link|ETSI|0",
@@ -3368,7 +3574,7 @@
       "fillable": false
     },
     {
-      "eid": "e257",
+      "eid": "e272",
       "role": "link",
       "name": "[40]",
       "fp": "link|[40]|0",
@@ -3381,7 +3587,7 @@
       "fillable": false
     },
     {
-      "eid": "e258",
+      "eid": "e273",
       "role": "link",
       "name": "[41]",
       "fp": "link|[41]|0",
@@ -3394,7 +3600,7 @@
       "fillable": false
     },
     {
-      "eid": "e259",
+      "eid": "e274",
       "role": "link",
       "name": "European Accessibility Act",
       "fp": "link|European Accessibility Act|1",
@@ -3407,7 +3613,7 @@
       "fillable": false
     },
     {
-      "eid": "e260",
+      "eid": "e275",
       "role": "link",
       "name": "Digital accessibility",
       "fp": "link|Digital accessibility|0",
@@ -3420,7 +3626,7 @@
       "fillable": false
     },
     {
-      "eid": "e261",
+      "eid": "e276",
       "role": "link",
       "name": "Digital inclusion",
       "fp": "link|Digital inclusion|0",
@@ -3433,7 +3639,7 @@
       "fillable": false
     },
     {
-      "eid": "e262",
+      "eid": "e277",
       "role": "link",
       "name": "will enter into force on 28 June 2025",
       "fp": "link|will enter into force on 28 June 2025|0",
@@ -3446,7 +3652,7 @@
       "fillable": false
     },
     {
-      "eid": "e263",
+      "eid": "e278",
       "role": "link",
       "name": "[42]",
       "fp": "link|[42]|0",
@@ -3459,7 +3665,7 @@
       "fillable": false
     },
     {
-      "eid": "e264",
+      "eid": "e279",
       "role": "link",
       "name": "India",
       "fp": "link|India|0",
@@ -3472,7 +3678,7 @@
       "fillable": false
     },
     {
-      "eid": "e265",
+      "eid": "e280",
       "role": "link",
       "name": "National Informatics Centre",
       "fp": "link|National Informatics Centre|0",
@@ -3485,7 +3691,7 @@
       "fillable": false
     },
     {
-      "eid": "e266",
+      "eid": "e281",
       "role": "link",
       "name": "Ministry of Electronics and Information Technology",
       "fp": "link|Ministry of Electronics and Information Technology|0",
@@ -3498,7 +3704,7 @@
       "fillable": false
     },
     {
-      "eid": "e267",
+      "eid": "e282",
       "role": "link",
       "name": "[43]",
       "fp": "link|[43]|0",
@@ -3511,7 +3717,7 @@
       "fillable": false
     },
     {
-      "eid": "e268",
+      "eid": "e283",
       "role": "link",
       "name": "[44]",
       "fp": "link|[44]|0",
@@ -3524,7 +3730,7 @@
       "fillable": false
     },
     {
-      "eid": "e269",
+      "eid": "e284",
       "role": "link",
       "name": "Ministry of Electronics and Information Technology",
       "fp": "link|Ministry of Electronics and Information Technology|1",
@@ -3537,7 +3743,7 @@
       "fillable": false
     },
     {
-      "eid": "e270",
+      "eid": "e285",
       "role": "link",
       "name": "[45]",
       "fp": "link|[45]|0",
@@ -3550,7 +3756,7 @@
       "fillable": false
     },
     {
-      "eid": "e271",
+      "eid": "e286",
       "role": "link",
       "name": "World Wide Web Consortium",
       "fp": "link|World Wide Web Consortium|1",
@@ -3563,7 +3769,7 @@
       "fillable": false
     },
     {
-      "eid": "e272",
+      "eid": "e287",
       "role": "link",
       "name": "Web standards",
       "fp": "link|Web standards|1",
@@ -3576,7 +3782,7 @@
       "fillable": false
     },
     {
-      "eid": "e273",
+      "eid": "e288",
       "role": "link",
       "name": "Web Accessibility Initiative",
       "fp": "link|Web Accessibility Initiative|2",
@@ -3589,7 +3795,7 @@
       "fillable": false
     },
     {
-      "eid": "e274",
+      "eid": "e289",
       "role": "link",
       "name": "[14]",
       "fp": "link|[14]|1",
@@ -3602,10 +3808,10 @@
       "fillable": false
     },
     {
-      "eid": "e275",
+      "eid": "e290",
       "role": "link",
       "name": "Web Content Accessibility Guidelines",
-      "fp": "link|Web Content Accessibility Guidelines|3",
+      "fp": "link|Web Content Accessibility Guidelines|5",
       "rect": {
         "x": 264,
         "y": 6361,
@@ -3615,7 +3821,7 @@
       "fillable": false
     },
     {
-      "eid": "e276",
+      "eid": "e291",
       "role": "link",
       "name": "UAAG",
       "fp": "link|UAAG|1",
@@ -3628,7 +3834,7 @@
       "fillable": false
     },
     {
-      "eid": "e277",
+      "eid": "e292",
       "role": "link",
       "name": "[18]",
       "fp": "link|[18]|1",
@@ -3641,7 +3847,7 @@
       "fillable": false
     },
     {
-      "eid": "e278",
+      "eid": "e293",
       "role": "link",
       "name": "[46]",
       "fp": "link|[46]|0",
@@ -3654,7 +3860,7 @@
       "fillable": false
     },
     {
-      "eid": "e279",
+      "eid": "e294",
       "role": "link",
       "name": "[47]",
       "fp": "link|[47]|0",
@@ -3667,7 +3873,7 @@
       "fillable": false
     },
     {
-      "eid": "e280",
+      "eid": "e295",
       "role": "link",
       "name": "Rights of Persons with Disabilities Act, 2016",
       "fp": "link|Rights of Persons with Disabilities Act, 2016|0",
@@ -3680,7 +3886,7 @@
       "fillable": false
     },
     {
-      "eid": "e281",
+      "eid": "e296",
       "role": "link",
       "name": "[48]",
       "fp": "link|[48]|0",
@@ -3693,7 +3899,7 @@
       "fillable": false
     },
     {
-      "eid": "e282",
+      "eid": "e297",
       "role": "link",
       "name": "[49]",
       "fp": "link|[49]|0",
@@ -3706,7 +3912,7 @@
       "fillable": false
     },
     {
-      "eid": "e283",
+      "eid": "e298",
       "role": "link",
       "name": "Ireland",
       "fp": "link|Ireland|0",
@@ -3719,7 +3925,7 @@
       "fillable": false
     },
     {
-      "eid": "e284",
+      "eid": "e299",
       "role": "link",
       "name": "[50]",
       "fp": "link|[50]|0",
@@ -3732,7 +3938,7 @@
       "fillable": false
     },
     {
-      "eid": "e285",
+      "eid": "e300",
       "role": "link",
       "name": "[51]",
       "fp": "link|[51]|0",
@@ -3745,7 +3951,7 @@
       "fillable": false
     },
     {
-      "eid": "e286",
+      "eid": "e301",
       "role": "link",
       "name": "[52]",
       "fp": "link|[52]|0",
@@ -3758,7 +3964,7 @@
       "fillable": false
     },
     {
-      "eid": "e287",
+      "eid": "e302",
       "role": "link",
       "name": "Stanca Act",
       "fp": "link|Stanca Act|0",
@@ -3771,7 +3977,7 @@
       "fillable": false
     },
     {
-      "eid": "e288",
+      "eid": "e303",
       "role": "link",
       "name": "Gazzetta Ufficiale",
       "fp": "link|Gazzetta Ufficiale|0",
@@ -3784,7 +3990,7 @@
       "fillable": false
     },
     {
-      "eid": "e289",
+      "eid": "e304",
       "role": "link",
       "name": "[53]",
       "fp": "link|[53]|0",
@@ -3797,7 +4003,7 @@
       "fillable": false
     },
     {
-      "eid": "e290",
+      "eid": "e305",
       "role": "link",
       "name": "[54]",
       "fp": "link|[54]|0",
@@ -3810,7 +4016,7 @@
       "fillable": false
     },
     {
-      "eid": "e291",
+      "eid": "e306",
       "role": "link",
       "name": "[55]",
       "fp": "link|[55]|0",
@@ -3823,7 +4029,7 @@
       "fillable": false
     },
     {
-      "eid": "e292",
+      "eid": "e307",
       "role": "link",
       "name": "[56]",
       "fp": "link|[56]|0",
@@ -3836,7 +4042,7 @@
       "fillable": false
     },
     {
-      "eid": "e293",
+      "eid": "e308",
       "role": "link",
       "name": "Anti-discrimination Accessibility Act (page does not exist)",
       "fp": "link|Anti-discrimination Accessibility Act (page does not exist)|0",
@@ -3849,7 +4055,7 @@
       "fillable": false
     },
     {
-      "eid": "e294",
+      "eid": "e309",
       "role": "link",
       "name": "[57]",
       "fp": "link|[57]|0",
@@ -3862,7 +4068,7 @@
       "fillable": false
     },
     {
-      "eid": "e295",
+      "eid": "e310",
       "role": "link",
       "name": "[58]",
       "fp": "link|[58]|0",
@@ -3875,7 +4081,7 @@
       "fillable": false
     },
     {
-      "eid": "e296",
+      "eid": "e311",
       "role": "link",
       "name": "[59]",
       "fp": "link|[59]|0",
@@ -3888,7 +4094,7 @@
       "fillable": false
     },
     {
-      "eid": "e297",
+      "eid": "e312",
       "role": "link",
       "name": "[60]",
       "fp": "link|[60]|0",
@@ -3901,7 +4107,7 @@
       "fillable": false
     },
     {
-      "eid": "e298",
+      "eid": "e313",
       "role": "link",
       "name": "Web Accessibility Initiatives in the Philippines",
       "fp": "link|Web Accessibility Initiatives in the Philippines|0",
@@ -3914,7 +4120,7 @@
       "fillable": false
     },
     {
-      "eid": "e299",
+      "eid": "e314",
       "role": "link",
       "name": "Biwako Millennium Framework (page does not exist)",
       "fp": "link|Biwako Millennium Framework (page does not exist)|0",
@@ -3927,7 +4133,7 @@
       "fillable": false
     },
     {
-      "eid": "e300",
+      "eid": "e315",
       "role": "link",
       "name": "UNESCAP",
       "fp": "link|UNESCAP|0",
@@ -3940,7 +4146,7 @@
       "fillable": false
     },
     {
-      "eid": "e301",
+      "eid": "e316",
       "role": "link",
       "name": "Philippines",
       "fp": "link|Philippines|0",
@@ -3953,7 +4159,7 @@
       "fillable": false
     },
     {
-      "eid": "e302",
+      "eid": "e317",
       "role": "link",
       "name": "Asia-Pacific",
       "fp": "link|Asia-Pacific|0",
@@ -3966,7 +4172,7 @@
       "fillable": false
     },
     {
-      "eid": "e303",
+      "eid": "e318",
       "role": "link",
       "name": "Manila Accessible Information and Communications Technologies Design Recommendations (page does not exist)",
       "fp": "link|Manila Accessible Information and Communications Technologies Design Recommendations (page does not exist)|0",
@@ -3979,7 +4185,7 @@
       "fillable": false
     },
     {
-      "eid": "e304",
+      "eid": "e319",
       "role": "link",
       "name": "[61]",
       "fp": "link|[61]|0",
@@ -3992,7 +4198,7 @@
       "fillable": false
     },
     {
-      "eid": "e305",
+      "eid": "e320",
       "role": "link",
       "name": "[62]",
       "fp": "link|[62]|0",
@@ -4005,7 +4211,7 @@
       "fillable": false
     },
     {
-      "eid": "e306",
+      "eid": "e321",
       "role": "link",
       "name": "[63]",
       "fp": "link|[63]|0",
@@ -4018,7 +4224,7 @@
       "fillable": false
     },
     {
-      "eid": "e307",
+      "eid": "e322",
       "role": "link",
       "name": "UK",
       "fp": "link|UK|0",
@@ -4031,7 +4237,7 @@
       "fillable": false
     },
     {
-      "eid": "e308",
+      "eid": "e323",
       "role": "link",
       "name": "Equality Act 2010",
       "fp": "link|Equality Act 2010|0",
@@ -4044,7 +4250,7 @@
       "fillable": false
     },
     {
-      "eid": "e309",
+      "eid": "e324",
       "role": "link",
       "name": "[64]",
       "fp": "link|[64]|0",
@@ -4057,7 +4263,7 @@
       "fillable": false
     },
     {
-      "eid": "e310",
+      "eid": "e325",
       "role": "link",
       "name": "Equality and Human Rights Commission",
       "fp": "link|Equality and Human Rights Commission|0",
@@ -4070,7 +4276,7 @@
       "fillable": false
     },
     {
-      "eid": "e311",
+      "eid": "e326",
       "role": "link",
       "name": "BS 8878",
       "fp": "link|BS 8878|0",
@@ -4083,7 +4289,7 @@
       "fillable": false
     },
     {
-      "eid": "e312",
+      "eid": "e327",
       "role": "link",
       "name": "Disability Rights Commission",
       "fp": "link|Disability Rights Commission|0",
@@ -4096,7 +4302,7 @@
       "fillable": false
     },
     {
-      "eid": "e313",
+      "eid": "e328",
       "role": "link",
       "name": "[65]",
       "fp": "link|[65]|0",
@@ -4109,7 +4315,7 @@
       "fillable": false
     },
     {
-      "eid": "e314",
+      "eid": "e329",
       "role": "link",
       "name": "Equality Act 2010",
       "fp": "link|Equality Act 2010|1",
@@ -4122,7 +4328,7 @@
       "fillable": false
     },
     {
-      "eid": "e315",
+      "eid": "e330",
       "role": "link",
       "name": "[66]",
       "fp": "link|[66]|0",
@@ -4135,7 +4341,7 @@
       "fillable": false
     },
     {
-      "eid": "e316",
+      "eid": "e331",
       "role": "link",
       "name": "[67]",
       "fp": "link|[67]|0",
@@ -4148,7 +4354,7 @@
       "fillable": false
     },
     {
-      "eid": "e317",
+      "eid": "e332",
       "role": "link",
       "name": "[68]",
       "fp": "link|[68]|0",
@@ -4161,7 +4367,7 @@
       "fillable": false
     },
     {
-      "eid": "e318",
+      "eid": "e333",
       "role": "link",
       "name": "National Rail",
       "fp": "link|National Rail|0",
@@ -4174,7 +4380,7 @@
       "fillable": false
     },
     {
-      "eid": "e319",
+      "eid": "e334",
       "role": "link",
       "name": "[69]",
       "fp": "link|[69]|0",
@@ -4187,7 +4393,7 @@
       "fillable": false
     },
     {
-      "eid": "e320",
+      "eid": "e335",
       "role": "link",
       "name": "[70]",
       "fp": "link|[70]|0",
@@ -4200,7 +4406,7 @@
       "fillable": false
     },
     {
-      "eid": "e321",
+      "eid": "e336",
       "role": "link",
       "name": "[71]",
       "fp": "link|[71]|0",
@@ -4213,7 +4419,7 @@
       "fillable": false
     },
     {
-      "eid": "e322",
+      "eid": "e337",
       "role": "link",
       "name": "[72]",
       "fp": "link|[72]|0",
@@ -4226,7 +4432,7 @@
       "fillable": false
     },
     {
-      "eid": "e323",
+      "eid": "e338",
       "role": "link",
       "name": "[73]",
       "fp": "link|[73]|0",
@@ -4239,7 +4445,7 @@
       "fillable": false
     },
     {
-      "eid": "e324",
+      "eid": "e339",
       "role": "link",
       "name": "European Accessibility Act",
       "fp": "link|European Accessibility Act|2",
@@ -4252,7 +4458,7 @@
       "fillable": false
     },
     {
-      "eid": "e325",
+      "eid": "e340",
       "role": "link",
       "name": "European Union",
       "fp": "link|European Union|0",
@@ -4265,7 +4471,7 @@
       "fillable": false
     },
     {
-      "eid": "e326",
+      "eid": "e341",
       "role": "link",
       "name": "[74]",
       "fp": "link|[74]|0",
@@ -4278,7 +4484,7 @@
       "fillable": false
     },
     {
-      "eid": "e327",
+      "eid": "e342",
       "role": "link",
       "name": "[75]",
       "fp": "link|[75]|0",
@@ -4291,7 +4497,7 @@
       "fillable": false
     },
     {
-      "eid": "e328",
+      "eid": "e343",
       "role": "link",
       "name": "[74]",
       "fp": "link|[74]|1",
@@ -4304,7 +4510,7 @@
       "fillable": false
     },
     {
-      "eid": "e329",
+      "eid": "e344",
       "role": "link",
       "name": "United States",
       "fp": "link|United States|0",
@@ -4317,7 +4523,7 @@
       "fillable": false
     },
     {
-      "eid": "e330",
+      "eid": "e345",
       "role": "link",
       "name": "Section 508 Amendment to the Rehabilitation Act of 1973",
       "fp": "link|Section 508 Amendment to the Rehabilitation Act of 1973|0",
@@ -4330,7 +4536,7 @@
       "fillable": false
     },
     {
-      "eid": "e331",
+      "eid": "e346",
       "role": "link",
       "name": "[76]",
       "fp": "link|[76]|0",
@@ -4343,7 +4549,7 @@
       "fillable": false
     },
     {
-      "eid": "e332",
+      "eid": "e347",
       "role": "link",
       "name": "Section 504 of the Rehabilitation Act",
       "fp": "link|Section 504 of the Rehabilitation Act|1",
@@ -4356,7 +4562,7 @@
       "fillable": false
     },
     {
-      "eid": "e333",
+      "eid": "e348",
       "role": "link",
       "name": "Americans with Disabilities Act of 1990",
       "fp": "link|Americans with Disabilities Act of 1990|1",
@@ -4369,7 +4575,7 @@
       "fillable": false
     },
     {
-      "eid": "e334",
+      "eid": "e349",
       "role": "link",
       "name": "[77]",
       "fp": "link|[77]|0",
@@ -4382,7 +4588,7 @@
       "fillable": false
     },
     {
-      "eid": "e335",
+      "eid": "e350",
       "role": "link",
       "name": "Winn Dixie",
       "fp": "link|Winn Dixie|0",
@@ -4395,7 +4601,7 @@
       "fillable": false
     },
     {
-      "eid": "e336",
+      "eid": "e351",
       "role": "link",
       "name": "[78]",
       "fp": "link|[78]|0",
@@ -4408,7 +4614,7 @@
       "fillable": false
     },
     {
-      "eid": "e337",
+      "eid": "e352",
       "role": "link",
       "name": "Domino's Pizza",
       "fp": "link|Domino's Pizza|0",
@@ -4421,7 +4627,7 @@
       "fillable": false
     },
     {
-      "eid": "e338",
+      "eid": "e353",
       "role": "link",
       "name": "Ninth Circuit",
       "fp": "link|Ninth Circuit|0",
@@ -4434,7 +4640,7 @@
       "fillable": false
     },
     {
-      "eid": "e339",
+      "eid": "e354",
       "role": "link",
       "name": "Due Process Clause",
       "fp": "link|Due Process Clause|0",
@@ -4447,7 +4653,7 @@
       "fillable": false
     },
     {
-      "eid": "e340",
+      "eid": "e355",
       "role": "link",
       "name": "[78]",
       "fp": "link|[78]|1",
@@ -4460,7 +4666,7 @@
       "fillable": false
     },
     {
-      "eid": "e341",
+      "eid": "e356",
       "role": "link",
       "name": "[79]",
       "fp": "link|[79]|0",
@@ -4473,7 +4679,7 @@
       "fillable": false
     },
     {
-      "eid": "e342",
+      "eid": "e357",
       "role": "link",
       "name": "[80]",
       "fp": "link|[80]|0",
@@ -4486,7 +4692,7 @@
       "fillable": false
     },
     {
-      "eid": "e343",
+      "eid": "e358",
       "role": "link",
       "name": "[81]",
       "fp": "link|[81]|0",
@@ -4499,7 +4705,7 @@
       "fillable": false
     },
     {
-      "eid": "e344",
+      "eid": "e359",
       "role": "link",
       "name": "System testing",
       "fp": "link|System testing|0",
@@ -4512,7 +4718,7 @@
       "fillable": false
     },
     {
-      "eid": "e345",
+      "eid": "e360",
       "role": "link",
       "name": "Accessibility",
       "fp": "link|Accessibility|2",
@@ -4525,7 +4731,7 @@
       "fillable": false
     },
     {
-      "eid": "e346",
+      "eid": "e361",
       "role": "link",
       "name": "[82]",
       "fp": "link|[82]|0",
@@ -4538,7 +4744,7 @@
       "fillable": false
     },
     {
-      "eid": "e347",
+      "eid": "e362",
       "role": "link",
       "name": "WAI-ARIA",
       "fp": "link|WAI-ARIA|0",
@@ -4551,7 +4757,7 @@
       "fillable": false
     },
     {
-      "eid": "e348",
+      "eid": "e363",
       "role": "link",
       "name": "[83]",
       "fp": "link|[83]|0",
@@ -4564,7 +4770,7 @@
       "fillable": false
     },
     {
-      "eid": "e349",
+      "eid": "e364",
       "role": "link",
       "name": "World Wide Web Consortium",
       "fp": "link|World Wide Web Consortium|2",
@@ -4577,7 +4783,7 @@
       "fillable": false
     },
     {
-      "eid": "e350",
+      "eid": "e365",
       "role": "link",
       "name": "Accessibility",
       "fp": "link|Accessibility|3",
@@ -4590,7 +4796,7 @@
       "fillable": false
     },
     {
-      "eid": "e351",
+      "eid": "e366",
       "role": "link",
       "name": "Dynamic content",
       "fp": "link|Dynamic content|0",
@@ -4603,7 +4809,7 @@
       "fillable": false
     },
     {
-      "eid": "e352",
+      "eid": "e367",
       "role": "link",
       "name": "Elements of graphical user interfaces",
       "fp": "link|Elements of graphical user interfaces|0",
@@ -4616,7 +4822,7 @@
       "fillable": false
     },
     {
-      "eid": "e353",
+      "eid": "e368",
       "role": "link",
       "name": "Ajax (programming)",
       "fp": "link|Ajax (programming)|0",
@@ -4629,7 +4835,7 @@
       "fillable": false
     },
     {
-      "eid": "e354",
+      "eid": "e369",
       "role": "link",
       "name": "HTML",
       "fp": "link|HTML|1",
@@ -4642,7 +4848,7 @@
       "fillable": false
     },
     {
-      "eid": "e355",
+      "eid": "e370",
       "role": "link",
       "name": "JavaScript",
       "fp": "link|JavaScript|0",
@@ -4655,7 +4861,7 @@
       "fillable": false
     },
     {
-      "eid": "e356",
+      "eid": "e371",
       "role": "link",
       "name": "Accessible publishing",
       "fp": "link|Accessible publishing|0",
@@ -4668,7 +4874,7 @@
       "fillable": false
     },
     {
-      "eid": "e357",
+      "eid": "e372",
       "role": "link",
       "name": "Augmentative and alternative communication",
       "fp": "link|Augmentative and alternative communication|0",
@@ -4681,7 +4887,7 @@
       "fillable": false
     },
     {
-      "eid": "e358",
+      "eid": "e373",
       "role": "link",
       "name": "Blue Beanie Day",
       "fp": "link|Blue Beanie Day|0",
@@ -4694,7 +4900,7 @@
       "fillable": false
     },
     {
-      "eid": "e359",
+      "eid": "e374",
       "role": "link",
       "name": "Computer accessibility",
       "fp": "link|Computer accessibility|0",
@@ -4707,7 +4913,7 @@
       "fillable": false
     },
     {
-      "eid": "e360",
+      "eid": "e375",
       "role": "link",
       "name": "Device independence",
       "fp": "link|Device independence|0",
@@ -4720,7 +4926,7 @@
       "fillable": false
     },
     {
-      "eid": "e361",
+      "eid": "e376",
       "role": "link",
       "name": "Digital divide",
       "fp": "link|Digital divide|0",
@@ -4733,7 +4939,7 @@
       "fillable": false
     },
     {
-      "eid": "e362",
+      "eid": "e377",
       "role": "link",
       "name": "European Internet Accessibility Observatory",
       "fp": "link|European Internet Accessibility Observatory|0",
@@ -4746,7 +4952,7 @@
       "fillable": false
     },
     {
-      "eid": "e363",
+      "eid": "e378",
       "role": "link",
       "name": "Knowbility",
       "fp": "link|Knowbility|0",
@@ -4759,7 +4965,7 @@
       "fillable": false
     },
     {
-      "eid": "e364",
+      "eid": "e379",
       "role": "link",
       "name": "Maguire v Sydney Organising Committee for the Olympic Games (2000)",
       "fp": "link|Maguire v Sydney Organising Committee for the Olympic Games (2000)|0",
@@ -4772,7 +4978,7 @@
       "fillable": false
     },
     {
-      "eid": "e365",
+      "eid": "e380",
       "role": "link",
       "name": "Multimodal interaction",
       "fp": "link|Multimodal interaction|0",
@@ -4785,7 +4991,7 @@
       "fillable": false
     },
     {
-      "eid": "e366",
+      "eid": "e381",
       "role": "link",
       "name": "Progressive enhancement",
       "fp": "link|Progressive enhancement|0",
@@ -4798,7 +5004,7 @@
       "fillable": false
     },
     {
-      "eid": "e367",
+      "eid": "e382",
       "role": "link",
       "name": "Universal design",
       "fp": "link|Universal design|1",
@@ -4811,7 +5017,7 @@
       "fillable": false
     },
     {
-      "eid": "e368",
+      "eid": "e383",
       "role": "link",
       "name": "Web Accessibility Initiative",
       "fp": "link|Web Accessibility Initiative|3",
@@ -4824,7 +5030,7 @@
       "fillable": false
     },
     {
-      "eid": "e369",
+      "eid": "e384",
       "role": "link",
       "name": "Web engineering",
       "fp": "link|Web engineering|0",
@@ -4837,7 +5043,7 @@
       "fillable": false
     },
     {
-      "eid": "e370",
+      "eid": "e385",
       "role": "link",
       "name": "Web interoperability",
       "fp": "link|Web interoperability|0",
@@ -4850,7 +5056,7 @@
       "fillable": false
     },
     {
-      "eid": "e371",
+      "eid": "e386",
       "role": "link",
       "name": "Web literacy",
       "fp": "link|Web literacy|0",
@@ -4863,7 +5069,7 @@
       "fillable": false
     },
     {
-      "eid": "e372",
+      "eid": "e387",
       "role": "link",
       "name": "Jump up to:",
       "fp": "link|Jump up to:|0",
@@ -4876,7 +5082,7 @@
       "fillable": false
     },
     {
-      "eid": "e373",
+      "eid": "e388",
       "role": "link",
       "name": "2",
       "fp": "link|2|0",
@@ -4889,7 +5095,7 @@
       "fillable": false
     },
     {
-      "eid": "e374",
+      "eid": "e389",
       "role": "link",
       "name": "Communication from the Commission to the Council, the European Parliament and the |European Economic and Social Committe",
       "fp": "link|Communication from the Commission to the Council, the European Parliament and the |European Economic and Social Committe|0",
@@ -4902,7 +5108,7 @@
       "fillable": false
     },
     {
-      "eid": "e375",
+      "eid": "e390",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|0",
@@ -4915,7 +5121,7 @@
       "fillable": false
     },
     {
-      "eid": "e376",
+      "eid": "e391",
       "role": "link",
       "name": "19 November 2021 at the",
       "fp": "link|19 November 2021 at the|0",
@@ -4928,7 +5134,7 @@
       "fillable": false
     },
     {
-      "eid": "e377",
+      "eid": "e392",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|0",
@@ -4941,7 +5147,7 @@
       "fillable": false
     },
     {
-      "eid": "e378",
+      "eid": "e393",
       "role": "link",
       "name": "\"Wix Is the Best Way for Most People to Build a Website\"",
       "fp": "link|\"Wix Is the Best Way for Most People to Build a Website\"|0",
@@ -4954,7 +5160,7 @@
       "fillable": false
     },
     {
-      "eid": "e379",
+      "eid": "e394",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|1",
@@ -4967,7 +5173,7 @@
       "fillable": false
     },
     {
-      "eid": "e380",
+      "eid": "e395",
       "role": "link",
       "name": "\"Accessibility Champ: Wix, WordPress, Squarespace, Duda, Or...?\"",
       "fp": "link|\"Accessibility Champ: Wix, WordPress, Squarespace, Duda, Or...?\"|0",
@@ -4980,7 +5186,7 @@
       "fillable": false
     },
     {
-      "eid": "e381",
+      "eid": "e396",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|2",
@@ -4993,7 +5199,7 @@
       "fillable": false
     },
     {
-      "eid": "e382",
+      "eid": "e397",
       "role": "link",
       "name": "\"Indexes of Cognitive Web Accessibility Resources\"",
       "fp": "link|\"Indexes of Cognitive Web Accessibility Resources\"|0",
@@ -5006,7 +5212,7 @@
       "fillable": false
     },
     {
-      "eid": "e383",
+      "eid": "e398",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|3",
@@ -5019,7 +5225,7 @@
       "fillable": false
     },
     {
-      "eid": "e384",
+      "eid": "e399",
       "role": "link",
       "name": "\"Web Accessibility: An Introduction\"",
       "fp": "link|\"Web Accessibility: An Introduction\"|0",
@@ -5032,7 +5238,7 @@
       "fillable": false
     },
     {
-      "eid": "e385",
+      "eid": "e400",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|1",
@@ -5045,7 +5251,7 @@
       "fillable": false
     },
     {
-      "eid": "e386",
+      "eid": "e401",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|4",
@@ -5058,7 +5264,7 @@
       "fillable": false
     },
     {
-      "eid": "e387",
+      "eid": "e402",
       "role": "link",
       "name": "\"Government Accessibility Standards and WCAG 2.0\"",
       "fp": "link|\"Government Accessibility Standards and WCAG 2.0\"|0",
@@ -5071,7 +5277,7 @@
       "fillable": false
     },
     {
-      "eid": "e388",
+      "eid": "e403",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|2",
@@ -5084,7 +5290,7 @@
       "fillable": false
     },
     {
-      "eid": "e389",
+      "eid": "e404",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|5",
@@ -5097,7 +5303,7 @@
       "fillable": false
     },
     {
-      "eid": "e390",
+      "eid": "e405",
       "role": "link",
       "name": "ISO/IEC 40500:2012: Information technology – W3C Web Content Accessibility Guidelines (WCAG) 2.0",
       "fp": "link|ISO/IEC 40500:2012: Information technology – W3C Web Content Accessibility Guidelines (WCAG) 2.0|0",
@@ -5110,7 +5316,7 @@
       "fillable": false
     },
     {
-      "eid": "e391",
+      "eid": "e406",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|3",
@@ -5123,7 +5329,7 @@
       "fillable": false
     },
     {
-      "eid": "e392",
+      "eid": "e407",
       "role": "link",
       "name": "7 December 2017 at the",
       "fp": "link|7 December 2017 at the|0",
@@ -5136,7 +5342,7 @@
       "fillable": false
     },
     {
-      "eid": "e393",
+      "eid": "e408",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|6",
@@ -5149,7 +5355,7 @@
       "fillable": false
     },
     {
-      "eid": "e394",
+      "eid": "e409",
       "role": "link",
       "name": "\"Web Content Accessibility Guidelines (WCAG) 2.1\"",
       "fp": "link|\"Web Content Accessibility Guidelines (WCAG) 2.1\"|0",
@@ -5162,7 +5368,7 @@
       "fillable": false
     },
     {
-      "eid": "e395",
+      "eid": "e410",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|7",
@@ -5175,7 +5381,7 @@
       "fillable": false
     },
     {
-      "eid": "e396",
+      "eid": "e411",
       "role": "link",
       "name": "\"Putting the User at the Heart of the W3C Process\"",
       "fp": "link|\"Putting the User at the Heart of the W3C Process\"|0",
@@ -5188,7 +5394,7 @@
       "fillable": false
     },
     {
-      "eid": "e397",
+      "eid": "e412",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|0",
@@ -5201,7 +5407,7 @@
       "fillable": false
     },
     {
-      "eid": "e398",
+      "eid": "e413",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|8",
@@ -5214,7 +5420,7 @@
       "fillable": false
     },
     {
-      "eid": "e399",
+      "eid": "e414",
       "role": "link",
       "name": "\"Formal Objection to WCAG 2.0\"",
       "fp": "link|\"Formal Objection to WCAG 2.0\"|0",
@@ -5227,7 +5433,7 @@
       "fillable": false
     },
     {
-      "eid": "e400",
+      "eid": "e415",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|4",
@@ -5240,7 +5446,7 @@
       "fillable": false
     },
     {
-      "eid": "e401",
+      "eid": "e416",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|9",
@@ -5253,7 +5459,7 @@
       "fillable": false
     },
     {
-      "eid": "e402",
+      "eid": "e417",
       "role": "link",
       "name": "\"WCAG 2.0: The new W3C accessibility guidelines evaluated\"",
       "fp": "link|\"WCAG 2.0: The new W3C accessibility guidelines evaluated\"|0",
@@ -5266,7 +5472,7 @@
       "fillable": false
     },
     {
-      "eid": "e403",
+      "eid": "e418",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|5",
@@ -5279,7 +5485,7 @@
       "fillable": false
     },
     {
-      "eid": "e404",
+      "eid": "e419",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|10",
@@ -5292,7 +5498,7 @@
       "fillable": false
     },
     {
-      "eid": "e405",
+      "eid": "e420",
       "role": "link",
       "name": "\"To Hell with WCAG 2 · An A List Apart Article\"",
       "fp": "link|\"To Hell with WCAG 2 · An A List Apart Article\"|0",
@@ -5305,7 +5511,7 @@
       "fillable": false
     },
     {
-      "eid": "e406",
+      "eid": "e421",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|6",
@@ -5318,7 +5524,7 @@
       "fillable": false
     },
     {
-      "eid": "e407",
+      "eid": "e422",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|11",
@@ -5331,7 +5537,7 @@
       "fillable": false
     },
     {
-      "eid": "e408",
+      "eid": "e423",
       "role": "link",
       "name": "\"Testability Costs Too Much · An A List Apart Article\"",
       "fp": "link|\"Testability Costs Too Much · An A List Apart Article\"|0",
@@ -5344,7 +5550,7 @@
       "fillable": false
     },
     {
-      "eid": "e409",
+      "eid": "e424",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|7",
@@ -5357,7 +5563,7 @@
       "fillable": false
     },
     {
-      "eid": "e410",
+      "eid": "e425",
       "role": "link",
       "name": "Jump up to:",
       "fp": "link|Jump up to:|1",
@@ -5370,7 +5576,7 @@
       "fillable": false
     },
     {
-      "eid": "e411",
+      "eid": "e426",
       "role": "link",
       "name": "2",
       "fp": "link|2|1",
@@ -5383,7 +5589,7 @@
       "fillable": false
     },
     {
-      "eid": "e412",
+      "eid": "e427",
       "role": "link",
       "name": "\"Authoring Tool Accessibility Guidelines (ATAG) Overview\"",
       "fp": "link|\"Authoring Tool Accessibility Guidelines (ATAG) Overview\"|0",
@@ -5396,7 +5602,7 @@
       "fillable": false
     },
     {
-      "eid": "e413",
+      "eid": "e428",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|8",
@@ -5409,7 +5615,7 @@
       "fillable": false
     },
     {
-      "eid": "e414",
+      "eid": "e429",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|12",
@@ -5422,7 +5628,7 @@
       "fillable": false
     },
     {
-      "eid": "e415",
+      "eid": "e430",
       "role": "link",
       "name": "\"Web Content Accessibility Guidelines (WCAG) 2.0\"",
       "fp": "link|\"Web Content Accessibility Guidelines (WCAG) 2.0\"|0",
@@ -5435,7 +5641,7 @@
       "fillable": false
     },
     {
-      "eid": "e416",
+      "eid": "e431",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|9",
@@ -5448,7 +5654,7 @@
       "fillable": false
     },
     {
-      "eid": "e417",
+      "eid": "e432",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|13",
@@ -5461,7 +5667,7 @@
       "fillable": false
     },
     {
-      "eid": "e418",
+      "eid": "e433",
       "role": "link",
       "name": "\"Techniques for WCAG 2.0\"",
       "fp": "link|\"Techniques for WCAG 2.0\"|0",
@@ -5474,7 +5680,7 @@
       "fillable": false
     },
     {
-      "eid": "e419",
+      "eid": "e434",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|10",
@@ -5487,7 +5693,7 @@
       "fillable": false
     },
     {
-      "eid": "e420",
+      "eid": "e435",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|14",
@@ -5500,7 +5706,7 @@
       "fillable": false
     },
     {
-      "eid": "e421",
+      "eid": "e436",
       "role": "link",
       "name": "\"Understanding Techniques for WCAG Success Criteria\"",
       "fp": "link|\"Understanding Techniques for WCAG Success Criteria\"|0",
@@ -5513,7 +5719,7 @@
       "fillable": false
     },
     {
-      "eid": "e422",
+      "eid": "e437",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|11",
@@ -5526,7 +5732,7 @@
       "fillable": false
     },
     {
-      "eid": "e423",
+      "eid": "e438",
       "role": "link",
       "name": "Jump up to:",
       "fp": "link|Jump up to:|2",
@@ -5539,7 +5745,7 @@
       "fillable": false
     },
     {
-      "eid": "e424",
+      "eid": "e439",
       "role": "link",
       "name": "2",
       "fp": "link|2|2",
@@ -5552,7 +5758,7 @@
       "fillable": false
     },
     {
-      "eid": "e425",
+      "eid": "e440",
       "role": "link",
       "name": "\"User Agent Accessibility Guidelines (UAAG) Overview\"",
       "fp": "link|\"User Agent Accessibility Guidelines (UAAG) Overview\"|0",
@@ -5565,7 +5771,7 @@
       "fillable": false
     },
     {
-      "eid": "e426",
+      "eid": "e441",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|12",
@@ -5578,7 +5784,7 @@
       "fillable": false
     },
     {
-      "eid": "e427",
+      "eid": "e442",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|15",
@@ -5591,7 +5797,7 @@
       "fillable": false
     },
     {
-      "eid": "e428",
+      "eid": "e443",
       "role": "link",
       "name": "\"Internet Usage Statistics\"",
       "fp": "link|\"Internet Usage Statistics\"|0",
@@ -5604,7 +5810,7 @@
       "fillable": false
     },
     {
-      "eid": "e429",
+      "eid": "e444",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|13",
@@ -5617,7 +5823,7 @@
       "fillable": false
     },
     {
-      "eid": "e430",
+      "eid": "e445",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|16",
@@ -5630,7 +5836,7 @@
       "fillable": false
     },
     {
-      "eid": "e431",
+      "eid": "e446",
       "role": "link",
       "name": "\"Section 508 of the Rehabilitation Act\"",
       "fp": "link|\"Section 508 of the Rehabilitation Act\"|0",
@@ -5643,7 +5849,7 @@
       "fillable": false
     },
     {
-      "eid": "e432",
+      "eid": "e447",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|1",
@@ -5656,7 +5862,7 @@
       "fillable": false
     },
     {
-      "eid": "e433",
+      "eid": "e448",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|17",
@@ -5669,7 +5875,7 @@
       "fillable": false
     },
     {
-      "eid": "e434",
+      "eid": "e449",
       "role": "link",
       "name": "\"World Laws Introduction to Laws Throughout the World\"",
       "fp": "link|\"World Laws Introduction to Laws Throughout the World\"|0",
@@ -5682,7 +5888,7 @@
       "fillable": false
     },
     {
-      "eid": "e435",
+      "eid": "e450",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|14",
@@ -5695,7 +5901,7 @@
       "fillable": false
     },
     {
-      "eid": "e436",
+      "eid": "e451",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|18",
@@ -5708,7 +5914,7 @@
       "fillable": false
     },
     {
-      "eid": "e437",
+      "eid": "e452",
       "role": "link",
       "name": "\"Digital Accessibility Laws Around the Globe\"",
       "fp": "link|\"Digital Accessibility Laws Around the Globe\"|0",
@@ -5721,7 +5927,7 @@
       "fillable": false
     },
     {
-      "eid": "e438",
+      "eid": "e453",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|15",
@@ -5734,7 +5940,7 @@
       "fillable": false
     },
     {
-      "eid": "e439",
+      "eid": "e454",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|19",
@@ -5747,7 +5953,7 @@
       "fillable": false
     },
     {
-      "eid": "e440",
+      "eid": "e455",
       "role": "link",
       "name": "\"What is web accessibility and why is it critical to your website's success?\"",
       "fp": "link|\"What is web accessibility and why is it critical to your website's success?\"|0",
@@ -5760,7 +5966,7 @@
       "fillable": false
     },
     {
-      "eid": "e441",
+      "eid": "e456",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|16",
@@ -5773,7 +5979,7 @@
       "fillable": false
     },
     {
-      "eid": "e442",
+      "eid": "e457",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|20",
@@ -5786,7 +5992,7 @@
       "fillable": false
     },
     {
-      "eid": "e443",
+      "eid": "e458",
       "role": "link",
       "name": "\"Infoleg\"",
       "fp": "link|\"Infoleg\"|0",
@@ -5799,7 +6005,7 @@
       "fillable": false
     },
     {
-      "eid": "e444",
+      "eid": "e459",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|21",
@@ -5812,7 +6018,7 @@
       "fillable": false
     },
     {
-      "eid": "e445",
+      "eid": "e460",
       "role": "link",
       "name": "\"BOLETIN OFICIAL REPUBLICA ARGENTINA - ACCESO A LA INFORMACIÓN PÚBLICA - Decreto 656/2019\"",
       "fp": "link|\"BOLETIN OFICIAL REPUBLICA ARGENTINA - ACCESO A LA INFORMACIÓN PÚBLICA - Decreto 656/2019\"|0",
@@ -5825,7 +6031,7 @@
       "fillable": false
     },
     {
-      "eid": "e446",
+      "eid": "e461",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|22",
@@ -5838,7 +6044,7 @@
       "fillable": false
     },
     {
-      "eid": "e447",
+      "eid": "e462",
       "role": "link",
       "name": "\"Oficina Nacional de Tecnologías de Información\"",
       "fp": "link|\"Oficina Nacional de Tecnologías de Información\"|0",
@@ -5851,7 +6057,7 @@
       "fillable": false
     },
     {
-      "eid": "e448",
+      "eid": "e463",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|23",
@@ -5864,7 +6070,7 @@
       "fillable": false
     },
     {
-      "eid": "e449",
+      "eid": "e464",
       "role": "link",
       "name": "\"Maguire v SOCOG | Australian Human Rights Commission\"",
       "fp": "link|\"Maguire v SOCOG | Australian Human Rights Commission\"|0",
@@ -5877,7 +6083,7 @@
       "fillable": false
     },
     {
-      "eid": "e450",
+      "eid": "e465",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|17",
@@ -5890,7 +6096,7 @@
       "fillable": false
     },
     {
-      "eid": "e451",
+      "eid": "e466",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|24",
@@ -5903,7 +6109,7 @@
       "fillable": false
     },
     {
-      "eid": "e452",
+      "eid": "e467",
       "role": "link",
       "name": "\"World Wide Web Access: Disability Discrimination Act Advisory Notes ver 4.0 (2010) | Australian Human Rights Commission",
       "fp": "link|\"World Wide Web Access: Disability Discrimination Act Advisory Notes ver 4.0 (2010) | Australian Human Rights Commission|0",
@@ -5916,7 +6122,7 @@
       "fillable": false
     },
     {
-      "eid": "e453",
+      "eid": "e468",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|18",
@@ -5929,7 +6135,7 @@
       "fillable": false
     },
     {
-      "eid": "e454",
+      "eid": "e469",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|25",
@@ -5942,7 +6148,7 @@
       "fillable": false
     },
     {
-      "eid": "e455",
+      "eid": "e470",
       "role": "link",
       "name": "\"e-MAG – Modelo de Acessibilidade de Governo Eletrônico\"",
       "fp": "link|\"e-MAG – Modelo de Acessibilidade de Governo Eletrônico\"|0",
@@ -5955,7 +6161,7 @@
       "fillable": false
     },
     {
-      "eid": "e456",
+      "eid": "e471",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|19",
@@ -5968,7 +6174,7 @@
       "fillable": false
     },
     {
-      "eid": "e457",
+      "eid": "e472",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|26",
@@ -5981,7 +6187,7 @@
       "fillable": false
     },
     {
-      "eid": "e458",
+      "eid": "e473",
       "role": "link",
       "name": "\"Standard on Web Accessibility\"",
       "fp": "link|\"Standard on Web Accessibility\"|0",
@@ -5994,7 +6200,7 @@
       "fillable": false
     },
     {
-      "eid": "e459",
+      "eid": "e474",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|20",
@@ -6007,7 +6213,7 @@
       "fillable": false
     },
     {
-      "eid": "e460",
+      "eid": "e475",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|27",
@@ -6020,7 +6226,7 @@
       "fillable": false
     },
     {
-      "eid": "e461",
+      "eid": "e476",
       "role": "link",
       "name": "\"Assessment Methodology\"",
       "fp": "link|\"Assessment Methodology\"|0",
@@ -6033,7 +6239,7 @@
       "fillable": false
     },
     {
-      "eid": "e462",
+      "eid": "e477",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|2",
@@ -6046,7 +6252,7 @@
       "fillable": false
     },
     {
-      "eid": "e463",
+      "eid": "e478",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|28",
@@ -6059,7 +6265,7 @@
       "fillable": false
     },
     {
-      "eid": "e464",
+      "eid": "e479",
       "role": "link",
       "name": "\"The Web Experience Toolkit\"",
       "fp": "link|\"The Web Experience Toolkit\"|0",
@@ -6072,7 +6278,7 @@
       "fillable": false
     },
     {
-      "eid": "e465",
+      "eid": "e480",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|3",
@@ -6085,7 +6291,7 @@
       "fillable": false
     },
     {
-      "eid": "e466",
+      "eid": "e481",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|29",
@@ -6098,7 +6304,7 @@
       "fillable": false
     },
     {
-      "eid": "e467",
+      "eid": "e482",
       "role": "link",
       "name": "\"Standard on Optimizing Websites and Applications for Mobile Devices\"",
       "fp": "link|\"Standard on Optimizing Websites and Applications for Mobile Devices\"|0",
@@ -6111,7 +6317,7 @@
       "fillable": false
     },
     {
-      "eid": "e468",
+      "eid": "e483",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|4",
@@ -6124,7 +6330,7 @@
       "fillable": false
     },
     {
-      "eid": "e469",
+      "eid": "e484",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|30",
@@ -6137,7 +6343,7 @@
       "fillable": false
     },
     {
-      "eid": "e470",
+      "eid": "e485",
       "role": "link",
       "name": "\"Standard on Web Usability\"",
       "fp": "link|\"Standard on Web Usability\"|0",
@@ -6150,7 +6356,7 @@
       "fillable": false
     },
     {
-      "eid": "e471",
+      "eid": "e486",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|5",
@@ -6163,7 +6369,7 @@
       "fillable": false
     },
     {
-      "eid": "e472",
+      "eid": "e487",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|31",
@@ -6176,7 +6382,7 @@
       "fillable": false
     },
     {
-      "eid": "e473",
+      "eid": "e488",
       "role": "link",
       "name": "\"Standard on Web Interoperability\"",
       "fp": "link|\"Standard on Web Interoperability\"|0",
@@ -6189,7 +6395,7 @@
       "fillable": false
     },
     {
-      "eid": "e474",
+      "eid": "e489",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|6",
@@ -6202,7 +6408,7 @@
       "fillable": false
     },
     {
-      "eid": "e475",
+      "eid": "e490",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|32",
@@ -6215,7 +6421,7 @@
       "fillable": false
     },
     {
-      "eid": "e476",
+      "eid": "e491",
       "role": "link",
       "name": "\"MEPs vote to make online public services accessible to everyone\"",
       "fp": "link|\"MEPs vote to make online public services accessible to everyone\"|0",
@@ -6228,7 +6434,7 @@
       "fillable": false
     },
     {
-      "eid": "e477",
+      "eid": "e492",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|21",
@@ -6241,7 +6447,7 @@
       "fillable": false
     },
     {
-      "eid": "e478",
+      "eid": "e493",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|33",
@@ -6254,7 +6460,7 @@
       "fillable": false
     },
     {
-      "eid": "e479",
+      "eid": "e494",
       "role": "link",
       "name": "European Union's Mandate M 376",
       "fp": "link|European Union's Mandate M 376|0",
@@ -6267,7 +6473,7 @@
       "fillable": false
     },
     {
-      "eid": "e480",
+      "eid": "e495",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|22",
@@ -6280,7 +6486,7 @@
       "fillable": false
     },
     {
-      "eid": "e481",
+      "eid": "e496",
       "role": "link",
       "name": "20 November 2021 at the",
       "fp": "link|20 November 2021 at the|0",
@@ -6293,7 +6499,7 @@
       "fillable": false
     },
     {
-      "eid": "e482",
+      "eid": "e497",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|34",
@@ -6306,7 +6512,7 @@
       "fillable": false
     },
     {
-      "eid": "e483",
+      "eid": "e498",
       "role": "link",
       "name": "Standardisation requests - mandates",
       "fp": "link|Standardisation requests - mandates|0",
@@ -6319,7 +6525,7 @@
       "fillable": false
     },
     {
-      "eid": "e484",
+      "eid": "e499",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|23",
@@ -6332,7 +6538,7 @@
       "fillable": false
     },
     {
-      "eid": "e485",
+      "eid": "e500",
       "role": "link",
       "name": "20 November 2021 at the",
       "fp": "link|20 November 2021 at the|1",
@@ -6345,7 +6551,7 @@
       "fillable": false
     },
     {
-      "eid": "e486",
+      "eid": "e501",
       "role": "link",
       "name": "Jump up to:",
       "fp": "link|Jump up to:|3",
@@ -6358,7 +6564,7 @@
       "fillable": false
     },
     {
-      "eid": "e487",
+      "eid": "e502",
       "role": "link",
       "name": "2",
       "fp": "link|2|3",
@@ -6371,7 +6577,7 @@
       "fillable": false
     },
     {
-      "eid": "e488",
+      "eid": "e503",
       "role": "link",
       "name": "Standardisation Mandate to CEN, CENELEC AND ETSI in support of European Accessibility Requirements for Public Procuremen",
       "fp": "link|Standardisation Mandate to CEN, CENELEC AND ETSI in support of European Accessibility Requirements for Public Procuremen|0",
@@ -6384,7 +6590,7 @@
       "fillable": false
     },
     {
-      "eid": "e489",
+      "eid": "e504",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|24",
@@ -6397,7 +6603,7 @@
       "fillable": false
     },
     {
-      "eid": "e490",
+      "eid": "e505",
       "role": "link",
       "name": "22 December 2021 at the",
       "fp": "link|22 December 2021 at the|0",
@@ -6410,7 +6616,7 @@
       "fillable": false
     },
     {
-      "eid": "e491",
+      "eid": "e506",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|35",
@@ -6423,7 +6629,7 @@
       "fillable": false
     },
     {
-      "eid": "e492",
+      "eid": "e507",
       "role": "link",
       "name": "Directive (EU) 2016/2102 of the European Parliament and of the Council of 26 October 2016 on the accessibility of the we",
       "fp": "link|Directive (EU) 2016/2102 of the European Parliament and of the Council of 26 October 2016 on the accessibility of the we|0",
@@ -6436,7 +6642,7 @@
       "fillable": false
     },
     {
-      "eid": "e493",
+      "eid": "e508",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|25",
@@ -6449,7 +6655,7 @@
       "fillable": false
     },
     {
-      "eid": "e494",
+      "eid": "e509",
       "role": "link",
       "name": "29 March 2017 at the",
       "fp": "link|29 March 2017 at the|0",
@@ -6462,7 +6668,7 @@
       "fillable": false
     },
     {
-      "eid": "e495",
+      "eid": "e510",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|36",
@@ -6475,7 +6681,7 @@
       "fillable": false
     },
     {
-      "eid": "e496",
+      "eid": "e511",
       "role": "link",
       "name": "Rolling Plan for ICT Standardisation 2017. COM (2016) 176 final.",
       "fp": "link|Rolling Plan for ICT Standardisation 2017. COM (2016) 176 final.|0",
@@ -6488,7 +6694,7 @@
       "fillable": false
     },
     {
-      "eid": "e497",
+      "eid": "e512",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|26",
@@ -6501,7 +6707,7 @@
       "fillable": false
     },
     {
-      "eid": "e498",
+      "eid": "e513",
       "role": "link",
       "name": "29 March 2017 at the",
       "fp": "link|29 March 2017 at the|1",
@@ -6514,7 +6720,7 @@
       "fillable": false
     },
     {
-      "eid": "e499",
+      "eid": "e514",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|37",
@@ -6527,7 +6733,7 @@
       "fillable": false
     },
     {
-      "eid": "e500",
+      "eid": "e515",
       "role": "link",
       "name": "\"Employment, Social Affairs & Inclusion\"",
       "fp": "link|\"Employment, Social Affairs & Inclusion\"|0",
@@ -6540,7 +6746,7 @@
       "fillable": false
     },
     {
-      "eid": "e501",
+      "eid": "e516",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|38",
@@ -6553,7 +6759,7 @@
       "fillable": false
     },
     {
-      "eid": "e502",
+      "eid": "e517",
       "role": "link",
       "name": "\"Guidelines for Indian Government Websites\"",
       "fp": "link|\"Guidelines for Indian Government Websites\"|0",
@@ -6566,7 +6772,7 @@
       "fillable": false
     },
     {
-      "eid": "e503",
+      "eid": "e518",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|39",
@@ -6579,7 +6785,7 @@
       "fillable": false
     },
     {
-      "eid": "e504",
+      "eid": "e519",
       "role": "link",
       "name": "\"India: Web Accessibility Initiative (WAI)\"",
       "fp": "link|\"India: Web Accessibility Initiative (WAI)\"|0",
@@ -6592,7 +6798,7 @@
       "fillable": false
     },
     {
-      "eid": "e505",
+      "eid": "e520",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|40",
@@ -6605,7 +6811,7 @@
       "fillable": false
     },
     {
-      "eid": "e506",
+      "eid": "e521",
       "role": "link",
       "name": "\"National Policy on Universal Electronic Accessibility\"",
       "fp": "link|\"National Policy on Universal Electronic Accessibility\"|0",
@@ -6618,7 +6824,7 @@
       "fillable": false
     },
     {
-      "eid": "e507",
+      "eid": "e522",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|41",
@@ -6631,7 +6837,7 @@
       "fillable": false
     },
     {
-      "eid": "e508",
+      "eid": "e523",
       "role": "link",
       "name": "\"Introduction\"",
       "fp": "link|\"Introduction\"|0",
@@ -6644,7 +6850,7 @@
       "fillable": false
     },
     {
-      "eid": "e509",
+      "eid": "e524",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|42",
@@ -6657,7 +6863,7 @@
       "fillable": false
     },
     {
-      "eid": "e510",
+      "eid": "e525",
       "role": "link",
       "name": "\"GIGW\"",
       "fp": "link|\"GIGW\"|0",
@@ -6670,7 +6876,7 @@
       "fillable": false
     },
     {
-      "eid": "e511",
+      "eid": "e526",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|43",
@@ -6683,7 +6889,7 @@
       "fillable": false
     },
     {
-      "eid": "e512",
+      "eid": "e527",
       "role": "link",
       "name": "\"The Rights of Persons with Disabilities (RPWD)\"",
       "fp": "link|\"The Rights of Persons with Disabilities (RPWD)\"|0",
@@ -6696,7 +6902,7 @@
       "fillable": false
     },
     {
-      "eid": "e513",
+      "eid": "e528",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|44",
@@ -6709,7 +6915,7 @@
       "fillable": false
     },
     {
-      "eid": "e514",
+      "eid": "e529",
       "role": "link",
       "name": "\"Rights of Persons with Disabilities Act, 2016\"",
       "fp": "link|\"Rights of Persons with Disabilities Act, 2016\"|0",
@@ -6722,7 +6928,7 @@
       "fillable": false
     },
     {
-      "eid": "e515",
+      "eid": "e530",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|45",
@@ -6735,7 +6941,7 @@
       "fillable": false
     },
     {
-      "eid": "e516",
+      "eid": "e531",
       "role": "link",
       "name": "\"Disability Act 2005 – Tithe an Oireachtais\"",
       "fp": "link|\"Disability Act 2005 – Tithe an Oireachtais\"|0",
@@ -6748,7 +6954,7 @@
       "fillable": false
     },
     {
-      "eid": "e517",
+      "eid": "e532",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|27",
@@ -6761,7 +6967,7 @@
       "fillable": false
     },
     {
-      "eid": "e518",
+      "eid": "e533",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|46",
@@ -6774,7 +6980,7 @@
       "fillable": false
     },
     {
-      "eid": "e519",
+      "eid": "e534",
       "role": "link",
       "name": "\"Code of Practice on Accessibility of Public Services and Information Provided by Public Bodies\"",
       "fp": "link|\"Code of Practice on Accessibility of Public Services and Information Provided by Public Bodies\"|0",
@@ -6787,7 +6993,7 @@
       "fillable": false
     },
     {
-      "eid": "e520",
+      "eid": "e535",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|7",
@@ -6800,7 +7006,7 @@
       "fillable": false
     },
     {
-      "eid": "e521",
+      "eid": "e536",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|47",
@@ -6813,7 +7019,7 @@
       "fillable": false
     },
     {
-      "eid": "e522",
+      "eid": "e537",
       "role": "link",
       "name": "\"Israel Technology Law Blog, Website Accessibility Requirements\"",
       "fp": "link|\"Israel Technology Law Blog, Website Accessibility Requirements\"|0",
@@ -6826,7 +7032,7 @@
       "fillable": false
     },
     {
-      "eid": "e523",
+      "eid": "e538",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|8",
@@ -6839,7 +7045,7 @@
       "fillable": false
     },
     {
-      "eid": "e524",
+      "eid": "e539",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|48",
@@ -6852,7 +7058,7 @@
       "fillable": false
     },
     {
-      "eid": "e525",
+      "eid": "e540",
       "role": "link",
       "name": "\"JIS X 8341-3:2016\"",
       "fp": "link|\"JIS X 8341-3:2016\"|0",
@@ -6865,7 +7071,7 @@
       "fillable": false
     },
     {
-      "eid": "e526",
+      "eid": "e541",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|28",
@@ -6878,7 +7084,7 @@
       "fillable": false
     },
     {
-      "eid": "e527",
+      "eid": "e542",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|49",
@@ -6891,7 +7097,7 @@
       "fillable": false
     },
     {
-      "eid": "e528",
+      "eid": "e543",
       "role": "link",
       "name": "\"FITA - 15 years of service,projects and innovation\"",
       "fp": "link|\"FITA - 15 years of service,projects and innovation\"|0",
@@ -6904,7 +7110,7 @@
       "fillable": false
     },
     {
-      "eid": "e529",
+      "eid": "e544",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|29",
@@ -6917,7 +7123,7 @@
       "fillable": false
     },
     {
-      "eid": "e530",
+      "eid": "e545",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|50",
@@ -6930,7 +7136,7 @@
       "fillable": false
     },
     {
-      "eid": "e531",
+      "eid": "e546",
       "role": "link",
       "name": "\"FITA Services\"",
       "fp": "link|\"FITA Services\"|0",
@@ -6943,7 +7149,7 @@
       "fillable": false
     },
     {
-      "eid": "e532",
+      "eid": "e547",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|30",
@@ -6956,7 +7162,7 @@
       "fillable": false
     },
     {
-      "eid": "e533",
+      "eid": "e548",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|51",
@@ -6969,7 +7175,7 @@
       "fillable": false
     },
     {
-      "eid": "e534",
+      "eid": "e549",
       "role": "link",
       "name": "\"MCA - Web Accessibility\"",
       "fp": "link|\"MCA - Web Accessibility\"|0",
@@ -6982,7 +7188,7 @@
       "fillable": false
     },
     {
-      "eid": "e535",
+      "eid": "e550",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|31",
@@ -6995,7 +7201,7 @@
       "fillable": false
     },
     {
-      "eid": "e536",
+      "eid": "e551",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|52",
@@ -7008,7 +7214,7 @@
       "fillable": false
     },
     {
-      "eid": "e537",
+      "eid": "e552",
       "role": "link",
       "name": "\"Regulation for universal design of information and communication technology (ICT) solutions\"",
       "fp": "link|\"Regulation for universal design of information and communication technology (ICT) solutions\"|0",
@@ -7021,7 +7227,7 @@
       "fillable": false
     },
     {
-      "eid": "e538",
+      "eid": "e553",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|32",
@@ -7034,7 +7240,7 @@
       "fillable": false
     },
     {
-      "eid": "e539",
+      "eid": "e554",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|53",
@@ -7047,7 +7253,7 @@
       "fillable": false
     },
     {
-      "eid": "e540",
+      "eid": "e555",
       "role": "link",
       "name": "52–",
       "fp": "link|52–|0",
@@ -7060,7 +7266,7 @@
       "fillable": false
     },
     {
-      "eid": "e541",
+      "eid": "e556",
       "role": "link",
       "name": "10.1002/bsl.2103",
       "fp": "link|10.1002/bsl.2103|0",
@@ -7073,7 +7279,7 @@
       "fillable": false
     },
     {
-      "eid": "e542",
+      "eid": "e557",
       "role": "link",
       "name": "Hdl (identifier)",
       "fp": "link|Hdl (identifier)|0",
@@ -7086,7 +7292,7 @@
       "fillable": false
     },
     {
-      "eid": "e543",
+      "eid": "e558",
       "role": "link",
       "name": "10642/2585",
       "fp": "link|10642/2585|0",
@@ -7099,7 +7305,7 @@
       "fillable": false
     },
     {
-      "eid": "e544",
+      "eid": "e559",
       "role": "link",
       "name": "10642/2585",
       "fp": "link|10642/2585|1",
@@ -7112,7 +7318,7 @@
       "fillable": false
     },
     {
-      "eid": "e545",
+      "eid": "e560",
       "role": "link",
       "name": "24504974",
       "fp": "link|24504974|0",
@@ -7125,7 +7331,7 @@
       "fillable": false
     },
     {
-      "eid": "e546",
+      "eid": "e561",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|54",
@@ -7138,7 +7344,7 @@
       "fillable": false
     },
     {
-      "eid": "e547",
+      "eid": "e562",
       "role": "link",
       "name": "\"Forskrift om universell utforming av informasjon\"",
       "fp": "link|\"Forskrift om universell utforming av informasjon\"|0",
@@ -7151,7 +7357,7 @@
       "fillable": false
     },
     {
-      "eid": "e548",
+      "eid": "e563",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|33",
@@ -7164,7 +7370,7 @@
       "fillable": false
     },
     {
-      "eid": "e549",
+      "eid": "e564",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|55",
@@ -7177,7 +7383,7 @@
       "fillable": false
     },
     {
-      "eid": "e550",
+      "eid": "e565",
       "role": "link",
       "name": "\"The Government's Action Plan for Universal Design 2015–2019\"",
       "fp": "link|\"The Government's Action Plan for Universal Design 2015–2019\"|0",
@@ -7190,7 +7396,7 @@
       "fillable": false
     },
     {
-      "eid": "e551",
+      "eid": "e566",
       "role": "link",
       "name": "(PDF)",
       "fp": "link|(PDF)|0",
@@ -7203,7 +7409,7 @@
       "fillable": false
     },
     {
-      "eid": "e552",
+      "eid": "e567",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|56",
@@ -7216,7 +7422,7 @@
       "fillable": false
     },
     {
-      "eid": "e553",
+      "eid": "e568",
       "role": "link",
       "name": "\"UNE 139803:2012 Requisitos de accesibilidad para contenidos en...\"",
       "fp": "link|\"UNE 139803:2012 Requisitos de accesibilidad para contenidos en...\"|0",
@@ -7229,7 +7435,7 @@
       "fillable": false
     },
     {
-      "eid": "e554",
+      "eid": "e569",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|34",
@@ -7242,7 +7448,7 @@
       "fillable": false
     },
     {
-      "eid": "e555",
+      "eid": "e570",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|57",
@@ -7255,7 +7461,7 @@
       "fillable": false
     },
     {
-      "eid": "e556",
+      "eid": "e571",
       "role": "link",
       "name": "\"Swedish National Guidelines for Public Sector Websites\"",
       "fp": "link|\"Swedish National Guidelines for Public Sector Websites\"|0",
@@ -7268,7 +7474,7 @@
       "fillable": false
     },
     {
-      "eid": "e557",
+      "eid": "e572",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|35",
@@ -7281,7 +7487,7 @@
       "fillable": false
     },
     {
-      "eid": "e558",
+      "eid": "e573",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|58",
@@ -7294,7 +7500,7 @@
       "fillable": false
     },
     {
-      "eid": "e559",
+      "eid": "e574",
       "role": "link",
       "name": "\"New Version of Guidelines for Swedish Public Sector Web Sites\"",
       "fp": "link|\"New Version of Guidelines for Swedish Public Sector Web Sites\"|0",
@@ -7307,7 +7513,7 @@
       "fillable": false
     },
     {
-      "eid": "e560",
+      "eid": "e575",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|36",
@@ -7320,7 +7526,7 @@
       "fillable": false
     },
     {
-      "eid": "e561",
+      "eid": "e576",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|59",
@@ -7333,7 +7539,7 @@
       "fillable": false
     },
     {
-      "eid": "e562",
+      "eid": "e577",
       "role": "link",
       "name": "\"A guide to good practice in commissioning accessible websites\"",
       "fp": "link|\"A guide to good practice in commissioning accessible websites\"|0",
@@ -7346,7 +7552,7 @@
       "fillable": false
     },
     {
-      "eid": "e563",
+      "eid": "e578",
       "role": "link",
       "name": "(PDF)",
       "fp": "link|(PDF)|1",
@@ -7359,7 +7565,7 @@
       "fillable": false
     },
     {
-      "eid": "e564",
+      "eid": "e579",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|60",
@@ -7372,7 +7578,7 @@
       "fillable": false
     },
     {
-      "eid": "e565",
+      "eid": "e580",
       "role": "link",
       "name": "\"BS 8878:2010 Web accessibility. Code of practice\"",
       "fp": "link|\"BS 8878:2010 Web accessibility. Code of practice\"|0",
@@ -7385,7 +7591,7 @@
       "fillable": false
     },
     {
-      "eid": "e566",
+      "eid": "e581",
       "role": "link",
       "name": "British Standards Institute",
       "fp": "link|British Standards Institute|0",
@@ -7398,7 +7604,7 @@
       "fillable": false
     },
     {
-      "eid": "e567",
+      "eid": "e582",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|37",
@@ -7411,7 +7617,7 @@
       "fillable": false
     },
     {
-      "eid": "e568",
+      "eid": "e583",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|61",
@@ -7424,7 +7630,7 @@
       "fillable": false
     },
     {
-      "eid": "e569",
+      "eid": "e584",
       "role": "link",
       "name": "\"Equality Act 2010\"",
       "fp": "link|\"Equality Act 2010\"|0",
@@ -7437,7 +7643,7 @@
       "fillable": false
     },
     {
-      "eid": "e570",
+      "eid": "e585",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|38",
@@ -7450,7 +7656,7 @@
       "fillable": false
     },
     {
-      "eid": "e571",
+      "eid": "e586",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|62",
@@ -7463,7 +7669,7 @@
       "fillable": false
     },
     {
-      "eid": "e572",
+      "eid": "e587",
       "role": "link",
       "name": "\"BS 8878 web accessibility standards – all you need to know\"",
       "fp": "link|\"BS 8878 web accessibility standards – all you need to know\"|0",
@@ -7476,7 +7682,7 @@
       "fillable": false
     },
     {
-      "eid": "e573",
+      "eid": "e588",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|39",
@@ -7489,7 +7695,7 @@
       "fillable": false
     },
     {
-      "eid": "e574",
+      "eid": "e589",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|63",
@@ -7502,7 +7708,7 @@
       "fillable": false
     },
     {
-      "eid": "e575",
+      "eid": "e590",
       "role": "link",
       "name": "\"ISO 30071-1 digital accessibility standards (supersedes BS 8878) – all you need to know\"",
       "fp": "link|\"ISO 30071-1 digital accessibility standards (supersedes BS 8878) – all you need to know\"|0",
@@ -7515,7 +7721,7 @@
       "fillable": false
     },
     {
-      "eid": "e576",
+      "eid": "e591",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|40",
@@ -7528,7 +7734,7 @@
       "fillable": false
     },
     {
-      "eid": "e577",
+      "eid": "e592",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|64",
@@ -7541,7 +7747,7 @@
       "fillable": false
     },
     {
-      "eid": "e578",
+      "eid": "e593",
       "role": "link",
       "name": "\"Prince Philip: National Rail's 'accessibility process' failed to see …\"",
       "fp": "link|\"Prince Philip: National Rail's 'accessibility process' failed to see …\"|0",
@@ -7554,7 +7760,7 @@
       "fillable": false
     },
     {
-      "eid": "e579",
+      "eid": "e594",
       "role": "link",
       "name": "Independent.co.uk",
       "fp": "link|Independent.co.uk|0",
@@ -7567,7 +7773,7 @@
       "fillable": false
     },
     {
-      "eid": "e580",
+      "eid": "e595",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|65",
@@ -7580,7 +7786,7 @@
       "fillable": false
     },
     {
-      "eid": "e581",
+      "eid": "e596",
       "role": "link",
       "name": "\"Regulations on the accessibility of new public sector websites come into force\"",
       "fp": "link|\"Regulations on the accessibility of new public sector websites come into force\"|0",
@@ -7593,7 +7799,7 @@
       "fillable": false
     },
     {
-      "eid": "e582",
+      "eid": "e597",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|41",
@@ -7606,7 +7812,7 @@
       "fillable": false
     },
     {
-      "eid": "e583",
+      "eid": "e598",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|66",
@@ -7619,7 +7825,7 @@
       "fillable": false
     },
     {
-      "eid": "e584",
+      "eid": "e599",
       "role": "link",
       "name": "\"Understanding accessibility requirements for public sector bodies\"",
       "fp": "link|\"Understanding accessibility requirements for public sector bodies\"|0",
@@ -7632,7 +7838,7 @@
       "fillable": false
     },
     {
-      "eid": "e585",
+      "eid": "e600",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|42",
@@ -7645,7 +7851,7 @@
       "fillable": false
     },
     {
-      "eid": "e586",
+      "eid": "e601",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|67",
@@ -7658,7 +7864,7 @@
       "fillable": false
     },
     {
-      "eid": "e587",
+      "eid": "e602",
       "role": "link",
       "name": "\"Understanding new accessibility requirements for public sector bodies | Local Government Association\"",
       "fp": "link|\"Understanding new accessibility requirements for public sector bodies | Local Government Association\"|0",
@@ -7671,7 +7877,7 @@
       "fillable": false
     },
     {
-      "eid": "e588",
+      "eid": "e603",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|43",
@@ -7684,7 +7890,7 @@
       "fillable": false
     },
     {
-      "eid": "e589",
+      "eid": "e604",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|68",
@@ -7697,7 +7903,7 @@
       "fillable": false
     },
     {
-      "eid": "e590",
+      "eid": "e605",
       "role": "link",
       "name": "\"Accessibility Regulations for Public Sector Bodies\"",
       "fp": "link|\"Accessibility Regulations for Public Sector Bodies\"|0",
@@ -7710,7 +7916,7 @@
       "fillable": false
     },
     {
-      "eid": "e591",
+      "eid": "e606",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|44",
@@ -7723,7 +7929,7 @@
       "fillable": false
     },
     {
-      "eid": "e592",
+      "eid": "e607",
       "role": "link",
       "name": "Jump up to:",
       "fp": "link|Jump up to:|4",
@@ -7736,7 +7942,7 @@
       "fillable": false
     },
     {
-      "eid": "e593",
+      "eid": "e608",
       "role": "link",
       "name": "2",
       "fp": "link|2|4",
@@ -7749,7 +7955,7 @@
       "fillable": false
     },
     {
-      "eid": "e594",
+      "eid": "e609",
       "role": "link",
       "name": "\"European Accessibility Act (EAA)\"",
       "fp": "link|\"European Accessibility Act (EAA)\"|0",
@@ -7762,7 +7968,7 @@
       "fillable": false
     },
     {
-      "eid": "e595",
+      "eid": "e610",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|69",
@@ -7775,7 +7981,7 @@
       "fillable": false
     },
     {
-      "eid": "e596",
+      "eid": "e611",
       "role": "link",
       "name": "\"Accessibility Directive: Final countdown before application on 28 June 2025\"",
       "fp": "link|\"Accessibility Directive: Final countdown before application on 28 June 2025\"|0",
@@ -7788,7 +7994,7 @@
       "fillable": false
     },
     {
-      "eid": "e597",
+      "eid": "e612",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|70",
@@ -7801,7 +8007,7 @@
       "fillable": false
     },
     {
-      "eid": "e598",
+      "eid": "e613",
       "role": "link",
       "name": "\"About the Section 508 Standards – United States Access Board\"",
       "fp": "link|\"About the Section 508 Standards – United States Access Board\"|0",
@@ -7814,7 +8020,7 @@
       "fillable": false
     },
     {
-      "eid": "e599",
+      "eid": "e614",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|45",
@@ -7827,7 +8033,7 @@
       "fillable": false
     },
     {
-      "eid": "e600",
+      "eid": "e615",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|71",
@@ -7840,7 +8046,7 @@
       "fillable": false
     },
     {
-      "eid": "e601",
+      "eid": "e616",
       "role": "link",
       "name": "\"Nondiscrimination on the Basis of Disability in Public Accommodations and Commercial Facilities\"",
       "fp": "link|\"Nondiscrimination on the Basis of Disability in Public Accommodations and Commercial Facilities\"|0",
@@ -7853,7 +8059,7 @@
       "fillable": false
     },
     {
-      "eid": "e602",
+      "eid": "e617",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|46",
@@ -7866,7 +8072,7 @@
       "fillable": false
     },
     {
-      "eid": "e603",
+      "eid": "e618",
       "role": "link",
       "name": "Jump up to:",
       "fp": "link|Jump up to:|5",
@@ -7879,7 +8085,7 @@
       "fillable": false
     },
     {
-      "eid": "e604",
+      "eid": "e619",
       "role": "link",
       "name": "2",
       "fp": "link|2|5",
@@ -7892,7 +8098,7 @@
       "fillable": false
     },
     {
-      "eid": "e605",
+      "eid": "e620",
       "role": "link",
       "name": "\"A blind man couldn't order pizza from Domino's. The company wants the Supreme Court to say websites don't have to be ac",
       "fp": "link|\"A blind man couldn't order pizza from Domino's. The company wants the Supreme Court to say websites don't have to be ac|0",
@@ -7905,7 +8111,7 @@
       "fillable": false
     },
     {
-      "eid": "e606",
+      "eid": "e621",
       "role": "link",
       "name": "CNBC",
       "fp": "link|CNBC|0",
@@ -7918,7 +8124,7 @@
       "fillable": false
     },
     {
-      "eid": "e607",
+      "eid": "e622",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|47",
@@ -7931,7 +8137,7 @@
       "fillable": false
     },
     {
-      "eid": "e608",
+      "eid": "e623",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|72",
@@ -7944,7 +8150,7 @@
       "fillable": false
     },
     {
-      "eid": "e609",
+      "eid": "e624",
       "role": "link",
       "name": "\"Robles v. Domino's Pizza LLC\"",
       "fp": "link|\"Robles v. Domino's Pizza LLC\"|0",
@@ -7957,7 +8163,7 @@
       "fillable": false
     },
     {
-      "eid": "e610",
+      "eid": "e625",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|9",
@@ -7970,7 +8176,7 @@
       "fillable": false
     },
     {
-      "eid": "e611",
+      "eid": "e626",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|73",
@@ -7983,7 +8189,7 @@
       "fillable": false
     },
     {
-      "eid": "e612",
+      "eid": "e627",
       "role": "link",
       "name": "\"Robles v. Domino's Pizza Explained\"",
       "fp": "link|\"Robles v. Domino's Pizza Explained\"|0",
@@ -7996,7 +8202,7 @@
       "fillable": false
     },
     {
-      "eid": "e613",
+      "eid": "e628",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|48",
@@ -8009,7 +8215,7 @@
       "fillable": false
     },
     {
-      "eid": "e614",
+      "eid": "e629",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|74",
@@ -8022,7 +8228,7 @@
       "fillable": false
     },
     {
-      "eid": "e615",
+      "eid": "e630",
       "role": "link",
       "name": "\"Federal Court Website Accessibility Lawsuit Filings Continue to Decrease in 2024\"",
       "fp": "link|\"Federal Court Website Accessibility Lawsuit Filings Continue to Decrease in 2024\"|0",
@@ -8035,7 +8241,7 @@
       "fillable": false
     },
     {
-      "eid": "e616",
+      "eid": "e631",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|49",
@@ -8048,7 +8254,7 @@
       "fillable": false
     },
     {
-      "eid": "e617",
+      "eid": "e632",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|75",
@@ -8061,7 +8267,7 @@
       "fillable": false
     },
     {
-      "eid": "e618",
+      "eid": "e633",
       "role": "link",
       "name": "\"Pitfalls of Web Accessibility Evaluation Tools\"",
       "fp": "link|\"Pitfalls of Web Accessibility Evaluation Tools\"|0",
@@ -8074,7 +8280,7 @@
       "fillable": false
     },
     {
-      "eid": "e619",
+      "eid": "e634",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|50",
@@ -8087,7 +8293,7 @@
       "fillable": false
     },
     {
-      "eid": "e620",
+      "eid": "e635",
       "role": "link",
       "name": "Jump up",
       "fp": "link|Jump up|76",
@@ -8100,7 +8306,7 @@
       "fillable": false
     },
     {
-      "eid": "e621",
+      "eid": "e636",
       "role": "link",
       "name": "\"Accessible Rich Internet Applications (WAI-ARIA) 1.0\"",
       "fp": "link|\"Accessible Rich Internet Applications (WAI-ARIA) 1.0\"|0",
@@ -8113,7 +8319,7 @@
       "fillable": false
     },
     {
-      "eid": "e622",
+      "eid": "e637",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|51",
@@ -8126,7 +8332,7 @@
       "fillable": false
     },
     {
-      "eid": "e623",
+      "eid": "e638",
       "role": "link",
       "name": "\"Judge: ADA lawsuit against Target can proceed\"",
       "fp": "link|\"Judge: ADA lawsuit against Target can proceed\"|0",
@@ -8139,7 +8345,7 @@
       "fillable": false
     },
     {
-      "eid": "e624",
+      "eid": "e639",
       "role": "link",
       "name": "Building Accessible Websites",
       "fp": "link|Building Accessible Websites|0",
@@ -8152,7 +8358,7 @@
       "fillable": false
     },
     {
-      "eid": "e625",
+      "eid": "e640",
       "role": "link",
       "name": "Building Accessible Websites",
       "fp": "link|Building Accessible Websites|1",
@@ -8165,7 +8371,7 @@
       "fillable": false
     },
     {
-      "eid": "e626",
+      "eid": "e641",
       "role": "link",
       "name": "Special:BookSources/978-0-7357-1150-1",
       "fp": "link|Special:BookSources/978-0-7357-1150-1|0",
@@ -8178,7 +8384,7 @@
       "fillable": false
     },
     {
-      "eid": "e627",
+      "eid": "e642",
       "role": "link",
       "name": "A Web for Everyone: Designing Accessible User Experiences",
       "fp": "link|A Web for Everyone: Designing Accessible User Experiences|0",
@@ -8191,7 +8397,7 @@
       "fillable": false
     },
     {
-      "eid": "e628",
+      "eid": "e643",
       "role": "link",
       "name": "ISBN (identifier)",
       "fp": "link|ISBN (identifier)|0",
@@ -8204,7 +8410,7 @@
       "fillable": false
     },
     {
-      "eid": "e629",
+      "eid": "e644",
       "role": "link",
       "name": "Special:BookSources/978-1-933820-97-2",
       "fp": "link|Special:BookSources/978-1-933820-97-2|0",
@@ -8217,7 +8423,7 @@
       "fillable": false
     },
     {
-      "eid": "e630",
+      "eid": "e645",
       "role": "link",
       "name": "Web Accessibility for People with Disabilities",
       "fp": "link|Web Accessibility for People with Disabilities|0",
@@ -8230,7 +8436,7 @@
       "fillable": false
     },
     {
-      "eid": "e631",
+      "eid": "e646",
       "role": "link",
       "name": "ISBN (identifier)",
       "fp": "link|ISBN (identifier)|1",
@@ -8243,7 +8449,7 @@
       "fillable": false
     },
     {
-      "eid": "e632",
+      "eid": "e647",
       "role": "link",
       "name": "Special:BookSources/978-1-929629-08-4",
       "fp": "link|Special:BookSources/978-1-929629-08-4|0",
@@ -8256,7 +8462,7 @@
       "fillable": false
     },
     {
-      "eid": "e633",
+      "eid": "e648",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|10",
@@ -8269,7 +8475,7 @@
       "fillable": false
     },
     {
-      "eid": "e634",
+      "eid": "e649",
       "role": "link",
       "name": "WCAG 2.0 made easy",
       "fp": "link|WCAG 2.0 made easy|0",
@@ -8282,7 +8488,7 @@
       "fillable": false
     },
     {
-      "eid": "e635",
+      "eid": "e650",
       "role": "link",
       "name": "ISBN (identifier)",
       "fp": "link|ISBN (identifier)|2",
@@ -8295,7 +8501,7 @@
       "fillable": false
     },
     {
-      "eid": "e636",
+      "eid": "e651",
       "role": "link",
       "name": "Special:BookSources/978-84-614-6177-6",
       "fp": "link|Special:BookSources/978-84-614-6177-6|0",
@@ -8308,7 +8514,7 @@
       "fillable": false
     },
     {
-      "eid": "e637",
+      "eid": "e652",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|11",
@@ -8321,7 +8527,7 @@
       "fillable": false
     },
     {
-      "eid": "e638",
+      "eid": "e653",
       "role": "link",
       "name": "ISBN (identifier)",
       "fp": "link|ISBN (identifier)|3",
@@ -8334,7 +8540,7 @@
       "fillable": false
     },
     {
-      "eid": "e639",
+      "eid": "e654",
       "role": "link",
       "name": "Special:BookSources/978-0-201-77422-1",
       "fp": "link|Special:BookSources/978-0-201-77422-1|0",
@@ -8347,7 +8553,7 @@
       "fillable": false
     },
     {
-      "eid": "e640",
+      "eid": "e655",
       "role": "link",
       "name": "ISBN (identifier)",
       "fp": "link|ISBN (identifier)|4",
@@ -8360,7 +8566,7 @@
       "fillable": false
     },
     {
-      "eid": "e641",
+      "eid": "e656",
       "role": "link",
       "name": "Special:BookSources/978-1-59059-148-2",
       "fp": "link|Special:BookSources/978-1-59059-148-2|0",
@@ -8373,7 +8579,7 @@
       "fillable": false
     },
     {
-      "eid": "e642",
+      "eid": "e657",
       "role": "link",
       "name": "Apps For All: Coding Accessible Web Applications",
       "fp": "link|Apps For All: Coding Accessible Web Applications|0",
@@ -8386,7 +8592,7 @@
       "fillable": false
     },
     {
-      "eid": "e643",
+      "eid": "e658",
       "role": "link",
       "name": "ISBN (identifier)",
       "fp": "link|ISBN (identifier)|5",
@@ -8399,7 +8605,7 @@
       "fillable": false
     },
     {
-      "eid": "e644",
+      "eid": "e659",
       "role": "link",
       "name": "Special:BookSources/978-3-94454079-5",
       "fp": "link|Special:BookSources/978-3-94454079-5|0",
@@ -8412,7 +8618,7 @@
       "fillable": false
     },
     {
-      "eid": "e645",
+      "eid": "e660",
       "role": "link",
       "name": "the original",
       "fp": "link|the original|12",
@@ -8425,7 +8631,7 @@
       "fillable": false
     },
     {
-      "eid": "e646",
+      "eid": "e661",
       "role": "link",
       "name": "ISBN (identifier)",
       "fp": "link|ISBN (identifier)|6",
@@ -8438,7 +8644,7 @@
       "fillable": false
     },
     {
-      "eid": "e647",
+      "eid": "e662",
       "role": "link",
       "name": "Special:BookSources/978-0-58081-204-0",
       "fp": "link|Special:BookSources/978-0-58081-204-0|0",
@@ -8451,7 +8657,7 @@
       "fillable": false
     },
     {
-      "eid": "e648",
+      "eid": "e663",
       "role": "presentation",
       "name": "This article's use of external links may not follow Wikipedia's policies or guidelines. Please improve this article by r",
       "fp": "presentation|This article's use of external links may not follow Wikipedia's policies or guidelines. Please improve this article by r|0",
@@ -8464,7 +8670,7 @@
       "fillable": false
     },
     {
-      "eid": "e649",
+      "eid": "e664",
       "role": "link",
       "name": "Wikipedia:External links",
       "fp": "link|Wikipedia:External links|0",
@@ -8477,7 +8683,20 @@
       "fillable": false
     },
     {
-      "eid": "e650",
+      "eid": "e665",
+      "role": "link",
+      "name": "improve this article",
+      "fp": "link|improve this article|0",
+      "rect": {
+        "x": 647,
+        "y": 17852,
+        "w": 133,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e666",
       "role": "link",
       "name": "Wikipedia:What Wikipedia is not",
       "fp": "link|Wikipedia:What Wikipedia is not|0",
@@ -8490,7 +8709,7 @@
       "fillable": false
     },
     {
-      "eid": "e651",
+      "eid": "e667",
       "role": "link",
       "name": "Wikipedia:External links",
       "fp": "link|Wikipedia:External links|1",
@@ -8503,7 +8722,7 @@
       "fillable": false
     },
     {
-      "eid": "e652",
+      "eid": "e668",
       "role": "link",
       "name": "Wikipedia:Citing sources",
       "fp": "link|Wikipedia:Citing sources|0",
@@ -8516,7 +8735,7 @@
       "fillable": false
     },
     {
-      "eid": "e653",
+      "eid": "e669",
       "role": "link",
       "name": "Help:Maintenance template removal",
       "fp": "link|Help:Maintenance template removal|0",
@@ -8529,7 +8748,7 @@
       "fillable": false
     },
     {
-      "eid": "e654",
+      "eid": "e670",
       "role": "link",
       "name": "How To Design For Accessibility (BBC)",
       "fp": "link|How To Design For Accessibility (BBC)|0",
@@ -8542,7 +8761,7 @@
       "fillable": false
     },
     {
-      "eid": "e655",
+      "eid": "e671",
       "role": "link",
       "name": "Inclusive Design Principles",
       "fp": "link|Inclusive Design Principles|0",
@@ -8555,7 +8774,7 @@
       "fillable": false
     },
     {
-      "eid": "e656",
+      "eid": "e672",
       "role": "link",
       "name": "Apple Developer Accessibility Resources",
       "fp": "link|Apple Developer Accessibility Resources|0",
@@ -8568,7 +8787,7 @@
       "fillable": false
     },
     {
-      "eid": "e657",
+      "eid": "e673",
       "role": "link",
       "name": "BBC GEL Technical Accessibility Guides",
       "fp": "link|BBC GEL Technical Accessibility Guides|0",
@@ -8581,7 +8800,7 @@
       "fillable": false
     },
     {
-      "eid": "e658",
+      "eid": "e674",
       "role": "link",
       "name": "Google Developer Accessibility Resources",
       "fp": "link|Google Developer Accessibility Resources|0",
@@ -8594,7 +8813,7 @@
       "fillable": false
     },
     {
-      "eid": "e659",
+      "eid": "e675",
       "role": "link",
       "name": "Microsoft Developer Accessibility Resources",
       "fp": "link|Microsoft Developer Accessibility Resources|0",
@@ -8607,7 +8826,7 @@
       "fillable": false
     },
     {
-      "eid": "e660",
+      "eid": "e676",
       "role": "link",
       "name": "W3C WCAG Developer Accessibility Resources",
       "fp": "link|W3C WCAG Developer Accessibility Resources|0",
@@ -8620,7 +8839,7 @@
       "fillable": false
     },
     {
-      "eid": "e661",
+      "eid": "e677",
       "role": "link",
       "name": "W3C – Web Accessibility Initiative (WAI)",
       "fp": "link|W3C – Web Accessibility Initiative (WAI)|0",
@@ -8633,7 +8852,7 @@
       "fillable": false
     },
     {
-      "eid": "e662",
+      "eid": "e678",
       "role": "link",
       "name": "W3C – Web Content Accessibility Guidelines (WCAG) 2.0",
       "fp": "link|W3C – Web Content Accessibility Guidelines (WCAG) 2.0|0",
@@ -8646,7 +8865,7 @@
       "fillable": false
     },
     {
-      "eid": "e663",
+      "eid": "e679",
       "role": "link",
       "name": "Equality and Human Rights Commission: PAS 78: a guide to good practice in commissioning accessible websites (which BS 88",
       "fp": "link|Equality and Human Rights Commission: PAS 78: a guide to good practice in commissioning accessible websites (which BS 88|0",
@@ -8659,7 +8878,7 @@
       "fillable": false
     },
     {
-      "eid": "e664",
+      "eid": "e680",
       "role": "link",
       "name": "European Union – Unified Web Evaluation Methodology 1.2",
       "fp": "link|European Union – Unified Web Evaluation Methodology 1.2|0",
@@ -8672,7 +8891,7 @@
       "fillable": false
     },
     {
-      "eid": "e665",
+      "eid": "e681",
       "role": "link",
       "name": "University of Illinois iCITA HTML Accessibility Best Practices",
       "fp": "link|University of Illinois iCITA HTML Accessibility Best Practices|0",
@@ -8685,7 +8904,7 @@
       "fillable": false
     },
     {
-      "eid": "e666",
+      "eid": "e682",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|52",
@@ -8698,7 +8917,7 @@
       "fillable": false
     },
     {
-      "eid": "e667",
+      "eid": "e683",
       "role": "link",
       "name": "8 February 2020 at the",
       "fp": "link|8 February 2020 at the|0",
@@ -8711,7 +8930,7 @@
       "fillable": false
     },
     {
-      "eid": "e668",
+      "eid": "e684",
       "role": "link",
       "name": "BBC GEL Product Accessibility Guidelines",
       "fp": "link|BBC GEL Product Accessibility Guidelines|0",
@@ -8724,7 +8943,7 @@
       "fillable": false
     },
     {
-      "eid": "e669",
+      "eid": "e685",
       "role": "link",
       "name": "BBC GEL Subtitles (Captions) Guidelines",
       "fp": "link|BBC GEL Subtitles (Captions) Guidelines|0",
@@ -8737,7 +8956,7 @@
       "fillable": false
     },
     {
-      "eid": "e670",
+      "eid": "e686",
       "role": "link",
       "name": "Archived",
       "fp": "link|Archived|53",
@@ -8750,7 +8969,7 @@
       "fillable": false
     },
     {
-      "eid": "e671",
+      "eid": "e687",
       "role": "link",
       "name": "15 July 2022 at the",
       "fp": "link|15 July 2022 at the|0",
@@ -8763,7 +8982,7 @@
       "fillable": false
     },
     {
-      "eid": "e672",
+      "eid": "e688",
       "role": "link",
       "name": "BBC Editorial Accessibility Guide (Online and TV)",
       "fp": "link|BBC Editorial Accessibility Guide (Online and TV)|0",
@@ -8776,7 +8995,7 @@
       "fillable": false
     },
     {
-      "eid": "e673",
+      "eid": "e689",
       "role": "navigation",
       "name": "Web accessibility",
       "fp": "navigation|Web accessibility|0",
@@ -8789,7 +9008,7 @@
       "fillable": false
     },
     {
-      "eid": "e674",
+      "eid": "e690",
       "role": "button",
       "name": "hide",
       "st": "expanded",
@@ -8803,7 +9022,7 @@
       "fillable": false
     },
     {
-      "eid": "e675",
+      "eid": "e691",
       "role": "link",
       "name": "Template:Web accessibility",
       "fp": "link|Template:Web accessibility|0",
@@ -8816,7 +9035,7 @@
       "fillable": false
     },
     {
-      "eid": "e676",
+      "eid": "e692",
       "role": "link",
       "name": "Template talk:Web accessibility",
       "fp": "link|Template talk:Web accessibility|0",
@@ -8829,7 +9048,7 @@
       "fillable": false
     },
     {
-      "eid": "e677",
+      "eid": "e693",
       "role": "link",
       "name": "Special:EditPage/Template:Web accessibility",
       "fp": "link|Special:EditPage/Template:Web accessibility|0",
@@ -8842,10 +9061,23 @@
       "fillable": false
     },
     {
-      "eid": "e678",
+      "eid": "e694",
+      "role": "link",
+      "name": "Web accessibility",
+      "fp": "link|Web accessibility|1",
+      "rect": {
+        "x": 573,
+        "y": 18499,
+        "w": 134,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e695",
       "role": "link",
       "name": "Web Content Accessibility Guidelines",
-      "fp": "link|Web Content Accessibility Guidelines|4",
+      "fp": "link|Web Content Accessibility Guidelines|6",
       "rect": {
         "x": 396,
         "y": 18530,
@@ -8855,7 +9087,7 @@
       "fillable": false
     },
     {
-      "eid": "e679",
+      "eid": "e696",
       "role": "link",
       "name": "AccessiBe",
       "fp": "link|AccessiBe|0",
@@ -8868,7 +9100,7 @@
       "fillable": false
     },
     {
-      "eid": "e680",
+      "eid": "e697",
       "role": "link",
       "name": "Bobby (software)",
       "fp": "link|Bobby (software)|0",
@@ -8881,7 +9113,7 @@
       "fillable": false
     },
     {
-      "eid": "e681",
+      "eid": "e698",
       "role": "link",
       "name": "Dragon NaturallySpeaking",
       "fp": "link|Dragon NaturallySpeaking|0",
@@ -8894,7 +9126,7 @@
       "fillable": false
     },
     {
-      "eid": "e682",
+      "eid": "e699",
       "role": "link",
       "name": "Easy Chirp",
       "fp": "link|Easy Chirp|0",
@@ -8907,7 +9139,7 @@
       "fillable": false
     },
     {
-      "eid": "e683",
+      "eid": "e700",
       "role": "link",
       "name": "ZAC Browser",
       "fp": "link|ZAC Browser|0",
@@ -8920,7 +9152,7 @@
       "fillable": false
     },
     {
-      "eid": "e684",
+      "eid": "e701",
       "role": "link",
       "name": "NonVisual Desktop Access",
       "fp": "link|NonVisual Desktop Access|0",
@@ -8933,7 +9165,7 @@
       "fillable": false
     },
     {
-      "eid": "e685",
+      "eid": "e702",
       "role": "link",
       "name": "VoiceOver",
       "fp": "link|VoiceOver|0",
@@ -8946,7 +9178,7 @@
       "fillable": false
     },
     {
-      "eid": "e686",
+      "eid": "e703",
       "role": "link",
       "name": "ZoomText",
       "fp": "link|ZoomText|0",
@@ -8959,7 +9191,7 @@
       "fillable": false
     },
     {
-      "eid": "e687",
+      "eid": "e704",
       "role": "link",
       "name": "AnySurfer",
       "fp": "link|AnySurfer|0",
@@ -8972,7 +9204,7 @@
       "fillable": false
     },
     {
-      "eid": "e688",
+      "eid": "e705",
       "role": "link",
       "name": "Deque Systems",
       "fp": "link|Deque Systems|0",
@@ -8985,7 +9217,7 @@
       "fillable": false
     },
     {
-      "eid": "e689",
+      "eid": "e706",
       "role": "link",
       "name": "Disability Rights Education and Defense Fund",
       "fp": "link|Disability Rights Education and Defense Fund|1",
@@ -8998,7 +9230,7 @@
       "fillable": false
     },
     {
-      "eid": "e690",
+      "eid": "e707",
       "role": "link",
       "name": "International Association of Accessibility Professionals",
       "fp": "link|International Association of Accessibility Professionals|0",
@@ -9011,7 +9243,7 @@
       "fillable": false
     },
     {
-      "eid": "e691",
+      "eid": "e708",
       "role": "link",
       "name": "Knowbility",
       "fp": "link|Knowbility|1",
@@ -9024,7 +9256,7 @@
       "fillable": false
     },
     {
-      "eid": "e692",
+      "eid": "e709",
       "role": "link",
       "name": "WebAIM",
       "fp": "link|WebAIM|1",
@@ -9037,7 +9269,7 @@
       "fillable": false
     },
     {
-      "eid": "e693",
+      "eid": "e710",
       "role": "link",
       "name": "Web Accessibility Initiative",
       "fp": "link|Web Accessibility Initiative|4",
@@ -9050,7 +9282,7 @@
       "fillable": false
     },
     {
-      "eid": "e694",
+      "eid": "e711",
       "role": "navigation",
       "name": "Disability",
       "fp": "navigation|Disability|0",
@@ -9063,11 +9295,11 @@
       "fillable": false
     },
     {
-      "eid": "e695",
+      "eid": "e712",
       "role": "button",
       "name": "show",
       "st": "collapsed",
-      "fp": "button|show|0",
+      "fp": "button|show|10",
       "rect": {
         "x": 952,
         "y": 18680,
@@ -9077,7 +9309,7 @@
       "fillable": false
     },
     {
-      "eid": "e696",
+      "eid": "e713",
       "role": "link",
       "name": "Template:Disability navbox",
       "fp": "link|Template:Disability navbox|0",
@@ -9090,7 +9322,7 @@
       "fillable": false
     },
     {
-      "eid": "e697",
+      "eid": "e714",
       "role": "link",
       "name": "Template talk:Disability navbox",
       "fp": "link|Template talk:Disability navbox|0",
@@ -9103,7 +9335,7 @@
       "fillable": false
     },
     {
-      "eid": "e698",
+      "eid": "e715",
       "role": "link",
       "name": "Special:EditPage/Template:Disability navbox",
       "fp": "link|Special:EditPage/Template:Disability navbox|0",
@@ -9116,7 +9348,33 @@
       "fillable": false
     },
     {
-      "eid": "e699",
+      "eid": "e716",
+      "role": "link",
+      "name": "Disability",
+      "fp": "link|Disability|2",
+      "rect": {
+        "x": 604,
+        "y": 18681,
+        "w": 71,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e717",
+      "role": "link",
+      "name": "Disability",
+      "fp": "link|Disability|3",
+      "rect": {
+        "x": 379,
+        "y": 18710,
+        "w": 56,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e718",
       "role": "link",
       "name": "Disability studies",
       "fp": "link|Disability studies|1",
@@ -9129,7 +9387,7 @@
       "fillable": false
     },
     {
-      "eid": "e700",
+      "eid": "e719",
       "role": "link",
       "name": "Neurodiversity",
       "fp": "link|Neurodiversity|1",
@@ -9142,7 +9400,7 @@
       "fillable": false
     },
     {
-      "eid": "e701",
+      "eid": "e720",
       "role": "link",
       "name": "Medical model of disability",
       "fp": "link|Medical model of disability|1",
@@ -9155,7 +9413,7 @@
       "fillable": false
     },
     {
-      "eid": "e702",
+      "eid": "e721",
       "role": "link",
       "name": "Social model of disability",
       "fp": "link|Social model of disability|1",
@@ -9168,7 +9426,7 @@
       "fillable": false
     },
     {
-      "eid": "e703",
+      "eid": "e722",
       "role": "link",
       "name": "Individualized Education Program",
       "fp": "link|Individualized Education Program|1",
@@ -9181,7 +9439,7 @@
       "fillable": false
     },
     {
-      "eid": "e704",
+      "eid": "e723",
       "role": "link",
       "name": "Inclusion (disability rights)",
       "fp": "link|Inclusion (disability rights)|2",
@@ -9194,7 +9452,7 @@
       "fillable": false
     },
     {
-      "eid": "e705",
+      "eid": "e724",
       "role": "link",
       "name": "Learning disability",
       "fp": "link|Learning disability|2",
@@ -9207,7 +9465,7 @@
       "fillable": false
     },
     {
-      "eid": "e706",
+      "eid": "e725",
       "role": "link",
       "name": "Mainstreaming (education)",
       "fp": "link|Mainstreaming (education)|1",
@@ -9220,7 +9478,7 @@
       "fillable": false
     },
     {
-      "eid": "e707",
+      "eid": "e726",
       "role": "link",
       "name": "Physical therapy",
       "fp": "link|Physical therapy|1",
@@ -9233,7 +9491,7 @@
       "fillable": false
     },
     {
-      "eid": "e708",
+      "eid": "e727",
       "role": "link",
       "name": "Driver rehabilitation",
       "fp": "link|Driver rehabilitation|0",
@@ -9246,7 +9504,7 @@
       "fillable": false
     },
     {
-      "eid": "e709",
+      "eid": "e728",
       "role": "link",
       "name": "Special needs",
       "fp": "link|Special needs|1",
@@ -9259,7 +9517,7 @@
       "fillable": false
     },
     {
-      "eid": "e710",
+      "eid": "e729",
       "role": "link",
       "name": "Special school",
       "fp": "link|Special school|0",
@@ -9272,7 +9530,7 @@
       "fillable": false
     },
     {
-      "eid": "e711",
+      "eid": "e730",
       "role": "link",
       "name": "Special education",
       "fp": "link|Special education|2",
@@ -9285,7 +9543,7 @@
       "fillable": false
     },
     {
-      "eid": "e712",
+      "eid": "e731",
       "role": "link",
       "name": "Ableism",
       "fp": "link|Ableism|1",
@@ -9298,7 +9556,7 @@
       "fillable": false
     },
     {
-      "eid": "e713",
+      "eid": "e732",
       "role": "link",
       "name": "Disability rights movement",
       "fp": "link|Disability rights movement|1",
@@ -9311,7 +9569,7 @@
       "fillable": false
     },
     {
-      "eid": "e714",
+      "eid": "e733",
       "role": "link",
       "name": "Autism rights movement",
       "fp": "link|Autism rights movement|0",
@@ -9324,7 +9582,7 @@
       "fillable": false
     },
     {
-      "eid": "e715",
+      "eid": "e734",
       "role": "link",
       "name": "List of disability-related terms that developed negative connotations",
       "fp": "link|List of disability-related terms that developed negative connotations|0",
@@ -9337,7 +9595,7 @@
       "fillable": false
     },
     {
-      "eid": "e716",
+      "eid": "e735",
       "role": "link",
       "name": "Right to sit",
       "fp": "link|Right to sit|0",
@@ -9350,7 +9608,7 @@
       "fillable": false
     },
     {
-      "eid": "e717",
+      "eid": "e736",
       "role": "link",
       "name": "Right to sit in the United States",
       "fp": "link|Right to sit in the United States|0",
@@ -9363,7 +9621,7 @@
       "fillable": false
     },
     {
-      "eid": "e718",
+      "eid": "e737",
       "role": "link",
       "name": "Accessibility Act (Newfoundland and Labrador)",
       "fp": "link|Accessibility Act (Newfoundland and Labrador)|0",
@@ -9376,7 +9634,7 @@
       "fillable": false
     },
     {
-      "eid": "e719",
+      "eid": "e738",
       "role": "link",
       "name": "Accessibility Act (Nova Scotia)",
       "fp": "link|Accessibility Act (Nova Scotia)|0",
@@ -9389,7 +9647,7 @@
       "fillable": false
     },
     {
-      "eid": "e720",
+      "eid": "e739",
       "role": "link",
       "name": "Accessible British Columbia Act",
       "fp": "link|Accessible British Columbia Act|0",
@@ -9402,7 +9660,7 @@
       "fillable": false
     },
     {
-      "eid": "e721",
+      "eid": "e740",
       "role": "link",
       "name": "Accessible Canada Act",
       "fp": "link|Accessible Canada Act|2",
@@ -9415,7 +9673,7 @@
       "fillable": false
     },
     {
-      "eid": "e722",
+      "eid": "e741",
       "role": "link",
       "name": "Accessibility for Manitobans Act",
       "fp": "link|Accessibility for Manitobans Act|0",
@@ -9428,7 +9686,7 @@
       "fillable": false
     },
     {
-      "eid": "e723",
+      "eid": "e742",
       "role": "link",
       "name": "Accessibility for Ontarians with Disabilities Act, 2005",
       "fp": "link|Accessibility for Ontarians with Disabilities Act, 2005|1",
@@ -9441,7 +9699,7 @@
       "fillable": false
     },
     {
-      "eid": "e724",
+      "eid": "e743",
       "role": "link",
       "name": "Accessible Saskatchewan Act",
       "fp": "link|Accessible Saskatchewan Act|0",
@@ -9454,7 +9712,7 @@
       "fillable": false
     },
     {
-      "eid": "e725",
+      "eid": "e744",
       "role": "link",
       "name": "Americans with Disabilities Act of 1990",
       "fp": "link|Americans with Disabilities Act of 1990|2",
@@ -9467,7 +9725,7 @@
       "fillable": false
     },
     {
-      "eid": "e726",
+      "eid": "e745",
       "role": "link",
       "name": "Anti-Discrimination Act 1977",
       "fp": "link|Anti-Discrimination Act 1977|0",
@@ -9480,7 +9738,7 @@
       "fillable": false
     },
     {
-      "eid": "e727",
+      "eid": "e746",
       "role": "link",
       "name": "Anti-Discrimination Act 1991",
       "fp": "link|Anti-Discrimination Act 1991|0",
@@ -9493,7 +9751,7 @@
       "fillable": false
     },
     {
-      "eid": "e728",
+      "eid": "e747",
       "role": "link",
       "name": "Twenty-First Century Communications and Video Accessibility Act of 2010",
       "fp": "link|Twenty-First Century Communications and Video Accessibility Act of 2010|0",
@@ -9506,7 +9764,7 @@
       "fillable": false
     },
     {
-      "eid": "e729",
+      "eid": "e748",
       "role": "link",
       "name": "Disability Discrimination Act 1992",
       "fp": "link|Disability Discrimination Act 1992|2",
@@ -9519,7 +9777,7 @@
       "fillable": false
     },
     {
-      "eid": "e730",
+      "eid": "e749",
       "role": "link",
       "name": "Disability Discrimination Act (Switzerland)",
       "fp": "link|Disability Discrimination Act (Switzerland)|1",
@@ -9532,7 +9790,7 @@
       "fillable": false
     },
     {
-      "eid": "e731",
+      "eid": "e750",
       "role": "link",
       "name": "Disability Discrimination Act 1995",
       "fp": "link|Disability Discrimination Act 1995|1",
@@ -9545,7 +9803,7 @@
       "fillable": false
     },
     {
-      "eid": "e732",
+      "eid": "e751",
       "role": "link",
       "name": "Convention on the Rights of Persons with Disabilities",
       "fp": "link|Convention on the Rights of Persons with Disabilities|1",
@@ -9558,7 +9816,7 @@
       "fillable": false
     },
     {
-      "eid": "e733",
+      "eid": "e752",
       "role": "link",
       "name": "European Accessibility Act",
       "fp": "link|European Accessibility Act|3",
@@ -9571,7 +9829,7 @@
       "fillable": false
     },
     {
-      "eid": "e734",
+      "eid": "e753",
       "role": "link",
       "name": "Declaration on the Rights of Disabled Persons",
       "fp": "link|Declaration on the Rights of Disabled Persons|0",
@@ -9584,7 +9842,7 @@
       "fillable": false
     },
     {
-      "eid": "e735",
+      "eid": "e754",
       "role": "link",
       "name": "Inter-American Convention on the Elimination of all Forms of Discrimination Against Persons with Disabilities",
       "fp": "link|Inter-American Convention on the Elimination of all Forms of Discrimination Against Persons with Disabilities|1",
@@ -9597,7 +9855,7 @@
       "fillable": false
     },
     {
-      "eid": "e736",
+      "eid": "e755",
       "role": "link",
       "name": "International Classification of Functioning, Disability and Health",
       "fp": "link|International Classification of Functioning, Disability and Health|0",
@@ -9610,7 +9868,7 @@
       "fillable": false
     },
     {
-      "eid": "e737",
+      "eid": "e756",
       "role": "link",
       "name": "Promotion of Equality and Prevention of Unfair Discrimination Act, 2000",
       "fp": "link|Promotion of Equality and Prevention of Unfair Discrimination Act, 2000|1",
@@ -9623,7 +9881,7 @@
       "fillable": false
     },
     {
-      "eid": "e738",
+      "eid": "e757",
       "role": "link",
       "name": "Section 504 of the Rehabilitation Act",
       "fp": "link|Section 504 of the Rehabilitation Act|2",
@@ -9636,7 +9894,7 @@
       "fillable": false
     },
     {
-      "eid": "e739",
+      "eid": "e758",
       "role": "link",
       "name": "Services for mental disorders",
       "fp": "link|Services for mental disorders|0",
@@ -9649,7 +9907,7 @@
       "fillable": false
     },
     {
-      "eid": "e740",
+      "eid": "e759",
       "role": "link",
       "name": "Services and supports for people with disabilities",
       "fp": "link|Services and supports for people with disabilities|0",
@@ -9662,7 +9920,7 @@
       "fillable": false
     },
     {
-      "eid": "e741",
+      "eid": "e760",
       "role": "link",
       "name": "Disability Living Allowance",
       "fp": "link|Disability Living Allowance|1",
@@ -9675,7 +9933,7 @@
       "fillable": false
     },
     {
-      "eid": "e742",
+      "eid": "e761",
       "role": "link",
       "name": "Ontario Disability Support Program",
       "fp": "link|Ontario Disability Support Program|1",
@@ -9688,7 +9946,7 @@
       "fillable": false
     },
     {
-      "eid": "e743",
+      "eid": "e762",
       "role": "link",
       "name": "Disabled Persons Railcard",
       "fp": "link|Disabled Persons Railcard|1",
@@ -9701,7 +9959,7 @@
       "fillable": false
     },
     {
-      "eid": "e744",
+      "eid": "e763",
       "role": "link",
       "name": "Social Security Disability Insurance",
       "fp": "link|Social Security Disability Insurance|1",
@@ -9714,7 +9972,7 @@
       "fillable": false
     },
     {
-      "eid": "e745",
+      "eid": "e764",
       "role": "link",
       "name": "Supplemental Security Income",
       "fp": "link|Supplemental Security Income|1",
@@ -9727,7 +9985,7 @@
       "fillable": false
     },
     {
-      "eid": "e746",
+      "eid": "e765",
       "role": "link",
       "name": "Disabled students allowance",
       "fp": "link|Disabled students allowance|0",
@@ -9740,7 +9998,7 @@
       "fillable": false
     },
     {
-      "eid": "e747",
+      "eid": "e766",
       "role": "link",
       "name": "CNIB Foundation",
       "fp": "link|CNIB Foundation|0",
@@ -9753,7 +10011,7 @@
       "fillable": false
     },
     {
-      "eid": "e748",
+      "eid": "e767",
       "role": "link",
       "name": "Council for Canadians with Disabilities",
       "fp": "link|Council for Canadians with Disabilities|0",
@@ -9766,7 +10024,7 @@
       "fillable": false
     },
     {
-      "eid": "e749",
+      "eid": "e768",
       "role": "link",
       "name": "Disabled Peoples' International",
       "fp": "link|Disabled Peoples' International|1",
@@ -9779,7 +10037,7 @@
       "fillable": false
     },
     {
-      "eid": "e750",
+      "eid": "e769",
       "role": "link",
       "name": "Movement for the Intellectually Disabled of Singapore",
       "fp": "link|Movement for the Intellectually Disabled of Singapore|0",
@@ -9792,7 +10050,7 @@
       "fillable": false
     },
     {
-      "eid": "e751",
+      "eid": "e770",
       "role": "link",
       "name": "Reach Canada",
       "fp": "link|Reach Canada|0",
@@ -9805,7 +10063,7 @@
       "fillable": false
     },
     {
-      "eid": "e752",
+      "eid": "e771",
       "role": "link",
       "name": "Accessible toilet",
       "fp": "link|Accessible toilet|1",
@@ -9818,7 +10076,7 @@
       "fillable": false
     },
     {
-      "eid": "e753",
+      "eid": "e772",
       "role": "link",
       "name": "Activities of daily living",
       "fp": "link|Activities of daily living|1",
@@ -9831,7 +10089,7 @@
       "fillable": false
     },
     {
-      "eid": "e754",
+      "eid": "e773",
       "role": "link",
       "name": "Assistance dog",
       "fp": "link|Assistance dog|0",
@@ -9844,7 +10102,7 @@
       "fillable": false
     },
     {
-      "eid": "e755",
+      "eid": "e774",
       "role": "link",
       "name": "Assistive technology",
       "fp": "link|Assistive technology|2",
@@ -9857,7 +10115,7 @@
       "fillable": false
     },
     {
-      "eid": "e756",
+      "eid": "e775",
       "role": "link",
       "name": "Curb cut",
       "fp": "link|Curb cut|0",
@@ -9870,7 +10128,7 @@
       "fillable": false
     },
     {
-      "eid": "e757",
+      "eid": "e776",
       "role": "link",
       "name": "Curb cut effect",
       "fp": "link|Curb cut effect|2",
@@ -9883,7 +10141,7 @@
       "fillable": false
     },
     {
-      "eid": "e758",
+      "eid": "e777",
       "role": "link",
       "name": "Inclusive design",
       "fp": "link|Inclusive design|1",
@@ -9896,7 +10154,7 @@
       "fillable": false
     },
     {
-      "eid": "e759",
+      "eid": "e778",
       "role": "link",
       "name": "Independent living",
       "fp": "link|Independent living|0",
@@ -9909,7 +10167,7 @@
       "fillable": false
     },
     {
-      "eid": "e760",
+      "eid": "e779",
       "role": "link",
       "name": "Mobility aid",
       "fp": "link|Mobility aid|1",
@@ -9922,7 +10180,7 @@
       "fillable": false
     },
     {
-      "eid": "e761",
+      "eid": "e780",
       "role": "link",
       "name": "Orthotics",
       "fp": "link|Orthotics|1",
@@ -9935,7 +10193,7 @@
       "fillable": false
     },
     {
-      "eid": "e762",
+      "eid": "e781",
       "role": "link",
       "name": "Unlicensed assistive personnel",
       "fp": "link|Unlicensed assistive personnel|1",
@@ -9948,7 +10206,7 @@
       "fillable": false
     },
     {
-      "eid": "e763",
+      "eid": "e782",
       "role": "link",
       "name": "Accessibility",
       "fp": "link|Accessibility|4",
@@ -9961,7 +10219,7 @@
       "fillable": false
     },
     {
-      "eid": "e764",
+      "eid": "e783",
       "role": "link",
       "name": "Prosthesis",
       "fp": "link|Prosthesis|1",
@@ -9974,7 +10232,7 @@
       "fillable": false
     },
     {
-      "eid": "e765",
+      "eid": "e784",
       "role": "link",
       "name": "Redundant elevators",
       "fp": "link|Redundant elevators|0",
@@ -9987,7 +10245,7 @@
       "fillable": false
     },
     {
-      "eid": "e766",
+      "eid": "e785",
       "role": "link",
       "name": "Universal design",
       "fp": "link|Universal design|2",
@@ -10000,10 +10258,10 @@
       "fillable": false
     },
     {
-      "eid": "e767",
+      "eid": "e786",
       "role": "link",
       "name": "Web accessibility",
-      "fp": "link|Web accessibility|1",
+      "fp": "link|Web accessibility|2",
       "rect": {
         "x": 461,
         "y": 19027,
@@ -10013,7 +10271,7 @@
       "fillable": false
     },
     {
-      "eid": "e768",
+      "eid": "e787",
       "role": "link",
       "name": "Augmentative and alternative communication",
       "fp": "link|Augmentative and alternative communication|1",
@@ -10026,7 +10284,7 @@
       "fillable": false
     },
     {
-      "eid": "e769",
+      "eid": "e788",
       "role": "link",
       "name": "Conscription of people with disabilities",
       "fp": "link|Conscription of people with disabilities|0",
@@ -10039,7 +10297,7 @@
       "fillable": false
     },
     {
-      "eid": "e770",
+      "eid": "e789",
       "role": "link",
       "name": "Emotional or behavioral disability",
       "fp": "link|Emotional or behavioral disability|0",
@@ -10052,7 +10310,7 @@
       "fillable": false
     },
     {
-      "eid": "e771",
+      "eid": "e790",
       "role": "link",
       "name": "Invisible disability",
       "fp": "link|Invisible disability|0",
@@ -10065,7 +10323,7 @@
       "fillable": false
     },
     {
-      "eid": "e772",
+      "eid": "e791",
       "role": "link",
       "name": "Disability and disasters",
       "fp": "link|Disability and disasters|0",
@@ -10078,7 +10336,7 @@
       "fillable": false
     },
     {
-      "eid": "e773",
+      "eid": "e792",
       "role": "link",
       "name": "Disability and LGBT identities",
       "fp": "link|Disability and LGBT identities|0",
@@ -10091,7 +10349,7 @@
       "fillable": false
     },
     {
-      "eid": "e774",
+      "eid": "e793",
       "role": "link",
       "name": "Disability and religion",
       "fp": "link|Disability and religion|0",
@@ -10104,7 +10362,7 @@
       "fillable": false
     },
     {
-      "eid": "e775",
+      "eid": "e794",
       "role": "link",
       "name": "Disability and poverty",
       "fp": "link|Disability and poverty|0",
@@ -10117,7 +10375,7 @@
       "fillable": false
     },
     {
-      "eid": "e776",
+      "eid": "e795",
       "role": "link",
       "name": "Disproportionality in special education",
       "fp": "link|Disproportionality in special education|0",
@@ -10130,7 +10388,7 @@
       "fillable": false
     },
     {
-      "eid": "e777",
+      "eid": "e796",
       "role": "link",
       "name": "Sexuality and disability",
       "fp": "link|Sexuality and disability|1",
@@ -10143,7 +10401,7 @@
       "fillable": false
     },
     {
-      "eid": "e778",
+      "eid": "e797",
       "role": "link",
       "name": "Youth and disability",
       "fp": "link|Youth and disability|0",
@@ -10156,7 +10414,7 @@
       "fillable": false
     },
     {
-      "eid": "e779",
+      "eid": "e798",
       "role": "link",
       "name": "Models of disability",
       "fp": "link|Models of disability|1",
@@ -10169,7 +10427,7 @@
       "fillable": false
     },
     {
-      "eid": "e780",
+      "eid": "e799",
       "role": "link",
       "name": "Inspiration porn",
       "fp": "link|Inspiration porn|0",
@@ -10182,7 +10440,7 @@
       "fillable": false
     },
     {
-      "eid": "e781",
+      "eid": "e800",
       "role": "link",
       "name": "Bodymind (disability studies)",
       "fp": "link|Bodymind (disability studies)|0",
@@ -10195,7 +10453,7 @@
       "fillable": false
     },
     {
-      "eid": "e782",
+      "eid": "e801",
       "role": "link",
       "name": "Crip (disability term)",
       "fp": "link|Crip (disability term)|0",
@@ -10208,7 +10466,7 @@
       "fillable": false
     },
     {
-      "eid": "e783",
+      "eid": "e802",
       "role": "link",
       "name": "Neuroqueer theory",
       "fp": "link|Neuroqueer theory|0",
@@ -10221,7 +10479,7 @@
       "fillable": false
     },
     {
-      "eid": "e784",
+      "eid": "e803",
       "role": "link",
       "name": "Deaf studies",
       "fp": "link|Deaf studies|0",
@@ -10234,7 +10492,7 @@
       "fillable": false
     },
     {
-      "eid": "e785",
+      "eid": "e804",
       "role": "link",
       "name": "Eugenics",
       "fp": "link|Eugenics|0",
@@ -10247,7 +10505,7 @@
       "fillable": false
     },
     {
-      "eid": "e786",
+      "eid": "e805",
       "role": "link",
       "name": "Disability anthropology",
       "fp": "link|Disability anthropology|0",
@@ -10260,7 +10518,7 @@
       "fillable": false
     },
     {
-      "eid": "e787",
+      "eid": "e806",
       "role": "link",
       "name": "Geography of disability",
       "fp": "link|Geography of disability|0",
@@ -10273,7 +10531,7 @@
       "fillable": false
     },
     {
-      "eid": "e788",
+      "eid": "e807",
       "role": "link",
       "name": "Disability studies in education",
       "fp": "link|Disability studies in education|0",
@@ -10286,7 +10544,7 @@
       "fillable": false
     },
     {
-      "eid": "e789",
+      "eid": "e808",
       "role": "link",
       "name": "List of disability studies journals",
       "fp": "link|List of disability studies journals|0",
@@ -10299,7 +10557,7 @@
       "fillable": false
     },
     {
-      "eid": "e790",
+      "eid": "e809",
       "role": "link",
       "name": "Disability culture",
       "fp": "link|Disability culture|1",
@@ -10312,7 +10570,7 @@
       "fillable": false
     },
     {
-      "eid": "e791",
+      "eid": "e810",
       "role": "link",
       "name": "Disability art",
       "fp": "link|Disability art|1",
@@ -10325,7 +10583,7 @@
       "fillable": false
     },
     {
-      "eid": "e792",
+      "eid": "e811",
       "role": "link",
       "name": "Disability in the arts",
       "fp": "link|Disability in the arts|1",
@@ -10338,7 +10596,7 @@
       "fillable": false
     },
     {
-      "eid": "e793",
+      "eid": "e812",
       "role": "link",
       "name": "Disability in children's literature",
       "fp": "link|Disability in children's literature|0",
@@ -10351,7 +10609,7 @@
       "fillable": false
     },
     {
-      "eid": "e794",
+      "eid": "e813",
       "role": "link",
       "name": "Disability in horror films",
       "fp": "link|Disability in horror films|0",
@@ -10364,7 +10622,7 @@
       "fillable": false
     },
     {
-      "eid": "e795",
+      "eid": "e814",
       "role": "link",
       "name": "Disability in the media",
       "fp": "link|Disability in the media|1",
@@ -10377,7 +10635,7 @@
       "fillable": false
     },
     {
-      "eid": "e796",
+      "eid": "e815",
       "role": "link",
       "name": "Parasports",
       "fp": "link|Parasports|1",
@@ -10390,7 +10648,7 @@
       "fillable": false
     },
     {
-      "eid": "e797",
+      "eid": "e816",
       "role": "link",
       "name": "Deaflympics",
       "fp": "link|Deaflympics|1",
@@ -10403,7 +10661,7 @@
       "fillable": false
     },
     {
-      "eid": "e798",
+      "eid": "e817",
       "role": "link",
       "name": "Paralympic Games",
       "fp": "link|Paralympic Games|1",
@@ -10416,7 +10674,7 @@
       "fillable": false
     },
     {
-      "eid": "e799",
+      "eid": "e818",
       "role": "link",
       "name": "Special Olympics",
       "fp": "link|Special Olympics|1",
@@ -10429,7 +10687,7 @@
       "fillable": false
     },
     {
-      "eid": "e800",
+      "eid": "e819",
       "role": "link",
       "name": "Category:Disability",
       "fp": "link|Category:Disability|1",
@@ -10442,7 +10700,7 @@
       "fillable": false
     },
     {
-      "eid": "e801",
+      "eid": "e820",
       "role": "link",
       "name": "Category:Disability-related lists",
       "fp": "link|Category:Disability-related lists|1",
@@ -10455,7 +10713,7 @@
       "fillable": false
     },
     {
-      "eid": "e802",
+      "eid": "e821",
       "role": "link",
       "name": "Help:Category",
       "fp": "link|Help:Category|0",
@@ -10468,7 +10726,7 @@
       "fillable": false
     },
     {
-      "eid": "e803",
+      "eid": "e822",
       "role": "link",
       "name": "Category:Web accessibility",
       "fp": "link|Category:Web accessibility|0",
@@ -10481,7 +10739,7 @@
       "fillable": false
     },
     {
-      "eid": "e804",
+      "eid": "e823",
       "role": "link",
       "name": "Category:Accessible information",
       "fp": "link|Category:Accessible information|0",
@@ -10494,7 +10752,7 @@
       "fillable": false
     },
     {
-      "eid": "e805",
+      "eid": "e824",
       "role": "link",
       "name": "Category:Web design",
       "fp": "link|Category:Web design|0",
@@ -10507,7 +10765,7 @@
       "fillable": false
     },
     {
-      "eid": "e806",
+      "eid": "e825",
       "role": "link",
       "name": "Category:Usability",
       "fp": "link|Category:Usability|0",
@@ -10520,7 +10778,7 @@
       "fillable": false
     },
     {
-      "eid": "e807",
+      "eid": "e826",
       "role": "link",
       "name": "mw:Special:MyLanguage/Parsoid",
       "ctx": "footer",
@@ -10534,7 +10792,7 @@
       "fillable": false
     },
     {
-      "eid": "e808",
+      "eid": "e827",
       "role": "link",
       "name": "Wikipedia:Text of the Creative Commons Attribution-ShareAlike 4.0 International License",
       "ctx": "footer",
@@ -10548,7 +10806,7 @@
       "fillable": false
     },
     {
-      "eid": "e809",
+      "eid": "e828",
       "role": "link",
       "name": "foundation:Special:MyLanguage/Policy:Terms of Use",
       "ctx": "footer",
@@ -10562,7 +10820,7 @@
       "fillable": false
     },
     {
-      "eid": "e810",
+      "eid": "e829",
       "role": "link",
       "name": "foundation:Special:MyLanguage/Policy:Privacy policy",
       "ctx": "footer",
@@ -10576,7 +10834,7 @@
       "fillable": false
     },
     {
-      "eid": "e811",
+      "eid": "e830",
       "role": "link",
       "name": "Wikimedia Foundation, Inc.",
       "ctx": "footer",
@@ -10590,7 +10848,7 @@
       "fillable": false
     },
     {
-      "eid": "e812",
+      "eid": "e831",
       "role": "link",
       "name": "Privacy policy",
       "ctx": "footer",
@@ -10604,7 +10862,7 @@
       "fillable": false
     },
     {
-      "eid": "e813",
+      "eid": "e832",
       "role": "link",
       "name": "About Wikipedia",
       "ctx": "footer",
@@ -10618,7 +10876,7 @@
       "fillable": false
     },
     {
-      "eid": "e814",
+      "eid": "e833",
       "role": "link",
       "name": "Disclaimers",
       "ctx": "footer",
@@ -10632,7 +10890,7 @@
       "fillable": false
     },
     {
-      "eid": "e815",
+      "eid": "e834",
       "role": "link",
       "name": "Contact Wikipedia",
       "ctx": "footer",
@@ -10646,7 +10904,7 @@
       "fillable": false
     },
     {
-      "eid": "e816",
+      "eid": "e835",
       "role": "link",
       "name": "Legal & safety contacts",
       "ctx": "footer",
@@ -10660,7 +10918,7 @@
       "fillable": false
     },
     {
-      "eid": "e817",
+      "eid": "e836",
       "role": "link",
       "name": "Code of Conduct",
       "ctx": "footer",
@@ -10674,7 +10932,7 @@
       "fillable": false
     },
     {
-      "eid": "e818",
+      "eid": "e837",
       "role": "link",
       "name": "Developers",
       "ctx": "footer",
@@ -10688,7 +10946,7 @@
       "fillable": false
     },
     {
-      "eid": "e819",
+      "eid": "e838",
       "role": "link",
       "name": "Statistics",
       "ctx": "footer",
@@ -10702,7 +10960,7 @@
       "fillable": false
     },
     {
-      "eid": "e820",
+      "eid": "e839",
       "role": "link",
       "name": "Cookie statement",
       "ctx": "footer",
@@ -10716,7 +10974,7 @@
       "fillable": false
     },
     {
-      "eid": "e821",
+      "eid": "e840",
       "role": "link",
       "name": "Mobile view",
       "ctx": "footer",
@@ -10730,7 +10988,7 @@
       "fillable": false
     },
     {
-      "eid": "e822",
+      "eid": "e841",
       "role": "link",
       "name": "Wikimedia Foundation",
       "ctx": "footer",
@@ -10744,7 +11002,7 @@
       "fillable": false
     },
     {
-      "eid": "e823",
+      "eid": "e842",
       "role": "link",
       "name": "Powered by MediaWiki",
       "ctx": "footer",
@@ -10759,6 +11017,6 @@
     }
   ],
   "text": "Web accessibility 25 languages Article Talk Read Edit View history Tools Appearance hide Text Small Standard Large Width",
-  "contentHash": "lrtdts",
+  "contentHash": "1cyzswy",
   "totalCandidates": 1014
 }

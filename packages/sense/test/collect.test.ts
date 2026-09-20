@@ -1,7 +1,7 @@
 // @vitest-environment happy-dom
 import { beforeEach, describe, expect, it } from "vitest";
 import { collectSnapshot } from "../src/collect.js";
-import { rankElements, rankOf, tokenize } from "../src/rank.js";
+import { rankElements, rankedSnapshot, rankOf, tokenize } from "../src/rank.js";
 
 /**
  * happy-dom lays nothing out, so every rect is 0x0 and the visibility filter would
@@ -135,5 +135,52 @@ describe("rank", () => {
     const beta = raw.elements.find((e) => e.name === "Beta");
     expect(rankOf(raw, "click beta", beta?.eid ?? "")).toBe(0);
     expect(rankOf(raw, "anything", "nope")).toBe(-1);
+  });
+});
+
+describe("rankedSnapshot", () => {
+  it("keeps the ranked selection but presents it in document order", () => {
+    document.body.innerHTML = `
+      <a href="/1">Alpha story</a>
+      <a href="/2">Beta story</a>
+      <a href="/3">Pricing</a>`;
+    const raw = collectSnapshot();
+    // Ranking floats "Pricing" to the top for this intent...
+    expect(rankElements(raw, "open pricing")[0]?.name).toBe("Pricing");
+    // ...but the snapshot the model sees must still run in page order, or an intent
+    // like "open the first story" has no way to be answered.
+    const snap = rankedSnapshot(raw, "open pricing");
+    expect(snap.elements.map((e) => e.name)).toEqual(["Alpha story", "Beta story", "Pricing"]);
+  });
+
+  it("still drops everything past the cap", () => {
+    document.body.innerHTML = Array.from({ length: 30 }, (_, i) => `<a href="/${i}">Link ${i}</a>`).join("");
+    const snap = rankedSnapshot(collectSnapshot(), "link 7", 5);
+    expect(snap.elements).toHaveLength(5);
+  });
+});
+
+describe("dedupe", () => {
+  it("keeps result links inside a container whose text contains them", () => {
+    // GitHub/Stack Overflow shape: a clickable row wrapping the real result link.
+    // A naive "parent text includes mine" rule deletes every result on the page.
+    document.body.innerHTML = `
+      <div role="listitem" onclick="x()">
+        <a href="/a">How do I await a Playwright locator</a>
+        <span>42 votes</span>
+      </div>
+      <div role="listitem" onclick="x()">
+        <a href="/b">Why does my selector time out</a>
+      </div>`;
+    const names = collectSnapshot().elements.map((e) => e.name);
+    expect(names).toContain("How do I await a Playwright locator");
+    expect(names).toContain("Why does my selector time out");
+  });
+
+  it("still collapses a button wrapping its own label", () => {
+    document.body.innerHTML = `<button><span>Submit application</span></button>`;
+    const hits = collectSnapshot().elements.filter((e) => e.name.includes("Submit application"));
+    expect(hits).toHaveLength(1);
+    expect(hits[0]?.role).toBe("button");
   });
 });

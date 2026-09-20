@@ -39,6 +39,95 @@
     {
       "eid": "e3",
       "role": "button",
+      "name": "Platform",
+      "ctx": "nav: Global",
+      "st": "collapsed",
+      "fp": "button|Platform|0",
+      "rect": {
+        "x": 80,
+        "y": 16,
+        "w": 101,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "button",
+      "name": "Solutions",
+      "ctx": "nav: Global",
+      "st": "collapsed",
+      "fp": "button|Solutions|0",
+      "rect": {
+        "x": 181,
+        "y": 16,
+        "w": 107,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "button",
+      "name": "Resources",
+      "ctx": "nav: Global",
+      "st": "collapsed",
+      "fp": "button|Resources|0",
+      "rect": {
+        "x": 289,
+        "y": 16,
+        "w": 116,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "button",
+      "name": "Open Source",
+      "ctx": "nav: Global",
+      "st": "collapsed",
+      "fp": "button|Open Source|0",
+      "rect": {
+        "x": 405,
+        "y": 16,
+        "w": 135,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "button",
+      "name": "Enterprise",
+      "ctx": "nav: Global",
+      "st": "collapsed",
+      "fp": "button|Enterprise|0",
+      "rect": {
+        "x": 540,
+        "y": 16,
+        "w": 115,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "Pricing",
+      "ctx": "nav: Global",
+      "fp": "link|Pricing|0",
+      "rect": {
+        "x": 654,
+        "y": 16,
+        "w": 69,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "button",
       "name": "Search or jump to, type / to search",
       "ctx": "header",
       "st": "collapsed",
@@ -52,7 +141,35 @@
       "fillable": false
     },
     {
-      "eid": "e4",
+      "eid": "e10",
+      "role": "link",
+      "name": "Sign in",
+      "ctx": "header",
+      "fp": "link|Sign in|0",
+      "rect": {
+        "x": 1051,
+        "y": 20,
+        "w": 72,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "Sign in",
+      "ctx": "header",
+      "fp": "link|Sign in|1",
+      "rect": {
+        "x": 1131,
+        "y": 20,
+        "w": 77,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
       "role": "button",
       "name": "Appearance settings",
       "ctx": "header",
@@ -66,7 +183,7 @@
       "fillable": false
     },
     {
-      "eid": "e5",
+      "eid": "e13",
       "role": "region",
       "name": "Filter by",
       "ctx": "repositories Search Results · browser agent",
@@ -80,7 +197,7 @@
       "fillable": false
     },
     {
-      "eid": "e6",
+      "eid": "e14",
       "role": "link",
       "name": "Code ... (...)results",
       "fp": "link|Code ... (...)results|0",
@@ -93,7 +210,7 @@
       "fillable": false
     },
     {
-      "eid": "e7",
+      "eid": "e15",
       "role": "link",
       "name": "Repositories 16.9k (16.9k)results",
       "fp": "link|Repositories 16.9k (16.9k)results|0",
@@ -106,7 +223,7 @@
       "fillable": false
     },
     {
-      "eid": "e8",
+      "eid": "e16",
       "role": "link",
       "name": "Issues 557k (557k)results",
       "fp": "link|Issues 557k (557k)results|0",
@@ -119,7 +236,7 @@
       "fillable": false
     },
     {
-      "eid": "e9",
+      "eid": "e17",
       "role": "link",
       "name": "Pull requests 2.1M (2.1M)results",
       "fp": "link|Pull requests 2.1M (2.1M)results|0",
@@ -132,7 +249,7 @@
       "fillable": false
     },
     {
-      "eid": "e10",
+      "eid": "e18",
       "role": "link",
       "name": "Discussions 11.8k (11.8k)results",
       "fp": "link|Discussions 11.8k (11.8k)results|0",
@@ -145,7 +262,7 @@
       "fillable": false
     },
     {
-      "eid": "e11",
+      "eid": "e19",
       "role": "link",
       "name": "Users 220 (220)results",
       "fp": "link|Users 220 (220)results|0",
@@ -158,7 +275,7 @@
       "fillable": false
     },
     {
-      "eid": "e12",
+      "eid": "e20",
       "role": "button",
       "name": "More",
       "fp": "button|More|0",
@@ -171,7 +288,7 @@
       "fillable": false
     },
     {
-      "eid": "e13",
+      "eid": "e21",
       "role": "link",
       "name": "Python",
       "fp": "link|Python|0",
@@ -184,7 +301,7 @@
       "fillable": false
     },
     {
-      "eid": "e14",
+      "eid": "e22",
       "role": "link",
       "name": "TypeScript",
       "fp": "link|TypeScript|0",
@@ -197,7 +314,7 @@
       "fillable": false
     },
     {
-      "eid": "e15",
+      "eid": "e23",
       "role": "link",
       "name": "JavaScript",
       "fp": "link|JavaScript|0",
@@ -210,7 +327,7 @@
       "fillable": false
     },
     {
-      "eid": "e16",
+      "eid": "e24",
       "role": "link",
       "name": "HTML",
       "fp": "link|HTML|0",
@@ -223,7 +340,7 @@
       "fillable": false
     },
     {
-      "eid": "e17",
+      "eid": "e25",
       "role": "link",
       "name": "Rust",
       "fp": "link|Rust|0",
@@ -236,7 +353,7 @@
       "fillable": false
     },
     {
-      "eid": "e18",
+      "eid": "e26",
       "role": "link",
       "name": "Go",
       "fp": "link|Go|0",
@@ -249,7 +366,7 @@
       "fillable": false
     },
     {
-      "eid": "e19",
+      "eid": "e27",
       "role": "link",
       "name": "Shell",
       "fp": "link|Shell|0",
@@ -262,7 +379,7 @@
       "fillable": false
     },
     {
-      "eid": "e20",
+      "eid": "e28",
       "role": "link",
       "name": "PHP",
       "fp": "link|PHP|0",
@@ -275,7 +392,7 @@
       "fillable": false
     },
     {
-      "eid": "e21",
+      "eid": "e29",
       "role": "link",
       "name": "Jupyter Notebook",
       "fp": "link|Jupyter Notebook|0",
@@ -288,7 +405,7 @@
       "fillable": false
     },
     {
-      "eid": "e22",
+      "eid": "e30",
       "role": "link",
       "name": "Java",
       "fp": "link|Java|0",
@@ -301,7 +418,7 @@
       "fillable": false
     },
     {
-      "eid": "e23",
+      "eid": "e31",
       "role": "button",
       "name": "More languages...",
       "fp": "button|More languages...|0",
@@ -314,7 +431,7 @@
       "fillable": false
     },
     {
-      "eid": "e24",
+      "eid": "e32",
       "role": "button",
       "name": "Owner",
       "fp": "button|Owner|0",
@@ -327,7 +444,7 @@
       "fillable": false
     },
     {
-      "eid": "e25",
+      "eid": "e33",
       "role": "button",
       "name": "Size",
       "fp": "button|Size|0",
@@ -340,7 +457,7 @@
       "fillable": false
     },
     {
-      "eid": "e26",
+      "eid": "e34",
       "role": "button",
       "name": "Number of followers",
       "fp": "button|Number of followers|0",
@@ -353,7 +470,7 @@
       "fillable": false
     },
     {
-      "eid": "e27",
+      "eid": "e35",
       "role": "button",
       "name": "Number of forks",
       "fp": "button|Number of forks|0",
@@ -366,7 +483,7 @@
       "fillable": false
     },
     {
-      "eid": "e28",
+      "eid": "e36",
       "role": "button",
       "name": "Number of stars",
       "fp": "button|Number of stars|0",
@@ -379,7 +496,7 @@
       "fillable": false
     },
     {
-      "eid": "e29",
+      "eid": "e37",
       "role": "button",
       "name": "Date created",
       "fp": "button|Date created|0",
@@ -392,7 +509,7 @@
       "fillable": false
     },
     {
-      "eid": "e30",
+      "eid": "e38",
       "role": "button",
       "name": "Date pushed",
       "fp": "button|Date pushed|0",
@@ -405,7 +522,7 @@
       "fillable": false
     },
     {
-      "eid": "e31",
+      "eid": "e39",
       "role": "button",
       "name": "Topic",
       "fp": "button|Topic|0",
@@ -418,7 +535,7 @@
       "fillable": false
     },
     {
-      "eid": "e32",
+      "eid": "e40",
       "role": "button",
       "name": "License",
       "fp": "button|License|0",
@@ -431,7 +548,7 @@
       "fillable": false
     },
     {
-      "eid": "e33",
+      "eid": "e41",
       "role": "button",
       "name": "Archived",
       "fp": "button|Archived|0",
@@ -444,7 +561,7 @@
       "fillable": false
     },
     {
-      "eid": "e34",
+      "eid": "e42",
       "role": "link",
       "name": "Public",
       "fp": "link|Public|0",
@@ -457,7 +574,7 @@
       "fillable": false
     },
     {
-      "eid": "e35",
+      "eid": "e43",
       "role": "link",
       "name": "Private",
       "fp": "link|Private|0",
@@ -470,7 +587,7 @@
       "fillable": false
     },
     {
-      "eid": "e36",
+      "eid": "e44",
       "role": "link",
       "name": "Advanced search",
       "fp": "link|Advanced search|0",
@@ -483,7 +600,7 @@
       "fillable": false
     },
     {
-      "eid": "e37",
+      "eid": "e45",
       "role": "slider",
       "name": "Draggable pane splitter",
       "ctx": "repositories Search Results · browser agent",
@@ -497,7 +614,7 @@
       "fillable": false
     },
     {
-      "eid": "e38",
+      "eid": "e46",
       "role": "button",
       "name": "Sort by: Best match",
       "st": "collapsed",
@@ -511,7 +628,7 @@
       "fillable": false
     },
     {
-      "eid": "e39",
+      "eid": "e47",
       "role": "button",
       "name": "Open column options",
       "st": "collapsed",
@@ -525,7 +642,7 @@
       "fillable": false
     },
     {
-      "eid": "e40",
+      "eid": "e48",
       "role": "link",
       "name": "browser-use/browser-use",
       "fp": "link|browser-use/browser-use|0",
@@ -538,7 +655,7 @@
       "fillable": false
     },
     {
-      "eid": "e41",
+      "eid": "e49",
       "role": "link",
       "name": "python",
       "ctx": "browser-use/browser-use",
@@ -552,7 +669,7 @@
       "fillable": false
     },
     {
-      "eid": "e42",
+      "eid": "e50",
       "role": "link",
       "name": "browser-automation",
       "ctx": "browser-use/browser-use",
@@ -566,7 +683,7 @@
       "fillable": false
     },
     {
-      "eid": "e43",
+      "eid": "e51",
       "role": "link",
       "name": "ai-agents",
       "ctx": "browser-use/browser-use",
@@ -580,7 +697,7 @@
       "fillable": false
     },
     {
-      "eid": "e44",
+      "eid": "e52",
       "role": "link",
       "name": "playwright",
       "ctx": "browser-use/browser-use",
@@ -594,7 +711,7 @@
       "fillable": false
     },
     {
-      "eid": "e45",
+      "eid": "e53",
       "role": "link",
       "name": "ai-tools",
       "ctx": "browser-use/browser-use",
@@ -608,11 +725,11 @@
       "fillable": false
     },
     {
-      "eid": "e46",
+      "eid": "e54",
       "role": "link",
-      "name": "115471 stars",
+      "name": "115478 stars",
       "ctx": "browser-use/browser-use",
-      "fp": "link|115471 stars|0",
+      "fp": "link|115478 stars|0",
       "rect": {
         "x": 416,
         "y": 239,
@@ -622,7 +739,7 @@
       "fillable": false
     },
     {
-      "eid": "e47",
+      "eid": "e55",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|0",
@@ -635,7 +752,7 @@
       "fillable": false
     },
     {
-      "eid": "e48",
+      "eid": "e56",
       "role": "link",
       "name": "reworkd/AgentGPT",
       "fp": "link|reworkd/AgentGPT|0",
@@ -648,7 +765,7 @@
       "fillable": false
     },
     {
-      "eid": "e49",
+      "eid": "e57",
       "role": "link",
       "name": "agent",
       "ctx": "reworkd/AgentGPTPublic archive",
@@ -662,7 +779,7 @@
       "fillable": false
     },
     {
-      "eid": "e50",
+      "eid": "e58",
       "role": "link",
       "name": "ai",
       "ctx": "reworkd/AgentGPTPublic archive",
@@ -676,7 +793,7 @@
       "fillable": false
     },
     {
-      "eid": "e51",
+      "eid": "e59",
       "role": "link",
       "name": "agi",
       "ctx": "reworkd/AgentGPTPublic archive",
@@ -690,7 +807,7 @@
       "fillable": false
     },
     {
-      "eid": "e52",
+      "eid": "e60",
       "role": "link",
       "name": "openai",
       "ctx": "reworkd/AgentGPTPublic archive",
@@ -704,7 +821,7 @@
       "fillable": false
     },
     {
-      "eid": "e53",
+      "eid": "e61",
       "role": "link",
       "name": "gpt",
       "ctx": "reworkd/AgentGPTPublic archive",
@@ -718,7 +835,7 @@
       "fillable": false
     },
     {
-      "eid": "e54",
+      "eid": "e62",
       "role": "link",
       "name": "36290 stars",
       "ctx": "reworkd/AgentGPTPublic archive",
@@ -732,7 +849,7 @@
       "fillable": false
     },
     {
-      "eid": "e55",
+      "eid": "e63",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|1",
@@ -745,7 +862,7 @@
       "fillable": false
     },
     {
-      "eid": "e56",
+      "eid": "e64",
       "role": "button",
       "name": "Sponsor reworkd/AgentGPT",
       "fp": "button|Sponsor reworkd/AgentGPT|0",
@@ -758,7 +875,7 @@
       "fillable": false
     },
     {
-      "eid": "e57",
+      "eid": "e65",
       "role": "link",
       "name": "vercel-labs/agent-browser",
       "fp": "link|vercel-labs/agent-browser|0",
@@ -771,11 +888,11 @@
       "fillable": false
     },
     {
-      "eid": "e58",
+      "eid": "e66",
       "role": "link",
-      "name": "42913 stars",
+      "name": "42916 stars",
       "ctx": "vercel-labs/agent-browser",
-      "fp": "link|42913 stars|0",
+      "fp": "link|42916 stars|0",
       "rect": {
         "x": 401,
         "y": 543,
@@ -785,7 +902,7 @@
       "fillable": false
     },
     {
-      "eid": "e59",
+      "eid": "e67",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|2",
@@ -798,7 +915,7 @@
       "fillable": false
     },
     {
-      "eid": "e60",
+      "eid": "e68",
       "role": "link",
       "name": "jenssegers/agent",
       "fp": "link|jenssegers/agent|0",
@@ -811,7 +928,7 @@
       "fillable": false
     },
     {
-      "eid": "e61",
+      "eid": "e69",
       "role": "link",
       "name": "platform",
       "ctx": "jenssegers/agent",
@@ -825,7 +942,7 @@
       "fillable": false
     },
     {
-      "eid": "e62",
+      "eid": "e70",
       "role": "link",
       "name": "browser",
       "ctx": "jenssegers/agent",
@@ -839,7 +956,7 @@
       "fillable": false
     },
     {
-      "eid": "e63",
+      "eid": "e71",
       "role": "link",
       "name": "robot",
       "ctx": "jenssegers/agent",
@@ -853,7 +970,7 @@
       "fillable": false
     },
     {
-      "eid": "e64",
+      "eid": "e72",
       "role": "link",
       "name": "user-agent",
       "ctx": "jenssegers/agent",
@@ -867,7 +984,7 @@
       "fillable": false
     },
     {
-      "eid": "e65",
+      "eid": "e73",
       "role": "link",
       "name": "accept-language",
       "ctx": "jenssegers/agent",
@@ -881,11 +998,11 @@
       "fillable": false
     },
     {
-      "eid": "e66",
+      "eid": "e74",
       "role": "link",
-      "name": "4868 stars",
+      "name": "4869 stars",
       "ctx": "jenssegers/agent",
-      "fp": "link|4868 stars|0",
+      "fp": "link|4869 stars|0",
       "rect": {
         "x": 400,
         "y": 754,
@@ -895,7 +1012,7 @@
       "fillable": false
     },
     {
-      "eid": "e67",
+      "eid": "e75",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|3",
@@ -908,7 +1025,7 @@
       "fillable": false
     },
     {
-      "eid": "e68",
+      "eid": "e76",
       "role": "button",
       "name": "Sponsor jenssegers/agent",
       "fp": "button|Sponsor jenssegers/agent|0",
@@ -921,7 +1038,7 @@
       "fillable": false
     },
     {
-      "eid": "e69",
+      "eid": "e77",
       "role": "link",
       "name": "Tencent/BrowserSkill",
       "fp": "link|Tencent/BrowserSkill|0",
@@ -934,7 +1051,7 @@
       "fillable": false
     },
     {
-      "eid": "e70",
+      "eid": "e78",
       "role": "link",
       "name": "agent",
       "ctx": "Tencent/BrowserSkill",
@@ -948,7 +1065,7 @@
       "fillable": false
     },
     {
-      "eid": "e71",
+      "eid": "e79",
       "role": "link",
       "name": "browser-use",
       "ctx": "Tencent/BrowserSkill",
@@ -962,7 +1079,7 @@
       "fillable": false
     },
     {
-      "eid": "e72",
+      "eid": "e80",
       "role": "link",
       "name": "dsh-plugin",
       "ctx": "Tencent/BrowserSkill",
@@ -976,21 +1093,21 @@
       "fillable": false
     },
     {
-      "eid": "e73",
+      "eid": "e81",
       "role": "link",
-      "name": "5942 stars",
+      "name": "5953 stars",
       "ctx": "Tencent/BrowserSkill",
-      "fp": "link|5942 stars|0",
+      "fp": "link|5953 stars|0",
       "rect": {
         "x": 437,
         "y": 934,
-        "w": 46,
+        "w": 36,
         "h": 18
       },
       "fillable": false
     },
     {
-      "eid": "e74",
+      "eid": "e82",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|4",
@@ -1003,7 +1120,7 @@
       "fillable": false
     },
     {
-      "eid": "e75",
+      "eid": "e83",
       "role": "link",
       "name": "browseros-ai/BrowserOS",
       "fp": "link|browseros-ai/BrowserOS|0",
@@ -1016,7 +1133,7 @@
       "fillable": false
     },
     {
-      "eid": "e76",
+      "eid": "e84",
       "role": "link",
       "name": "windows",
       "ctx": "browseros-ai/BrowserOS",
@@ -1030,7 +1147,7 @@
       "fillable": false
     },
     {
-      "eid": "e77",
+      "eid": "e85",
       "role": "link",
       "name": "macos",
       "ctx": "browseros-ai/BrowserOS",
@@ -1044,7 +1161,7 @@
       "fillable": false
     },
     {
-      "eid": "e78",
+      "eid": "e86",
       "role": "link",
       "name": "linux",
       "ctx": "browseros-ai/BrowserOS",
@@ -1058,7 +1175,7 @@
       "fillable": false
     },
     {
-      "eid": "e79",
+      "eid": "e87",
       "role": "link",
       "name": "agent",
       "ctx": "browseros-ai/BrowserOS",
@@ -1072,7 +1189,7 @@
       "fillable": false
     },
     {
-      "eid": "e80",
+      "eid": "e88",
       "role": "link",
       "name": "browser",
       "ctx": "browseros-ai/BrowserOS",
@@ -1086,11 +1203,11 @@
       "fillable": false
     },
     {
-      "eid": "e81",
+      "eid": "e89",
       "role": "link",
-      "name": "13723 stars",
+      "name": "13724 stars",
       "ctx": "browseros-ai/BrowserOS",
-      "fp": "link|13723 stars|0",
+      "fp": "link|13724 stars|0",
       "rect": {
         "x": 437,
         "y": 1114,
@@ -1100,7 +1217,7 @@
       "fillable": false
     },
     {
-      "eid": "e82",
+      "eid": "e90",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|5",
@@ -1113,7 +1230,7 @@
       "fillable": false
     },
     {
-      "eid": "e83",
+      "eid": "e91",
       "role": "link",
       "name": "browser-use/web-ui",
       "fp": "link|browser-use/web-ui|0",
@@ -1126,7 +1243,7 @@
       "fillable": false
     },
     {
-      "eid": "e84",
+      "eid": "e92",
       "role": "link",
       "name": "browser-automation",
       "ctx": "browser-use/web-ui",
@@ -1140,7 +1257,7 @@
       "fillable": false
     },
     {
-      "eid": "e85",
+      "eid": "e93",
       "role": "link",
       "name": "cloud-browser",
       "ctx": "browser-use/web-ui",
@@ -1154,7 +1271,7 @@
       "fillable": false
     },
     {
-      "eid": "e86",
+      "eid": "e94",
       "role": "link",
       "name": "ai-agent",
       "ctx": "browser-use/web-ui",
@@ -1168,7 +1285,7 @@
       "fillable": false
     },
     {
-      "eid": "e87",
+      "eid": "e95",
       "role": "link",
       "name": "browser-use-box",
       "ctx": "browser-use/web-ui",
@@ -1182,7 +1299,7 @@
       "fillable": false
     },
     {
-      "eid": "e88",
+      "eid": "e96",
       "role": "link",
       "name": "16576 stars",
       "ctx": "browser-use/web-ui",
@@ -1196,7 +1313,7 @@
       "fillable": false
     },
     {
-      "eid": "e89",
+      "eid": "e97",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|6",
@@ -1209,7 +1326,7 @@
       "fillable": false
     },
     {
-      "eid": "e90",
+      "eid": "e98",
       "role": "link",
       "name": "agentrhq/webcmd",
       "fp": "link|agentrhq/webcmd|0",
@@ -1222,7 +1339,7 @@
       "fillable": false
     },
     {
-      "eid": "e91",
+      "eid": "e99",
       "role": "link",
       "name": "cli",
       "ctx": "agentrhq/webcmd",
@@ -1236,7 +1353,7 @@
       "fillable": false
     },
     {
-      "eid": "e92",
+      "eid": "e100",
       "role": "link",
       "name": "developer-tools",
       "ctx": "agentrhq/webcmd",
@@ -1250,7 +1367,7 @@
       "fillable": false
     },
     {
-      "eid": "e93",
+      "eid": "e101",
       "role": "link",
       "name": "browser-automation",
       "ctx": "agentrhq/webcmd",
@@ -1264,7 +1381,7 @@
       "fillable": false
     },
     {
-      "eid": "e94",
+      "eid": "e102",
       "role": "link",
       "name": "ai-agents",
       "ctx": "agentrhq/webcmd",
@@ -1278,7 +1395,7 @@
       "fillable": false
     },
     {
-      "eid": "e95",
+      "eid": "e103",
       "role": "link",
       "name": "self-learning-ai",
       "ctx": "agentrhq/webcmd",
@@ -1292,11 +1409,11 @@
       "fillable": false
     },
     {
-      "eid": "e96",
+      "eid": "e104",
       "role": "link",
-      "name": "2236 stars",
+      "name": "2237 stars",
       "ctx": "agentrhq/webcmd",
-      "fp": "link|2236 stars|0",
+      "fp": "link|2237 stars|0",
       "rect": {
         "x": 437,
         "y": 1463,
@@ -1306,7 +1423,7 @@
       "fillable": false
     },
     {
-      "eid": "e97",
+      "eid": "e105",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|7",
@@ -1319,7 +1436,7 @@
       "fillable": false
     },
     {
-      "eid": "e98",
+      "eid": "e106",
       "role": "link",
       "name": "feder-cr/AIHawk",
       "fp": "link|feder-cr/AIHawk|0",
@@ -1332,7 +1449,7 @@
       "fillable": false
     },
     {
-      "eid": "e99",
+      "eid": "e107",
       "role": "link",
       "name": "productivity",
       "ctx": "feder-cr/AIHawk",
@@ -1346,7 +1463,7 @@
       "fillable": false
     },
     {
-      "eid": "e100",
+      "eid": "e108",
       "role": "link",
       "name": "browser",
       "ctx": "feder-cr/AIHawk",
@@ -1360,7 +1477,7 @@
       "fillable": false
     },
     {
-      "eid": "e101",
+      "eid": "e109",
       "role": "link",
       "name": "task-automation",
       "ctx": "feder-cr/AIHawk",
@@ -1374,7 +1491,7 @@
       "fillable": false
     },
     {
-      "eid": "e102",
+      "eid": "e110",
       "role": "link",
       "name": "autonomous-agents",
       "ctx": "feder-cr/AIHawk",
@@ -1388,7 +1505,7 @@
       "fillable": false
     },
     {
-      "eid": "e103",
+      "eid": "e111",
       "role": "link",
       "name": "market-research",
       "ctx": "feder-cr/AIHawk",
@@ -1402,7 +1519,7 @@
       "fillable": false
     },
     {
-      "eid": "e104",
+      "eid": "e112",
       "role": "link",
       "name": "31602 stars",
       "ctx": "feder-cr/AIHawk",
@@ -1416,7 +1533,7 @@
       "fillable": false
     },
     {
-      "eid": "e105",
+      "eid": "e113",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|8",
@@ -1429,7 +1546,7 @@
       "fillable": false
     },
     {
-      "eid": "e106",
+      "eid": "e114",
       "role": "button",
       "name": "Sponsor feder-cr/AIHawk",
       "fp": "button|Sponsor feder-cr/AIHawk|0",
@@ -1442,7 +1559,7 @@
       "fillable": false
     },
     {
-      "eid": "e107",
+      "eid": "e115",
       "role": "link",
       "name": "h4ckf0r0day/obscura",
       "fp": "link|h4ckf0r0day/obscura|0",
@@ -1455,7 +1572,7 @@
       "fillable": false
     },
     {
-      "eid": "e108",
+      "eid": "e116",
       "role": "link",
       "name": "rust",
       "ctx": "h4ckf0r0day/obscura",
@@ -1469,7 +1586,7 @@
       "fillable": false
     },
     {
-      "eid": "e109",
+      "eid": "e117",
       "role": "link",
       "name": "browser",
       "ctx": "h4ckf0r0day/obscura",
@@ -1483,7 +1600,7 @@
       "fillable": false
     },
     {
-      "eid": "e110",
+      "eid": "e118",
       "role": "link",
       "name": "headless",
       "ctx": "h4ckf0r0day/obscura",
@@ -1497,7 +1614,7 @@
       "fillable": false
     },
     {
-      "eid": "e111",
+      "eid": "e119",
       "role": "link",
       "name": "cdp",
       "ctx": "h4ckf0r0day/obscura",
@@ -1511,7 +1628,7 @@
       "fillable": false
     },
     {
-      "eid": "e112",
+      "eid": "e120",
       "role": "link",
       "name": "browser-automation",
       "ctx": "h4ckf0r0day/obscura",
@@ -1525,11 +1642,11 @@
       "fillable": false
     },
     {
-      "eid": "e113",
+      "eid": "e121",
       "role": "link",
-      "name": "27425 stars",
+      "name": "27424 stars",
       "ctx": "h4ckf0r0day/obscura",
-      "fp": "link|27425 stars|0",
+      "fp": "link|27424 stars|0",
       "rect": {
         "x": 401,
         "y": 1854,
@@ -1539,7 +1656,7 @@
       "fillable": false
     },
     {
-      "eid": "e114",
+      "eid": "e122",
       "role": "link",
       "name": "Star",
       "fp": "link|Star|9",
@@ -1552,7 +1669,7 @@
       "fillable": false
     },
     {
-      "eid": "e115",
+      "eid": "e123",
       "role": "link",
       "name": "Page 1",
       "ctx": "nav: Pagination",
@@ -1566,7 +1683,7 @@
       "fillable": false
     },
     {
-      "eid": "e116",
+      "eid": "e124",
       "role": "link",
       "name": "Page 2",
       "ctx": "nav: Pagination",
@@ -1580,7 +1697,7 @@
       "fillable": false
     },
     {
-      "eid": "e117",
+      "eid": "e125",
       "role": "link",
       "name": "Page 3",
       "ctx": "nav: Pagination",
@@ -1594,7 +1711,7 @@
       "fillable": false
     },
     {
-      "eid": "e118",
+      "eid": "e126",
       "role": "link",
       "name": "Page 4",
       "ctx": "nav: Pagination",
@@ -1608,7 +1725,7 @@
       "fillable": false
     },
     {
-      "eid": "e119",
+      "eid": "e127",
       "role": "link",
       "name": "Page 5",
       "ctx": "nav: Pagination",
@@ -1622,7 +1739,7 @@
       "fillable": false
     },
     {
-      "eid": "e120",
+      "eid": "e128",
       "role": "link",
       "name": "Page 6",
       "ctx": "nav: Pagination",
@@ -1636,7 +1753,7 @@
       "fillable": false
     },
     {
-      "eid": "e121",
+      "eid": "e129",
       "role": "link",
       "name": "Page 7...",
       "ctx": "nav: Pagination",
@@ -1650,7 +1767,7 @@
       "fillable": false
     },
     {
-      "eid": "e122",
+      "eid": "e130",
       "role": "presentation",
       "name": "…",
       "ctx": "nav: Pagination",
@@ -1664,7 +1781,7 @@
       "fillable": false
     },
     {
-      "eid": "e123",
+      "eid": "e131",
       "role": "link",
       "name": "Page 100",
       "ctx": "nav: Pagination",
@@ -1678,7 +1795,7 @@
       "fillable": false
     },
     {
-      "eid": "e124",
+      "eid": "e132",
       "role": "link",
       "name": "Next Page",
       "ctx": "nav: Pagination",
@@ -1692,7 +1809,7 @@
       "fillable": false
     },
     {
-      "eid": "e125",
+      "eid": "e133",
       "role": "link",
       "name": "Explore sponsorable projects",
       "ctx": "Sponsor open source projects you depend on",
@@ -1707,6 +1824,6 @@
     }
   ],
   "text": "repositories Search Results · browser agent Filter by Code ... (...) results Repositories 16.9k (16.9k) results Issues 5",
-  "contentHash": "m58oel",
+  "contentHash": "z90fl2",
   "totalCandidates": 244
 }

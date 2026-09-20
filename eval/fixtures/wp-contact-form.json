@@ -2115,7 +2115,6 @@
       "eid": "e155",
       "role": "button",
       "name": "Submit",
-      "value": "Submit",
       "ctx": "form",
       "fp": "button|Submit|0",
       "rect": {
@@ -2446,7 +2445,6 @@
       "eid": "e178",
       "role": "button",
       "name": "Submit",
-      "value": "Submit",
       "ctx": "form",
       "fp": "button|Submit|1",
       "rect": {
@@ -2530,8 +2528,8 @@
     {
       "eid": "e184",
       "role": "link",
-      "name": "W3Schools Full Access",
-      "fp": "link|W3Schools Full Access|0",
+      "name": "W3Schools app - someone is ahead of you in the weekly league",
+      "fp": "link|W3Schools app - someone is ahead of you in the weekly league|0",
       "rect": {
         "x": 1113,
         "y": 106,
@@ -3572,6 +3570,6 @@
     }
   ],
   "text": "Tutorials References Exercises Certificates Search field NEW W3Schools app Start the adventure Sign In Get Certified HTM",
-  "contentHash": "1paw451",
+  "contentHash": "t9vvfb",
   "totalCandidates": 614
 }

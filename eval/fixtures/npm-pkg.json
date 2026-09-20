@@ -258,6 +258,19 @@
     },
     {
       "eid": "e19",
+      "role": "tab",
+      "name": "Readme",
+      "fp": "tab|Readme|0",
+      "rect": {
+        "x": 57,
+        "y": 340,
+        "w": 200,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
       "role": "presentation",
       "name": "Code Beta",
       "fp": "presentation|Code Beta|0",
@@ -270,7 +283,20 @@
       "fillable": false
     },
     {
-      "eid": "e20",
+      "eid": "e21",
+      "role": "tab",
+      "name": "Code Beta",
+      "fp": "tab|Code Beta|0",
+      "rect": {
+        "x": 258,
+        "y": 339,
+        "w": 230,
+        "h": 45
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
       "role": "presentation",
       "name": "1 Dependency",
       "fp": "presentation|1 Dependency|0",
@@ -283,7 +309,20 @@
       "fillable": false
     },
     {
-      "eid": "e21",
+      "eid": "e23",
+      "role": "tab",
+      "name": "1 Dependency",
+      "fp": "tab|1 Dependency|0",
+      "rect": {
+        "x": 488,
+        "y": 339,
+        "w": 238,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
       "role": "presentation",
       "name": "5347 Dependents",
       "fp": "presentation|5347 Dependents|0",
@@ -296,7 +335,20 @@
       "fillable": false
     },
     {
-      "eid": "e22",
+      "eid": "e25",
+      "role": "tab",
+      "name": "5347 Dependents",
+      "fp": "tab|5347 Dependents|0",
+      "rect": {
+        "x": 726,
+        "y": 339,
+        "w": 259,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
       "role": "presentation",
       "name": "5,692 Versions",
       "fp": "presentation|5,692 Versions|0",
@@ -309,7 +361,20 @@
       "fillable": false
     },
     {
-      "eid": "e23",
+      "eid": "e27",
+      "role": "tab",
+      "name": "5,692 Versions",
+      "fp": "tab|5,692 Versions|0",
+      "rect": {
+        "x": 985,
+        "y": 339,
+        "w": 239,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
       "role": "tabpanel",
       "name": "Readme",
       "fp": "tabpanel|Readme|0",
@@ -322,7 +387,7 @@
       "fillable": false
     },
     {
-      "eid": "e24",
+      "eid": "e29",
       "role": "link",
       "name": "Permalink: 🎭 Playwright",
       "ctx": "🎭 Playwright",
@@ -336,7 +401,7 @@
       "fillable": false
     },
     {
-      "eid": "e25",
+      "eid": "e30",
       "role": "link",
       "name": "npm version",
       "fp": "link|npm version|0",
@@ -349,7 +414,7 @@
       "fillable": false
     },
     {
-      "eid": "e26",
+      "eid": "e31",
       "role": "link",
       "name": "Chromium version",
       "fp": "link|Chromium version|0",
@@ -362,7 +427,7 @@
       "fillable": false
     },
     {
-      "eid": "e27",
+      "eid": "e32",
       "role": "link",
       "name": "Firefox version",
       "fp": "link|Firefox version|0",
@@ -375,7 +440,7 @@
       "fillable": false
     },
     {
-      "eid": "e28",
+      "eid": "e33",
       "role": "link",
       "name": "WebKit version",
       "fp": "link|WebKit version|0",
@@ -388,7 +453,7 @@
       "fillable": false
     },
     {
-      "eid": "e29",
+      "eid": "e34",
       "role": "link",
       "name": "Join Discord",
       "fp": "link|Join Discord|0",
@@ -401,7 +466,7 @@
       "fillable": false
     },
     {
-      "eid": "e30",
+      "eid": "e35",
       "role": "link",
       "name": "Documentation",
       "fp": "link|Documentation|1",
@@ -414,7 +479,7 @@
       "fillable": false
     },
     {
-      "eid": "e31",
+      "eid": "e36",
       "role": "link",
       "name": "API reference",
       "fp": "link|API reference|0",
@@ -427,7 +492,7 @@
       "fillable": false
     },
     {
-      "eid": "e32",
+      "eid": "e37",
       "role": "link",
       "name": "Permalink: Documentation | API reference",
       "ctx": "Documentation | API reference",
@@ -441,7 +506,7 @@
       "fillable": false
     },
     {
-      "eid": "e33",
+      "eid": "e38",
       "role": "link",
       "name": "Permalink: Get Started",
       "ctx": "Get Started",
@@ -455,7 +520,7 @@
       "fillable": false
     },
     {
-      "eid": "e34",
+      "eid": "e39",
       "role": "link",
       "name": "Playwright Test",
       "fp": "link|Playwright Test|0",
@@ -468,7 +533,7 @@
       "fillable": false
     },
     {
-      "eid": "e35",
+      "eid": "e40",
       "role": "link",
       "name": "Playwright CLI",
       "fp": "link|Playwright CLI|0",
@@ -481,7 +546,7 @@
       "fillable": false
     },
     {
-      "eid": "e36",
+      "eid": "e41",
       "role": "link",
       "name": "Playwright MCP",
       "fp": "link|Playwright MCP|0",
@@ -494,7 +559,7 @@
       "fillable": false
     },
     {
-      "eid": "e37",
+      "eid": "e42",
       "role": "link",
       "name": "Playwright Library",
       "fp": "link|Playwright Library|0",
@@ -507,7 +572,7 @@
       "fillable": false
     },
     {
-      "eid": "e38",
+      "eid": "e43",
       "role": "link",
       "name": "VS Code Extension",
       "fp": "link|VS Code Extension|0",
@@ -520,7 +585,7 @@
       "fillable": false
     },
     {
-      "eid": "e39",
+      "eid": "e44",
       "role": "link",
       "name": "Install from Marketplace",
       "fp": "link|Install from Marketplace|0",
@@ -533,7 +598,7 @@
       "fillable": false
     },
     {
-      "eid": "e40",
+      "eid": "e45",
       "role": "link",
       "name": "Permalink: Playwright Test",
       "ctx": "Playwright Test",
@@ -547,7 +612,7 @@
       "fillable": false
     },
     {
-      "eid": "e41",
+      "eid": "e46",
       "role": "link",
       "name": "Permalink: Install",
       "ctx": "Install",
@@ -561,7 +626,7 @@
       "fillable": false
     },
     {
-      "eid": "e42",
+      "eid": "e47",
       "role": "link",
       "name": "Permalink: Write a test",
       "ctx": "Write a test",
@@ -575,7 +640,7 @@
       "fillable": false
     },
     {
-      "eid": "e43",
+      "eid": "e48",
       "role": "link",
       "name": "Permalink: Run tests",
       "ctx": "Run tests",
@@ -589,7 +654,7 @@
       "fillable": false
     },
     {
-      "eid": "e44",
+      "eid": "e49",
       "role": "link",
       "name": "Permalink: Key capabilities",
       "ctx": "Key capabilities",
@@ -603,7 +668,7 @@
       "fillable": false
     },
     {
-      "eid": "e45",
+      "eid": "e50",
       "role": "link",
       "name": "Trace Viewer",
       "fp": "link|Trace Viewer|0",
@@ -616,7 +681,7 @@
       "fillable": false
     },
     {
-      "eid": "e46",
+      "eid": "e51",
       "role": "link",
       "name": "Full testing documentation",
       "fp": "link|Full testing documentation|0",
@@ -629,7 +694,7 @@
       "fillable": false
     },
     {
-      "eid": "e47",
+      "eid": "e52",
       "role": "link",
       "name": "Permalink: Playwright CLI",
       "ctx": "Playwright CLI",
@@ -643,7 +708,7 @@
       "fillable": false
     },
     {
-      "eid": "e48",
+      "eid": "e53",
       "role": "link",
       "name": "Playwright CLI",
       "fp": "link|Playwright CLI|1",
@@ -656,7 +721,7 @@
       "fillable": false
     },
     {
-      "eid": "e49",
+      "eid": "e54",
       "role": "link",
       "name": "Permalink: Install",
       "ctx": "Install",
@@ -670,7 +735,7 @@
       "fillable": false
     },
     {
-      "eid": "e50",
+      "eid": "e55",
       "role": "link",
       "name": "Permalink: Usage",
       "ctx": "Usage",
@@ -684,7 +749,7 @@
       "fillable": false
     },
     {
-      "eid": "e51",
+      "eid": "e56",
       "role": "link",
       "name": "Permalink: Session monitoring",
       "ctx": "Session monitoring",
@@ -698,7 +763,7 @@
       "fillable": false
     },
     {
-      "eid": "e52",
+      "eid": "e57",
       "role": "link",
       "name": "Full CLI documentation",
       "fp": "link|Full CLI documentation|0",
@@ -711,7 +776,7 @@
       "fillable": false
     },
     {
-      "eid": "e53",
+      "eid": "e58",
       "role": "link",
       "name": "GitHub",
       "fp": "link|GitHub|0",
@@ -724,7 +789,7 @@
       "fillable": false
     },
     {
-      "eid": "e54",
+      "eid": "e59",
       "role": "link",
       "name": "Permalink: Playwright MCP",
       "ctx": "Playwright MCP",
@@ -738,7 +803,7 @@
       "fillable": false
     },
     {
-      "eid": "e55",
+      "eid": "e60",
       "role": "link",
       "name": "Playwright MCP server",
       "fp": "link|Playwright MCP server|0",
@@ -751,7 +816,7 @@
       "fillable": false
     },
     {
-      "eid": "e56",
+      "eid": "e61",
       "role": "link",
       "name": "Model Context Protocol",
       "fp": "link|Model Context Protocol|0",
@@ -764,7 +829,7 @@
       "fillable": false
     },
     {
-      "eid": "e57",
+      "eid": "e62",
       "role": "link",
       "name": "Permalink: Setup",
       "ctx": "Setup",
@@ -778,7 +843,7 @@
       "fillable": false
     },
     {
-      "eid": "e58",
+      "eid": "e63",
       "role": "link",
       "name": "Install in VS Code",
       "fp": "link|Install in VS Code|0",
@@ -791,7 +856,7 @@
       "fillable": false
     },
     {
-      "eid": "e59",
+      "eid": "e64",
       "role": "link",
       "name": "Permalink: How it works",
       "ctx": "How it works",
@@ -805,7 +870,7 @@
       "fillable": false
     },
     {
-      "eid": "e60",
+      "eid": "e65",
       "role": "link",
       "name": "Full MCP documentation",
       "fp": "link|Full MCP documentation|0",
@@ -818,7 +883,7 @@
       "fillable": false
     },
     {
-      "eid": "e61",
+      "eid": "e66",
       "role": "link",
       "name": "GitHub",
       "fp": "link|GitHub|1",
@@ -831,7 +896,7 @@
       "fillable": false
     },
     {
-      "eid": "e62",
+      "eid": "e67",
       "role": "link",
       "name": "Permalink: Playwright Library",
       "ctx": "Playwright Library",
@@ -845,7 +910,7 @@
       "fillable": false
     },
     {
-      "eid": "e63",
+      "eid": "e68",
       "role": "link",
       "name": "Permalink: Install",
       "ctx": "Install",
@@ -859,7 +924,7 @@
       "fillable": false
     },
     {
-      "eid": "e64",
+      "eid": "e69",
       "role": "link",
       "name": "Permalink: Examples",
       "ctx": "Examples",
@@ -873,7 +938,7 @@
       "fillable": false
     },
     {
-      "eid": "e65",
+      "eid": "e70",
       "role": "link",
       "name": "Library documentation",
       "fp": "link|Library documentation|0",
@@ -886,7 +951,7 @@
       "fillable": false
     },
     {
-      "eid": "e66",
+      "eid": "e71",
       "role": "link",
       "name": "API reference",
       "fp": "link|API reference|1",
@@ -899,7 +964,7 @@
       "fillable": false
     },
     {
-      "eid": "e67",
+      "eid": "e72",
       "role": "link",
       "name": "Permalink: VS Code Extension",
       "ctx": "VS Code Extension",
@@ -913,7 +978,7 @@
       "fillable": false
     },
     {
-      "eid": "e68",
+      "eid": "e73",
       "role": "link",
       "name": "Playwright VS Code extension",
       "fp": "link|Playwright VS Code extension|0",
@@ -926,7 +991,7 @@
       "fillable": false
     },
     {
-      "eid": "e69",
+      "eid": "e74",
       "role": "link",
       "name": "Install the extension",
       "fp": "link|Install the extension|0",
@@ -939,7 +1004,7 @@
       "fillable": false
     },
     {
-      "eid": "e70",
+      "eid": "e75",
       "role": "link",
       "name": "VS Code guide",
       "fp": "link|VS Code guide|0",
@@ -952,7 +1017,7 @@
       "fillable": false
     },
     {
-      "eid": "e71",
+      "eid": "e76",
       "role": "link",
       "name": "Permalink: Cross-Browser Support",
       "ctx": "Cross-Browser Support",
@@ -966,7 +1031,7 @@
       "fillable": false
     },
     {
-      "eid": "e72",
+      "eid": "e77",
       "role": "link",
       "name": "Chrome for Testing",
       "fp": "link|Chrome for Testing|0",
@@ -979,7 +1044,7 @@
       "fillable": false
     },
     {
-      "eid": "e73",
+      "eid": "e78",
       "role": "link",
       "name": "Permalink: Other Languages",
       "ctx": "Other Languages",
@@ -993,7 +1058,7 @@
       "fillable": false
     },
     {
-      "eid": "e74",
+      "eid": "e79",
       "role": "link",
       "name": "Python",
       "fp": "link|Python|0",
@@ -1006,7 +1071,7 @@
       "fillable": false
     },
     {
-      "eid": "e75",
+      "eid": "e80",
       "role": "link",
       "name": ".NET",
       "fp": "link|.NET|0",
@@ -1019,7 +1084,7 @@
       "fillable": false
     },
     {
-      "eid": "e76",
+      "eid": "e81",
       "role": "link",
       "name": "Java",
       "fp": "link|Java|0",
@@ -1032,7 +1097,7 @@
       "fillable": false
     },
     {
-      "eid": "e77",
+      "eid": "e82",
       "role": "link",
       "name": "Permalink: Resources",
       "ctx": "Resources",
@@ -1046,7 +1111,7 @@
       "fillable": false
     },
     {
-      "eid": "e78",
+      "eid": "e83",
       "role": "link",
       "name": "Documentation",
       "fp": "link|Documentation|2",
@@ -1059,7 +1124,7 @@
       "fillable": false
     },
     {
-      "eid": "e79",
+      "eid": "e84",
       "role": "link",
       "name": "API reference",
       "fp": "link|API reference|2",
@@ -1072,7 +1137,7 @@
       "fillable": false
     },
     {
-      "eid": "e80",
+      "eid": "e85",
       "role": "link",
       "name": "MCP server",
       "fp": "link|MCP server|0",
@@ -1085,7 +1150,7 @@
       "fillable": false
     },
     {
-      "eid": "e81",
+      "eid": "e86",
       "role": "link",
       "name": "CLI for coding agents",
       "fp": "link|CLI for coding agents|0",
@@ -1098,7 +1163,7 @@
       "fillable": false
     },
     {
-      "eid": "e82",
+      "eid": "e87",
       "role": "link",
       "name": "VS Code extension",
       "fp": "link|VS Code extension|0",
@@ -1111,7 +1176,7 @@
       "fillable": false
     },
     {
-      "eid": "e83",
+      "eid": "e88",
       "role": "link",
       "name": "Contribution guide",
       "fp": "link|Contribution guide|0",
@@ -1124,7 +1189,7 @@
       "fillable": false
     },
     {
-      "eid": "e84",
+      "eid": "e89",
       "role": "link",
       "name": "Changelog",
       "fp": "link|Changelog|0",
@@ -1137,7 +1202,7 @@
       "fillable": false
     },
     {
-      "eid": "e85",
+      "eid": "e90",
       "role": "link",
       "name": "Discord",
       "fp": "link|Discord|0",
@@ -1150,7 +1215,7 @@
       "fillable": false
     },
     {
-      "eid": "e86",
+      "eid": "e91",
       "role": "link",
       "name": "View build summary",
       "ctx": "aside",
@@ -1164,7 +1229,7 @@
       "fillable": false
     },
     {
-      "eid": "e87",
+      "eid": "e92",
       "role": "link",
       "name": "Source Commit",
       "ctx": "aside",
@@ -1178,7 +1243,7 @@
       "fillable": false
     },
     {
-      "eid": "e88",
+      "eid": "e93",
       "role": "link",
       "name": "Build File",
       "ctx": "aside",
@@ -1192,7 +1257,7 @@
       "fillable": false
     },
     {
-      "eid": "e89",
+      "eid": "e94",
       "role": "link",
       "name": "Public Ledger",
       "ctx": "aside",
@@ -1206,7 +1271,7 @@
       "fillable": false
     },
     {
-      "eid": "e90",
+      "eid": "e95",
       "role": "link",
       "name": "Share feedback",
       "ctx": "aside",
@@ -1220,7 +1285,7 @@
       "fillable": false
     },
     {
-      "eid": "e91",
+      "eid": "e96",
       "role": "button",
       "name": "Copy install command line",
       "ctx": "aside: Package sidebar",
@@ -1234,7 +1299,7 @@
       "fillable": false
     },
     {
-      "eid": "e92",
+      "eid": "e97",
       "role": "link",
       "name": "Repository github.com/microsoft/playwright",
       "ctx": "aside: Package sidebar",
@@ -1248,7 +1313,7 @@
       "fillable": false
     },
     {
-      "eid": "e93",
+      "eid": "e98",
       "role": "link",
       "name": "Homepage playwright.dev",
       "ctx": "aside: Package sidebar",
@@ -1262,7 +1327,7 @@
       "fillable": false
     },
     {
-      "eid": "e94",
+      "eid": "e99",
       "role": "button",
       "name": "Showing weekly downloads",
       "ctx": "aside: Package sidebar",
@@ -1276,7 +1341,7 @@
       "fillable": false
     },
     {
-      "eid": "e95",
+      "eid": "e100",
       "role": "button",
       "name": "View more provenance details",
       "ctx": "aside: Package sidebar",
@@ -1290,7 +1355,7 @@
       "fillable": false
     },
     {
-      "eid": "e96",
+      "eid": "e101",
       "role": "link",
       "name": "pavelfeldman",
       "ctx": "aside: Package sidebar",
@@ -1304,7 +1369,7 @@
       "fillable": false
     },
     {
-      "eid": "e97",
+      "eid": "e102",
       "role": "link",
       "name": "yurys",
       "ctx": "aside: Package sidebar",
@@ -1318,7 +1383,7 @@
       "fillable": false
     },
     {
-      "eid": "e98",
+      "eid": "e103",
       "role": "link",
       "name": "microsoft1es",
       "ctx": "aside: Package sidebar",
@@ -1332,7 +1397,7 @@
       "fillable": false
     },
     {
-      "eid": "e99",
+      "eid": "e104",
       "role": "link",
       "name": "dgozman-ms",
       "ctx": "aside: Package sidebar",
@@ -1346,7 +1411,7 @@
       "fillable": false
     },
     {
-      "eid": "e100",
+      "eid": "e105",
       "role": "link",
       "name": "microsoft-oss-releases",
       "ctx": "aside: Package sidebar",
@@ -1360,7 +1425,7 @@
       "fillable": false
     },
     {
-      "eid": "e101",
+      "eid": "e106",
       "role": "link",
       "name": "Analyze security with Socket",
       "ctx": "aside: Package sidebar",
@@ -1374,7 +1439,7 @@
       "fillable": false
     },
     {
-      "eid": "e102",
+      "eid": "e107",
       "role": "link",
       "name": "Check bundle size",
       "ctx": "aside: Package sidebar",
@@ -1388,7 +1453,7 @@
       "fillable": false
     },
     {
-      "eid": "e103",
+      "eid": "e108",
       "role": "link",
       "name": "View package health",
       "ctx": "aside: Package sidebar",
@@ -1402,7 +1467,7 @@
       "fillable": false
     },
     {
-      "eid": "e104",
+      "eid": "e109",
       "role": "link",
       "name": "Explore dependencies",
       "ctx": "aside: Package sidebar",
@@ -1416,7 +1481,7 @@
       "fillable": false
     },
     {
-      "eid": "e105",
+      "eid": "e110",
       "role": "link",
       "name": "Report malware",
       "ctx": "aside: Package sidebar",
@@ -1430,7 +1495,7 @@
       "fillable": false
     },
     {
-      "eid": "e106",
+      "eid": "e111",
       "role": "link",
       "name": "Visit npm GitHub page",
       "ctx": "footer",
@@ -1444,7 +1509,7 @@
       "fillable": false
     },
     {
-      "eid": "e107",
+      "eid": "e112",
       "role": "link",
       "name": "GitHub",
       "ctx": "footer",
@@ -1458,7 +1523,7 @@
       "fillable": false
     },
     {
-      "eid": "e108",
+      "eid": "e113",
       "role": "link",
       "name": "Help",
       "ctx": "footer",
@@ -1472,7 +1537,7 @@
       "fillable": false
     },
     {
-      "eid": "e109",
+      "eid": "e114",
       "role": "link",
       "name": "Advisories",
       "ctx": "footer",
@@ -1486,7 +1551,7 @@
       "fillable": false
     },
     {
-      "eid": "e110",
+      "eid": "e115",
       "role": "link",
       "name": "Status",
       "ctx": "footer",
@@ -1500,7 +1565,7 @@
       "fillable": false
     },
     {
-      "eid": "e111",
+      "eid": "e116",
       "role": "link",
       "name": "Contact npm",
       "ctx": "footer",
@@ -1514,7 +1579,7 @@
       "fillable": false
     },
     {
-      "eid": "e112",
+      "eid": "e117",
       "role": "link",
       "name": "About",
       "ctx": "footer",
@@ -1528,7 +1593,7 @@
       "fillable": false
     },
     {
-      "eid": "e113",
+      "eid": "e118",
       "role": "link",
       "name": "Blog",
       "ctx": "footer",
@@ -1542,7 +1607,7 @@
       "fillable": false
     },
     {
-      "eid": "e114",
+      "eid": "e119",
       "role": "link",
       "name": "Press",
       "ctx": "footer",
@@ -1556,7 +1621,7 @@
       "fillable": false
     },
     {
-      "eid": "e115",
+      "eid": "e120",
       "role": "link",
       "name": "Policies",
       "ctx": "footer",
@@ -1570,7 +1635,7 @@
       "fillable": false
     },
     {
-      "eid": "e116",
+      "eid": "e121",
       "role": "link",
       "name": "Terms of Use",
       "ctx": "footer",
@@ -1584,7 +1649,7 @@
       "fillable": false
     },
     {
-      "eid": "e117",
+      "eid": "e122",
       "role": "link",
       "name": "Code of Conduct",
       "ctx": "footer",
@@ -1598,7 +1663,7 @@
       "fillable": false
     },
     {
-      "eid": "e118",
+      "eid": "e123",
       "role": "link",
       "name": "Privacy",
       "ctx": "footer",
@@ -1613,6 +1678,6 @@
     }
   ],
   "text": "playwright 1.63.0 • Public • Published 16 days ago Readme Code Beta 1 Dependency 5347 Dependents 5,692 Versions 🎭 Playw",
-  "contentHash": "lf8ifu",
+  "contentHash": "1fcpxg6",
   "totalCandidates": 167
 }

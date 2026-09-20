@@ -173,6 +173,13 @@ export function App(): JSX.Element {
           </div>
         )}
 
+        {state.result && (
+          <div className="result">
+            <div className="muted">result</div>
+            {state.result}
+          </div>
+        )}
+
         <div className="log">{state.log.join("\n") || "no activity yet"}</div>
       </div>
     </div>

@@ -46,6 +46,23 @@ chrome.alarms.onAlarm.addListener(() => {
   // Existing purely to keep the worker alive while a run is in flight.
 });
 
+/**
+ * What the run actually produced, for the panel to show.
+ *
+ * A run that reads a page and composes an answer puts it in the scratchpad — and the
+ * first real session ended with a correct summary that was never displayed, which
+ * makes the whole thing pointless however well it ran.
+ */
+function describeResult(data: Record<string, unknown>): string | undefined {
+  const parts: string[] = [];
+  for (const [key, value] of Object.entries(data)) {
+    if (key === "profile" || key === "answers") continue;
+    parts.push(typeof value === "string" ? value : JSON.stringify(value, null, 2));
+  }
+  const text = parts.join("\n\n").trim();
+  return text ? text.slice(0, 4000) : undefined;
+}
+
 function describe(e: RunEvent): string | null {
   switch (e.type) {
     case "node:start":
@@ -86,8 +103,13 @@ async function start(goal: string, tabId: number): Promise<void> {
     throw new Error(`no access to ${new URL(url).host} — grant it when asked, then run again`);
   }
 
+  // Before anything else: the tab must be able to answer. Doing this up front turns
+  // "Receiving end does not exist" into a message that says what is actually wrong.
+  const executor = new TabExecutor(tabId);
+  await executor.ensureContentScript();
+
   await chrome.alarms.create(KEEPALIVE, { periodInMinutes: 0.5 });
-  await patch({ running: true, goal, log: [`goal: ${goal}`], status: "planning" });
+  await patch({ running: true, goal, log: [`goal: ${goal}`], status: "planning", result: undefined });
 
   const { runId, plan, balance } = await api.createRun(goal, url);
   await patch({ credits: balance, status: "running" });
@@ -104,7 +126,7 @@ async function start(goal: string, tabId: number): Promise<void> {
   try {
     const result = await runPlan({
       capabilities,
-      executor: new TabExecutor(tabId),
+      executor,
       plan,
       emit: (e) => {
         const line = describe(e);
@@ -120,6 +142,8 @@ async function start(goal: string, tabId: number): Promise<void> {
     await patch({
       running: false,
       status: result.status,
+      result: describeResult(result.data),
+      ...(result.pending.length ? { pending: undefined } : {}),
       ...(me ? { credits: me.credits } : {}),
     });
   } finally {

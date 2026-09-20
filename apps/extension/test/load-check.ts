@@ -85,6 +85,34 @@ try {
   })) as { ok?: boolean; guard?: { pageKey: string | null } };
   check("guards run in the content script", Boolean(guard?.ok && guard.guard?.pageKey));
 
+  // The case that broke in real use: a tab open before the extension existed has no
+  // content script, and the only clue is "Receiving end does not exist". The worker
+  // injects on demand, so the manifest's files must actually be injectable — CRXJS
+  // ships a loader that imports the real module, which is easy to get wrong.
+  const injected = (await worker.evaluate(async () => {
+    const [tab] = await chrome.tabs.query({ url: "https://example.com/*" });
+    if (!tab?.id) return { error: "no tab" };
+    const files = chrome.runtime.getManifest().content_scripts?.[0]?.js ?? [];
+    try {
+      await chrome.scripting.executeScript({ target: { tabId: tab.id }, files });
+      await new Promise((r) => setTimeout(r, 400));
+      const reply = await chrome.tabs.sendMessage(tab.id, { kind: "guard", node: null });
+      return { ok: true, reply };
+    } catch (err) {
+      return { error: String(err) };
+    }
+  })) as { ok?: boolean; error?: string };
+  // Without a host grant this MUST fail, and must fail legibly. The permission is
+  // requested from the side panel during the click; here there is no gesture and no
+  // grant, so the assertion is that the reason is stated rather than surfacing later
+  // as an unexplained "Receiving end does not exist".
+  const namesThePermission = /permission to access this host/i.test(injected?.error ?? "");
+  check(
+    "on-demand injection fails legibly without a host grant",
+    Boolean(injected?.ok) || namesThePermission,
+    injected?.error?.slice(0, 80) ?? "",
+  );
+
   const text = (await worker.evaluate(async () => {
     const [tab] = await chrome.tabs.query({ url: "https://example.com/*" });
     if (!tab?.id) return { error: "no tab" };

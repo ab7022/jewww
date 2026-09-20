@@ -32,13 +32,43 @@ export class TabExecutor implements Executor {
     }
   }
 
-  /** Inject the content script, using the paths the built manifest declares. */
+  /**
+   * Make sure the tab can answer us.
+   *
+   * A declarative content script only runs on page load, so any tab that was already
+   * open when the extension was installed has none — which is most of them, and the
+   * failure reads as "Receiving end does not exist" with no hint that a reload would
+   * fix it. Injecting on demand covers that and a navigation tearing the script down.
+   */
+  async ensureContentScript(): Promise<void> {
+    const alive = await chrome.tabs
+      .sendMessage(this.tabId, { kind: "guard", node: null })
+      .then(() => true)
+      .catch(() => false);
+    if (alive) return;
+
+    const files = chrome.runtime.getManifest().content_scripts?.[0]?.js ?? [];
+    if (!files.length) throw new Error("no content script in the manifest");
+    try {
+      await chrome.scripting.executeScript({ target: { tabId: this.tabId }, files });
+    } catch (err) {
+      // Nearly always a missing host permission for this origin. Say so, rather than
+      // letting it surface later as an unexplained connection error.
+      throw new Error(
+        `cannot run on this tab: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    }
+    // The loader imports the real module, so the listener is not registered yet.
+    await new Promise((r) => setTimeout(r, 300));
+  }
+
   private async inject(): Promise<void> {
     const files = chrome.runtime.getManifest().content_scripts?.[0]?.js ?? [];
     if (!files.length) return;
     await chrome.scripting
       .executeScript({ target: { tabId: this.tabId }, files })
       .catch(() => {});
+    await new Promise((r) => setTimeout(r, 250));
   }
 
   async snapshot(): Promise<RawSnapshot> {

@@ -49,4 +49,6 @@ export interface PanelState {
   log: string[];
   pending?: PendingApproval;
   status?: string;
+  /** What the run produced, shown when it finishes. */
+  result?: string;
 }

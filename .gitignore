@@ -6,3 +6,5 @@ eval/results/*.json
 plans/
 results/
 .data/
+apps/extension/dist/
+apps/extension/dist-types/

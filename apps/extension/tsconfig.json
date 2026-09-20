@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist-types",
+    "rootDir": "src",
+    "jsx": "react-jsx",
+    "types": ["chrome", "vite/client"],
+    "noEmit": false,
+    "composite": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "references": [
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/sense" },
+    { "path": "../../packages/policy" },
+    { "path": "../../packages/runtime" }
+  ]
+}

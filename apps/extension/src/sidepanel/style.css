@@ -1,0 +1,56 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --line: #262b35;
+  --text: #e6e8ec;
+  --muted: #8b94a3;
+  --accent: #6ea8fe;
+  --danger: #ff6b6b;
+  --warn: #ffd166;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fbfbfd; --panel: #fff; --line: #e4e6eb; --text: #14161a;
+    --muted: #6b7280; --accent: #2563eb; --danger: #d92d20; --warn: #b45309;
+    color-scheme: light;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 13px/1.5 ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+.wrap { display: flex; flex-direction: column; height: 100vh; }
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--line);
+}
+h1 { font-size: 13px; margin: 0; font-weight: 600; }
+.muted { color: var(--muted); font-size: 12px; }
+.body { padding: 12px; display: flex; flex-direction: column; gap: 10px; flex: 1; min-height: 0; }
+textarea {
+  width: 100%; min-height: 64px; resize: vertical; padding: 8px 10px;
+  background: var(--panel); color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px; font: inherit;
+}
+button {
+  padding: 7px 12px; border-radius: 7px; border: 1px solid var(--line);
+  background: var(--panel); color: var(--text); font: inherit; cursor: pointer;
+}
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.danger { border-color: var(--danger); color: var(--danger); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.row { display: flex; gap: 8px; align-items: center; }
+.log {
+  flex: 1; min-height: 0; overflow: auto; padding: 8px 10px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  font: 11px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-wrap;
+}
+.approve {
+  border: 1px solid var(--warn); border-radius: 8px; padding: 10px;
+  background: color-mix(in srgb, var(--warn) 10%, transparent);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.approve strong { font-size: 12px; }
+.risk { color: var(--warn); font-weight: 600; text-transform: uppercase; font-size: 11px; }

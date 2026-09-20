@@ -102,7 +102,7 @@ for (const { task, target, snap } of rows) {
     subgoal: task.intent,
     success: `the intent "${task.intent}" has visibly been carried out`,
     snapshot: capped,
-    space,
+    nodes,
     recent: [],
   });
   cost += d.costUsd;

@@ -1,9 +1,10 @@
 import type { Executor, Guard } from "@jev-browser/executor";
+import { decide } from "@jev-browser/policy";
 import type { JevProvider } from "@jev-browser/jev";
 import type { Action, Answer, Plan, RawSnapshot } from "@jev-browser/shared";
 import { describe, expect, it } from "vitest";
 import type { RunEvent } from "../src/events.js";
-import { runPlan } from "../src/run.js";
+import { type Capabilities, runPlan } from "../src/run.js";
 import { Scratchpad, scratchKey } from "../src/scratchpad.js";
 
 describe("scratchpad", () => {
@@ -104,11 +105,37 @@ function fakeJev(ops: string[], target = "e1"): JevProvider {
 }
 
 const plan = (nodes: Plan["nodes"]): Plan => ({ goal: "g", sites: [], nodes });
-const base = { apiKey: "k", profile: {} };
 
-async function run(p: Plan, jev: JevProvider, executor: Executor, extra: Partial<Parameters<typeof runPlan>[0]> = {}) {
+/**
+ * The loop takes its model calls as injected capabilities, so the CLI can wire them
+ * to the model packages and the extension to the server. Tests wire `decide` to a
+ * scripted JEV and everything else to a stub.
+ */
+function capabilities(jev: JevProvider, over: Partial<Capabilities> = {}): Capabilities {
+  return {
+    decide: (input) => decide(jev, input),
+    text: async () => "typed text",
+    extract: async () => [],
+    compose: async () => "composed",
+    ...over,
+  };
+}
+
+async function run(
+  p: Plan,
+  jev: JevProvider,
+  executor: Executor,
+  extra: Partial<Parameters<typeof runPlan>[0]> = {},
+  caps: Partial<Capabilities> = {},
+) {
   const events: RunEvent[] = [];
-  const result = await runPlan({ jev, executor, plan: p, emit: (e) => events.push(e), ...base, ...extra });
+  const result = await runPlan({
+    capabilities: capabilities(jev, caps),
+    executor,
+    plan: p,
+    emit: (e) => events.push(e),
+    ...extra,
+  });
   return { result, events };
 }
 
@@ -182,6 +209,7 @@ describe("confirm node", () => {
       ]),
       fakeJev(["DONE"]),
       fakeExecutor(["h1"]),
+      {},
       { compose: async () => "the composed message" },
     );
     const suspend = events.find((e) => e.type === "suspend");
@@ -202,14 +230,14 @@ describe("foreach", () => {
 
   it("counts SUCCESSES, not attempts, against min", async () => {
     // Every iteration blocks, so zero succeed and min:2 must fail.
-    const { result } = await run(body, fakeJev(["CLICK"]), fakeExecutor(["same"]), {
+    const { result } = await run(body, fakeJev(["CLICK"]), fakeExecutor(["same"]), {}, {
       extract: async () => [{ id: 1 }, { id: 2 }, { id: 3 }],
     });
     expect(result.status).toBe("blocked");
   });
 
   it("succeeds once min iterations complete", async () => {
-    const { result } = await run(body, fakeJev(["DONE"]), fakeExecutor(["h1"]), {
+    const { result } = await run(body, fakeJev(["DONE"]), fakeExecutor(["h1"]), {}, {
       extract: async () => [{ id: 1 }, { id: 2 }],
     });
     expect(result.status).toBe("done");
@@ -225,7 +253,7 @@ describe("foreach", () => {
         do: [{ kind: "compose", id: "c", intent: "i", from: ["$.item"], into: "out" }],
       },
     ]);
-    const { result } = await run(p, fakeJev(["DONE"]), fakeExecutor(["h1"]), {
+    const { result } = await run(p, fakeJev(["DONE"]), fakeExecutor(["h1"]), {}, {
       extract: async () => [{ company: "A" }, { company: "A" }, { company: "B" }],
       compose: async (_i, inputs) => {
         seen.push(inputs);

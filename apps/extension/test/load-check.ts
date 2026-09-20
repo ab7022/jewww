@@ -1,0 +1,107 @@
+/**
+ * Loads the BUILT extension into a real Chrome and checks the parts that only exist
+ * at runtime: that the content script is injected, that it answers the worker's
+ * messages, and that the collector sees the real page.
+ *
+ * Unit tests cannot cover any of this — there is no DOM, no message bus and no
+ * service worker in vitest.
+ *
+ *   pnpm --filter @jev-browser/extension build && pnpm check:extension
+ */
+import { existsSync, mkdtempSync, readFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { chromium } from "playwright";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const dist = join(root, "dist");
+if (!existsSync(join(dist, "manifest.json"))) {
+  throw new Error("build the extension first: pnpm --filter @jev-browser/extension build");
+}
+
+const results: { name: string; pass: boolean; detail?: string }[] = [];
+const check = (name: string, pass: boolean, detail?: string) =>
+  results.push({ name, pass, ...(detail ? { detail } : {}) });
+
+const manifest = JSON.parse(readFileSync(join(dist, "manifest.json"), "utf8")) as {
+  host_permissions?: string[];
+  permissions?: string[];
+  optional_permissions?: string[];
+};
+
+// The single most important property of the shipped manifest.
+check(
+  "host_permissions is EMPTY at install",
+  !manifest.host_permissions || manifest.host_permissions.length === 0,
+  JSON.stringify(manifest.host_permissions),
+);
+check(
+  "debugger is optional, not granted up front",
+  !manifest.permissions?.includes("debugger") &&
+    Boolean(manifest.optional_permissions?.includes("debugger")),
+);
+
+const profile = mkdtempSync(join(tmpdir(), "jev-ext-"));
+const context = await chromium.launchPersistentContext(profile, {
+  channel: "chromium",
+  headless: true,
+  args: [`--disable-extensions-except=${dist}`, `--load-extension=${dist}`],
+});
+
+try {
+  // The service worker registering at all is the thing MV3 most often gets wrong.
+  let worker = context.serviceWorkers()[0];
+  if (!worker) worker = await context.waitForEvent("serviceworker", { timeout: 15_000 });
+  const extensionId = new URL(worker.url()).host;
+  check("service worker registered", Boolean(extensionId), extensionId);
+
+  const page = await context.newPage();
+  await page.goto("https://example.com", { waitUntil: "domcontentloaded" });
+  await page.waitForTimeout(1500);
+
+  // Drive the content script exactly as the worker does.
+  const snapshot = (await worker.evaluate(async () => {
+    const [tab] = await chrome.tabs.query({ url: "https://example.com/*" });
+    if (!tab?.id) return { error: "no tab" };
+    return chrome.tabs.sendMessage(tab.id, { kind: "snapshot" });
+  })) as { ok?: boolean; snapshot?: { elements: unknown[]; url: string }; error?: string };
+
+  check(
+    "content script answers a snapshot request",
+    Boolean(snapshot?.ok && snapshot.snapshot),
+    snapshot?.error ?? "",
+  );
+  check(
+    "collector sees real elements with node ids",
+    Boolean(snapshot?.snapshot?.elements?.length),
+    `${snapshot?.snapshot?.elements?.length ?? 0} elements`,
+  );
+
+  const guard = (await worker.evaluate(async () => {
+    const [tab] = await chrome.tabs.query({ url: "https://example.com/*" });
+    if (!tab?.id) return { error: "no tab" };
+    return chrome.tabs.sendMessage(tab.id, { kind: "guard", node: 1 });
+  })) as { ok?: boolean; guard?: { pageKey: string | null } };
+  check("guards run in the content script", Boolean(guard?.ok && guard.guard?.pageKey));
+
+  const text = (await worker.evaluate(async () => {
+    const [tab] = await chrome.tabs.query({ url: "https://example.com/*" });
+    if (!tab?.id) return { error: "no tab" };
+    return chrome.tabs.sendMessage(tab.id, { kind: "pageText" });
+  })) as { ok?: boolean; text?: string };
+  check(
+    "bulk page text is available for extraction",
+    Boolean(text?.ok && (text.text?.length ?? 0) > 20),
+    `${text?.text?.length ?? 0} chars`,
+  );
+} finally {
+  await context.close();
+}
+
+for (const r of results) {
+  console.log(`  ${r.pass ? "ok  " : "FAIL"} ${r.name}${r.detail ? `  (${r.detail})` : ""}`);
+}
+const failed = results.filter((r) => !r.pass);
+console.log(`\n${results.length - failed.length}/${results.length} extension checks passed`);
+process.exitCode = failed.length ? 1 : 0;

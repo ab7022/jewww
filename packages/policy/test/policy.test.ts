@@ -21,7 +21,7 @@ const snapshot: Snapshot = {
   text: "",
   contentHash: "h",
 };
-const input = { goal: "g", subgoal: "s", success: "visible", snapshot, space, recent: [] };
+const input = { goal: "g", subgoal: "s", success: "visible", snapshot, nodes, recent: [] };
 
 function fakeJev(answers: Record<string, Answer>): JevProvider {
   return {
@@ -57,7 +57,7 @@ describe("action space", () => {
 
 describe("fan-out", () => {
   it("asks operation, risk and every target head in ONE request", () => {
-    expect(Object.keys(buildQuestions(input)).sort()).toEqual([
+    expect(Object.keys(buildQuestions({ ...input, space })).sort()).toEqual([
       "click_target", "operation", "risk", "type_text_target",
     ]);
   });

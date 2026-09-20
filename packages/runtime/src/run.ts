@@ -1,35 +1,44 @@
-import {
-  type Executor,
-  StalePage,
-  UnreachableTarget,
-} from "@jev-browser/executor";
-import type { JevProvider } from "@jev-browser/jev";
-import { buildActionSpace, decide, fieldText, shouldEscalate } from "@jev-browser/policy";
+
+import type { Decision, DecideInput, TextContext } from "@jev-browser/policy";
+import { shouldEscalate } from "@jev-browser/policy";
 import { DEFAULT_CAP, rankedSnapshot } from "@jev-browser/sense";
 import {
+  type Executor,
   FORBIDDEN_FIELD,
   IRREVERSIBLE_NAME,
   type Node,
   type Plan,
   SCRATCH_REF,
+  StalePage,
+  UnreachableTarget,
 } from "@jev-browser/shared";
 import type { Emit, RunStatus } from "./events.js";
 import { Scratchpad } from "./scratchpad.js";
 
+/**
+ * Everything the loop needs a model for, injected rather than called directly.
+ *
+ * The CLI wires these straight to the model packages; the extension wires them to the
+ * server, which is the only place an API key exists. Same loop either way — and it is
+ * what lets the extension avoid bundling any model client at all.
+ */
+export interface Capabilities {
+  decide(input: DecideInput): Promise<Decision>;
+  /** Text for a TYPE_TEXT step, written with the page in front of the model. */
+  text(ctx: TextContext): Promise<string>;
+  extract(intent: string, schema: unknown, pageText: string): Promise<unknown>;
+  compose(intent: string, inputs: Record<string, unknown>): Promise<unknown>;
+}
+
 export interface RunOptions {
-  jev: JevProvider;
+  capabilities: Capabilities;
   executor: Executor;
   plan: Plan;
   emit: Emit;
-  /** Produces text/data for read, compose and TYPE_TEXT. */
-  apiKey: string;
   profile?: Record<string, string>;
   maxSteps?: number;
-  /** Called at a confirm node. Returning false suspends the run. */
+  /** Called before anything irreversible. Returning false suspends the run. */
   approve?: (preview: string, risk: string) => Promise<boolean>;
-  /** Per-node extraction; injected so the server can meter it. */
-  extract?: (intent: string, schema: unknown, pageText: string) => Promise<unknown>;
-  compose?: (intent: string, inputs: Record<string, unknown>) => Promise<unknown>;
 }
 
 export interface RunResult {
@@ -127,17 +136,12 @@ async function runActNode(
     if (raw.contentHash !== lastHash) repeats = 0;
     lastHash = raw.contentHash;
 
-    const space = buildActionSpace(capped.elements, nodes, {
-      canScrollDown: raw.viewport.scrollY < raw.viewport.maxScrollY,
-      canScrollUp: raw.viewport.scrollY > 0,
-    });
-
-    const d = await decide(opts.jev, {
+    const d = await opts.capabilities.decide({
       goal: opts.plan.goal,
       subgoal: node.intent,
       success: node.success,
       snapshot: capped,
-      space,
+      nodes,
       recent: [],
     });
     state.cost += d.costUsd;
@@ -197,24 +201,26 @@ async function runActNode(
       if (slotted !== undefined) {
         text = slotted;
       } else {
-        const t = await fieldText(
-          {
-            goal: opts.plan.goal,
-            subgoal: node.intent,
-            field: {
-              label: d.target?.label ?? "",
-              role: d.target?.role ?? "textbox",
-              ...(d.target?.value ? { value: d.target.value } : {}),
-            },
-            page: { title: capped.title, text: capped.text },
-            recent: [],
-            ...(opts.profile ? { profile: opts.profile } : {}),
+        const started = Date.now();
+        text = await opts.capabilities.text({
+          goal: opts.plan.goal,
+          subgoal: node.intent,
+          field: {
+            label: d.target?.label ?? "",
+            role: d.target?.role ?? "textbox",
+            ...(d.target?.value ? { value: d.target.value } : {}),
           },
-          { apiKey: opts.apiKey },
-        );
-        text = t.text;
-        state.cost += t.costUsd;
-        opts.emit({ type: "text", field: d.target?.label ?? "", value: t.text, latencyMs: t.latencyMs, costUsd: t.costUsd });
+          page: { title: capped.title, text: capped.text },
+          recent: [],
+          ...(opts.profile ? { profile: opts.profile } : {}),
+        });
+        opts.emit({
+          type: "text",
+          field: d.target?.label ?? "",
+          value: text,
+          latencyMs: Date.now() - started,
+          costUsd: 0,
+        });
       }
     }
 
@@ -243,13 +249,9 @@ async function runReadNode(
   opts: RunOptions,
   pad: Scratchpad,
 ): Promise<RunStatus> {
-  if (!opts.extract) {
-    opts.emit({ type: "warn", message: `${node.id}: no extractor supplied` });
-    return "blocked";
-  }
   const raw = await opts.executor.snapshot();
   const body = await opts.executor.pageText();
-  const value = await opts.extract(node.intent, node.schema, `${raw.title}\n${raw.url}\n\n${body}`);
+  const value = await opts.capabilities.extract(node.intent, node.schema, `${raw.title}\n${raw.url}\n\n${body}`);
   pad.set(node.into, value);
   opts.emit({
     type: "node:done",
@@ -264,12 +266,8 @@ async function runComposeNode(
   opts: RunOptions,
   pad: Scratchpad,
 ): Promise<RunStatus> {
-  if (!opts.compose) {
-    opts.emit({ type: "warn", message: `${node.id}: no composer supplied` });
-    return "blocked";
-  }
   const inputs = Object.fromEntries(node.from.map((k) => [k, pad.get(k)]));
-  pad.set(node.into, await opts.compose(node.intent, inputs));
+  pad.set(node.into, await opts.capabilities.compose(node.intent, inputs));
   return "done";
 }
 

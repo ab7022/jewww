@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { fromEnv } from "@jev-browser/jev";
 import { compose, extract, makePlan } from "@jev-browser/planner";
-import { buildActionSpace, decide, fieldText } from "@jev-browser/policy";
+import { decide, fieldText } from "@jev-browser/policy";
 import type { Snapshot } from "@jev-browser/shared";
 import express, { type Express, type NextFunction, type Request, type Response } from "express";
 import {
@@ -187,16 +187,12 @@ export function createApp(cfg: AppConfig): Express {
     };
     await assertBalance(store, uid(req), 1);
 
-    const space = buildActionSpace(body.snapshot.elements, body.nodes, {
-      canScrollDown: body.snapshot.viewport.scrollY < body.snapshot.viewport.maxScrollY,
-      canScrollUp: body.snapshot.viewport.scrollY > 0,
-    });
     const d = await decide(jev(), {
       goal: run.goal,
       subgoal: body.subgoal,
       success: body.success,
       snapshot: body.snapshot,
-      space,
+      nodes: body.nodes,
       recent: body.recent ?? [],
     });
     const charge = await meter(store, uid(req), "decide", d.costUsd, run._id);

@@ -8,8 +8,7 @@
  *
  *   pnpm exec tsx eval/src/check-guards.ts
  */
-import { collectorCall, collectorSource } from "@jev-browser/sense/bundle";
-import { nodeGuardScript, pageKeyScript, resolveScript } from "@jev-browser/sense";
+import { call, collectorSource } from "@jev-browser/sense/bundle";
 import type { RawSnapshot } from "@jev-browser/shared";
 import { chromium } from "playwright";
 
@@ -27,7 +26,7 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 800, height: 600 } });
 await page.setContent(PAGE);
 await page.evaluate(await collectorSource());
-const snap = (await page.evaluate(collectorCall(500))) as RawSnapshot;
+const snap = (await page.evaluate(call.snapshot(500))) as RawSnapshot;
 
 const byName = (n: string) => snap.elements.find((e) => e.name.includes(n));
 const go = byName("Submit order");
@@ -38,10 +37,12 @@ const results: { name: string; pass: boolean; detail?: string }[] = [];
 const check = (name: string, pass: boolean, detail?: string) =>
   results.push({ name, pass, ...(detail ? { detail } : {}) });
 
-const pageKey = () => page.evaluate(pageKeyScript()) as Promise<string | null>;
-const guard = (node: number) => page.evaluate(nodeGuardScript(node)) as Promise<string | null>;
-const resolve = (node: number, kind: "click" | "fill") =>
-  page.evaluate(resolveScript(node, kind)) as Promise<string | null>;
+const pageKey = () => page.evaluate(call.pageKey()) as Promise<string | null>;
+const guard = (node: number) => page.evaluate(call.nodeGuard(node)) as Promise<string | null>;
+const resolve = async (node: number, kind: "click" | "fill") => {
+  const raw = (await page.evaluate(call.resolvePoint(node, kind))) as string | null;
+  return raw && raw !== "null" ? raw : null;
+};
 
 // 1. Scrolling is not a semantic change. If it invalidated decisions, every page
 //    with a sticky header would re-decide forever.

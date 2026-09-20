@@ -3,3 +3,4 @@ export * from "./question.js";
 export * from "./action.js";
 export * from "./profile.js";
 export * from "./plan.js";
+export * from "./executor.js";

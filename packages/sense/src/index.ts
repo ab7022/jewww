@@ -1,11 +1,12 @@
 export { collectSnapshot } from "./collect.js";
 export {
-  nodeGuardScript,
-  pageKeyScript,
-  resolveScript,
-  settleScript,
+  nodeGuard,
+  pageKey,
+  resolvePoint,
+  settle,
+  snapshot,
   stillFresh,
-} from "./guard.js";
+} from "./browser.js";
 export {
   DEFAULT_CAP,
   rankElements,

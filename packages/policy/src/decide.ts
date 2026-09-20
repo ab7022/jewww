@@ -10,6 +10,7 @@ import {
 } from "@jev-browser/shared";
 import {
   type ActionSpace,
+  buildActionSpace,
   describeTarget,
   type Operation,
   type TargetEntry,
@@ -22,7 +23,8 @@ export interface DecideInput {
   subgoal: string;
   success: string;
   snapshot: Snapshot;
-  space: ActionSpace;
+  /** eid -> live DOM node id. The action space is built from this. */
+  nodes: Record<string, number>;
   recent: { action: string; text?: string | null; pageChanged?: boolean | null }[];
 }
 
@@ -52,7 +54,7 @@ export const ACT_THRESHOLD = 0.7;
  * for every operation that has one — plus the risk class. Only the head matching the
  * chosen operation is consumed; the rest cost nothing extra and save a round trip.
  */
-export function buildQuestions(input: DecideInput): Questions {
+export function buildQuestions(input: DecideInput & { space: ActionSpace }): Questions {
   const { space, goal, subgoal, success } = input;
   const context = `Goal: ${goal}\nSubgoal: ${subgoal}\nSucceeds when: ${success}`;
 
@@ -81,7 +83,11 @@ export function buildQuestions(input: DecideInput): Questions {
 }
 
 export async function decide(jev: JevProvider, input: DecideInput): Promise<Decision> {
-  const questions = buildQuestions(input);
+  const space = buildActionSpace(input.snapshot.elements, input.nodes, {
+    canScrollDown: input.snapshot.viewport.scrollY < input.snapshot.viewport.maxScrollY,
+    canScrollUp: input.snapshot.viewport.scrollY > 0,
+  });
+  const questions = buildQuestions({ ...input, space });
   const state = {
     goal: input.goal,
     subgoal: input.subgoal,
@@ -92,20 +98,20 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
       text: input.snapshot.text,
     },
     scroll: input.snapshot.viewport,
-    elements: input.space.elements,
+    elements: space.elements,
     recent_actions: input.recent.slice(-10),
   };
 
   const r = await jev.evaluate(state, questions);
 
   const opAnswer = r.answers.operation;
-  validateChoice(opAnswer, Object.keys(input.space.operations));
+  validateChoice(opAnswer, Object.keys(space.operations));
   const operation = opAnswer.choice as Operation;
 
   let target: TargetEntry | undefined;
   let targetConfidence: number | undefined;
 
-  const head = input.space.targets[operation as "CLICK" | "TYPE_TEXT" | "SELECT"];
+  const head = space.targets[operation as "CLICK" | "TYPE_TEXT" | "SELECT"];
   if (head) {
     // Validate ONLY the head the operation selected. An unused speculative head
     // cannot cause an action, so a malformed one must not fail the step either.

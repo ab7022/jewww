@@ -9,7 +9,8 @@
 import { CdpExecutor } from "@jev-browser/executor";
 import { fromEnv } from "@jev-browser/jev";
 import { compose, extract, makePlan } from "@jev-browser/planner";
-import { runPlan } from "@jev-browser/runtime";
+import { decide, fieldText } from "@jev-browser/policy";
+import { type Capabilities, runPlan } from "@jev-browser/runtime";
 import type { RunEvent } from "@jev-browser/runtime";
 
 function arg(name: string): string | undefined {
@@ -73,20 +74,25 @@ print({ type: "plan", nodes: planned.plan.nodes.length, sites: planned.plan.site
 
 const executor = await CdpExecutor.launch(url, { headless: !flag("headed") });
 try {
-  const result = await runPlan({
-    jev: fromEnv("openrouter"),
-    executor,
-    plan: planned.plan,
-    emit: print,
-    apiKey,
-    // --auto-approve exists ONLY so a read-only task can run unattended. It must
-    // never be the default: it turns the safety gate off.
-    ...(flag("auto-approve")
-      ? { approve: async () => true }
-      : {}),
+  // The CLI talks to the models directly. The extension wires these same four to
+  // the server instead, which is the only place an API key exists.
+  const jev = fromEnv("openrouter");
+  const capabilities: Capabilities = {
+    decide: (input) => decide(jev, input),
+    text: async (ctx) => (await fieldText(ctx, { apiKey })).text,
     extract: async (intent, schema, pageText) =>
       (await extract({ apiKey, intent, schema, pageText })).value,
     compose: async (intent, inputs) => (await compose({ apiKey, intent, inputs })).value,
+  };
+
+  const result = await runPlan({
+    capabilities,
+    executor,
+    plan: planned.plan,
+    emit: print,
+    // --auto-approve exists ONLY so a read-only task can run unattended. It must
+    // never be the default: it turns the safety gate off.
+    ...(flag("auto-approve") ? { approve: async () => true } : {}),
   });
 
   const data = Object.entries(result.data).filter(([k]) => k !== "profile");

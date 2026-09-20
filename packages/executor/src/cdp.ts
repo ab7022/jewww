@@ -1,18 +1,15 @@
+import { call, collectorSource } from "@jev-browser/sense/bundle";
+import { stillFresh } from "@jev-browser/sense";
 import {
-  collectorCall,
-  collectorSource,
-} from "@jev-browser/sense/bundle";
-import {
-  nodeGuardScript,
-  pageKeyScript,
-  resolveScript,
-  settleScript,
-  stillFresh,
-} from "@jev-browser/sense";
-import type { Action, RawSnapshot } from "@jev-browser/shared";
+  type Action,
+  type Executor,
+  type Guard,
+  type RawSnapshot,
+  StalePage,
+  UnreachableTarget,
+} from "@jev-browser/shared";
 import type { Browser, Page } from "playwright";
 import { chromium } from "playwright";
-import { type Executor, type Guard, StalePage, UnreachableTarget } from "./types.js";
 
 export interface CdpOptions {
   headless?: boolean;
@@ -75,7 +72,7 @@ export class CdpExecutor implements Executor {
         // Re-injected every time: a navigation wipes the page's globals, and the
         // collector's node registry must belong to the document we are reading.
         await this.page.evaluate(this.source);
-        return (await this.page.evaluate(collectorCall(this.maxCandidates))) as RawSnapshot;
+        return (await this.page.evaluate(call.snapshot(this.maxCandidates))) as RawSnapshot;
       } catch (err) {
         if (attempt >= 3) throw new StalePage(`could not observe the page: ${String(err).slice(0, 120)}`);
         await this.page.waitForLoadState("domcontentloaded").catch(() => {});
@@ -95,8 +92,8 @@ export class CdpExecutor implements Executor {
   }
 
   async guardFor(node: number | null): Promise<Guard> {
-    const pageKey = (await this.evalOrNull(pageKeyScript())) as string | null;
-    const nodeGuard = node === null ? null : ((await this.evalOrNull(nodeGuardScript(node))) as string | null);
+    const pageKey = (await this.evalOrNull(call.pageKey())) as string | null;
+    const nodeGuard = node === null ? null : ((await this.evalOrNull(call.nodeGuard(node))) as string | null);
     return { pageKey, nodeGuard };
   }
 
@@ -128,13 +125,14 @@ export class CdpExecutor implements Executor {
     //    performs the mutation, because a native select cannot be driven by a click.
     const kind = action.kind === "type" ? "fill" : action.kind === "select" ? "select" : "click";
     const option = action.kind === "select" ? action.option : undefined;
-    const raw = (await this.evalOrNull(resolveScript(node, kind, option))) as string | null;
-    if (raw === null) {
+    const raw = (await this.evalOrNull(call.resolvePoint(node, kind, option))) as string | null;
+    const point = raw && raw !== "null" ? (JSON.parse(raw) as { x: number; y: number }) : null;
+    if (!point) {
       throw new UnreachableTarget("target is gone, disabled, off-screen, or covered");
     }
     if (kind === "select") return;
 
-    const { x, y } = JSON.parse(raw) as { x: number; y: number };
+    const { x, y } = point;
 
     // 3. Execute. No retries past this line.
     await this.page.mouse.click(x, y);
@@ -149,7 +147,7 @@ export class CdpExecutor implements Executor {
 
   async settle(node: number | null, isCombobox: boolean): Promise<void> {
     try {
-      await this.page.evaluate(settleScript(node, isCombobox));
+      await this.page.evaluate(call.settle(node, isCombobox));
     } catch {
       // A navigation during settle is normal and not an error — the next snapshot
       // will observe wherever we landed.

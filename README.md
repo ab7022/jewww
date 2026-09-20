@@ -21,6 +21,7 @@ before any Chrome code exists.
 | `packages/runtime` | Interprets the node program: scratchpad, step loop, foreach, confirm |
 | `apps/runner` | Headless CLI that plans a goal and executes it end to end |
 | `apps/server` | Node + Express + MongoDB. Holds the model keys, meters credits, logs runs |
+| `apps/extension` | MV3 Chrome extension: side panel, content-script executor, approval gate |
 
 ## Setup
 
@@ -43,6 +44,7 @@ pnpm eval:fields            # field mapping on real ATS forms
 pnpm eval:plans             # 50 end-to-end use cases → planner checks
 pnpm plan <slug>            # inspect one plan
 pnpm check:guards           # freshness + occlusion guards in a real browser
+pnpm check:extension        # build the extension and load it in a real Chrome
 
 pnpm server                 # Express API on :8787 (needs a local MongoDB)
 pnpm run-task --goal "..." --url https://...   # plan and execute, headless

@@ -8,6 +8,7 @@
     "@jev-browser/jev": "workspace:*",
     "@jev-browser/planner": "workspace:*",
     "@jev-browser/runtime": "workspace:*",
-    "@jev-browser/shared": "workspace:*"
+    "@jev-browser/shared": "workspace:*",
+    "@jev-browser/policy": "workspace:*"
   }
 }

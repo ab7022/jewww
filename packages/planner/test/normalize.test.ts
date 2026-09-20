@@ -1,7 +1,7 @@
 import type { JevProvider } from "@jev-browser/jev";
-import type { Answer, Plan } from "@jev-browser/shared";
+import { type Answer, Plan } from "@jev-browser/shared";
 import { describe, expect, it } from "vitest";
-import { normalizePlan } from "../src/normalize.js";
+import { coerceNodes, normalizePlan } from "../src/normalize.js";
 
 const plan = (nodes: Plan["nodes"]): Plan => ({ goal: "g", sites: [], nodes });
 const act = (id: string, intent: string, extra: Record<string, unknown> = {}) =>
@@ -80,5 +80,49 @@ describe("normalizePlan", () => {
     const { changes, costUsd } = await normalizePlan(fakeJev({}), empty);
     expect(changes).toHaveLength(0);
     expect(costUsd).toBe(0);
+  });
+});
+
+describe("coerceNodes", () => {
+  const raw = (nodes: unknown[]) => ({ goal: "g", sites: [], nodes });
+
+  it("turns an invented node kind into an act node", async () => {
+    // A long plan reliably contains one of these, and rejecting the whole plan over
+    // it loses twenty good nodes.
+    const fixed = coerceNodes(raw([{ kind: "navigate", id: "n", intent: "Open the page" }])) as {
+      nodes: { kind: string; success: string }[];
+    };
+    expect(fixed.nodes[0]?.kind).toBe("act");
+    expect(fixed.nodes[0]?.success).toContain("Open the page");
+    expect(Plan.safeParse(fixed).success).toBe(true);
+  });
+
+  it("keeps a supplied success criterion", () => {
+    const fixed = coerceNodes(
+      raw([{ kind: "verify", id: "v", intent: "check it", success: "the badge is visible" }]),
+    ) as { nodes: { success: string }[] };
+    expect(fixed.nodes[0]?.success).toBe("the badge is visible");
+  });
+
+  it("drops a node that says nothing at all", () => {
+    const fixed = coerceNodes(raw([{ kind: "???" }, { kind: "act", id: "a", intent: "i", success: "s" }])) as {
+      nodes: unknown[];
+    };
+    expect(fixed.nodes).toHaveLength(1);
+  });
+
+  it("reaches inside a foreach body", () => {
+    const fixed = coerceNodes(
+      raw([
+        { kind: "foreach", id: "f", intent: "i", over: "$.x", as: "y",
+          do: [{ kind: "upload", id: "u", intent: "attach the file" }] },
+      ]),
+    ) as { nodes: { do: { kind: string }[] }[] };
+    expect(fixed.nodes[0]?.do[0]?.kind).toBe("act");
+  });
+
+  it("leaves a valid plan untouched", () => {
+    const good = raw([{ kind: "act", id: "a", intent: "i", success: "s" }]);
+    expect(coerceNodes(good)).toEqual(good);
   });
 });

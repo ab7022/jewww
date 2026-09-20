@@ -223,6 +223,35 @@ export function settle(node: number | null, isCombobox: boolean): Promise<boolea
   });
 }
 
+/**
+ * Visible text for extraction, with the page's links appended.
+ *
+ * `innerText` contains no hrefs, so an extraction asked for "the jobs and their
+ * URLs" can only return what is written on screen — on Hacker News that is
+ * "supabase.link", not a URL you can navigate to. Every link the agent might follow
+ * has to be readable, or it cannot plan navigation at all.
+ */
+export function pageText(maxChars = 40_000): string {
+  const main = document.querySelector("main,article,[role=main]") ?? document.body;
+  const body = ((main as HTMLElement).innerText ?? "").replace(/\n{3,}/g, "\n\n").trim();
+
+  const seen = new Set<string>();
+  const links: string[] = [];
+  for (const a of document.querySelectorAll<HTMLAnchorElement>("a[href]")) {
+    const href = a.href;
+    if (!href || !/^https?:/.test(href) || seen.has(href)) continue;
+    if (!a.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) continue;
+    const label = (a.innerText || a.textContent || "").replace(/\s+/g, " ").trim().slice(0, 100);
+    if (!label) continue;
+    seen.add(href);
+    links.push(`- [${label}](${href})`);
+    if (links.length >= 300) break;
+  }
+
+  const linkSection = links.length ? `\n\nLinks on this page:\n${links.join("\n")}` : "";
+  return `${body.slice(0, Math.max(0, maxChars - linkSection.length))}${linkSection}`;
+}
+
 /** Snapshot the page. Re-exported so one bundle serves the whole browser surface. */
 export function snapshot(maxCandidates = 2000): RawSnapshot {
   return collectSnapshot(maxCandidates);

@@ -124,6 +124,9 @@ importers:
 
   eval:
     dependencies:
+      '@jev-browser/executor':
+        specifier: workspace:*
+        version: link:../packages/executor
       '@jev-browser/jev':
         specifier: workspace:*
         version: link:../packages/jev

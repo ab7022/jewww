@@ -1,6 +1,6 @@
 import { Plan } from "@jev-browser/shared";
 import type { JevProvider } from "@jev-browser/jev";
-import { type Normalisation, normalizePlan } from "./normalize.js";
+import { coerceNodes, type Normalisation, normalizePlan } from "./normalize.js";
 import { type ChatResult, chat, DEFAULT_PLANNER_MODEL } from "./llm.js";
 import { SYSTEM_PROMPT, userPrompt } from "./prompt.js";
 
@@ -47,7 +47,7 @@ export async function makePlan(opts: {
     user: userPrompt(opts.goal, opts.start),
   });
 
-  const parsed = Plan.safeParse(tryExtract(first.text));
+  const parsed = Plan.safeParse(coerceNodes(tryExtract(first.text)));
   if (parsed.success) {
     const norm = await canonicalise(parsed.data, opts.jev);
     return {
@@ -70,7 +70,7 @@ export async function makePlan(opts: {
       `Previous answer:\n${first.text.slice(0, 4000)}\n\nReturn corrected JSON only.`,
   });
 
-  const norm = await canonicalise(Plan.parse(tryExtract(second.text)), opts.jev);
+  const norm = await canonicalise(Plan.parse(coerceNodes(tryExtract(second.text))), opts.jev);
   return {
     plan: norm.plan,
     normalised: norm.changes,

@@ -1,6 +1,7 @@
 import {
   nodeGuard,
   pageKey,
+  pageText,
   resolvePoint,
   settle,
   snapshot,
@@ -39,14 +40,8 @@ async function handle(msg: ToContent): Promise<FromContent> {
     case "snapshot":
       return { ok: true, snapshot: snapshot(msg.maxCandidates ?? 2000) };
 
-    case "pageText": {
-      const main = document.querySelector("main,article,[role=main]") ?? document.body;
-      const text = ((main as HTMLElement).innerText ?? "")
-        .replace(/\n{3,}/g, "\n\n")
-        .trim()
-        .slice(0, msg.maxChars ?? 40_000);
-      return { ok: true, text };
-    }
+    case "pageText":
+      return { ok: true, text: pageText(msg.maxChars ?? 40_000) };
 
     case "guard":
       return { ok: true, guard: currentGuard(msg.node, msg.fp) };

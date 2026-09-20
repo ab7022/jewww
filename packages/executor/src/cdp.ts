@@ -8,7 +8,7 @@ import {
   StalePage,
   UnreachableTarget,
 } from "@jev-browser/shared";
-import type { Browser, Page } from "playwright";
+import type { Browser, BrowserContext, Page } from "playwright";
 import { chromium } from "playwright";
 
 export interface CdpOptions {
@@ -31,12 +31,62 @@ export interface CdpOptions {
  *   3. never retry a mutation. A click that may have landed must not land twice.
  */
 export class CdpExecutor implements Executor {
+  private context: BrowserContext | null = null;
+  /** Tabs open at the moment of the last action, to detect one the click opened. */
+  private pagesBefore = 0;
+
   private constructor(
     private readonly browser: Browser | null,
-    private readonly page: Page,
+    private page: Page,
     private readonly maxCandidates: number,
     private source: string,
   ) {}
+
+  /**
+   * Follow tabs the page opens.
+   *
+   * A great many "Apply", "Open", and "Continue" controls are `target="_blank"`.
+   * Holding a single page meant the click worked, a new tab appeared, and the agent
+   * kept observing the old one — reporting "the page did not change" and giving up,
+   * over and over, on sites where it had actually succeeded.
+   */
+  private follow(context: BrowserContext): void {
+    this.context = context;
+    context.on("page", (opened) => {
+      this.page = opened;
+      opened.on("close", () => {
+        const remaining = context.pages().filter((p) => !p.isClosed());
+        const last = remaining[remaining.length - 1];
+        if (last) this.page = last;
+      });
+    });
+  }
+
+  /**
+   * Give a tab the click may have opened time to appear, and adopt it.
+   *
+   * Bounded and conditional: it polls only while no new tab has shown up, and gives
+   * up quickly. Simply waiting a fixed 120ms — which was the first attempt — misses
+   * the tab often enough that the agent reports "the page did not change" on sites
+   * where the click had in fact worked.
+   */
+  private async adoptNewTab(maxWaitMs = 600): Promise<boolean> {
+    if (!this.context) return false;
+    const deadline = Date.now() + maxWaitMs;
+    while (Date.now() < deadline) {
+      const open = this.context.pages().filter((p) => !p.isClosed());
+      if (open.length > this.pagesBefore) {
+        const last = open[open.length - 1];
+        if (last) {
+          this.page = last;
+          await last.waitForLoadState("domcontentloaded", { timeout: 5_000 }).catch(() => {});
+          return true;
+        }
+      }
+      await new Promise((r) => setTimeout(r, 50));
+    }
+    return false;
+  }
 
   static async launch(url: string, opts: CdpOptions = {}): Promise<CdpExecutor> {
     const browser = opts.cdpUrl
@@ -54,16 +104,28 @@ export class CdpExecutor implements Executor {
     const page = context.pages()[0] ?? (await context.newPage());
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30_000 });
 
-    return new CdpExecutor(
+    const executor = new CdpExecutor(
       opts.cdpUrl ? null : browser,
       page,
       opts.maxCandidates ?? 2000,
       await collectorSource(),
     );
+    executor.follow(context);
+    return executor;
   }
 
   url(): string {
     return this.page.url();
+  }
+
+  /** Run arbitrary setup in the page. For tests and diagnostics only. */
+  async inject(expression: string): Promise<void> {
+    await this.page.evaluate(expression);
+  }
+
+  /** Evaluate and return a value. For diagnostics only. */
+  async probe(expression: string): Promise<unknown> {
+    return this.page.evaluate(expression);
   }
 
   async snapshot(): Promise<RawSnapshot> {
@@ -82,13 +144,10 @@ export class CdpExecutor implements Executor {
   }
 
   async pageText(maxChars = 40_000): Promise<string> {
-    const text = (await this.evalOrNull(
-      `(() => {
-         const main = document.querySelector('main,article,[role=main]') || document.body;
-         return (main.innerText || '').replace(/\\n{3,}/g, '\\n\\n').trim().slice(0, ${maxChars});
-       })()`,
-    )) as string | null;
-    return text ?? "";
+    // Injected first: a navigation since the last snapshot would have wiped the
+    // bundle, and extraction must not silently return an empty page.
+    await this.page.evaluate(this.source).catch(() => {});
+    return ((await this.evalOrNull(call.pageText(maxChars))) as string | null) ?? "";
   }
 
   async guardFor(node: number | null, fp?: string): Promise<Guard> {
@@ -136,8 +195,30 @@ export class CdpExecutor implements Executor {
          })()`,
       );
       if (!marked) throw new UnreachableTarget("chosen target is not a file input");
+
+      // Where the upload widget sits, in absolute page coordinates, captured BEFORE
+      // the upload. Sites replace the input with a filename display once a file is
+      // chosen, which detaches the node — so scrolling to it afterwards silently
+      // does nothing, and the next observation shows the top of the page with no
+      // sign of the file that was just attached.
+      const anchorY = (await this.page.evaluate(
+        `(() => {
+           const e = globalThis.__jevSenseCache?.nodes.get(${node});
+           const box = e?.parentElement ?? e;
+           if (!box) return null;
+           return box.getBoundingClientRect().top + window.scrollY;
+         })()`,
+      )) as number | null;
+
       try {
         await this.page.setInputFiles("input[data-jev-upload]", action.file, { timeout: 10_000 });
+        if (anchorY !== null) {
+          await this.page
+            .evaluate(
+              `window.scrollTo({ top: Math.max(0, ${anchorY} - window.innerHeight / 2), behavior: "instant" })`,
+            )
+            .catch(() => {});
+        }
       } finally {
         await this.page
           .evaluate(`document.querySelector('input[data-jev-upload]')?.removeAttribute('data-jev-upload')`)
@@ -171,6 +252,7 @@ export class CdpExecutor implements Executor {
     const { x, y } = resolution;
 
     // 3. Execute. No retries past this line.
+    this.pagesBefore = this.context?.pages().filter((pg) => !pg.isClosed()).length ?? 0;
     await this.page.mouse.click(x, y);
     if (action.kind === "type") {
       if (text === undefined) throw new Error("type action reached the executor with no text");
@@ -182,6 +264,9 @@ export class CdpExecutor implements Executor {
   }
 
   async settle(node: number | null, isCombobox: boolean): Promise<void> {
+    // A click that opened a tab means the interesting page is the new one, and the
+    // settle below belongs to it rather than to the page we left.
+    if (await this.adoptNewTab()) return;
     try {
       await this.page.evaluate(call.settle(node, isCombobox));
     } catch {

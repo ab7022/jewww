@@ -2,6 +2,7 @@ export { collectSnapshot } from "./collect.js";
 export {
   nodeGuard,
   pageKey,
+  pageText,
   resolvePoint,
   settle,
   snapshot,

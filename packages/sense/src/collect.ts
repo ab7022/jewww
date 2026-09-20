@@ -25,6 +25,21 @@ export const SELECTOR = [
   "[contenteditable]:not([contenteditable=false])",
 ].join(",");
 
+/**
+ * Roles that describe a container, not a control.
+ *
+ * They match `[role]` in the selector and so were collected, then offered as click
+ * targets — and clicking a group does nothing at all. On a Greenhouse form the model
+ * kept choosing `[group] "Resume/CV"` after the upload had already succeeded,
+ * repeating until the loop guard killed a run that had in fact finished.
+ */
+const CONTAINER_ROLES = new Set([
+  "group", "region", "banner", "contentinfo", "navigation", "main", "form", "search",
+  "list", "listitem", "table", "row", "rowgroup", "presentation", "none", "article",
+  "document", "application", "status", "alert", "log", "tooltip", "separator",
+  "heading", "img", "figure", "paragraph", "definition", "term", "toolbar",
+]);
+
 const TAG_ROLE: Record<string, string> = {
   A: "link", BUTTON: "button", SELECT: "combobox", TEXTAREA: "textbox",
   SUMMARY: "disclosure", H1: "heading", H2: "heading", H3: "heading",
@@ -71,6 +86,25 @@ function labelText(el: Element): string {
 }
 
 export function nameOf(el: Element): string {
+  // A file input is visually hidden, so its own label is usually the word on the
+  // button covering it ("Attach"). The surrounding field says what it is actually
+  // for ("Resume/CV"), which is what the model needs to choose correctly.
+  if (el.tagName === "INPUT" && (el as HTMLInputElement).type === "file") {
+    // Walk out until a container names the FIELD rather than the button sitting on
+    // it. Every wrapper around a Greenhouse upload is labelled "Attach"; the field is
+    // called "Resume/CV" several levels up, and a label that contains the input is by
+    // definition the button's own, so it is skipped.
+    let scope: Element | null = el.parentElement;
+    for (let depth = 0; scope && depth < 10; depth++, scope = scope.parentElement) {
+      const aria = clean(scope.getAttribute("aria-label"));
+      if (aria) return aria;
+      for (const candidate of scope.querySelectorAll("label,legend,h1,h2,h3,h4")) {
+        if (candidate.contains(el)) continue;
+        const text = clean(candidate.textContent);
+        if (text) return text;
+      }
+    }
+  }
   const aria = clean(el.getAttribute("aria-label"));
   if (aria) return aria;
   const by = el.getAttribute("aria-labelledby");
@@ -195,6 +229,20 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
     return s.join(" ");
   }
 
+  /** True when clicking this would only raise the native file dialog. */
+  function isFilePickerTrigger(el: Element): boolean {
+    if (el.querySelector('input[type="file"]')) return true;
+    let scope: Element | null = el.parentElement;
+    for (let depth = 0; scope && depth < 3; depth++, scope = scope.parentElement) {
+      const input = scope.querySelector('input[type="file"]');
+      if (!input) continue;
+      // Only when the widget is small: a whole form containing an upload field
+      // somewhere must not have every button removed.
+      if (scope.querySelectorAll(SELECTOR).length <= 4) return true;
+    }
+    return false;
+  }
+
   function visible(el: Element): DOMRect | null {
     // File inputs are hidden by design almost everywhere — sites style a button or
     // label over an `opacity:0` input. Dropping them for being invisible means the
@@ -231,11 +279,23 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
   for (const el of all) {
     if (kept.length >= maxCandidates) break;
     try {
+      // A control that only opens the file picker is a dead end: clicking it raises
+      // a native dialog no agent can answer, so the page never changes and the run
+      // burns its retries. The file input itself is collected and filled by the
+      // driver instead.
+      //
+      // Both shapes count — a wrapper containing the input, and a button sitting
+      // beside it inside the same small upload widget, which is how Greenhouse,
+      // Lever and Ashby all build it.
+      if (el.tagName !== "INPUT" && isFilePickerTrigger(el)) continue;
+
       const rect = visible(el);
       if (!rect) continue;
       const role = roleOf(el);
-      // A bare [role] hook with no interactive meaning is noise.
-      if (role === "generic" && !el.hasAttribute("onclick")) continue;
+      // A bare [role] hook, or a container role, is not something to act on — unless
+      // the page has explicitly made it clickable.
+      const actionable = el.hasAttribute("onclick") || el.hasAttribute("tabindex");
+      if ((role === "generic" || CONTAINER_ROLES.has(role)) && !actionable) continue;
       const name = nameOf(el);
       if (!name) continue;
       kept.push({ el, role, name, rect });
@@ -305,8 +365,31 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
     };
   });
 
-  const main = document.querySelector("main,article,[role=main]") ?? document.body;
-  const text = clean((main as HTMLElement).innerText).slice(0, 1500);
+  // Text that is ON SCREEN, not the first 1500 characters of the document.
+  //
+  // The old version returned the top of the page regardless of where the agent had
+  // scrolled, so it could never confirm anything further down — after uploading a
+  // resume it could not see the filename that had just appeared, and kept hunting
+  // for the field it had already filled until the loop guard killed the run.
+  const words: string[] = [];
+  let textLength = 0;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const range = document.createRange();
+  let textNode = walker.nextNode();
+  while (textNode && textLength < 2000) {
+    const value = (textNode.textContent ?? "").trim();
+    const parent = textNode.parentElement;
+    textNode = walker.nextNode();
+    if (!value || !parent) continue;
+    if (parent.closest("script,style,noscript,template")) continue;
+    range.selectNodeContents(textNode ? parent : parent);
+    const r = range.getBoundingClientRect();
+    if (r.width <= 0 || r.height <= 0) continue;
+    if (r.bottom <= 0 || r.top >= innerHeight || r.right <= 0 || r.left >= innerWidth) continue;
+    words.push(value);
+    textLength += value.length;
+  }
+  const text = words.join("\n").slice(0, 2000);
 
   return {
     url: location.href,

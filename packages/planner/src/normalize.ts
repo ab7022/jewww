@@ -23,6 +23,42 @@ const KIND_CRITERIA: Record<string, string> = {
   read: "only reads information off the page without changing anything",
 };
 
+const KNOWN_KINDS = new Set(["act", "fill", "read", "compose", "confirm", "foreach"]);
+
+/**
+ * Repair a raw plan before it is validated.
+ *
+ * A model writing a long plan will occasionally invent a node kind — "navigate",
+ * "attach", "verify" — and the discriminated union then rejects the ENTIRE plan with
+ * an error pointing at `foreach`, the fallback branch. Losing twenty good nodes
+ * because one had the wrong label is the wrong trade: anything that describes doing
+ * something to a page is an `act`, which is exactly what those invented kinds mean.
+ *
+ * Runs on the raw JSON, before parsing, because after parsing there is nothing left.
+ */
+export function coerceNodes(raw: unknown): unknown {
+  if (!raw || typeof raw !== "object") return raw;
+  const plan = raw as { nodes?: unknown };
+  if (!Array.isArray(plan.nodes)) return raw;
+
+  const fix = (nodes: unknown[]): unknown[] =>
+    nodes.flatMap((n) => {
+      if (!n || typeof n !== "object") return [];
+      const node = { ...(n as Record<string, unknown>) };
+      if (node.kind === "foreach" && Array.isArray(node.do)) node.do = fix(node.do);
+      if (typeof node.kind === "string" && KNOWN_KINDS.has(node.kind)) return [node];
+      // An unrecognised kind that still names an outcome is an act node.
+      if (typeof node.intent === "string") {
+        node.kind = "act";
+        node.success ??= `the step "${node.intent}" has visibly been carried out`;
+        return [node];
+      }
+      return [];
+    });
+
+  return { ...(raw as object), nodes: fix(plan.nodes) };
+}
+
 export interface Normalisation {
   nodeId: string;
   from: string;

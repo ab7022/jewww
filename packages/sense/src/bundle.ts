@@ -45,6 +45,7 @@ export async function collectorSource(): Promise<string> {
 export const call = {
   snapshot: (maxCandidates = 2000) => `${GLOBAL_NAME}.snapshot(${maxCandidates})`,
   pageKey: () => `${GLOBAL_NAME}.pageKey()`,
+  pageText: (maxChars = 40_000) => `${GLOBAL_NAME}.pageText(${maxChars})`,
   nodeGuard: (node: number, fp?: string) =>
     `${GLOBAL_NAME}.nodeGuard(${node}, ${JSON.stringify(fp ?? null)})`,
   resolvePoint: (node: number, kind: string, value?: string, fp?: string) =>

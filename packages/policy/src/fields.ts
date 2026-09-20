@@ -1,7 +1,7 @@
 import type { JevProvider } from "@jev-browser/jev";
 import {
   NO_FIELD,
-  profileCriteria,
+  NO_FIELD_DESC,
   type Questions,
   type SnapshotElement,
   validateChoice,
@@ -42,15 +42,22 @@ export async function mapFields(
   input: {
     page: { url: string; title: string };
     fields: SnapshotElement[];
-    /** Profile keys the user actually has a value for. */
-    available?: string[];
+    /**
+     * Everything the agent could put in a field, as key -> description.
+     *
+     * Deliberately not limited to profile fields: an answer the user gave earlier
+     * ("why do you want to work here") belongs in the same keyspace, so the model
+     * matches it to a differently-worded question on the next site. That matching is
+     * a judgement, which is why it is a question rather than a string comparison.
+     */
+    criteria: Record<string, string>;
   },
 ): Promise<MapFieldsResult> {
   if (!input.fields.length) {
     return { mappings: [], costUsd: 0, latencyMs: 0, inputTokens: 0 };
   }
 
-  const criteria = profileCriteria(input.available as never);
+  const criteria = { ...input.criteria, [NO_FIELD]: NO_FIELD_DESC };
   const questions: Questions = {};
   for (const f of input.fields) {
     questions[f.eid] = {

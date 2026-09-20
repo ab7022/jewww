@@ -44,6 +44,7 @@ pnpm eval:fields            # field mapping on real ATS forms
 pnpm eval:plans             # 50 end-to-end use cases → planner checks
 pnpm plan <slug>            # inspect one plan
 pnpm check:guards           # freshness + occlusion guards in a real browser
+pnpm check:executor         # new-tab following and re-render recovery
 pnpm check:extension        # build the extension and load it in a real Chrome
 
 pnpm server                 # Express API on :8787 (needs a local MongoDB)
@@ -63,9 +64,24 @@ Everything after `eval:capture` replays saved fixtures offline. A full sweep is 
 | Field mapping | 98.3% (59 fields, 5 real ATS forms) | ≥90% |
 | Planner safety gating | 50/50 irreversible cases | 100% |
 | Planner quality | 45/50 fully clean | — |
+| 10-job flow, end to end | 13 applications filled + resume attached in 482s for $0.057 |
 | Guard checks (real browser) | 9/9 | — |
 | JEV cost / latency | $0.042/M input, ~530ms warm | — |
 | Text helper | ~1.5s, $0.000026 per field | — |
+
+## Asking, and remembering
+
+A form always contains something a profile cannot answer — "why do you want to work
+here", "when could you start". Those fields are collected and asked ONCE, and the
+answers join the same keyspace the profile lives in, so JEV matches a
+differently-worded version of the question on the next site. Answer it on the first
+application and the next nine fill themselves.
+
+Authority comes from the goal, not a flag. "Do not submit any application" is read as
+`autonomy: never` and outranks every approval path including `--auto-approve`, because
+it is an instruction the user actually gave. A goal that describes a task and says
+nothing about review is carried out without interruption — an agent that stops before
+every button trains people to approve without reading.
 
 ## Generalising, not special-casing
 

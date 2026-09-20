@@ -42,7 +42,10 @@ const OPERATION_LABEL: Record<string, string> = {
   CLICK: "Click an element: a button, link, menu option, autocomplete suggestion, or calendar day.",
   TYPE_TEXT: "Enter or replace text in an editable field. A small model supplies the value from the goal.",
   SELECT: "Choose a value in an observed native dropdown.",
-  ATTACH: "Attach the user's file to a file-upload control. Only offered when the page has one.",
+  ATTACH:
+    "Upload the user's file to a file-upload field. This is the ONLY way to attach a " +
+    "file — there is no dialog to click through, so choose this rather than clicking " +
+    "an upload or attach button.",
   SCROLL_DOWN: "Reveal content below the current viewport.",
   SCROLL_UP: "Reveal content above the current viewport.",
   WAIT: "The needed control is absent or disabled, or submitted results are still loading.",

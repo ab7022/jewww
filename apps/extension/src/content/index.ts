@@ -22,15 +22,47 @@ function currentGuard(node: number | null, fp?: string): GuardPair {
   return { pageKey: pageKey(), nodeGuard: node === null ? null : nodeGuard(node, fp) };
 }
 
-/** Native setters, because React ignores a plain `.value =` assignment. */
-function setNativeValue(el: HTMLElement, value: string): void {
+/**
+ * Put text into a field, whatever kind of field it is.
+ *
+ * Three cases, and getting them confused is how this broke: a real <input> or
+ * <textarea> needs the NATIVE value setter, because React installs its own and
+ * ignores a plain assignment; a contenteditable — which is what X, Slack, Gmail and
+ * Notion all use — has no value property at all, so calling an input's setter on it
+ * throws "Illegal invocation"; and rich editors track their own state, so the text
+ * has to arrive as a real input event rather than a DOM mutation.
+ */
+function setFieldValue(el: HTMLElement, value: string): void {
+  el.focus();
+
+  if (el.isContentEditable) {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+    // execCommand is deprecated but remains the only thing rich editors reliably
+    // observe: it produces the same beforeinput/input pair a keystroke would.
+    const inserted = document.execCommand("insertText", false, value);
+    if (!inserted) {
+      el.textContent = value;
+      el.dispatchEvent(new InputEvent("input", { bubbles: true, data: value, inputType: "insertText" }));
+    }
+    return;
+  }
+
   const proto =
     el instanceof HTMLTextAreaElement
       ? HTMLTextAreaElement.prototype
-      : HTMLInputElement.prototype;
+      : el instanceof HTMLSelectElement
+        ? HTMLSelectElement.prototype
+        : HTMLInputElement.prototype;
   const setter = Object.getOwnPropertyDescriptor(proto, "value")?.set;
-  if (setter) setter.call(el, value);
-  else (el as HTMLInputElement).value = value;
+  if (setter && (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement || el instanceof HTMLSelectElement)) {
+    setter.call(el, value);
+  } else {
+    (el as HTMLInputElement).value = value;
+  }
   el.dispatchEvent(new Event("input", { bubbles: true }));
   el.dispatchEvent(new Event("change", { bubbles: true }));
 }
@@ -96,8 +128,7 @@ async function handle(msg: ToContent): Promise<FromContent> {
         ) {
           return { ok: false, error: `refused to type into a credential field: ${label}` };
         }
-        target.focus();
-        setNativeValue(target, text ?? "");
+        setFieldValue(target, text ?? "");
         if (action.submit) {
           target.dispatchEvent(
             new KeyboardEvent("keydown", { key: "Enter", bubbles: true, cancelable: true }),

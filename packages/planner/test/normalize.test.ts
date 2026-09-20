@@ -126,3 +126,35 @@ describe("coerceNodes", () => {
     expect(coerceNodes(good)).toEqual(good);
   });
 });
+
+describe("locating steps on a site", () => {
+  const withSites = (nodes: Plan["nodes"]): Plan => ({
+    goal: "g", sites: ["https://in.bookmyshow.com"], nodes,
+  });
+
+  it("marks a step with the site the model says it happens on", async () => {
+    // The planner lists sites on the plan but rarely on the node, and nothing else
+    // can supply it — there is no navigate operation for the model to choose.
+    const { plan: out } = await normalizePlan(
+      fakeJev({ a: ["act", 0.9], site_a: ["https://in.bookmyshow.com", 0.95] }),
+      withSites([act("a", "Navigate to BookMyShow")]),
+    );
+    expect(out.nodes[0]?.kind === "act" && out.nodes[0].site).toBe("https://in.bookmyshow.com");
+  });
+
+  it("leaves a step alone when it belongs on the current page", async () => {
+    const { plan: out } = await normalizePlan(
+      fakeJev({ a: ["act", 0.9], site_a: ["__current", 0.95] }),
+      withSites([act("a", "Click the search button")]),
+    );
+    expect(out.nodes[0]?.kind === "act" && out.nodes[0].site).toBeUndefined();
+  });
+
+  it("does not overwrite a site the planner already set", async () => {
+    const { plan: out } = await normalizePlan(
+      fakeJev({ a: ["act", 0.9], site_a: ["https://in.bookmyshow.com", 0.99] }),
+      withSites([act("a", "do it", { site: "https://example.com" })]),
+    );
+    expect(out.nodes[0]?.kind === "act" && out.nodes[0].site).toBe("https://example.com");
+  });
+});

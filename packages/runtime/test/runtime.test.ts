@@ -1,5 +1,6 @@
 import type { Executor, Guard } from "@jev-browser/executor";
 import { decide } from "@jev-browser/policy";
+import { UnreachableTarget } from "@jev-browser/shared";
 import type { JevProvider } from "@jev-browser/jev";
 import type { Action, Answer, Plan, RawSnapshot } from "@jev-browser/shared";
 import { describe, expect, it } from "vitest";
@@ -484,5 +485,74 @@ describe("attach", () => {
     expect(result.status).toBe("done");
     expect(ex.acted).toHaveLength(1);
     expect(ex.acted[0]?.kind).toBe("attach");
+  });
+});
+
+describe("reaching another site", () => {
+  it("navigates to a node's site before acting there", async () => {
+    // There is no NAVIGATE operation for the model to choose, so without this a goal
+    // like "open BookMyShow and search" is unreachable from any other page.
+    const ex = fakeExecutor(["h1", "h2"]);
+    await run(
+      plan([{ kind: "act", id: "a", intent: "search there", success: "s", site: "in.bookmyshow.com" }]),
+      fakeJev(["DONE"]), ex,
+    );
+    expect(ex.acted[0]).toEqual({ kind: "navigate", url: "https://in.bookmyshow.com/" });
+  });
+
+  it("does not navigate when already on that site", async () => {
+    const ex = fakeExecutor(["h1", "h2"]);
+    ex.url = () => "https://x.test/page";
+    await run(
+      plan([{ kind: "act", id: "a", intent: "do a thing", success: "s", site: "https://x.test" }]),
+      fakeJev(["DONE"]), ex,
+    );
+    expect(ex.acted.filter((a) => a.kind === "navigate")).toHaveLength(0);
+  });
+
+  it("prefers an explicit url slot over the site", async () => {
+    const ex = fakeExecutor(["h1", "h2"]);
+    await run(
+      plan([{
+        kind: "act", id: "a", intent: "open it", success: "s",
+        site: "example.com", slots: { url: "https://example.com/deep/link" },
+      }]),
+      fakeJev(["DONE"]), ex,
+    );
+    expect(ex.acted[0]).toEqual({ kind: "navigate", url: "https://example.com/deep/link" });
+  });
+});
+
+describe("feedback into the next decision", () => {
+  it("tells the model what failed and why", async () => {
+    // Previously `recent` was always empty, so a refused click looked exactly like
+    // one never attempted and the model picked the same covered target forever.
+    const seen: { action: string }[][] = [];
+    const ex = fakeExecutor(["h1", "h2", "h3"]);
+    ex.act = async () => {
+      throw new UnreachableTarget("covered by div#modal");
+    };
+    await run(plan([{ kind: "act", id: "a", intent: "i", success: "s" }]), fakeJev(["CLICK"]), ex, {}, {
+      decide: async (input) => {
+        seen.push(input.recent as { action: string }[]);
+        return decide(fakeJev(["CLICK"]), input);
+      },
+    });
+    const later = seen.find((r) => r.length > 0);
+    expect(later?.[0]?.action).toContain("FAILED");
+    expect(later?.[0]?.action).toContain("covered by div#modal");
+  });
+
+  it("records whether the page actually changed", async () => {
+    const seen: { pageChanged?: boolean | null }[][] = [];
+    await run(plan([{ kind: "act", id: "a", intent: "i", success: "s" }]), fakeJev(["CLICK"]),
+      fakeExecutor(["same"]), {}, {
+        decide: async (input) => {
+          seen.push(input.recent as { pageChanged?: boolean | null }[]);
+          return decide(fakeJev(["CLICK"]), input);
+        },
+      });
+    const withHistory = seen.find((r) => r.length > 0);
+    expect(withHistory?.[0]?.pageChanged).toBe(false);
   });
 });

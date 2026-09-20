@@ -131,6 +131,12 @@ export function nameOf(el: Element): string {
   if (alt) return alt;
   const text = clean((el as HTMLElement).innerText || el.textContent);
   if (text) return text;
+
+  // Icon-only controls — a close X above all — carry no text at all. The id or class
+  // the page gave them is the only description available, and an unnamed element is
+  // dropped entirely, which is how modal dismissers went missing.
+  const hint = clean(el.getAttribute("id")) || clean(el.getAttribute("class")).split(" ")[0];
+  if (hint && hint.length <= 40) return hint.replace(/[-_]+/g, " ").trim();
   return "";
 }
 
@@ -273,8 +279,39 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
 
   // --- collect -------------------------------------------------------------
 
-  const all = Array.from(document.querySelectorAll(SELECTOR));
-  const kept: { el: Element; role: string; name: string; rect: DOMRect }[] = [];
+  /**
+   * Elements the page styles as clickable but never marked up as such.
+   *
+   * `cursor: pointer` is how a page tells a human "this does something", and huge
+   * numbers of real controls are a plain div with a JS listener and that style —
+   * modal close buttons above all. They match no role and no [onclick] attribute, so
+   * they were invisible: on BookMyShow the agent could see the link it wanted but not
+   * the bottom-sheet dismisser covering it, and retried the blocked click until the
+   * loop guard stopped the run.
+   *
+   * Bounded on both sides: a capped scan, because getComputedStyle is not free, and
+   * only small named elements, because a whole clickable card would otherwise drown
+   * out the controls inside it.
+   */
+  function pointerCandidates(): Element[] {
+    const out: Element[] = [];
+    const scan = document.querySelectorAll("div,span,li,td,label,i,svg,p,section,header");
+    const limit = Math.min(scan.length, 1500);
+    for (let i = 0; i < limit && out.length < 80; i++) {
+      const el = scan[i];
+      if (!el || el.matches(SELECTOR)) continue;
+      const r = el.getBoundingClientRect();
+      if (r.width < 8 || r.height < 8 || r.width > 480 || r.height > 240) continue;
+      if (getComputedStyle(el).cursor !== "pointer") continue;
+      // A clickable wrapper around other clickables is the card, not the control.
+      if (el.querySelector(SELECTOR)) continue;
+      out.push(el);
+    }
+    return out;
+  }
+
+  const all = [...document.querySelectorAll(SELECTOR), ...pointerCandidates()];
+  const kept: { el: Element; role: string; name: string; rect: DOMRect; promoted: boolean }[] = [];
 
   for (const el of all) {
     if (kept.length >= maxCandidates) break;
@@ -291,14 +328,25 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
 
       const rect = visible(el);
       if (!rect) continue;
-      const role = roleOf(el);
+      let role = roleOf(el);
       // A bare [role] hook, or a container role, is not something to act on — unless
-      // the page has explicitly made it clickable.
-      const actionable = el.hasAttribute("onclick") || el.hasAttribute("tabindex");
-      if ((role === "generic" || CONTAINER_ROLES.has(role)) && !actionable) continue;
+      // the page has explicitly made it clickable, by attribute or by cursor.
+      const actionable =
+        el.hasAttribute("onclick") ||
+        el.hasAttribute("tabindex") ||
+        getComputedStyle(el).cursor === "pointer";
+      // A container the page made clickable is usable, but it is NOT a label for
+      // what is inside it — collapsing its children into it deletes the real
+      // controls. Tracked so the dedupe below can tell the two apart.
+      let promoted = false;
+      if (role === "generic" || CONTAINER_ROLES.has(role)) {
+        if (!actionable) continue;
+        role = "button";
+        promoted = true;
+      }
       const name = nameOf(el);
       if (!name) continue;
-      kept.push({ el, role, name, rect });
+      kept.push({ el, role, name, rect, promoted });
     } catch {
       // A single hostile element must never cost us the whole snapshot.
     }
@@ -316,7 +364,9 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
     let p = el.parentElement;
     while (p) {
       const parent = set.get(p);
-      if (parent && INTERACTIVE.test(parent.role)) {
+      // Never collapse into a promoted container: a clickable row's text contains
+      // every link inside it, so treating it as their label deletes the results.
+      if (parent && !parent.promoted && INTERACTIVE.test(parent.role)) {
         // Same label, or a label barely longer than ours — a wrapper, not a list.
         if (parent.name === name) return false;
         if (parent.name.includes(name) && parent.name.length <= name.length + 12) return false;

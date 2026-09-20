@@ -123,6 +123,43 @@ try {
     Boolean(text?.ok && (text.text?.length ?? 0) > 20),
     `${text?.text?.length ?? 0} chars`,
   );
+  // X, Slack, Gmail and Notion all compose into a contenteditable, which has no
+  // `value` property — calling an input's native setter on one throws "Illegal
+  // invocation", which is exactly what killed a real tweet-composing run.
+  await page.evaluate(`
+    document.body.innerHTML =
+      '<div id="c" contenteditable="true" role="textbox" aria-label="Post text"></div>';
+  `);
+  await page.waitForTimeout(300);
+
+  const typed = (await worker.evaluate(async () => {
+    const [tab] = await chrome.tabs.query({ url: "https://example.com/*" });
+    if (!tab?.id) return { error: "no tab" };
+    const snap = (await chrome.tabs.sendMessage(tab.id, { kind: "snapshot" })) as {
+      ok?: boolean;
+      snapshot?: { elements: { eid: string; node: number; name: string; fp: string }[] };
+    };
+    const box = snap.snapshot?.elements.find((e) => e.name === "Post text");
+    if (!box) return { error: "collector missed the contenteditable" };
+    const guard = (await chrome.tabs.sendMessage(tab.id, { kind: "guard", node: box.node, fp: box.fp })) as {
+      guard: unknown;
+    };
+    return chrome.tabs.sendMessage(tab.id, {
+      kind: "act",
+      action: { kind: "type", eid: box.eid, text: "hello from the agent" },
+      node: box.node,
+      fp: box.fp,
+      guard: guard.guard,
+      text: "hello from the agent",
+    });
+  })) as { ok?: boolean; error?: string };
+
+  const landed = await page.evaluate(`document.getElementById('c')?.textContent ?? ''`);
+  check(
+    "types into a contenteditable composer",
+    Boolean(typed?.ok) && landed === "hello from the agent",
+    typed?.error ?? `got "${landed}"`,
+  );
 } finally {
   await context.close();
 }

@@ -13,6 +13,11 @@ autocomplete suggestion selected. For date pickers, CLICK the field, then the da
 then any confirmation. Do not toggle a checkbox, switch or radio already in the
 requested state. Submit a populated search field before opening a result.
 
+An entry in recent_actions marked FAILED did not happen, and its reason says why.
+Do not choose the same target again — act on the reason. If something covered the
+target, dismiss that overlay, popup or dialog first. If the page did not change after
+an action, that action achieved nothing and repeating it will not either.
+
 WAIT only when the needed control is absent or disabled, or submitted results are
 still loading. Recent WAIT actions are not evidence of loading. Prefer any useful
 visible control over WAIT.

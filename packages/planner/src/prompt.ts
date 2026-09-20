@@ -91,7 +91,11 @@ when you are writing the plan.
 7. ONE OBSERVABLE OUTCOME PER ACT NODE. "search for X and open the third result" is
    two nodes. Split until each success criterion is a single visible state.
 
-8. Set "site" on any node whose origin differs from the one before it, and list every
+8. SET "site" ON EVERY NODE THAT HAPPENS SOMEWHERE ELSE. There is no navigate
+   action — a step that begins on a different site is only reachable because of this
+   field. "Go to example.com and search" must carry site: "https://example.com".
+
+9. Set "site" on any node whose origin differs from the one before it, and list every
    origin in "sites" so permissions can be requested up front.
 
 ## Profile keys available for form filling

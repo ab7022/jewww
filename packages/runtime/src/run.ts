@@ -169,7 +169,7 @@ async function runActNode(
   // model what to do instead left every iteration of a loop on the previous item's
   // page — eight applications in a row were filled against the same company,
   // because "an application form is visible" was true of the page it never left.
-  const destination = urlSlot(node.slots, pad);
+  const destination = urlSlot(node.slots, pad) ?? siteUrl(node.site, opts.executor.url());
   if (destination && destination !== opts.executor.url()) {
     await opts.executor.act({ kind: "navigate", url: destination }, null, {
       pageKey: null,
@@ -181,6 +181,16 @@ async function runActNode(
 
   let lastHash = "";
   let repeats = 0;
+  /**
+   * What just happened, fed back into the next decision.
+   *
+   * This was an empty array on every call, so the model had NO memory within a node:
+   * a click refused because a modal covered the target looked identical to a click
+   * never attempted, and it chose the same covered element over and over until the
+   * loop guard killed the run. Telling it what failed and why is what lets it try
+   * dismissing the overlay instead.
+   */
+  const recent: { action: string; text?: string | null; pageChanged?: boolean | null }[] = [];
 
   for (let i = 0; i < MAX_STEPS_PER_NODE; i++) {
     if (state.steps >= state.budget) return "budget";
@@ -196,6 +206,8 @@ async function runActNode(
       return "blocked";
     }
     if (raw.contentHash !== lastHash) repeats = 0;
+    const last = recent[recent.length - 1];
+    if (last && last.pageChanged === undefined) last.pageChanged = raw.contentHash !== lastHash;
     lastHash = raw.contentHash;
 
     const profile = (pad.get("profile") ?? {}) as Record<string, string>;
@@ -205,7 +217,7 @@ async function runActNode(
       success: node.success,
       snapshot: capped,
       nodes,
-      recent: [],
+      recent: recent.slice(-5),
       // ATTACH only exists as an option when the user has actually offered a file.
       ...(profile.resumeFile ? { attachable: profile.resumeFile } : {}),
     });
@@ -344,10 +356,15 @@ async function runActNode(
     // compares against the moment we are actually about to touch the page.
     const fp = raw.elements.find((e) => e.eid === d.target?.eid)?.fp;
     const guard = await opts.executor.guardFor(d.node ?? null, fp);
+    const describe = `${d.operation}${label ? ` "${label}"` : ""}`;
     try {
       await opts.executor.act(d.action, d.node ?? null, guard, text, fp);
+      recent.push({ action: describe, ...(text !== undefined ? { text } : {}) });
     } catch (err) {
       if (err instanceof StalePage || err instanceof UnreachableTarget) {
+        // Recorded as a FAILURE with its reason. "covered by a modal" is actionable —
+        // the model can dismiss the overlay — but only if it is told.
+        recent.push({ action: `${describe} FAILED: ${err.message}`, pageChanged: false });
         opts.emit({ type: "warn", message: `${node.id}: ${err.message}, re-observing` });
         continue; // never retried; we go back and decide again from a fresh page
       }
@@ -657,6 +674,27 @@ async function runForeachNode(
     return "blocked";
   }
   return "done";
+}
+
+/**
+ * A node that belongs to a different site, resolved to somewhere to go.
+ *
+ * The action space has no NAVIGATE operation — JEV chooses between options and
+ * cannot invent a URL — so without this, "open BookMyShow and search for a film"
+ * was simply unreachable from another site. The planner already marks these nodes
+ * with `site`; nothing was acting on it.
+ */
+function siteUrl(site: string | undefined, currentUrl: string): string | null {
+  if (!site) return null;
+  const target = /^https?:\/\//.test(site) ? site : `https://${site.replace(/^\/+/, "")}`;
+  try {
+    const to = new URL(target);
+    // Only when it is actually somewhere else; a same-origin `site` is just a label.
+    if (currentUrl && new URL(currentUrl).origin === to.origin) return null;
+    return to.toString();
+  } catch {
+    return null;
+  }
 }
 
 /** The destination a node already knows, if any. */

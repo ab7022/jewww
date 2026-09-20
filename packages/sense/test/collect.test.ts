@@ -184,3 +184,35 @@ describe("dedupe", () => {
     expect(hits[0]?.role).toBe("button");
   });
 });
+
+describe("clickable containers", () => {
+  it("collects a div the page styles as clickable", () => {
+    // Modal close buttons are usually a bare div with a listener and cursor:pointer.
+    // Nothing marks them up as controls, and without this the agent can see the link
+    // it wants but not the overlay covering it.
+    document.body.innerHTML = `<div id="bottomSheet-model-close" style="cursor:pointer">✕</div>`;
+    const el = collectSnapshot().elements.find((e) => e.name === "✕");
+    expect(el).toBeTruthy();
+    expect(el?.role).toBe("button");
+  });
+
+  it("names an icon-only control from its id when it has no text", () => {
+    document.body.innerHTML = `<div id="bottomSheet-model-close" style="cursor:pointer"><svg></svg></div>`;
+    const names = collectSnapshot().elements.map((e) => e.name);
+    expect(names.some((n) => n.includes("bottomSheet"))).toBe(true);
+  });
+
+  it("ignores a div that is not styled as clickable", () => {
+    document.body.innerHTML = `<div id="plain">just text</div>`;
+    expect(collectSnapshot().elements.find((e) => e.name === "just text")).toBeUndefined();
+  });
+
+  it("does not swallow the controls inside a clickable row", () => {
+    document.body.innerHTML = `
+      <div role="listitem" onclick="x()" style="cursor:pointer">
+        <a href="/a">How do I await a Playwright locator</a>
+      </div>`;
+    const names = collectSnapshot().elements.map((e) => e.name);
+    expect(names).toContain("How do I await a Playwright locator");
+  });
+});

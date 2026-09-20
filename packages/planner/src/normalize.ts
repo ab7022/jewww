@@ -66,6 +66,8 @@ export interface Normalisation {
   confidence: number;
 }
 
+const STAY = "__current";
+
 export interface NormalizeResult {
   plan: Plan;
   changes: Normalisation[];
@@ -90,7 +92,49 @@ export async function normalizePlan(jev: JevProvider, plan: Plan): Promise<Norma
     };
   }
 
+  /**
+   * Which site each step happens on.
+   *
+   * The planner lists the origins a run will touch on the PLAN, but rarely marks the
+   * individual node — and nothing else can supply it, because the executor has no
+   * NAVIGATE operation for the model to choose and JEV cannot invent a URL. Without
+   * it, "open BookMyShow and search" simply never leaves the page it started on.
+   *
+   * Asked in the same request as the kind classification, so it costs nothing extra.
+   */
+  const siteCriteria: Record<string, string> = { [STAY]: "the page the run is already on" };
+  for (const site of plan.sites) siteCriteria[site] = `the site ${site}`;
+  const askSites = plan.sites.length > 0;
+  if (askSites) {
+    for (const node of acts) {
+      if (node.site) continue;
+      questions[`site_${node.id}`] = {
+        type: "choice",
+        instructions:
+          `Which site does this step happen on?\n` +
+          `Step: "${node.intent}"\n` +
+          `It succeeds when: "${node.success}"`,
+        criteria: siteCriteria,
+      };
+    }
+  }
+
   const r = await jev.evaluate({ goal: plan.goal, steps: acts.map((a) => a.intent) }, questions);
+
+  const sites = new Map<string, string>();
+  if (askSites) {
+    for (const node of acts) {
+      const answer = r.answers[`site_${node.id}`];
+      try {
+        validateChoice(answer, Object.keys(siteCriteria));
+      } catch {
+        continue;
+      }
+      if (answer.choice === STAY) continue;
+      if ((answer.probabilities?.[answer.choice] ?? 1) < 0.6) continue;
+      sites.set(node.id, answer.choice);
+    }
+  }
 
   const rewrite = new Map<string, Normalisation>();
   for (const node of acts) {
@@ -113,8 +157,11 @@ export async function normalizePlan(jev: JevProvider, plan: Plan): Promise<Norma
   const apply = (nodes: Node[]): Node[] =>
     nodes.map((node) => {
       if (node.kind === "foreach") return { ...node, do: apply(node.do) };
-      if (node.kind !== "act" || !rewrite.has(node.id)) return node;
-      const { slots: _slots, ...rest } = node;
+      if (node.kind !== "act") return node;
+      const site = node.site ?? sites.get(node.id);
+      const located = site ? { ...node, site } : node;
+      if (!rewrite.has(node.id)) return located;
+      const { slots: _slots, ...rest } = located;
       return { ...rest, kind: "fill" as const };
     });
 

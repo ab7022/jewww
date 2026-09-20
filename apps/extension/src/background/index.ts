@@ -283,6 +283,7 @@ async function start(goal: string, tabId: number): Promise<void> {
         return askApproval();
       },
     });
+    executor.detach();
     await api.finish(runId, result.status).catch(() => {});
     const me = await api.me().catch(() => null);
     const state = await getState();
@@ -308,6 +309,7 @@ async function start(goal: string, tabId: number): Promise<void> {
       ...(me ? { credits: me.credits } : {}),
     });
   } finally {
+    executor.detach();
     await chrome.alarms.clear(KEEPALIVE);
     pendingApproval = null;
     await patch({ running: false });

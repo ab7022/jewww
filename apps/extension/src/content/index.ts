@@ -9,6 +9,7 @@ import {
 } from "@jev-browser/sense";
 import { FORBIDDEN_FIELD } from "@jev-browser/shared";
 import type { FromContent, GuardPair, ToContent } from "../shared/messages.js";
+import { pressAt } from "./press.js";
 
 /**
  * The page-side half of the executor.
@@ -130,14 +131,24 @@ async function handle(msg: ToContent): Promise<FromContent> {
         }
         setFieldValue(target, text ?? "");
         if (action.submit) {
-          target.dispatchEvent(
-            new KeyboardEvent("keydown", { key: "Enter", bubbles: true, cancelable: true }),
-          );
+          for (const type of ["keydown", "keypress", "keyup"]) {
+            target.dispatchEvent(
+              new KeyboardEvent(type, {
+                key: "Enter",
+                code: "Enter",
+                keyCode: 13,
+                which: 13,
+                bubbles: true,
+                cancelable: true,
+                composed: true,
+              } as KeyboardEventInit),
+            );
+          }
         }
         return { ok: true };
       }
 
-      target.click();
+      pressAt(el ?? target, target, point.x, point.y);
       return { ok: true };
     }
   }

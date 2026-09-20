@@ -15,6 +15,34 @@ import type { FromContent, ToContent } from "../shared/messages.js";
  */
 export class TabExecutor implements Executor {
   /**
+   * Follow a tab the page opens.
+   *
+   * Countless controls are target="_blank" — Google Forms' "Blank form" among them —
+   * and bound to a single tabId the extension kept driving the page it started on
+   * while the real work opened somewhere it could not see. It then tried to make
+   * progress on the old page, which looked like the model going off the rails.
+   *
+   * The CDP driver already did this; the extension did not, which is exactly the
+   * kind of gap two implementations of one contract produce.
+   */
+  private watchForNewTabs(): void {
+    this.onCreated = (tab) => {
+      if (tab.openerTabId !== this.tabId || !tab.id) return;
+      this.tabId = tab.id;
+      this.lastUrl = tab.url ?? "";
+    };
+    chrome.tabs.onCreated.addListener(this.onCreated);
+  }
+
+  private onCreated?: (tab: chrome.tabs.Tab) => void;
+
+  /** Stop following; the tab belongs to the user once the run ends. */
+  detach(): void {
+    if (this.onCreated) chrome.tabs.onCreated.removeListener(this.onCreated);
+    this.onCreated = undefined;
+  }
+
+  /**
    * Where the tab currently is.
    *
    * `url()` is synchronous on the interface but chrome.tabs.get is not, so this is
@@ -25,7 +53,9 @@ export class TabExecutor implements Executor {
    */
   private lastUrl = "";
 
-  constructor(private readonly tabId: number) {}
+  constructor(private tabId: number) {
+    this.watchForNewTabs();
+  }
 
   private async send(msg: ToContent): Promise<FromContent> {
     for (let attempt = 0; ; attempt++) {
@@ -82,6 +112,11 @@ export class TabExecutor implements Executor {
     await new Promise((r) => setTimeout(r, 250));
   }
 
+  /** The tab being driven right now, which a click may have changed. */
+  activeTab(): number {
+    return this.tabId;
+  }
+
   async snapshot(): Promise<RawSnapshot> {
     const res = await this.send({ kind: "snapshot" });
     if (!("snapshot" in res) || !res.ok) throw new StalePage("could not observe the page");
@@ -131,7 +166,8 @@ export class TabExecutor implements Executor {
   }
 
   async close(): Promise<void> {
-    // The tab belongs to the user, not to us.
+    // The tab belongs to the user, not to us — but stop listening for new ones.
+    this.detach();
   }
 }
 

@@ -637,3 +637,45 @@ describe("an unexpected failure", () => {
     expect(result.status).toBe("blocked");
   });
 });
+
+describe("asking for approval", () => {
+  it("announces the question BEFORE waiting on the answer", async () => {
+    // The gate awaited an answer to a question the interface had never been told
+    // about, so nothing was ever shown and the run hung — a safety mechanism
+    // silently turning into a deadlock.
+    const order: string[] = [];
+    await run(
+      plan([{ kind: "confirm", id: "c", intent: "ok?", preview: "send it", mode: "single", risk: "message" }]),
+      fakeJev(["DONE"]),
+      fakeExecutor(["h1"]),
+      {
+        approve: async () => {
+          order.push("waited");
+          return true;
+        },
+      },
+    );
+    expect(order).toEqual(["waited"]);
+  });
+
+  it("emits an approval event carrying what it wants to do", async () => {
+    const { events } = await run(
+      plan([{ kind: "confirm", id: "c", intent: "ok?", preview: "send it", mode: "single", risk: "message" }]),
+      fakeJev(["DONE"]), fakeExecutor(["h1"]), { approve: async () => true },
+    );
+    const ask = events.find((e) => e.type === "approval");
+    expect(ask).toMatchObject({ nodeId: "c", preview: "send it", risk: "message" });
+    // And it comes before the node finishes.
+    expect(events.indexOf(ask!)).toBeLessThan(
+      events.findIndex((e) => e.type === "node:done" && e.id === "c"),
+    );
+  });
+
+  it("asks before an irreversible step inside an act node", async () => {
+    const { events } = await run(
+      plan([{ kind: "act", id: "a", intent: "i", success: "s" }]),
+      fakeJevRisky(["CLICK"]), fakeExecutor(["h1", "h2"]), { approve: async () => false },
+    );
+    expect(events.some((e) => e.type === "approval")).toBe(true);
+  });
+});

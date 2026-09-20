@@ -116,6 +116,7 @@ button.small { padding: 4px 9px; font-size: 12px; }
 }
 .step.done .marker { color: var(--good); }
 .step.running .marker { color: var(--accent); animation: pulse 1.1s ease-in-out infinite; }
+.step.waiting .step-title { font-weight: 550; }
 .step.waiting .marker { color: var(--warn); }
 .step.failed .marker { color: var(--bad); }
 @keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .35 } }

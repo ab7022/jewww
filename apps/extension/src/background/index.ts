@@ -104,6 +104,15 @@ function applyEvent(steps: TimelineStep[], e: RunEvent): TimelineStep[] {
 
   switch (e.type) {
     case "node:start": {
+      // The interpreter is sequential, so anything still marked running when the
+      // next step begins has in fact finished — several completed steps were
+      // showing as in progress at once.
+      for (const s of next) {
+        if (s.status === "running" && s.id !== e.id) {
+          s.status = "done";
+          s.endedAt ??= Date.now();
+        }
+      }
       const existing = next.find((s) => s.id === e.id);
       const step: TimelineStep = {
         id: e.id,
@@ -163,6 +172,19 @@ function applyEvent(steps: TimelineStep[], e: RunEvent): TimelineStep[] {
 
     case "warn": {
       current()?.actions.push(humanize(e.message));
+      return next;
+    }
+
+    case "approval": {
+      const step = next.find((s) => s.id === e.nodeId) ?? current();
+      if (step) {
+        step.status = "waiting";
+        step.prompt = {
+          preview: e.action ? phrase("", e.action, e.target).text : e.preview,
+          risk: e.risk,
+          reason: "confirm",
+        };
+      }
       return next;
     }
 

@@ -22,6 +22,21 @@ export type RunEvent =
       target?: string;
     }
   | { type: "queued"; nodeId: string; preview: string; risk: Risk }
+  /**
+   * Emitted BEFORE waiting on the person, so the interface can actually ask.
+   *
+   * Without it the loop awaited an answer to a question nobody had been shown, and
+   * the run hung on a prompt that existed only inside the runtime — the safety gate
+   * silently becoming a deadlock.
+   */
+  | {
+      type: "approval";
+      nodeId: string;
+      preview: string;
+      risk: Risk;
+      action?: Action;
+      target?: string;
+    }
   | { type: "asked"; nodeId: string; count: number; answered: number }
   | { type: "reused"; field: string; from: string }
   | { type: "warn"; message: string }

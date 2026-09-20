@@ -181,12 +181,17 @@ function Header({
   );
 }
 
+/**
+ * Distinct at a glance and at 13px. A filled dot for "done" and a half dot for
+ * "running" were nearly identical in the panel, so several finished steps read as
+ * still in progress.
+ */
 const ICON: Record<TimelineStep["status"], string> = {
   pending: "○",
-  running: "◐",
-  done: "●",
+  running: "◆",
+  done: "✓",
   failed: "✕",
-  waiting: "❚",
+  waiting: "❯",
 };
 
 function Step({ step, onAnswer }: { step: TimelineStep; onAnswer: (ok: boolean) => void }) {

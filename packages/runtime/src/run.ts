@@ -330,6 +330,14 @@ async function runActNode(
         opts.emit({ type: "queued", nodeId: node.id, preview, risk: d.risk });
         return "done";
       }
+      opts.emit({
+        type: "approval",
+        nodeId: node.id,
+        preview,
+        risk: d.risk,
+        action: d.action,
+        ...(label ? { target: label } : {}),
+      });
       const ok = opts.approve ? await opts.approve(preview, d.risk) : false;
       if (!ok) {
         opts.emit({
@@ -655,6 +663,12 @@ async function runConfirmNode(
   const preview = SCRATCH_REF.test(node.preview)
     ? String(pad.resolve(node.preview) ?? node.preview)
     : node.preview;
+  opts.emit({
+    type: "approval",
+    nodeId: node.id,
+    preview,
+    risk: node.risk ?? "none",
+  });
   const ok = opts.approve ? await opts.approve(preview, node.risk ?? "none") : false;
   if (ok) return "done";
   opts.emit({

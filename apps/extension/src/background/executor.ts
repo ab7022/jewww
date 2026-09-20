@@ -14,6 +14,17 @@ import type { FromContent, ToContent } from "../shared/messages.js";
  * one-file swap rather than a rewrite.
  */
 export class TabExecutor implements Executor {
+  /**
+   * Where the tab currently is.
+   *
+   * `url()` is synchronous on the interface but chrome.tabs.get is not, so this is
+   * kept up to date from each observation. It returned "" before, which made the
+   * runtime think it was never on the target site — so a step marked
+   * `site: google.com` navigated away from google.com/travel/flights to the
+   * homepage, throwing away the page the user was already on.
+   */
+  private lastUrl = "";
+
   constructor(private readonly tabId: number) {}
 
   private async send(msg: ToContent): Promise<FromContent> {
@@ -74,6 +85,7 @@ export class TabExecutor implements Executor {
   async snapshot(): Promise<RawSnapshot> {
     const res = await this.send({ kind: "snapshot" });
     if (!("snapshot" in res) || !res.ok) throw new StalePage("could not observe the page");
+    this.lastUrl = res.snapshot.url;
     return res.snapshot;
   }
 
@@ -95,6 +107,7 @@ export class TabExecutor implements Executor {
     text?: string,
     fp?: string,
   ): Promise<void> {
+    if (action.kind === "navigate") this.lastUrl = action.url;
     const res = await this.send({
       kind: "act",
       action,
@@ -114,7 +127,7 @@ export class TabExecutor implements Executor {
   }
 
   url(): string {
-    return "";
+    return this.lastUrl;
   }
 
   async close(): Promise<void> {

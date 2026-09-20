@@ -46,7 +46,7 @@ function snapshot(hash: string, name = "Go"): RawSnapshot {
 }
 
 /** A page holding two empty, fillable fields. */
-function fakeFillExecutor(): Executor & { acted: Action[] } {
+function fakeFillExecutor(): Executor & { acted: Action[]; typed: string[] } {
   const ex = fakeExecutor(["h1", "h2", "h3"]);
   const base = ex.snapshot.bind(ex);
   ex.snapshot = async () => {
@@ -62,11 +62,14 @@ function fakeFillExecutor(): Executor & { acted: Action[] } {
   return ex;
 }
 
-function fakeExecutor(hashes: string[], name?: string): Executor & { acted: Action[] } {
+function fakeExecutor(hashes: string[], name?: string): Executor & { acted: Action[]; typed: string[] } {
   let i = 0;
   const acted: Action[] = [];
+  // The text for a `type` arrives as a separate argument, not on the action.
+  const typed: string[] = [];
   return {
     acted,
+    typed,
     async snapshot() {
       return snapshot(hashes[Math.min(i++, hashes.length - 1)] ?? "h", name);
     },
@@ -76,8 +79,9 @@ function fakeExecutor(hashes: string[], name?: string): Executor & { acted: Acti
     async guardFor(): Promise<Guard> {
       return { pageKey: "k", nodeGuard: "g" };
     },
-    async act(action) {
+    async act(action, _node, _guard, text) {
       acted.push(action);
+      if (typeof text === "string") typed.push(text);
     },
     async settle() {},
     url() {
@@ -554,5 +558,82 @@ describe("feedback into the next decision", () => {
       });
     const withHistory = seen.find((r) => r.length > 0);
     expect(withHistory?.[0]?.pageChanged).toBe(false);
+  });
+});
+
+describe("not navigating away from where you already are", () => {
+  it("stays put when the current page is already on that site", async () => {
+    // The tab executor reported "" for its URL, so this check always failed and a
+    // step marked site:google.com navigated away from google.com/travel/flights.
+    const ex = fakeExecutor(["h1", "h2"]);
+    ex.url = () => "https://www.google.com/travel/flights";
+    await run(
+      plan([{ kind: "act", id: "a", intent: "search flights", success: "s", site: "https://www.google.com" }]),
+      fakeJev(["DONE"]), ex,
+    );
+    expect(ex.acted.filter((a) => a.kind === "navigate")).toHaveLength(0);
+  });
+
+  it("does not report the step finished just for navigating", async () => {
+    const ex = fakeExecutor(["h1", "h2"]);
+    ex.url = () => "https://elsewhere.test";
+    const { events } = await run(
+      plan([{ kind: "act", id: "a", intent: "go there", success: "s", site: "https://in.bookmyshow.com" }]),
+      fakeJev(["DONE"]), ex,
+    );
+    const firstDone = events.findIndex((e) => e.type === "node:done");
+    const navigated = events.findIndex(
+      (e) => e.type === "step" && e.action.kind === "navigate",
+    );
+    expect(navigated).toBeGreaterThanOrEqual(0);
+    expect(firstDone).toBeGreaterThan(navigated);
+  });
+});
+
+describe("when the text model declines", () => {
+  const typing = plan([{ kind: "act", id: "a", intent: "fill the box", success: "s" }]);
+
+  it("asks instead of ending the run", async () => {
+    // Returning null is the INSTRUCTED behaviour — inventing someone's phone number
+    // is worse than leaving it blank. Treating it as fatal ended whole runs.
+    let asked = 0;
+    // fakeFillExecutor's e1 is an ordinary textbox; e2 in the other fixture is named
+    // "Password", which the credential block correctly refuses.
+    const ex = fakeFillExecutor();
+    const { result } = await run(typing, fakeJev(["TYPE_TEXT", "DONE"], "e1"), ex, {
+      ask: async (missing) => {
+        asked += 1;
+        return Object.fromEntries(missing.map((m) => [m.key, "typed by hand"]));
+      },
+    }, { text: async () => null });
+
+    expect(asked).toBe(1);
+    expect(result.status).toBe("done");
+    expect(ex.typed).toContain("typed by hand");
+  });
+
+  it("carries on with the field blank when there is nobody to ask", async () => {
+    const { result } = await run(typing, fakeJev(["TYPE_TEXT", "DONE"], "e1"),
+      fakeFillExecutor(), {}, { text: async () => null });
+    expect(result.status).toBe("done");
+  });
+});
+
+describe("an unexpected failure", () => {
+  it("ends the step, not the run", async () => {
+    const ex = fakeExecutor(["h1", "h2"]);
+    ex.snapshot = async () => {
+      throw new Error("something nobody anticipated");
+    };
+    const { result, events } = await run(
+      plan([
+        { kind: "act", id: "a", intent: "the bad one", success: "s" },
+        { kind: "compose", id: "c", intent: "still fine", from: [], into: "out" },
+      ]),
+      fakeJev(["DONE"]), ex,
+    );
+    // The run reports the failure rather than throwing it at the caller.
+    expect(events.some((e) => e.type === "warn" && e.message.includes("nobody anticipated"))).toBe(true);
+    expect(result.status).toBe("blocked");
   });
 });

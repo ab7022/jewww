@@ -54,6 +54,7 @@ header {
 }
 .sub, .fine { color: var(--faint); font-size: 11px; }
 .sub { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+.header-right { display: flex; align-items: center; gap: 10px; }
 .credits { text-align: right; line-height: 1.2; }
 .credits strong { font-size: 14px; font-variant-numeric: tabular-nums; }
 .credits span { display: block; font-size: 10px; color: var(--faint); text-transform: uppercase; letter-spacing: .06em; }
@@ -87,6 +88,19 @@ button.small { padding: 4px 9px; font-size: 12px; }
 
 /* scrolling region */
 .stream { flex: 1; min-height: 0; overflow-y: auto; padding: 12px 14px 20px; }
+
+/* details */
+.details-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.details-head h2 { margin: 0; }
+.fields { display: flex; flex-direction: column; gap: 9px; margin: 12px 0 14px; }
+.fields label { display: flex; flex-direction: column; gap: 4px; }
+.fields span { font-size: 11px; color: var(--dim); }
+.fields input {
+  padding: 7px 10px; border-radius: 8px; font: inherit;
+  background: var(--raised); color: var(--text); border: 1px solid var(--line);
+}
+.fields input::placeholder { color: var(--faint); font-size: 12px; }
+.fields input:focus-visible { outline: none; border-color: var(--accent); }
 
 /* timeline */
 .timeline { list-style: none; margin: 0; padding: 0; }

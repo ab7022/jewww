@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { fromEnv } from "@jev-browser/jev";
-import { compose, extract, makePlan } from "@jev-browser/planner";
+import { compose, extract, extractDetails, makePlan } from "@jev-browser/planner";
 import { isTransient, JevError } from "@jev-browser/jev";
 import { decide, fieldText, mapFields } from "@jev-browser/policy";
 import type { Snapshot } from "@jev-browser/shared";
@@ -186,9 +186,7 @@ export function createApp(cfg: AppConfig): Express {
       updatedAt: now,
     });
 
-    const planned = await makePlan({ apiKey: cfg.openrouterKey, goal, start: url, jev: jev() });
-    const charge = await meter(store, uid(req), "plan", planned.costUsd, runId);
-    res.json({ runId, plan: planned.plan, balance: charge.balance });
+
   });
 
   /** Fails closed: a run that is not yours does not exist. */
@@ -253,6 +251,8 @@ export function createApp(cfg: AppConfig): Express {
     await assertBalance(store, uid(req), 1);
     const r = await fieldText(req.body, { apiKey: cfg.openrouterKey });
     const charge = await meter(store, uid(req), "text", r.costUsd, run._id);
+    // `null` means the model declined rather than invent a value; the caller asks
+    // the person instead. It is an answer, not an error.
     res.json({ text: r.text, balance: charge.balance });
   });
 

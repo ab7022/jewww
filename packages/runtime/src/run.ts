@@ -13,6 +13,7 @@ import {
   type Executor,
   FORBIDDEN_FIELD,
   type Node,
+  NO_FIELD,
   PROFILE_FIELDS,
   type ProfileKey,
   type SnapshotElement,
@@ -34,7 +35,7 @@ import { Scratchpad } from "./scratchpad.js";
 export interface Capabilities {
   decide(input: DecideInput): Promise<Decision>;
   /** Text for a TYPE_TEXT step, written with the page in front of the model. */
-  text(ctx: TextContext): Promise<string>;
+  text(ctx: TextContext): Promise<string | null>;
   extract(intent: string, schema: unknown, pageText: string): Promise<unknown>;
   compose(intent: string, inputs: Record<string, unknown>): Promise<unknown>;
   /** Maps every field of a form to a profile key in ONE call. */
@@ -131,25 +132,36 @@ async function runNodes(
     opts.emit({ type: "node:start", id: node.id, kind: node.kind, intent: node.intent });
 
     let status: RunStatus = "done";
-    switch (node.kind) {
-      case "act":
-        status = await runActNode(node, opts, pad, state);
-        break;
-      case "fill":
-        status = await runFillNode(node, opts, pad, state);
-        break;
-      case "read":
-        status = await runReadNode(node, opts, pad);
-        break;
-      case "compose":
-        status = await runComposeNode(node, opts, pad);
-        break;
-      case "confirm":
-        status = await runConfirmNode(node, opts, pad);
-        break;
-      case "foreach":
-        status = await runForeachNode(node, opts, pad, state);
-        break;
+    try {
+      switch (node.kind) {
+        case "act":
+          status = await runActNode(node, opts, pad, state);
+          break;
+        case "fill":
+          status = await runFillNode(node, opts, pad, state);
+          break;
+        case "read":
+          status = await runReadNode(node, opts, pad);
+          break;
+        case "compose":
+          status = await runComposeNode(node, opts, pad);
+          break;
+        case "confirm":
+          status = await runConfirmNode(node, opts, pad);
+          break;
+        case "foreach":
+          status = await runForeachNode(node, opts, pad, state);
+          break;
+      }
+    } catch (err) {
+      // A step that throws for a reason the loop did not anticipate should end THAT
+      // step, not the run — the work already done still stands, and a batch of ten
+      // must not be lost to one bad page.
+      opts.emit({
+        type: "warn",
+        message: err instanceof Error ? err.message : String(err),
+      });
+      status = "blocked";
     }
 
     if (status !== "done") return status;
@@ -176,7 +188,17 @@ async function runActNode(
       nodeGuard: null,
     });
     await opts.executor.settle(null, false);
-    opts.emit({ type: "node:done", id: node.id, detail: `navigated to ${destination.slice(0, 80)}` });
+    // Progress, not completion: emitting node:done here marked the step finished in
+    // the UI after 38ms, before it had done any of the work it was for.
+    opts.emit({
+      type: "step",
+      nodeId: node.id,
+      action: { kind: "navigate", url: destination },
+      operation: "NAVIGATE",
+      risk: "none",
+      latencyMs: 0,
+      costUsd: 0,
+    });
   }
 
   let lastHash = "";
@@ -332,7 +354,7 @@ async function runActNode(
         text = slotted;
       } else {
         const started = Date.now();
-        text = await opts.capabilities.text({
+        const written = await opts.capabilities.text({
           goal: opts.plan.goal,
           subgoal: node.intent,
           field: {
@@ -344,6 +366,31 @@ async function runActNode(
           recent: [],
           ...(opts.profile ? { profile: opts.profile } : {}),
         });
+
+        if (written === null) {
+          // The model declined rather than invent a value. Ask the person, once, and
+          // keep the answer for the rest of the run.
+          const field = d.target?.label ?? "this field";
+          const key = stableKey(field);
+          const answers = (pad.get("answers") ?? {}) as Record<string, { question: string; value: string }>;
+          const known = answers[key]?.value;
+          const given = known
+            ? { [key]: known }
+            : opts.ask
+              ? await opts.ask([{ key, label: field, role: d.target?.role ?? "textbox", required: false }])
+              : {};
+          const answer = given[key];
+          if (!answer?.trim()) {
+            recent.push({ action: `type into "${field}" skipped: no value available`, pageChanged: false });
+            opts.emit({ type: "warn", message: `nothing to put in “${field}”` });
+            continue;
+          }
+          if (!known) pad.set("answers", { ...answers, [key]: { question: field, value: answer } });
+          text = answer;
+        } else {
+          text = written;
+        }
+
         opts.emit({
           type: "text",
           field: d.target?.label ?? "",
@@ -439,15 +486,6 @@ async function runFillNode(
   }
 
   const profile = (pad.get("profile") ?? {}) as Record<string, string>;
-  if (!Object.keys(profile).length) {
-    // Without a profile there is nothing to map fields ONTO, and every answer comes
-    // back __none. Saying so beats reporting "filled 0/26" as if the model failed.
-    opts.emit({
-      type: "warn",
-      message: `${node.id}: no profile loaded, so no field can be filled`,
-    });
-    return "blocked";
-  }
   // `resumeFile` is a path on disk, not a value to type. Offering it as a mapping
   // target put "/Users/…/resume.txt" into two text boxes on a real application.
   // Files are attached through ATTACH, which is a separate operation for this reason.
@@ -465,11 +503,14 @@ async function runFillNode(
     criteria[key] = `the user's own answer to: "${a.question}"`;
   }
 
-  const mapped = await opts.capabilities.mapFields({
-    page: { url: raw.url, title: raw.title },
-    fields: fields.map(toSnapshotElement),
-    criteria,
-  });
+  // Nothing to map onto means nothing to ask the model about.
+  const mapped = Object.keys(criteria).length
+    ? await opts.capabilities.mapFields({
+        page: { url: raw.url, title: raw.title },
+        fields: fields.map(toSnapshotElement),
+        criteria,
+      })
+    : { mappings: [], costUsd: 0 };
   const mappings = mapped.mappings;
   state.steps += 1;
   state.cost += mapped.costUsd;
@@ -480,7 +521,11 @@ async function runFillNode(
   // Anything still unanswered goes to the user ONCE, as a batch. Their answers are
   // stored so the next nine applications fill them without asking again.
   const unknown: MissingField[] = [];
-  for (const m of mappings) {
+  // With nothing known, every field comes back __none and there is nothing to map
+  // onto — so ask about the fields themselves rather than reporting "filled 0/26"
+  // as though the model had failed.
+  const nothingKnown = !Object.keys(criteria).length;
+  for (const m of nothingKnown ? fields.map((f) => ({ eid: f.eid, label: f.name, key: NO_FIELD, confidence: 0, skipped: true })) : mappings) {
     if (!m.skipped && valueFor(m.key)) continue;
     // Already answered once. The model matches a differently-worded question to the
     // stored answer through `criteria`; this catches the identical wording, which is
@@ -518,7 +563,15 @@ async function runFillNode(
   let filled = 0;
   const skipped: string[] = [];
 
-  for (const m of mappings) {
+  // After asking, a field the user just answered is fillable even though the mapper
+  // never saw a candidate for it.
+  const fillable = mappings.length
+    ? mappings
+    : fields
+        .map((f) => ({ eid: f.eid, label: f.name, key: stableKey(f.name), confidence: 1, skipped: false }))
+        .filter((m) => answers[m.key]);
+
+  for (const m of fillable) {
     const element = byEid.get(m.eid);
     if (!element) continue;
 
@@ -691,8 +744,11 @@ function siteUrl(site: string | undefined, currentUrl: string): string | null {
   const target = /^https?:\/\//.test(site) ? site : `https://${site.replace(/^\/+/, "")}`;
   try {
     const to = new URL(target);
-    // Only when it is actually somewhere else; a same-origin `site` is just a label.
-    if (currentUrl && new URL(currentUrl).origin === to.origin) return null;
+    const here = currentUrl ? new URL(currentUrl) : null;
+    // Already on that site: a same-origin `site` is a label, not an instruction, and
+    // acting on it would throw away whatever page the user is actually on.
+    if (here && here.origin === to.origin) return null;
+    // A bare origin with no path is just "this site" — nothing more specific to go to.
     return to.toString();
   } catch {
     return null;

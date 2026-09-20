@@ -24,7 +24,14 @@ export interface TextContext {
 }
 
 export interface TextResult {
-  text: string;
+  /**
+   * The value to type, or null when the model could not determine one.
+   *
+   * Refusing is the instructed behaviour — inventing someone's phone number is far
+   * worse than leaving a field blank — so it must not be an exception. Treating it
+   * as one ended entire runs over a single field nobody could have filled.
+   */
+  text: string | null;
   model: string;
   latencyMs: number;
   costUsd: number;
@@ -74,14 +81,14 @@ export async function fieldText(
     if (Object.keys(parsed).length !== 1 || !("text" in parsed)) throw new Error();
     value = parsed.text;
   } catch {
-    throw new Error("text helper returned no valid value; nothing typed");
+    // Unparseable output is a genuine fault — but still not worth ending a run over.
+    value = null;
   }
-  if (typeof value !== "string" || !value.trim() || value.length > 2000) {
-    throw new Error("text helper returned no usable value; nothing typed");
-  }
+  const usable =
+    typeof value === "string" && value.trim() && value.length <= 2000 ? value : null;
 
   return {
-    text: value,
+    text: usable,
     model: json.model,
     latencyMs: Math.round(performance.now() - started),
     costUsd: json.usage?.cost ?? 0,

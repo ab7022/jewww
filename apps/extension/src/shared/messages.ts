@@ -32,7 +32,9 @@ export type ToWorker =
   | { kind: "state" }
   | { kind: "signIn" }
   | { kind: "signInDev" }
-  | { kind: "signOut" };
+  | { kind: "signOut" }
+  | { kind: "getProfile" }
+  | { kind: "saveProfile"; fields: Record<string, string> };
 
 export interface PendingApproval {
   preview: string;

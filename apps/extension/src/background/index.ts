@@ -43,11 +43,24 @@ async function getState(): Promise<PanelState> {
   };
 }
 
+/**
+ * Serialised, because patch() reads then writes.
+ *
+ * Run events arrive faster than a storage round trip, so two concurrent patches both
+ * read the same state and the second overwrote the first — which is how a step's
+ * failure reason vanished and left a bare ✕ with no explanation.
+ */
+let writes: Promise<unknown> = Promise.resolve();
+
 async function patch(next: Partial<PanelState>): Promise<PanelState> {
-  const state = { ...(await getState()), ...next };
-  await chrome.storage.local.set({ [STATE]: state });
-  chrome.runtime.sendMessage({ kind: "state", state }).catch(() => {});
-  return state;
+  const run = writes.then(async () => {
+    const state = { ...(await getState()), ...next };
+    await chrome.storage.local.set({ [STATE]: state });
+    chrome.runtime.sendMessage({ kind: "state", state }).catch(() => {});
+    return state;
+  });
+  writes = run.catch(() => {});
+  return run;
 }
 
 async function record(e: RunEvent): Promise<void> {
@@ -208,7 +221,7 @@ async function start(goal: string, tabId: number): Promise<void> {
     queued: undefined,
   });
 
-  const { runId, plan, balance } = await api.createRun(goal, url);
+  const { runId, plan, stated, balance } = await api.createRun(goal, url);
 
   // Draw the whole plan immediately, greyed out. Seeing what it intends to do before
   // it does any of it is most of the reassurance this interface has to provide.
@@ -220,6 +233,11 @@ async function start(goal: string, tabId: number): Promise<void> {
     actions: [],
   }));
   await patch({ credits: balance, status: "running", steps: planned });
+
+  // Saved details, overlaid with anything the user stated in the request — what
+  // they just typed is more specific than a saved default.
+  const saved = await api.profile().catch(() => ({}));
+  const profile = { ...saved, ...(stated ?? {}) };
 
   const capabilities: Capabilities = {
     decide: (input) => api.decide(runId, input.subgoal, input),
@@ -237,6 +255,7 @@ async function start(goal: string, tabId: number): Promise<void> {
       emit: (e) => {
         void record(e);
       },
+      ...(Object.keys(profile).length ? { profile } : {}),
       approve: async () => {
         if (aborted) return false;
         return askApproval();
@@ -298,6 +317,11 @@ chrome.runtime.onMessage.addListener((msg: ToWorker, _sender, sendResponse) => {
       case "signOut":
         await api.signOut();
         return sendResponse(await patch({ ...empty }));
+      case "getProfile":
+        return sendResponse(await api.profile().catch(() => ({})));
+      case "saveProfile":
+        await api.saveProfile(msg.fields);
+        return sendResponse({ ok: true });
       case "approve": {
         const resolve = pendingApproval;
         pendingApproval = null;

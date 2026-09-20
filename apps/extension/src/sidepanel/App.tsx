@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Details } from "./Details.js";
 import type { PanelState, ToWorker } from "../shared/messages.js";
 import { elapsed, type TimelineStep } from "../shared/timeline.js";
 
@@ -17,6 +18,7 @@ export function App(): JSX.Element {
   const [goal, setGoal] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showDetails, setShowDetails] = useState(false);
 
   const refresh = useCallback(async () => {
     const next = await send<PanelState>({ kind: "state" });
@@ -88,9 +90,20 @@ export function App(): JSX.Element {
 
   if (!state.signedIn) return <SignIn state={state} busy={busy} error={error} onSignIn={signIn} />;
 
+  if (showDetails) {
+    return (
+      <div className="app">
+        <Header email={state.email} credits={state.credits} />
+        <div className="stream">
+          <Details onClose={() => setShowDetails(false)} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="app">
-      <Header email={state.email} credits={state.credits} />
+      <Header email={state.email} credits={state.credits} onDetails={() => setShowDetails(true)} />
 
       <div className="composer">
         <textarea
@@ -141,7 +154,9 @@ export function App(): JSX.Element {
 
 // --- pieces ---------------------------------------------------------------
 
-function Header({ email, credits }: { email?: string; credits?: number }) {
+function Header({
+  email, credits, onDetails,
+}: { email?: string; credits?: number; onDetails?: () => void }) {
   return (
     <header>
       <div className="brand">
@@ -151,9 +166,16 @@ function Header({ email, credits }: { email?: string; credits?: number }) {
           <div className="sub">{email}</div>
         </div>
       </div>
-      <div className="credits" title="1 credit ≈ $0.001 of model usage">
-        <strong>{credits === undefined ? "—" : Math.floor(credits)}</strong>
-        <span>credits</span>
+      <div className="header-right">
+        {onDetails && (
+          <button className="ghost small" onClick={onDetails} title="Details used to fill forms">
+            Details
+          </button>
+        )}
+        <div className="credits" title="1 credit ≈ $0.001 of model usage">
+          <strong>{credits === undefined ? "—" : Math.floor(credits)}</strong>
+          <span>credits</span>
+        </div>
       </div>
     </header>
   );
@@ -298,7 +320,7 @@ function Empty({ onPick }: { onPick: (s: string) => void }) {
       </div>
       <p className="fine">
         It asks before anything it cannot undo — unless you tell it not to. It never types a
-        password.
+        password. To fill forms, add your details from the header.
       </p>
     </div>
   );

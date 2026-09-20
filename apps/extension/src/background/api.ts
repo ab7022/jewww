@@ -121,7 +121,10 @@ export class Api {
     this.call<{ email: string; credits: number; approxTasks: number }>("/api/me");
 
   createRun = (goal: string, url: string) =>
-    this.call<{ runId: string; plan: Plan; balance: number }>("/api/runs", { goal, url });
+    this.call<{ runId: string; plan: Plan; stated?: Record<string, string>; balance: number }>(
+      "/api/runs",
+      { goal, url },
+    );
 
   decide = async (runId: string, nodeId: string, input: DecideInput): Promise<Decision> =>
     (
@@ -135,8 +138,8 @@ export class Api {
       })
     ).decision;
 
-  text = async (runId: string, ctx: TextContext): Promise<string> =>
-    (await this.call<{ text: string }>(`/api/runs/${runId}/text`, ctx)).text;
+  text = async (runId: string, ctx: TextContext): Promise<string | null> =>
+    (await this.call<{ text: string | null }>(`/api/runs/${runId}/text`, ctx)).text;
 
   extract = async (runId: string, intent: string, schema: unknown, pageText: string) =>
     (await this.call<{ value: unknown }>(`/api/runs/${runId}/extract`, { intent, schema, pageText }))
@@ -147,6 +150,20 @@ export class Api {
 
   mapFields = async (runId: string, input: unknown): Promise<FieldMapping[]> =>
     (await this.call<{ mappings: FieldMapping[] }>(`/api/runs/${runId}/fields`, input)).mappings;
+
+  profile = async (): Promise<Record<string, string>> =>
+    (await this.call<{ fields: Record<string, string> }>("/api/profile")).fields ?? {};
+
+  saveProfile = async (fields: Record<string, string>): Promise<void> => {
+    const tokens = await this.tokens();
+    if (!tokens) throw new Error("not signed in");
+    const res = await fetch(`${this.base}/api/profile`, {
+      method: "PUT",
+      headers: { Authorization: `Bearer ${tokens.access}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ fields }),
+    });
+    if (!res.ok) throw new Error("could not save your details");
+  };
 
   finish = (runId: string, status: string) =>
     this.call<{ ok: true }>(`/api/runs/${runId}/finish`, { status });

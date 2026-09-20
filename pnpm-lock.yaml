@@ -30,6 +30,24 @@ importers:
         specifier: ^3.2.0
         version: 3.2.7(@types/node@24.13.6)(happy-dom@20.14.5)(tsx@4.23.13)
 
+  apps/runner:
+    dependencies:
+      '@jev-browser/executor':
+        specifier: workspace:*
+        version: link:../../packages/executor
+      '@jev-browser/jev':
+        specifier: workspace:*
+        version: link:../../packages/jev
+      '@jev-browser/planner':
+        specifier: workspace:*
+        version: link:../../packages/planner
+      '@jev-browser/runtime':
+        specifier: workspace:*
+        version: link:../../packages/runtime
+      '@jev-browser/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+
   eval:
     dependencies:
       '@jev-browser/jev':
@@ -47,6 +65,19 @@ importers:
       '@jev-browser/shared':
         specifier: workspace:*
         version: link:../packages/shared
+
+  packages/executor:
+    dependencies:
+      '@jev-browser/sense':
+        specifier: workspace:*
+        version: link:../sense
+      '@jev-browser/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      playwright:
+        specifier: ^1.50.0
+        version: 1.63.0
 
   packages/jev:
     dependencies:
@@ -68,6 +99,27 @@ importers:
       '@jev-browser/jev':
         specifier: workspace:*
         version: link:../jev
+      '@jev-browser/shared':
+        specifier: workspace:*
+        version: link:../shared
+
+  packages/runtime:
+    dependencies:
+      '@jev-browser/executor':
+        specifier: workspace:*
+        version: link:../executor
+      '@jev-browser/jev':
+        specifier: workspace:*
+        version: link:../jev
+      '@jev-browser/planner':
+        specifier: workspace:*
+        version: link:../planner
+      '@jev-browser/policy':
+        specifier: workspace:*
+        version: link:../policy
+      '@jev-browser/sense':
+        specifier: workspace:*
+        version: link:../sense
       '@jev-browser/shared':
         specifier: workspace:*
         version: link:../shared

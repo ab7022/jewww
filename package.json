@@ -19,7 +19,8 @@
     "eval:plans": "tsx --env-file-if-exists=.env eval/src/bench-plan.ts",
     "eval:fields": "tsx --env-file-if-exists=.env eval/src/bench-fields.ts",
     "eval:select": "tsx --env-file-if-exists=.env eval/src/bench-select.ts",
-    "check:guards": "tsx eval/src/check-guards.ts"
+    "check:guards": "tsx eval/src/check-guards.ts",
+    "run-task": "tsx --env-file-if-exists=.env apps/runner/src/index.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",

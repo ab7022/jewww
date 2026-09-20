@@ -16,7 +16,10 @@ before any Chrome code exists.
 | `packages/sense` | DOM → ranked snapshot. Collector is one self-contained function, so the same source runs under Playwright now and as a content script later. Ranking is pure and runs in Node. |
 | `packages/jev` | OpenRouter `/api/v1/systemone` (primary) + Vercel `/v1/evaluate`, with the `noul`/`boolean` dialect normalised away |
 | `packages/policy` | The per-step decision: fan-out question battery, risk gate, inline text helper |
-| `packages/planner` | goal → node program, on `openai/gpt-5.6-luna` |
+| `packages/planner` | goal → node program on `openai/gpt-5.6-luna`, plus `read`/`compose` extraction |
+| `packages/executor` | `Action` → a real browser. CDP today, a content script later |
+| `packages/runtime` | Interprets the node program: scratchpad, step loop, foreach, confirm |
+| `apps/runner` | Headless CLI that plans a goal and executes it end to end |
 
 ## Setup
 
@@ -39,6 +42,10 @@ pnpm eval:fields            # field mapping on real ATS forms
 pnpm eval:plans             # 50 end-to-end use cases → planner checks
 pnpm plan <slug>            # inspect one plan
 pnpm check:guards           # freshness + occlusion guards in a real browser
+
+pnpm run-task --goal "..." --url https://...   # plan and execute, headless
+#   --headed         watch it
+#   --auto-approve   read-only tasks only; this turns the safety gate OFF
 ```
 
 Everything after `eval:capture` replays saved fixtures offline. A full sweep is a few cents.

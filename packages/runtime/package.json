@@ -1,0 +1,15 @@
+{
+  "name": "@jev-browser/runtime",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@jev-browser/executor": "workspace:*",
+    "@jev-browser/jev": "workspace:*",
+    "@jev-browser/planner": "workspace:*",
+    "@jev-browser/policy": "workspace:*",
+    "@jev-browser/sense": "workspace:*",
+    "@jev-browser/shared": "workspace:*"
+  }
+}

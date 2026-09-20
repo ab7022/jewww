@@ -1,0 +1,13 @@
+{
+  "name": "@jev-browser/runner",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@jev-browser/executor": "workspace:*",
+    "@jev-browser/jev": "workspace:*",
+    "@jev-browser/planner": "workspace:*",
+    "@jev-browser/runtime": "workspace:*",
+    "@jev-browser/shared": "workspace:*"
+  }
+}

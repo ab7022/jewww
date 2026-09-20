@@ -3,6 +3,7 @@ import { type ChatResult, chat, DEFAULT_PLANNER_MODEL } from "./llm.js";
 import { SYSTEM_PROMPT, userPrompt } from "./prompt.js";
 
 export { SYSTEM_PROMPT, DEFAULT_PLANNER_MODEL };
+export { compose, extract } from "./extract.js";
 export type { ChatResult };
 
 export interface PlanResult {

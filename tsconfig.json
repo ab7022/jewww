@@ -14,10 +14,19 @@
       "path": "packages/policy"
     },
     {
+      "path": "packages/executor"
+    },
+    {
+      "path": "packages/runtime"
+    },
+    {
       "path": "packages/planner"
     },
     {
       "path": "eval"
+    },
+    {
+      "path": "apps/runner"
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "@jev-browser/executor",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@jev-browser/sense": "workspace:*",
+    "@jev-browser/shared": "workspace:*"
+  },
+  "devDependencies": { "playwright": "^1.50.0" }
+}

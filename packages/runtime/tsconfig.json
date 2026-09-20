@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "outDir": "dist", "rootDir": "src", "types": ["node"] },
+  "include": ["src/**/*.ts"],
+  "references": [
+    { "path": "../shared" }, { "path": "../sense" }, { "path": "../jev" },
+    { "path": "../policy" }, { "path": "../planner" }, { "path": "../executor" }
+  ]
+}

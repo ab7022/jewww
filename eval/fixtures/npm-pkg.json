@@ -1,0 +1,1618 @@
+{
+  "url": "https://www.npmjs.com/package/playwright",
+  "title": "playwright - npm",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 7995
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "alert",
+      "name": "npm tokens that bypass 2FA are being restricted — account changes (Aug 2026) and direct publishing (Jan 2027). Learn how",
+      "fp": "alert|npm tokens that bypass 2FA are being restricted — account changes (Aug 2026) and direct publishing (Jan 2027). Learn how|0",
+      "rect": {
+        "x": 88,
+        "y": 21,
+        "w": 908,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "Learn how to prepare for the npm bypass 2FA token deprecation",
+      "fp": "link|Learn how to prepare for the npm bypass 2FA token deprecation|0",
+      "rect": {
+        "x": 835,
+        "y": 20,
+        "w": 161,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "button",
+      "name": "Close notification",
+      "fp": "button|Close notification|0",
+      "rect": {
+        "x": 1224,
+        "y": 16,
+        "w": 24,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "link",
+      "name": "skip to content",
+      "ctx": "header",
+      "fp": "link|skip to content|0",
+      "rect": {
+        "x": 496,
+        "y": -31,
+        "w": 52,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "link",
+      "name": "skip to package search",
+      "ctx": "header",
+      "fp": "link|skip to package search|0",
+      "rect": {
+        "x": 558,
+        "y": -31,
+        "w": 103,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "link",
+      "name": "skip to sign in",
+      "ctx": "header",
+      "fp": "link|skip to sign in|0",
+      "rect": {
+        "x": 671,
+        "y": -31,
+        "w": 43,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "button",
+      "name": "Light mode — click for dark",
+      "ctx": "header",
+      "fp": "button|Light mode — click for dark|0",
+      "rect": {
+        "x": 32,
+        "y": 88,
+        "w": 28,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "Pro",
+      "ctx": "nav: Product Navigation",
+      "fp": "link|Pro|0",
+      "rect": {
+        "x": 75,
+        "y": 82,
+        "w": 43,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "Teams",
+      "ctx": "nav: Product Navigation",
+      "fp": "link|Teams|0",
+      "rect": {
+        "x": 124,
+        "y": 82,
+        "w": 69,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Pricing",
+      "ctx": "nav: Product Navigation",
+      "fp": "link|Pricing|0",
+      "rect": {
+        "x": 199,
+        "y": 82,
+        "w": 70,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "Documentation",
+      "ctx": "nav: Product Navigation",
+      "fp": "link|Documentation|0",
+      "rect": {
+        "x": 275,
+        "y": 82,
+        "w": 133,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "Npm",
+      "ctx": "header",
+      "fp": "link|Npm|0",
+      "rect": {
+        "x": 32,
+        "y": 170,
+        "w": 70,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "combobox",
+      "name": "Search packages",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Search packages|0",
+      "rect": {
+        "x": 178,
+        "y": 154,
+        "w": 716,
+        "h": 40
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e14",
+      "role": "button",
+      "name": "Search",
+      "ctx": "form",
+      "fp": "button|Search|0",
+      "rect": {
+        "x": 902,
+        "y": 148,
+        "w": 116,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "link",
+      "name": "Sign Up",
+      "ctx": "header",
+      "fp": "link|Sign Up|0",
+      "rect": {
+        "x": 1049,
+        "y": 148,
+        "w": 112,
+        "h": 49
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "Sign In",
+      "ctx": "header",
+      "fp": "link|Sign In|0",
+      "rect": {
+        "x": 1177,
+        "y": 158,
+        "w": 55,
+        "h": 29
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "tablist",
+      "name": "playwright1.63.0 • Public • Published 16 days ago",
+      "fp": "tablist|playwright1.63.0 • Public • Published 16 days ago|0",
+      "rect": {
+        "x": 56,
+        "y": 339,
+        "w": 1168,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "presentation",
+      "name": "Readme",
+      "fp": "presentation|Readme|0",
+      "rect": {
+        "x": 56,
+        "y": 339,
+        "w": 202,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "presentation",
+      "name": "Code Beta",
+      "fp": "presentation|Code Beta|0",
+      "rect": {
+        "x": 258,
+        "y": 339,
+        "w": 230,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "presentation",
+      "name": "1 Dependency",
+      "fp": "presentation|1 Dependency|0",
+      "rect": {
+        "x": 488,
+        "y": 339,
+        "w": 238,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "presentation",
+      "name": "5347 Dependents",
+      "fp": "presentation|5347 Dependents|0",
+      "rect": {
+        "x": 726,
+        "y": 339,
+        "w": 259,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "presentation",
+      "name": "5,692 Versions",
+      "fp": "presentation|5,692 Versions|0",
+      "rect": {
+        "x": 985,
+        "y": 339,
+        "w": 239,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "tabpanel",
+      "name": "Readme",
+      "fp": "tabpanel|Readme|0",
+      "rect": {
+        "x": 56,
+        "y": 394,
+        "w": 763,
+        "h": 8068
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "link",
+      "name": "Permalink: 🎭 Playwright",
+      "ctx": "🎭 Playwright",
+      "fp": "link|Permalink: 🎭 Playwright|0",
+      "rect": {
+        "x": 36,
+        "y": 472,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "npm version",
+      "fp": "link|npm version|0",
+      "rect": {
+        "x": 56,
+        "y": 475,
+        "w": 88,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "Chromium version",
+      "fp": "link|Chromium version|0",
+      "rect": {
+        "x": 148,
+        "y": 475,
+        "w": 173,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "Firefox version",
+      "fp": "link|Firefox version|0",
+      "rect": {
+        "x": 324,
+        "y": 475,
+        "w": 103,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "WebKit version",
+      "fp": "link|WebKit version|0",
+      "rect": {
+        "x": 431,
+        "y": 475,
+        "w": 99,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "Join Discord",
+      "fp": "link|Join Discord|0",
+      "rect": {
+        "x": 534,
+        "y": 475,
+        "w": 80,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "Documentation",
+      "fp": "link|Documentation|1",
+      "rect": {
+        "x": 56,
+        "y": 517,
+        "w": 196,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "API reference",
+      "fp": "link|API reference|0",
+      "rect": {
+        "x": 271,
+        "y": 517,
+        "w": 166,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "Permalink: Documentation | API reference",
+      "ctx": "Documentation | API reference",
+      "fp": "link|Permalink: Documentation | API reference|0",
+      "rect": {
+        "x": 36,
+        "y": 580,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "Permalink: Get Started",
+      "ctx": "Get Started",
+      "fp": "link|Permalink: Get Started|0",
+      "rect": {
+        "x": 36,
+        "y": 718,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "Playwright Test",
+      "fp": "link|Playwright Test|0",
+      "rect": {
+        "x": 70,
+        "y": 822,
+        "w": 117,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "Playwright CLI",
+      "fp": "link|Playwright CLI|0",
+      "rect": {
+        "x": 70,
+        "y": 879,
+        "w": 110,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "Playwright MCP",
+      "fp": "link|Playwright MCP|0",
+      "rect": {
+        "x": 70,
+        "y": 947,
+        "w": 120,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "Playwright Library",
+      "fp": "link|Playwright Library|0",
+      "rect": {
+        "x": 70,
+        "y": 1003,
+        "w": 82,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "VS Code Extension",
+      "fp": "link|VS Code Extension|0",
+      "rect": {
+        "x": 70,
+        "y": 1072,
+        "w": 73,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "Install from Marketplace",
+      "fp": "link|Install from Marketplace|0",
+      "rect": {
+        "x": 470,
+        "y": 1084,
+        "w": 177,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "Permalink: Playwright Test",
+      "ctx": "Playwright Test",
+      "fp": "link|Permalink: Playwright Test|0",
+      "rect": {
+        "x": 36,
+        "y": 1211,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "Permalink: Install",
+      "ctx": "Install",
+      "fp": "link|Permalink: Install|0",
+      "rect": {
+        "x": 36,
+        "y": 1345,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "Permalink: Write a test",
+      "ctx": "Write a test",
+      "fp": "link|Permalink: Write a test|0",
+      "rect": {
+        "x": 36,
+        "y": 1597,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "link",
+      "name": "Permalink: Run tests",
+      "ctx": "Run tests",
+      "fp": "link|Permalink: Run tests|0",
+      "rect": {
+        "x": 36,
+        "y": 1983,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "link",
+      "name": "Permalink: Key capabilities",
+      "ctx": "Key capabilities",
+      "fp": "link|Permalink: Key capabilities|0",
+      "rect": {
+        "x": 36,
+        "y": 2163,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "Trace Viewer",
+      "fp": "link|Trace Viewer|0",
+      "rect": {
+        "x": 480,
+        "y": 2723,
+        "w": 99,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "Full testing documentation",
+      "fp": "link|Full testing documentation|0",
+      "rect": {
+        "x": 56,
+        "y": 3093,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "Permalink: Playwright CLI",
+      "ctx": "Playwright CLI",
+      "fp": "link|Permalink: Playwright CLI|0",
+      "rect": {
+        "x": 36,
+        "y": 3208,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "Playwright CLI",
+      "fp": "link|Playwright CLI|1",
+      "rect": {
+        "x": 56,
+        "y": 3211,
+        "w": 114,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "Permalink: Install",
+      "ctx": "Install",
+      "fp": "link|Permalink: Install|1",
+      "rect": {
+        "x": 36,
+        "y": 3342,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "link",
+      "name": "Permalink: Usage",
+      "ctx": "Usage",
+      "fp": "link|Permalink: Usage|0",
+      "rect": {
+        "x": 36,
+        "y": 3568,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "link",
+      "name": "Permalink: Session monitoring",
+      "ctx": "Session monitoring",
+      "fp": "link|Permalink: Session monitoring|0",
+      "rect": {
+        "x": 36,
+        "y": 3942,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "link",
+      "name": "Full CLI documentation",
+      "fp": "link|Full CLI documentation|0",
+      "rect": {
+        "x": 56,
+        "y": 4096,
+        "w": 182,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "link",
+      "name": "GitHub",
+      "fp": "link|GitHub|0",
+      "rect": {
+        "x": 249,
+        "y": 4096,
+        "w": 55,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "link",
+      "name": "Permalink: Playwright MCP",
+      "ctx": "Playwright MCP",
+      "fp": "link|Permalink: Playwright MCP|0",
+      "rect": {
+        "x": 36,
+        "y": 4211,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "Playwright MCP server",
+      "fp": "link|Playwright MCP server|0",
+      "rect": {
+        "x": 88,
+        "y": 4214,
+        "w": 176,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "link",
+      "name": "Model Context Protocol",
+      "fp": "link|Model Context Protocol|0",
+      "rect": {
+        "x": 56,
+        "y": 4214,
+        "w": 686,
+        "h": 53
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": "Permalink: Setup",
+      "ctx": "Setup",
+      "fp": "link|Permalink: Setup|0",
+      "rect": {
+        "x": 36,
+        "y": 4345,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "link",
+      "name": "Install in VS Code",
+      "fp": "link|Install in VS Code|0",
+      "rect": {
+        "x": 56,
+        "y": 4694,
+        "w": 170,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "Permalink: How it works",
+      "ctx": "How it works",
+      "fp": "link|Permalink: How it works|0",
+      "rect": {
+        "x": 36,
+        "y": 4887,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "link",
+      "name": "Full MCP documentation",
+      "fp": "link|Full MCP documentation|0",
+      "rect": {
+        "x": 56,
+        "y": 5340,
+        "w": 191,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "GitHub",
+      "fp": "link|GitHub|1",
+      "rect": {
+        "x": 259,
+        "y": 5340,
+        "w": 55,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "Permalink: Playwright Library",
+      "ctx": "Playwright Library",
+      "fp": "link|Permalink: Playwright Library|0",
+      "rect": {
+        "x": 36,
+        "y": 5456,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": "Permalink: Install",
+      "ctx": "Install",
+      "fp": "link|Permalink: Install|2",
+      "rect": {
+        "x": 36,
+        "y": 5590,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "link",
+      "name": "Permalink: Examples",
+      "ctx": "Examples",
+      "fp": "link|Permalink: Examples|0",
+      "rect": {
+        "x": 36,
+        "y": 5694,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "link",
+      "name": "Library documentation",
+      "fp": "link|Library documentation|0",
+      "rect": {
+        "x": 56,
+        "y": 6822,
+        "w": 180,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "link",
+      "name": "API reference",
+      "fp": "link|API reference|1",
+      "rect": {
+        "x": 248,
+        "y": 6822,
+        "w": 104,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "link",
+      "name": "Permalink: VS Code Extension",
+      "ctx": "VS Code Extension",
+      "fp": "link|Permalink: VS Code Extension|0",
+      "rect": {
+        "x": 36,
+        "y": 6937,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "Playwright VS Code extension",
+      "fp": "link|Playwright VS Code extension|0",
+      "rect": {
+        "x": 88,
+        "y": 6940,
+        "w": 232,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "Install the extension",
+      "fp": "link|Install the extension|0",
+      "rect": {
+        "x": 56,
+        "y": 7347,
+        "w": 158,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "VS Code guide",
+      "fp": "link|VS Code guide|0",
+      "rect": {
+        "x": 225,
+        "y": 7347,
+        "w": 111,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "link",
+      "name": "Permalink: Cross-Browser Support",
+      "ctx": "Cross-Browser Support",
+      "fp": "link|Permalink: Cross-Browser Support|0",
+      "rect": {
+        "x": 36,
+        "y": 7462,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "Chrome for Testing",
+      "fp": "link|Chrome for Testing|0",
+      "rect": {
+        "x": 479,
+        "y": 7645,
+        "w": 148,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "link",
+      "name": "Permalink: Other Languages",
+      "ctx": "Other Languages",
+      "fp": "link|Permalink: Other Languages|0",
+      "rect": {
+        "x": 36,
+        "y": 7750,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "link",
+      "name": "Python",
+      "fp": "link|Python|0",
+      "rect": {
+        "x": 290,
+        "y": 7753,
+        "w": 57,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": ".NET",
+      "fp": "link|.NET|0",
+      "rect": {
+        "x": 355,
+        "y": 7753,
+        "w": 37,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "link",
+      "name": "Java",
+      "fp": "link|Java|0",
+      "rect": {
+        "x": 433,
+        "y": 7753,
+        "w": 36,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "Permalink: Resources",
+      "ctx": "Resources",
+      "fp": "link|Permalink: Resources|0",
+      "rect": {
+        "x": 36,
+        "y": 7859,
+        "w": 20,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "link",
+      "name": "Documentation",
+      "fp": "link|Documentation|2",
+      "rect": {
+        "x": 72,
+        "y": 7860,
+        "w": 117,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "API reference",
+      "fp": "link|API reference|2",
+      "rect": {
+        "x": 72,
+        "y": 7891,
+        "w": 99,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "MCP server",
+      "fp": "link|MCP server|0",
+      "rect": {
+        "x": 72,
+        "y": 7922,
+        "w": 84,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "CLI for coding agents",
+      "fp": "link|CLI for coding agents|0",
+      "rect": {
+        "x": 72,
+        "y": 7953,
+        "w": 157,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "link",
+      "name": "VS Code extension",
+      "fp": "link|VS Code extension|0",
+      "rect": {
+        "x": 72,
+        "y": 7984,
+        "w": 137,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "link",
+      "name": "Contribution guide",
+      "fp": "link|Contribution guide|0",
+      "rect": {
+        "x": 72,
+        "y": 8016,
+        "w": 142,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "link",
+      "name": "Changelog",
+      "fp": "link|Changelog|0",
+      "rect": {
+        "x": 72,
+        "y": 8047,
+        "w": 80,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "link",
+      "name": "Discord",
+      "fp": "link|Discord|0",
+      "rect": {
+        "x": 72,
+        "y": 8078,
+        "w": 57,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "View build summary",
+      "ctx": "aside",
+      "fp": "link|View build summary|0",
+      "rect": {
+        "x": 105,
+        "y": 8392,
+        "w": 128,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "Source Commit",
+      "ctx": "aside",
+      "fp": "link|Source Commit|0",
+      "rect": {
+        "x": 508,
+        "y": 8337,
+        "w": 294,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "Build File",
+      "ctx": "aside",
+      "fp": "link|Build File|0",
+      "rect": {
+        "x": 508,
+        "y": 8363,
+        "w": 294,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "link",
+      "name": "Public Ledger",
+      "ctx": "aside",
+      "fp": "link|Public Ledger|0",
+      "rect": {
+        "x": 508,
+        "y": 8389,
+        "w": 294,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "Share feedback",
+      "ctx": "aside",
+      "fp": "link|Share feedback|0",
+      "rect": {
+        "x": 56,
+        "y": 8442,
+        "w": 103,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "button",
+      "name": "Copy install command line",
+      "ctx": "aside: Package sidebar",
+      "fp": "button|Copy install command line|0",
+      "rect": {
+        "x": 1154,
+        "y": 462,
+        "w": 28,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "link",
+      "name": "Repository github.com/microsoft/playwright",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|Repository github.com/microsoft/playwright|0",
+      "rect": {
+        "x": 855,
+        "y": 568,
+        "w": 285,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "link",
+      "name": "Homepage playwright.dev",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|Homepage playwright.dev|0",
+      "rect": {
+        "x": 855,
+        "y": 681,
+        "w": 145,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "button",
+      "name": "Showing weekly downloads",
+      "ctx": "aside: Package sidebar",
+      "fp": "button|Showing weekly downloads|0",
+      "rect": {
+        "x": 851,
+        "y": 740,
+        "w": 357,
+        "h": 77
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "button",
+      "name": "View more provenance details",
+      "ctx": "aside: Package sidebar",
+      "fp": "button|View more provenance details|0",
+      "rect": {
+        "x": 911,
+        "y": 859,
+        "w": 26,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "link",
+      "name": "pavelfeldman",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|pavelfeldman|0",
+      "rect": {
+        "x": 851,
+        "y": 1059,
+        "w": 42,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "yurys",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|yurys|0",
+      "rect": {
+        "x": 901,
+        "y": 1059,
+        "w": 42,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "link",
+      "name": "microsoft1es",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|microsoft1es|0",
+      "rect": {
+        "x": 951,
+        "y": 1059,
+        "w": 42,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "link",
+      "name": "dgozman-ms",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|dgozman-ms|0",
+      "rect": {
+        "x": 1001,
+        "y": 1059,
+        "w": 42,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "link",
+      "name": "microsoft-oss-releases",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|microsoft-oss-releases|0",
+      "rect": {
+        "x": 1051,
+        "y": 1059,
+        "w": 42,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "link",
+      "name": "Analyze security with Socket",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|Analyze security with Socket|0",
+      "rect": {
+        "x": 851,
+        "y": 1110,
+        "w": 357,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "Check bundle size",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|Check bundle size|0",
+      "rect": {
+        "x": 851,
+        "y": 1166,
+        "w": 357,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "View package health",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|View package health|0",
+      "rect": {
+        "x": 851,
+        "y": 1222,
+        "w": 357,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "link",
+      "name": "Explore dependencies",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|Explore dependencies|0",
+      "rect": {
+        "x": 851,
+        "y": 1278,
+        "w": 357,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "Report malware",
+      "ctx": "aside: Package sidebar",
+      "fp": "link|Report malware|0",
+      "rect": {
+        "x": 851,
+        "y": 1333,
+        "w": 357,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "Visit npm GitHub page",
+      "ctx": "footer",
+      "fp": "link|Visit npm GitHub page|0",
+      "rect": {
+        "x": 48,
+        "y": 8656,
+        "w": 50,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "link",
+      "name": "GitHub",
+      "ctx": "footer",
+      "fp": "link|GitHub|2",
+      "rect": {
+        "x": 48,
+        "y": 8704,
+        "w": 50,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "link",
+      "name": "Help",
+      "ctx": "footer",
+      "fp": "link|Help|0",
+      "rect": {
+        "x": 173,
+        "y": 8669,
+        "w": 40,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e109",
+      "role": "link",
+      "name": "Advisories",
+      "ctx": "footer",
+      "fp": "link|Advisories|0",
+      "rect": {
+        "x": 173,
+        "y": 8709,
+        "w": 85,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e110",
+      "role": "link",
+      "name": "Status",
+      "ctx": "footer",
+      "fp": "link|Status|0",
+      "rect": {
+        "x": 173,
+        "y": 8749,
+        "w": 54,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e111",
+      "role": "link",
+      "name": "Contact npm",
+      "ctx": "footer",
+      "fp": "link|Contact npm|0",
+      "rect": {
+        "x": 173,
+        "y": 8789,
+        "w": 111,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e112",
+      "role": "link",
+      "name": "About",
+      "ctx": "footer",
+      "fp": "link|About|0",
+      "rect": {
+        "x": 547,
+        "y": 8669,
+        "w": 52,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e113",
+      "role": "link",
+      "name": "Blog",
+      "ctx": "footer",
+      "fp": "link|Blog|0",
+      "rect": {
+        "x": 547,
+        "y": 8709,
+        "w": 39,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e114",
+      "role": "link",
+      "name": "Press",
+      "ctx": "footer",
+      "fp": "link|Press|0",
+      "rect": {
+        "x": 547,
+        "y": 8749,
+        "w": 46,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
+      "role": "link",
+      "name": "Policies",
+      "ctx": "footer",
+      "fp": "link|Policies|0",
+      "rect": {
+        "x": 922,
+        "y": 8669,
+        "w": 63,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e116",
+      "role": "link",
+      "name": "Terms of Use",
+      "ctx": "footer",
+      "fp": "link|Terms of Use|0",
+      "rect": {
+        "x": 922,
+        "y": 8709,
+        "w": 107,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e117",
+      "role": "link",
+      "name": "Code of Conduct",
+      "ctx": "footer",
+      "fp": "link|Code of Conduct|0",
+      "rect": {
+        "x": 922,
+        "y": 8749,
+        "w": 141,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e118",
+      "role": "link",
+      "name": "Privacy",
+      "ctx": "footer",
+      "fp": "link|Privacy|0",
+      "rect": {
+        "x": 922,
+        "y": 8789,
+        "w": 62,
+        "h": 23
+      },
+      "fillable": false
+    }
+  ],
+  "text": "playwright 1.63.0 • Public • Published 16 days ago Readme Code Beta 1 Dependency 5347 Dependents 5,692 Versions 🎭 Playw",
+  "contentHash": "lf8ifu",
+  "totalCandidates": 167
+}

@@ -1,0 +1,951 @@
+{
+  "url": "https://job-boards.greenhouse.io/anthropic",
+  "title": "Jobs at Anthropic",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 3463
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Anthropic Logo",
+      "fp": "link|Anthropic Logo|0",
+      "rect": {
+        "x": 64,
+        "y": 72,
+        "w": 64,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "Create alert",
+      "ctx": "Open Roles",
+      "fp": "link|Create alert|0",
+      "rect": {
+        "x": 149,
+        "y": 252,
+        "w": 88,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "textbox",
+      "name": "Search",
+      "ctx": "Open Roles",
+      "fp": "textbox|Search|0",
+      "rect": {
+        "x": 64,
+        "y": 373,
+        "w": 272,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e4",
+      "role": "combobox",
+      "name": "Department",
+      "st": "collapsed",
+      "fp": "combobox|Department|0",
+      "rect": {
+        "x": 368,
+        "y": 376,
+        "w": 3,
+        "h": 22
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e5",
+      "role": "button",
+      "name": "Toggle flyout",
+      "fp": "button|Toggle flyout|0",
+      "rect": {
+        "x": 592,
+        "y": 367,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "combobox",
+      "name": "Office",
+      "st": "collapsed",
+      "fp": "combobox|Office|0",
+      "rect": {
+        "x": 656,
+        "y": 376,
+        "w": 3,
+        "h": 22
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e7",
+      "role": "button",
+      "name": "Toggle flyout",
+      "fp": "button|Toggle flyout|1",
+      "rect": {
+        "x": 880,
+        "y": 367,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "Anthropic Fellows Program, AI Safety & Security London, UK; Ontario, CAN; Remote-Friendly, United States; San Francisco,",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Anthropic Fellows Program, AI Safety & Security London, UK; Ontario, CAN; Remote-Friendly, United States; San Francisco,|0",
+      "rect": {
+        "x": 65,
+        "y": 576,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "Anthropic Fellows Program, ML Systems & Reinforcement Learning London, UK; Ontario, CAN; Remote-Friendly, United States;",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Anthropic Fellows Program, ML Systems & Reinforcement Learning London, UK; Ontario, CAN; Remote-Friendly, United States;|0",
+      "rect": {
+        "x": 65,
+        "y": 647,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Anthropic Fellows Program, The Anthropic Institute (Economics & Policy) London, UK; Ontario, CAN; Remote-Friendly, Unite",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Anthropic Fellows Program, The Anthropic Institute (Economics & Policy) London, UK; Ontario, CAN; Remote-Friendly, Unite|0",
+      "rect": {
+        "x": 65,
+        "y": 718,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "Data Operations Manager, Human Data San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Data Operations Manager, Human Data San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 789,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "Engineering Manager, GPU (ML Accelerator) San Francisco, CA | New York City, NY | Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Engineering Manager, GPU (ML Accelerator) San Francisco, CA | New York City, NY | Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 860,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "link",
+      "name": "Engineering Manager, Research Data Platform San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Engineering Manager, Research Data Platform San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 931,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "link",
+      "name": "Engineering Manager, Research Productivity San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Engineering Manager, Research Productivity San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 1002,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "link",
+      "name": "Engineering Manager, Search San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Engineering Manager, Search San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 1073,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "[Expression of Interest] Research Engineer / Scientist, Alignment - London London, UK",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|[Expression of Interest] Research Engineer / Scientist, Alignment - London London, UK|0",
+      "rect": {
+        "x": 65,
+        "y": 1144,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "[Expression of Interest] Research Manager, Interpretability San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|[Expression of Interest] Research Manager, Interpretability San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 1215,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "link",
+      "name": "Full-Stack Software Engineer, Reinforcement Learning San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Full-Stack Software Engineer, Reinforcement Learning San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 1286,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "link",
+      "name": "Life Sciences Operator, Lead New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Life Sciences Operator, Lead New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 1357,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "link",
+      "name": "Machine Learning Infrastructure Engineer, Safeguards Research San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Machine Learning Infrastructure Engineer, Safeguards Research San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 1428,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "link",
+      "name": "ML/Research Engineer, Safeguards San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|ML/Research Engineer, Safeguards San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 1499,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "link",
+      "name": "Performance Engineer San Francisco, CA | New York City, NY | Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Performance Engineer San Francisco, CA | New York City, NY | Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 1570,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "link",
+      "name": "Performance Engineer, GPU San Francisco, CA | New York City, NY | Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Performance Engineer, GPU San Francisco, CA | New York City, NY | Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 1641,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "link",
+      "name": "Performance Engineer, Inference Engine San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Performance Engineer, Inference Engine San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 1712,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "Performance Engineer, Inference Systems San Francisco, CA | New York City, NY | Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Performance Engineer, Inference Systems San Francisco, CA | New York City, NY | Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 1783,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "Pre-training Data Infrastructure Engineer San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Pre-training Data Infrastructure Engineer San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 1854,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "Pre-training Distributed Systems Tech Lead / Manager San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Pre-training Distributed Systems Tech Lead / Manager San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 1925,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "Product Manager, Claude Science San Francisco, CA | New York City, NY | Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Product Manager, Claude Science San Francisco, CA | New York City, NY | Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 1996,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "Research Engineer, Chip Design RL (Reinforcement Learning) San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Chip Design RL (Reinforcement Learning) San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 2067,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "Research Engineer, Code RL (Reinforcement Learning) San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Code RL (Reinforcement Learning) San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 2138,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "Research Engineer, Computer Use San Francisco, CA | New York City, NY | Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Computer Use San Francisco, CA | New York City, NY | Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 2209,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "Research Engineer, Cybersecurity RL (Reinforcement Learning) San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Cybersecurity RL (Reinforcement Learning) San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 2280,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "Research Engineer, Discovery San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Discovery San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 2351,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "Research Engineer, Domain Scaling San Francisco, CA | New York City, NY | Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Domain Scaling San Francisco, CA | New York City, NY | Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 2422,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "Research Engineer, Interpretability San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Interpretability San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 2493,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "Research Engineer, Knowledge Team Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, N",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Knowledge Team Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, N|0",
+      "rect": {
+        "x": 65,
+        "y": 2564,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "Research Engineer, Life Sciences San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Life Sciences San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 2635,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "Research Engineer, Machine Learning (Reinforcement Learning) London, UK",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Machine Learning (Reinforcement Learning) London, UK|0",
+      "rect": {
+        "x": 65,
+        "y": 2706,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "Research Engineer, Machine Learning (Reinforcement Learning) San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Machine Learning (Reinforcement Learning) San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 2777,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "Research Engineer, Machine Learning (RL Velocity) Remote-Friendly (Travel-Required) | San Francisco, CA | New York City,",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Machine Learning (RL Velocity) Remote-Friendly (Travel-Required) | San Francisco, CA | New York City,|0",
+      "rect": {
+        "x": 65,
+        "y": 2848,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "Research Engineer, Machine Learning (RL Velocity) London, UK",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Machine Learning (RL Velocity) London, UK|0",
+      "rect": {
+        "x": 65,
+        "y": 2919,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "Research Engineer, Model Evaluations Remote-Friendly (Travel-Required) | San Francisco, CA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Model Evaluations Remote-Friendly (Travel-Required) | San Francisco, CA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 2990,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "link",
+      "name": "Research Engineer, Performance RL (Reinforcement Learning) San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Performance RL (Reinforcement Learning) San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 3061,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "link",
+      "name": "Research Engineer, Pretraining London, UK",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Pretraining London, UK|0",
+      "rect": {
+        "x": 65,
+        "y": 3132,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "Research Engineer, Pretraining Scaling San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Pretraining Scaling San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 3203,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "Research Engineer, Pretraining Scaling - London London, UK",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Pretraining Scaling - London London, UK|0",
+      "rect": {
+        "x": 65,
+        "y": 3274,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "Research Engineer, Production Model Post-Training San Francisco, CA | New York City, NY | Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Production Model Post-Training San Francisco, CA | New York City, NY | Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 3345,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "Research Engineer, Production Model Post-Training Zürich, CH",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Production Model Post-Training Zürich, CH|0",
+      "rect": {
+        "x": 65,
+        "y": 3416,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "Research Engineer/Research Scientist, Pre-training Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA |",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer/Research Scientist, Pre-training Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA ||0",
+      "rect": {
+        "x": 65,
+        "y": 3487,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "link",
+      "name": "Research Engineer / Research Scientist, Tokens New York City, NY; New York City, NY | Seattle, WA; San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer / Research Scientist, Tokens New York City, NY; New York City, NY | Seattle, WA; San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 3558,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "link",
+      "name": "Research Engineer, RL Engineering San Francisco, CA | New York City, NY | Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, RL Engineering San Francisco, CA | New York City, NY | Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 3629,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "link",
+      "name": "Research Engineer, RL Scaling Science London, UK",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, RL Scaling Science London, UK|0",
+      "rect": {
+        "x": 65,
+        "y": 3700,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "link",
+      "name": "Research Engineer / Scientist, Alignment San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer / Scientist, Alignment San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 3771,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "link",
+      "name": "Research Engineer, Takeoff Intel Remote-Friendly (Travel Required) | San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Takeoff Intel Remote-Friendly (Travel Required) | San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 3842,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "Research Engineer, Universes Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Universes Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY|0",
+      "rect": {
+        "x": 65,
+        "y": 3913,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "link",
+      "name": "Research Engineer, Visual Knowledge Work New York City, NY; San Francisco, CA; Seattle, WA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Engineer, Visual Knowledge Work New York City, NY; San Francisco, CA; Seattle, WA|0",
+      "rect": {
+        "x": 65,
+        "y": 3984,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": "Research Scientist, Interpretability San Francisco, CA",
+      "ctx": "AI Research & Engineering",
+      "fp": "link|Research Scientist, Interpretability San Francisco, CA|0",
+      "rect": {
+        "x": 65,
+        "y": 4055,
+        "w": 1158,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "navigation",
+      "name": "Pagination",
+      "ctx": "nav: Pagination",
+      "fp": "navigation|Pagination|0",
+      "rect": {
+        "x": 64,
+        "y": 4173,
+        "w": 1152,
+        "h": 70
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "button",
+      "name": "Previous page",
+      "ctx": "nav: Pagination",
+      "st": "disabled",
+      "fp": "button|Previous page|0",
+      "rect": {
+        "x": 485,
+        "y": 4201,
+        "w": 7,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "button",
+      "name": "Go to page 1",
+      "ctx": "nav: Pagination",
+      "fp": "button|Go to page 1|0",
+      "rect": {
+        "x": 508,
+        "y": 4189,
+        "w": 41,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "button",
+      "name": "Go to page 2",
+      "ctx": "nav: Pagination",
+      "fp": "button|Go to page 2|0",
+      "rect": {
+        "x": 557,
+        "y": 4190,
+        "w": 40,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "button",
+      "name": "Go to page 3",
+      "ctx": "nav: Pagination",
+      "fp": "button|Go to page 3|0",
+      "rect": {
+        "x": 605,
+        "y": 4190,
+        "w": 41,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "button",
+      "name": "Go to page 4",
+      "ctx": "nav: Pagination",
+      "fp": "button|Go to page 4|0",
+      "rect": {
+        "x": 655,
+        "y": 4190,
+        "w": 42,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "button",
+      "name": "Go to page 13",
+      "ctx": "nav: Pagination",
+      "fp": "button|Go to page 13|0",
+      "rect": {
+        "x": 724,
+        "y": 4190,
+        "w": 48,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "button",
+      "name": "Next page",
+      "ctx": "nav: Pagination",
+      "fp": "button|Next page|0",
+      "rect": {
+        "x": 788,
+        "y": 4201,
+        "w": 7,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "link",
+      "name": "Powered by",
+      "ctx": "footer",
+      "fp": "link|Powered by|0",
+      "rect": {
+        "x": 636,
+        "y": 4316,
+        "w": 100,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "img",
+      "name": "Greenhouse logo",
+      "ctx": "footer",
+      "fp": "img|Greenhouse logo|0",
+      "rect": {
+        "x": 636,
+        "y": 4316,
+        "w": 100,
+        "h": 30
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Open Roles Create a Job Alert Level-up your career by having opportunities at Anthropic sent directly to your inbox. Cre",
+  "contentHash": "16n7bzp",
+  "totalCandidates": 69
+}

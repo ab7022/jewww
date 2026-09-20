@@ -1,0 +1,1420 @@
+{
+  "url": "https://news.ycombinator.com/jobs",
+  "title": "jobs | Hacker News",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 263
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Hacker News",
+      "fp": "link|Hacker News|0",
+      "rect": {
+        "x": 130,
+        "y": 12,
+        "w": 98,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "new",
+      "fp": "link|new|0",
+      "rect": {
+        "x": 233,
+        "y": 12,
+        "w": 27,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "link",
+      "name": "past",
+      "fp": "link|past|0",
+      "rect": {
+        "x": 276,
+        "y": 12,
+        "w": 29,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "link",
+      "name": "comments",
+      "fp": "link|comments|0",
+      "rect": {
+        "x": 319,
+        "y": 12,
+        "w": 70,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "link",
+      "name": "ask",
+      "fp": "link|ask|0",
+      "rect": {
+        "x": 404,
+        "y": 12,
+        "w": 23,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "link",
+      "name": "show",
+      "fp": "link|show|0",
+      "rect": {
+        "x": 443,
+        "y": 12,
+        "w": 34,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "link",
+      "name": "jobs",
+      "fp": "link|jobs|0",
+      "rect": {
+        "x": 493,
+        "y": 12,
+        "w": 28,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "jobs",
+      "fp": "link|jobs|1",
+      "rect": {
+        "x": 536,
+        "y": 12,
+        "w": 46,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "login",
+      "fp": "link|login|0",
+      "rect": {
+        "x": 1139,
+        "y": 12,
+        "w": 32,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "ycombinator.com/jobs",
+      "fp": "link|ycombinator.com/jobs|0",
+      "rect": {
+        "x": 411,
+        "y": 48,
+        "w": 148,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "Supabase (YC S20) Is Hiring for OrioleDB",
+      "fp": "link|Supabase (YC S20) Is Hiring for OrioleDB|0",
+      "rect": {
+        "x": 139,
+        "y": 78,
+        "w": 279,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "supabase.link",
+      "fp": "link|supabase.link|0",
+      "rect": {
+        "x": 426,
+        "y": 80,
+        "w": 73,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "link",
+      "name": "21 hours ago",
+      "fp": "link|21 hours ago|0",
+      "rect": {
+        "x": 139,
+        "y": 94,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "link",
+      "name": "Cekura (YC F24) Is Hiring",
+      "fp": "link|Cekura (YC F24) Is Hiring|0",
+      "rect": {
+        "x": 139,
+        "y": 110,
+        "w": 172,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|0",
+      "rect": {
+        "x": 320,
+        "y": 112,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "2 days ago",
+      "fp": "link|2 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 126,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "Zettascale (YC S24) Is Hiring ASIC/FPGA Engineers to Build Chips for ASI",
+      "fp": "link|Zettascale (YC S24) Is Hiring ASIC/FPGA Engineers to Build Chips for ASI|0",
+      "rect": {
+        "x": 139,
+        "y": 142,
+        "w": 494,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "link",
+      "name": "zscc.ai",
+      "fp": "link|zscc.ai|0",
+      "rect": {
+        "x": 641,
+        "y": 144,
+        "w": 35,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "link",
+      "name": "2 days ago",
+      "fp": "link|2 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 158,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "link",
+      "name": "Kyber (YC W23) Is Hiring a Forward Deployed Engineer",
+      "fp": "link|Kyber (YC W23) Is Hiring a Forward Deployed Engineer|0",
+      "rect": {
+        "x": 139,
+        "y": 174,
+        "w": 371,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|1",
+      "rect": {
+        "x": 518,
+        "y": 176,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "link",
+      "name": "4 days ago",
+      "fp": "link|4 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 190,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "link",
+      "name": "Jiga (YC W21) Is Hiring Product Engineer (Remote/US)",
+      "fp": "link|Jiga (YC W21) Is Hiring Product Engineer (Remote/US)|0",
+      "rect": {
+        "x": 139,
+        "y": 206,
+        "w": 369,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "link",
+      "name": "jiga.io",
+      "fp": "link|jiga.io|0",
+      "rect": {
+        "x": 516,
+        "y": 208,
+        "w": 33,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "4 days ago",
+      "fp": "link|4 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 222,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "Lingo.dev (YC F24) is hiring a senior content engineer (Remote, worldwide)",
+      "fp": "link|Lingo.dev (YC F24) is hiring a senior content engineer (Remote, worldwide)|0",
+      "rect": {
+        "x": 139,
+        "y": 238,
+        "w": 508,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "lingo.dev",
+      "fp": "link|lingo.dev|0",
+      "rect": {
+        "x": 655,
+        "y": 240,
+        "w": 49,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "5 days ago",
+      "fp": "link|5 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 254,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "Cua (YC P25) Is Hiring a Founding Technical GTM Lead",
+      "fp": "link|Cua (YC P25) Is Hiring a Founding Technical GTM Lead|0",
+      "rect": {
+        "x": 139,
+        "y": 270,
+        "w": 366,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|2",
+      "rect": {
+        "x": 513,
+        "y": 272,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "5 days ago",
+      "fp": "link|5 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 286,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "Zep AI (YC W24) Is Hiring a Head of Forward Deployed Engineering",
+      "fp": "link|Zep AI (YC W24) Is Hiring a Head of Forward Deployed Engineering|0",
+      "rect": {
+        "x": 139,
+        "y": 302,
+        "w": 454,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "getzep.com",
+      "fp": "link|getzep.com|0",
+      "rect": {
+        "x": 601,
+        "y": 304,
+        "w": 62,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "8 days ago",
+      "fp": "link|8 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 318,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "Roame (YC S23) Is Hiring Viral Content Editor",
+      "fp": "link|Roame (YC S23) Is Hiring Viral Content Editor|0",
+      "rect": {
+        "x": 139,
+        "y": 334,
+        "w": 309,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|3",
+      "rect": {
+        "x": 456,
+        "y": 336,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "11 days ago",
+      "fp": "link|11 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 350,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "Opalite Health (YC W26) Is Hiring – Founding GTM",
+      "fp": "link|Opalite Health (YC W26) Is Hiring – Founding GTM|0",
+      "rect": {
+        "x": 139,
+        "y": 366,
+        "w": 339,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|4",
+      "rect": {
+        "x": 487,
+        "y": 368,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "13 days ago",
+      "fp": "link|13 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 382,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "SubImage (YC W25) Is Hiring a Founding Engineer in SF",
+      "fp": "link|SubImage (YC W25) Is Hiring a Founding Engineer in SF|0",
+      "rect": {
+        "x": 139,
+        "y": 398,
+        "w": 380,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|5",
+      "rect": {
+        "x": 527,
+        "y": 400,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "link",
+      "name": "16 days ago",
+      "fp": "link|16 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 414,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "link",
+      "name": "Tasklet (YC P26) Is Hiring a Customer Success Engineer",
+      "fp": "link|Tasklet (YC P26) Is Hiring a Customer Success Engineer|0",
+      "rect": {
+        "x": 139,
+        "y": 430,
+        "w": 376,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "tasklet.ai",
+      "fp": "link|tasklet.ai|0",
+      "rect": {
+        "x": 523,
+        "y": 432,
+        "w": 49,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "16 days ago",
+      "fp": "link|16 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 446,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "Gooseworks (YC W23) Is Hiring – Founding Creative Engineer",
+      "fp": "link|Gooseworks (YC W23) Is Hiring – Founding Creative Engineer|0",
+      "rect": {
+        "x": 139,
+        "y": 462,
+        "w": 414,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|6",
+      "rect": {
+        "x": 562,
+        "y": 464,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "16 days ago",
+      "fp": "link|16 days ago|2",
+      "rect": {
+        "x": 139,
+        "y": 478,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "link",
+      "name": "9 Mothers (YC P26) Is Hiring in Austin, TX",
+      "fp": "link|9 Mothers (YC P26) Is Hiring in Austin, TX|0",
+      "rect": {
+        "x": 139,
+        "y": 494,
+        "w": 283,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "link",
+      "name": "9mothers.com",
+      "fp": "link|9mothers.com|0",
+      "rect": {
+        "x": 430,
+        "y": 496,
+        "w": 77,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "link",
+      "name": "17 days ago",
+      "fp": "link|17 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 510,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "link",
+      "name": "Nango (YC W23) is hiring across eng, product and GTM (SF and remote)",
+      "fp": "link|Nango (YC W23) is hiring across eng, product and GTM (SF and remote)|0",
+      "rect": {
+        "x": 139,
+        "y": 526,
+        "w": 487,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "link",
+      "name": "nango.dev",
+      "fp": "link|nango.dev|0",
+      "rect": {
+        "x": 634,
+        "y": 528,
+        "w": 56,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "17 days ago",
+      "fp": "link|17 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 542,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "link",
+      "name": "Telli (YC F24) is hiring engineers and designers [Berlin, on-site]",
+      "fp": "link|Telli (YC F24) is hiring engineers and designers [Berlin, on-site]|0",
+      "rect": {
+        "x": 139,
+        "y": 558,
+        "w": 427,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": "telli.com",
+      "fp": "link|telli.com|0",
+      "rect": {
+        "x": 574,
+        "y": 560,
+        "w": 46,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "link",
+      "name": "18 days ago",
+      "fp": "link|18 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 574,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "Quill (YC W20) Is Hiring a Fullstack SWE",
+      "fp": "link|Quill (YC W20) Is Hiring a Fullstack SWE|0",
+      "rect": {
+        "x": 139,
+        "y": 590,
+        "w": 272,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "link",
+      "name": "18 days ago",
+      "fp": "link|18 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 606,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "CollectWise (YC F24) Is Hiring",
+      "fp": "link|CollectWise (YC F24) Is Hiring|0",
+      "rect": {
+        "x": 139,
+        "y": 622,
+        "w": 202,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|7",
+      "rect": {
+        "x": 349,
+        "y": 624,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": "19 days ago",
+      "fp": "link|19 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 638,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "link",
+      "name": "Autonomous (YC F25) is hiring engineers",
+      "fp": "link|Autonomous (YC F25) is hiring engineers|0",
+      "rect": {
+        "x": 139,
+        "y": 654,
+        "w": 276,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "link",
+      "name": "19 days ago",
+      "fp": "link|19 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 670,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "link",
+      "name": "Weave (YC W25) is hiring ML, AI, product, & design engineers",
+      "fp": "link|Weave (YC W25) is hiring ML, AI, product, & design engineers|0",
+      "rect": {
+        "x": 139,
+        "y": 686,
+        "w": 417,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "link",
+      "name": "jobs.ashbyhq.com",
+      "fp": "link|jobs.ashbyhq.com|0",
+      "rect": {
+        "x": 564,
+        "y": 688,
+        "w": 98,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "19 days ago",
+      "fp": "link|19 days ago|2",
+      "rect": {
+        "x": 139,
+        "y": 702,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "Artie (YC S23) Is Hiring Technical AES",
+      "fp": "link|Artie (YC S23) Is Hiring Technical AES|0",
+      "rect": {
+        "x": 139,
+        "y": 718,
+        "w": 255,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "artie.com",
+      "fp": "link|artie.com|0",
+      "rect": {
+        "x": 402,
+        "y": 720,
+        "w": 51,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "link",
+      "name": "20 days ago",
+      "fp": "link|20 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 734,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "Attimet (YC F24) Is Hiring Members of Technical Staff – Engineering and Research",
+      "fp": "link|Attimet (YC F24) Is Hiring Members of Technical Staff – Engineering and Research|0",
+      "rect": {
+        "x": 139,
+        "y": 750,
+        "w": 552,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|8",
+      "rect": {
+        "x": 699,
+        "y": 752,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "link",
+      "name": "22 days ago",
+      "fp": "link|22 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 766,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": "GoGoGrandparent (YC S16) is hiring back end engineers",
+      "fp": "link|GoGoGrandparent (YC S16) is hiring back end engineers|0",
+      "rect": {
+        "x": 139,
+        "y": 782,
+        "w": 379,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|9",
+      "rect": {
+        "x": 527,
+        "y": 784,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "23 days ago",
+      "fp": "link|23 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 798,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "link",
+      "name": "Bild AI (YC W25) is hiring product and AI engineers",
+      "fp": "link|Bild AI (YC W25) is hiring product and AI engineers|0",
+      "rect": {
+        "x": 139,
+        "y": 814,
+        "w": 346,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "bild.ai",
+      "fp": "link|bild.ai|0",
+      "rect": {
+        "x": 493,
+        "y": 816,
+        "w": 32,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "23 days ago",
+      "fp": "link|23 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 830,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "Adentris (YC P25) Is Hiring",
+      "fp": "link|Adentris (YC P25) Is Hiring|0",
+      "rect": {
+        "x": 139,
+        "y": 846,
+        "w": 181,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|10",
+      "rect": {
+        "x": 328,
+        "y": 848,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "link",
+      "name": "24 days ago",
+      "fp": "link|24 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 862,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "link",
+      "name": "Proliferate (YC S25) Is Hiring",
+      "fp": "link|Proliferate (YC S25) Is Hiring|0",
+      "rect": {
+        "x": 139,
+        "y": 878,
+        "w": 195,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|11",
+      "rect": {
+        "x": 342,
+        "y": 880,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "25 days ago",
+      "fp": "link|25 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 894,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "Clara (YC P26) is hiring a growth engineer to bring AI doctors to market",
+      "fp": "link|Clara (YC P26) is hiring a growth engineer to bring AI doctors to market|0",
+      "rect": {
+        "x": 139,
+        "y": 910,
+        "w": 485,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|12",
+      "rect": {
+        "x": 632,
+        "y": 912,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "link",
+      "name": "25 days ago",
+      "fp": "link|25 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 926,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "Autostep (YC P26) Is Hiring AI/Fullstack Engineers and a Chief of Staff",
+      "fp": "link|Autostep (YC P26) Is Hiring AI/Fullstack Engineers and a Chief of Staff|0",
+      "rect": {
+        "x": 139,
+        "y": 942,
+        "w": 474,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "link",
+      "name": "dover.com",
+      "fp": "link|dover.com|0",
+      "rect": {
+        "x": 621,
+        "y": 944,
+        "w": 55,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "link",
+      "name": "26 days ago",
+      "fp": "link|26 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 958,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "link",
+      "name": "SalesPatriot (YC W25) Is Hiring Forward Deployed Engineers",
+      "fp": "link|SalesPatriot (YC W25) Is Hiring Forward Deployed Engineers|0",
+      "rect": {
+        "x": 139,
+        "y": 974,
+        "w": 406,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "link",
+      "name": "ycombinator.com",
+      "fp": "link|ycombinator.com|13",
+      "rect": {
+        "x": 553,
+        "y": 976,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "link",
+      "name": "29 days ago",
+      "fp": "link|29 days ago|0",
+      "rect": {
+        "x": 139,
+        "y": 990,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "link",
+      "name": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
+      "fp": "link|LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers|0",
+      "rect": {
+        "x": 139,
+        "y": 1006,
+        "w": 399,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "jobs.ashbyhq.com",
+      "fp": "link|jobs.ashbyhq.com|1",
+      "rect": {
+        "x": 546,
+        "y": 1008,
+        "w": 98,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "link",
+      "name": "29 days ago",
+      "fp": "link|29 days ago|1",
+      "rect": {
+        "x": 139,
+        "y": 1022,
+        "w": 57,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "link",
+      "name": "More",
+      "fp": "link|More|0",
+      "rect": {
+        "x": 139,
+        "y": 1048,
+        "w": 33,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "link",
+      "name": "Guidelines",
+      "fp": "link|Guidelines|0",
+      "rect": {
+        "x": 450,
+        "y": 1092,
+        "w": 55,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "link",
+      "name": "FAQ",
+      "fp": "link|FAQ|0",
+      "rect": {
+        "x": 517,
+        "y": 1092,
+        "w": 21,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "Lists",
+      "fp": "link|Lists|0",
+      "rect": {
+        "x": 551,
+        "y": 1092,
+        "w": 24,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "API",
+      "fp": "link|API|0",
+      "rect": {
+        "x": 588,
+        "y": 1092,
+        "w": 18,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "link",
+      "name": "Security",
+      "fp": "link|Security|0",
+      "rect": {
+        "x": 618,
+        "y": 1092,
+        "w": 44,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "Legal",
+      "fp": "link|Legal|0",
+      "rect": {
+        "x": 674,
+        "y": 1092,
+        "w": 28,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "Apply to YC",
+      "fp": "link|Apply to YC|0",
+      "rect": {
+        "x": 715,
+        "y": 1092,
+        "w": 62,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "link",
+      "name": "Contact",
+      "fp": "link|Contact|0",
+      "rect": {
+        "x": 789,
+        "y": 1092,
+        "w": 41,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "textbox",
+      "name": "q",
+      "ctx": "form",
+      "fp": "textbox|q|0",
+      "rect": {
+        "x": 594,
+        "y": 1121,
+        "w": 148,
+        "h": 21
+      },
+      "fillable": true
+    }
+  ],
+  "text": "Hacker Newsnew | past | comments | ask | show | jobs | submit login These are jobs at YC startups. See more at ycombinat",
+  "contentHash": "qihbdr",
+  "totalCandidates": 109
+}

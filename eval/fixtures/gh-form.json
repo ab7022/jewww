@@ -1,0 +1,924 @@
+{
+  "url": "https://job-boards.greenhouse.io/anthropic/jobs/4741104008",
+  "title": "Job Application for Engineering Manager, GPU (ML Accelerator) at Anthropic",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 8383
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Anthropic Logo",
+      "fp": "link|Anthropic Logo|0",
+      "rect": {
+        "x": 214,
+        "y": 72,
+        "w": 64,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "Back to jobs",
+      "fp": "link|Back to jobs|0",
+      "rect": {
+        "x": 214,
+        "y": 110,
+        "w": 105,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "button",
+      "name": "Apply",
+      "fp": "button|Apply|0",
+      "rect": {
+        "x": 972,
+        "y": 172,
+        "w": 94,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "link",
+      "name": "anthropic.com/careers",
+      "ctx": "Logistics",
+      "fp": "link|anthropic.com/careers|0",
+      "rect": {
+        "x": 738,
+        "y": 2406,
+        "w": 167,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "link",
+      "name": "our policy",
+      "ctx": "Come work with us!",
+      "fp": "link|our policy|0",
+      "rect": {
+        "x": 214,
+        "y": 2917,
+        "w": 820,
+        "h": 44
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "link",
+      "name": "Create alert",
+      "fp": "link|Create alert|0",
+      "rect": {
+        "x": 285,
+        "y": 3062,
+        "w": 88,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "textbox",
+      "name": "First Name",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|First Name|0",
+      "rect": {
+        "x": 214,
+        "y": 3280,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e8",
+      "role": "textbox",
+      "name": "Last Name",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|Last Name|0",
+      "rect": {
+        "x": 214,
+        "y": 3356,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e9",
+      "role": "textbox",
+      "name": "Email",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|Email|0",
+      "rect": {
+        "x": 214,
+        "y": 3432,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e10",
+      "role": "combobox",
+      "name": "Country*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Country*|0",
+      "rect": {
+        "x": 230,
+        "y": 3512,
+        "w": 3,
+        "h": 20
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e11",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|0",
+      "rect": {
+        "x": 317,
+        "y": 3502,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "textbox",
+      "name": "Phone",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|Phone|0",
+      "rect": {
+        "x": 365,
+        "y": 3508,
+        "w": 449,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e13",
+      "role": "group",
+      "name": "Resume/CV*",
+      "ctx": "form",
+      "st": "required",
+      "fp": "group|Resume/CV*|0",
+      "rect": {
+        "x": 214,
+        "y": 3558,
+        "w": 852,
+        "h": 252
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "button",
+      "name": "Attach",
+      "ctx": "form",
+      "fp": "button|Attach|0",
+      "rect": {
+        "x": 214,
+        "y": 3588,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "button",
+      "name": "Dropbox",
+      "ctx": "form",
+      "fp": "button|Dropbox|0",
+      "rect": {
+        "x": 214,
+        "y": 3638,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "button",
+      "name": "Google Drive",
+      "ctx": "form",
+      "fp": "button|Google Drive|0",
+      "rect": {
+        "x": 214,
+        "y": 3688,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "button",
+      "name": "Enter manually",
+      "ctx": "form",
+      "fp": "button|Enter manually|0",
+      "rect": {
+        "x": 214,
+        "y": 3738,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "group",
+      "name": "Cover Letter",
+      "ctx": "form",
+      "fp": "group|Cover Letter|0",
+      "rect": {
+        "x": 214,
+        "y": 3826,
+        "w": 852,
+        "h": 252
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "button",
+      "name": "Attach",
+      "ctx": "form",
+      "fp": "button|Attach|1",
+      "rect": {
+        "x": 214,
+        "y": 3856,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "button",
+      "name": "Dropbox",
+      "ctx": "form",
+      "fp": "button|Dropbox|1",
+      "rect": {
+        "x": 214,
+        "y": 3906,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "button",
+      "name": "Google Drive",
+      "ctx": "form",
+      "fp": "button|Google Drive|1",
+      "rect": {
+        "x": 214,
+        "y": 3956,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "button",
+      "name": "Enter manually",
+      "ctx": "form",
+      "fp": "button|Enter manually|1",
+      "rect": {
+        "x": 214,
+        "y": 4006,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "textbox",
+      "name": "Website",
+      "ctx": "form",
+      "fp": "textbox|Website|0",
+      "rect": {
+        "x": 214,
+        "y": 4161,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e24",
+      "role": "textbox",
+      "name": "LinkedIn Profile",
+      "ctx": "form",
+      "fp": "textbox|LinkedIn Profile|0",
+      "rect": {
+        "x": 214,
+        "y": 4237,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e25",
+      "role": "textbox",
+      "name": "When is the earliest you would want to start working with us?",
+      "ctx": "form",
+      "fp": "textbox|When is the earliest you would want to start working with us?|0",
+      "rect": {
+        "x": 214,
+        "y": 4367,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e26",
+      "role": "textbox",
+      "name": "Do you have any deadlines or timeline considerations we should be aware of?",
+      "ctx": "form",
+      "fp": "textbox|Do you have any deadlines or timeline considerations we should be aware of?|0",
+      "rect": {
+        "x": 214,
+        "y": 4443,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e27",
+      "role": "combobox",
+      "name": "Are you open to relocation for this role? *",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Are you open to relocation for this role? *|0",
+      "rect": {
+        "x": 230,
+        "y": 4523,
+        "w": 3,
+        "h": 20
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e28",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|1",
+      "rect": {
+        "x": 782,
+        "y": 4513,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "textbox",
+      "name": "What is the address from which you plan on working? If you would need to relocate, please type \"relocating\".",
+      "ctx": "form",
+      "fp": "textbox|What is the address from which you plan on working? If you would need to relocate, please type \"relocating\".|0",
+      "rect": {
+        "x": 214,
+        "y": 4613,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e30",
+      "role": "textbox",
+      "name": "(Optional) Personal Preferences",
+      "ctx": "form",
+      "fp": "textbox|(Optional) Personal Preferences|0",
+      "rect": {
+        "x": 214,
+        "y": 4689,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e31",
+      "role": "combobox",
+      "name": "Are you open to working in-person in one of our offices 25% of the time?*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Are you open to working in-person in one of our offices 25% of the time?*|0",
+      "rect": {
+        "x": 230,
+        "y": 4803,
+        "w": 3,
+        "h": 20
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e32",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|2",
+      "rect": {
+        "x": 782,
+        "y": 4793,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "combobox",
+      "name": "AI Policy for Application*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|AI Policy for Application*|0",
+      "rect": {
+        "x": 230,
+        "y": 4879,
+        "w": 3,
+        "h": 20
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e34",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|3",
+      "rect": {
+        "x": 782,
+        "y": 4869,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "AI partnership guidelines for candidates",
+      "ctx": "form",
+      "fp": "link|AI partnership guidelines for candidates|0",
+      "rect": {
+        "x": 224,
+        "y": 4970,
+        "w": 548,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "textbox",
+      "name": "Why Anthropic?",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|Why Anthropic?|0",
+      "rect": {
+        "x": 214,
+        "y": 5073,
+        "w": 852,
+        "h": 88
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e37",
+      "role": "combobox",
+      "name": "Will you now or will you in the future require employment visa sponsorship to work in the country in which the job you'r",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Will you now or will you in the future require employment visa sponsorship to work in the country in which the job you'r|0",
+      "rect": {
+        "x": 230,
+        "y": 5259,
+        "w": 3,
+        "h": 20
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e38",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|4",
+      "rect": {
+        "x": 782,
+        "y": 5249,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "textbox",
+      "name": "Additional Information",
+      "ctx": "form",
+      "fp": "textbox|Additional Information|0",
+      "rect": {
+        "x": 214,
+        "y": 5339,
+        "w": 852,
+        "h": 88
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e40",
+      "role": "combobox",
+      "name": "Have you ever interviewed at Anthropic before?*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Have you ever interviewed at Anthropic before?*|0",
+      "rect": {
+        "x": 230,
+        "y": 5507,
+        "w": 3,
+        "h": 20
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e41",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|5",
+      "rect": {
+        "x": 782,
+        "y": 5497,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "textbox",
+      "name": "Publications (e.g. Google Scholar) URL",
+      "ctx": "form",
+      "fp": "textbox|Publications (e.g. Google Scholar) URL|0",
+      "rect": {
+        "x": 214,
+        "y": 5579,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e43",
+      "role": "textbox",
+      "name": "GitHub URL",
+      "ctx": "form",
+      "fp": "textbox|GitHub URL|0",
+      "rect": {
+        "x": 214,
+        "y": 5655,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e44",
+      "role": "combobox",
+      "name": "Please read the arbitration agreement below*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Please read the arbitration agreement below*|0",
+      "rect": {
+        "x": 230,
+        "y": 5735,
+        "w": 3,
+        "h": 20
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e45",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|6",
+      "rect": {
+        "x": 782,
+        "y": 5725,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "https://www.jamsadr.com/rules-employment-arbitration",
+      "ctx": "form",
+      "fp": "link|https://www.jamsadr.com/rules-employment-arbitration|0",
+      "rect": {
+        "x": 342,
+        "y": 6008,
+        "w": 366,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "www.google.com",
+      "ctx": "form",
+      "fp": "link|www.google.com|0",
+      "rect": {
+        "x": 224,
+        "y": 6048,
+        "w": 112,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "arbdemands@anthropic.com",
+      "ctx": "form",
+      "fp": "link|arbdemands@anthropic.com|0",
+      "rect": {
+        "x": 224,
+        "y": 6368,
+        "w": 190,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "combobox",
+      "name": "Agreement to Arbitrate*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Agreement to Arbitrate*|0",
+      "rect": {
+        "x": 230,
+        "y": 6715,
+        "w": 3,
+        "h": 20
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e50",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|7",
+      "rect": {
+        "x": 782,
+        "y": 6705,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "combobox",
+      "name": "Gender",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Gender|0",
+      "rect": {
+        "x": 230,
+        "y": 7070,
+        "w": 3,
+        "h": 24
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e52",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|8",
+      "rect": {
+        "x": 782,
+        "y": 7062,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "combobox",
+      "name": "Are you Hispanic/Latino?",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Are you Hispanic/Latino?|0",
+      "rect": {
+        "x": 230,
+        "y": 7146,
+        "w": 3,
+        "h": 24
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e54",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|9",
+      "rect": {
+        "x": 782,
+        "y": 7138,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "Are you Hispanic/Latino?Select...",
+      "ctx": "form",
+      "fp": "link|Are you Hispanic/Latino?Select...|0",
+      "rect": {
+        "x": 214,
+        "y": 7196,
+        "w": 213,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "combobox",
+      "name": "Veteran Status",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Veteran Status|0",
+      "rect": {
+        "x": 230,
+        "y": 7726,
+        "w": 3,
+        "h": 24
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e57",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|10",
+      "rect": {
+        "x": 782,
+        "y": 7718,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "link",
+      "name": "www.dol.gov/ofccp",
+      "ctx": "form",
+      "fp": "link|www.dol.gov/ofccp|0",
+      "rect": {
+        "x": 603,
+        "y": 8185,
+        "w": 141,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "combobox",
+      "name": "Disability Status",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Disability Status|0",
+      "rect": {
+        "x": 230,
+        "y": 8947,
+        "w": 3,
+        "h": 24
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e60",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|11",
+      "rect": {
+        "x": 782,
+        "y": 8939,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "button",
+      "name": "Submit application",
+      "ctx": "form",
+      "fp": "button|Submit application|0",
+      "rect": {
+        "x": 875,
+        "y": 9123,
+        "w": 191,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "Powered by",
+      "ctx": "footer",
+      "fp": "link|Powered by|0",
+      "rect": {
+        "x": 636,
+        "y": 9236,
+        "w": 100,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "img",
+      "name": "Greenhouse logo",
+      "ctx": "footer",
+      "fp": "img|Greenhouse logo|0",
+      "rect": {
+        "x": 636,
+        "y": 9236,
+        "w": 100,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "presentation",
+      "name": "reCAPTCHA",
+      "fp": "presentation|reCAPTCHA|0",
+      "rect": {
+        "x": 1210,
+        "y": 826,
+        "w": 256,
+        "h": 60
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Back to jobs Engineering Manager, GPU (ML Accelerator) San Francisco, CA | New York City, NY | Seattle, WA Apply About A",
+  "contentHash": "kbbg5j",
+  "totalCandidates": 339
+}

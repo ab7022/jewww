@@ -1,0 +1,2509 @@
+{
+  "url": "https://openrouter.ai/models",
+  "title": "Compare AI Models: Pricing, Context & Benchmarks | OpenRouter",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 100951
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "OpenRouter",
+      "ctx": "nav",
+      "fp": "link|OpenRouter|0",
+      "rect": {
+        "x": 24,
+        "y": 11,
+        "w": 147,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "button",
+      "name": "Search",
+      "ctx": "nav",
+      "fp": "button|Search|0",
+      "rect": {
+        "x": 251,
+        "y": 12,
+        "w": 240,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "button",
+      "name": "Models",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Models|0",
+      "rect": {
+        "x": 664,
+        "y": 12,
+        "w": 82,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "button",
+      "name": "Rankings",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Rankings|0",
+      "rect": {
+        "x": 750,
+        "y": 12,
+        "w": 93,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "button",
+      "name": "Ori",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Ori|0",
+      "rect": {
+        "x": 847,
+        "y": 12,
+        "w": 53,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "link",
+      "name": "Benchmarks",
+      "ctx": "nav",
+      "fp": "link|Benchmarks|0",
+      "rect": {
+        "x": 903,
+        "y": 12,
+        "w": 100,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "link",
+      "name": "Chat",
+      "ctx": "nav",
+      "fp": "link|Chat|0",
+      "rect": {
+        "x": 1007,
+        "y": 12,
+        "w": 48,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "Chat",
+      "ctx": "nav",
+      "fp": "link|Chat|1",
+      "rect": {
+        "x": 1059,
+        "y": 12,
+        "w": 62,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "button",
+      "name": "Pricing",
+      "ctx": "nav",
+      "fp": "button|Pricing|0",
+      "rect": {
+        "x": 1059,
+        "y": 12,
+        "w": 62,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Docs",
+      "ctx": "nav",
+      "fp": "link|Docs|0",
+      "rect": {
+        "x": 1126,
+        "y": 12,
+        "w": 51,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "button",
+      "name": "Sign Up",
+      "ctx": "nav",
+      "fp": "button|Sign Up|0",
+      "rect": {
+        "x": 1181,
+        "y": 12,
+        "w": 75,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "presentation",
+      "name": "Input modalities Text Image File Audio Video Discounted Context length Prompt pricing Series Categories Supported parame",
+      "ctx": "nav",
+      "fp": "presentation|Input modalities Text Image File Audio Video Discounted Context length Prompt pricing Series Categories Supported parame|0",
+      "rect": {
+        "x": 24,
+        "y": 68,
+        "w": 239,
+        "h": 832
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "region",
+      "name": "Input modalitiesTextImageFileAudioVideo",
+      "ctx": "nav",
+      "fp": "region|Input modalitiesTextImageFileAudioVideo|0",
+      "rect": {
+        "x": 24,
+        "y": 303,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "button",
+      "name": "Supported parameters",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Supported parameters|0",
+      "rect": {
+        "x": 24,
+        "y": 537,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "region",
+      "name": "Supported parameters",
+      "ctx": "nav",
+      "fp": "region|Supported parameters|0",
+      "rect": {
+        "x": 24,
+        "y": 583,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "button",
+      "name": "Distillable",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Distillable|0",
+      "rect": {
+        "x": 24,
+        "y": 583,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "region",
+      "name": "Distillable",
+      "ctx": "nav",
+      "fp": "region|Distillable|0",
+      "rect": {
+        "x": 24,
+        "y": 630,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "button",
+      "name": "Zero data retention",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Zero data retention|0",
+      "rect": {
+        "x": 24,
+        "y": 630,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "region",
+      "name": "Zero data retention",
+      "ctx": "nav",
+      "fp": "region|Zero data retention|0",
+      "rect": {
+        "x": 24,
+        "y": 677,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "button",
+      "name": "In-region routing",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|In-region routing|0",
+      "rect": {
+        "x": 24,
+        "y": 677,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "button",
+      "name": "Information",
+      "ctx": "nav",
+      "fp": "button|Information|0",
+      "rect": {
+        "x": 195,
+        "y": 694,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "region",
+      "name": "In-region routing",
+      "ctx": "nav",
+      "fp": "region|In-region routing|0",
+      "rect": {
+        "x": 24,
+        "y": 724,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "button",
+      "name": "Output pricing",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Output pricing|0",
+      "rect": {
+        "x": 24,
+        "y": 724,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "region",
+      "name": "Output pricing",
+      "ctx": "nav",
+      "fp": "region|Output pricing|0",
+      "rect": {
+        "x": 24,
+        "y": 770,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "button",
+      "name": "Model age",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Model age|0",
+      "rect": {
+        "x": 24,
+        "y": 770,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "region",
+      "name": "Model age",
+      "ctx": "nav",
+      "fp": "region|Model age|0",
+      "rect": {
+        "x": 24,
+        "y": 817,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "button",
+      "name": "Tool calling",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Tool calling|0",
+      "rect": {
+        "x": 24,
+        "y": 817,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "button",
+      "name": "Information",
+      "ctx": "nav",
+      "fp": "button|Information|1",
+      "rect": {
+        "x": 195,
+        "y": 834,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "region",
+      "name": "Tool calling",
+      "ctx": "nav",
+      "fp": "region|Tool calling|0",
+      "rect": {
+        "x": 24,
+        "y": 864,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "button",
+      "name": "Inactive models",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Inactive models|0",
+      "rect": {
+        "x": 24,
+        "y": 864,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "region",
+      "name": "Inactive models",
+      "ctx": "nav",
+      "fp": "region|Inactive models|0",
+      "rect": {
+        "x": 24,
+        "y": 911,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "button",
+      "name": "Artificial Analysis",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Artificial Analysis|0",
+      "rect": {
+        "x": 24,
+        "y": 911,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "region",
+      "name": "Artificial Analysis",
+      "ctx": "nav",
+      "fp": "region|Artificial Analysis|0",
+      "rect": {
+        "x": 24,
+        "y": 957,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "button",
+      "name": "Design Arena",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Design Arena|0",
+      "rect": {
+        "x": 24,
+        "y": 957,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "region",
+      "name": "Design Arena",
+      "ctx": "nav",
+      "fp": "region|Design Arena|0",
+      "rect": {
+        "x": 24,
+        "y": 1004,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "button",
+      "name": "Providers",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Providers|0",
+      "rect": {
+        "x": 24,
+        "y": 1004,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "region",
+      "name": "Providers",
+      "ctx": "nav",
+      "fp": "region|Providers|0",
+      "rect": {
+        "x": 24,
+        "y": 1051,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "button",
+      "name": "Model authors",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Model authors|0",
+      "rect": {
+        "x": 24,
+        "y": 1051,
+        "w": 219,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "Compare",
+      "ctx": "Models",
+      "fp": "link|Compare|0",
+      "rect": {
+        "x": 969,
+        "y": 68,
+        "w": 114,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "Favicon for anthropic",
+      "ctx": "Models",
+      "fp": "link|Favicon for anthropic|0",
+      "rect": {
+        "x": 1091,
+        "y": 68,
+        "w": 165,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "textbox",
+      "name": "Search models...",
+      "fp": "textbox|Search models...|0",
+      "rect": {
+        "x": 288,
+        "y": 120,
+        "w": 354,
+        "h": 36
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e42",
+      "role": "combobox",
+      "name": "Newest",
+      "ctx": "Models",
+      "st": "collapsed",
+      "fp": "combobox|Newest|0",
+      "rect": {
+        "x": 650,
+        "y": 120,
+        "w": 192,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "combobox",
+      "name": "All variants",
+      "ctx": "Models",
+      "st": "collapsed",
+      "fp": "combobox|All variants|0",
+      "rect": {
+        "x": 850,
+        "y": 120,
+        "w": 144,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "button",
+      "name": "Pinned",
+      "ctx": "Models",
+      "fp": "button|Pinned|0",
+      "rect": {
+        "x": 1002,
+        "y": 120,
+        "w": 97,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "tablist",
+      "name": "Models display format",
+      "fp": "tablist|Models display format|0",
+      "rect": {
+        "x": 1107,
+        "y": 120,
+        "w": 149,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "tab",
+      "name": "List view",
+      "fp": "tab|List view|0",
+      "rect": {
+        "x": 1110,
+        "y": 123,
+        "w": 66,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "tab",
+      "name": "Table view",
+      "fp": "tab|Table view|0",
+      "rect": {
+        "x": 1175,
+        "y": 123,
+        "w": 78,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "tablist",
+      "name": "Filter models by output modality",
+      "ctx": "Models",
+      "fp": "tablist|Filter models by output modality|0",
+      "rect": {
+        "x": 288,
+        "y": 172,
+        "w": 968,
+        "h": 43
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "tab",
+      "name": "All",
+      "ctx": "Models",
+      "fp": "tab|All|0",
+      "rect": {
+        "x": 288,
+        "y": 172,
+        "w": 48,
+        "h": 43
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "tab",
+      "name": "Text 446",
+      "ctx": "Models",
+      "fp": "tab|Text 446|0",
+      "rect": {
+        "x": 336,
+        "y": 172,
+        "w": 113,
+        "h": 43
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "tab",
+      "name": "Image 52",
+      "ctx": "Models",
+      "fp": "tab|Image 52|0",
+      "rect": {
+        "x": 449,
+        "y": 172,
+        "w": 119,
+        "h": 43
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "tab",
+      "name": "Video 29",
+      "ctx": "Models",
+      "fp": "tab|Video 29|0",
+      "rect": {
+        "x": 568,
+        "y": 172,
+        "w": 117,
+        "h": 43
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "tab",
+      "name": "Speech 18",
+      "ctx": "Models",
+      "fp": "tab|Speech 18|0",
+      "rect": {
+        "x": 684,
+        "y": 172,
+        "w": 129,
+        "h": 43
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "tab",
+      "name": "Transcription 21",
+      "ctx": "Models",
+      "fp": "tab|Transcription 21|0",
+      "rect": {
+        "x": 813,
+        "y": 172,
+        "w": 164,
+        "h": 43
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "tab",
+      "name": "Embeddings 37",
+      "ctx": "Models",
+      "fp": "tab|Embeddings 37|0",
+      "rect": {
+        "x": 977,
+        "y": 172,
+        "w": 163,
+        "h": 43
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "tab",
+      "name": "More",
+      "ctx": "Models",
+      "st": "collapsed",
+      "fp": "tab|More|0",
+      "rect": {
+        "x": 1140,
+        "y": 172,
+        "w": 85,
+        "h": 43
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": "PrismML: Ternary Bonsai 2 27B",
+      "fp": "link|PrismML: Ternary Bonsai 2 27B|0",
+      "rect": {
+        "x": 291,
+        "y": 236,
+        "w": 962,
+        "h": 142
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "link",
+      "name": "Favicon for prism-ml",
+      "fp": "link|Favicon for prism-ml|0",
+      "rect": {
+        "x": 311,
+        "y": 252,
+        "w": 26,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "PrismML: Ternary Bonsai 2 27B",
+      "fp": "link|PrismML: Ternary Bonsai 2 27B|1",
+      "rect": {
+        "x": 343,
+        "y": 254,
+        "w": 231,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|0",
+      "rect": {
+        "x": 1217,
+        "y": 257,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "Bonsai 2 27B is a 27B-parameter reasoning model from PrismML derived from Qwen3.8-27B. It supports coding, mathematics, ",
+      "fp": "link|Bonsai 2 27B is a 27B-parameter reasoning model from PrismML derived from Qwen3.8-27B. It supports coding, mathematics, |0",
+      "rect": {
+        "x": 311,
+        "y": 286,
+        "w": 922,
+        "h": 46
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "prism-ml",
+      "fp": "link|prism-ml|0",
+      "rect": {
+        "x": 330,
+        "y": 342,
+        "w": 61,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": "Z.ai: GLM 5.3 FlashX",
+      "fp": "link|Z.ai: GLM 5.3 FlashX|0",
+      "rect": {
+        "x": 291,
+        "y": 388,
+        "w": 962,
+        "h": 142
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "link",
+      "name": "Favicon for z-ai",
+      "fp": "link|Favicon for z-ai|0",
+      "rect": {
+        "x": 311,
+        "y": 404,
+        "w": 26,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "link",
+      "name": "Z.ai: GLM 5.3 FlashX",
+      "fp": "link|Z.ai: GLM 5.3 FlashX|1",
+      "rect": {
+        "x": 343,
+        "y": 406,
+        "w": 153,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|1",
+      "rect": {
+        "x": 1217,
+        "y": 409,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "link",
+      "name": "GLM-5.3-FlashX is the high-speed variant of Z.ai's GLM-5.3-Flash, a native multimodal model delivering inference speeds ",
+      "fp": "link|GLM-5.3-FlashX is the high-speed variant of Z.ai's GLM-5.3-Flash, a native multimodal model delivering inference speeds |0",
+      "rect": {
+        "x": 311,
+        "y": 438,
+        "w": 922,
+        "h": 46
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "z-ai",
+      "fp": "link|z-ai|0",
+      "rect": {
+        "x": 330,
+        "y": 494,
+        "w": 25,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "TypeSafe: Jev Latest",
+      "fp": "link|TypeSafe: Jev Latest|0",
+      "rect": {
+        "x": 291,
+        "y": 540,
+        "w": 962,
+        "h": 143
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "Favicon for typesafe",
+      "fp": "link|Favicon for typesafe|0",
+      "rect": {
+        "x": 311,
+        "y": 556,
+        "w": 26,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "img",
+      "name": "OpenRouter latest alias",
+      "fp": "img|OpenRouter latest alias|0",
+      "rect": {
+        "x": 327,
+        "y": 572,
+        "w": 12,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "TypeSafe: Jev Latest",
+      "fp": "link|TypeSafe: Jev Latest|1",
+      "rect": {
+        "x": 343,
+        "y": 561,
+        "w": 157,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "link",
+      "name": "This model always redirects to the latest model in the Jev family.",
+      "fp": "link|This model always redirects to the latest model in the Jev family.|0",
+      "rect": {
+        "x": 311,
+        "y": 596,
+        "w": 922,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "link",
+      "name": "typesafe",
+      "fp": "link|typesafe|0",
+      "rect": {
+        "x": 330,
+        "y": 646,
+        "w": 60,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": "TypeSafe: Jev 1.13",
+      "fp": "link|TypeSafe: Jev 1.13|0",
+      "rect": {
+        "x": 291,
+        "y": 693,
+        "w": 962,
+        "h": 142
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "link",
+      "name": "Favicon for typesafe",
+      "fp": "link|Favicon for typesafe|1",
+      "rect": {
+        "x": 311,
+        "y": 709,
+        "w": 26,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "TypeSafe: Jev 1.13",
+      "fp": "link|TypeSafe: Jev 1.13|1",
+      "rect": {
+        "x": 343,
+        "y": 711,
+        "w": 143,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|2",
+      "rect": {
+        "x": 1217,
+        "y": 714,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "Jev is a structured decision model from TypeSafe, and the first of its System One models. System One models make fast, s",
+      "fp": "link|Jev is a structured decision model from TypeSafe, and the first of its System One models. System One models make fast, s|0",
+      "rect": {
+        "x": 311,
+        "y": 743,
+        "w": 922,
+        "h": 46
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "typesafe",
+      "fp": "link|typesafe|1",
+      "rect": {
+        "x": 330,
+        "y": 799,
+        "w": 60,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "Pareto",
+      "fp": "link|Pareto|0",
+      "rect": {
+        "x": 291,
+        "y": 845,
+        "w": 962,
+        "h": 142
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "link",
+      "name": "Favicon for unbiased",
+      "fp": "link|Favicon for unbiased|0",
+      "rect": {
+        "x": 311,
+        "y": 861,
+        "w": 26,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "link",
+      "name": "Pareto",
+      "fp": "link|Pareto|1",
+      "rect": {
+        "x": 343,
+        "y": 863,
+        "w": 51,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|3",
+      "rect": {
+        "x": 1217,
+        "y": 866,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "link",
+      "name": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-leve",
+      "fp": "link|Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-leve|0",
+      "rect": {
+        "x": 311,
+        "y": 895,
+        "w": 922,
+        "h": 46
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "unbiased",
+      "fp": "link|unbiased|0",
+      "rect": {
+        "x": 330,
+        "y": 951,
+        "w": 62,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "DeepSeek: DeepSeek Pro Latest",
+      "fp": "link|DeepSeek: DeepSeek Pro Latest|0",
+      "rect": {
+        "x": 291,
+        "y": 997,
+        "w": 962,
+        "h": 143
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "Favicon for deepseek",
+      "fp": "link|Favicon for deepseek|0",
+      "rect": {
+        "x": 311,
+        "y": 1013,
+        "w": 26,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "img",
+      "name": "OpenRouter latest alias",
+      "fp": "img|OpenRouter latest alias|1",
+      "rect": {
+        "x": 327,
+        "y": 1029,
+        "w": 12,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "DeepSeek: DeepSeek Pro Latest",
+      "fp": "link|DeepSeek: DeepSeek Pro Latest|1",
+      "rect": {
+        "x": 343,
+        "y": 1018,
+        "w": 251,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|4",
+      "rect": {
+        "x": 1217,
+        "y": 1018,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "link",
+      "name": "This model always redirects to the latest model in the DeepSeek Pro family.",
+      "fp": "link|This model always redirects to the latest model in the DeepSeek Pro family.|0",
+      "rect": {
+        "x": 311,
+        "y": 1053,
+        "w": 922,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "link",
+      "name": "deepseek",
+      "fp": "link|deepseek|0",
+      "rect": {
+        "x": 330,
+        "y": 1103,
+        "w": 68,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "link",
+      "name": "DeepSeek: DeepSeek Flash Latest",
+      "fp": "link|DeepSeek: DeepSeek Flash Latest|0",
+      "rect": {
+        "x": 291,
+        "y": 1150,
+        "w": 962,
+        "h": 143
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "link",
+      "name": "Favicon for deepseek",
+      "fp": "link|Favicon for deepseek|1",
+      "rect": {
+        "x": 311,
+        "y": 1166,
+        "w": 26,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "img",
+      "name": "OpenRouter latest alias",
+      "fp": "img|OpenRouter latest alias|2",
+      "rect": {
+        "x": 327,
+        "y": 1182,
+        "w": 12,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "DeepSeek: DeepSeek Flash Latest",
+      "fp": "link|DeepSeek: DeepSeek Flash Latest|1",
+      "rect": {
+        "x": 343,
+        "y": 1171,
+        "w": 265,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|5",
+      "rect": {
+        "x": 1217,
+        "y": 1171,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "link",
+      "name": "This model always redirects to the latest model in the DeepSeek Flash family.",
+      "fp": "link|This model always redirects to the latest model in the DeepSeek Flash family.|0",
+      "rect": {
+        "x": 311,
+        "y": 1206,
+        "w": 922,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "link",
+      "name": "deepseek",
+      "fp": "link|deepseek|1",
+      "rect": {
+        "x": 330,
+        "y": 1256,
+        "w": 68,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "link",
+      "name": "Inference.net: Schematron V2 Turbo",
+      "fp": "link|Inference.net: Schematron V2 Turbo|0",
+      "rect": {
+        "x": 291,
+        "y": 1303,
+        "w": 962,
+        "h": 142
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "Favicon for inference-net",
+      "fp": "link|Favicon for inference-net|0",
+      "rect": {
+        "x": 311,
+        "y": 1319,
+        "w": 26,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "Inference.net: Schematron V2 Turbo",
+      "fp": "link|Inference.net: Schematron V2 Turbo|1",
+      "rect": {
+        "x": 343,
+        "y": 1321,
+        "w": 279,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|6",
+      "rect": {
+        "x": 1217,
+        "y": 1324,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "Schematron V2 Turbo is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes throughput for hi",
+      "fp": "link|Schematron V2 Turbo is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes throughput for hi|0",
+      "rect": {
+        "x": 311,
+        "y": 1353,
+        "w": 922,
+        "h": 46
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "inference-net",
+      "fp": "link|inference-net|0",
+      "rect": {
+        "x": 330,
+        "y": 1409,
+        "w": 93,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "link",
+      "name": "Inference.net: Schematron V2 Small",
+      "fp": "link|Inference.net: Schematron V2 Small|0",
+      "rect": {
+        "x": 291,
+        "y": 1455,
+        "w": 962,
+        "h": 142
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "link",
+      "name": "Favicon for inference-net",
+      "fp": "link|Favicon for inference-net|1",
+      "rect": {
+        "x": 311,
+        "y": 1471,
+        "w": 26,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e109",
+      "role": "link",
+      "name": "Inference.net: Schematron V2 Small",
+      "fp": "link|Inference.net: Schematron V2 Small|1",
+      "rect": {
+        "x": 343,
+        "y": 1473,
+        "w": 277,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e110",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|7",
+      "rect": {
+        "x": 1217,
+        "y": 1476,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e111",
+      "role": "link",
+      "name": "Schematron V2 Small is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes extraction qualit",
+      "fp": "link|Schematron V2 Small is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes extraction qualit|0",
+      "rect": {
+        "x": 311,
+        "y": 1505,
+        "w": 922,
+        "h": 46
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e112",
+      "role": "link",
+      "name": "inference-net",
+      "fp": "link|inference-net|1",
+      "rect": {
+        "x": 330,
+        "y": 1561,
+        "w": 93,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e113",
+      "role": "link",
+      "name": "Meta: Muse Voice Transcribe 1.0",
+      "fp": "link|Meta: Muse Voice Transcribe 1.0|0",
+      "rect": {
+        "x": 291,
+        "y": 1607,
+        "w": 962,
+        "h": 142
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e114",
+      "role": "link",
+      "name": "Favicon for meta",
+      "fp": "link|Favicon for meta|0",
+      "rect": {
+        "x": 311,
+        "y": 1623,
+        "w": 26,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
+      "role": "link",
+      "name": "Meta: Muse Voice Transcribe 1.0",
+      "fp": "link|Meta: Muse Voice Transcribe 1.0|1",
+      "rect": {
+        "x": 343,
+        "y": 1625,
+        "w": 246,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e116",
+      "role": "button",
+      "name": "Characters transcribed in the last 7 days",
+      "fp": "button|Characters transcribed in the last 7 days|0",
+      "rect": {
+        "x": 1217,
+        "y": 1628,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e117",
+      "role": "link",
+      "name": "Muse Voice Transcribe 1.0 is a synchronous speech-to-text model from Meta. It is suited for push-to-talk, endpointing, a",
+      "fp": "link|Muse Voice Transcribe 1.0 is a synchronous speech-to-text model from Meta. It is suited for push-to-talk, endpointing, a|0",
+      "rect": {
+        "x": 311,
+        "y": 1657,
+        "w": 922,
+        "h": 46
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e118",
+      "role": "link",
+      "name": "meta",
+      "fp": "link|meta|0",
+      "rect": {
+        "x": 330,
+        "y": 1713,
+        "w": 35,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e119",
+      "role": "link",
+      "name": "OpenAI: GPT Astra Latest",
+      "fp": "link|OpenAI: GPT Astra Latest|0",
+      "rect": {
+        "x": 291,
+        "y": 1759,
+        "w": 962,
+        "h": 143
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e120",
+      "role": "link",
+      "name": "Favicon for openai",
+      "fp": "link|Favicon for openai|0",
+      "rect": {
+        "x": 311,
+        "y": 1775,
+        "w": 26,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e121",
+      "role": "img",
+      "name": "OpenRouter latest alias",
+      "fp": "img|OpenRouter latest alias|3",
+      "rect": {
+        "x": 327,
+        "y": 1791,
+        "w": 12,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e122",
+      "role": "link",
+      "name": "OpenAI: GPT Astra Latest",
+      "fp": "link|OpenAI: GPT Astra Latest|1",
+      "rect": {
+        "x": 343,
+        "y": 1780,
+        "w": 194,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e123",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|8",
+      "rect": {
+        "x": 1217,
+        "y": 1780,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e124",
+      "role": "link",
+      "name": "This model always redirects to the latest model in the GPT Astra family.",
+      "fp": "link|This model always redirects to the latest model in the GPT Astra family.|0",
+      "rect": {
+        "x": 311,
+        "y": 1815,
+        "w": 922,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e125",
+      "role": "link",
+      "name": "openai",
+      "fp": "link|openai|0",
+      "rect": {
+        "x": 330,
+        "y": 1865,
+        "w": 46,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e126",
+      "role": "link",
+      "name": "OpenAI: GPT Sol Latest",
+      "fp": "link|OpenAI: GPT Sol Latest|0",
+      "rect": {
+        "x": 291,
+        "y": 1912,
+        "w": 962,
+        "h": 143
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e127",
+      "role": "link",
+      "name": "Favicon for openai",
+      "fp": "link|Favicon for openai|1",
+      "rect": {
+        "x": 311,
+        "y": 1928,
+        "w": 26,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e128",
+      "role": "img",
+      "name": "OpenRouter latest alias",
+      "fp": "img|OpenRouter latest alias|4",
+      "rect": {
+        "x": 327,
+        "y": 1944,
+        "w": 12,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e129",
+      "role": "link",
+      "name": "OpenAI: GPT Sol Latest",
+      "fp": "link|OpenAI: GPT Sol Latest|1",
+      "rect": {
+        "x": 343,
+        "y": 1933,
+        "w": 178,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e130",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|9",
+      "rect": {
+        "x": 1217,
+        "y": 1933,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e131",
+      "role": "link",
+      "name": "This model always redirects to the latest model in the GPT Sol family.",
+      "fp": "link|This model always redirects to the latest model in the GPT Sol family.|0",
+      "rect": {
+        "x": 311,
+        "y": 1968,
+        "w": 922,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e132",
+      "role": "link",
+      "name": "openai",
+      "fp": "link|openai|1",
+      "rect": {
+        "x": 330,
+        "y": 2018,
+        "w": 46,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e133",
+      "role": "link",
+      "name": "OpenAI: GPT Terra Latest",
+      "fp": "link|OpenAI: GPT Terra Latest|0",
+      "rect": {
+        "x": 291,
+        "y": 2065,
+        "w": 962,
+        "h": 143
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e134",
+      "role": "link",
+      "name": "Favicon for openai",
+      "fp": "link|Favicon for openai|2",
+      "rect": {
+        "x": 311,
+        "y": 2081,
+        "w": 26,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e135",
+      "role": "img",
+      "name": "OpenRouter latest alias",
+      "fp": "img|OpenRouter latest alias|5",
+      "rect": {
+        "x": 327,
+        "y": 2097,
+        "w": 12,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e136",
+      "role": "link",
+      "name": "OpenAI: GPT Terra Latest",
+      "fp": "link|OpenAI: GPT Terra Latest|1",
+      "rect": {
+        "x": 343,
+        "y": 2086,
+        "w": 192,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e137",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|10",
+      "rect": {
+        "x": 1217,
+        "y": 2086,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e138",
+      "role": "link",
+      "name": "This model always redirects to the latest model in the GPT Terra family.",
+      "fp": "link|This model always redirects to the latest model in the GPT Terra family.|0",
+      "rect": {
+        "x": 311,
+        "y": 2121,
+        "w": 922,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e139",
+      "role": "link",
+      "name": "openai",
+      "fp": "link|openai|2",
+      "rect": {
+        "x": 330,
+        "y": 2171,
+        "w": 46,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e140",
+      "role": "link",
+      "name": "OpenAI: GPT Luna Latest",
+      "fp": "link|OpenAI: GPT Luna Latest|0",
+      "rect": {
+        "x": 291,
+        "y": 2218,
+        "w": 962,
+        "h": 143
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e141",
+      "role": "link",
+      "name": "Favicon for openai",
+      "fp": "link|Favicon for openai|3",
+      "rect": {
+        "x": 311,
+        "y": 2234,
+        "w": 26,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e142",
+      "role": "img",
+      "name": "OpenRouter latest alias",
+      "fp": "img|OpenRouter latest alias|6",
+      "rect": {
+        "x": 327,
+        "y": 2250,
+        "w": 12,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e143",
+      "role": "link",
+      "name": "OpenAI: GPT Luna Latest",
+      "fp": "link|OpenAI: GPT Luna Latest|1",
+      "rect": {
+        "x": 343,
+        "y": 2239,
+        "w": 190,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e144",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|11",
+      "rect": {
+        "x": 1217,
+        "y": 2239,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e145",
+      "role": "link",
+      "name": "This model always redirects to the latest model in the GPT Luna family.",
+      "fp": "link|This model always redirects to the latest model in the GPT Luna family.|0",
+      "rect": {
+        "x": 311,
+        "y": 2274,
+        "w": 922,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e146",
+      "role": "link",
+      "name": "openai",
+      "fp": "link|openai|3",
+      "rect": {
+        "x": 330,
+        "y": 2324,
+        "w": 46,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e147",
+      "role": "link",
+      "name": "Sakana: Fugu Ultra v2",
+      "fp": "link|Sakana: Fugu Ultra v2|0",
+      "rect": {
+        "x": 291,
+        "y": 2371,
+        "w": 962,
+        "h": 142
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e148",
+      "role": "link",
+      "name": "Favicon for sakana",
+      "fp": "link|Favicon for sakana|0",
+      "rect": {
+        "x": 311,
+        "y": 2387,
+        "w": 26,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e149",
+      "role": "link",
+      "name": "Sakana: Fugu Ultra v2",
+      "fp": "link|Sakana: Fugu Ultra v2|1",
+      "rect": {
+        "x": 343,
+        "y": 2389,
+        "w": 164,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e150",
+      "role": "button",
+      "name": "Tokens processed in the last 7 days",
+      "fp": "button|Tokens processed in the last 7 days|12",
+      "rect": {
+        "x": 1217,
+        "y": 2392,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e151",
+      "role": "link",
+      "name": "Fugu Ultra v2 is the higher-performance model in Sakana AI's Fugu family. Rather than a single monolithic model, Fugu is",
+      "fp": "link|Fugu Ultra v2 is the higher-performance model in Sakana AI's Fugu family. Rather than a single monolithic model, Fugu is|0",
+      "rect": {
+        "x": 311,
+        "y": 2421,
+        "w": 922,
+        "h": 46
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e152",
+      "role": "link",
+      "name": "sakana",
+      "fp": "link|sakana|0",
+      "rect": {
+        "x": 330,
+        "y": 2477,
+        "w": 47,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e153",
+      "role": "link",
+      "name": "OpenRouter",
+      "ctx": "footer",
+      "fp": "link|OpenRouter|1",
+      "rect": {
+        "x": 48,
+        "y": 101359,
+        "w": 109,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e154",
+      "role": "link",
+      "name": "Chat",
+      "ctx": "footer",
+      "fp": "link|Chat|2",
+      "rect": {
+        "x": 291,
+        "y": 101394,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e155",
+      "role": "link",
+      "name": "Rankings",
+      "ctx": "footer",
+      "fp": "link|Rankings|0",
+      "rect": {
+        "x": 291,
+        "y": 101425,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e156",
+      "role": "link",
+      "name": "Benchmarks",
+      "ctx": "footer",
+      "fp": "link|Benchmarks|1",
+      "rect": {
+        "x": 291,
+        "y": 101455,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e157",
+      "role": "link",
+      "name": "Apps",
+      "ctx": "footer",
+      "fp": "link|Apps|0",
+      "rect": {
+        "x": 291,
+        "y": 101486,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e158",
+      "role": "link",
+      "name": "Discover",
+      "ctx": "footer",
+      "fp": "link|Discover|0",
+      "rect": {
+        "x": 291,
+        "y": 101517,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e159",
+      "role": "link",
+      "name": "Models",
+      "ctx": "footer",
+      "fp": "link|Models|0",
+      "rect": {
+        "x": 291,
+        "y": 101548,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e160",
+      "role": "link",
+      "name": "Collections",
+      "ctx": "footer",
+      "fp": "link|Collections|0",
+      "rect": {
+        "x": 291,
+        "y": 101578,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e161",
+      "role": "link",
+      "name": "Providers",
+      "ctx": "footer",
+      "fp": "link|Providers|0",
+      "rect": {
+        "x": 291,
+        "y": 101609,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e162",
+      "role": "link",
+      "name": "Pricing",
+      "ctx": "footer",
+      "fp": "link|Pricing|0",
+      "rect": {
+        "x": 291,
+        "y": 101640,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e163",
+      "role": "link",
+      "name": "Business",
+      "ctx": "footer",
+      "fp": "link|Business|0",
+      "rect": {
+        "x": 291,
+        "y": 101671,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e164",
+      "role": "link",
+      "name": "Enterprise",
+      "ctx": "footer",
+      "fp": "link|Enterprise|0",
+      "rect": {
+        "x": 291,
+        "y": 101701,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e165",
+      "role": "link",
+      "name": "Labs",
+      "ctx": "footer",
+      "fp": "link|Labs|0",
+      "rect": {
+        "x": 291,
+        "y": 101732,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e166",
+      "role": "link",
+      "name": "About",
+      "ctx": "footer",
+      "fp": "link|About|0",
+      "rect": {
+        "x": 534,
+        "y": 101394,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e167",
+      "role": "link",
+      "name": "Blog",
+      "ctx": "footer",
+      "fp": "link|Blog|0",
+      "rect": {
+        "x": 534,
+        "y": 101425,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e168",
+      "role": "link",
+      "name": "Careers Hiring",
+      "ctx": "footer",
+      "fp": "link|Careers Hiring|0",
+      "rect": {
+        "x": 534,
+        "y": 101455,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e169",
+      "role": "link",
+      "name": "Privacy",
+      "ctx": "footer",
+      "fp": "link|Privacy|0",
+      "rect": {
+        "x": 534,
+        "y": 101486,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e170",
+      "role": "link",
+      "name": "Terms of Service",
+      "ctx": "footer",
+      "fp": "link|Terms of Service|0",
+      "rect": {
+        "x": 534,
+        "y": 101517,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e171",
+      "role": "link",
+      "name": "Trust Center",
+      "ctx": "footer",
+      "fp": "link|Trust Center|0",
+      "rect": {
+        "x": 534,
+        "y": 101548,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e172",
+      "role": "link",
+      "name": "Support",
+      "ctx": "footer",
+      "fp": "link|Support|0",
+      "rect": {
+        "x": 534,
+        "y": 101578,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e173",
+      "role": "link",
+      "name": "Works With OR",
+      "ctx": "footer",
+      "fp": "link|Works With OR|0",
+      "rect": {
+        "x": 534,
+        "y": 101609,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e174",
+      "role": "link",
+      "name": "Data",
+      "ctx": "footer",
+      "fp": "link|Data|0",
+      "rect": {
+        "x": 534,
+        "y": 101640,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e175",
+      "role": "link",
+      "name": "Brand",
+      "ctx": "footer",
+      "fp": "link|Brand|0",
+      "rect": {
+        "x": 534,
+        "y": 101671,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e176",
+      "role": "link",
+      "name": "Documentation",
+      "ctx": "footer",
+      "fp": "link|Documentation|0",
+      "rect": {
+        "x": 778,
+        "y": 101394,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e177",
+      "role": "link",
+      "name": "API Reference",
+      "ctx": "footer",
+      "fp": "link|API Reference|0",
+      "rect": {
+        "x": 778,
+        "y": 101425,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e178",
+      "role": "link",
+      "name": "Developer Platform",
+      "ctx": "footer",
+      "fp": "link|Developer Platform|0",
+      "rect": {
+        "x": 778,
+        "y": 101455,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e179",
+      "role": "link",
+      "name": "Status",
+      "ctx": "footer",
+      "fp": "link|Status|0",
+      "rect": {
+        "x": 778,
+        "y": 101486,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e180",
+      "role": "link",
+      "name": "Discord",
+      "ctx": "footer",
+      "fp": "link|Discord|0",
+      "rect": {
+        "x": 1021,
+        "y": 101394,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e181",
+      "role": "link",
+      "name": "GitHub",
+      "ctx": "footer",
+      "fp": "link|GitHub|0",
+      "rect": {
+        "x": 1021,
+        "y": 101425,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e182",
+      "role": "link",
+      "name": "LinkedIn",
+      "ctx": "footer",
+      "fp": "link|LinkedIn|0",
+      "rect": {
+        "x": 1021,
+        "y": 101455,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e183",
+      "role": "link",
+      "name": "X",
+      "ctx": "footer",
+      "fp": "link|X|0",
+      "rect": {
+        "x": 1021,
+        "y": 101486,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e184",
+      "role": "link",
+      "name": "YouTube",
+      "ctx": "footer",
+      "fp": "link|YouTube|0",
+      "rect": {
+        "x": 1021,
+        "y": 101517,
+        "w": 211,
+        "h": 23
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Input modalities Text Image File Audio Video Discounted Context length Prompt pricing Series Categories Supported parame",
+  "contentHash": "c2qep3",
+  "totalCandidates": 317
+}

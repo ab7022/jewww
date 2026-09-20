@@ -1,0 +1,3094 @@
+{
+  "url": "https://stackoverflow.com/questions/tagged/playwright",
+  "title": "Newest 'playwright' Questions - Stack Overflow",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 2118
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Stack Overflow Home",
+      "ctx": "header",
+      "fp": "link|Stack Overflow Home|0",
+      "rect": {
+        "x": 8,
+        "y": 3,
+        "w": 191,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "presentation",
+      "name": "Stack Overflow",
+      "ctx": "header",
+      "fp": "presentation|Stack Overflow|0",
+      "rect": {
+        "x": 199,
+        "y": 13,
+        "w": 268,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "link",
+      "name": "About",
+      "ctx": "header",
+      "fp": "link|About|0",
+      "rect": {
+        "x": 199,
+        "y": 15,
+        "w": 63,
+        "h": 29
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "button",
+      "name": "Products",
+      "ctx": "header",
+      "st": "collapsed",
+      "fp": "button|Products|0",
+      "rect": {
+        "x": 266,
+        "y": 15,
+        "w": 83,
+        "h": 29
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "link",
+      "name": "Stack Internal",
+      "ctx": "header",
+      "fp": "link|Stack Internal|0",
+      "rect": {
+        "x": 353,
+        "y": 15,
+        "w": 114,
+        "h": 29
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "search",
+      "name": "Loading…",
+      "ctx": "form",
+      "fp": "search|Loading…|0",
+      "rect": {
+        "x": 467,
+        "y": 13,
+        "w": 585,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "combobox",
+      "name": "Search",
+      "value": "[playwright]",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Search|0",
+      "rect": {
+        "x": 475,
+        "y": 13,
+        "w": 569,
+        "h": 33
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "Help Center and other resources",
+      "ctx": "nav: Topbar",
+      "fp": "link|Help Center and other resources|0",
+      "rect": {
+        "x": 1052,
+        "y": 3,
+        "w": 38,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "Site switcher",
+      "ctx": "nav: Topbar",
+      "st": "collapsed",
+      "fp": "link|Site switcher|0",
+      "rect": {
+        "x": 1090,
+        "y": 3,
+        "w": 38,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Log in",
+      "ctx": "nav: Topbar",
+      "fp": "link|Log in|0",
+      "rect": {
+        "x": 1128,
+        "y": 13,
+        "w": 59,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "Sign up",
+      "ctx": "nav: Topbar",
+      "fp": "link|Sign up|0",
+      "rect": {
+        "x": 1192,
+        "y": 13,
+        "w": 68,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "Home",
+      "ctx": "nav: Primary",
+      "fp": "link|Home|0",
+      "rect": {
+        "x": 8,
+        "y": 80,
+        "w": 164,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "link",
+      "name": "Questions",
+      "ctx": "nav: Primary",
+      "fp": "link|Questions|0",
+      "rect": {
+        "x": 8,
+        "y": 113,
+        "w": 164,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "link",
+      "name": "AI Assist",
+      "ctx": "nav: Primary",
+      "fp": "link|AI Assist|0",
+      "rect": {
+        "x": 8,
+        "y": 146,
+        "w": 164,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "link",
+      "name": "Tags",
+      "ctx": "nav: Primary",
+      "fp": "link|Tags|0",
+      "rect": {
+        "x": 8,
+        "y": 178,
+        "w": 164,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "Stack Overflow for Agents",
+      "ctx": "nav: Primary",
+      "fp": "link|Stack Overflow for Agents|0",
+      "rect": {
+        "x": 8,
+        "y": 235,
+        "w": 164,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "Challenges",
+      "ctx": "nav: Primary",
+      "fp": "link|Challenges|0",
+      "rect": {
+        "x": 8,
+        "y": 291,
+        "w": 164,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "link",
+      "name": "Chat",
+      "ctx": "nav: Primary",
+      "st": "expanded",
+      "fp": "link|Chat|0",
+      "rect": {
+        "x": 8,
+        "y": 323,
+        "w": 164,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "link",
+      "name": "Articles",
+      "ctx": "nav: Primary",
+      "fp": "link|Articles|0",
+      "rect": {
+        "x": 8,
+        "y": 356,
+        "w": 164,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "link",
+      "name": "Users",
+      "ctx": "nav: Primary",
+      "fp": "link|Users|0",
+      "rect": {
+        "x": 8,
+        "y": 388,
+        "w": 164,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "link",
+      "name": "Companies",
+      "ctx": "nav: Primary",
+      "fp": "link|Companies|0",
+      "rect": {
+        "x": 8,
+        "y": 445,
+        "w": 164,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "link",
+      "name": "Developer Story",
+      "ctx": "nav: Primary",
+      "fp": "link|Developer Story|0",
+      "rect": {
+        "x": 8,
+        "y": 478,
+        "w": 164,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "button",
+      "name": "COLLECTIVES",
+      "ctx": "nav: Primary",
+      "st": "collapsed",
+      "fp": "button|COLLECTIVES|0",
+      "rect": {
+        "x": 16,
+        "y": 543,
+        "w": 156,
+        "h": 14
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "link",
+      "name": "Explore all Collectives",
+      "ctx": "nav: Primary",
+      "fp": "link|Explore all Collectives|0",
+      "rect": {
+        "x": 16,
+        "y": 594,
+        "w": 123,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "Try for free",
+      "ctx": "nav: Primary",
+      "fp": "link|Try for free|0",
+      "rect": {
+        "x": 16,
+        "y": 790,
+        "w": 148,
+        "h": 29
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "Learn more",
+      "ctx": "nav: Primary",
+      "fp": "link|Learn more|0",
+      "rect": {
+        "x": 16,
+        "y": 820,
+        "w": 148,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "button",
+      "name": "Watch tag",
+      "ctx": "header",
+      "fp": "button|Watch tag|0",
+      "rect": {
+        "x": 222,
+        "y": 222,
+        "w": 128,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "Go to Wiki",
+      "ctx": "header",
+      "fp": "link|Go to Wiki|0",
+      "rect": {
+        "x": 358,
+        "y": 222,
+        "w": 128,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "Newest",
+      "fp": "link|Newest|0",
+      "rect": {
+        "x": 476,
+        "y": 313,
+        "w": 65,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "Active",
+      "fp": "link|Active|0",
+      "rect": {
+        "x": 542,
+        "y": 313,
+        "w": 58,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "Bountied",
+      "fp": "link|Bountied|0",
+      "rect": {
+        "x": 599,
+        "y": 313,
+        "w": 74,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "Unanswered",
+      "fp": "link|Unanswered|0",
+      "rect": {
+        "x": 674,
+        "y": 313,
+        "w": 95,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "button",
+      "name": "More",
+      "st": "collapsed",
+      "fp": "button|More|0",
+      "rect": {
+        "x": 769,
+        "y": 313,
+        "w": 64,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "button",
+      "name": "Filter",
+      "st": "collapsed",
+      "fp": "button|Filter|0",
+      "rect": {
+        "x": 853,
+        "y": 309,
+        "w": 71,
+        "h": 35
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "link|Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]|0",
+      "rect": {
+        "x": 313,
+        "y": 372,
+        "w": 555,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "show questions tagged 'best-practices'",
+      "ctx": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "link|show questions tagged 'best-practices'|0",
+      "rect": {
+        "x": 343,
+        "y": 461,
+        "w": 119,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "link|show questions tagged 'playwright'|0",
+      "rect": {
+        "x": 468,
+        "y": 461,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "show questions tagged 'argocd'",
+      "ctx": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "link|show questions tagged 'argocd'|0",
+      "rect": {
+        "x": 548,
+        "y": 461,
+        "w": 52,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "show questions tagged 'tekton'",
+      "ctx": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "link|show questions tagged 'tekton'|0",
+      "rect": {
+        "x": 606,
+        "y": 461,
+        "w": 49,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "show questions tagged 'tekton-pipelines'",
+      "ctx": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "link|show questions tagged 'tekton-pipelines'|0",
+      "rect": {
+        "x": 661,
+        "y": 461,
+        "w": 110,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "HarishVijayamohan's user avatar",
+      "ctx": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "link|HarishVijayamohan's user avatar|0",
+      "rect": {
+        "x": 630,
+        "y": 495,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "HarishVijayamohan",
+      "ctx": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "link|HarishVijayamohan|0",
+      "rect": {
+        "x": 650,
+        "y": 497,
+        "w": 107,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "presentation",
+      "name": "HarishVijayamohan",
+      "ctx": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "presentation|HarishVijayamohan|0",
+      "rect": {
+        "x": 762,
+        "y": 497,
+        "w": 24,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "presentation",
+      "name": "630 reputation score 630",
+      "ctx": "Is it a good practice to manage Tekton Pipeline manifests using Argo CD? [closed]",
+      "fp": "presentation|630 reputation score 630|0",
+      "rect": {
+        "x": 762,
+        "y": 497,
+        "w": 24,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "In Playwright parallel ''fullyParallel: true,'' and ''workers: process.env.CI ? 2 : undefined,'' still test executes as ",
+      "fp": "link|In Playwright parallel ''fullyParallel: true,'' and ''workers: process.env.CI ? 2 : undefined,'' still test executes as |0",
+      "rect": {
+        "x": 313,
+        "y": 543,
+        "w": 570,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "In Playwright parallel ''fullyParallel: true,'' and ''workers: process.env.CI ? 2 : undefined,'' still test executes as ",
+      "fp": "link|show questions tagged 'playwright'|1",
+      "rect": {
+        "x": 313,
+        "y": 632,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "show questions tagged 'playwright-typescript'",
+      "ctx": "In Playwright parallel ''fullyParallel: true,'' and ''workers: process.env.CI ? 2 : undefined,'' still test executes as ",
+      "fp": "link|show questions tagged 'playwright-typescript'|0",
+      "rect": {
+        "x": 394,
+        "y": 632,
+        "w": 142,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "pratik37's user avatar",
+      "ctx": "In Playwright parallel ''fullyParallel: true,'' and ''workers: process.env.CI ? 2 : undefined,'' still test executes as ",
+      "fp": "link|pratik37's user avatar|0",
+      "rect": {
+        "x": 687,
+        "y": 637,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "pratik37",
+      "ctx": "In Playwright parallel ''fullyParallel: true,'' and ''workers: process.env.CI ? 2 : undefined,'' still test executes as ",
+      "fp": "link|pratik37|0",
+      "rect": {
+        "x": 707,
+        "y": 639,
+        "w": 47,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "presentation",
+      "name": "pratik37",
+      "ctx": "In Playwright parallel ''fullyParallel: true,'' and ''workers: process.env.CI ? 2 : undefined,'' still test executes as ",
+      "fp": "presentation|pratik37|0",
+      "rect": {
+        "x": 758,
+        "y": 639,
+        "w": 23,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "presentation",
+      "name": "379 reputation score 379",
+      "ctx": "In Playwright parallel ''fullyParallel: true,'' and ''workers: process.env.CI ? 2 : undefined,'' still test executes as ",
+      "fp": "presentation|379 reputation score 379|0",
+      "rect": {
+        "x": 758,
+        "y": 639,
+        "w": 23,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "link",
+      "name": "New in type script Playwright I am not able to get proper psot method respoce [closed]",
+      "fp": "link|New in type script Playwright I am not able to get proper psot method respoce [closed]|0",
+      "rect": {
+        "x": 313,
+        "y": 690,
+        "w": 555,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "New in type script Playwright I am not able to get proper psot method respoce [closed]",
+      "fp": "link|show questions tagged 'playwright'|2",
+      "rect": {
+        "x": 313,
+        "y": 778,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "link",
+      "name": "show questions tagged 'playwright-typescript'",
+      "ctx": "New in type script Playwright I am not able to get proper psot method respoce [closed]",
+      "fp": "link|show questions tagged 'playwright-typescript'|1",
+      "rect": {
+        "x": 394,
+        "y": 778,
+        "w": 142,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "pratik37's user avatar",
+      "ctx": "New in type script Playwright I am not able to get proper psot method respoce [closed]",
+      "fp": "link|pratik37's user avatar|1",
+      "rect": {
+        "x": 693,
+        "y": 783,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "link",
+      "name": "pratik37",
+      "ctx": "New in type script Playwright I am not able to get proper psot method respoce [closed]",
+      "fp": "link|pratik37|1",
+      "rect": {
+        "x": 713,
+        "y": 785,
+        "w": 47,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "presentation",
+      "name": "pratik37",
+      "ctx": "New in type script Playwright I am not able to get proper psot method respoce [closed]",
+      "fp": "presentation|pratik37|1",
+      "rect": {
+        "x": 764,
+        "y": 785,
+        "w": 23,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "presentation",
+      "name": "379 reputation score 379",
+      "ctx": "New in type script Playwright I am not able to get proper psot method respoce [closed]",
+      "fp": "presentation|379 reputation score 379|1",
+      "rect": {
+        "x": 764,
+        "y": 785,
+        "w": 23,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "Playwright button is not clickable",
+      "fp": "link|Playwright button is not clickable|0",
+      "rect": {
+        "x": 313,
+        "y": 836,
+        "w": 250,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "link",
+      "name": "show questions tagged 'typescript'",
+      "ctx": "Playwright button is not clickable",
+      "fp": "link|show questions tagged 'typescript'|0",
+      "rect": {
+        "x": 313,
+        "y": 903,
+        "w": 72,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "show questions tagged 'automated-tests'",
+      "ctx": "Playwright button is not clickable",
+      "fp": "link|show questions tagged 'automated-tests'|0",
+      "rect": {
+        "x": 391,
+        "y": 903,
+        "w": 111,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Playwright button is not clickable",
+      "fp": "link|show questions tagged 'playwright'|3",
+      "rect": {
+        "x": 509,
+        "y": 903,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": "Ivan's user avatar",
+      "ctx": "Playwright button is not clickable",
+      "fp": "link|Ivan's user avatar|0",
+      "rect": {
+        "x": 715,
+        "y": 908,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "link",
+      "name": "Ivan",
+      "ctx": "Playwright button is not clickable",
+      "fp": "link|Ivan|0",
+      "rect": {
+        "x": 735,
+        "y": 910,
+        "w": 23,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "presentation",
+      "name": "Ivan",
+      "ctx": "Playwright button is not clickable",
+      "fp": "presentation|Ivan|0",
+      "rect": {
+        "x": 762,
+        "y": 910,
+        "w": 34,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "presentation",
+      "name": "2,812 reputation score 2812",
+      "ctx": "Playwright button is not clickable",
+      "fp": "presentation|2,812 reputation score 2812|0",
+      "rect": {
+        "x": 762,
+        "y": 910,
+        "w": 34,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "link",
+      "name": "Playwright session state not loading",
+      "fp": "link|Playwright session state not loading|0",
+      "rect": {
+        "x": 313,
+        "y": 961,
+        "w": 273,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "show questions tagged 'c#'",
+      "ctx": "Playwright session state not loading",
+      "fp": "link|show questions tagged 'c#'|0",
+      "rect": {
+        "x": 313,
+        "y": 1027,
+        "w": 25,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "show questions tagged 'asp.net'",
+      "ctx": "Playwright session state not loading",
+      "fp": "link|show questions tagged 'asp.net'|0",
+      "rect": {
+        "x": 344,
+        "y": 1027,
+        "w": 55,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Playwright session state not loading",
+      "fp": "link|show questions tagged 'playwright'|4",
+      "rect": {
+        "x": 405,
+        "y": 1027,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "link",
+      "name": "Bluebaron's user avatar",
+      "ctx": "Playwright session state not loading",
+      "fp": "link|Bluebaron's user avatar|0",
+      "rect": {
+        "x": 663,
+        "y": 1032,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "Bluebaron",
+      "ctx": "Playwright session state not loading",
+      "fp": "link|Bluebaron|0",
+      "rect": {
+        "x": 683,
+        "y": 1034,
+        "w": 57,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "presentation",
+      "name": "Bluebaron",
+      "ctx": "Playwright session state not loading",
+      "fp": "presentation|Bluebaron|0",
+      "rect": {
+        "x": 744,
+        "y": 1034,
+        "w": 36,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "presentation",
+      "name": "2,558 reputation score 2558",
+      "ctx": "Playwright session state not loading",
+      "fp": "presentation|2,558 reputation score 2558|0",
+      "rect": {
+        "x": 744,
+        "y": 1034,
+        "w": 36,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": "How does a Playwright locator behave when the matched DOM element is replaced? [closed]",
+      "fp": "link|How does a Playwright locator behave when the matched DOM element is replaced? [closed]|0",
+      "rect": {
+        "x": 313,
+        "y": 1085,
+        "w": 561,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "link",
+      "name": "show questions tagged 'javascript'",
+      "ctx": "How does a Playwright locator behave when the matched DOM element is replaced? [closed]",
+      "fp": "link|show questions tagged 'javascript'|0",
+      "rect": {
+        "x": 313,
+        "y": 1174,
+        "w": 69,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "show questions tagged 'typescript'",
+      "ctx": "How does a Playwright locator behave when the matched DOM element is replaced? [closed]",
+      "fp": "link|show questions tagged 'typescript'|1",
+      "rect": {
+        "x": 388,
+        "y": 1174,
+        "w": 72,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "link",
+      "name": "show questions tagged 'automated-tests'",
+      "ctx": "How does a Playwright locator behave when the matched DOM element is replaced? [closed]",
+      "fp": "link|show questions tagged 'automated-tests'|1",
+      "rect": {
+        "x": 467,
+        "y": 1174,
+        "w": 111,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "How does a Playwright locator behave when the matched DOM element is replaced? [closed]",
+      "fp": "link|show questions tagged 'playwright'|5",
+      "rect": {
+        "x": 584,
+        "y": 1174,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "Sri Ramya's user avatar",
+      "ctx": "How does a Playwright locator behave when the matched DOM element is replaced? [closed]",
+      "fp": "link|Sri Ramya's user avatar|0",
+      "rect": {
+        "x": 682,
+        "y": 1179,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "Sri Ramya",
+      "ctx": "How does a Playwright locator behave when the matched DOM element is replaced? [closed]",
+      "fp": "link|Sri Ramya|0",
+      "rect": {
+        "x": 702,
+        "y": 1181,
+        "w": 56,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "presentation",
+      "name": "Sri Ramya",
+      "ctx": "How does a Playwright locator behave when the matched DOM element is replaced? [closed]",
+      "fp": "presentation|Sri Ramya|0",
+      "rect": {
+        "x": 762,
+        "y": 1181,
+        "w": 16,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "presentation",
+      "name": "25 reputation score 25",
+      "ctx": "How does a Playwright locator behave when the matched DOM element is replaced? [closed]",
+      "fp": "presentation|25 reputation score 25|0",
+      "rect": {
+        "x": 762,
+        "y": 1181,
+        "w": 16,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "link",
+      "name": "Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]",
+      "fp": "link|Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]|0",
+      "rect": {
+        "x": 313,
+        "y": 1232,
+        "w": 566,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "link",
+      "name": "show questions tagged 'python'",
+      "ctx": "Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]",
+      "fp": "link|show questions tagged 'python'|0",
+      "rect": {
+        "x": 343,
+        "y": 1320,
+        "w": 52,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "show questions tagged 'aws-lambda'",
+      "ctx": "Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]",
+      "fp": "link|show questions tagged 'aws-lambda'|0",
+      "rect": {
+        "x": 401,
+        "y": 1320,
+        "w": 84,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "show questions tagged 'lambda'",
+      "ctx": "Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]",
+      "fp": "link|show questions tagged 'lambda'|0",
+      "rect": {
+        "x": 491,
+        "y": 1320,
+        "w": 55,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]",
+      "fp": "link|show questions tagged 'playwright'|6",
+      "rect": {
+        "x": 551,
+        "y": 1320,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "link",
+      "name": "SAFAA LHAKKAOUI's user avatar",
+      "ctx": "Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]",
+      "fp": "link|SAFAA LHAKKAOUI's user avatar|0",
+      "rect": {
+        "x": 636,
+        "y": 1354,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "SAFAA LHAKKAOUI",
+      "ctx": "Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]",
+      "fp": "link|SAFAA LHAKKAOUI|0",
+      "rect": {
+        "x": 656,
+        "y": 1356,
+        "w": 110,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "presentation",
+      "name": "SAFAA LHAKKAOUI",
+      "ctx": "Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]",
+      "fp": "presentation|SAFAA LHAKKAOUI|0",
+      "rect": {
+        "x": 770,
+        "y": 1356,
+        "w": 7,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "presentation",
+      "name": "7 reputation score 7",
+      "ctx": "Playwright works locally but gets Cloudflare Turnstile 403 on AWS Lambda [closed]",
+      "fp": "presentation|7 reputation score 7|0",
+      "rect": {
+        "x": 770,
+        "y": 1356,
+        "w": 7,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "link",
+      "name": "Coverage mismatch in Angular app's Playwright test using monocart reports",
+      "fp": "link|Coverage mismatch in Angular app's Playwright test using monocart reports|0",
+      "rect": {
+        "x": 313,
+        "y": 1402,
+        "w": 519,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "link",
+      "name": "show questions tagged 'angular'",
+      "ctx": "Coverage mismatch in Angular app's Playwright test using monocart reports",
+      "fp": "link|show questions tagged 'angular'|0",
+      "rect": {
+        "x": 313,
+        "y": 1491,
+        "w": 56,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "link",
+      "name": "show questions tagged 'code-coverage'",
+      "ctx": "Coverage mismatch in Angular app's Playwright test using monocart reports",
+      "fp": "link|show questions tagged 'code-coverage'|0",
+      "rect": {
+        "x": 375,
+        "y": 1491,
+        "w": 101,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Coverage mismatch in Angular app's Playwright test using monocart reports",
+      "fp": "link|show questions tagged 'playwright'|7",
+      "rect": {
+        "x": 481,
+        "y": 1491,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "Steffen Harbich's user avatar",
+      "ctx": "Coverage mismatch in Angular app's Playwright test using monocart reports",
+      "fp": "link|Steffen Harbich's user avatar|0",
+      "rect": {
+        "x": 631,
+        "y": 1496,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "link",
+      "name": "Steffen Harbich",
+      "ctx": "Coverage mismatch in Angular app's Playwright test using monocart reports",
+      "fp": "link|Steffen Harbich|0",
+      "rect": {
+        "x": 651,
+        "y": 1498,
+        "w": 89,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "presentation",
+      "name": "Steffen Harbich",
+      "ctx": "Coverage mismatch in Angular app's Playwright test using monocart reports",
+      "fp": "presentation|Steffen Harbich|0",
+      "rect": {
+        "x": 743,
+        "y": 1498,
+        "w": 35,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "presentation",
+      "name": "2,687 reputation score 2687",
+      "ctx": "Coverage mismatch in Angular app's Playwright test using monocart reports",
+      "fp": "presentation|2,687 reputation score 2687|0",
+      "rect": {
+        "x": 743,
+        "y": 1498,
+        "w": 35,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "link",
+      "name": "Coverage report for Angular app with Playwright tests",
+      "fp": "link|Coverage report for Angular app with Playwright tests|0",
+      "rect": {
+        "x": 313,
+        "y": 1549,
+        "w": 407,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "show questions tagged 'angular'",
+      "ctx": "Coverage report for Angular app with Playwright tests",
+      "fp": "link|show questions tagged 'angular'|1",
+      "rect": {
+        "x": 313,
+        "y": 1615,
+        "w": 56,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "show questions tagged 'code-coverage'",
+      "ctx": "Coverage report for Angular app with Playwright tests",
+      "fp": "link|show questions tagged 'code-coverage'|1",
+      "rect": {
+        "x": 375,
+        "y": 1615,
+        "w": 101,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Coverage report for Angular app with Playwright tests",
+      "fp": "link|show questions tagged 'playwright'|8",
+      "rect": {
+        "x": 481,
+        "y": 1615,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "Steffen Harbich's user avatar",
+      "ctx": "Coverage report for Angular app with Playwright tests",
+      "fp": "link|Steffen Harbich's user avatar|1",
+      "rect": {
+        "x": 636,
+        "y": 1620,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "Steffen Harbich",
+      "ctx": "Coverage report for Angular app with Playwright tests",
+      "fp": "link|Steffen Harbich|1",
+      "rect": {
+        "x": 656,
+        "y": 1622,
+        "w": 89,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "presentation",
+      "name": "Steffen Harbich",
+      "ctx": "Coverage report for Angular app with Playwright tests",
+      "fp": "presentation|Steffen Harbich|1",
+      "rect": {
+        "x": 748,
+        "y": 1622,
+        "w": 35,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "presentation",
+      "name": "2,687 reputation score 2687",
+      "ctx": "Coverage report for Angular app with Playwright tests",
+      "fp": "presentation|2,687 reputation score 2687|1",
+      "rect": {
+        "x": 748,
+        "y": 1622,
+        "w": 35,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e109",
+      "role": "link",
+      "name": "Playwright tests are no longer detected after updating VS Code / Playwright",
+      "fp": "link|Playwright tests are no longer detected after updating VS Code / Playwright|0",
+      "rect": {
+        "x": 313,
+        "y": 1673,
+        "w": 490,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e110",
+      "role": "link",
+      "name": "show questions tagged 'javascript'",
+      "ctx": "Playwright tests are no longer detected after updating VS Code / Playwright",
+      "fp": "link|show questions tagged 'javascript'|1",
+      "rect": {
+        "x": 313,
+        "y": 1762,
+        "w": 69,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e111",
+      "role": "link",
+      "name": "show questions tagged 'vs-code'",
+      "ctx": "Playwright tests are no longer detected after updating VS Code / Playwright",
+      "fp": "link|show questions tagged 'vs-code'|0",
+      "rect": {
+        "x": 388,
+        "y": 1762,
+        "w": 59,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e112",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Playwright tests are no longer detected after updating VS Code / Playwright",
+      "fp": "link|show questions tagged 'playwright'|9",
+      "rect": {
+        "x": 453,
+        "y": 1762,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e113",
+      "role": "link",
+      "name": "Hila Ben Simon's user avatar",
+      "ctx": "Playwright tests are no longer detected after updating VS Code / Playwright",
+      "fp": "link|Hila Ben Simon's user avatar|0",
+      "rect": {
+        "x": 669,
+        "y": 1767,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e114",
+      "role": "link",
+      "name": "Hila Ben Simon",
+      "ctx": "Playwright tests are no longer detected after updating VS Code / Playwright",
+      "fp": "link|Hila Ben Simon|0",
+      "rect": {
+        "x": 689,
+        "y": 1769,
+        "w": 85,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
+      "role": "presentation",
+      "name": "Hila Ben Simon",
+      "ctx": "Playwright tests are no longer detected after updating VS Code / Playwright",
+      "fp": "presentation|Hila Ben Simon|0",
+      "rect": {
+        "x": 778,
+        "y": 1769,
+        "w": 6,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e116",
+      "role": "presentation",
+      "name": "1 reputation score 1",
+      "ctx": "Playwright tests are no longer detected after updating VS Code / Playwright",
+      "fp": "presentation|1 reputation score 1|0",
+      "rect": {
+        "x": 778,
+        "y": 1769,
+        "w": 6,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e117",
+      "role": "link",
+      "name": "How can I locate an element in a nested div without selecting the outer div?",
+      "fp": "link|How can I locate an element in a nested div without selecting the outer div?|0",
+      "rect": {
+        "x": 313,
+        "y": 1820,
+        "w": 571,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e118",
+      "role": "link",
+      "name": "show questions tagged 'javascript'",
+      "ctx": "How can I locate an element in a nested div without selecting the outer div?",
+      "fp": "link|show questions tagged 'javascript'|2",
+      "rect": {
+        "x": 313,
+        "y": 1886,
+        "w": 69,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e119",
+      "role": "link",
+      "name": "show questions tagged 'ui-automation'",
+      "ctx": "How can I locate an element in a nested div without selecting the outer div?",
+      "fp": "link|show questions tagged 'ui-automation'|0",
+      "rect": {
+        "x": 388,
+        "y": 1886,
+        "w": 95,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e120",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "How can I locate an element in a nested div without selecting the outer div?",
+      "fp": "link|show questions tagged 'playwright'|10",
+      "rect": {
+        "x": 490,
+        "y": 1886,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e121",
+      "role": "link",
+      "name": "Adnan Zaman's user avatar",
+      "ctx": "How can I locate an element in a nested div without selecting the outer div?",
+      "fp": "link|Adnan Zaman's user avatar|0",
+      "rect": {
+        "x": 661,
+        "y": 1891,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e122",
+      "role": "link",
+      "name": "Adnan Zaman",
+      "ctx": "How can I locate an element in a nested div without selecting the outer div?",
+      "fp": "link|Adnan Zaman|0",
+      "rect": {
+        "x": 681,
+        "y": 1893,
+        "w": 78,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e123",
+      "role": "presentation",
+      "name": "Adnan Zaman",
+      "ctx": "How can I locate an element in a nested div without selecting the outer div?",
+      "fp": "presentation|Adnan Zaman|0",
+      "rect": {
+        "x": 763,
+        "y": 1893,
+        "w": 22,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e124",
+      "role": "presentation",
+      "name": "163 reputation score 163",
+      "ctx": "How can I locate an element in a nested div without selecting the outer div?",
+      "fp": "presentation|163 reputation score 163|0",
+      "rect": {
+        "x": 763,
+        "y": 1893,
+        "w": 22,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e125",
+      "role": "link",
+      "name": "Playwright-Lighthouse Has no properties Error",
+      "fp": "link|Playwright-Lighthouse Has no properties Error|0",
+      "rect": {
+        "x": 313,
+        "y": 1944,
+        "w": 353,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e126",
+      "role": "link",
+      "name": "show questions tagged 'typescript'",
+      "ctx": "Playwright-Lighthouse Has no properties Error",
+      "fp": "link|show questions tagged 'typescript'|2",
+      "rect": {
+        "x": 313,
+        "y": 2011,
+        "w": 72,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e127",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Playwright-Lighthouse Has no properties Error",
+      "fp": "link|show questions tagged 'playwright'|11",
+      "rect": {
+        "x": 391,
+        "y": 2011,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e128",
+      "role": "link",
+      "name": "show questions tagged 'playwright-lighthouse'",
+      "ctx": "Playwright-Lighthouse Has no properties Error",
+      "fp": "link|show questions tagged 'playwright-lighthouse'|0",
+      "rect": {
+        "x": 472,
+        "y": 2011,
+        "w": 144,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e129",
+      "role": "link",
+      "name": "Ivan's user avatar",
+      "ctx": "Playwright-Lighthouse Has no properties Error",
+      "fp": "link|Ivan's user avatar|1",
+      "rect": {
+        "x": 704,
+        "y": 2016,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e130",
+      "role": "link",
+      "name": "Ivan",
+      "ctx": "Playwright-Lighthouse Has no properties Error",
+      "fp": "link|Ivan|1",
+      "rect": {
+        "x": 724,
+        "y": 2018,
+        "w": 23,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e131",
+      "role": "presentation",
+      "name": "Ivan",
+      "ctx": "Playwright-Lighthouse Has no properties Error",
+      "fp": "presentation|Ivan|1",
+      "rect": {
+        "x": 751,
+        "y": 2018,
+        "w": 34,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e132",
+      "role": "presentation",
+      "name": "2,812 reputation score 2812",
+      "ctx": "Playwright-Lighthouse Has no properties Error",
+      "fp": "presentation|2,812 reputation score 2812|1",
+      "rect": {
+        "x": 751,
+        "y": 2018,
+        "w": 34,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e133",
+      "role": "link",
+      "name": "Value returns undefined [closed]",
+      "fp": "link|Value returns undefined [closed]|0",
+      "rect": {
+        "x": 313,
+        "y": 2069,
+        "w": 248,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e134",
+      "role": "link",
+      "name": "show questions tagged 'typescript'",
+      "ctx": "Value returns undefined [closed]",
+      "fp": "link|show questions tagged 'typescript'|3",
+      "rect": {
+        "x": 313,
+        "y": 2135,
+        "w": 72,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e135",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Value returns undefined [closed]",
+      "fp": "link|show questions tagged 'playwright'|12",
+      "rect": {
+        "x": 391,
+        "y": 2135,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e136",
+      "role": "link",
+      "name": "show questions tagged 'playwright-test'",
+      "ctx": "Value returns undefined [closed]",
+      "fp": "link|show questions tagged 'playwright-test'|0",
+      "rect": {
+        "x": 472,
+        "y": 2135,
+        "w": 104,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e137",
+      "role": "link",
+      "name": "Ivan's user avatar",
+      "ctx": "Value returns undefined [closed]",
+      "fp": "link|Ivan's user avatar|2",
+      "rect": {
+        "x": 701,
+        "y": 2140,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e138",
+      "role": "link",
+      "name": "Ivan",
+      "ctx": "Value returns undefined [closed]",
+      "fp": "link|Ivan|2",
+      "rect": {
+        "x": 721,
+        "y": 2142,
+        "w": 23,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e139",
+      "role": "presentation",
+      "name": "Ivan",
+      "ctx": "Value returns undefined [closed]",
+      "fp": "presentation|Ivan|2",
+      "rect": {
+        "x": 748,
+        "y": 2142,
+        "w": 34,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e140",
+      "role": "presentation",
+      "name": "2,812 reputation score 2812",
+      "ctx": "Value returns undefined [closed]",
+      "fp": "presentation|2,812 reputation score 2812|2",
+      "rect": {
+        "x": 748,
+        "y": 2142,
+        "w": 34,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e141",
+      "role": "link",
+      "name": "Playwright C# launches a blank window after updating Edge from 148 to 150",
+      "fp": "link|Playwright C# launches a blank window after updating Edge from 148 to 150|0",
+      "rect": {
+        "x": 313,
+        "y": 2193,
+        "w": 547,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e142",
+      "role": "link",
+      "name": "show questions tagged 'c#'",
+      "ctx": "Playwright C# launches a blank window after updating Edge from 148 to 150",
+      "fp": "link|show questions tagged 'c#'|1",
+      "rect": {
+        "x": 313,
+        "y": 2282,
+        "w": 25,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e143",
+      "role": "link",
+      "name": "show questions tagged 'microsoft-edge'",
+      "ctx": "Playwright C# launches a blank window after updating Edge from 148 to 150",
+      "fp": "link|show questions tagged 'microsoft-edge'|0",
+      "rect": {
+        "x": 344,
+        "y": 2282,
+        "w": 104,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e144",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "Playwright C# launches a blank window after updating Edge from 148 to 150",
+      "fp": "link|show questions tagged 'playwright'|13",
+      "rect": {
+        "x": 454,
+        "y": 2282,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e145",
+      "role": "link",
+      "name": "show questions tagged 'playwright-dotnet'",
+      "ctx": "Playwright C# launches a blank window after updating Edge from 148 to 150",
+      "fp": "link|show questions tagged 'playwright-dotnet'|0",
+      "rect": {
+        "x": 535,
+        "y": 2282,
+        "w": 120,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e146",
+      "role": "link",
+      "name": "Guganesh D.R's user avatar",
+      "ctx": "Playwright C# launches a blank window after updating Edge from 148 to 150",
+      "fp": "link|Guganesh D.R's user avatar|0",
+      "rect": {
+        "x": 678,
+        "y": 2287,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e147",
+      "role": "link",
+      "name": "Guganesh D.R",
+      "ctx": "Playwright C# launches a blank window after updating Edge from 148 to 150",
+      "fp": "link|Guganesh D.R|0",
+      "rect": {
+        "x": 698,
+        "y": 2289,
+        "w": 80,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e148",
+      "role": "presentation",
+      "name": "Guganesh D.R",
+      "ctx": "Playwright C# launches a blank window after updating Edge from 148 to 150",
+      "fp": "presentation|Guganesh D.R|0",
+      "rect": {
+        "x": 782,
+        "y": 2289,
+        "w": 14,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e149",
+      "role": "presentation",
+      "name": "21 reputation score 21",
+      "ctx": "Playwright C# launches a blank window after updating Edge from 148 to 150",
+      "fp": "presentation|21 reputation score 21|0",
+      "rect": {
+        "x": 782,
+        "y": 2289,
+        "w": 14,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e150",
+      "role": "link",
+      "name": "StorageState login test code did not trigger",
+      "fp": "link|StorageState login test code did not trigger|0",
+      "rect": {
+        "x": 313,
+        "y": 2340,
+        "w": 329,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e151",
+      "role": "link",
+      "name": "show questions tagged 'typescript'",
+      "ctx": "StorageState login test code did not trigger",
+      "fp": "link|show questions tagged 'typescript'|4",
+      "rect": {
+        "x": 313,
+        "y": 2406,
+        "w": 72,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e152",
+      "role": "link",
+      "name": "show questions tagged 'playwright'",
+      "ctx": "StorageState login test code did not trigger",
+      "fp": "link|show questions tagged 'playwright'|14",
+      "rect": {
+        "x": 391,
+        "y": 2406,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e153",
+      "role": "link",
+      "name": "show questions tagged 'playwright-test'",
+      "ctx": "StorageState login test code did not trigger",
+      "fp": "link|show questions tagged 'playwright-test'|1",
+      "rect": {
+        "x": 472,
+        "y": 2406,
+        "w": 104,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e154",
+      "role": "link",
+      "name": "Ivan's user avatar",
+      "ctx": "StorageState login test code did not trigger",
+      "fp": "link|Ivan's user avatar|3",
+      "rect": {
+        "x": 715,
+        "y": 2411,
+        "w": 16,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e155",
+      "role": "link",
+      "name": "Ivan",
+      "ctx": "StorageState login test code did not trigger",
+      "fp": "link|Ivan|3",
+      "rect": {
+        "x": 735,
+        "y": 2413,
+        "w": 23,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e156",
+      "role": "presentation",
+      "name": "Ivan",
+      "ctx": "StorageState login test code did not trigger",
+      "fp": "presentation|Ivan|3",
+      "rect": {
+        "x": 762,
+        "y": 2413,
+        "w": 34,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e157",
+      "role": "presentation",
+      "name": "2,812 reputation score 2812",
+      "ctx": "StorageState login test code did not trigger",
+      "fp": "presentation|2,812 reputation score 2812|3",
+      "rect": {
+        "x": 762,
+        "y": 2413,
+        "w": 34,
+        "h": 12
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e158",
+      "role": "link",
+      "name": "Show 15 items per page",
+      "fp": "link|Show 15 items per page|0",
+      "rect": {
+        "x": 740,
+        "y": 2506,
+        "w": 32,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e159",
+      "role": "link",
+      "name": "Show 30 items per page",
+      "fp": "link|Show 30 items per page|0",
+      "rect": {
+        "x": 776,
+        "y": 2506,
+        "w": 34,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e160",
+      "role": "link",
+      "name": "Show 50 items per page",
+      "fp": "link|Show 50 items per page|0",
+      "rect": {
+        "x": 814,
+        "y": 2506,
+        "w": 34,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e161",
+      "role": "link",
+      "name": "Go to page 2",
+      "fp": "link|Go to page 2|0",
+      "rect": {
+        "x": 225,
+        "y": 2506,
+        "w": 26,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e162",
+      "role": "link",
+      "name": "Go to page 3",
+      "fp": "link|Go to page 3|0",
+      "rect": {
+        "x": 255,
+        "y": 2506,
+        "w": 26,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e163",
+      "role": "link",
+      "name": "Go to page 4",
+      "fp": "link|Go to page 4|0",
+      "rect": {
+        "x": 285,
+        "y": 2506,
+        "w": 26,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e164",
+      "role": "link",
+      "name": "Go to page 5",
+      "fp": "link|Go to page 5|0",
+      "rect": {
+        "x": 315,
+        "y": 2506,
+        "w": 26,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e165",
+      "role": "link",
+      "name": "Go to page 234",
+      "fp": "link|Go to page 234|0",
+      "rect": {
+        "x": 377,
+        "y": 2506,
+        "w": 42,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e166",
+      "role": "link",
+      "name": "Go to next page",
+      "fp": "link|Go to next page|0",
+      "rect": {
+        "x": 424,
+        "y": 2506,
+        "w": 46,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e167",
+      "role": "button",
+      "name": "Copy onboarding snippet",
+      "ctx": "aside: Stack Overflow for Agents",
+      "fp": "button|Copy onboarding snippet|0",
+      "rect": {
+        "x": 1193,
+        "y": 211,
+        "w": 25,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e168",
+      "role": "link",
+      "name": "Supports Claude Code, Cursor, Codex, Windsurf and more.",
+      "ctx": "aside: Stack Overflow for Agents",
+      "fp": "link|Supports Claude Code, Cursor, Codex, Windsurf and more.|0",
+      "rect": {
+        "x": 965,
+        "y": 326,
+        "w": 222,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e169",
+      "role": "link",
+      "name": "From better privacy to our new ChatGPT plugin, here's what's new on Stack Overflow for Agents",
+      "fp": "link|From better privacy to our new ChatGPT plugin, here's what's new on Stack Overflow for Agents|0",
+      "rect": {
+        "x": 987,
+        "y": 420,
+        "w": 231,
+        "h": 50
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e170",
+      "role": "link",
+      "name": "The AI magic words",
+      "fp": "link|The AI magic words|0",
+      "rect": {
+        "x": 987,
+        "y": 483,
+        "w": 119,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e171",
+      "role": "link",
+      "name": "Free (votes) for all (that want them)",
+      "fp": "link|Free (votes) for all (that want them)|0",
+      "rect": {
+        "x": 987,
+        "y": 556,
+        "w": 215,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e172",
+      "role": "link",
+      "name": "Should we burninate the [tooling] tag?",
+      "fp": "link|Should we burninate the [tooling] tag?|0",
+      "rect": {
+        "x": 987,
+        "y": 588,
+        "w": 232,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e173",
+      "role": "link",
+      "name": "Developer Story is now available",
+      "fp": "link|Developer Story is now available|0",
+      "rect": {
+        "x": 987,
+        "y": 620,
+        "w": 195,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e174",
+      "role": "link",
+      "name": "Hot Network Questions",
+      "fp": "link|Hot Network Questions|0",
+      "rect": {
+        "x": 948,
+        "y": 1233,
+        "w": 197,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e175",
+      "role": "link",
+      "name": "Increasing awerness learning new thing with AI",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Increasing awerness learning new thing with AI|0",
+      "rect": {
+        "x": 970,
+        "y": 1277,
+        "w": 270,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e176",
+      "role": "link",
+      "name": "\"than the other workers\" versus \"than other workers\"",
+      "ctx": "Hot Network Questions",
+      "fp": "link|\"than the other workers\" versus \"than other workers\"|0",
+      "rect": {
+        "x": 970,
+        "y": 1305,
+        "w": 270,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e177",
+      "role": "link",
+      "name": "Integer maze: A maze you can do in your head",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Integer maze: A maze you can do in your head|0",
+      "rect": {
+        "x": 970,
+        "y": 1346,
+        "w": 270,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e178",
+      "role": "link",
+      "name": "In Matthew 25:15, \"each according to his ability\", what does ability mean?",
+      "ctx": "Hot Network Questions",
+      "fp": "link|In Matthew 25:15, \"each according to his ability\", what does ability mean?|0",
+      "rect": {
+        "x": 970,
+        "y": 1374,
+        "w": 270,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e179",
+      "role": "link",
+      "name": "Emission of electromagnetic radiation - quantum versus classical",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Emission of electromagnetic radiation - quantum versus classical|0",
+      "rect": {
+        "x": 970,
+        "y": 1415,
+        "w": 270,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e180",
+      "role": "link",
+      "name": "What does Frege mean when he says the distinction between sense & reference changes a function's cognitive value?",
+      "ctx": "Hot Network Questions",
+      "fp": "link|What does Frege mean when he says the distinction between sense & reference changes a function's cognitive value?|0",
+      "rect": {
+        "x": 970,
+        "y": 1456,
+        "w": 270,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e181",
+      "role": "link",
+      "name": "Which is \"that\" card?",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Which is \"that\" card?|0",
+      "rect": {
+        "x": 970,
+        "y": 1513,
+        "w": 270,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e182",
+      "role": "link",
+      "name": "Choosing optimal tire pressure for longtail cargo bike",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Choosing optimal tire pressure for longtail cargo bike|0",
+      "rect": {
+        "x": 970,
+        "y": 1541,
+        "w": 270,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e183",
+      "role": "link",
+      "name": "What is the casing of my Thermarest ProLite sleeping pad made of, and why?",
+      "ctx": "Hot Network Questions",
+      "fp": "link|What is the casing of my Thermarest ProLite sleeping pad made of, and why?|0",
+      "rect": {
+        "x": 970,
+        "y": 1582,
+        "w": 270,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e184",
+      "role": "link",
+      "name": "In quantum mechanics, how do we know how many particles are in a given space?",
+      "ctx": "Hot Network Questions",
+      "fp": "link|In quantum mechanics, how do we know how many particles are in a given space?|0",
+      "rect": {
+        "x": 970,
+        "y": 1624,
+        "w": 270,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e185",
+      "role": "link",
+      "name": "\"Any\" combined with \"other\"",
+      "ctx": "Hot Network Questions",
+      "fp": "link|\"Any\" combined with \"other\"|0",
+      "rect": {
+        "x": 970,
+        "y": 1665,
+        "w": 270,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e186",
+      "role": "link",
+      "name": "printf - char values are not printed as expected",
+      "ctx": "Hot Network Questions",
+      "fp": "link|printf - char values are not printed as expected|0",
+      "rect": {
+        "x": 970,
+        "y": 1693,
+        "w": 270,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e187",
+      "role": "link",
+      "name": "Here is Aftermath's Cryptic Crossword #1",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Here is Aftermath's Cryptic Crossword #1|0",
+      "rect": {
+        "x": 970,
+        "y": 1721,
+        "w": 270,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e188",
+      "role": "link",
+      "name": "Why is the tonal center not explicitly marked (in standard sheet music)?",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Why is the tonal center not explicitly marked (in standard sheet music)?|0",
+      "rect": {
+        "x": 970,
+        "y": 1749,
+        "w": 270,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e189",
+      "role": "link",
+      "name": "Blink raster layer automatically",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Blink raster layer automatically|0",
+      "rect": {
+        "x": 970,
+        "y": 1790,
+        "w": 270,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e190",
+      "role": "link",
+      "name": "Determining the closed orbits of a system of differential equations.",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Determining the closed orbits of a system of differential equations.|0",
+      "rect": {
+        "x": 970,
+        "y": 1818,
+        "w": 270,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e191",
+      "role": "link",
+      "name": "Why is the Onyomi of 呆 so different from its Chinese pronunciation?",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Why is the Onyomi of 呆 so different from its Chinese pronunciation?|0",
+      "rect": {
+        "x": 970,
+        "y": 1859,
+        "w": 270,
+        "h": 31
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e192",
+      "role": "link",
+      "name": "Modification of a portion of software subject to LGPL and release for the community to review and possibly incorporate i",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Modification of a portion of software subject to LGPL and release for the community to review and possibly incorporate i|0",
+      "rect": {
+        "x": 970,
+        "y": 1900,
+        "w": 270,
+        "h": 62
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e193",
+      "role": "link",
+      "name": "Multiplication in base b",
+      "ctx": "Hot Network Questions",
+      "fp": "link|Multiplication in base b|0",
+      "rect": {
+        "x": 970,
+        "y": 1973,
+        "w": 270,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e194",
+      "role": "link",
+      "name": "more hot questions",
+      "ctx": "Hot Network Questions",
+      "fp": "link|more hot questions|0",
+      "rect": {
+        "x": 970,
+        "y": 2006,
+        "w": 270,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e195",
+      "role": "link",
+      "name": "The 30 newest playwright questions",
+      "fp": "link|The 30 newest playwright questions|0",
+      "rect": {
+        "x": 948,
+        "y": 2047,
+        "w": 227,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e196",
+      "role": "contentinfo",
+      "name": "STACK OVERFLOW Questions Help Chat BUSINESS Stack Internal Stack Data Licensing Stack Ads COMPANY About Press Work Here ",
+      "ctx": "footer",
+      "fp": "contentinfo|STACK OVERFLOW Questions Help Chat BUSINESS Stack Internal Stack Data Licensing Stack Ads COMPANY About Press Work Here |0",
+      "rect": {
+        "x": 0,
+        "y": 2577,
+        "w": 1280,
+        "h": 441
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e197",
+      "role": "link",
+      "name": "Stack Overflow",
+      "ctx": "footer",
+      "fp": "link|Stack Overflow|0",
+      "rect": {
+        "x": 20,
+        "y": 2618,
+        "w": 32,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e198",
+      "role": "link",
+      "name": "Legal",
+      "ctx": "nav: Footer",
+      "fp": "link|Legal|0",
+      "rect": {
+        "x": 576,
+        "y": 2771,
+        "w": 33,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e199",
+      "role": "link",
+      "name": "Privacy Policy",
+      "ctx": "nav: Footer",
+      "fp": "link|Privacy Policy|0",
+      "rect": {
+        "x": 576,
+        "y": 2796,
+        "w": 84,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e200",
+      "role": "link",
+      "name": "Terms of Service",
+      "ctx": "nav: Footer",
+      "fp": "link|Terms of Service|0",
+      "rect": {
+        "x": 576,
+        "y": 2821,
+        "w": 102,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e201",
+      "role": "link",
+      "name": "Contact Us",
+      "ctx": "nav: Footer",
+      "fp": "link|Contact Us|0",
+      "rect": {
+        "x": 576,
+        "y": 2846,
+        "w": 68,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e202",
+      "role": "button",
+      "name": "Cookie Settings",
+      "ctx": "nav: Footer",
+      "fp": "button|Cookie Settings|0",
+      "rect": {
+        "x": 576,
+        "y": 2871,
+        "w": 96,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e203",
+      "role": "link",
+      "name": "Cookie Policy",
+      "ctx": "nav: Footer",
+      "fp": "link|Cookie Policy|0",
+      "rect": {
+        "x": 576,
+        "y": 2896,
+        "w": 82,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e204",
+      "role": "link",
+      "name": "STACK OVERFLOW’S OPEN COMMUNITIES",
+      "ctx": "nav: Footer",
+      "fp": "link|STACK OVERFLOW’S OPEN COMMUNITIES|0",
+      "rect": {
+        "x": 832,
+        "y": 2667,
+        "w": 274,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e205",
+      "role": "link",
+      "name": "Technology",
+      "ctx": "nav: Footer",
+      "fp": "link|Technology|0",
+      "rect": {
+        "x": 832,
+        "y": 2696,
+        "w": 70,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e206",
+      "role": "link",
+      "name": "Culture & recreation",
+      "ctx": "nav: Footer",
+      "fp": "link|Culture & recreation|0",
+      "rect": {
+        "x": 832,
+        "y": 2721,
+        "w": 122,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e207",
+      "role": "link",
+      "name": "Life & arts",
+      "ctx": "nav: Footer",
+      "fp": "link|Life & arts|0",
+      "rect": {
+        "x": 832,
+        "y": 2746,
+        "w": 62,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e208",
+      "role": "link",
+      "name": "Science",
+      "ctx": "nav: Footer",
+      "fp": "link|Science|0",
+      "rect": {
+        "x": 832,
+        "y": 2771,
+        "w": 48,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e209",
+      "role": "link",
+      "name": "Professional",
+      "ctx": "nav: Footer",
+      "fp": "link|Professional|0",
+      "rect": {
+        "x": 832,
+        "y": 2796,
+        "w": 74,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e210",
+      "role": "link",
+      "name": "Business",
+      "ctx": "nav: Footer",
+      "fp": "link|Business|0",
+      "rect": {
+        "x": 832,
+        "y": 2821,
+        "w": 54,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e211",
+      "role": "link",
+      "name": "API",
+      "ctx": "nav: Footer",
+      "fp": "link|API|0",
+      "rect": {
+        "x": 832,
+        "y": 2862,
+        "w": 20,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e212",
+      "role": "link",
+      "name": "Blog",
+      "ctx": "footer",
+      "fp": "link|Blog|0",
+      "rect": {
+        "x": 20,
+        "y": 2945,
+        "w": 23,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e213",
+      "role": "link",
+      "name": "Facebook",
+      "ctx": "footer",
+      "fp": "link|Facebook|0",
+      "rect": {
+        "x": 55,
+        "y": 2945,
+        "w": 51,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e214",
+      "role": "link",
+      "name": "Twitter",
+      "ctx": "footer",
+      "fp": "link|Twitter|0",
+      "rect": {
+        "x": 118,
+        "y": 2945,
+        "w": 36,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e215",
+      "role": "link",
+      "name": "LinkedIn",
+      "ctx": "footer",
+      "fp": "link|LinkedIn|0",
+      "rect": {
+        "x": 167,
+        "y": 2945,
+        "w": 44,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e216",
+      "role": "link",
+      "name": "Instagram",
+      "ctx": "footer",
+      "fp": "link|Instagram|0",
+      "rect": {
+        "x": 223,
+        "y": 2945,
+        "w": 52,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e217",
+      "role": "link",
+      "name": "user contributions licensed under",
+      "ctx": "footer",
+      "fp": "link|user contributions licensed under|0",
+      "rect": {
+        "x": 445,
+        "y": 2968,
+        "w": 52,
+        "h": 14
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e218",
+      "role": "dialog",
+      "name": "Privacy",
+      "ctx": "div: Privacy",
+      "fp": "dialog|Privacy|0",
+      "rect": {
+        "x": 40,
+        "y": 729,
+        "w": 362,
+        "h": 131
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e219",
+      "role": "link",
+      "name": "Cookie Policy",
+      "ctx": "div: Privacy",
+      "fp": "link|Cookie Policy|1",
+      "rect": {
+        "x": 255,
+        "y": 763,
+        "w": 81,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e220",
+      "role": "button",
+      "name": "Necessary cookies only",
+      "ctx": "div: Privacy",
+      "fp": "button|Necessary cookies only|0",
+      "rect": {
+        "x": 40,
+        "y": 831,
+        "w": 180,
+        "h": 29
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e221",
+      "role": "button",
+      "name": "Customize settings, Opens the preference center dialog",
+      "ctx": "div: Privacy",
+      "fp": "button|Customize settings, Opens the preference center dialog|0",
+      "rect": {
+        "x": 224,
+        "y": 831,
+        "w": 152,
+        "h": 29
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e222",
+      "role": "button",
+      "name": "Close",
+      "ctx": "div: Privacy",
+      "fp": "button|Close|0",
+      "rect": {
+        "x": 382,
+        "y": 705,
+        "w": 44,
+        "h": 44
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Skip to main content About Products Stack Internal Log in Sign up Home Questions AI Assist Tags Stack Overflow for Agent",
+  "contentHash": "1wlsql8",
+  "totalCandidates": 1972
+}

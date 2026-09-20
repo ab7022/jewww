@@ -1,0 +1,2221 @@
+{
+  "url": "https://jobs.ashbyhq.com/ramp",
+  "title": "Ramp Jobs",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 18616
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Ramp",
+      "fp": "link|Ramp|0",
+      "rect": {
+        "x": 514,
+        "y": 39,
+        "w": 252,
+        "h": 19
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "status",
+      "name": "Open Positions (148)",
+      "fp": "status|Open Positions (148)|0",
+      "rect": {
+        "x": 304,
+        "y": 121,
+        "w": 672,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "combobox",
+      "name": "Department",
+      "fp": "combobox|Department|0",
+      "rect": {
+        "x": 304,
+        "y": 209,
+        "w": 330,
+        "h": 38
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e4",
+      "role": "combobox",
+      "name": "Employment",
+      "fp": "combobox|Employment|0",
+      "rect": {
+        "x": 646,
+        "y": 209,
+        "w": 330,
+        "h": 38
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e5",
+      "role": "combobox",
+      "name": "Location",
+      "fp": "combobox|Location|0",
+      "rect": {
+        "x": 304,
+        "y": 259,
+        "w": 330,
+        "h": 38
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e6",
+      "role": "combobox",
+      "name": "Location Type",
+      "fp": "combobox|Location Type|0",
+      "rect": {
+        "x": 646,
+        "y": 259,
+        "w": 330,
+        "h": 38
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e7",
+      "role": "link",
+      "name": "AI Solutions Strategist Business Development • New York, NY (HQ) • Full time • Hybrid $176K – $240K • Offers Equity",
+      "ctx": "Business Development",
+      "fp": "link|AI Solutions Strategist Business Development • New York, NY (HQ) • Full time • Hybrid $176K – $240K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 379,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "Financial Partnerships Manager, International Business Development • New York, NY (HQ); San Francisco, CA • Full time • ",
+      "ctx": "Business Development",
+      "fp": "link|Financial Partnerships Manager, International Business Development • New York, NY (HQ); San Francisco, CA • Full time • |0",
+      "rect": {
+        "x": 292,
+        "y": 502,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "Money Laundering Reporting Officer, AML Compliance • Remote (Sweden) • Full time • Remote SEK 836,400 – SEK 1,131,600 • ",
+      "ctx": "Compliance",
+      "fp": "link|Money Laundering Reporting Officer, AML Compliance • Remote (Sweden) • Full time • Remote SEK 836,400 – SEK 1,131,600 • |0",
+      "rect": {
+        "x": 292,
+        "y": 694,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Senior Financial Crimes Compliance Controls Strategist Compliance • New York, NY (HQ); Remote (US) • Full time • Hybrid ",
+      "ctx": "Compliance",
+      "fp": "link|Senior Financial Crimes Compliance Controls Strategist Compliance • New York, NY (HQ); Remote (US) • Full time • Hybrid |0",
+      "rect": {
+        "x": 292,
+        "y": 818,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "Associate Manager, Premier Support (Customer Experience) Customer Experience • New York, NY (HQ); Denver, CO; Miami, FL;",
+      "ctx": "Customer Experience",
+      "fp": "link|Associate Manager, Premier Support (Customer Experience) Customer Experience • New York, NY (HQ); Denver, CO; Miami, FL;|0",
+      "rect": {
+        "x": 292,
+        "y": 1010,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "Customer Experience Associate Customer Experience • New York, NY (HQ); Denver, CO; Miami, FL; Remote (US) • Full time • ",
+      "ctx": "Customer Experience",
+      "fp": "link|Customer Experience Associate Customer Experience • New York, NY (HQ); Denver, CO; Miami, FL; Remote (US) • Full time • |0",
+      "rect": {
+        "x": 292,
+        "y": 1154,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "link",
+      "name": "Customer Experience Associate (Evening Shift) Customer Experience • New York, NY (HQ); Denver, CO; Miami, FL; Remote (US",
+      "ctx": "Customer Experience",
+      "fp": "link|Customer Experience Associate (Evening Shift) Customer Experience • New York, NY (HQ); Denver, CO; Miami, FL; Remote (US|0",
+      "rect": {
+        "x": 292,
+        "y": 1298,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "link",
+      "name": "Director, Customer Experience Customer Experience • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybr",
+      "ctx": "Customer Experience",
+      "fp": "link|Director, Customer Experience Customer Experience • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybr|0",
+      "rect": {
+        "x": 292,
+        "y": 1442,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "link",
+      "name": "University Grad | Customer Experience Associate Customer Experience • New York, NY (HQ); Remote (US); San Francisco, CA ",
+      "ctx": "Customer Experience",
+      "fp": "link|University Grad | Customer Experience Associate Customer Experience • New York, NY (HQ); Remote (US); San Francisco, CA |0",
+      "rect": {
+        "x": 292,
+        "y": 1565,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "Data Scientist Data • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $137,120 – $297,330 • Offer",
+      "ctx": "Data",
+      "fp": "link|Data Scientist Data • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $137,120 – $297,330 • Offer|0",
+      "rect": {
+        "x": 292,
+        "y": 1758,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "Data Scientist, Finance Data • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $137,120 – $297,330 • Offers Eq",
+      "ctx": "Data",
+      "fp": "link|Data Scientist, Finance Data • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $137,120 – $297,330 • Offers Eq|0",
+      "rect": {
+        "x": 292,
+        "y": 1881,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "link",
+      "name": "Economist, Ramp Economics Lab Data • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $140K – $190K • Offers Eq",
+      "ctx": "Data",
+      "fp": "link|Economist, Ramp Economics Lab Data • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $140K – $190K • Offers Eq|0",
+      "rect": {
+        "x": 292,
+        "y": 2004,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "link",
+      "name": "Design Engineer Design • New York, NY (HQ) • Full time • Hybrid $172K – $440K • Offers Equity",
+      "ctx": "Design",
+      "fp": "link|Design Engineer Design • New York, NY (HQ) • Full time • Hybrid $172K – $440K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 2196,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "link",
+      "name": "Director, Brand Operations Design • New York, NY (HQ) • Full time • Hybrid",
+      "ctx": "Design",
+      "fp": "link|Director, Brand Operations Design • New York, NY (HQ) • Full time • Hybrid|0",
+      "rect": {
+        "x": 292,
+        "y": 2319,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "link",
+      "name": "Director, Product Design Design • New York, NY (HQ) • Full time • Hybrid",
+      "ctx": "Design",
+      "fp": "link|Director, Product Design Design • New York, NY (HQ) • Full time • Hybrid|0",
+      "rect": {
+        "x": 292,
+        "y": 2418,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "link",
+      "name": "Head of Brand Design • New York, NY (HQ) • Full time • Hybrid",
+      "ctx": "Design",
+      "fp": "link|Head of Brand Design • New York, NY (HQ) • Full time • Hybrid|0",
+      "rect": {
+        "x": 292,
+        "y": 2517,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "link",
+      "name": "Product Designer Design • New York, NY (HQ) • Full time • Hybrid $172K – $440K • Offers Equity",
+      "ctx": "Design",
+      "fp": "link|Product Designer Design • New York, NY (HQ) • Full time • Hybrid $172K – $440K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 2616,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "link",
+      "name": "Senior Brand Designer, Growth Design • San Francisco, CA • Full time • Hybrid $132K – $181K • Offers Equity",
+      "ctx": "Design",
+      "fp": "link|Senior Brand Designer, Growth Design • San Francisco, CA • Full time • Hybrid $132K – $181K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 2739,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "Applied AI Engineer Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $204.4K – $352K • Offers Equ",
+      "ctx": "Engineering",
+      "fp": "link|Applied AI Engineer Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $204.4K – $352K • Offers Equ|0",
+      "rect": {
+        "x": 292,
+        "y": 2932,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "Applied AI Engineer, Fullstack Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $204.4K – $352K •",
+      "ctx": "Engineering",
+      "fp": "link|Applied AI Engineer, Fullstack Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $204.4K – $352K •|0",
+      "rect": {
+        "x": 292,
+        "y": 3055,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "Backend Engineer, Ops Engineering Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $284.9K • Offers Equity",
+      "ctx": "Engineering",
+      "fp": "link|Backend Engineer, Ops Engineering Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $284.9K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 3178,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "GTM Business Systems Analyst – Post Sales Engineering • New York, NY (HQ); Miami, FL; San Francisco, CA • Full time • Hy",
+      "ctx": "Engineering",
+      "fp": "link|GTM Business Systems Analyst – Post Sales Engineering • New York, NY (HQ); Miami, FL; San Francisco, CA • Full time • Hy|0",
+      "rect": {
+        "x": 292,
+        "y": 3301,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "GTM Business Systems Engineer – Post Sales Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $122.",
+      "ctx": "Engineering",
+      "fp": "link|GTM Business Systems Engineer – Post Sales Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $122.|0",
+      "rect": {
+        "x": 292,
+        "y": 3424,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "GTM Business Systems Engineer, Quote-to-Cash Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $12",
+      "ctx": "Engineering",
+      "fp": "link|GTM Business Systems Engineer, Quote-to-Cash Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $12|0",
+      "rect": {
+        "x": 292,
+        "y": 3547,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "GTM Senior Business Systems Analyst – Channel Sales Engineering • New York, NY (HQ); Miami, FL; San Francisco, CA • Full",
+      "ctx": "Engineering",
+      "fp": "link|GTM Senior Business Systems Analyst – Channel Sales Engineering • New York, NY (HQ); Miami, FL; San Francisco, CA • Full|0",
+      "rect": {
+        "x": 292,
+        "y": 3670,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "GTM Senior Business Systems Analyst, Pre-Sales Engineering • New York, NY (HQ); Miami, FL; San Francisco, CA • Full time",
+      "ctx": "Engineering",
+      "fp": "link|GTM Senior Business Systems Analyst, Pre-Sales Engineering • New York, NY (HQ); Miami, FL; San Francisco, CA • Full time|0",
+      "rect": {
+        "x": 292,
+        "y": 3793,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "Mobile Engineer, Android Engineering • New York, NY (HQ); Remote (Canada); Remote (US); San Francisco, CA • Full time • ",
+      "ctx": "Engineering",
+      "fp": "link|Mobile Engineer, Android Engineering • New York, NY (HQ); Remote (Canada); Remote (US); San Francisco, CA • Full time • |0",
+      "rect": {
+        "x": 292,
+        "y": 3917,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "Mobile Engineer, iOS Engineering • New York, NY (HQ); Remote (Canada); Remote (US); San Francisco, CA • Full time • Hybr",
+      "ctx": "Engineering",
+      "fp": "link|Mobile Engineer, iOS Engineering • New York, NY (HQ); Remote (Canada); Remote (US); San Francisco, CA • Full time • Hybr|0",
+      "rect": {
+        "x": 292,
+        "y": 4061,
+        "w": 696,
+        "h": 120
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "Security Engineer, Cloud Engineering • New York, NY (HQ); Miami, FL; Remote (Canada); Remote (US) • Full time • Hybrid $",
+      "ctx": "Engineering",
+      "fp": "link|Security Engineer, Cloud Engineering • New York, NY (HQ); Miami, FL; Remote (Canada); Remote (US) • Full time • Hybrid $|0",
+      "rect": {
+        "x": 292,
+        "y": 4181,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "Security Engineer, Privacy Engineering • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid",
+      "ctx": "Engineering",
+      "fp": "link|Security Engineer, Privacy Engineering • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid|0",
+      "rect": {
+        "x": 292,
+        "y": 4304,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "Security Engineer, Product Engineering • New York, NY (HQ) • Full time • Hybrid",
+      "ctx": "Engineering",
+      "fp": "link|Security Engineer, Product Engineering • New York, NY (HQ) • Full time • Hybrid|0",
+      "rect": {
+        "x": 292,
+        "y": 4403,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "Software Engineer, Backend, Growth Engineering • New York, NY (HQ) • Full time • Hybrid $200K – $310K • Offers Equity",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Backend, Growth Engineering • New York, NY (HQ) • Full time • Hybrid $200K – $310K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 4502,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "Software Engineer, Bill Pay & Procurement Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $168K ",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Bill Pay & Procurement Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $168K |0",
+      "rect": {
+        "x": 292,
+        "y": 4625,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "Software Engineer, Core Product Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $275K • Offers Equity",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Core Product Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $275K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 4748,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "Software Engineer, Credit Engineering • New York, NY (HQ) • Full time • Hybrid $189K – $330K • Offers Equity",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Credit Engineering • New York, NY (HQ) • Full time • Hybrid $189K – $330K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 4871,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "Software Engineer, Data Platform Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $324.5K • Offers Equity",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Data Platform Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $324.5K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 4994,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "link",
+      "name": "Software Engineer, Developer API Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $330K • Offers Equity",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Developer API Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $330K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 5117,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "link",
+      "name": "Software Engineer, Engineering Platform Engineering • New York, NY (HQ) • Full time • Hybrid $246.9K – $339.5K • Offers ",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Engineering Platform Engineering • New York, NY (HQ) • Full time • Hybrid $246.9K – $339.5K • Offers |0",
+      "rect": {
+        "x": 292,
+        "y": 5240,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "Software Engineer, Enterprise Product Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $189K – $3",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Enterprise Product Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $189K – $3|0",
+      "rect": {
+        "x": 292,
+        "y": 5363,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "Software Engineer, Forward Deployed Engineering • San Francisco, CA; New York, NY (HQ) • Full time • Hybrid $189K – $330",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Forward Deployed Engineering • San Francisco, CA; New York, NY (HQ) • Full time • Hybrid $189K – $330|0",
+      "rect": {
+        "x": 292,
+        "y": 5487,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "Software Engineer, Forward Deployed AI Solutions Engineering • New York, NY (HQ) • Full time • Hybrid $189K – $330K • Of",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Forward Deployed AI Solutions Engineering • New York, NY (HQ) • Full time • Hybrid $189K – $330K • Of|0",
+      "rect": {
+        "x": 292,
+        "y": 5610,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "Software Engineer, Fraud & Identity Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $284.9K • Offers Equity",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Fraud & Identity Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $284.9K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 5733,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "Software Engineer, Frontend Engineering • New York, NY (HQ); Miami, FL; Remote (Canada); Remote (US); San Francisco, CA ",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Frontend Engineering • New York, NY (HQ); Miami, FL; Remote (Canada); Remote (US); San Francisco, CA |0",
+      "rect": {
+        "x": 292,
+        "y": 5856,
+        "w": 696,
+        "h": 120
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "link",
+      "name": "Software Engineer, Growth Platform Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $168K – $275.",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Growth Platform Engineering • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $168K – $275.|0",
+      "rect": {
+        "x": 292,
+        "y": 5976,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "link",
+      "name": "Software Engineer, International Engineering • London • Full time • Hybrid £106.4K – £146.3K • Offers Equity",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, International Engineering • London • Full time • Hybrid £106.4K – £146.3K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 6099,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "link",
+      "name": "Software Engineer, Onboarding Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $275.1K • Offers Equity",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Onboarding Engineering • New York, NY (HQ) • Full time • Hybrid $168K – $275.1K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 6222,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "link",
+      "name": "Software Engineer, Production Engineering Engineering • New York, NY (HQ); Remote (Canada); Remote (US); San Francisco, ",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Production Engineering Engineering • New York, NY (HQ); Remote (Canada); Remote (US); San Francisco, |0",
+      "rect": {
+        "x": 292,
+        "y": 6345,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "link",
+      "name": "Software Engineer, Security, Stablecoin Engineering • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Re",
+      "ctx": "Engineering",
+      "fp": "link|Software Engineer, Security, Stablecoin Engineering • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Re|0",
+      "rect": {
+        "x": 292,
+        "y": 6489,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "TLM, Production Engineering Engineering • New York, NY (HQ); Remote (Canada); Remote (US); San Francisco, CA • Full time",
+      "ctx": "Engineering",
+      "fp": "link|TLM, Production Engineering Engineering • New York, NY (HQ); Remote (Canada); Remote (US); San Francisco, CA • Full time|0",
+      "rect": {
+        "x": 292,
+        "y": 6612,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "link",
+      "name": "Associate, Capital Markets Finance • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $104K – $192K • Offers Eq",
+      "ctx": "Finance",
+      "fp": "link|Associate, Capital Markets Finance • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $104K – $192K • Offers Eq|0",
+      "rect": {
+        "x": 292,
+        "y": 6826,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": "Associate, Strategic Finance Finance • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $104K – $192K • Offers ",
+      "ctx": "Finance",
+      "fp": "link|Associate, Strategic Finance Finance • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $104K – $192K • Offers |0",
+      "rect": {
+        "x": 292,
+        "y": 6949,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "link",
+      "name": "Director, Strategic Finance Finance • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $280K – $385K • Offers E",
+      "ctx": "Finance",
+      "fp": "link|Director, Strategic Finance Finance • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $280K – $385K • Offers E|0",
+      "rect": {
+        "x": 292,
+        "y": 7072,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "Senior Associate, Strategic Finance Finance • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $140K – $230K",
+      "ctx": "Finance",
+      "fp": "link|Senior Associate, Strategic Finance Finance • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $140K – $230K|0",
+      "rect": {
+        "x": 292,
+        "y": 7195,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "link",
+      "name": "Senior Manager, Deal Desk Finance • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $240K – $300K",
+      "ctx": "Finance",
+      "fp": "link|Senior Manager, Deal Desk Finance • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $240K – $300K|0",
+      "rect": {
+        "x": 292,
+        "y": 7318,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "Senior Manager, Equity Administration Finance • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $",
+      "ctx": "Finance",
+      "fp": "link|Senior Manager, Equity Administration Finance • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $|0",
+      "rect": {
+        "x": 292,
+        "y": 7441,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "IT Site Specialist IT • San Francisco, CA • Temporary • On-site",
+      "ctx": "IT",
+      "fp": "link|IT Site Specialist IT • San Francisco, CA • Temporary • On-site|0",
+      "rect": {
+        "x": 292,
+        "y": 7634,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": "Finance Storytelling Lead Marketing • New York, NY (HQ) • Full time • Hybrid $160K – $220K • Offers Equity",
+      "ctx": "Marketing",
+      "fp": "link|Finance Storytelling Lead Marketing • New York, NY (HQ) • Full time • Hybrid $160K – $220K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 7802,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "link",
+      "name": "Lead Product Marketing Manager - Verticals Marketing • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $190K –",
+      "ctx": "Marketing",
+      "fp": "link|Lead Product Marketing Manager - Verticals Marketing • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $190K –|0",
+      "rect": {
+        "x": 292,
+        "y": 7925,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "link",
+      "name": "Performance Marketing Manager Marketing • New York, NY (HQ) • Full time • Hybrid $112K – $154K • Offers Equity",
+      "ctx": "Marketing",
+      "fp": "link|Performance Marketing Manager Marketing • New York, NY (HQ) • Full time • Hybrid $112K – $154K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 8048,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "link",
+      "name": "Senior Product Marketing Manager - New Products Marketing • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $1",
+      "ctx": "Marketing",
+      "fp": "link|Senior Product Marketing Manager - New Products Marketing • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $1|0",
+      "rect": {
+        "x": 292,
+        "y": 8171,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "link",
+      "name": "Social Media Lead Marketing • New York, NY (HQ); Miami, FL • Full time • Hybrid $122K – $231K • Offers Equity • Multiple",
+      "ctx": "Marketing",
+      "fp": "link|Social Media Lead Marketing • New York, NY (HQ); Miami, FL • Full time • Hybrid $122K – $231K • Offers Equity • Multiple|0",
+      "rect": {
+        "x": 292,
+        "y": 8294,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "Associate GTM Recruiter People & Talent • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $96K – $125K",
+      "ctx": "People & Talent",
+      "fp": "link|Associate GTM Recruiter People & Talent • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $96K – $125K|0",
+      "rect": {
+        "x": 292,
+        "y": 8487,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "Executive Assistant | Multiple Openings People & Talent • New York, NY (HQ) • Full time • Hybrid $130K – $170K • Offers ",
+      "ctx": "People & Talent",
+      "fp": "link|Executive Assistant | Multiple Openings People & Talent • New York, NY (HQ) • Full time • Hybrid $130K – $170K • Offers |0",
+      "rect": {
+        "x": 292,
+        "y": 8610,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "HRIS Analyst People & Talent • New York, NY (HQ) • Full time • Hybrid $110K – $155K • Offers Equity",
+      "ctx": "People & Talent",
+      "fp": "link|HRIS Analyst People & Talent • New York, NY (HQ) • Full time • Hybrid $110K – $155K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 8733,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "link",
+      "name": "Immigration & Global Mobility Program Manager People & Talent • New York, NY (HQ) • Full time • Hybrid $110K – $155K • O",
+      "ctx": "People & Talent",
+      "fp": "link|Immigration & Global Mobility Program Manager People & Talent • New York, NY (HQ) • Full time • Hybrid $110K – $155K • O|0",
+      "rect": {
+        "x": 292,
+        "y": 8856,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "Lead Recruiter | Design People & Talent • New York, NY (HQ) • Full time • Hybrid $158K – $230K • Offers Equity",
+      "ctx": "People & Talent",
+      "fp": "link|Lead Recruiter | Design People & Talent • New York, NY (HQ) • Full time • Hybrid $158K – $230K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 8979,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "link",
+      "name": "Recruiting Coordinator (Contract) People & Talent • San Francisco, CA • Full time • Hybrid $75K – $100K • We will provid",
+      "ctx": "People & Talent",
+      "fp": "link|Recruiting Coordinator (Contract) People & Talent • San Francisco, CA • Full time • Hybrid $75K – $100K • We will provid|0",
+      "rect": {
+        "x": 292,
+        "y": 9102,
+        "w": 696,
+        "h": 141
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "link",
+      "name": "Senior Manager, Head of Talent Operations People & Talent • New York, NY (HQ); Remote (US); San Francisco, CA • Full tim",
+      "ctx": "People & Talent",
+      "fp": "link|Senior Manager, Head of Talent Operations People & Talent • New York, NY (HQ); Remote (US); San Francisco, CA • Full tim|0",
+      "rect": {
+        "x": 292,
+        "y": 9243,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": "Senior Recruiter | GTM Expansion People & Talent • London • Full time • On-site £92K – £126.5K • Offers Equity • Offers ",
+      "ctx": "People & Talent",
+      "fp": "link|Senior Recruiter | GTM Expansion People & Talent • London • Full time • On-site £92K – £126.5K • Offers Equity • Offers |0",
+      "rect": {
+        "x": 292,
+        "y": 9367,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "link",
+      "name": "Senior Recruiter, Emerging Talent People & Talent • New York, NY (HQ) • Full time • Hybrid $125K – $230K • Offers Equity",
+      "ctx": "People & Talent",
+      "fp": "link|Senior Recruiter, Emerging Talent People & Talent • New York, NY (HQ) • Full time • Hybrid $125K – $230K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 9490,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "Senior/Lead Recruiter | GTM People & Talent • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $204K – $280K • ",
+      "ctx": "People & Talent",
+      "fp": "link|Senior/Lead Recruiter | GTM People & Talent • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $204K – $280K • |0",
+      "rect": {
+        "x": 292,
+        "y": 9613,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "link",
+      "name": "Technical Recruiter | Engineering People & Talent • New York, NY (HQ) • Full time • Hybrid $158K – $230K • Offers Equity",
+      "ctx": "People & Talent",
+      "fp": "link|Technical Recruiter | Engineering People & Talent • New York, NY (HQ) • Full time • Hybrid $158K – $230K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 9736,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "Product Manager | International Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $230K – $325K • Offe",
+      "ctx": "Product",
+      "fp": "link|Product Manager | International Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $230K – $325K • Offe|0",
+      "rect": {
+        "x": 292,
+        "y": 9928,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "Product Manager | Tax Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $230K – $325K • Offers Equity",
+      "ctx": "Product",
+      "fp": "link|Product Manager | Tax Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $230K – $325K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 10051,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "Product Manager | Vendor Intelligence & Marketplace Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid ",
+      "ctx": "Product",
+      "fp": "link|Product Manager | Vendor Intelligence & Marketplace Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid |0",
+      "rect": {
+        "x": 292,
+        "y": 10174,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "link",
+      "name": "Product Operations | AI Revenue Systems Product • New York, NY (HQ) • Full time • Hybrid $128K – $180K • Offers Equity",
+      "ctx": "Product",
+      "fp": "link|Product Operations | AI Revenue Systems Product • New York, NY (HQ) • Full time • Hybrid $128K – $180K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 10298,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "link",
+      "name": "Product Operations Specialist | Bill Pay Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $128K – $18",
+      "ctx": "Product",
+      "fp": "link|Product Operations Specialist | Bill Pay Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $128K – $18|0",
+      "rect": {
+        "x": 292,
+        "y": 10421,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "link",
+      "name": "Product Operations Specialist | Customer Setup Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $128K",
+      "ctx": "Product",
+      "fp": "link|Product Operations Specialist | Customer Setup Product • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $128K|0",
+      "rect": {
+        "x": 292,
+        "y": 10544,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "link",
+      "name": "Product Operations Specialist | Generalist Product • New York, NY (HQ) • Full time • Hybrid $128K – $180K • Offers Equit",
+      "ctx": "Product",
+      "fp": "link|Product Operations Specialist | Generalist Product • New York, NY (HQ) • Full time • Hybrid $128K – $180K • Offers Equit|0",
+      "rect": {
+        "x": 292,
+        "y": 10667,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "Product Operations Specialist | Juno Product • New York, NY (HQ); Denver, CO; San Francisco, CA • Full time • Hybrid $10",
+      "ctx": "Product",
+      "fp": "link|Product Operations Specialist | Juno Product • New York, NY (HQ); Denver, CO; San Francisco, CA • Full time • Hybrid $10|0",
+      "rect": {
+        "x": 292,
+        "y": 10790,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "Product Operations Specialist | Travel Product • New York, NY (HQ) • Full time • Hybrid $128K – $180K • Offers Equity",
+      "ctx": "Product",
+      "fp": "link|Product Operations Specialist | Travel Product • New York, NY (HQ) • Full time • Hybrid $128K – $180K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 10913,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "Credit Risk Associate Risk • New York, NY (HQ) • Full time • Hybrid $108K – $200K • Offers Equity",
+      "ctx": "Risk",
+      "fp": "link|Credit Risk Associate Risk • New York, NY (HQ) • Full time • Hybrid $108K – $200K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 11106,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "link",
+      "name": "Senior Credit Underwriter | UK Risk • London • Full time • On-site £74K – £100K • Offers Equity",
+      "ctx": "Risk",
+      "fp": "link|Senior Credit Underwriter | UK Risk • London • Full time • On-site £74K – £100K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 11229,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "Account Executive Sales • London • Full time • On-site",
+      "ctx": "Sales",
+      "fp": "link|Account Executive Sales • London • Full time • On-site|0",
+      "rect": {
+        "x": 292,
+        "y": 11421,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "link",
+      "name": "Account Executive | Commercial Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $158K – $231K • Offers ",
+      "ctx": "Sales",
+      "fp": "link|Account Executive | Commercial Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $158K – $231K • Offers |0",
+      "rect": {
+        "x": 292,
+        "y": 11520,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "link",
+      "name": "Account Executive | Enterprise Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $243K – $3",
+      "ctx": "Sales",
+      "fp": "link|Account Executive | Enterprise Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $243K – $3|0",
+      "rect": {
+        "x": 292,
+        "y": 11643,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "link",
+      "name": "Account Executive | Mid-Market Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $225K – $3",
+      "ctx": "Sales",
+      "fp": "link|Account Executive | Mid-Market Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $225K – $3|0",
+      "rect": {
+        "x": 292,
+        "y": 11766,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "link",
+      "name": "Account Executive | Strategic Sales • San Francisco, CA • Full time • Hybrid $310K – $407K • Offers Equity • Offers Comm",
+      "ctx": "Sales",
+      "fp": "link|Account Executive | Strategic Sales • San Francisco, CA • Full time • Hybrid $310K – $407K • Offers Equity • Offers Comm|0",
+      "rect": {
+        "x": 292,
+        "y": 11889,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "link",
+      "name": "Account Manager | Commercial Sales • New York, NY (HQ); Denver, CO; Miami, FL; San Francisco, CA • Full time • Hybrid $1",
+      "ctx": "Sales",
+      "fp": "link|Account Manager | Commercial Sales • New York, NY (HQ); Denver, CO; Miami, FL; San Francisco, CA • Full time • Hybrid $1|0",
+      "rect": {
+        "x": 292,
+        "y": 12012,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "link",
+      "name": "Account Manager | Enterprise Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $250K – $340K • Offers Eq",
+      "ctx": "Sales",
+      "fp": "link|Account Manager | Enterprise Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $250K – $340K • Offers Eq|0",
+      "rect": {
+        "x": 292,
+        "y": 12136,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "Account Manager | Growth Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $97,920 – $149,600 • Offers C",
+      "ctx": "Sales",
+      "fp": "link|Account Manager | Growth Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $97,920 – $149,600 • Offers C|0",
+      "rect": {
+        "x": 292,
+        "y": 12259,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "link",
+      "name": "Account Manager | Mid-Market Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Remote $190K – $260",
+      "ctx": "Sales",
+      "fp": "link|Account Manager | Mid-Market Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Remote $190K – $260|0",
+      "rect": {
+        "x": 292,
+        "y": 12382,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "link",
+      "name": "AI Solutions Engineer Sales • New York, NY (HQ) • Full time • Hybrid $217K – $298K • Offers Equity",
+      "ctx": "Sales",
+      "fp": "link|AI Solutions Engineer Sales • New York, NY (HQ) • Full time • Hybrid $217K – $298K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 12505,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "link",
+      "name": "BDR, Manager Sales • London • Full time • On-site",
+      "ctx": "Sales",
+      "fp": "link|BDR, Manager Sales • London • Full time • On-site|0",
+      "rect": {
+        "x": 292,
+        "y": 12628,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "link",
+      "name": "Business Development Sales • London • Full time • On-site",
+      "ctx": "Sales",
+      "fp": "link|Business Development Sales • London • Full time • On-site|0",
+      "rect": {
+        "x": 292,
+        "y": 12727,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "Business Development Representative | Ontario, Canada Sales • Toronto, ON • Full time • Hybrid CA$90K – CA$100K • Offers",
+      "ctx": "Sales",
+      "fp": "link|Business Development Representative | Ontario, Canada Sales • Toronto, ON • Full time • Hybrid CA$90K – CA$100K • Offers|0",
+      "rect": {
+        "x": 292,
+        "y": 12826,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "Channel Partner Manager, Accounting Sales • New York, NY (HQ); Miami, FL; San Francisco, CA • Full time • Hybrid $14K – ",
+      "ctx": "Sales",
+      "fp": "link|Channel Partner Manager, Accounting Sales • New York, NY (HQ); Miami, FL; San Francisco, CA • Full time • Hybrid $14K – |0",
+      "rect": {
+        "x": 292,
+        "y": 12949,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "link",
+      "name": "Channel Partner Manager, Accounting Sales • London • Full time • On-site",
+      "ctx": "Sales",
+      "fp": "link|Channel Partner Manager, Accounting Sales • London • Full time • On-site|0",
+      "rect": {
+        "x": 292,
+        "y": 13072,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "Channel Partner Manager, Canada Sales • Toronto, ON; Remote (Canada) • Full time • Hybrid CA$192K – CA$264K • Offers Equ",
+      "ctx": "Sales",
+      "fp": "link|Channel Partner Manager, Canada Sales • Toronto, ON; Remote (Canada) • Full time • Hybrid CA$192K – CA$264K • Offers Equ|0",
+      "rect": {
+        "x": 292,
+        "y": 13171,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "Channel Partner Manager, Cross-Functional Sales • London • Full time • On-site",
+      "ctx": "Sales",
+      "fp": "link|Channel Partner Manager, Cross-Functional Sales • London • Full time • On-site|0",
+      "rect": {
+        "x": 292,
+        "y": 13294,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "link",
+      "name": "Channel Partner Manager, Embedded ISV Sales • New York, NY (HQ); Remote (US) • Full time • Hybrid $140K – $214K • Offers",
+      "ctx": "Sales",
+      "fp": "link|Channel Partner Manager, Embedded ISV Sales • New York, NY (HQ); Remote (US) • Full time • Hybrid $140K – $214K • Offers|0",
+      "rect": {
+        "x": 292,
+        "y": 13393,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "link",
+      "name": "Commercial Account Executive, Canada Sales • Toronto, ON • Full time • On-site CA$166.6K – CA$182K • Offers Equity • Off",
+      "ctx": "Sales",
+      "fp": "link|Commercial Account Executive, Canada Sales • Toronto, ON • Full time • On-site CA$166.6K – CA$182K • Offers Equity • Off|0",
+      "rect": {
+        "x": 292,
+        "y": 13516,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e109",
+      "role": "link",
+      "name": "Commercial Account Manager, Canada Sales • Toronto, ON • Full time • On-site CA$156K – CA$213K • Offers Equity • Offers ",
+      "ctx": "Sales",
+      "fp": "link|Commercial Account Manager, Canada Sales • Toronto, ON • Full time • On-site CA$156K – CA$213K • Offers Equity • Offers |0",
+      "rect": {
+        "x": 292,
+        "y": 13639,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e110",
+      "role": "link",
+      "name": "Customer Activation | Partnerships Sales • New York, NY (HQ); San Francisco, CA; Toronto, ON • Full time • Hybrid $116K ",
+      "ctx": "Sales",
+      "fp": "link|Customer Activation | Partnerships Sales • New York, NY (HQ); San Francisco, CA; Toronto, ON • Full time • Hybrid $116K |0",
+      "rect": {
+        "x": 292,
+        "y": 13762,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e111",
+      "role": "link",
+      "name": "Customer Activation Manager | Commercial Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $97.1K – $148",
+      "ctx": "Sales",
+      "fp": "link|Customer Activation Manager | Commercial Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $97.1K – $148|0",
+      "rect": {
+        "x": 292,
+        "y": 13886,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e112",
+      "role": "link",
+      "name": "Customer Activation Manager | Enterprise Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $182K – $278K",
+      "ctx": "Sales",
+      "fp": "link|Customer Activation Manager | Enterprise Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $182K – $278K|0",
+      "rect": {
+        "x": 292,
+        "y": 14009,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e113",
+      "role": "link",
+      "name": "Customer Activation Manager | Mid-Market Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $142K – $216K",
+      "ctx": "Sales",
+      "fp": "link|Customer Activation Manager | Mid-Market Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $142K – $216K|0",
+      "rect": {
+        "x": 292,
+        "y": 14132,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e114",
+      "role": "link",
+      "name": "Customer Activation Manager | Scaled Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid",
+      "ctx": "Sales",
+      "fp": "link|Customer Activation Manager | Scaled Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid|0",
+      "rect": {
+        "x": 292,
+        "y": 14255,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
+      "role": "link",
+      "name": "Customer Activation Manager | Strategic Enterprise Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $19",
+      "ctx": "Sales",
+      "fp": "link|Customer Activation Manager | Strategic Enterprise Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $19|0",
+      "rect": {
+        "x": 292,
+        "y": 14354,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e116",
+      "role": "link",
+      "name": "Director, Partnerships Sales • London • Full time • On-site",
+      "ctx": "Sales",
+      "fp": "link|Director, Partnerships Sales • London • Full time • On-site|0",
+      "rect": {
+        "x": 292,
+        "y": 14477,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e117",
+      "role": "link",
+      "name": "Engagement Manager Sales • London • Full time • On-site",
+      "ctx": "Sales",
+      "fp": "link|Engagement Manager Sales • London • Full time • On-site|0",
+      "rect": {
+        "x": 292,
+        "y": 14576,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e118",
+      "role": "link",
+      "name": "Enterprise Customer Activation Manager | Bill Pay & Procurement Sales • New York, NY (HQ); Miami, FL; Remote (Canada); R",
+      "ctx": "Sales",
+      "fp": "link|Enterprise Customer Activation Manager | Bill Pay & Procurement Sales • New York, NY (HQ); Miami, FL; Remote (Canada); R|0",
+      "rect": {
+        "x": 292,
+        "y": 14675,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e119",
+      "role": "link",
+      "name": "Enterprise Manager, Sales Development Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $16",
+      "ctx": "Sales",
+      "fp": "link|Enterprise Manager, Sales Development Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $16|0",
+      "rect": {
+        "x": 292,
+        "y": 14819,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e120",
+      "role": "link",
+      "name": "Manager, Account Executive | Commercial Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $237K – $346K ",
+      "ctx": "Sales",
+      "fp": "link|Manager, Account Executive | Commercial Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $237K – $346K |0",
+      "rect": {
+        "x": 292,
+        "y": 14942,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e121",
+      "role": "link",
+      "name": "Manager, Advisory and Services Partnerships Sales • New York, NY (HQ) • Full time • Hybrid $214K – $297K • Offers Equity",
+      "ctx": "Sales",
+      "fp": "link|Manager, Advisory and Services Partnerships Sales • New York, NY (HQ) • Full time • Hybrid $214K – $297K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 15065,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e122",
+      "role": "link",
+      "name": "Manager, Channel Partnerships | Private Equity Sales • New York, NY (HQ) • Full time • Hybrid $194K – $297K • Offers Equ",
+      "ctx": "Sales",
+      "fp": "link|Manager, Channel Partnerships | Private Equity Sales • New York, NY (HQ) • Full time • Hybrid $194K – $297K • Offers Equ|0",
+      "rect": {
+        "x": 292,
+        "y": 15188,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e123",
+      "role": "link",
+      "name": "Manager, Procurement Product Activation Sales • San Francisco, CA; New York, NY (HQ); Remote (US) • Full time • Hybrid $",
+      "ctx": "Sales",
+      "fp": "link|Manager, Procurement Product Activation Sales • San Francisco, CA; New York, NY (HQ); Remote (US) • Full time • Hybrid $|0",
+      "rect": {
+        "x": 292,
+        "y": 15311,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e124",
+      "role": "link",
+      "name": "Manager, Scaled Customer Success Strategy & Operations Sales • San Francisco, CA; New York, NY (HQ); Remote (US) • Full ",
+      "ctx": "Sales",
+      "fp": "link|Manager, Scaled Customer Success Strategy & Operations Sales • San Francisco, CA; New York, NY (HQ); Remote (US) • Full |0",
+      "rect": {
+        "x": 292,
+        "y": 15435,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e125",
+      "role": "link",
+      "name": "Partner Consultant, Accounting Sales • Remote (US); New York, NY (HQ); Remote (Canada); San Francisco, CA • Full time • ",
+      "ctx": "Sales",
+      "fp": "link|Partner Consultant, Accounting Sales • Remote (US); New York, NY (HQ); Remote (Canada); San Francisco, CA • Full time • |0",
+      "rect": {
+        "x": 292,
+        "y": 15558,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e126",
+      "role": "link",
+      "name": "Partner Development Representative | Private Equity Sales • New York, NY (HQ); Miami, FL; Remote (US); San Francisco, CA",
+      "ctx": "Sales",
+      "fp": "link|Partner Development Representative | Private Equity Sales • New York, NY (HQ); Miami, FL; Remote (US); San Francisco, CA|0",
+      "rect": {
+        "x": 292,
+        "y": 15702,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e127",
+      "role": "link",
+      "name": "Procurement Product Activation Manager Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $1",
+      "ctx": "Sales",
+      "fp": "link|Procurement Product Activation Manager Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hybrid $1|0",
+      "rect": {
+        "x": 292,
+        "y": 15825,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e128",
+      "role": "link",
+      "name": "Sales Development Representative | Inbound Sales • New York, NY (HQ); Miami, FL; Remote (US); San Francisco, CA • Full t",
+      "ctx": "Sales",
+      "fp": "link|Sales Development Representative | Inbound Sales • New York, NY (HQ); Miami, FL; Remote (US); San Francisco, CA • Full t|0",
+      "rect": {
+        "x": 292,
+        "y": 15948,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e129",
+      "role": "link",
+      "name": "Sales Development Representative, Mid-Market Sales • New York, NY (HQ) • Full time • Hybrid $85K – $105K • Offers Equity",
+      "ctx": "Sales",
+      "fp": "link|Sales Development Representative, Mid-Market Sales • New York, NY (HQ) • Full time • Hybrid $85K – $105K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 16071,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e130",
+      "role": "link",
+      "name": "Sales Development Representative, SMB Sales • New York, NY (HQ) • Full time • Hybrid $85K – $105K • Offers Equity • Offe",
+      "ctx": "Sales",
+      "fp": "link|Sales Development Representative, SMB Sales • New York, NY (HQ) • Full time • Hybrid $85K – $105K • Offers Equity • Offe|0",
+      "rect": {
+        "x": 292,
+        "y": 16194,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e131",
+      "role": "link",
+      "name": "Senior Channel Partner Manager, Canada Sales • Toronto, ON; Remote (Canada) • Full time • Hybrid CA$265K – CA$363K • Off",
+      "ctx": "Sales",
+      "fp": "link|Senior Channel Partner Manager, Canada Sales • Toronto, ON; Remote (Canada) • Full time • Hybrid CA$265K – CA$363K • Off|0",
+      "rect": {
+        "x": 292,
+        "y": 16317,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e132",
+      "role": "link",
+      "name": "Senior Channel Partner Manager, Embedded ISV Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hyb",
+      "ctx": "Sales",
+      "fp": "link|Senior Channel Partner Manager, Embedded ISV Sales • New York, NY (HQ); Remote (US); San Francisco, CA • Full time • Hyb|0",
+      "rect": {
+        "x": 292,
+        "y": 16441,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e133",
+      "role": "link",
+      "name": "Senior Customer Activation Manager | Partnerships Sales • New York, NY (HQ); San Francisco, CA; Toronto, ON • Full time ",
+      "ctx": "Sales",
+      "fp": "link|Senior Customer Activation Manager | Partnerships Sales • New York, NY (HQ); San Francisco, CA; Toronto, ON • Full time |0",
+      "rect": {
+        "x": 292,
+        "y": 16564,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e134",
+      "role": "link",
+      "name": "Senior Customer Activation Manager | Scaled Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid",
+      "ctx": "Sales",
+      "fp": "link|Senior Customer Activation Manager | Scaled Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid|0",
+      "rect": {
+        "x": 292,
+        "y": 16687,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e135",
+      "role": "link",
+      "name": "Senior Manager, Account Executive | Mid-Market Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $360K –",
+      "ctx": "Sales",
+      "fp": "link|Senior Manager, Account Executive | Mid-Market Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $360K –|0",
+      "rect": {
+        "x": 292,
+        "y": 16786,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e136",
+      "role": "link",
+      "name": "Senior Manager, Strategic Technical Consulting Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $235K –",
+      "ctx": "Sales",
+      "fp": "link|Senior Manager, Strategic Technical Consulting Sales • New York, NY (HQ); San Francisco, CA • Full time • Hybrid $235K –|0",
+      "rect": {
+        "x": 292,
+        "y": 16909,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e137",
+      "role": "link",
+      "name": "Senior Partner Consultant, Systems Integrators Sales • Remote (US); New York, NY (HQ); San Francisco, CA; Toronto, ON • ",
+      "ctx": "Sales",
+      "fp": "link|Senior Partner Consultant, Systems Integrators Sales • Remote (US); New York, NY (HQ); San Francisco, CA; Toronto, ON • |0",
+      "rect": {
+        "x": 292,
+        "y": 17032,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e138",
+      "role": "link",
+      "name": "Senior Product Partnerships Manager Sales • New York, NY (HQ); Miami, FL; San Francisco, CA • Full time • Hybrid $180K –",
+      "ctx": "Sales",
+      "fp": "link|Senior Product Partnerships Manager Sales • New York, NY (HQ); Miami, FL; San Francisco, CA • Full time • Hybrid $180K –|0",
+      "rect": {
+        "x": 292,
+        "y": 17155,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e139",
+      "role": "link",
+      "name": "Senior Scaled Customer Activation Manager | Canada Sales • Toronto, ON • Full time • Hybrid",
+      "ctx": "Sales",
+      "fp": "link|Senior Scaled Customer Activation Manager | Canada Sales • Toronto, ON • Full time • Hybrid|0",
+      "rect": {
+        "x": 292,
+        "y": 17278,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e140",
+      "role": "link",
+      "name": "SMB Manager, Sales Development Sales • New York, NY (HQ) • Full time • Hybrid $158.4K – $242K • Offers Equity • Offers C",
+      "ctx": "Sales",
+      "fp": "link|SMB Manager, Sales Development Sales • New York, NY (HQ) • Full time • Hybrid $158.4K – $242K • Offers Equity • Offers C|0",
+      "rect": {
+        "x": 292,
+        "y": 17377,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e141",
+      "role": "link",
+      "name": "Solutions Consultant, Commercial Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San Francisco, CA; ",
+      "ctx": "Sales",
+      "fp": "link|Solutions Consultant, Commercial Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San Francisco, CA; |0",
+      "rect": {
+        "x": 292,
+        "y": 17500,
+        "w": 696,
+        "h": 120
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e142",
+      "role": "link",
+      "name": "Solutions Consultant, Enterprise Sales • New York, NY (HQ); Miami, FL; Remote (US); San Francisco, CA • Full time • Hybr",
+      "ctx": "Sales",
+      "fp": "link|Solutions Consultant, Enterprise Sales • New York, NY (HQ); Miami, FL; Remote (US); San Francisco, CA • Full time • Hybr|0",
+      "rect": {
+        "x": 292,
+        "y": 17620,
+        "w": 696,
+        "h": 99
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e143",
+      "role": "link",
+      "name": "Solutions Consultant, Mid-Market Sales • New York, NY (HQ); Miami, FL; Remote (Canada); Remote (US); San Francisco, CA •",
+      "ctx": "Sales",
+      "fp": "link|Solutions Consultant, Mid-Market Sales • New York, NY (HQ); Miami, FL; Remote (Canada); Remote (US); San Francisco, CA •|0",
+      "rect": {
+        "x": 292,
+        "y": 17719,
+        "w": 696,
+        "h": 120
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e144",
+      "role": "link",
+      "name": "Solutions Consultant, Public Sector Sales • New York, NY (HQ) • Full time • Hybrid $158K – $242K • Offers Equity • Multi",
+      "ctx": "Sales",
+      "fp": "link|Solutions Consultant, Public Sector Sales • New York, NY (HQ) • Full time • Hybrid $158K – $242K • Offers Equity • Multi|0",
+      "rect": {
+        "x": 292,
+        "y": 17839,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e145",
+      "role": "link",
+      "name": "Technical Consultant, Commercial Sales • Remote (US); New York, NY (HQ); San Francisco, CA • Full time • Remote $124,560",
+      "ctx": "Sales",
+      "fp": "link|Technical Consultant, Commercial Sales • Remote (US); New York, NY (HQ); San Francisco, CA • Full time • Remote $124,560|0",
+      "rect": {
+        "x": 292,
+        "y": 17962,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e146",
+      "role": "link",
+      "name": "Technical Consultant, Enterprise Sales • New York, NY (HQ); Miami, FL; Remote (Canada); Remote (US); San Francisco, CA •",
+      "ctx": "Sales",
+      "fp": "link|Technical Consultant, Enterprise Sales • New York, NY (HQ); Miami, FL; Remote (Canada); Remote (US); San Francisco, CA •|0",
+      "rect": {
+        "x": 292,
+        "y": 18085,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e147",
+      "role": "link",
+      "name": "Technical Consultant, Enterprise, Microsoft Dynamics F&O Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Cana",
+      "ctx": "Sales",
+      "fp": "link|Technical Consultant, Enterprise, Microsoft Dynamics F&O Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Cana|0",
+      "rect": {
+        "x": 292,
+        "y": 18229,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e148",
+      "role": "link",
+      "name": "Technical Consultant, Enterprise, Oracle Cloud Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San F",
+      "ctx": "Sales",
+      "fp": "link|Technical Consultant, Enterprise, Oracle Cloud Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San F|0",
+      "rect": {
+        "x": 292,
+        "y": 18374,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e149",
+      "role": "link",
+      "name": "Technical Consultant, Mid-Market Sales • Remote (US); New York, NY (HQ); San Francisco, CA • Full time • Remote $151K – ",
+      "ctx": "Sales",
+      "fp": "link|Technical Consultant, Mid-Market Sales • Remote (US); New York, NY (HQ); San Francisco, CA • Full time • Remote $151K – |0",
+      "rect": {
+        "x": 292,
+        "y": 18518,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e150",
+      "role": "link",
+      "name": "Technical Consultant, S/4HANA Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San Francisco, CA • Fu",
+      "ctx": "Sales",
+      "fp": "link|Technical Consultant, S/4HANA Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San Francisco, CA • Fu|0",
+      "rect": {
+        "x": 292,
+        "y": 18641,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e151",
+      "role": "link",
+      "name": "Technical Consultant, Strategic, Oracle Cloud Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San Fr",
+      "ctx": "Sales",
+      "fp": "link|Technical Consultant, Strategic, Oracle Cloud Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San Fr|0",
+      "rect": {
+        "x": 292,
+        "y": 18785,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e152",
+      "role": "link",
+      "name": "Technical Consultant, Workday Financials Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San Francis",
+      "ctx": "Sales",
+      "fp": "link|Technical Consultant, Workday Financials Sales • Remote (US); Miami, FL; New York, NY (HQ); Remote (Canada); San Francis|0",
+      "rect": {
+        "x": 292,
+        "y": 18929,
+        "w": 696,
+        "h": 144
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e153",
+      "role": "link",
+      "name": "Senior Security Engineer, Endpoint Security • New York, NY (HQ) • Full time • Hybrid $172K – $236K • Offers Equity",
+      "ctx": "Security",
+      "fp": "link|Senior Security Engineer, Endpoint Security • New York, NY (HQ) • Full time • Hybrid $172K – $236K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 19142,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e154",
+      "role": "link",
+      "name": "Systems Engineer, Corporate Security Security • New York, NY (HQ) • Full time • Hybrid $144K – $199K • Offers Equity",
+      "ctx": "Security",
+      "fp": "link|Systems Engineer, Corporate Security Security • New York, NY (HQ) • Full time • Hybrid $144K – $199K • Offers Equity|0",
+      "rect": {
+        "x": 292,
+        "y": 19266,
+        "w": 696,
+        "h": 123
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e155",
+      "role": "link",
+      "name": "Learn more about Ashby",
+      "ctx": "footer",
+      "fp": "link|Learn more about Ashby|0",
+      "rect": {
+        "x": 152,
+        "y": 19474,
+        "w": 113,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e156",
+      "role": "link",
+      "name": "Privacy Policy",
+      "ctx": "footer",
+      "fp": "link|Privacy Policy|0",
+      "rect": {
+        "x": 831,
+        "y": 19474,
+        "w": 79,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e157",
+      "role": "link",
+      "name": "Security",
+      "ctx": "footer",
+      "fp": "link|Security|0",
+      "rect": {
+        "x": 926,
+        "y": 19474,
+        "w": 47,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e158",
+      "role": "link",
+      "name": "Vulnerability Disclosure",
+      "ctx": "footer",
+      "fp": "link|Vulnerability Disclosure|0",
+      "rect": {
+        "x": 990,
+        "y": 19474,
+        "w": 138,
+        "h": 15
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Open Positions (148) Filters: Reset filters Department All Departments Business Development (2) Compliance (2) Customer ",
+  "contentHash": "1izywpk",
+  "totalCandidates": 161
+}

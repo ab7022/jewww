@@ -1,0 +1,2087 @@
+{
+  "url": "https://vercel.com/pricing",
+  "title": "Vercel Pricing: Hobby, Pro, and Enterprise plans",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 14159
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Vercel",
+      "ctx": "header",
+      "st": "collapsed",
+      "fp": "link|Vercel|0",
+      "rect": {
+        "x": 16,
+        "y": 15,
+        "w": 37,
+        "h": 34
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "button",
+      "name": "Products",
+      "ctx": "nav: Main navigation",
+      "st": "collapsed",
+      "fp": "button|Products|0",
+      "rect": {
+        "x": 65,
+        "y": 16,
+        "w": 94,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "button",
+      "name": "Resources",
+      "ctx": "nav: Main navigation",
+      "st": "collapsed",
+      "fp": "button|Resources|0",
+      "rect": {
+        "x": 159,
+        "y": 16,
+        "w": 104,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "link",
+      "name": "Enterprise",
+      "ctx": "nav: Main navigation",
+      "fp": "link|Enterprise|0",
+      "rect": {
+        "x": 264,
+        "y": 16,
+        "w": 89,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "link",
+      "name": "Pricing",
+      "ctx": "nav: Main navigation",
+      "fp": "link|Pricing|0",
+      "rect": {
+        "x": 353,
+        "y": 16,
+        "w": 68,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "link",
+      "name": "Get a Demo",
+      "ctx": "header",
+      "fp": "link|Get a Demo|0",
+      "rect": {
+        "x": 992,
+        "y": 16,
+        "w": 101,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "link",
+      "name": "Log In",
+      "ctx": "header",
+      "fp": "link|Log In|0",
+      "rect": {
+        "x": 1105,
+        "y": 16,
+        "w": 64,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "Sign Up",
+      "ctx": "header",
+      "fp": "link|Sign Up|0",
+      "rect": {
+        "x": 1181,
+        "y": 16,
+        "w": 75,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "Start deploying",
+      "fp": "link|Start deploying|0",
+      "rect": {
+        "x": 57,
+        "y": 866,
+        "w": 137,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Start a free trial",
+      "fp": "link|Start a free trial|0",
+      "rect": {
+        "x": 467,
+        "y": 866,
+        "w": 140,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "Get a demo",
+      "fp": "link|Get a demo|0",
+      "rect": {
+        "x": 877,
+        "y": 866,
+        "w": 111,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "Learn more about taxes",
+      "fp": "link|Learn more about taxes|0",
+      "rect": {
+        "x": 865,
+        "y": 977,
+        "w": 140,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "link",
+      "name": "Learn about Fluid Compute No idle, no waste Only pay for actual execution time, not idle resources.",
+      "fp": "link|Learn about Fluid Compute No idle, no waste Only pay for actual execution time, not idle resources.|0",
+      "rect": {
+        "x": 24,
+        "y": 1091,
+        "w": 606,
+        "h": 340
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "link",
+      "name": "LIMIT Learn about Spend Management Control your spending Set a limit, get alerts, and we'll stop usage before you go ove",
+      "fp": "link|LIMIT Learn about Spend Management Control your spending Set a limit, get alerts, and we'll stop usage before you go ove|0",
+      "rect": {
+        "x": 650,
+        "y": 1091,
+        "w": 606,
+        "h": 340
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "searchbox",
+      "name": "Search",
+      "fp": "searchbox|Search|0",
+      "rect": {
+        "x": 53,
+        "y": 1546,
+        "w": 278,
+        "h": 36
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "Edge Requests",
+      "fp": "link|Edge Requests|0",
+      "rect": {
+        "x": 25,
+        "y": 2509,
+        "w": 307,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "Fast Data Transfer",
+      "fp": "link|Fast Data Transfer|0",
+      "rect": {
+        "x": 25,
+        "y": 2564,
+        "w": 307,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "link",
+      "name": "Regional pricing ↗",
+      "fp": "link|Regional pricing ↗|0",
+      "rect": {
+        "x": 739,
+        "y": 2628,
+        "w": 109,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "link",
+      "name": "Regional pricing ↗",
+      "fp": "link|Regional pricing ↗|1",
+      "rect": {
+        "x": 739,
+        "y": 3510,
+        "w": 109,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "link",
+      "name": "Regional pricing ↗",
+      "fp": "link|Regional pricing ↗|2",
+      "rect": {
+        "x": 739,
+        "y": 5086,
+        "w": 109,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "link",
+      "name": "Active CPU pricing",
+      "fp": "link|Active CPU pricing|0",
+      "rect": {
+        "x": 205,
+        "y": 5294,
+        "w": 136,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "link",
+      "name": "Fast Origin Transfer",
+      "fp": "link|Fast Origin Transfer|0",
+      "rect": {
+        "x": 25,
+        "y": 6068,
+        "w": 307,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "link",
+      "name": "Regional pricing ↗",
+      "fp": "link|Regional pricing ↗|3",
+      "rect": {
+        "x": 739,
+        "y": 6509,
+        "w": 109,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "link",
+      "name": "Observability",
+      "fp": "link|Observability|0",
+      "rect": {
+        "x": 25,
+        "y": 10191,
+        "w": 307,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "Speed Insights Plus Events",
+      "fp": "link|Speed Insights Plus Events|0",
+      "rect": {
+        "x": 25,
+        "y": 10513,
+        "w": 307,
+        "h": 76
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "Web Analytics Events",
+      "fp": "link|Web Analytics Events|0",
+      "rect": {
+        "x": 25,
+        "y": 10592,
+        "w": 307,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "Runtime Logs",
+      "fp": "link|Runtime Logs|0",
+      "rect": {
+        "x": 25,
+        "y": 10808,
+        "w": 307,
+        "h": 76
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "Session Tracing",
+      "fp": "link|Session Tracing|0",
+      "rect": {
+        "x": 25,
+        "y": 10887,
+        "w": 307,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "Drains Volume",
+      "fp": "link|Drains Volume|0",
+      "rect": {
+        "x": 25,
+        "y": 10942,
+        "w": 307,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "Regional pricing ↗",
+      "fp": "link|Regional pricing ↗|4",
+      "rect": {
+        "x": 739,
+        "y": 11006,
+        "w": 109,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "Passport",
+      "fp": "link|Passport|0",
+      "rect": {
+        "x": 25,
+        "y": 11850,
+        "w": 307,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "Static IPs (shared pool)",
+      "fp": "link|Static IPs (shared pool)|0",
+      "rect": {
+        "x": 25,
+        "y": 12015,
+        "w": 307,
+        "h": 76
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "Secure Compute",
+      "fp": "link|Secure Compute|0",
+      "rect": {
+        "x": 25,
+        "y": 12094,
+        "w": 307,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "Sign up for free",
+      "fp": "link|Sign up for free|0",
+      "rect": {
+        "x": 417,
+        "y": 12889,
+        "w": 138,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "Start a free Pro trial",
+      "fp": "link|Start a free Pro trial|0",
+      "rect": {
+        "x": 711,
+        "y": 12889,
+        "w": 165,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "Contact Sales",
+      "fp": "link|Contact Sales|0",
+      "rect": {
+        "x": 1038,
+        "y": 12889,
+        "w": 128,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "disclosure",
+      "name": "01What currency are Vercel prices shown in, and do they include taxes?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|01What currency are Vercel prices shown in, and do they include taxes?|0",
+      "rect": {
+        "x": 547,
+        "y": 13205,
+        "w": 709,
+        "h": 100
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "Learn more about taxes",
+      "fp": "link|Learn more about taxes|1",
+      "rect": {
+        "x": 911,
+        "y": 13384,
+        "w": 173,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "disclosure",
+      "name": "02Which Vercel plan is right for me?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|02Which Vercel plan is right for me?|0",
+      "rect": {
+        "x": 547,
+        "y": 13441,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "Contact our sales team",
+      "fp": "link|Contact our sales team|0",
+      "rect": {
+        "x": 950,
+        "y": 13588,
+        "w": 175,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "disclosure",
+      "name": "03Do you offer custom invoicing?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|03Do you offer custom invoicing?|0",
+      "rect": {
+        "x": 547,
+        "y": 13509,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "Contact our sales team",
+      "fp": "link|Contact our sales team|1",
+      "rect": {
+        "x": 736,
+        "y": 13605,
+        "w": 171,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "disclosure",
+      "name": "04What are the limits for each plan?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|04What are the limits for each plan?|0",
+      "rect": {
+        "x": 547,
+        "y": 13577,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "link",
+      "name": "here",
+      "fp": "link|here|0",
+      "rect": {
+        "x": 798,
+        "y": 13647,
+        "w": 32,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "Fair Use Policy",
+      "fp": "link|Fair Use Policy|0",
+      "rect": {
+        "x": 991,
+        "y": 13673,
+        "w": 107,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "disclosure",
+      "name": "05I went over my included credit. What can I do?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|05I went over my included credit. What can I do?|0",
+      "rect": {
+        "x": 547,
+        "y": 13645,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "contact us",
+      "fp": "link|contact us|0",
+      "rect": {
+        "x": 833,
+        "y": 13741,
+        "w": 77,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "disclosure",
+      "name": "06Can I buy additional usage?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|06Can I buy additional usage?|0",
+      "rect": {
+        "x": 547,
+        "y": 13713,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "in our documentation",
+      "fp": "link|in our documentation|0",
+      "rect": {
+        "x": 1041,
+        "y": 13835,
+        "w": 155,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "disclosure",
+      "name": "07I have a Hobby account, how do I upgrade to a paid plan?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|07I have a Hobby account, how do I upgrade to a paid plan?|0",
+      "rect": {
+        "x": 547,
+        "y": 13781,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "disclosure",
+      "name": "08Is there a limit to how many teams I can have?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|08Is there a limit to how many teams I can have?|0",
+      "rect": {
+        "x": 547,
+        "y": 13849,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "disclosure",
+      "name": "09How does Vercel calculate usage?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|09How does Vercel calculate usage?|0",
+      "rect": {
+        "x": 547,
+        "y": 13917,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "link",
+      "name": "documentation",
+      "fp": "link|documentation|0",
+      "rect": {
+        "x": 879,
+        "y": 13987,
+        "w": 110,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "disclosure",
+      "name": "10I want to transfer a domain name to Vercel. Is there a fee?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|10I want to transfer a domain name to Vercel. Is there a fee?|0",
+      "rect": {
+        "x": 547,
+        "y": 13985,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "disclosure",
+      "name": "11Do cached responses affect usage?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|11Do cached responses affect usage?|0",
+      "rect": {
+        "x": 547,
+        "y": 14053,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "link",
+      "name": "cached",
+      "fp": "link|cached|0",
+      "rect": {
+        "x": 739,
+        "y": 14149,
+        "w": 54,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": "compresses",
+      "fp": "link|compresses|0",
+      "rect": {
+        "x": 754,
+        "y": 14277,
+        "w": 88,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "disclosure",
+      "name": "12How can I manage my spend?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|12How can I manage my spend?|0",
+      "rect": {
+        "x": 547,
+        "y": 14121,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "Spend Management",
+      "fp": "link|Spend Management|0",
+      "rect": {
+        "x": 938,
+        "y": 14217,
+        "w": 148,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "link",
+      "name": "recursion protection",
+      "fp": "link|recursion protection|0",
+      "rect": {
+        "x": 1057,
+        "y": 14403,
+        "w": 146,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "improved function defaults",
+      "fp": "link|improved function defaults|0",
+      "rect": {
+        "x": 652,
+        "y": 14428,
+        "w": 196,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "hard spend limits",
+      "fp": "link|hard spend limits|0",
+      "rect": {
+        "x": 855,
+        "y": 14428,
+        "w": 125,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": "Attack Challenge Mode",
+      "fp": "link|Attack Challenge Mode|0",
+      "rect": {
+        "x": 988,
+        "y": 14428,
+        "w": 170,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "disclosure",
+      "name": "13What I can spend my included usage credit on?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|13What I can spend my included usage credit on?|0",
+      "rect": {
+        "x": 547,
+        "y": 14189,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "link",
+      "name": "vercel.com/docs/plans/pro-plan#monthly-credit",
+      "fp": "link|vercel.com/docs/plans/pro-plan#monthly-credit|0",
+      "rect": {
+        "x": 669,
+        "y": 14285,
+        "w": 353,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "disclosure",
+      "name": "14What is Flat Rate CDN?",
+      "ctx": "Frequently asked questions",
+      "fp": "disclosure|14What is Flat Rate CDN?|0",
+      "rect": {
+        "x": 547,
+        "y": 14257,
+        "w": 709,
+        "h": 68
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "link",
+      "name": "here.",
+      "fp": "link|here.|0",
+      "rect": {
+        "x": 738,
+        "y": 14606,
+        "w": 36,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "Talk to sales",
+      "ctx": "Can't decide?",
+      "fp": "link|Talk to sales|0",
+      "rect": {
+        "x": 959,
+        "y": 14136,
+        "w": 118,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "Get started for free",
+      "ctx": "Can't decide?",
+      "fp": "link|Get started for free|0",
+      "rect": {
+        "x": 1094,
+        "y": 14136,
+        "w": 162,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "AI SDK",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|AI SDK|0",
+      "rect": {
+        "x": 22,
+        "y": 14535,
+        "w": 50,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "link",
+      "name": "AI Gateway",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|AI Gateway|0",
+      "rect": {
+        "x": 22,
+        "y": 14563,
+        "w": 79,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "Sandbox",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Sandbox|0",
+      "rect": {
+        "x": 22,
+        "y": 14591,
+        "w": 60,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "link",
+      "name": "Workflows",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Workflows|0",
+      "rect": {
+        "x": 22,
+        "y": 14619,
+        "w": 72,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "link",
+      "name": "ConnectNew",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|ConnectNew|0",
+      "rect": {
+        "x": 22,
+        "y": 14647,
+        "w": 104,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": "PassportNew",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|PassportNew|0",
+      "rect": {
+        "x": 22,
+        "y": 14675,
+        "w": 107,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "link",
+      "name": "eveNew",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|eveNew|0",
+      "rect": {
+        "x": 22,
+        "y": 14703,
+        "w": 72,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "CI/CD",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|CI/CD|0",
+      "rect": {
+        "x": 231,
+        "y": 14535,
+        "w": 43,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "link",
+      "name": "Content Delivery",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Content Delivery|0",
+      "rect": {
+        "x": 231,
+        "y": 14563,
+        "w": 111,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "Fluid Compute",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Fluid Compute|0",
+      "rect": {
+        "x": 231,
+        "y": 14591,
+        "w": 97,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "Observability",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Observability|1",
+      "rect": {
+        "x": 231,
+        "y": 14619,
+        "w": 88,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "Platform Security",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Platform Security|0",
+      "rect": {
+        "x": 441,
+        "y": 14535,
+        "w": 115,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "link",
+      "name": "WAF",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|WAF|0",
+      "rect": {
+        "x": 441,
+        "y": 14563,
+        "w": 33,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "link",
+      "name": "Bot Management",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Bot Management|0",
+      "rect": {
+        "x": 441,
+        "y": 14591,
+        "w": 114,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "link",
+      "name": "BotID",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|BotID|0",
+      "rect": {
+        "x": 441,
+        "y": 14619,
+        "w": 40,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "link",
+      "name": "Vercel DropNew",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Vercel DropNew|0",
+      "rect": {
+        "x": 650,
+        "y": 14535,
+        "w": 124,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "Vercel Agent",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Vercel Agent|0",
+      "rect": {
+        "x": 650,
+        "y": 14563,
+        "w": 86,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "Vercel PluginNew",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Vercel PluginNew|0",
+      "rect": {
+        "x": 650,
+        "y": 14591,
+        "w": 134,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "Agent Skills",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Agent Skills|0",
+      "rect": {
+        "x": 650,
+        "y": 14619,
+        "w": 80,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "link",
+      "name": "Domains",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Domains|0",
+      "rect": {
+        "x": 650,
+        "y": 14647,
+        "w": 60,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "v0",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|v0|0",
+      "rect": {
+        "x": 650,
+        "y": 14675,
+        "w": 21,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "link",
+      "name": "eveNew",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|eveNew|1",
+      "rect": {
+        "x": 859,
+        "y": 14535,
+        "w": 72,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "link",
+      "name": "Next.js",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Next.js|0",
+      "rect": {
+        "x": 859,
+        "y": 14563,
+        "w": 48,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "link",
+      "name": "Nuxt",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Nuxt|0",
+      "rect": {
+        "x": 859,
+        "y": 14591,
+        "w": 35,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "link",
+      "name": "SvelteKit",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|SvelteKit|0",
+      "rect": {
+        "x": 859,
+        "y": 14619,
+        "w": 61,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "link",
+      "name": "Nitro",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Nitro|0",
+      "rect": {
+        "x": 859,
+        "y": 14647,
+        "w": 35,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "link",
+      "name": "Turborepo",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Turborepo|0",
+      "rect": {
+        "x": 859,
+        "y": 14675,
+        "w": 68,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "Tanstack Start",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Tanstack Start|0",
+      "rect": {
+        "x": 859,
+        "y": 14703,
+        "w": 97,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "link",
+      "name": "FastAPI",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|FastAPI|0",
+      "rect": {
+        "x": 859,
+        "y": 14731,
+        "w": 54,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "link",
+      "name": "All frameworks",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|All frameworks|0",
+      "rect": {
+        "x": 859,
+        "y": 14759,
+        "w": 100,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "link",
+      "name": "Vercel SDK",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Vercel SDK|0",
+      "rect": {
+        "x": 1069,
+        "y": 14535,
+        "w": 75,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "link",
+      "name": "Workflow SDKNew",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Workflow SDKNew|0",
+      "rect": {
+        "x": 1069,
+        "y": 14563,
+        "w": 142,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "Flags SDK",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Flags SDK|0",
+      "rect": {
+        "x": 1069,
+        "y": 14591,
+        "w": 70,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "Chat SDKNew",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Chat SDKNew|0",
+      "rect": {
+        "x": 1069,
+        "y": 14619,
+        "w": 111,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "link",
+      "name": "Queues SDKNew",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Queues SDKNew|0",
+      "rect": {
+        "x": 1069,
+        "y": 14647,
+        "w": 130,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "Streamdown",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Streamdown|0",
+      "rect": {
+        "x": 1069,
+        "y": 14675,
+        "w": 86,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "AI Apps",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|AI Apps|0",
+      "rect": {
+        "x": 22,
+        "y": 14855,
+        "w": 56,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "link",
+      "name": "Web Apps",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Web Apps|0",
+      "rect": {
+        "x": 22,
+        "y": 14883,
+        "w": 69,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "link",
+      "name": "Marketing Sites",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Marketing Sites|0",
+      "rect": {
+        "x": 22,
+        "y": 14911,
+        "w": 104,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e109",
+      "role": "link",
+      "name": "Platforms",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Platforms|0",
+      "rect": {
+        "x": 22,
+        "y": 14939,
+        "w": 66,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e110",
+      "role": "link",
+      "name": "Commerce",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Commerce|0",
+      "rect": {
+        "x": 22,
+        "y": 14967,
+        "w": 74,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e111",
+      "role": "link",
+      "name": "Platform Engineers",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Platform Engineers|0",
+      "rect": {
+        "x": 22,
+        "y": 14995,
+        "w": 126,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e112",
+      "role": "link",
+      "name": "Design Engineers",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Design Engineers|0",
+      "rect": {
+        "x": 22,
+        "y": 15023,
+        "w": 115,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e113",
+      "role": "link",
+      "name": "Docs",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Docs|0",
+      "rect": {
+        "x": 231,
+        "y": 14855,
+        "w": 37,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e114",
+      "role": "link",
+      "name": "Blog",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Blog|0",
+      "rect": {
+        "x": 231,
+        "y": 14883,
+        "w": 33,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
+      "role": "link",
+      "name": "Changelog",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Changelog|0",
+      "rect": {
+        "x": 231,
+        "y": 14911,
+        "w": 73,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e116",
+      "role": "link",
+      "name": "Knowledge Base",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Knowledge Base|0",
+      "rect": {
+        "x": 231,
+        "y": 14939,
+        "w": 111,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e117",
+      "role": "link",
+      "name": "Academy",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Academy|0",
+      "rect": {
+        "x": 231,
+        "y": 14967,
+        "w": 64,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e118",
+      "role": "link",
+      "name": "Articles",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Articles|0",
+      "rect": {
+        "x": 231,
+        "y": 14995,
+        "w": 52,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e119",
+      "role": "link",
+      "name": "Community",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Community|0",
+      "rect": {
+        "x": 231,
+        "y": 15023,
+        "w": 78,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e120",
+      "role": "link",
+      "name": "Is Agentic",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Is Agentic|0",
+      "rect": {
+        "x": 231,
+        "y": 15051,
+        "w": 67,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e121",
+      "role": "link",
+      "name": "Customers",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Customers|0",
+      "rect": {
+        "x": 441,
+        "y": 14855,
+        "w": 73,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e122",
+      "role": "link",
+      "name": "Marketplace",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Marketplace|0",
+      "rect": {
+        "x": 441,
+        "y": 14883,
+        "w": 84,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e123",
+      "role": "link",
+      "name": "Templates",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Templates|0",
+      "rect": {
+        "x": 441,
+        "y": 14911,
+        "w": 70,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e124",
+      "role": "link",
+      "name": "Partner Finder",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Partner Finder|0",
+      "rect": {
+        "x": 441,
+        "y": 14939,
+        "w": 96,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e125",
+      "role": "link",
+      "name": "Vercel + AWS",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Vercel + AWS|0",
+      "rect": {
+        "x": 441,
+        "y": 14967,
+        "w": 89,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e126",
+      "role": "link",
+      "name": "About",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|About|0",
+      "rect": {
+        "x": 650,
+        "y": 14855,
+        "w": 42,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e127",
+      "role": "link",
+      "name": "Careers",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Careers|0",
+      "rect": {
+        "x": 650,
+        "y": 14883,
+        "w": 54,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e128",
+      "role": "link",
+      "name": "Press",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Press|0",
+      "rect": {
+        "x": 650,
+        "y": 14911,
+        "w": 40,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e129",
+      "role": "link",
+      "name": "Events",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Events|0",
+      "rect": {
+        "x": 650,
+        "y": 14939,
+        "w": 47,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e130",
+      "role": "link",
+      "name": "Startups",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Startups|0",
+      "rect": {
+        "x": 650,
+        "y": 14967,
+        "w": 59,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e131",
+      "role": "link",
+      "name": "Shipped on Vercel",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Shipped on Vercel|0",
+      "rect": {
+        "x": 650,
+        "y": 14995,
+        "w": 120,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e132",
+      "role": "link",
+      "name": "Open Source Program",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Open Source Program|0",
+      "rect": {
+        "x": 650,
+        "y": 15023,
+        "w": 145,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e133",
+      "role": "link",
+      "name": "Enterprise",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Enterprise|1",
+      "rect": {
+        "x": 650,
+        "y": 15051,
+        "w": 69,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e134",
+      "role": "link",
+      "name": "Pricing",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Pricing|1",
+      "rect": {
+        "x": 650,
+        "y": 15079,
+        "w": 48,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e135",
+      "role": "link",
+      "name": "Help",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Help|0",
+      "rect": {
+        "x": 650,
+        "y": 15107,
+        "w": 34,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e136",
+      "role": "link",
+      "name": "Privacy Policy",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Privacy Policy|0",
+      "rect": {
+        "x": 859,
+        "y": 14855,
+        "w": 93,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e137",
+      "role": "link",
+      "name": "Terms of Service",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Terms of Service|0",
+      "rect": {
+        "x": 859,
+        "y": 14883,
+        "w": 110,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e138",
+      "role": "link",
+      "name": "Cookie Policy",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Cookie Policy|0",
+      "rect": {
+        "x": 859,
+        "y": 14911,
+        "w": 90,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e139",
+      "role": "link",
+      "name": "DPA",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|DPA|0",
+      "rect": {
+        "x": 859,
+        "y": 14939,
+        "w": 31,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e140",
+      "role": "link",
+      "name": "Acceptable Use Policy",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Acceptable Use Policy|0",
+      "rect": {
+        "x": 859,
+        "y": 14967,
+        "w": 146,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e141",
+      "role": "link",
+      "name": "Legal (all documents)",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Legal (all documents)|0",
+      "rect": {
+        "x": 859,
+        "y": 14995,
+        "w": 140,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e142",
+      "role": "link",
+      "name": "Trust Center",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Trust Center|0",
+      "rect": {
+        "x": 859,
+        "y": 15023,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e143",
+      "role": "link",
+      "name": "Status",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Status|0",
+      "rect": {
+        "x": 859,
+        "y": 15051,
+        "w": 46,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e144",
+      "role": "link",
+      "name": "GitHub",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|GitHub|0",
+      "rect": {
+        "x": 1069,
+        "y": 14855,
+        "w": 48,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e145",
+      "role": "link",
+      "name": "X",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|X|0",
+      "rect": {
+        "x": 1069,
+        "y": 14883,
+        "w": 12,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e146",
+      "role": "link",
+      "name": "LinkedIn",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|LinkedIn|0",
+      "rect": {
+        "x": 1069,
+        "y": 14911,
+        "w": 58,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e147",
+      "role": "link",
+      "name": "YouTube",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|YouTube|0",
+      "rect": {
+        "x": 1069,
+        "y": 14939,
+        "w": 57,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e148",
+      "role": "link",
+      "name": "Instagram",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Instagram|0",
+      "rect": {
+        "x": 1069,
+        "y": 14967,
+        "w": 69,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e149",
+      "role": "link",
+      "name": "Vercel",
+      "ctx": "nav: Vercel Directory",
+      "fp": "link|Vercel|1",
+      "rect": {
+        "x": 24,
+        "y": 15157,
+        "w": 185,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e150",
+      "role": "link",
+      "name": "Loading status…",
+      "ctx": "footer",
+      "fp": "link|Loading status…|0",
+      "rect": {
+        "x": 4,
+        "y": 15221,
+        "w": 156,
+        "h": 34
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e151",
+      "role": "button",
+      "name": "View as AI agent",
+      "ctx": "footer",
+      "fp": "button|View as AI agent|0",
+      "rect": {
+        "x": 1232,
+        "y": 15226,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Scale your app, control your costs Hobby $0 /mo. The perfect starting place for your web app or personal project. Import",
+  "contentHash": "i7836x",
+  "totalCandidates": 318
+}

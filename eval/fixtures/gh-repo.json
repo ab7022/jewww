@@ -1,0 +1,3108 @@
+{
+  "url": "https://github.com/microsoft/playwright",
+  "title": "GitHub - microsoft/playwright: Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. · GitHub",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 7533
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "banner",
+      "name": "Navigation Menu Platform Solutions Resources Open Source Enterprise Pricing Sign in Sign up",
+      "ctx": "header",
+      "fp": "banner|Navigation Menu Platform Solutions Resources Open Source Enterprise Pricing Sign in Sign up|0",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 72
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "Homepage",
+      "ctx": "header",
+      "fp": "link|Homepage|0",
+      "rect": {
+        "x": 32,
+        "y": 20,
+        "w": 32,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "button",
+      "name": "Search or jump to, type / to search",
+      "ctx": "header",
+      "st": "collapsed",
+      "fp": "button|Search or jump to, type / to search|0",
+      "rect": {
+        "x": 1001,
+        "y": 20,
+        "w": 42,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "button",
+      "name": "Appearance settings",
+      "ctx": "header",
+      "fp": "button|Appearance settings|0",
+      "rect": {
+        "x": 1216,
+        "y": 20,
+        "w": 32,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "link",
+      "name": "microsoft",
+      "fp": "link|microsoft|0",
+      "rect": {
+        "x": 56,
+        "y": 91,
+        "w": 83,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "link",
+      "name": "playwright",
+      "fp": "link|playwright|0",
+      "rect": {
+        "x": 152,
+        "y": 91,
+        "w": 97,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "link",
+      "name": "You must be signed in to change notification settings",
+      "fp": "link|You must be signed in to change notification settings|0",
+      "rect": {
+        "x": 858,
+        "y": 88,
+        "w": 124,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "Fork 6.5k",
+      "fp": "link|Fork 6.5k|0",
+      "rect": {
+        "x": 990,
+        "y": 88,
+        "w": 120,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "You must be signed in to star a repository",
+      "fp": "link|You must be signed in to star a repository|0",
+      "rect": {
+        "x": 1118,
+        "y": 88,
+        "w": 130,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Code",
+      "ctx": "nav: Repository",
+      "fp": "link|Code|0",
+      "rect": {
+        "x": 32,
+        "y": 143,
+        "w": 75,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "Issues 185",
+      "ctx": "nav: Repository",
+      "fp": "link|Issues 185|0",
+      "rect": {
+        "x": 115,
+        "y": 143,
+        "w": 126,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "Pull requests 34",
+      "ctx": "nav: Repository",
+      "fp": "link|Pull requests 34|0",
+      "rect": {
+        "x": 250,
+        "y": 143,
+        "w": 166,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "link",
+      "name": "Actions",
+      "ctx": "nav: Repository",
+      "fp": "link|Actions|0",
+      "rect": {
+        "x": 424,
+        "y": 143,
+        "w": 91,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "link",
+      "name": "Security and quality",
+      "ctx": "nav: Repository",
+      "fp": "link|Security and quality|0",
+      "rect": {
+        "x": 522,
+        "y": 143,
+        "w": 175,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "link",
+      "name": "Insights",
+      "ctx": "nav: Repository",
+      "fp": "link|Insights|0",
+      "rect": {
+        "x": 705,
+        "y": 143,
+        "w": 94,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "button",
+      "name": "main branch",
+      "st": "collapsed",
+      "fp": "button|main branch|0",
+      "rect": {
+        "x": 32,
+        "y": 206,
+        "w": 106,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "178 Branches",
+      "fp": "link|178 Branches|0",
+      "rect": {
+        "x": 146,
+        "y": 206,
+        "w": 124,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "link",
+      "name": "166 Tags",
+      "fp": "link|166 Tags|0",
+      "rect": {
+        "x": 270,
+        "y": 206,
+        "w": 94,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "combobox",
+      "name": "Go to file",
+      "st": "collapsed",
+      "fp": "combobox|Go to file|0",
+      "rect": {
+        "x": 648,
+        "y": 207,
+        "w": 154,
+        "h": 30
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e20",
+      "role": "button",
+      "name": "Go to file",
+      "st": "collapsed",
+      "fp": "button|Go to file|0",
+      "rect": {
+        "x": 827,
+        "y": 206,
+        "w": 109,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "link",
+      "name": "yury-s",
+      "ctx": "Latest commit",
+      "fp": "link|yury-s|0",
+      "rect": {
+        "x": 45,
+        "y": 270,
+        "w": 9,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "link",
+      "name": "commits by yury-s",
+      "ctx": "Latest commit",
+      "fp": "link|commits by yury-s|0",
+      "rect": {
+        "x": 54,
+        "y": 271,
+        "w": 180,
+        "h": 21
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "link",
+      "name": "chore(coverage): istanbul instrumentation for the trace viewer and ht…",
+      "ctx": "Latest commit",
+      "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and ht…|0",
+      "rect": {
+        "x": 242,
+        "y": 273,
+        "w": 455,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "button",
+      "name": "Open commit details",
+      "ctx": "Latest commit",
+      "st": "collapsed",
+      "fp": "button|Open commit details|0",
+      "rect": {
+        "x": 591,
+        "y": 267,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "button",
+      "name": "failure",
+      "ctx": "Latest commit",
+      "fp": "button|failure|0",
+      "rect": {
+        "x": 627,
+        "y": 267,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "Commit 07f1a61",
+      "ctx": "Latest commit",
+      "fp": "link|Commit 07f1a61|0",
+      "rect": {
+        "x": 671,
+        "y": 272,
+        "w": 44,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "17,916 Commits",
+      "ctx": "History",
+      "fp": "link|17,916 Commits|0",
+      "rect": {
+        "x": 794,
+        "y": 267,
+        "w": 129,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": ".azure-pipelines, (Directory)",
+      "fp": "link|.azure-pipelines, (Directory)|0",
+      "rect": {
+        "x": 75,
+        "y": 320,
+        "w": 104,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "devops: restore npm publishing from GitHub Actions (#42550)",
+      "fp": "link|devops: restore npm publishing from GitHub Actions (#42550)|0",
+      "rect": {
+        "x": 410,
+        "y": 320,
+        "w": 347,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "#42550",
+      "fp": "link|#42550|0",
+      "rect": {
+        "x": 757,
+        "y": 320,
+        "w": 51,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "devops: restore npm publishing from GitHub Actions (#42550)",
+      "fp": "link|devops: restore npm publishing from GitHub Actions (#42550)|1",
+      "rect": {
+        "x": 808,
+        "y": 320,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": ".claude/skills, (Directory)",
+      "fp": "link|.claude/skills, (Directory)|0",
+      "rect": {
+        "x": 75,
+        "y": 361,
+        "w": 83,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "chore(skills): add cherry-pick skill for release branches (#42667)",
+      "fp": "link|chore(skills): add cherry-pick skill for release branches (#42667)|0",
+      "rect": {
+        "x": 410,
+        "y": 361,
+        "w": 363,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "#42667",
+      "fp": "link|#42667|0",
+      "rect": {
+        "x": 773,
+        "y": 361,
+        "w": 51,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "chore(skills): add cherry-pick skill for release branches (#42667)",
+      "fp": "link|chore(skills): add cherry-pick skill for release branches (#42667)|1",
+      "rect": {
+        "x": 824,
+        "y": 361,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": ".github, (Directory)",
+      "fp": "link|.github, (Directory)|0",
+      "rect": {
+        "x": 75,
+        "y": 402,
+        "w": 45,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "devops(bidi): fix publishing when a single csv report is uploaded (#42764)",
+      "fp": "link|devops(bidi): fix publishing when a single csv report is uploaded (#42764)|0",
+      "rect": {
+        "x": 410,
+        "y": 402,
+        "w": 423,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "#4…",
+      "fp": "link|#4…|0",
+      "rect": {
+        "x": 833,
+        "y": 402,
+        "w": 28,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "browser_patches, (Directory)",
+      "fp": "link|browser_patches, (Directory)|0",
+      "rect": {
+        "x": 75,
+        "y": 443,
+        "w": 111,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "feat(firefox): roll to r1549 (#42767)",
+      "fp": "link|feat(firefox): roll to r1549 (#42767)|0",
+      "rect": {
+        "x": 410,
+        "y": 443,
+        "w": 171,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "#42767",
+      "fp": "link|#42767|0",
+      "rect": {
+        "x": 581,
+        "y": 443,
+        "w": 50,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "feat(firefox): roll to r1549 (#42767)",
+      "fp": "link|feat(firefox): roll to r1549 (#42767)|1",
+      "rect": {
+        "x": 630,
+        "y": 443,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "link",
+      "name": "docs/src, (Directory)",
+      "fp": "link|docs/src, (Directory)|0",
+      "rect": {
+        "x": 75,
+        "y": 484,
+        "w": 55,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "link",
+      "name": "feat(mcp): offer page-registered WebMCP tools as MCP tools (#42671)",
+      "fp": "link|feat(mcp): offer page-registered WebMCP tools as MCP tools (#42671)|0",
+      "rect": {
+        "x": 410,
+        "y": 484,
+        "w": 406,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "#42671",
+      "fp": "link|#42671|0",
+      "rect": {
+        "x": 816,
+        "y": 484,
+        "w": 49,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "feat(mcp): offer page-registered WebMCP tools as MCP tools (#42671)",
+      "fp": "link|feat(mcp): offer page-registered WebMCP tools as MCP tools (#42671)|1",
+      "rect": {
+        "x": 865,
+        "y": 484,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "examples, (Directory)",
+      "fp": "link|examples, (Directory)|0",
+      "rect": {
+        "x": 75,
+        "y": 525,
+        "w": 61,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "test(components): restore web and html-reporter component tests (#41889)",
+      "fp": "link|test(components): restore web and html-reporter component tests (#41889)|0",
+      "rect": {
+        "x": 410,
+        "y": 525,
+        "w": 440,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "#41889",
+      "fp": "link|#41889|0",
+      "rect": {
+        "x": 850,
+        "y": 525,
+        "w": 50,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "link",
+      "name": "test(components): restore web and html-reporter component tests (#41889)",
+      "fp": "link|test(components): restore web and html-reporter component tests (#41889)|1",
+      "rect": {
+        "x": 899,
+        "y": 525,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "link",
+      "name": "packages, (Directory)",
+      "fp": "link|packages, (Directory)|0",
+      "rect": {
+        "x": 75,
+        "y": 566,
+        "w": 62,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "link",
+      "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
+      "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|0",
+      "rect": {
+        "x": 410,
+        "y": 566,
+        "w": 455,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "link",
+      "name": "tests, (Directory)",
+      "fp": "link|tests, (Directory)|0",
+      "rect": {
+        "x": 75,
+        "y": 607,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "link",
+      "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
+      "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|1",
+      "rect": {
+        "x": 410,
+        "y": 607,
+        "w": 455,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "utils, (Directory)",
+      "fp": "link|utils, (Directory)|0",
+      "rect": {
+        "x": 75,
+        "y": 648,
+        "w": 27,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "link",
+      "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
+      "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|2",
+      "rect": {
+        "x": 410,
+        "y": 648,
+        "w": 455,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": ".editorconfig, (File)",
+      "fp": "link|.editorconfig, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 689,
+        "w": 82,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "link",
+      "name": "Initial commit",
+      "fp": "link|Initial commit|0",
+      "rect": {
+        "x": 410,
+        "y": 689,
+        "w": 86,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": ".gitattributes, (File)",
+      "fp": "link|.gitattributes, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 730,
+        "w": 83,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "link",
+      "name": "feat: implement a new image comparison function (#19166) This patch implements a new image comparison function, codename",
+      "fp": "link|feat: implement a new image comparison function (#19166) This patch implements a new image comparison function, codename|0",
+      "rect": {
+        "x": 410,
+        "y": 730,
+        "w": 331,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "#19166",
+      "fp": "link|#19166|0",
+      "rect": {
+        "x": 740,
+        "y": 730,
+        "w": 48,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "feat: implement a new image comparison function (#19166) This patch implements a new image comparison function, codename",
+      "fp": "link|feat: implement a new image comparison function (#19166) This patch implements a new image comparison function, codename|1",
+      "rect": {
+        "x": 788,
+        "y": 730,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": ".gitignore, (File)",
+      "fp": "link|.gitignore, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 771,
+        "w": 61,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "link",
+      "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
+      "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|3",
+      "rect": {
+        "x": 410,
+        "y": 771,
+        "w": 455,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "link",
+      "name": "CLAUDE.md, (File)",
+      "fp": "link|CLAUDE.md, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 812,
+        "w": 80,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "link",
+      "name": "chore: remove experimental component testing (#42168)",
+      "fp": "link|chore: remove experimental component testing (#42168)|0",
+      "rect": {
+        "x": 410,
+        "y": 812,
+        "w": 313,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "link",
+      "name": "#42168",
+      "fp": "link|#42168|0",
+      "rect": {
+        "x": 723,
+        "y": 812,
+        "w": 50,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "chore: remove experimental component testing (#42168)",
+      "fp": "link|chore: remove experimental component testing (#42168)|1",
+      "rect": {
+        "x": 773,
+        "y": 812,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "CODE_OF_CONDUCT.md, (File)",
+      "fp": "link|CODE_OF_CONDUCT.md, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 853,
+        "w": 163,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "Revert \"chore: rework the crlf in md fix\" This reverts commit b5914e0982091b5138d11d23514470acede33ede.",
+      "fp": "link|Revert \"chore: rework the crlf in md fix\" This reverts commit b5914e0982091b5138d11d23514470acede33ede.|0",
+      "rect": {
+        "x": 410,
+        "y": 853,
+        "w": 255,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "link",
+      "name": "CONTRIBUTING.md, (File)",
+      "fp": "link|CONTRIBUTING.md, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 894,
+        "w": 129,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "chore: update contributors' guide (#40541)",
+      "fp": "link|chore: update contributors' guide (#40541)|0",
+      "rect": {
+        "x": 410,
+        "y": 894,
+        "w": 225,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "link",
+      "name": "#40541",
+      "fp": "link|#40541|0",
+      "rect": {
+        "x": 635,
+        "y": 894,
+        "w": 50,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "link",
+      "name": "chore: update contributors' guide (#40541)",
+      "fp": "link|chore: update contributors' guide (#40541)|1",
+      "rect": {
+        "x": 684,
+        "y": 894,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": "FILING_ISSUES.md, (File)",
+      "fp": "link|FILING_ISSUES.md, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 935,
+        "w": 124,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "link",
+      "name": "docs: issue guide (#34457)",
+      "fp": "link|docs: issue guide (#34457)|0",
+      "rect": {
+        "x": 410,
+        "y": 935,
+        "w": 121,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "#34457",
+      "fp": "link|#34457|0",
+      "rect": {
+        "x": 531,
+        "y": 935,
+        "w": 51,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "link",
+      "name": "docs: issue guide (#34457)",
+      "fp": "link|docs: issue guide (#34457)|1",
+      "rect": {
+        "x": 583,
+        "y": 935,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "LICENSE, (File)",
+      "fp": "link|LICENSE, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 976,
+        "w": 57,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "chore(license): use Apache 2.0 (#389)",
+      "fp": "link|chore(license): use Apache 2.0 (#389)|0",
+      "rect": {
+        "x": 410,
+        "y": 976,
+        "w": 209,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "#389",
+      "fp": "link|#389|0",
+      "rect": {
+        "x": 619,
+        "y": 976,
+        "w": 35,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "link",
+      "name": "chore(license): use Apache 2.0 (#389)",
+      "fp": "link|chore(license): use Apache 2.0 (#389)|1",
+      "rect": {
+        "x": 654,
+        "y": 976,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "link",
+      "name": "NOTICE, (File)",
+      "fp": "link|NOTICE, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 1017,
+        "w": 51,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "link",
+      "name": "chore(license): add NOTICE (#309)",
+      "fp": "link|chore(license): add NOTICE (#309)|0",
+      "rect": {
+        "x": 410,
+        "y": 1017,
+        "w": 188,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "link",
+      "name": "#309",
+      "fp": "link|#309|0",
+      "rect": {
+        "x": 598,
+        "y": 1017,
+        "w": 35,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "chore(license): add NOTICE (#309)",
+      "fp": "link|chore(license): add NOTICE (#309)|1",
+      "rect": {
+        "x": 633,
+        "y": 1017,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "README.md, (File)",
+      "fp": "link|README.md, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 1058,
+        "w": 81,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "feat(firefox): roll to r1549 (#42767)",
+      "fp": "link|feat(firefox): roll to r1549 (#42767)|2",
+      "rect": {
+        "x": 410,
+        "y": 1058,
+        "w": 171,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "link",
+      "name": "#42767",
+      "fp": "link|#42767|1",
+      "rect": {
+        "x": 581,
+        "y": 1058,
+        "w": 50,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "feat(firefox): roll to r1549 (#42767)",
+      "fp": "link|feat(firefox): roll to r1549 (#42767)|3",
+      "rect": {
+        "x": 630,
+        "y": 1058,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "link",
+      "name": "SECURITY.md, (File)",
+      "fp": "link|SECURITY.md, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 1099,
+        "w": 90,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "link",
+      "name": "chore(policy files): Update SECURITY.md to V0.0.9 (#31775) Prompted by https://github.com/microsoft/playwright/pull/3173",
+      "fp": "link|chore(policy files): Update SECURITY.md to V0.0.9 (#31775) Prompted by https://github.com/microsoft/playwright/pull/3173|0",
+      "rect": {
+        "x": 410,
+        "y": 1099,
+        "w": 336,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "link",
+      "name": "#31775",
+      "fp": "link|#31775|0",
+      "rect": {
+        "x": 746,
+        "y": 1099,
+        "w": 48,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "link",
+      "name": "chore(policy files): Update SECURITY.md to V0.0.9 (#31775) Prompted by https://github.com/microsoft/playwright/pull/3173",
+      "fp": "link|chore(policy files): Update SECURITY.md to V0.0.9 (#31775) Prompted by https://github.com/microsoft/playwright/pull/3173|1",
+      "rect": {
+        "x": 794,
+        "y": 1099,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "link",
+      "name": "SUPPORT.md, (File)",
+      "fp": "link|SUPPORT.md, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 1140,
+        "w": 88,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "link",
+      "name": "docs: add SUPPORT.md (#32362)",
+      "fp": "link|docs: add SUPPORT.md (#32362)|0",
+      "rect": {
+        "x": 410,
+        "y": 1140,
+        "w": 165,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "#32362",
+      "fp": "link|#32362|0",
+      "rect": {
+        "x": 574,
+        "y": 1140,
+        "w": 51,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "link",
+      "name": "docs: add SUPPORT.md (#32362)",
+      "fp": "link|docs: add SUPPORT.md (#32362)|1",
+      "rect": {
+        "x": 626,
+        "y": 1140,
+        "w": 5,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "link",
+      "name": "eslint.config.mjs, (File)",
+      "fp": "link|eslint.config.mjs, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 1181,
+        "w": 105,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "link",
+      "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
+      "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|4",
+      "rect": {
+        "x": 410,
+        "y": 1181,
+        "w": 455,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "link",
+      "name": "package-lock.json, (File)",
+      "fp": "link|package-lock.json, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 1222,
+        "w": 118,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
+      "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|5",
+      "rect": {
+        "x": 410,
+        "y": 1222,
+        "w": 455,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "package.json, (File)",
+      "fp": "link|package.json, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 1263,
+        "w": 85,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "link",
+      "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
+      "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|6",
+      "rect": {
+        "x": 410,
+        "y": 1263,
+        "w": 455,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "tsconfig.json, (File)",
+      "fp": "link|tsconfig.json, (File)|0",
+      "rect": {
+        "x": 75,
+        "y": 1304,
+        "w": 83,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "feat(ct): type mount() story ids through a generated Stories registry (#42518)",
+      "fp": "link|feat(ct): type mount() story ids through a generated Stories registry (#42518)|0",
+      "rect": {
+        "x": 410,
+        "y": 1304,
+        "w": 446,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "link",
+      "name": "…",
+      "fp": "link|…|0",
+      "rect": {
+        "x": 855,
+        "y": 1304,
+        "w": 11,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "list",
+      "name": "README Code of conduct Contributing Apache-2.0 license Security",
+      "ctx": "nav: Repository files",
+      "fp": "list|README Code of conduct Contributing Apache-2.0 license Security|0",
+      "rect": {
+        "x": 41,
+        "y": 1358,
+        "w": 844,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e109",
+      "role": "button",
+      "name": "Outline",
+      "ctx": "Repository files navigation",
+      "st": "collapsed",
+      "fp": "button|Outline|0",
+      "rect": {
+        "x": 893,
+        "y": 1358,
+        "w": 34,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e110",
+      "role": "link",
+      "name": "npm version",
+      "fp": "link|npm version|0",
+      "rect": {
+        "x": 65,
+        "y": 1502,
+        "w": 88,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e111",
+      "role": "link",
+      "name": "Chromium version",
+      "fp": "link|Chromium version|0",
+      "rect": {
+        "x": 157,
+        "y": 1502,
+        "w": 167,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e112",
+      "role": "link",
+      "name": "Firefox version",
+      "fp": "link|Firefox version|0",
+      "rect": {
+        "x": 328,
+        "y": 1502,
+        "w": 103,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e113",
+      "role": "link",
+      "name": "WebKit version",
+      "fp": "link|WebKit version|0",
+      "rect": {
+        "x": 436,
+        "y": 1502,
+        "w": 99,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e114",
+      "role": "link",
+      "name": "Join Discord",
+      "fp": "link|Join Discord|0",
+      "rect": {
+        "x": 539,
+        "y": 1502,
+        "w": 80,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
+      "role": "link",
+      "name": "Documentation",
+      "fp": "link|Documentation|0",
+      "rect": {
+        "x": 65,
+        "y": 1548,
+        "w": 168,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e116",
+      "role": "link",
+      "name": "API reference",
+      "fp": "link|API reference|0",
+      "rect": {
+        "x": 249,
+        "y": 1548,
+        "w": 147,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e117",
+      "role": "link",
+      "name": "Playwright Test",
+      "fp": "link|Playwright Test|0",
+      "rect": {
+        "x": 79,
+        "y": 1814,
+        "w": 117,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e118",
+      "role": "link",
+      "name": "Playwright CLI",
+      "fp": "link|Playwright CLI|0",
+      "rect": {
+        "x": 79,
+        "y": 1851,
+        "w": 110,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e119",
+      "role": "link",
+      "name": "Playwright MCP",
+      "fp": "link|Playwright MCP|0",
+      "rect": {
+        "x": 79,
+        "y": 1888,
+        "w": 120,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e120",
+      "role": "link",
+      "name": "Playwright Library",
+      "fp": "link|Playwright Library|0",
+      "rect": {
+        "x": 79,
+        "y": 1925,
+        "w": 138,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e121",
+      "role": "link",
+      "name": "VS Code Extension",
+      "fp": "link|VS Code Extension|0",
+      "rect": {
+        "x": 79,
+        "y": 1962,
+        "w": 143,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e122",
+      "role": "link",
+      "name": "Install from Marketplace",
+      "fp": "link|Install from Marketplace|0",
+      "rect": {
+        "x": 578,
+        "y": 1962,
+        "w": 174,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e123",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "npm init playwright@latest",
+      "fp": "button|Copy code to clipboard|0",
+      "rect": {
+        "x": 867,
+        "y": 2217,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e124",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "npm i -D @playwright/test npx playwright install",
+      "fp": "button|Copy code to clipboard|1",
+      "rect": {
+        "x": 867,
+        "y": 2325,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e125",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "import { test, expect } from '@playwright/test'; test('has title', async ({ page }) => { await page.goto('https://playwr",
+      "fp": "button|Copy code to clipboard|2",
+      "rect": {
+        "x": 867,
+        "y": 2462,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e126",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "npx playwright test",
+      "fp": "button|Copy code to clipboard|3",
+      "rect": {
+        "x": 867,
+        "y": 2795,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e127",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "page.getByRole('button', { name: 'Submit' }) page.getByLabel('Email') page.getByPlaceholder('Search...') page.getByTestI",
+      "fp": "button|Copy code to clipboard|4",
+      "rect": {
+        "x": 867,
+        "y": 3080,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e128",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "// Save state after login await page.context().storageState({ path: 'auth.json' }); // Reuse in other tests test.use({ s",
+      "fp": "button|Copy code to clipboard|5",
+      "rect": {
+        "x": 867,
+        "y": 3271,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e129",
+      "role": "link",
+      "name": "Trace Viewer",
+      "fp": "link|Trace Viewer|0",
+      "rect": {
+        "x": 397,
+        "y": 3436,
+        "w": 94,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e130",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "// playwright.config.ts export default defineConfig({ use: { trace: 'on-first-retry', }, });",
+      "fp": "button|Copy code to clipboard|6",
+      "rect": {
+        "x": 867,
+        "y": 3481,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e131",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "npx playwright show-trace trace.zip",
+      "fp": "button|Copy code to clipboard|7",
+      "rect": {
+        "x": 867,
+        "y": 3648,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e132",
+      "role": "link",
+      "name": "Full testing documentation",
+      "fp": "link|Full testing documentation|0",
+      "rect": {
+        "x": 65,
+        "y": 3751,
+        "w": 193,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e133",
+      "role": "link",
+      "name": "Playwright CLI",
+      "fp": "link|Playwright CLI|1",
+      "rect": {
+        "x": 65,
+        "y": 3881,
+        "w": 104,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e134",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "npm install -g @playwright/cli@latest",
+      "fp": "button|Copy code to clipboard|8",
+      "rect": {
+        "x": 867,
+        "y": 3999,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e135",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "playwright-cli install --skills",
+      "fp": "button|Copy code to clipboard|9",
+      "rect": {
+        "x": 867,
+        "y": 4107,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e136",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "Test the \"add todo\" flow on https://demo.playwright.dev/todomvc using playwright-cli. Take screenshots for all successfu",
+      "fp": "button|Copy code to clipboard|10",
+      "rect": {
+        "x": 867,
+        "y": 4264,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e137",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "playwright-cli open https://demo.playwright.dev/todomvc/ --headed playwright-cli type \"Buy groceries\" playwright-cli pre",
+      "fp": "button|Copy code to clipboard|11",
+      "rect": {
+        "x": 867,
+        "y": 4391,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e138",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "playwright-cli show",
+      "fp": "button|Copy code to clipboard|12",
+      "rect": {
+        "x": 867,
+        "y": 4631,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e139",
+      "role": "link",
+      "name": "Full CLI documentation",
+      "fp": "link|Full CLI documentation|0",
+      "rect": {
+        "x": 65,
+        "y": 4694,
+        "w": 167,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e140",
+      "role": "link",
+      "name": "GitHub",
+      "fp": "link|GitHub|0",
+      "rect": {
+        "x": 244,
+        "y": 4694,
+        "w": 51,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e141",
+      "role": "link",
+      "name": "Playwright MCP server",
+      "fp": "link|Playwright MCP server|0",
+      "rect": {
+        "x": 97,
+        "y": 4824,
+        "w": 164,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e142",
+      "role": "link",
+      "name": "Model Context Protocol",
+      "fp": "link|Model Context Protocol|0",
+      "rect": {
+        "x": 612,
+        "y": 4824,
+        "w": 171,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e143",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "{ \"mcpServers\": { \"playwright\": { \"command\": \"npx\", \"args\": [\"@playwright/mcp@latest\"] } } }",
+      "fp": "button|Copy code to clipboard|13",
+      "rect": {
+        "x": 867,
+        "y": 4982,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e144",
+      "role": "link",
+      "name": "Install in VS Code",
+      "fp": "link|Install in VS Code|0",
+      "rect": {
+        "x": 65,
+        "y": 5225,
+        "w": 170,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e145",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "claude mcp add playwright npx @playwright/mcp@latest",
+      "fp": "button|Copy code to clipboard|14",
+      "rect": {
+        "x": 867,
+        "y": 5310,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e146",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "Navigate to https://demo.playwright.dev/todomvc and add a few todo items.",
+      "fp": "button|Copy code to clipboard|15",
+      "rect": {
+        "x": 867,
+        "y": 5467,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e147",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "- heading \"todos\" [level=1] - textbox \"What needs to be done?\" [ref=e5] - listitem: - checkbox \"Toggle Todo\" [ref=e10] -",
+      "fp": "button|Copy code to clipboard|16",
+      "rect": {
+        "x": 867,
+        "y": 5574,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e148",
+      "role": "link",
+      "name": "Full MCP documentation",
+      "fp": "link|Full MCP documentation|0",
+      "rect": {
+        "x": 65,
+        "y": 5780,
+        "w": 177,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e149",
+      "role": "link",
+      "name": "GitHub",
+      "fp": "link|GitHub|1",
+      "rect": {
+        "x": 255,
+        "y": 5780,
+        "w": 51,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e150",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "npm i playwright",
+      "fp": "button|Copy code to clipboard|17",
+      "rect": {
+        "x": 867,
+        "y": 6028,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e151",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "import { chromium } from 'playwright'; const browser = await chromium.launch(); const page = await browser.newPage(); aw",
+      "fp": "button|Copy code to clipboard|18",
+      "rect": {
+        "x": 867,
+        "y": 6185,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e152",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "import { chromium } from 'playwright'; const browser = await chromium.launch(); const page = await browser.newPage(); aw",
+      "fp": "button|Copy code to clipboard|19",
+      "rect": {
+        "x": 867,
+        "y": 6411,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e153",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "import { chromium, devices } from 'playwright'; const browser = await chromium.launch(); const context = await browser.n",
+      "fp": "button|Copy code to clipboard|20",
+      "rect": {
+        "x": 867,
+        "y": 6637,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e154",
+      "role": "button",
+      "name": "Copy code to clipboard",
+      "value": "import { chromium } from 'playwright'; const browser = await chromium.launch(); const page = await browser.newPage(); aw",
+      "fp": "button|Copy code to clipboard|21",
+      "rect": {
+        "x": 867,
+        "y": 6883,
+        "w": 28,
+        "h": 28
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e155",
+      "role": "link",
+      "name": "Library documentation",
+      "fp": "link|Library documentation|0",
+      "rect": {
+        "x": 65,
+        "y": 7064,
+        "w": 164,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e156",
+      "role": "link",
+      "name": "API reference",
+      "fp": "link|API reference|1",
+      "rect": {
+        "x": 241,
+        "y": 7064,
+        "w": 98,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e157",
+      "role": "link",
+      "name": "Playwright VS Code extension",
+      "fp": "link|Playwright VS Code extension|0",
+      "rect": {
+        "x": 97,
+        "y": 7194,
+        "w": 217,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e158",
+      "role": "link",
+      "name": "Install the extension",
+      "fp": "link|Install the extension|0",
+      "rect": {
+        "x": 65,
+        "y": 7490,
+        "w": 144,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e159",
+      "role": "link",
+      "name": "VS Code guide",
+      "fp": "link|VS Code guide|0",
+      "rect": {
+        "x": 221,
+        "y": 7490,
+        "w": 108,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e160",
+      "role": "link",
+      "name": "Chrome for Testing",
+      "fp": "link|Chrome for Testing|0",
+      "rect": {
+        "x": 471,
+        "y": 7785,
+        "w": 138,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e161",
+      "role": "link",
+      "name": "Python",
+      "fp": "link|Python|0",
+      "rect": {
+        "x": 286,
+        "y": 7887,
+        "w": 51,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e162",
+      "role": "link",
+      "name": ".NET",
+      "fp": "link|.NET|0",
+      "rect": {
+        "x": 346,
+        "y": 7887,
+        "w": 34,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e163",
+      "role": "link",
+      "name": "Java",
+      "fp": "link|Java|0",
+      "rect": {
+        "x": 419,
+        "y": 7887,
+        "w": 33,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e164",
+      "role": "link",
+      "name": "Documentation",
+      "fp": "link|Documentation|1",
+      "rect": {
+        "x": 97,
+        "y": 7989,
+        "w": 111,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e165",
+      "role": "link",
+      "name": "API reference",
+      "fp": "link|API reference|2",
+      "rect": {
+        "x": 97,
+        "y": 8017,
+        "w": 98,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e166",
+      "role": "link",
+      "name": "MCP server",
+      "fp": "link|MCP server|0",
+      "rect": {
+        "x": 97,
+        "y": 8045,
+        "w": 84,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e167",
+      "role": "link",
+      "name": "CLI for coding agents",
+      "fp": "link|CLI for coding agents|0",
+      "rect": {
+        "x": 97,
+        "y": 8073,
+        "w": 155,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e168",
+      "role": "link",
+      "name": "VS Code extension",
+      "fp": "link|VS Code extension|0",
+      "rect": {
+        "x": 97,
+        "y": 8101,
+        "w": 137,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e169",
+      "role": "link",
+      "name": "Contribution guide",
+      "fp": "link|Contribution guide|0",
+      "rect": {
+        "x": 97,
+        "y": 8129,
+        "w": 135,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e170",
+      "role": "link",
+      "name": "Changelog",
+      "fp": "link|Changelog|0",
+      "rect": {
+        "x": 97,
+        "y": 8157,
+        "w": 78,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e171",
+      "role": "link",
+      "name": "Discord",
+      "fp": "link|Discord|0",
+      "rect": {
+        "x": 97,
+        "y": 8185,
+        "w": 56,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e172",
+      "role": "link",
+      "name": "playwright.dev",
+      "ctx": "About",
+      "fp": "link|playwright.dev|0",
+      "rect": {
+        "x": 1000,
+        "y": 352,
+        "w": 100,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e173",
+      "role": "link",
+      "name": "automation",
+      "ctx": "Topics",
+      "fp": "link|automation|0",
+      "rect": {
+        "x": 976,
+        "y": 383,
+        "w": 93,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e174",
+      "role": "link",
+      "name": "chrome",
+      "ctx": "Topics",
+      "fp": "link|chrome|0",
+      "rect": {
+        "x": 1071,
+        "y": 383,
+        "w": 71,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e175",
+      "role": "link",
+      "name": "chromium",
+      "ctx": "Topics",
+      "fp": "link|chromium|0",
+      "rect": {
+        "x": 1143,
+        "y": 383,
+        "w": 85,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e176",
+      "role": "link",
+      "name": "e2e-testing",
+      "ctx": "Topics",
+      "fp": "link|e2e-testing|0",
+      "rect": {
+        "x": 976,
+        "y": 417,
+        "w": 95,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e177",
+      "role": "link",
+      "name": "electron",
+      "ctx": "Topics",
+      "fp": "link|electron|0",
+      "rect": {
+        "x": 1073,
+        "y": 417,
+        "w": 75,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e178",
+      "role": "link",
+      "name": "end-to-end-testing",
+      "ctx": "Topics",
+      "fp": "link|end-to-end-testing|0",
+      "rect": {
+        "x": 976,
+        "y": 450,
+        "w": 141,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e179",
+      "role": "link",
+      "name": "firefox",
+      "ctx": "Topics",
+      "fp": "link|firefox|0",
+      "rect": {
+        "x": 1119,
+        "y": 450,
+        "w": 64,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e180",
+      "role": "link",
+      "name": "javascript",
+      "ctx": "Topics",
+      "fp": "link|javascript|0",
+      "rect": {
+        "x": 976,
+        "y": 484,
+        "w": 84,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e181",
+      "role": "link",
+      "name": "playwright",
+      "ctx": "Topics",
+      "fp": "link|playwright|1",
+      "rect": {
+        "x": 1062,
+        "y": 484,
+        "w": 89,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e182",
+      "role": "link",
+      "name": "test",
+      "ctx": "Topics",
+      "fp": "link|test|0",
+      "rect": {
+        "x": 1152,
+        "y": 484,
+        "w": 49,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e183",
+      "role": "link",
+      "name": "test-automation",
+      "ctx": "Topics",
+      "fp": "link|test-automation|0",
+      "rect": {
+        "x": 976,
+        "y": 517,
+        "w": 122,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e184",
+      "role": "link",
+      "name": "testing",
+      "ctx": "Topics",
+      "fp": "link|testing|0",
+      "rect": {
+        "x": 1100,
+        "y": 517,
+        "w": 67,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e185",
+      "role": "link",
+      "name": "testing-tools",
+      "ctx": "Topics",
+      "fp": "link|testing-tools|0",
+      "rect": {
+        "x": 976,
+        "y": 551,
+        "w": 102,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e186",
+      "role": "link",
+      "name": "web",
+      "ctx": "Topics",
+      "fp": "link|web|0",
+      "rect": {
+        "x": 1080,
+        "y": 551,
+        "w": 50,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e187",
+      "role": "link",
+      "name": "webkit",
+      "ctx": "Topics",
+      "fp": "link|webkit|0",
+      "rect": {
+        "x": 1133,
+        "y": 551,
+        "w": 65,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e188",
+      "role": "link",
+      "name": "Readme",
+      "ctx": "Resources",
+      "fp": "link|Readme|0",
+      "rect": {
+        "x": 976,
+        "y": 586,
+        "w": 77,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e189",
+      "role": "link",
+      "name": "Apache-2.0 license",
+      "ctx": "Resources",
+      "fp": "link|Apache-2.0 license|0",
+      "rect": {
+        "x": 976,
+        "y": 615,
+        "w": 149,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e190",
+      "role": "link",
+      "name": "Code of conduct",
+      "ctx": "Code of conduct",
+      "fp": "link|Code of conduct|0",
+      "rect": {
+        "x": 976,
+        "y": 644,
+        "w": 132,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e191",
+      "role": "link",
+      "name": "Contributing",
+      "ctx": "Contributing",
+      "fp": "link|Contributing|0",
+      "rect": {
+        "x": 976,
+        "y": 673,
+        "w": 105,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e192",
+      "role": "link",
+      "name": "Security policy",
+      "ctx": "Security policy",
+      "fp": "link|Security policy|0",
+      "rect": {
+        "x": 976,
+        "y": 702,
+        "w": 119,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e193",
+      "role": "link",
+      "name": "Activity",
+      "ctx": "Security policy",
+      "fp": "link|Activity|0",
+      "rect": {
+        "x": 976,
+        "y": 731,
+        "w": 72,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e194",
+      "role": "link",
+      "name": "Custom properties",
+      "ctx": "Security policy",
+      "fp": "link|Custom properties|0",
+      "rect": {
+        "x": 976,
+        "y": 760,
+        "w": 144,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e195",
+      "role": "link",
+      "name": "6.5k forks",
+      "ctx": "Forks",
+      "fp": "link|6.5k forks|0",
+      "rect": {
+        "x": 976,
+        "y": 847,
+        "w": 90,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e196",
+      "role": "link",
+      "name": "Report repository",
+      "ctx": "Forks",
+      "fp": "link|Report repository|0",
+      "rect": {
+        "x": 976,
+        "y": 876,
+        "w": 113,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e197",
+      "role": "link",
+      "name": "Releases",
+      "fp": "link|Releases|0",
+      "rect": {
+        "x": 976,
+        "y": 928,
+        "w": 68,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e198",
+      "role": "link",
+      "name": "v1.63.0 Latest",
+      "ctx": "Releases166 (166)",
+      "fp": "link|v1.63.0 Latest|0",
+      "rect": {
+        "x": 976,
+        "y": 964,
+        "w": 272,
+        "h": 39
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e199",
+      "role": "link",
+      "name": "+ 165 releases",
+      "ctx": "Releases166 (166)",
+      "fp": "link|+ 165 releases|0",
+      "rect": {
+        "x": 976,
+        "y": 1019,
+        "w": 82,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e200",
+      "role": "link",
+      "name": "Used by",
+      "fp": "link|Used by|0",
+      "rect": {
+        "x": 976,
+        "y": 1069,
+        "w": 62,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e201",
+      "role": "link",
+      "name": "@Skudo-Privacy",
+      "ctx": "Used by510K (510K)",
+      "fp": "link|@Skudo-Privacy|0",
+      "rect": {
+        "x": 976,
+        "y": 1105,
+        "w": 272,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e202",
+      "role": "link",
+      "name": "Contributors",
+      "fp": "link|Contributors|0",
+      "rect": {
+        "x": 976,
+        "y": 1170,
+        "w": 96,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e203",
+      "role": "link",
+      "name": "@pavelfeldman",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@pavelfeldman|0",
+      "rect": {
+        "x": 976,
+        "y": 1212,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e204",
+      "role": "link",
+      "name": "@dgozman",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@dgozman|0",
+      "rect": {
+        "x": 1016,
+        "y": 1212,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e205",
+      "role": "link",
+      "name": "@yury-s",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@yury-s|0",
+      "rect": {
+        "x": 1056,
+        "y": 1212,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e206",
+      "role": "link",
+      "name": "@mxschmitt",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@mxschmitt|0",
+      "rect": {
+        "x": 1096,
+        "y": 1212,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e207",
+      "role": "link",
+      "name": "@aslushnikov",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@aslushnikov|0",
+      "rect": {
+        "x": 1136,
+        "y": 1212,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e208",
+      "role": "link",
+      "name": "@github-actions[bot]",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@github-actions[bot]|0",
+      "rect": {
+        "x": 1176,
+        "y": 1212,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e209",
+      "role": "link",
+      "name": "@playwrightmachine",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@playwrightmachine|0",
+      "rect": {
+        "x": 976,
+        "y": 1252,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e210",
+      "role": "link",
+      "name": "@Skn0tt",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@Skn0tt|0",
+      "rect": {
+        "x": 1016,
+        "y": 1252,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e211",
+      "role": "link",
+      "name": "@JoelEinbinder",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@JoelEinbinder|0",
+      "rect": {
+        "x": 1056,
+        "y": 1252,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e212",
+      "role": "link",
+      "name": "@microsoft-playwright-automation[bot]",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@microsoft-playwright-automation[bot]|0",
+      "rect": {
+        "x": 1096,
+        "y": 1252,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e213",
+      "role": "link",
+      "name": "@agg23",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@agg23|0",
+      "rect": {
+        "x": 1136,
+        "y": 1252,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e214",
+      "role": "link",
+      "name": "@debs-obrien",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@debs-obrien|0",
+      "rect": {
+        "x": 1176,
+        "y": 1252,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e215",
+      "role": "link",
+      "name": "@rwoll",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@rwoll|0",
+      "rect": {
+        "x": 976,
+        "y": 1292,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e216",
+      "role": "link",
+      "name": "@sand4rt",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|@sand4rt|0",
+      "rect": {
+        "x": 1016,
+        "y": 1292,
+        "w": 32,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e217",
+      "role": "link",
+      "name": "+ 782 contributors",
+      "ctx": "Contributors796 (796)",
+      "fp": "link|+ 782 contributors|0",
+      "rect": {
+        "x": 976,
+        "y": 1334,
+        "w": 105,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e218",
+      "role": "progressbar",
+      "name": "TypeScript: 91.7%",
+      "ctx": "Languages",
+      "fp": "progressbar|TypeScript: 91.7%|0",
+      "rect": {
+        "x": 976,
+        "y": 1420,
+        "w": 238,
+        "h": 8
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e219",
+      "role": "progressbar",
+      "name": "HTML: 3.6%",
+      "ctx": "Languages",
+      "fp": "progressbar|HTML: 3.6%|0",
+      "rect": {
+        "x": 1216,
+        "y": 1420,
+        "w": 9,
+        "h": 8
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e220",
+      "role": "progressbar",
+      "name": "CSS: 2.4%",
+      "ctx": "Languages",
+      "fp": "progressbar|CSS: 2.4%|0",
+      "rect": {
+        "x": 1228,
+        "y": 1420,
+        "w": 6,
+        "h": 8
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e221",
+      "role": "link",
+      "name": "TypeScript 91.7%",
+      "ctx": "Languages",
+      "fp": "link|TypeScript 91.7%|0",
+      "rect": {
+        "x": 976,
+        "y": 1439,
+        "w": 119,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e222",
+      "role": "link",
+      "name": "HTML 3.6%",
+      "ctx": "Languages",
+      "fp": "link|HTML 3.6%|0",
+      "rect": {
+        "x": 1107,
+        "y": 1439,
+        "w": 84,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e223",
+      "role": "link",
+      "name": "CSS 2.4%",
+      "ctx": "Languages",
+      "fp": "link|CSS 2.4%|0",
+      "rect": {
+        "x": 976,
+        "y": 1460,
+        "w": 74,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e224",
+      "role": "link",
+      "name": "C++ 0.7%",
+      "ctx": "Languages",
+      "fp": "link|C++ 0.7%|0",
+      "rect": {
+        "x": 1062,
+        "y": 1460,
+        "w": 73,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e225",
+      "role": "link",
+      "name": "Objective-C 0.5%",
+      "ctx": "Languages",
+      "fp": "link|Objective-C 0.5%|0",
+      "rect": {
+        "x": 976,
+        "y": 1481,
+        "w": 120,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e226",
+      "role": "link",
+      "name": "Shell 0.4%",
+      "ctx": "Languages",
+      "fp": "link|Shell 0.4%|0",
+      "rect": {
+        "x": 1108,
+        "y": 1481,
+        "w": 78,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e227",
+      "role": "link",
+      "name": "Other 0.7%",
+      "ctx": "Languages",
+      "fp": "link|Other 0.7%|0",
+      "rect": {
+        "x": 976,
+        "y": 1502,
+        "w": 82,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e228",
+      "role": "contentinfo",
+      "name": "Footer © 2026 GitHub, Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not ",
+      "ctx": "footer",
+      "fp": "contentinfo|Footer © 2026 GitHub, Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not |0",
+      "rect": {
+        "x": 0,
+        "y": 8319,
+        "w": 1280,
+        "h": 114
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e229",
+      "role": "link",
+      "name": "GitHub Homepage",
+      "ctx": "footer",
+      "fp": "link|GitHub Homepage|0",
+      "rect": {
+        "x": 195,
+        "y": 8367,
+        "w": 24,
+        "h": 26
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e230",
+      "role": "button",
+      "name": "Do not share my personal information",
+      "ctx": "nav: Footer",
+      "fp": "button|Do not share my personal information|0",
+      "rect": {
+        "x": 873,
+        "y": 8371,
+        "w": 212,
+        "h": 18
+      },
+      "fillable": false
+    }
+  ],
+  "text": "microsoft / playwright Public Notifications Fork 6.5k Star 96.4k Code Issues 185 Pull requests 34 Actions Security and q",
+  "contentHash": "1g6mn02",
+  "totalCandidates": 412
+}

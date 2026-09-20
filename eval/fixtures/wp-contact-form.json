@@ -1,0 +1,3577 @@
+{
+  "url": "https://www.w3schools.com/html/html_forms.asp",
+  "title": "HTML Forms",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 6313
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Home link",
+      "fp": "link|Home link|0",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 54
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "button",
+      "name": "Tutorials and References",
+      "ctx": "nav",
+      "fp": "button|Tutorials and References|0",
+      "rect": {
+        "x": 75,
+        "y": 0,
+        "w": 103,
+        "h": 56
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "button",
+      "name": "References",
+      "ctx": "nav",
+      "fp": "button|References|0",
+      "rect": {
+        "x": 178,
+        "y": 0,
+        "w": 117,
+        "h": 56
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "button",
+      "name": "Exercises and Quizzes",
+      "ctx": "nav",
+      "fp": "button|Exercises and Quizzes|0",
+      "rect": {
+        "x": 294,
+        "y": 0,
+        "w": 104,
+        "h": 56
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "button",
+      "name": "Certificates",
+      "ctx": "nav",
+      "fp": "button|Certificates|0",
+      "rect": {
+        "x": 399,
+        "y": 0,
+        "w": 119,
+        "h": 56
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "textbox",
+      "name": "Search field",
+      "fp": "textbox|Search field|0",
+      "rect": {
+        "x": 526,
+        "y": 10,
+        "w": 175,
+        "h": 36
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e7",
+      "role": "button",
+      "name": "Button to search",
+      "fp": "button|Button to search|0",
+      "rect": {
+        "x": 666,
+        "y": 11,
+        "w": 34,
+        "h": 34
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "button",
+      "name": "All our services",
+      "fp": "button|All our services|0",
+      "rect": {
+        "x": 709,
+        "y": 10,
+        "w": 36,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "W3Schools Adventure App - iOS and Android",
+      "fp": "link|W3Schools Adventure App - iOS and Android|0",
+      "rect": {
+        "x": 1005,
+        "y": 8,
+        "w": 156,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "button",
+      "name": "Sign in to your account",
+      "fp": "button|Sign in to your account|0",
+      "rect": {
+        "x": 1175,
+        "y": 8,
+        "w": 95,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "W3Schools Certificates",
+      "fp": "link|W3Schools Certificates|0",
+      "rect": {
+        "x": 873,
+        "y": 8,
+        "w": 116,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "generic",
+      "name": "HTML CSS JAVASCRIPT SQL PYTHON JAVA PHP C C++ C# AWS W3.CSS HOW TO BOOTSTRAP REACT MYSQL JQUERY EXCEL XML DJANGO NUMPY P",
+      "fp": "generic|HTML CSS JAVASCRIPT SQL PYTHON JAVA PHP C C++ C# AWS W3.CSS HOW TO BOOTSTRAP REACT MYSQL JQUERY EXCEL XML DJANGO NUMPY P|0",
+      "rect": {
+        "x": 0,
+        "y": 56,
+        "w": 1280,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "link",
+      "name": "HTML Tutorial",
+      "fp": "link|HTML Tutorial|0",
+      "rect": {
+        "x": 0,
+        "y": 56,
+        "w": 70,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "link",
+      "name": "CSS Tutorial",
+      "fp": "link|CSS Tutorial|0",
+      "rect": {
+        "x": 71,
+        "y": 56,
+        "w": 57,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "link",
+      "name": "JavaScript Tutorial",
+      "fp": "link|JavaScript Tutorial|0",
+      "rect": {
+        "x": 129,
+        "y": 56,
+        "w": 116,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "SQL Tutorial",
+      "fp": "link|SQL Tutorial|0",
+      "rect": {
+        "x": 246,
+        "y": 56,
+        "w": 58,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "Python Tutorial",
+      "fp": "link|Python Tutorial|0",
+      "rect": {
+        "x": 305,
+        "y": 56,
+        "w": 89,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "link",
+      "name": "Java Tutorial",
+      "fp": "link|Java Tutorial|0",
+      "rect": {
+        "x": 395,
+        "y": 56,
+        "w": 65,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "link",
+      "name": "PHP Tutorial",
+      "fp": "link|PHP Tutorial|0",
+      "rect": {
+        "x": 461,
+        "y": 56,
+        "w": 60,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "link",
+      "name": "C Tutorial",
+      "fp": "link|C Tutorial|0",
+      "rect": {
+        "x": 522,
+        "y": 56,
+        "w": 40,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "link",
+      "name": "C++ Tutorial",
+      "fp": "link|C++ Tutorial|0",
+      "rect": {
+        "x": 562,
+        "y": 56,
+        "w": 56,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "link",
+      "name": "C# Tutorial",
+      "fp": "link|C# Tutorial|0",
+      "rect": {
+        "x": 620,
+        "y": 56,
+        "w": 48,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "link",
+      "name": "AWS Tutorial",
+      "fp": "link|AWS Tutorial|0",
+      "rect": {
+        "x": 669,
+        "y": 56,
+        "w": 61,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "link",
+      "name": "W3.CSS Tutorial",
+      "fp": "link|W3.CSS Tutorial|0",
+      "rect": {
+        "x": 731,
+        "y": 56,
+        "w": 83,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "How to",
+      "fp": "link|How to|0",
+      "rect": {
+        "x": 815,
+        "y": 56,
+        "w": 88,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "Bootstrap Tutorial",
+      "fp": "link|Bootstrap Tutorial|0",
+      "rect": {
+        "x": 904,
+        "y": 56,
+        "w": 116,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "React Tutorial",
+      "fp": "link|React Tutorial|0",
+      "rect": {
+        "x": 1020,
+        "y": 56,
+        "w": 76,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "MySQL Tutorial",
+      "fp": "link|MySQL Tutorial|0",
+      "rect": {
+        "x": 1097,
+        "y": 56,
+        "w": 78,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "JQuery Tutorial",
+      "fp": "link|JQuery Tutorial|0",
+      "rect": {
+        "x": 1176,
+        "y": 56,
+        "w": 86,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "Excel Tutorial",
+      "fp": "link|Excel Tutorial|0",
+      "rect": {
+        "x": 1264,
+        "y": 56,
+        "w": 74,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "XML Tutorial",
+      "fp": "link|XML Tutorial|0",
+      "rect": {
+        "x": 1339,
+        "y": 56,
+        "w": 59,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "Django Tutorial",
+      "fp": "link|Django Tutorial|0",
+      "rect": {
+        "x": 1399,
+        "y": 56,
+        "w": 89,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "NumPy Tutorial",
+      "fp": "link|NumPy Tutorial|0",
+      "rect": {
+        "x": 1489,
+        "y": 56,
+        "w": 81,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "Pandas Tutorial",
+      "fp": "link|Pandas Tutorial|0",
+      "rect": {
+        "x": 1570,
+        "y": 56,
+        "w": 87,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "Node.js Tutorial",
+      "fp": "link|Node.js Tutorial|0",
+      "rect": {
+        "x": 1658,
+        "y": 56,
+        "w": 88,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "DSA Tutorial",
+      "fp": "link|DSA Tutorial|0",
+      "rect": {
+        "x": 1747,
+        "y": 56,
+        "w": 58,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "TypeScript Tutorial",
+      "fp": "link|TypeScript Tutorial|0",
+      "rect": {
+        "x": 1807,
+        "y": 56,
+        "w": 117,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "Angular Tutorial",
+      "fp": "link|Angular Tutorial|0",
+      "rect": {
+        "x": 1924,
+        "y": 56,
+        "w": 98,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "Angular.js Tutorial",
+      "fp": "link|Angular.js Tutorial|0",
+      "rect": {
+        "x": 2023,
+        "y": 56,
+        "w": 115,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "Git Tutorial",
+      "fp": "link|Git Tutorial|0",
+      "rect": {
+        "x": 2139,
+        "y": 56,
+        "w": 54,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "PostgreSQL Tutorial",
+      "fp": "link|PostgreSQL Tutorial|0",
+      "rect": {
+        "x": 2194,
+        "y": 56,
+        "w": 125,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "MongoDB Tutorial",
+      "fp": "link|MongoDB Tutorial|0",
+      "rect": {
+        "x": 2320,
+        "y": 56,
+        "w": 105,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "link",
+      "name": "ASP Tutorial",
+      "fp": "link|ASP Tutorial|0",
+      "rect": {
+        "x": 2426,
+        "y": 56,
+        "w": 58,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "link",
+      "name": "A.I. Tutorial",
+      "fp": "link|A.I. Tutorial|0",
+      "rect": {
+        "x": 2484,
+        "y": 56,
+        "w": 44,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "R Tutorial",
+      "fp": "link|R Tutorial|0",
+      "rect": {
+        "x": 2529,
+        "y": 56,
+        "w": 40,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "Go Tutorial",
+      "fp": "link|Go Tutorial|0",
+      "rect": {
+        "x": 2570,
+        "y": 56,
+        "w": 51,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "Kotlin Tutorial",
+      "fp": "link|Kotlin Tutorial|0",
+      "rect": {
+        "x": 2622,
+        "y": 56,
+        "w": 83,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "Swift Tutorial",
+      "fp": "link|Swift Tutorial|0",
+      "rect": {
+        "x": 2706,
+        "y": 56,
+        "w": 74,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "Sass Tutorial",
+      "fp": "link|Sass Tutorial|0",
+      "rect": {
+        "x": 2781,
+        "y": 56,
+        "w": 66,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "link",
+      "name": "Vue.js Tutorial",
+      "fp": "link|Vue.js Tutorial|0",
+      "rect": {
+        "x": 2848,
+        "y": 56,
+        "w": 58,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "link",
+      "name": "Gen A.I. Tutorial",
+      "fp": "link|Gen A.I. Tutorial|0",
+      "rect": {
+        "x": 2907,
+        "y": 56,
+        "w": 78,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "link",
+      "name": "SciPy Tutorial",
+      "fp": "link|SciPy Tutorial|0",
+      "rect": {
+        "x": 2986,
+        "y": 56,
+        "w": 71,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "link",
+      "name": "Cyber security Tutorial",
+      "fp": "link|Cyber security Tutorial|0",
+      "rect": {
+        "x": 3058,
+        "y": 56,
+        "w": 145,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "link",
+      "name": "Data science Tutorial",
+      "fp": "link|Data science Tutorial|0",
+      "rect": {
+        "x": 3204,
+        "y": 56,
+        "w": 132,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "Introduction to Programming",
+      "fp": "link|Introduction to Programming|0",
+      "rect": {
+        "x": 3337,
+        "y": 56,
+        "w": 211,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "link",
+      "name": "Introduction to HTML & CSS",
+      "fp": "link|Introduction to HTML & CSS|0",
+      "rect": {
+        "x": 3549,
+        "y": 56,
+        "w": 188,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": "Bash Tutorial",
+      "fp": "link|Bash Tutorial|0",
+      "rect": {
+        "x": 3738,
+        "y": 56,
+        "w": 69,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "link",
+      "name": "Rust Tutorial",
+      "fp": "link|Rust Tutorial|0",
+      "rect": {
+        "x": 3808,
+        "y": 56,
+        "w": 68,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "Web Developer Tools",
+      "fp": "link|Web Developer Tools|0",
+      "rect": {
+        "x": 3877,
+        "y": 56,
+        "w": 78,
+        "h": 33
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "link",
+      "name": "HTML HOME",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML HOME|0",
+      "rect": {
+        "x": 8,
+        "y": -699,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "HTML Introduction",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML Introduction|0",
+      "rect": {
+        "x": 8,
+        "y": -672,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "Introduction Exercises",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Introduction Exercises|0",
+      "rect": {
+        "x": 8,
+        "y": -645,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": "HTML Basic",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML Basic|0",
+      "rect": {
+        "x": 8,
+        "y": -618,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "link",
+      "name": "Basic Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Basic Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -591,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "link",
+      "name": "Elements Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Elements Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -564,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "link",
+      "name": "Attributes Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Attributes Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -537,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "link",
+      "name": "Headings Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Headings Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -510,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "Paragraphs Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Paragraphs Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -483,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "Styles Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Styles Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -456,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "Formatting Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Formatting Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -429,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "link",
+      "name": "Quotations Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Quotations Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -402,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "Comments Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Comments Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -375,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "link",
+      "name": "Colors RGB HEX HSL Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Colors RGB HEX HSL Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -348,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "link",
+      "name": "CSS Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|CSS Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -321,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": "Links Link Colors Link Bookmarks Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Links Link Colors Link Bookmarks Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -294,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "link",
+      "name": "Images Image Map Background Images The Picture Element Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Images Image Map Background Images The Picture Element Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -267,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "HTML Favicon",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML Favicon|0",
+      "rect": {
+        "x": 8,
+        "y": -240,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "link",
+      "name": "Favicon Exercises",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Favicon Exercises|0",
+      "rect": {
+        "x": 8,
+        "y": -213,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "Page Title Exercises",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Page Title Exercises|0",
+      "rect": {
+        "x": 8,
+        "y": -186,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "HTML Lists",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML Lists|0",
+      "rect": {
+        "x": 8,
+        "y": -159,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "Lists Unordered Lists Ordered Lists Other Lists Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Lists Unordered Lists Ordered Lists Other Lists Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -132,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "link",
+      "name": "Block & Inline Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Block & Inline Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -105,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "link",
+      "name": "Div Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Div Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -78,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "link",
+      "name": "Classes Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Classes Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -51,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "link",
+      "name": "Id Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Id Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": -24,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "Buttons Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Buttons Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 3,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "Iframes Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Iframes Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 30,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "JavaScript Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|JavaScript Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 57,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "link",
+      "name": "File Paths Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|File Paths Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 84,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "Head Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Head Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 111,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "link",
+      "name": "Layout Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Layout Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 138,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "link",
+      "name": "Responsive Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Responsive Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 165,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "link",
+      "name": "Computercode Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Computercode Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 192,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "link",
+      "name": "Semantics Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Semantics Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 219,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "link",
+      "name": "HTML Entities",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML Entities|0",
+      "rect": {
+        "x": 8,
+        "y": 246,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "link",
+      "name": "Entities Exercises Code Challenge",
+      "ctx": "HTML Tutorial",
+      "fp": "link|Entities Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 273,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "HTML Emojis",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML Emojis|0",
+      "rect": {
+        "x": 8,
+        "y": 300,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "link",
+      "name": "HTML Charsets",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML Charsets|0",
+      "rect": {
+        "x": 8,
+        "y": 327,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "link",
+      "name": "HTML URL Encode",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML URL Encode|0",
+      "rect": {
+        "x": 8,
+        "y": 354,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "link",
+      "name": "HTML vs. XHTML",
+      "ctx": "HTML Tutorial",
+      "fp": "link|HTML vs. XHTML|0",
+      "rect": {
+        "x": 8,
+        "y": 381,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "link",
+      "name": "HTML Forms",
+      "ctx": "HTML Forms",
+      "fp": "link|HTML Forms|0",
+      "rect": {
+        "x": 8,
+        "y": 453,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "Forms",
+      "ctx": "HTML Forms",
+      "fp": "link|Forms|0",
+      "rect": {
+        "x": 8,
+        "y": 480,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "Exercises",
+      "ctx": "HTML Forms",
+      "fp": "link|Exercises|0",
+      "rect": {
+        "x": 8,
+        "y": 507,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "link",
+      "name": "Code Challenge",
+      "ctx": "HTML Forms",
+      "fp": "link|Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 534,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "Forms Exercises Code Challenge",
+      "ctx": "HTML Forms",
+      "fp": "link|Forms Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 561,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "Form Attributes Exercises",
+      "ctx": "HTML Forms",
+      "fp": "link|Form Attributes Exercises|0",
+      "rect": {
+        "x": 8,
+        "y": 588,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "link",
+      "name": "Form Elements Exercises Code Challenge",
+      "ctx": "HTML Forms",
+      "fp": "link|Form Elements Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 615,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "link",
+      "name": "Input Types Exercises Code Challenge",
+      "ctx": "HTML Forms",
+      "fp": "link|Input Types Exercises Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 642,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e109",
+      "role": "link",
+      "name": "Input Attributes Exercises",
+      "ctx": "HTML Forms",
+      "fp": "link|Input Attributes Exercises|0",
+      "rect": {
+        "x": 8,
+        "y": 669,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e110",
+      "role": "link",
+      "name": "HTML Canvas",
+      "ctx": "HTML Graphics",
+      "fp": "link|HTML Canvas|0",
+      "rect": {
+        "x": 8,
+        "y": 741,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e111",
+      "role": "link",
+      "name": "Canvas Code Challenge",
+      "ctx": "HTML Graphics",
+      "fp": "link|Canvas Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 768,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e112",
+      "role": "link",
+      "name": "HTML Media",
+      "ctx": "HTML Media",
+      "fp": "link|HTML Media|0",
+      "rect": {
+        "x": 8,
+        "y": 840,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e113",
+      "role": "link",
+      "name": "HTML Video",
+      "ctx": "HTML Media",
+      "fp": "link|HTML Video|0",
+      "rect": {
+        "x": 8,
+        "y": 867,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e114",
+      "role": "link",
+      "name": "Video Code Challenge",
+      "ctx": "HTML Media",
+      "fp": "link|Video Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 894,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
+      "role": "link",
+      "name": "Audio Code Challenge",
+      "ctx": "HTML Media",
+      "fp": "link|Audio Code Challenge|0",
+      "rect": {
+        "x": 8,
+        "y": 921,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e116",
+      "role": "link",
+      "name": "HTML YouTube",
+      "ctx": "HTML Media",
+      "fp": "link|HTML YouTube|0",
+      "rect": {
+        "x": 8,
+        "y": 948,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e117",
+      "role": "link",
+      "name": "HTML Web APIs",
+      "ctx": "HTML APIs",
+      "fp": "link|HTML Web APIs|0",
+      "rect": {
+        "x": 8,
+        "y": 1020,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e118",
+      "role": "link",
+      "name": "HTML Geolocation",
+      "ctx": "HTML APIs",
+      "fp": "link|HTML Geolocation|0",
+      "rect": {
+        "x": 8,
+        "y": 1047,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e119",
+      "role": "link",
+      "name": "HTML Drag and Drop",
+      "ctx": "HTML APIs",
+      "fp": "link|HTML Drag and Drop|0",
+      "rect": {
+        "x": 8,
+        "y": 1074,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e120",
+      "role": "link",
+      "name": "HTML Web Storage",
+      "ctx": "HTML APIs",
+      "fp": "link|HTML Web Storage|0",
+      "rect": {
+        "x": 8,
+        "y": 1101,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e121",
+      "role": "link",
+      "name": "HTML Web Workers",
+      "ctx": "HTML APIs",
+      "fp": "link|HTML Web Workers|0",
+      "rect": {
+        "x": 8,
+        "y": 1128,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e122",
+      "role": "link",
+      "name": "HTML SSE",
+      "ctx": "HTML APIs",
+      "fp": "link|HTML SSE|0",
+      "rect": {
+        "x": 8,
+        "y": 1155,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e123",
+      "role": "link",
+      "name": "HTML Certificate",
+      "ctx": "HTML Cert",
+      "fp": "link|HTML Certificate|0",
+      "rect": {
+        "x": 8,
+        "y": 1227,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e124",
+      "role": "link",
+      "name": "HTML Examples",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Examples|0",
+      "rect": {
+        "x": 8,
+        "y": 1299,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e125",
+      "role": "link",
+      "name": "HTML Editor",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Editor|0",
+      "rect": {
+        "x": 8,
+        "y": 1326,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e126",
+      "role": "link",
+      "name": "HTML Quiz",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Quiz|0",
+      "rect": {
+        "x": 8,
+        "y": 1353,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e127",
+      "role": "link",
+      "name": "HTML Exercises",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Exercises|0",
+      "rect": {
+        "x": 8,
+        "y": 1380,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e128",
+      "role": "link",
+      "name": "HTML Challenges",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Challenges|0",
+      "rect": {
+        "x": 8,
+        "y": 1407,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e129",
+      "role": "link",
+      "name": "HTML Website",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Website|0",
+      "rect": {
+        "x": 8,
+        "y": 1434,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e130",
+      "role": "link",
+      "name": "HTML Syllabus",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Syllabus|0",
+      "rect": {
+        "x": 8,
+        "y": 1461,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e131",
+      "role": "link",
+      "name": "HTML Study Plan",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Study Plan|0",
+      "rect": {
+        "x": 8,
+        "y": 1488,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e132",
+      "role": "link",
+      "name": "HTML Interview Prep",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Interview Prep|0",
+      "rect": {
+        "x": 8,
+        "y": 1515,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e133",
+      "role": "link",
+      "name": "HTML Summary",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Summary|0",
+      "rect": {
+        "x": 8,
+        "y": 1542,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e134",
+      "role": "link",
+      "name": "HTML Accessibility",
+      "ctx": "HTML Examples",
+      "fp": "link|HTML Accessibility|0",
+      "rect": {
+        "x": 8,
+        "y": 1569,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e135",
+      "role": "link",
+      "name": "HTML Tag List",
+      "ctx": "HTML References",
+      "fp": "link|HTML Tag List|0",
+      "rect": {
+        "x": 8,
+        "y": 1641,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e136",
+      "role": "link",
+      "name": "HTML Attributes",
+      "ctx": "HTML References",
+      "fp": "link|HTML Attributes|0",
+      "rect": {
+        "x": 8,
+        "y": 1668,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e137",
+      "role": "link",
+      "name": "HTML Global Attributes",
+      "ctx": "HTML References",
+      "fp": "link|HTML Global Attributes|0",
+      "rect": {
+        "x": 8,
+        "y": 1695,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e138",
+      "role": "link",
+      "name": "HTML Browser Support",
+      "ctx": "HTML References",
+      "fp": "link|HTML Browser Support|0",
+      "rect": {
+        "x": 8,
+        "y": 1722,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e139",
+      "role": "link",
+      "name": "HTML Events",
+      "ctx": "HTML References",
+      "fp": "link|HTML Events|0",
+      "rect": {
+        "x": 8,
+        "y": 1749,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e140",
+      "role": "link",
+      "name": "HTML Colors",
+      "ctx": "HTML References",
+      "fp": "link|HTML Colors|0",
+      "rect": {
+        "x": 8,
+        "y": 1776,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e141",
+      "role": "link",
+      "name": "HTML Canvas",
+      "ctx": "HTML References",
+      "fp": "link|HTML Canvas|1",
+      "rect": {
+        "x": 8,
+        "y": 1803,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e142",
+      "role": "link",
+      "name": "HTML Audio/Video",
+      "ctx": "HTML References",
+      "fp": "link|HTML Audio/Video|0",
+      "rect": {
+        "x": 8,
+        "y": 1830,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e143",
+      "role": "link",
+      "name": "HTML Doctypes",
+      "ctx": "HTML References",
+      "fp": "link|HTML Doctypes|0",
+      "rect": {
+        "x": 8,
+        "y": 1857,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e144",
+      "role": "link",
+      "name": "HTML Character Sets",
+      "ctx": "HTML References",
+      "fp": "link|HTML Character Sets|0",
+      "rect": {
+        "x": 8,
+        "y": 1884,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e145",
+      "role": "link",
+      "name": "HTML URL Encode",
+      "ctx": "HTML References",
+      "fp": "link|HTML URL Encode|1",
+      "rect": {
+        "x": 8,
+        "y": 1911,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e146",
+      "role": "link",
+      "name": "HTML Lang Codes",
+      "ctx": "HTML References",
+      "fp": "link|HTML Lang Codes|0",
+      "rect": {
+        "x": 8,
+        "y": 1938,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e147",
+      "role": "link",
+      "name": "HTTP Messages",
+      "ctx": "HTML References",
+      "fp": "link|HTTP Messages|0",
+      "rect": {
+        "x": 8,
+        "y": 1965,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e148",
+      "role": "link",
+      "name": "HTTP Methods",
+      "ctx": "HTML References",
+      "fp": "link|HTTP Methods|0",
+      "rect": {
+        "x": 8,
+        "y": 1992,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e149",
+      "role": "link",
+      "name": "PX to EM Converter",
+      "ctx": "HTML References",
+      "fp": "link|PX to EM Converter|0",
+      "rect": {
+        "x": 8,
+        "y": 2019,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e150",
+      "role": "link",
+      "name": "Keyboard Shortcuts",
+      "ctx": "HTML References",
+      "fp": "link|Keyboard Shortcuts|0",
+      "rect": {
+        "x": 8,
+        "y": 2046,
+        "w": 222,
+        "h": 27
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e151",
+      "role": "link",
+      "name": "❮ Previous",
+      "ctx": "HTML Forms",
+      "fp": "link|❮ Previous|0",
+      "rect": {
+        "x": 262,
+        "y": 439,
+        "w": 120,
+        "h": 45
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e152",
+      "role": "link",
+      "name": "Next ❯",
+      "ctx": "HTML Forms",
+      "fp": "link|Next ❯|0",
+      "rect": {
+        "x": 984,
+        "y": 439,
+        "w": 88,
+        "h": 45
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e153",
+      "role": "textbox",
+      "name": "First name:",
+      "value": "John",
+      "ctx": "form",
+      "fp": "textbox|First name:|0",
+      "rect": {
+        "x": 278,
+        "y": 692,
+        "w": 174,
+        "h": 30
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e154",
+      "role": "textbox",
+      "name": "Last name:",
+      "value": "Doe",
+      "ctx": "form",
+      "fp": "textbox|Last name:|0",
+      "rect": {
+        "x": 278,
+        "y": 746,
+        "w": 174,
+        "h": 30
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e155",
+      "role": "button",
+      "name": "Submit",
+      "value": "Submit",
+      "ctx": "form",
+      "fp": "button|Submit|0",
+      "rect": {
+        "x": 278,
+        "y": 800,
+        "w": 66,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e156",
+      "role": "link",
+      "name": "First name: Last name:",
+      "ctx": "Example",
+      "fp": "link|First name: Last name:|0",
+      "rect": {
+        "x": 262,
+        "y": 854,
+        "w": 147,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e157",
+      "role": "button",
+      "name": "Share on X",
+      "ctx": "HTML Forms",
+      "fp": "button|Share on X|0",
+      "rect": {
+        "x": 920,
+        "y": 965,
+        "w": 32,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e158",
+      "role": "button",
+      "name": "Share on Facebook",
+      "ctx": "HTML Forms",
+      "fp": "button|Share on Facebook|0",
+      "rect": {
+        "x": 960,
+        "y": 965,
+        "w": 32,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e159",
+      "role": "button",
+      "name": "Share on LinkedIn",
+      "ctx": "HTML Forms",
+      "fp": "button|Share on LinkedIn|0",
+      "rect": {
+        "x": 1000,
+        "y": 965,
+        "w": 32,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e160",
+      "role": "button",
+      "name": "Copy link",
+      "ctx": "HTML Forms",
+      "fp": "button|Copy link|0",
+      "rect": {
+        "x": 1040,
+        "y": 965,
+        "w": 32,
+        "h": 32
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e161",
+      "role": "link",
+      "name": "HTML Form Elements",
+      "ctx": "The <form> Element",
+      "fp": "link|HTML Form Elements|0",
+      "rect": {
+        "x": 676,
+        "y": 1347,
+        "w": 156,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e162",
+      "role": "link",
+      "name": "HTML Input Types",
+      "ctx": "The <input> Element",
+      "fp": "link|HTML Input Types|0",
+      "rect": {
+        "x": 652,
+        "y": 1876,
+        "w": 130,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e163",
+      "role": "link",
+      "name": "REMOVE ADS",
+      "ctx": "The <input> Element",
+      "fp": "link|REMOVE ADS|0",
+      "rect": {
+        "x": 620,
+        "y": 1947,
+        "w": 94,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e164",
+      "role": "link",
+      "name": "Try it Yourself »",
+      "ctx": "Example",
+      "fp": "link|Try it Yourself »|0",
+      "rect": {
+        "x": 262,
+        "y": 2420,
+        "w": 147,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e165",
+      "role": "textbox",
+      "name": "fname",
+      "ctx": "form",
+      "fp": "textbox|fname|0",
+      "rect": {
+        "x": 262,
+        "y": 2572,
+        "w": 174,
+        "h": 30
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e166",
+      "role": "textbox",
+      "name": "lname",
+      "ctx": "form",
+      "fp": "textbox|lname|0",
+      "rect": {
+        "x": 262,
+        "y": 2626,
+        "w": 174,
+        "h": 30
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e167",
+      "role": "link",
+      "name": "Try it Yourself »",
+      "ctx": "Example",
+      "fp": "link|Try it Yourself »|1",
+      "rect": {
+        "x": 262,
+        "y": 3740,
+        "w": 147,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e168",
+      "role": "radio",
+      "name": "HTML",
+      "value": "HTML",
+      "ctx": "Radio Buttons",
+      "fp": "radio|HTML|0",
+      "rect": {
+        "x": 262,
+        "y": 3915,
+        "w": 13,
+        "h": 13
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e169",
+      "role": "radio",
+      "name": "CSS",
+      "value": "CSS",
+      "ctx": "Radio Buttons",
+      "fp": "radio|CSS|0",
+      "rect": {
+        "x": 262,
+        "y": 3939,
+        "w": 13,
+        "h": 13
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e170",
+      "role": "radio",
+      "name": "JavaScript",
+      "value": "JavaScript",
+      "ctx": "Radio Buttons",
+      "fp": "radio|JavaScript|0",
+      "rect": {
+        "x": 262,
+        "y": 3963,
+        "w": 13,
+        "h": 13
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e171",
+      "role": "link",
+      "name": "Try it Yourself »",
+      "ctx": "Example",
+      "fp": "link|Try it Yourself »|2",
+      "rect": {
+        "x": 262,
+        "y": 4505,
+        "w": 147,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e172",
+      "role": "checkbox",
+      "name": "I have a bike",
+      "value": "Bike",
+      "ctx": "Checkboxes",
+      "fp": "checkbox|I have a bike|0",
+      "rect": {
+        "x": 262,
+        "y": 4638,
+        "w": 13,
+        "h": 13
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e173",
+      "role": "checkbox",
+      "name": "I have a car",
+      "value": "Car",
+      "ctx": "Checkboxes",
+      "fp": "checkbox|I have a car|0",
+      "rect": {
+        "x": 262,
+        "y": 4662,
+        "w": 13,
+        "h": 13
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e174",
+      "role": "checkbox",
+      "name": "I have a boat",
+      "value": "Boat",
+      "ctx": "Checkboxes",
+      "fp": "checkbox|I have a boat|0",
+      "rect": {
+        "x": 262,
+        "y": 4686,
+        "w": 13,
+        "h": 13
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e175",
+      "role": "link",
+      "name": "Try it Yourself »",
+      "ctx": "Example",
+      "fp": "link|Try it Yourself »|3",
+      "rect": {
+        "x": 262,
+        "y": 5248,
+        "w": 147,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e176",
+      "role": "textbox",
+      "name": "firstname",
+      "value": "John",
+      "ctx": "form",
+      "fp": "textbox|firstname|0",
+      "rect": {
+        "x": 262,
+        "y": 5400,
+        "w": 174,
+        "h": 30
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e177",
+      "role": "textbox",
+      "name": "lastname",
+      "value": "Doe",
+      "ctx": "form",
+      "fp": "textbox|lastname|0",
+      "rect": {
+        "x": 262,
+        "y": 5454,
+        "w": 174,
+        "h": 30
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e178",
+      "role": "button",
+      "name": "Submit",
+      "value": "Submit",
+      "ctx": "form",
+      "fp": "button|Submit|1",
+      "rect": {
+        "x": 262,
+        "y": 5508,
+        "w": 66,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e179",
+      "role": "link",
+      "name": "Try it Yourself »",
+      "ctx": "Example",
+      "fp": "link|Try it Yourself »|4",
+      "rect": {
+        "x": 262,
+        "y": 5992,
+        "w": 147,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e180",
+      "role": "link",
+      "name": "Tutorial on YouTube",
+      "ctx": "Video: HTML Forms",
+      "fp": "link|Tutorial on YouTube|0",
+      "rect": {
+        "x": 278,
+        "y": 6155,
+        "w": 778,
+        "h": 25
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e181",
+      "role": "link",
+      "name": "❮ Previous",
+      "ctx": "The Name Attribute for <input>",
+      "fp": "link|❮ Previous|1",
+      "rect": {
+        "x": 262,
+        "y": 6229,
+        "w": 120,
+        "h": 45
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e182",
+      "role": "link",
+      "name": "Next ❯",
+      "ctx": "The Name Attribute for <input>",
+      "fp": "link|Next ❯|1",
+      "rect": {
+        "x": 984,
+        "y": 6229,
+        "w": 88,
+        "h": 45
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e183",
+      "role": "link",
+      "name": "Sign in to track your progress",
+      "ctx": "The Name Attribute for <input>",
+      "fp": "link|Sign in to track your progress|0",
+      "rect": {
+        "x": 556,
+        "y": 6229,
+        "w": 222,
+        "h": 45
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e184",
+      "role": "link",
+      "name": "W3Schools Full Access",
+      "fp": "link|W3Schools Full Access|0",
+      "rect": {
+        "x": 1113,
+        "y": 106,
+        "w": 159,
+        "h": 300
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e185",
+      "role": "link",
+      "name": "W3Schools on YouTube",
+      "fp": "link|W3Schools on YouTube|0",
+      "rect": {
+        "x": 1116,
+        "y": 433,
+        "w": 28,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e186",
+      "role": "link",
+      "name": "W3Schools on LinkedIn",
+      "fp": "link|W3Schools on LinkedIn|0",
+      "rect": {
+        "x": 1148,
+        "y": 433,
+        "w": 25,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e187",
+      "role": "link",
+      "name": "Join the W3schools community on Discord",
+      "fp": "link|Join the W3schools community on Discord|0",
+      "rect": {
+        "x": 1178,
+        "y": 433,
+        "w": 31,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e188",
+      "role": "link",
+      "name": "W3Schools on Facebook",
+      "fp": "link|W3Schools on Facebook|0",
+      "rect": {
+        "x": 1214,
+        "y": 433,
+        "w": 25,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e189",
+      "role": "link",
+      "name": "W3Schools on Instagram",
+      "fp": "link|W3Schools on Instagram|0",
+      "rect": {
+        "x": 1244,
+        "y": 433,
+        "w": 25,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e190",
+      "role": "link",
+      "name": "New: W3Schools on TikTok",
+      "fp": "link|New: W3Schools on TikTok|0",
+      "rect": {
+        "x": 1184,
+        "y": 457,
+        "w": 18,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e191",
+      "role": "link",
+      "name": "REMOVE ADS",
+      "fp": "link|REMOVE ADS|1",
+      "rect": {
+        "x": 1146,
+        "y": 492,
+        "w": 94,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e192",
+      "role": "link",
+      "name": "Download on the App Store",
+      "ctx": "W3Schools Adventure App",
+      "fp": "link|Download on the App Store|0",
+      "rect": {
+        "x": 16,
+        "y": 6544,
+        "w": 162,
+        "h": 48
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e193",
+      "role": "link",
+      "name": "Get it on Google Play",
+      "ctx": "W3Schools Adventure App",
+      "fp": "link|Get it on Google Play|0",
+      "rect": {
+        "x": 192,
+        "y": 6544,
+        "w": 162,
+        "h": 48
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e194",
+      "role": "link",
+      "name": "Learn more about the W3Schools Adventure App",
+      "ctx": "W3Schools Adventure App",
+      "fp": "link|Learn more about the W3Schools Adventure App|0",
+      "rect": {
+        "x": 372,
+        "y": 6544,
+        "w": 77,
+        "h": 48
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e195",
+      "role": "link",
+      "name": "W3Schools.com",
+      "fp": "link|W3Schools.com|0",
+      "rect": {
+        "x": 210,
+        "y": 6741,
+        "w": 49,
+        "h": 19
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e196",
+      "role": "link",
+      "name": "Become a PLUS user and unlock powerful features",
+      "fp": "link|Become a PLUS user and unlock powerful features|0",
+      "rect": {
+        "x": 299,
+        "y": 6728,
+        "w": 34,
+        "h": 19
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e197",
+      "role": "link",
+      "name": "Get your own website with W3Schools Spaces",
+      "fp": "link|Get your own website with W3Schools Spaces|0",
+      "rect": {
+        "x": 393,
+        "y": 6728,
+        "w": 49,
+        "h": 19
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e198",
+      "role": "link",
+      "name": "Document your knowledge by getting certified",
+      "fp": "link|Document your knowledge by getting certified|0",
+      "rect": {
+        "x": 502,
+        "y": 6728,
+        "w": 96,
+        "h": 19
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e199",
+      "role": "link",
+      "name": "Contact us about W3Schools Academy for educational institutions",
+      "fp": "link|Contact us about W3Schools Academy for educational institutions|0",
+      "rect": {
+        "x": 658,
+        "y": 6728,
+        "w": 97,
+        "h": 19
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e200",
+      "role": "link",
+      "name": "W3Schools Practice Problems",
+      "fp": "link|W3Schools Practice Problems|0",
+      "rect": {
+        "x": 815,
+        "y": 6728,
+        "w": 63,
+        "h": 19
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e201",
+      "role": "link",
+      "name": "Contact us about sales or errors",
+      "fp": "link|Contact us about sales or errors|0",
+      "rect": {
+        "x": 938,
+        "y": 6728,
+        "w": 81,
+        "h": 19
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e202",
+      "role": "link",
+      "name": "HTML Tutorial",
+      "fp": "link|HTML Tutorial|1",
+      "rect": {
+        "x": 234,
+        "y": 6838,
+        "w": 72,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e203",
+      "role": "link",
+      "name": "CSS Tutorial",
+      "fp": "link|CSS Tutorial|1",
+      "rect": {
+        "x": 239,
+        "y": 6853,
+        "w": 62,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e204",
+      "role": "link",
+      "name": "JavaScript Tutorial",
+      "fp": "link|JavaScript Tutorial|1",
+      "rect": {
+        "x": 222,
+        "y": 6868,
+        "w": 97,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e205",
+      "role": "link",
+      "name": "How To Tutorial",
+      "fp": "link|How To Tutorial|0",
+      "rect": {
+        "x": 230,
+        "y": 6883,
+        "w": 81,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e206",
+      "role": "link",
+      "name": "SQL Tutorial",
+      "fp": "link|SQL Tutorial|1",
+      "rect": {
+        "x": 239,
+        "y": 6898,
+        "w": 64,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e207",
+      "role": "link",
+      "name": "Python Tutorial",
+      "fp": "link|Python Tutorial|1",
+      "rect": {
+        "x": 230,
+        "y": 6913,
+        "w": 80,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e208",
+      "role": "link",
+      "name": "W3.CSS Tutorial",
+      "fp": "link|W3.CSS Tutorial|1",
+      "rect": {
+        "x": 230,
+        "y": 6928,
+        "w": 81,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e209",
+      "role": "link",
+      "name": "Bootstrap Tutorial",
+      "fp": "link|Bootstrap Tutorial|1",
+      "rect": {
+        "x": 224,
+        "y": 6943,
+        "w": 94,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e210",
+      "role": "link",
+      "name": "PHP Tutorial",
+      "fp": "link|PHP Tutorial|1",
+      "rect": {
+        "x": 238,
+        "y": 6958,
+        "w": 65,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e211",
+      "role": "link",
+      "name": "Java Tutorial",
+      "fp": "link|Java Tutorial|1",
+      "rect": {
+        "x": 237,
+        "y": 6973,
+        "w": 67,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e212",
+      "role": "link",
+      "name": "C++ Tutorial",
+      "fp": "link|C++ Tutorial|1",
+      "rect": {
+        "x": 239,
+        "y": 6988,
+        "w": 62,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e213",
+      "role": "link",
+      "name": "jQuery Tutorial",
+      "fp": "link|jQuery Tutorial|0",
+      "rect": {
+        "x": 232,
+        "y": 7003,
+        "w": 78,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e214",
+      "role": "link",
+      "name": "HTML Reference",
+      "fp": "link|HTML Reference|0",
+      "rect": {
+        "x": 458,
+        "y": 6838,
+        "w": 83,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e215",
+      "role": "link",
+      "name": "CSS Reference",
+      "fp": "link|CSS Reference|0",
+      "rect": {
+        "x": 463,
+        "y": 6853,
+        "w": 73,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e216",
+      "role": "link",
+      "name": "JavaScript Reference",
+      "fp": "link|JavaScript Reference|0",
+      "rect": {
+        "x": 445,
+        "y": 6868,
+        "w": 108,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e217",
+      "role": "link",
+      "name": "SQL Reference",
+      "fp": "link|SQL Reference|0",
+      "rect": {
+        "x": 462,
+        "y": 6883,
+        "w": 74,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e218",
+      "role": "link",
+      "name": "Python Reference",
+      "fp": "link|Python Reference|0",
+      "rect": {
+        "x": 454,
+        "y": 6898,
+        "w": 91,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e219",
+      "role": "link",
+      "name": "W3.CSS Reference",
+      "fp": "link|W3.CSS Reference|0",
+      "rect": {
+        "x": 453,
+        "y": 6913,
+        "w": 92,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e220",
+      "role": "link",
+      "name": "Bootstrap Reference",
+      "fp": "link|Bootstrap Reference|0",
+      "rect": {
+        "x": 447,
+        "y": 6928,
+        "w": 104,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e221",
+      "role": "link",
+      "name": "PHP Reference",
+      "fp": "link|PHP Reference|0",
+      "rect": {
+        "x": 461,
+        "y": 6943,
+        "w": 76,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e222",
+      "role": "link",
+      "name": "HTML Colors",
+      "fp": "link|HTML Colors|1",
+      "rect": {
+        "x": 467,
+        "y": 6958,
+        "w": 65,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e223",
+      "role": "link",
+      "name": "Java Reference",
+      "fp": "link|Java Reference|0",
+      "rect": {
+        "x": 460,
+        "y": 6973,
+        "w": 78,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e224",
+      "role": "link",
+      "name": "AngularJS Reference",
+      "fp": "link|AngularJS Reference|0",
+      "rect": {
+        "x": 446,
+        "y": 6988,
+        "w": 106,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e225",
+      "role": "link",
+      "name": "jQuery Reference",
+      "fp": "link|jQuery Reference|0",
+      "rect": {
+        "x": 455,
+        "y": 7003,
+        "w": 88,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e226",
+      "role": "link",
+      "name": "HTML Examples",
+      "fp": "link|HTML Examples|1",
+      "rect": {
+        "x": 690,
+        "y": 6838,
+        "w": 81,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e227",
+      "role": "link",
+      "name": "CSS Examples",
+      "fp": "link|CSS Examples|0",
+      "rect": {
+        "x": 695,
+        "y": 6853,
+        "w": 71,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e228",
+      "role": "link",
+      "name": "JavaScript Examples",
+      "fp": "link|JavaScript Examples|0",
+      "rect": {
+        "x": 678,
+        "y": 6868,
+        "w": 106,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e229",
+      "role": "link",
+      "name": "How To Examples",
+      "fp": "link|How To Examples|0",
+      "rect": {
+        "x": 686,
+        "y": 6883,
+        "w": 90,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e230",
+      "role": "link",
+      "name": "SQL Examples",
+      "fp": "link|SQL Examples|0",
+      "rect": {
+        "x": 695,
+        "y": 6898,
+        "w": 72,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e231",
+      "role": "link",
+      "name": "Python Examples",
+      "fp": "link|Python Examples|0",
+      "rect": {
+        "x": 686,
+        "y": 6913,
+        "w": 89,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e232",
+      "role": "link",
+      "name": "W3.CSS Examples",
+      "fp": "link|W3.CSS Examples|0",
+      "rect": {
+        "x": 686,
+        "y": 6928,
+        "w": 90,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e233",
+      "role": "link",
+      "name": "Bootstrap Examples",
+      "fp": "link|Bootstrap Examples|0",
+      "rect": {
+        "x": 680,
+        "y": 6943,
+        "w": 102,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e234",
+      "role": "link",
+      "name": "PHP Examples",
+      "fp": "link|PHP Examples|0",
+      "rect": {
+        "x": 694,
+        "y": 6958,
+        "w": 74,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e235",
+      "role": "link",
+      "name": "Java Examples",
+      "fp": "link|Java Examples|0",
+      "rect": {
+        "x": 693,
+        "y": 6973,
+        "w": 76,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e236",
+      "role": "link",
+      "name": "XML Examples",
+      "fp": "link|XML Examples|0",
+      "rect": {
+        "x": 694,
+        "y": 6988,
+        "w": 73,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e237",
+      "role": "link",
+      "name": "jQuery Examples",
+      "fp": "link|jQuery Examples|0",
+      "rect": {
+        "x": 688,
+        "y": 7003,
+        "w": 86,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e238",
+      "role": "link",
+      "name": "Get Certified",
+      "fp": "link|Get Certified|0",
+      "rect": {
+        "x": 904,
+        "y": 6803,
+        "w": 111,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e239",
+      "role": "link",
+      "name": "HTML Certificate",
+      "fp": "link|HTML Certificate|1",
+      "rect": {
+        "x": 916,
+        "y": 6838,
+        "w": 85,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e240",
+      "role": "link",
+      "name": "CSS Certificate",
+      "fp": "link|CSS Certificate|0",
+      "rect": {
+        "x": 921,
+        "y": 6853,
+        "w": 75,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e241",
+      "role": "link",
+      "name": "JavaScript Certificate",
+      "fp": "link|JavaScript Certificate|0",
+      "rect": {
+        "x": 904,
+        "y": 6868,
+        "w": 111,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e242",
+      "role": "link",
+      "name": "Front End Certificate",
+      "fp": "link|Front End Certificate|0",
+      "rect": {
+        "x": 906,
+        "y": 6883,
+        "w": 106,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e243",
+      "role": "link",
+      "name": "SQL Certificate",
+      "fp": "link|SQL Certificate|0",
+      "rect": {
+        "x": 921,
+        "y": 6898,
+        "w": 77,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e244",
+      "role": "link",
+      "name": "Python Certificate",
+      "fp": "link|Python Certificate|0",
+      "rect": {
+        "x": 912,
+        "y": 6913,
+        "w": 93,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e245",
+      "role": "link",
+      "name": "PHP Certificate",
+      "fp": "link|PHP Certificate|0",
+      "rect": {
+        "x": 920,
+        "y": 6928,
+        "w": 78,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e246",
+      "role": "link",
+      "name": "jQuery Certificate",
+      "fp": "link|jQuery Certificate|0",
+      "rect": {
+        "x": 914,
+        "y": 6943,
+        "w": 91,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e247",
+      "role": "link",
+      "name": "Java Certificate",
+      "fp": "link|Java Certificate|0",
+      "rect": {
+        "x": 919,
+        "y": 6958,
+        "w": 80,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e248",
+      "role": "link",
+      "name": "C++ Certificate",
+      "fp": "link|C++ Certificate|0",
+      "rect": {
+        "x": 921,
+        "y": 6973,
+        "w": 75,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e249",
+      "role": "link",
+      "name": "C# Certificate",
+      "fp": "link|C# Certificate|0",
+      "rect": {
+        "x": 925,
+        "y": 6988,
+        "w": 69,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e250",
+      "role": "link",
+      "name": "XML Certificate",
+      "fp": "link|XML Certificate|0",
+      "rect": {
+        "x": 920,
+        "y": 7003,
+        "w": 77,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e251",
+      "role": "link",
+      "name": "W3Schools on YouTube",
+      "fp": "link|W3Schools on YouTube|1",
+      "rect": {
+        "x": 441,
+        "y": 7082,
+        "w": 23,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e252",
+      "role": "link",
+      "name": "W3Schools on LinkedIn",
+      "fp": "link|W3Schools on LinkedIn|1",
+      "rect": {
+        "x": 479,
+        "y": 7082,
+        "w": 17,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e253",
+      "role": "link",
+      "name": "Join the W3schools community on Discord",
+      "fp": "link|Join the W3schools community on Discord|1",
+      "rect": {
+        "x": 511,
+        "y": 7082,
+        "w": 25,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e254",
+      "role": "link",
+      "name": "W3Schools on Facebook",
+      "fp": "link|W3Schools on Facebook|1",
+      "rect": {
+        "x": 552,
+        "y": 7082,
+        "w": 17,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e255",
+      "role": "link",
+      "name": "W3Schools on Instagram",
+      "fp": "link|W3Schools on Instagram|1",
+      "rect": {
+        "x": 585,
+        "y": 7082,
+        "w": 17,
+        "h": 22
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e256",
+      "role": "link",
+      "name": "Forum",
+      "fp": "link|Forum|0",
+      "rect": {
+        "x": 617,
+        "y": 7086,
+        "w": 55,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e257",
+      "role": "link",
+      "name": "About W3Schools",
+      "fp": "link|About W3Schools|0",
+      "rect": {
+        "x": 688,
+        "y": 7086,
+        "w": 52,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e258",
+      "role": "link",
+      "name": "Contact us about W3Schools Academy for educational institutions and organizations",
+      "fp": "link|Contact us about W3Schools Academy for educational institutions and organizations|0",
+      "rect": {
+        "x": 755,
+        "y": 7086,
+        "w": 74,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e259",
+      "role": "link",
+      "name": "terms of use",
+      "fp": "link|terms of use|0",
+      "rect": {
+        "x": 886,
+        "y": 7133,
+        "w": 66,
+        "h": 14
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e260",
+      "role": "link",
+      "name": "cookies",
+      "fp": "link|cookies|0",
+      "rect": {
+        "x": 958,
+        "y": 7133,
+        "w": 41,
+        "h": 14
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e261",
+      "role": "link",
+      "name": "privacy policy",
+      "fp": "link|privacy policy|0",
+      "rect": {
+        "x": 1026,
+        "y": 7133,
+        "w": 71,
+        "h": 14
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e262",
+      "role": "link",
+      "name": "Copyright 1999-2026",
+      "fp": "link|Copyright 1999-2026|0",
+      "rect": {
+        "x": 383,
+        "y": 7163,
+        "w": 112,
+        "h": 14
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e263",
+      "role": "link",
+      "name": "W3Schools is Powered by W3.CSS",
+      "fp": "link|W3Schools is Powered by W3.CSS|0",
+      "rect": {
+        "x": 705,
+        "y": 7163,
+        "w": 189,
+        "h": 14
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Tutorials References Exercises Certificates Search field NEW W3Schools app Start the adventure Sign In Get Certified HTM",
+  "contentHash": "1paw451",
+  "totalCandidates": 614
+}

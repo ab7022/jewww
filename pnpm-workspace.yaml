@@ -1,0 +1,7 @@
+packages:
+  - packages/*
+  - eval
+
+# tsx/vitest pull in esbuild, whose postinstall resolves the platform binary.
+allowBuilds:
+  esbuild: true

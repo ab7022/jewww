@@ -1,0 +1,985 @@
+{
+  "url": "https://job-boards.greenhouse.io/discord/jobs/8694476002",
+  "title": "Job Application for Senior Software Engineer, Data Platform at Discord",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 7487
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Discord Logo",
+      "fp": "link|Discord Logo|0",
+      "rect": {
+        "x": 214,
+        "y": 371,
+        "w": 64,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "Back to jobs",
+      "fp": "link|Back to jobs|0",
+      "rect": {
+        "x": 214,
+        "y": 412,
+        "w": 113,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "button",
+      "name": "Apply",
+      "fp": "button|Apply|0",
+      "rect": {
+        "x": 973,
+        "y": 476,
+        "w": 93,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "link",
+      "name": "how we built our modern data stack leveraging open-source tools!",
+      "fp": "link|how we built our modern data stack leveraging open-source tools!|0",
+      "rect": {
+        "x": 214,
+        "y": 1004,
+        "w": 787,
+        "h": 47
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "link",
+      "name": "HERE.",
+      "fp": "link|HERE.|0",
+      "rect": {
+        "x": 988,
+        "y": 2340,
+        "w": 44,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "textbox",
+      "name": "First Name",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|First Name|0",
+      "rect": {
+        "x": 214,
+        "y": 2543,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e7",
+      "role": "textbox",
+      "name": "Last Name",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|Last Name|0",
+      "rect": {
+        "x": 214,
+        "y": 2619,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e8",
+      "role": "textbox",
+      "name": "Email",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|Email|0",
+      "rect": {
+        "x": 214,
+        "y": 2695,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e9",
+      "role": "combobox",
+      "name": "Country*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Country*|0",
+      "rect": {
+        "x": 230,
+        "y": 2773,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e10",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|0",
+      "rect": {
+        "x": 317,
+        "y": 2765,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "textbox",
+      "name": "Phone",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|Phone|0",
+      "rect": {
+        "x": 365,
+        "y": 2771,
+        "w": 449,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e12",
+      "role": "combobox",
+      "name": "Location (City)*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Location (City)*|0",
+      "rect": {
+        "x": 230,
+        "y": 2850,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e13",
+      "role": "button",
+      "name": "Location (City)*",
+      "ctx": "form",
+      "fp": "button|Location (City)*|0",
+      "rect": {
+        "x": 214,
+        "y": 2884,
+        "w": 84,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "group",
+      "name": "Resume/CV",
+      "ctx": "form",
+      "fp": "group|Resume/CV|0",
+      "rect": {
+        "x": 214,
+        "y": 2924,
+        "w": 852,
+        "h": 255
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "button",
+      "name": "Attach",
+      "ctx": "form",
+      "fp": "button|Attach|0",
+      "rect": {
+        "x": 214,
+        "y": 2954,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "button",
+      "name": "Dropbox",
+      "ctx": "form",
+      "fp": "button|Dropbox|0",
+      "rect": {
+        "x": 214,
+        "y": 3004,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "button",
+      "name": "Google Drive",
+      "ctx": "form",
+      "fp": "button|Google Drive|0",
+      "rect": {
+        "x": 214,
+        "y": 3054,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "button",
+      "name": "Enter manually",
+      "ctx": "form",
+      "fp": "button|Enter manually|0",
+      "rect": {
+        "x": 214,
+        "y": 3104,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "group",
+      "name": "Cover Letter",
+      "ctx": "form",
+      "fp": "group|Cover Letter|0",
+      "rect": {
+        "x": 214,
+        "y": 3195,
+        "w": 852,
+        "h": 255
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "button",
+      "name": "Attach",
+      "ctx": "form",
+      "fp": "button|Attach|1",
+      "rect": {
+        "x": 214,
+        "y": 3225,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "button",
+      "name": "Dropbox",
+      "ctx": "form",
+      "fp": "button|Dropbox|1",
+      "rect": {
+        "x": 214,
+        "y": 3275,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "button",
+      "name": "Google Drive",
+      "ctx": "form",
+      "fp": "button|Google Drive|1",
+      "rect": {
+        "x": 214,
+        "y": 3325,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "button",
+      "name": "Enter manually",
+      "ctx": "form",
+      "fp": "button|Enter manually|1",
+      "rect": {
+        "x": 214,
+        "y": 3375,
+        "w": 300,
+        "h": 42
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "combobox",
+      "name": "School",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|School|0",
+      "rect": {
+        "x": 230,
+        "y": 3591,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e25",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|1",
+      "rect": {
+        "x": 782,
+        "y": 3583,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "combobox",
+      "name": "Degree",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Degree|0",
+      "rect": {
+        "x": 230,
+        "y": 3676,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e27",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|2",
+      "rect": {
+        "x": 782,
+        "y": 3668,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "combobox",
+      "name": "Discipline",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Discipline|0",
+      "rect": {
+        "x": 230,
+        "y": 3761,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e29",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|3",
+      "rect": {
+        "x": 782,
+        "y": 3753,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "button",
+      "name": "EducationSchoolSelect...DegreeSelect...DisciplineSelect...",
+      "ctx": "form",
+      "fp": "button|EducationSchoolSelect...DegreeSelect...DisciplineSelect...|0",
+      "rect": {
+        "x": 214,
+        "y": 3818,
+        "w": 100,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "textbox",
+      "name": "Why do you want to work at Discord?",
+      "ctx": "form",
+      "st": "required",
+      "fp": "textbox|Why do you want to work at Discord?|0",
+      "rect": {
+        "x": 214,
+        "y": 3933,
+        "w": 852,
+        "h": 108
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e32",
+      "role": "textbox",
+      "name": "LinkedIn Profile",
+      "ctx": "form",
+      "fp": "textbox|LinkedIn Profile|0",
+      "rect": {
+        "x": 214,
+        "y": 4083,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e33",
+      "role": "textbox",
+      "name": "Website",
+      "ctx": "form",
+      "fp": "textbox|Website|0",
+      "rect": {
+        "x": 214,
+        "y": 4159,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e34",
+      "role": "textbox",
+      "name": "How did you hear about this job?",
+      "ctx": "form",
+      "fp": "textbox|How did you hear about this job?|0",
+      "rect": {
+        "x": 214,
+        "y": 4235,
+        "w": 600,
+        "h": 34
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e35",
+      "role": "combobox",
+      "name": "Are you legally authorized to work in the United States for our Company?*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Are you legally authorized to work in the United States for our Company?*|0",
+      "rect": {
+        "x": 230,
+        "y": 4313,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e36",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|4",
+      "rect": {
+        "x": 782,
+        "y": 4305,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "combobox",
+      "name": "Are you currently located in the US?*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Are you currently located in the US?*|0",
+      "rect": {
+        "x": 230,
+        "y": 4390,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e38",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|5",
+      "rect": {
+        "x": 782,
+        "y": 4382,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "combobox",
+      "name": "Are you currently based in or willing to relocate to the Bay Area for this position? *",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Are you currently based in or willing to relocate to the Bay Area for this position? *|0",
+      "rect": {
+        "x": 230,
+        "y": 4467,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e40",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|6",
+      "rect": {
+        "x": 782,
+        "y": 4459,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "combobox",
+      "name": "Gender*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Gender*|0",
+      "rect": {
+        "x": 230,
+        "y": 5121,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e42",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|7",
+      "rect": {
+        "x": 782,
+        "y": 5113,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "role": "combobox",
+      "name": "Race and Ethnicity*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Race and Ethnicity*|0",
+      "rect": {
+        "x": 230,
+        "y": 5206,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e44",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|8",
+      "rect": {
+        "x": 782,
+        "y": 5198,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e45",
+      "role": "combobox",
+      "name": "Veteran Status*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Veteran Status*|0",
+      "rect": {
+        "x": 230,
+        "y": 5291,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e46",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|9",
+      "rect": {
+        "x": 782,
+        "y": 5283,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e47",
+      "role": "combobox",
+      "name": "Disability Status*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Disability Status*|0",
+      "rect": {
+        "x": 230,
+        "y": 5376,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e48",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|10",
+      "rect": {
+        "x": 782,
+        "y": 5368,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "role": "combobox",
+      "name": "Gender Identity (optional)",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Gender Identity (optional)|0",
+      "rect": {
+        "x": 230,
+        "y": 5461,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e50",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|11",
+      "rect": {
+        "x": 782,
+        "y": 5453,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e51",
+      "role": "combobox",
+      "name": "Race or Ethnicity (optional)",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|Race or Ethnicity (optional)|0",
+      "rect": {
+        "x": 230,
+        "y": 5546,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e52",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|12",
+      "rect": {
+        "x": 782,
+        "y": 5538,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e53",
+      "role": "combobox",
+      "name": "I consider myself a member of the LGBTQ+ community. (optional)",
+      "ctx": "form",
+      "st": "collapsed",
+      "fp": "combobox|I consider myself a member of the LGBTQ+ community. (optional)|0",
+      "rect": {
+        "x": 230,
+        "y": 5631,
+        "w": 4,
+        "h": 25
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e54",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|13",
+      "rect": {
+        "x": 782,
+        "y": 5623,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e55",
+      "role": "combobox",
+      "name": "Gender*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Gender*|1",
+      "rect": {
+        "x": 230,
+        "y": 6013,
+        "w": 4,
+        "h": 24
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e56",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|14",
+      "rect": {
+        "x": 782,
+        "y": 6005,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e57",
+      "role": "combobox",
+      "name": "Are you Hispanic/Latino?*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Are you Hispanic/Latino?*|0",
+      "rect": {
+        "x": 230,
+        "y": 6089,
+        "w": 4,
+        "h": 24
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e58",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|15",
+      "rect": {
+        "x": 782,
+        "y": 6081,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e59",
+      "role": "link",
+      "name": "Are you Hispanic/Latino?*Select...",
+      "ctx": "form",
+      "fp": "link|Are you Hispanic/Latino?*Select...|0",
+      "rect": {
+        "x": 214,
+        "y": 6137,
+        "w": 215,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e60",
+      "role": "combobox",
+      "name": "Veteran Status*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Veteran Status*|1",
+      "rect": {
+        "x": 230,
+        "y": 6693,
+        "w": 4,
+        "h": 24
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e61",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|16",
+      "rect": {
+        "x": 782,
+        "y": 6685,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e62",
+      "role": "link",
+      "name": "www.dol.gov/ofccp",
+      "ctx": "form",
+      "fp": "link|www.dol.gov/ofccp|0",
+      "rect": {
+        "x": 830,
+        "y": 7150,
+        "w": 154,
+        "h": 23
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e63",
+      "role": "combobox",
+      "name": "Disability Status*",
+      "ctx": "form",
+      "st": "collapsed required",
+      "fp": "combobox|Disability Status*|1",
+      "rect": {
+        "x": 230,
+        "y": 8010,
+        "w": 4,
+        "h": 24
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e64",
+      "role": "button",
+      "name": "Toggle flyout",
+      "ctx": "form",
+      "fp": "button|Toggle flyout|17",
+      "rect": {
+        "x": 782,
+        "y": 8002,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e65",
+      "role": "button",
+      "name": "Submit application",
+      "ctx": "form",
+      "fp": "button|Submit application|0",
+      "rect": {
+        "x": 866,
+        "y": 8227,
+        "w": 200,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e66",
+      "role": "link",
+      "name": "Powered by",
+      "ctx": "footer",
+      "fp": "link|Powered by|0",
+      "rect": {
+        "x": 636,
+        "y": 8339,
+        "w": 100,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e67",
+      "role": "img",
+      "name": "Greenhouse logo",
+      "ctx": "footer",
+      "fp": "img|Greenhouse logo|0",
+      "rect": {
+        "x": 636,
+        "y": 8339,
+        "w": 100,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e68",
+      "role": "presentation",
+      "name": "reCAPTCHA",
+      "fp": "presentation|reCAPTCHA|0",
+      "rect": {
+        "x": 1210,
+        "y": 826,
+        "w": 256,
+        "h": 60
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Back to jobs Senior Software Engineer, Data Platform San Francisco Bay Area Apply Discord has a highly engaged community",
+  "contentHash": "tux96o",
+  "totalCandidates": 355
+}

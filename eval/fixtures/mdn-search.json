@@ -1,0 +1,609 @@
+{
+  "url": "https://developer.mozilla.org/en-US/search?q=fetch",
+  "title": "Search | MDN",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 1711
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Skip to main content",
+      "fp": "link|Skip to main content|0",
+      "rect": {
+        "x": 2,
+        "y": -320,
+        "w": 1276,
+        "h": 50
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "Skip to search",
+      "fp": "link|Skip to search|0",
+      "rect": {
+        "x": 2,
+        "y": -320,
+        "w": 1276,
+        "h": 50
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "link",
+      "name": "MDN",
+      "ctx": "nav",
+      "fp": "link|MDN|0",
+      "rect": {
+        "x": 10,
+        "y": 104,
+        "w": 99,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "button",
+      "name": "HTML",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|HTML|0",
+      "rect": {
+        "x": 212,
+        "y": 106,
+        "w": 88,
+        "h": 37
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "button",
+      "name": "CSS",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|CSS|0",
+      "rect": {
+        "x": 300,
+        "y": 106,
+        "w": 74,
+        "h": 37
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "button",
+      "name": "JavaScript",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|JavaScript|0",
+      "rect": {
+        "x": 374,
+        "y": 106,
+        "w": 122,
+        "h": 37
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e7",
+      "role": "button",
+      "name": "Web APIs",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Web APIs|0",
+      "rect": {
+        "x": 496,
+        "y": 106,
+        "w": 117,
+        "h": 37
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e8",
+      "role": "button",
+      "name": "All",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|All|0",
+      "rect": {
+        "x": 613,
+        "y": 106,
+        "w": 62,
+        "h": 37
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e9",
+      "role": "button",
+      "name": "Learn",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Learn|0",
+      "rect": {
+        "x": 675,
+        "y": 106,
+        "w": 107,
+        "h": 37
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "button",
+      "name": "Tools",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|Tools|0",
+      "rect": {
+        "x": 783,
+        "y": 106,
+        "w": 105,
+        "h": 37
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "button",
+      "name": "About",
+      "ctx": "nav",
+      "st": "collapsed",
+      "fp": "button|About|0",
+      "rect": {
+        "x": 888,
+        "y": 106,
+        "w": 87,
+        "h": 37
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e12",
+      "role": "link",
+      "name": "Blog",
+      "ctx": "nav",
+      "fp": "link|Blog|0",
+      "rect": {
+        "x": 975,
+        "y": 106,
+        "w": 56,
+        "h": 36
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e13",
+      "role": "link",
+      "name": "Search",
+      "ctx": "header",
+      "fp": "link|Search|0",
+      "rect": {
+        "x": 18,
+        "y": 161,
+        "w": 53,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e14",
+      "role": "link",
+      "name": "MDN logo",
+      "ctx": "footer",
+      "fp": "link|MDN logo|0",
+      "rect": {
+        "x": 16,
+        "y": 2220,
+        "w": 83,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "link",
+      "name": "MDN on GitHub",
+      "ctx": "footer",
+      "fp": "link|MDN on GitHub|0",
+      "rect": {
+        "x": 16,
+        "y": 2379,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "link",
+      "name": "MDN on Bluesky",
+      "ctx": "footer",
+      "fp": "link|MDN on Bluesky|0",
+      "rect": {
+        "x": 52,
+        "y": 2379,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e17",
+      "role": "link",
+      "name": "MDN on X",
+      "ctx": "footer",
+      "fp": "link|MDN on X|0",
+      "rect": {
+        "x": 88,
+        "y": 2379,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "link",
+      "name": "MDN on Mastodon",
+      "ctx": "footer",
+      "fp": "link|MDN on Mastodon|0",
+      "rect": {
+        "x": 124,
+        "y": 2379,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "link",
+      "name": "MDN blog RSS feed",
+      "ctx": "footer",
+      "fp": "link|MDN blog RSS feed|0",
+      "rect": {
+        "x": 160,
+        "y": 2379,
+        "w": 24,
+        "h": 24
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "link",
+      "name": "About",
+      "ctx": "footer",
+      "fp": "link|About|0",
+      "rect": {
+        "x": 512,
+        "y": 2264,
+        "w": 45,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "link",
+      "name": "Blog",
+      "ctx": "footer",
+      "fp": "link|Blog|1",
+      "rect": {
+        "x": 512,
+        "y": 2300,
+        "w": 34,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e22",
+      "role": "link",
+      "name": "Mozilla careers",
+      "ctx": "footer",
+      "fp": "link|Mozilla careers|0",
+      "rect": {
+        "x": 512,
+        "y": 2336,
+        "w": 133,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e23",
+      "role": "link",
+      "name": "Advertise with us",
+      "ctx": "footer",
+      "fp": "link|Advertise with us|0",
+      "rect": {
+        "x": 512,
+        "y": 2372,
+        "w": 129,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e24",
+      "role": "link",
+      "name": "MDN Plus",
+      "ctx": "footer",
+      "fp": "link|MDN Plus|0",
+      "rect": {
+        "x": 512,
+        "y": 2408,
+        "w": 75,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "link",
+      "name": "Product help",
+      "ctx": "footer",
+      "fp": "link|Product help|0",
+      "rect": {
+        "x": 512,
+        "y": 2444,
+        "w": 114,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "link",
+      "name": "MDN Community",
+      "ctx": "footer",
+      "fp": "link|MDN Community|0",
+      "rect": {
+        "x": 768,
+        "y": 2264,
+        "w": 128,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "Community resources",
+      "ctx": "footer",
+      "fp": "link|Community resources|0",
+      "rect": {
+        "x": 768,
+        "y": 2300,
+        "w": 165,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "Writing guidelines",
+      "ctx": "footer",
+      "fp": "link|Writing guidelines|0",
+      "rect": {
+        "x": 768,
+        "y": 2336,
+        "w": 135,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "MDN Discord",
+      "ctx": "footer",
+      "fp": "link|MDN Discord|0",
+      "rect": {
+        "x": 768,
+        "y": 2372,
+        "w": 118,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "MDN on GitHub",
+      "ctx": "footer",
+      "fp": "link|MDN on GitHub|1",
+      "rect": {
+        "x": 768,
+        "y": 2408,
+        "w": 135,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e31",
+      "role": "link",
+      "name": "Web technologies",
+      "ctx": "footer",
+      "fp": "link|Web technologies|0",
+      "rect": {
+        "x": 1024,
+        "y": 2264,
+        "w": 135,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e32",
+      "role": "link",
+      "name": "Learn web development",
+      "ctx": "footer",
+      "fp": "link|Learn web development|0",
+      "rect": {
+        "x": 1024,
+        "y": 2300,
+        "w": 181,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e33",
+      "role": "link",
+      "name": "Guides",
+      "ctx": "footer",
+      "fp": "link|Guides|0",
+      "rect": {
+        "x": 1024,
+        "y": 2336,
+        "w": 52,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e34",
+      "role": "link",
+      "name": "Tutorials",
+      "ctx": "footer",
+      "fp": "link|Tutorials|0",
+      "rect": {
+        "x": 1024,
+        "y": 2372,
+        "w": 64,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e35",
+      "role": "link",
+      "name": "Glossary",
+      "ctx": "footer",
+      "fp": "link|Glossary|0",
+      "rect": {
+        "x": 1024,
+        "y": 2408,
+        "w": 66,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e36",
+      "role": "link",
+      "name": "Hacks blog",
+      "ctx": "footer",
+      "fp": "link|Hacks blog|0",
+      "rect": {
+        "x": 1024,
+        "y": 2444,
+        "w": 102,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e37",
+      "role": "link",
+      "name": "Mozilla logo",
+      "ctx": "footer",
+      "fp": "link|Mozilla logo|0",
+      "rect": {
+        "x": 16,
+        "y": 2515,
+        "w": 128,
+        "h": 30
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e38",
+      "role": "link",
+      "name": "Website Privacy Notice",
+      "ctx": "footer",
+      "fp": "link|Website Privacy Notice|0",
+      "rect": {
+        "x": 168,
+        "y": 2521,
+        "w": 191,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e39",
+      "role": "link",
+      "name": "Telemetry Settings",
+      "ctx": "footer",
+      "fp": "link|Telemetry Settings|0",
+      "rect": {
+        "x": 375,
+        "y": 2521,
+        "w": 159,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e40",
+      "role": "link",
+      "name": "Legal",
+      "ctx": "footer",
+      "fp": "link|Legal|0",
+      "rect": {
+        "x": 550,
+        "y": 2521,
+        "w": 59,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e41",
+      "role": "link",
+      "name": "Community Participation Guidelines",
+      "ctx": "footer",
+      "fp": "link|Community Participation Guidelines|0",
+      "rect": {
+        "x": 625,
+        "y": 2521,
+        "w": 286,
+        "h": 20
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "role": "link",
+      "name": "a Creative Commons license",
+      "ctx": "footer",
+      "fp": "link|a Creative Commons license|0",
+      "rect": {
+        "x": 794,
+        "y": 2565,
+        "w": 214,
+        "h": 20
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Skip to main content Skip to search HTML CSS JavaScript Web APIs All Learn Tools About Blog Search Search Your blueprint",
+  "contentHash": "7tm16x",
+  "totalCandidates": 129
+}

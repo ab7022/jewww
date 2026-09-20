@@ -1,0 +1,8 @@
+{
+  "name": "@jev-browser/planner",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": { "@jev-browser/shared": "workspace:*", "zod": "^4.0.0" }
+}

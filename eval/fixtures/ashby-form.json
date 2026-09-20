@@ -1,0 +1,419 @@
+{
+  "url": "https://jobs.ashbyhq.com/ramp/b68aca53-16c0-4ced-ab1d-e8beb2940b4f/application",
+  "title": "Design Engineer @ Ramp",
+  "viewport": {
+    "w": 1280,
+    "h": 900,
+    "scrollY": 0,
+    "maxScrollY": 1551
+  },
+  "elements": [
+    {
+      "eid": "e1",
+      "role": "link",
+      "name": "Ramp",
+      "fp": "link|Ramp|0",
+      "rect": {
+        "x": 514,
+        "y": 39,
+        "w": 252,
+        "h": 19
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e2",
+      "role": "link",
+      "name": "Back to Ramp’s Job Listings",
+      "fp": "link|Back to Ramp’s Job Listings|0",
+      "rect": {
+        "x": 140,
+        "y": 30,
+        "w": 38,
+        "h": 40
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e3",
+      "role": "tablist",
+      "name": "Overview Application",
+      "ctx": "nav",
+      "fp": "tablist|Overview Application|0",
+      "rect": {
+        "x": 440,
+        "y": 178,
+        "w": 700,
+        "h": 38
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e4",
+      "role": "tabpanel",
+      "name": "Application",
+      "fp": "tabpanel|Application|0",
+      "rect": {
+        "x": 440,
+        "y": 216,
+        "w": 700,
+        "h": 2108
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e5",
+      "role": "presentation",
+      "name": "Autofill from resume Upload your resume here to autofill key application fields. Upload file",
+      "fp": "presentation|Autofill from resume Upload your resume here to autofill key application fields. Upload file|0",
+      "rect": {
+        "x": 456,
+        "y": 240,
+        "w": 668,
+        "h": 86
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e6",
+      "role": "textbox",
+      "name": "Legal Name",
+      "st": "required",
+      "fp": "textbox|Legal Name|0",
+      "rect": {
+        "x": 456,
+        "y": 380,
+        "w": 668,
+        "h": 54
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e7",
+      "role": "textbox",
+      "name": "Email",
+      "st": "required",
+      "fp": "textbox|Email|0",
+      "rect": {
+        "x": 456,
+        "y": 488,
+        "w": 668,
+        "h": 54
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e8",
+      "role": "textbox",
+      "name": "Phone",
+      "st": "required",
+      "fp": "textbox|Phone|0",
+      "rect": {
+        "x": 456,
+        "y": 596,
+        "w": 668,
+        "h": 54
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e9",
+      "role": "link",
+      "name": "Privacy Policy",
+      "fp": "link|Privacy Policy|0",
+      "rect": {
+        "x": 627,
+        "y": 725,
+        "w": 79,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e10",
+      "role": "link",
+      "name": "Terms and Conditions",
+      "fp": "link|Terms and Conditions|0",
+      "rect": {
+        "x": 917,
+        "y": 725,
+        "w": 127,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e11",
+      "role": "radio",
+      "name": "Yes - I consent to receiving text messages",
+      "value": "given",
+      "fp": "radio|Yes - I consent to receiving text messages|0",
+      "rect": {
+        "x": 456,
+        "y": 753,
+        "w": 13,
+        "h": 13
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e12",
+      "role": "radio",
+      "name": "No - I do not consent to receiving text messages",
+      "value": "notGiven",
+      "fp": "radio|No - I do not consent to receiving text messages|0",
+      "rect": {
+        "x": 456,
+        "y": 775,
+        "w": 13,
+        "h": 13
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e13",
+      "role": "textbox",
+      "name": "LinkedIn Profile",
+      "st": "required",
+      "fp": "textbox|LinkedIn Profile|0",
+      "rect": {
+        "x": 456,
+        "y": 844,
+        "w": 668,
+        "h": 54
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e14",
+      "role": "presentation",
+      "name": "Resume",
+      "fp": "presentation|Resume|0",
+      "rect": {
+        "x": 456,
+        "y": 952,
+        "w": 668,
+        "h": 120
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e15",
+      "role": "button",
+      "name": "Upload File",
+      "fp": "button|Upload File|0",
+      "rect": {
+        "x": 614,
+        "y": 986,
+        "w": 158,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e16",
+      "role": "textbox",
+      "name": "Website or portfolio (please share any relevant passwords)",
+      "st": "required",
+      "fp": "textbox|Website or portfolio (please share any relevant passwords)|0",
+      "rect": {
+        "x": 456,
+        "y": 1125,
+        "w": 668,
+        "h": 54
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e17",
+      "role": "presentation",
+      "name": "Cover Letter",
+      "fp": "presentation|Cover Letter|0",
+      "rect": {
+        "x": 456,
+        "y": 1233,
+        "w": 668,
+        "h": 120
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e18",
+      "role": "button",
+      "name": "Upload File",
+      "fp": "button|Upload File|1",
+      "rect": {
+        "x": 614,
+        "y": 1267,
+        "w": 158,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e19",
+      "role": "button",
+      "name": "Yes",
+      "fp": "button|Yes|0",
+      "rect": {
+        "x": 456,
+        "y": 1407,
+        "w": 80,
+        "h": 55
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e20",
+      "role": "button",
+      "name": "No",
+      "fp": "button|No|0",
+      "rect": {
+        "x": 534,
+        "y": 1407,
+        "w": 80,
+        "h": 55
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e21",
+      "role": "textbox",
+      "name": "What’s a project you’re most proud of?",
+      "st": "required",
+      "fp": "textbox|What’s a project you’re most proud of?|0",
+      "rect": {
+        "x": 456,
+        "y": 1516,
+        "w": 668,
+        "h": 132
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e22",
+      "role": "textbox",
+      "name": "What does “AI-first” mean in your day-to-day workflow?",
+      "st": "required",
+      "fp": "textbox|What does “AI-first” mean in your day-to-day workflow?|0",
+      "rect": {
+        "x": 456,
+        "y": 1701,
+        "w": 668,
+        "h": 132
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e23",
+      "role": "textbox",
+      "name": "We believe exceptional performance in one area is a good indication of performance in other areas. Do you have any examp",
+      "fp": "textbox|We believe exceptional performance in one area is a good indication of performance in other areas. Do you have any examp|0",
+      "rect": {
+        "x": 456,
+        "y": 1935,
+        "w": 668,
+        "h": 132
+      },
+      "fillable": true
+    },
+    {
+      "eid": "e24",
+      "role": "button",
+      "name": "Yes",
+      "fp": "button|Yes|1",
+      "rect": {
+        "x": 456,
+        "y": 2120,
+        "w": 80,
+        "h": 55
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e25",
+      "role": "button",
+      "name": "No",
+      "fp": "button|No|1",
+      "rect": {
+        "x": 534,
+        "y": 2120,
+        "w": 80,
+        "h": 55
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e26",
+      "role": "button",
+      "name": "Recruiting Privacy Policy",
+      "fp": "button|Recruiting Privacy Policy|0",
+      "rect": {
+        "x": 440,
+        "y": 2272,
+        "w": 700,
+        "h": 52
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e27",
+      "role": "link",
+      "name": "Learn more about Ashby",
+      "ctx": "footer",
+      "fp": "link|Learn more about Ashby|0",
+      "rect": {
+        "x": 152,
+        "y": 2409,
+        "w": 113,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e28",
+      "role": "link",
+      "name": "Privacy Policy",
+      "ctx": "footer",
+      "fp": "link|Privacy Policy|1",
+      "rect": {
+        "x": 831,
+        "y": 2409,
+        "w": 79,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e29",
+      "role": "link",
+      "name": "Security",
+      "ctx": "footer",
+      "fp": "link|Security|0",
+      "rect": {
+        "x": 926,
+        "y": 2409,
+        "w": 47,
+        "h": 15
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e30",
+      "role": "link",
+      "name": "Vulnerability Disclosure",
+      "ctx": "footer",
+      "fp": "link|Vulnerability Disclosure|0",
+      "rect": {
+        "x": 990,
+        "y": 2409,
+        "w": 138,
+        "h": 15
+      },
+      "fillable": false
+    }
+  ],
+  "text": "Design Engineer Location New York, NY (HQ) Employment Type Full time Location Type Hybrid Department Design Compensation",
+  "contentHash": "1glzn5c",
+  "totalCandidates": 42
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@jev-browser/eval",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@jev-browser/jev": "workspace:*",
+    "@jev-browser/sense": "workspace:*",
+    "@jev-browser/shared": "workspace:*",
+    "@jev-browser/planner": "workspace:*"
+  }
+}

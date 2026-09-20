@@ -81,6 +81,16 @@ const FINISHED = {
 
 const EMPTY = { signedIn: true, email: "dev@localhost", credits: 500, running: false, steps: [] };
 
+/**
+ * The shape an older build persisted: `log`, no `steps`. chrome.storage survives an
+ * update, so this is what the panel actually received after the redesign shipped —
+ * and `state.steps.map` threw, leaving a completely blank side panel.
+ */
+const LEGACY = {
+  signedIn: true, email: "dev@localhost", credits: 497, running: false,
+  log: ["goal: summarise this page", "read  Read the page"], status: "done",
+};
+
 // Served over HTTP, not file://: the built page references /assets/… absolutely,
 // which under file:// resolves to the filesystem root and renders nothing.
 const TYPES: Record<string, string> = {
@@ -106,6 +116,7 @@ for (const [name, state, scheme] of [
   ["waiting", WAITING, "dark"],
   ["finished", FINISHED, "dark"],
   ["finished-light", FINISHED, "light"],
+  ["legacy-state", LEGACY, "dark"],
 ] as const) {
   const page = await browser.newPage({
     viewport: { width: 400, height: 760 },
@@ -123,6 +134,11 @@ for (const [name, state, scheme] of [
   };`);
   await page.goto(`http://127.0.0.1:${port}/src/sidepanel/index.html`);
   await page.waitForTimeout(600);
+  // A blank panel is the failure this preview exists to catch.
+  const rendered = await page.evaluate(
+    `(document.getElementById('root')?.textContent ?? '').trim().length`,
+  );
+  if (!rendered) throw new Error(`${name}: the panel rendered nothing`);
   await page.screenshot({ path: join(out, `${name}.png`) });
   await page.close();
   console.log(`  ${name}.png`);

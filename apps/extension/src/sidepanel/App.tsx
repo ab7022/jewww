@@ -19,7 +19,10 @@ export function App(): JSX.Element {
   const [error, setError] = useState<string | null>(null);
 
   const refresh = useCallback(async () => {
-    setState(await send<PanelState>({ kind: "state" }));
+    const next = await send<PanelState>({ kind: "state" });
+    // Belt and braces against a state shape this build does not know: a panel that
+    // throws renders nothing at all, with no indication of why.
+    setState({ ...EMPTY, ...next, steps: Array.isArray(next?.steps) ? next.steps : [] });
   }, []);
 
   useEffect(() => {
@@ -27,7 +30,10 @@ export function App(): JSX.Element {
     // The worker pushes after every event, but MV3 can restart it at any moment, so
     // a slow poll keeps the panel honest rather than stuck on a stale view.
     const listener = (msg: { kind?: string; state?: PanelState }) => {
-      if (msg?.kind === "state" && msg.state) setState(msg.state);
+      if (msg?.kind === "state" && msg.state) {
+        const s = msg.state;
+        setState({ ...EMPTY, ...s, steps: Array.isArray(s.steps) ? s.steps : [] });
+      }
     };
     chrome.runtime.onMessage.addListener(listener);
     const timer = setInterval(() => void refresh(), 1200);

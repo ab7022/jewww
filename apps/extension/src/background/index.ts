@@ -24,9 +24,23 @@ let aborted = false;
 
 const empty: PanelState = { signedIn: false, running: false, steps: [] };
 
+/**
+ * Read the persisted panel state, tolerating a shape written by an older build.
+ *
+ * chrome.storage survives an extension update, so a state saved before `steps`
+ * existed came back without it and the panel crashed on `state.steps.map` — a blank
+ * side panel with no clue why. Anything unrecognised is dropped rather than trusted.
+ */
 async function getState(): Promise<PanelState> {
-  const stored = await chrome.storage.local.get(STATE);
-  return (stored[STATE] as PanelState | undefined) ?? empty;
+  const stored = (await chrome.storage.local.get(STATE))[STATE] as Partial<PanelState> | undefined;
+  if (!stored) return empty;
+  return {
+    ...empty,
+    ...stored,
+    steps: Array.isArray(stored.steps)
+      ? stored.steps.filter((s) => s && typeof s.id === "string" && Array.isArray(s.actions))
+      : [],
+  };
 }
 
 async function patch(next: Partial<PanelState>): Promise<PanelState> {

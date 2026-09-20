@@ -9,7 +9,7 @@ const URL = "https://ai-gateway.vercel.sh/v1/evaluate";
  */
 export function vercel(opts: { apiKey: string; model?: string; timeoutMs?: number }): JevProvider {
   const model = opts.model ?? "typesafe-ai/jev";
-  const timeoutMs = opts.timeoutMs ?? 5000;
+  const timeoutMs = opts.timeoutMs ?? 30_000;
 
   return {
     name: "vercel",

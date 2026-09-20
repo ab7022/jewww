@@ -1,4 +1,6 @@
-/** Minimal OpenRouter chat client. The planner is the only LLM in the system. */
+import { postWithRetry } from "@jev-browser/jev";
+
+/** Minimal OpenRouter chat client, sharing the retry policy of the JEV client. */
 export interface ChatResult {
   text: string;
   usage: { inputTokens: number; outputTokens: number };
@@ -19,25 +21,26 @@ export async function chat(opts: {
   const model = opts.model ?? DEFAULT_PLANNER_MODEL;
   const started = performance.now();
 
-  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${opts.apiKey}`,
-      "Content-Type": "application/json",
+  const res = await postWithRetry(
+    "https://openrouter.ai/api/v1/chat/completions",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${opts.apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model,
+        messages: [
+          { role: "system", content: opts.system },
+          { role: "user", content: opts.user },
+        ],
+        response_format: { type: "json_object" },
+        usage: { include: true },
+      }),
     },
-    body: JSON.stringify({
-      model,
-      messages: [
-        { role: "system", content: opts.system },
-        { role: "user", content: opts.user },
-      ],
-      response_format: { type: "json_object" },
-      usage: { include: true },
-    }),
-    signal: AbortSignal.timeout(opts.timeoutMs ?? 120_000),
-  });
-
-  if (!res.ok) throw new Error(`planner ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    opts.timeoutMs ?? 120_000,
+  );
   const json = (await res.json()) as {
     model: string;
     choices: { message: { content: string } }[];

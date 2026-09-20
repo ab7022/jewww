@@ -1,7 +1,7 @@
 import { confidenceOf } from "@jev-browser/shared";
 import { describe, expect, it, vi } from "vitest";
 import { openrouter } from "../src/openrouter.js";
-import { JevError, postWithRetry } from "../src/types.js";
+import { isTransient, JevError, postWithRetry } from "../src/types.js";
 
 function mockFetch(body: unknown, status = 200) {
   return vi.fn(async () =>
@@ -86,5 +86,46 @@ describe("postWithRetry", () => {
     const r = await postWithRetry("https://x", {}, 100);
     expect(r.status).toBe(200);
     expect(f).toHaveBeenCalledTimes(2);
+  });
+});
+
+describe("transient faults", () => {
+  it("recognises the shapes a network failure actually takes", () => {
+    // Undici reports a connect failure as a bare "fetch failed" with the reason on
+    // `cause`, and an aborted request as TimeoutError. Neither was being retried,
+    // so one Cloudflare connect timeout killed an entire run.
+    const timeout = Object.assign(new Error("The operation was aborted due to timeout"), {
+      name: "TimeoutError",
+    });
+    expect(isTransient(timeout)).toBe(true);
+    expect(isTransient(new Error("fetch failed"))).toBe(true);
+    expect(isTransient(new JevError("upstream 503", 503))).toBe(true);
+  });
+
+  it("does not retry our own bad request", () => {
+    expect(isTransient(new JevError("bad request", 400))).toBe(false);
+    expect(isTransient(new Error("probabilities do not sum to 1"))).toBe(false);
+  });
+
+  it("retries a timeout and succeeds", async () => {
+    let calls = 0;
+    vi.stubGlobal("fetch", async () => {
+      calls += 1;
+      if (calls < 3) throw Object.assign(new Error("timed out"), { name: "TimeoutError" });
+      return new Response("{}", { status: 200 });
+    });
+    const res = await postWithRetry("https://x", {}, 100);
+    expect(res.status).toBe(200);
+    expect(calls).toBe(3);
+  });
+
+  it("gives up with a 504 that names the reason", async () => {
+    vi.stubGlobal("fetch", async () => {
+      throw Object.assign(new Error("Connect Timeout Error"), { name: "TimeoutError" });
+    });
+    await expect(postWithRetry("https://x", {}, 50, 2)).rejects.toMatchObject({
+      status: 504,
+      message: expect.stringContaining("Connect Timeout Error"),
+    });
   });
 });

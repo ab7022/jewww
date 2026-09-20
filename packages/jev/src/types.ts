@@ -26,17 +26,41 @@ export class JevError extends Error {
   }
 }
 
-/** One retry on transport faults and 5xx. Never on 4xx — those are our bug. */
+/** A fault worth trying again: the request never got a considered answer. */
+export function isTransient(err: unknown): boolean {
+  if (err instanceof JevError) return !err.status || err.status >= 500;
+  if (!(err instanceof Error)) return false;
+  // Undici surfaces connect failures and DNS problems as a bare "fetch failed" with
+  // the real reason on `cause`, and an aborted request as TimeoutError.
+  return (
+    err.name === "TimeoutError" ||
+    err.name === "AbortError" ||
+    err.message.includes("fetch failed") ||
+    err.message.includes("ETIMEDOUT") ||
+    err.message.includes("ECONNRESET") ||
+    err.message.includes("ENOTFOUND")
+  );
+}
+
+/**
+ * POST with retries on anything transient — 5xx, timeouts, and connection failures.
+ *
+ * Connection faults were not retried at all, and a single Cloudflare connect timeout
+ * to the provider killed a whole run with an unexplained 500. Never retried on 4xx:
+ * those are our bug and repeating them only wastes the user's credits.
+ */
 export async function postWithRetry(
   url: string,
   init: RequestInit,
   timeoutMs: number,
+  attempts = 3,
 ): Promise<Response> {
   let lastErr: unknown;
-  for (let attempt = 0; attempt < 2; attempt++) {
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    if (attempt > 0) await new Promise((r) => setTimeout(r, 400 * 2 ** (attempt - 1)));
     try {
       const res = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) });
-      if (res.status >= 500 && attempt === 0) {
+      if (res.status >= 500) {
         lastErr = new JevError(`upstream ${res.status}`, res.status, await res.text());
         continue;
       }
@@ -44,9 +68,9 @@ export async function postWithRetry(
       return res;
     } catch (err) {
       lastErr = err;
-      if (err instanceof JevError && err.status && err.status < 500) throw err;
-      if (attempt === 1) break;
+      if (!isTransient(err)) throw err;
     }
   }
-  throw lastErr instanceof Error ? lastErr : new JevError(String(lastErr));
+  const detail = lastErr instanceof Error ? lastErr.message : String(lastErr);
+  throw new JevError(`model provider unreachable after ${attempts} attempts: ${detail}`, 504);
 }

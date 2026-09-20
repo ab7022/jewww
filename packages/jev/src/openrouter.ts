@@ -31,7 +31,7 @@ export function openrouter(opts: {
   timeoutMs?: number;
 }): JevProvider {
   const model = opts.model ?? "jev-1.13";
-  const timeoutMs = opts.timeoutMs ?? 5000;
+  const timeoutMs = opts.timeoutMs ?? 30_000;
 
   return {
     name: "openrouter",

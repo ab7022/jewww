@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { fromEnv } from "@jev-browser/jev";
 import { compose, extract, makePlan } from "@jev-browser/planner";
+import { isTransient, JevError } from "@jev-browser/jev";
 import { decide, fieldText, mapFields } from "@jev-browser/policy";
 import type { Snapshot } from "@jev-browser/shared";
 import express, { type Express, type NextFunction, type Request, type Response } from "express";
@@ -333,6 +334,21 @@ export function createApp(cfg: AppConfig): Express {
   app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
     if (err instanceof InsufficientCredits) {
       return res.status(402).json({ error: "insufficient_credits", balance: err.balance });
+    }
+    // A provider that timed out or could not be reached is not an internal error,
+    // and reporting it as one sent people looking in the wrong place. 504 with the
+    // reason says whose problem it is and that retrying is reasonable.
+    if (isTransient(err)) {
+      console.error(`upstream: ${err.message}`);
+      return res.status(504).json({
+        error: "upstream_unavailable",
+        message: "the model provider timed out or could not be reached — try again",
+        detail: err.message.slice(0, 200),
+      });
+    }
+    if (err instanceof JevError && err.status && err.status < 500) {
+      console.error(`bad request to provider: ${err.message}`);
+      return res.status(502).json({ error: "provider_rejected", message: err.message });
     }
     console.error(err);
     res.status(500).json({ error: "internal", message: err.message });

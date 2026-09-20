@@ -1,3 +1,4 @@
+import { postWithRetry } from "@jev-browser/jev";
 import { TEXT_VALUE } from "./instructions.js";
 
 /**
@@ -38,7 +39,9 @@ export async function fieldText(
   const model = opts.model ?? process.env.TEXT_MODEL ?? DEFAULT_TEXT_MODEL;
   const started = performance.now();
 
-  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+  const res = await postWithRetry(
+    "https://openrouter.ai/api/v1/chat/completions",
+    {
     method: "POST",
     headers: { Authorization: `Bearer ${opts.apiKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -52,9 +55,9 @@ export async function fieldText(
         { role: "user", content: JSON.stringify(ctx) },
       ],
     }),
-    signal: AbortSignal.timeout(opts.timeoutMs ?? 20_000),
-  });
-  if (!res.ok) throw new Error(`text helper ${res.status}; nothing typed`);
+    },
+    opts.timeoutMs ?? 30_000,
+  );
 
   const json = (await res.json()) as {
     model: string;

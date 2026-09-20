@@ -110,7 +110,10 @@ export class Api {
       const { balance } = (await res.json()) as { balance: number };
       throw new Error(`out of credits (${balance} left)`);
     }
-    if (!res.ok) throw new Error(`${path} failed: ${res.status} ${await res.text()}`);
+    if (!res.ok) {
+      const body = (await res.json().catch(() => ({}))) as { message?: string; error?: string };
+      throw new Error(body.message ?? body.error ?? `${path} failed with ${res.status}`);
+    }
     return (await res.json()) as T;
   }
 

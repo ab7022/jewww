@@ -1,7 +1,7 @@
 import { type Capabilities, runPlan } from "@jev-browser/runtime";
 import type { RunEvent } from "@jev-browser/runtime";
 import { Api } from "./api.js";
-import { ensureHostPermission, TabExecutor } from "./executor.js";
+import { hasHostPermission, TabExecutor } from "./executor.js";
 import type { PanelState, ToWorker } from "../shared/messages.js";
 
 /**
@@ -81,11 +81,9 @@ async function start(goal: string, tabId: number): Promise<void> {
   aborted = false;
   const tab = await chrome.tabs.get(tabId);
   const url = tab.url ?? "";
-  if (!url.startsWith("http")) throw new Error("open a normal web page first");
-
-  if (!(await ensureHostPermission(url))) {
-    await log("permission for this site was declined");
-    return;
+  if (!/^https?:/.test(url)) throw new Error(`this tab is on ${url || "an internal page"}`);
+  if (!(await hasHostPermission(url))) {
+    throw new Error(`no access to ${new URL(url).host} — grant it when asked, then run again`);
   }
 
   await chrome.alarms.create(KEEPALIVE, { periodInMinutes: 0.5 });

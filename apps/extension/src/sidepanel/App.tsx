@@ -10,6 +10,7 @@ export function App(): JSX.Element {
   const [state, setState] = useState<PanelState>(EMPTY);
   const [goal, setGoal] = useState("");
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const refresh = useCallback(async () => {
     setState(await send<PanelState>({ kind: "state" }));
@@ -42,11 +43,34 @@ export function App(): JSX.Element {
 
   const start = async () => {
     if (!goal.trim()) return;
+    setError(null);
     setBusy(true);
     try {
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-      if (tab?.id) await send({ kind: "start", goal: goal.trim(), tabId: tab.id });
+      const url = tab?.url ?? "";
+      if (!tab?.id || !/^https?:/.test(url)) {
+        setError(
+          `Open a normal web page in this tab first — it is currently on ${url || "an internal page"}.`,
+        );
+        return;
+      }
+
+      // Asked here, synchronously inside the click, because chrome.permissions.request
+      // only works during a user gesture. Requesting it from the service worker after
+      // an await throws "must be called during a user gesture" every time.
+      const origin = `${new URL(url).origin}/*`;
+      const granted =
+        (await chrome.permissions.contains({ origins: [origin] })) ||
+        (await chrome.permissions.request({ origins: [origin] }));
+      if (!granted) {
+        setError(`Access to ${new URL(url).host} was declined, so nothing can run there.`);
+        return;
+      }
+
+      await send({ kind: "start", goal: goal.trim(), tabId: tab.id });
       await refresh();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err));
     } finally {
       setBusy(false);
     }
@@ -123,6 +147,8 @@ export function App(): JSX.Element {
           )}
           {state.status && <span className="muted">{state.status}</span>}
         </div>
+
+        {error && <div className="error">{error}</div>}
 
         {state.pending && (
           <div className="approve">

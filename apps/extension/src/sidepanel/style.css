@@ -53,4 +53,8 @@ button:disabled { opacity: .5; cursor: not-allowed; }
   display: flex; flex-direction: column; gap: 8px;
 }
 .approve strong { font-size: 12px; }
+.error {
+  border: 1px solid var(--danger); border-radius: 8px; padding: 8px 10px;
+  background: color-mix(in srgb, var(--danger) 10%, transparent); font-size: 12px;
+}
 .risk { color: var(--warn); font-weight: 600; text-transform: uppercase; font-size: 11px; }

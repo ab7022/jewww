@@ -21,12 +21,24 @@ export class TabExecutor implements Executor {
       try {
         return (await chrome.tabs.sendMessage(this.tabId, msg)) as FromContent;
       } catch (err) {
-        // A navigation tears down the content script; it is re-injected on the new
-        // document a moment later.
         if (attempt >= 3) throw new StalePage(`tab unreachable: ${String(err).slice(0, 80)}`);
-        await new Promise((r) => setTimeout(r, 400));
+        // Two reasons the tab does not answer, and injecting fixes both: a tab that
+        // was already open when the extension loaded never got the content script at
+        // all, and a navigation tears down the one that was there. Requiring the user
+        // to reload every tab they already had open is not a real answer.
+        await this.inject();
+        await new Promise((r) => setTimeout(r, 300));
       }
     }
+  }
+
+  /** Inject the content script, using the paths the built manifest declares. */
+  private async inject(): Promise<void> {
+    const files = chrome.runtime.getManifest().content_scripts?.[0]?.js ?? [];
+    if (!files.length) return;
+    await chrome.scripting
+      .executeScript({ target: { tabId: this.tabId }, files })
+      .catch(() => {});
   }
 
   async snapshot(): Promise<RawSnapshot> {
@@ -80,9 +92,11 @@ export class TabExecutor implements Executor {
   }
 }
 
-/** Ask for access to one origin, at the moment a run actually needs it. */
-export async function ensureHostPermission(url: string): Promise<boolean> {
-  const origin = `${new URL(url).origin}/*`;
-  if (await chrome.permissions.contains({ origins: [origin] })) return true;
-  return chrome.permissions.request({ origins: [origin] });
+/**
+ * Verify access to one origin. Only ever CHECKS — the prompt belongs in the side
+ * panel's click handler, because chrome.permissions.request needs a user gesture and
+ * a service worker resuming after an await does not have one.
+ */
+export async function hasHostPermission(url: string): Promise<boolean> {
+  return chrome.permissions.contains({ origins: [`${new URL(url).origin}/*`] });
 }

@@ -12,6 +12,7 @@ export type Operation =
   | "CLICK"
   | "TYPE_TEXT"
   | "SELECT"
+  | "ATTACH"
   | "SCROLL_DOWN"
   | "SCROLL_UP"
   | "WAIT"
@@ -31,7 +32,7 @@ export interface TargetEntry {
 
 export interface ActionSpace {
   elements: SnapshotElement[];
-  targets: Partial<Record<"CLICK" | "TYPE_TEXT" | "SELECT", Record<string, TargetEntry>>>;
+  targets: Partial<Record<"CLICK" | "TYPE_TEXT" | "SELECT" | "ATTACH", Record<string, TargetEntry>>>;
   operations: Record<string, string>;
 }
 
@@ -41,6 +42,7 @@ const OPERATION_LABEL: Record<string, string> = {
   CLICK: "Click an element: a button, link, menu option, autocomplete suggestion, or calendar day.",
   TYPE_TEXT: "Enter or replace text in an editable field. A small model supplies the value from the goal.",
   SELECT: "Choose a value in an observed native dropdown.",
+  ATTACH: "Attach the user's file to a file-upload control. Only offered when the page has one.",
   SCROLL_DOWN: "Reveal content below the current viewport.",
   SCROLL_UP: "Reveal content above the current viewport.",
   WAIT: "The needed control is absent or disabled, or submitted results are still loading.",
@@ -51,10 +53,14 @@ const OPERATION_LABEL: Record<string, string> = {
 export function buildActionSpace(
   elements: SnapshotElement[],
   nodes: Record<string, number>,
-  opts: { canScrollDown: boolean; canScrollUp: boolean },
+  opts: { canScrollDown: boolean; canScrollUp: boolean; canAttach?: boolean },
 ): ActionSpace {
   const targets: ActionSpace["targets"] = {};
-  const put = (op: "CLICK" | "TYPE_TEXT" | "SELECT", key: string, entry: TargetEntry) => {
+  const put = (
+    op: "CLICK" | "TYPE_TEXT" | "SELECT" | "ATTACH",
+    key: string,
+    entry: TargetEntry,
+  ) => {
     (targets[op] ??= {})[key] = entry;
   };
 
@@ -70,6 +76,13 @@ export function buildActionSpace(
       ...(e.st !== undefined ? { state: e.st } : {}),
     };
 
+    // A file input cannot be clicked or typed into usefully — offering it as a
+    // CLICK target only ever produced a dialog nobody can answer. It becomes an
+    // ATTACH target instead, and only when there is actually a file to attach.
+    if (e.role === "fileinput") {
+      if (opts.canAttach) put("ATTACH", e.eid, base);
+      continue;
+    }
     if (e.role === "combobox" && e.value !== undefined && !EDITABLE.test(e.role)) {
       put("SELECT", e.eid, base);
       continue;
@@ -85,7 +98,7 @@ export function buildActionSpace(
   }
 
   const operations: Record<string, string> = {};
-  for (const op of ["CLICK", "TYPE_TEXT", "SELECT"] as const) {
+  for (const op of ["CLICK", "TYPE_TEXT", "SELECT", "ATTACH"] as const) {
     if (targets[op] && Object.keys(targets[op]).length) operations[op] = OPERATION_LABEL[op] ?? op;
   }
   if (opts.canScrollDown) operations.SCROLL_DOWN = OPERATION_LABEL.SCROLL_DOWN ?? "";

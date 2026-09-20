@@ -1,13 +1,18 @@
 import { Plan } from "@jev-browser/shared";
+import type { JevProvider } from "@jev-browser/jev";
+import { type Normalisation, normalizePlan } from "./normalize.js";
 import { type ChatResult, chat, DEFAULT_PLANNER_MODEL } from "./llm.js";
 import { SYSTEM_PROMPT, userPrompt } from "./prompt.js";
 
 export { SYSTEM_PROMPT, DEFAULT_PLANNER_MODEL };
 export { compose, extract } from "./extract.js";
+export { normalizePlan, type Normalisation } from "./normalize.js";
 export type { ChatResult };
 
 export interface PlanResult {
   plan: Plan;
+  /** Canonicalisations applied after parsing. Reported, never silent. */
+  normalised: Normalisation[];
   raw: string;
   usage: ChatResult["usage"];
   costUsd: number;
@@ -31,6 +36,8 @@ export async function makePlan(opts: {
   goal: string;
   start: string;
   model?: string;
+  /** When supplied, the plan is canonicalised by asking JEV what each step is. */
+  jev?: JevProvider;
 }): Promise<PlanResult> {
   const model = opts.model ?? DEFAULT_PLANNER_MODEL;
   const first = await chat({
@@ -42,7 +49,14 @@ export async function makePlan(opts: {
 
   const parsed = Plan.safeParse(tryExtract(first.text));
   if (parsed.success) {
-    return { ...toResult(first), plan: parsed.data, repaired: false };
+    const norm = await canonicalise(parsed.data, opts.jev);
+    return {
+      ...toResult(first),
+      plan: norm.plan,
+      normalised: norm.changes,
+      costUsd: first.costUsd + norm.costUsd,
+      repaired: false,
+    };
   }
 
   // One repair attempt, handing back the exact validation errors.
@@ -56,19 +70,27 @@ export async function makePlan(opts: {
       `Previous answer:\n${first.text.slice(0, 4000)}\n\nReturn corrected JSON only.`,
   });
 
-  const retry = Plan.parse(tryExtract(second.text));
+  const norm = await canonicalise(Plan.parse(tryExtract(second.text)), opts.jev);
   return {
-    plan: retry,
+    plan: norm.plan,
+    normalised: norm.changes,
     raw: second.text,
     usage: {
       inputTokens: first.usage.inputTokens + second.usage.inputTokens,
       outputTokens: first.usage.outputTokens + second.usage.outputTokens,
     },
-    costUsd: first.costUsd + second.costUsd,
+    costUsd: first.costUsd + second.costUsd + norm.costUsd,
     model: second.model,
     latencyMs: first.latencyMs + second.latencyMs,
     repaired: true,
   };
+}
+
+async function canonicalise(plan: Plan, jev?: JevProvider) {
+  if (!jev) return { plan, changes: [] as Normalisation[], costUsd: 0 };
+  // A failure here must not lose a usable plan — canonicalisation is an improvement,
+  // not a precondition.
+  return normalizePlan(jev, plan).catch(() => ({ plan, changes: [] as Normalisation[], costUsd: 0 }));
 }
 
 function tryExtract(text: string): unknown {

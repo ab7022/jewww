@@ -1,4 +1,4 @@
-import type { Decision, DecideInput, TextContext } from "@jev-browser/policy";
+import type { Decision, DecideInput, FieldMapping, TextContext } from "@jev-browser/policy";
 import type { Plan } from "@jev-browser/shared";
 
 /**
@@ -122,6 +122,9 @@ export class Api {
 
   compose = async (runId: string, intent: string, inputs: Record<string, unknown>) =>
     (await this.call<{ value: unknown }>(`/api/runs/${runId}/compose`, { intent, inputs })).value;
+
+  mapFields = async (runId: string, input: unknown): Promise<FieldMapping[]> =>
+    (await this.call<{ mappings: FieldMapping[] }>(`/api/runs/${runId}/fields`, input)).mappings;
 
   finish = (runId: string, status: string) =>
     this.call<{ ok: true }>(`/api/runs/${runId}/finish`, { status });

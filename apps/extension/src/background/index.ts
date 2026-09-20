@@ -100,6 +100,7 @@ async function start(goal: string, tabId: number): Promise<void> {
     text: (ctx) => api.text(runId, ctx),
     extract: (intent, schema, pageText) => api.extract(runId, intent, schema, pageText),
     compose: (intent, inputs) => api.compose(runId, intent, inputs),
+    mapFields: async (input) => ({ mappings: await api.mapFields(runId, input), costUsd: 0 }),
   };
 
   try {

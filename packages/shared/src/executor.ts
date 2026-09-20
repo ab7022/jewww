@@ -41,13 +41,16 @@ export interface Executor {
    * node needs the article, the step loop needs a preview.
    */
   pageText(maxChars?: number): Promise<string>;
-  /** Semantic guard for a decision about `node`, or the page alone when null. */
-  guardFor(node: number | null): Promise<Guard>;
+  /**
+   * Semantic guard for a decision about `node`, or the page alone when null.
+   * `fp` lets a re-rendered element be re-found rather than reported as gone.
+   */
+  guardFor(node: number | null, fp?: string): Promise<Guard>;
   /**
    * Execute. MUST re-verify `guard` immediately before input — including after text
    * generation, which takes seconds during which the page moves on.
    */
-  act(action: Action, node: number | null, guard: Guard, text?: string): Promise<void>;
+  act(action: Action, node: number | null, guard: Guard, text?: string, fp?: string): Promise<void>;
   /** Wait for the page to be worth observing again. */
   settle(node: number | null, isCombobox: boolean): Promise<void>;
   url(): string;

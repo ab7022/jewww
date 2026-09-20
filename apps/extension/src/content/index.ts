@@ -17,8 +17,8 @@ import type { FromContent, GuardPair, ToContent } from "../shared/messages.js";
  * with, while still pointing at the same DOM.
  */
 
-function currentGuard(node: number | null): GuardPair {
-  return { pageKey: pageKey(), nodeGuard: node === null ? null : nodeGuard(node) };
+function currentGuard(node: number | null, fp?: string): GuardPair {
+  return { pageKey: pageKey(), nodeGuard: node === null ? null : nodeGuard(node, fp) };
 }
 
 /** Native setters, because React ignores a plain `.value =` assignment. */
@@ -49,14 +49,14 @@ async function handle(msg: ToContent): Promise<FromContent> {
     }
 
     case "guard":
-      return { ok: true, guard: currentGuard(msg.node) };
+      return { ok: true, guard: currentGuard(msg.node, msg.fp) };
 
     case "settle":
       await settle(msg.node, msg.isCombobox);
       return { ok: true };
 
     case "act": {
-      const { action, node, guard, text } = msg;
+      const { action, node, guard, text, fp } = msg;
 
       if (action.kind === "navigate") {
         location.assign(action.url);
@@ -75,16 +75,14 @@ async function handle(msg: ToContent): Promise<FromContent> {
 
       // Freshness immediately before input — not when the decision was made, which
       // may have been seconds ago while a model wrote the text we are about to type.
-      if (!stillFresh(guard, currentGuard(node))) {
+      if (!stillFresh(guard, currentGuard(node, fp))) {
         return { ok: false, error: "page changed since the decision", stale: true };
       }
 
       const kind = action.kind === "type" ? "fill" : action.kind === "select" ? "select" : "click";
       const option = action.kind === "select" ? action.option : undefined;
-      const point = resolvePoint(node, kind, option);
-      if (!point) {
-        return { ok: false, error: "target gone, disabled, off-screen, or covered", unreachable: true };
-      }
+      const point = resolvePoint(node, kind, option, fp);
+      if ("refused" in point) return { ok: false, error: point.refused, unreachable: true };
       if (kind === "select") return { ok: true };
 
       const el = document.elementFromPoint(point.x, point.y) as HTMLElement | null;

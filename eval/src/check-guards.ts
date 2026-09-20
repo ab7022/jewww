@@ -40,8 +40,9 @@ const check = (name: string, pass: boolean, detail?: string) =>
 const pageKey = () => page.evaluate(call.pageKey()) as Promise<string | null>;
 const guard = (node: number) => page.evaluate(call.nodeGuard(node)) as Promise<string | null>;
 const resolve = async (node: number, kind: "click" | "fill") => {
-  const raw = (await page.evaluate(call.resolvePoint(node, kind))) as string | null;
-  return raw && raw !== "null" ? raw : null;
+  const raw = (await page.evaluate(call.resolvePoint(node, kind))) as string;
+  const r = JSON.parse(raw) as { x: number } | { refused: string };
+  return "refused" in r ? null : raw;
 };
 
 // 1. Scrolling is not a semantic change. If it invalidated decisions, every page

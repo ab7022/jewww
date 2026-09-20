@@ -26,6 +26,13 @@ when you are writing the plan.
           success: an observable state, e.g. "a list of past orders is visible".
           Never "the click worked" — describe what the screen shows.
 
+"fill"    Fill an ENTIRE form in one shot from the user's profile.
+          { kind, id, intent, site?, success, extras? }
+          Use this for any form with several fields — an application, a checkout, a
+          signup. It maps every field to a profile key in a single call, which is far
+          faster and cheaper than one act step per field. Do NOT emit a separate act
+          node per field. Fields it cannot map confidently are left for the human.
+
 "read"    Pull structured data off the current page into the scratchpad. An LLM does
           this, not JEV. { kind, id, intent, site?, schema, into }
 
@@ -39,6 +46,11 @@ when you are writing the plan.
           over is a scratchpad key. min means "until this many SUCCEED", not attempts.
 
 ## Rules
+
+0. ANY STEP THAT FILLS MORE THAN ONE FORM FIELD MUST BE A "fill" NODE.
+   Never emit an act node whose intent is to enter values into form fields, and never
+   emit one act node per field. One fill node handles the entire form in a single
+   call. Attaching a file and submitting remain separate steps.
 
 1. SLOTS ARE FOR REFERENCES, NOT LITERALS. Use "slots" only to point at something an
    earlier read or compose put in the scratchpad ("$.summary"), or at profile data
@@ -73,10 +85,13 @@ when you are writing the plan.
 5. READ BEFORE YOU LOOP. A foreach needs its collection to already be in the
    scratchpad, so a read node must populate it first.
 
-6. ONE OBSERVABLE OUTCOME PER ACT NODE. "search for X and open the third result" is
+6. FORMS USE "fill", NOT A CHAIN OF act NODES. One fill node handles the whole form.
+   Attaching a file and submitting are still separate steps.
+
+7. ONE OBSERVABLE OUTCOME PER ACT NODE. "search for X and open the third result" is
    two nodes. Split until each success criterion is a single visible state.
 
-7. Set "site" on any node whose origin differs from the one before it, and list every
+8. Set "site" on any node whose origin differs from the one before it, and list every
    origin in "sites" so permissions can be requested up front.
 
 ## Profile keys available for form filling

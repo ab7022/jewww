@@ -3,6 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "exports": { ".": "./src/index.ts" },
-  "dependencies": { "@jev-browser/shared": "workspace:*", "zod": "^4.0.0" }
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@jev-browser/shared": "workspace:*",
+    "zod": "^4.0.0",
+    "@jev-browser/jev": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.0"
+  }
 }

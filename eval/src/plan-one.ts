@@ -28,7 +28,9 @@ console.log(`\ngoal      ${goal}`);
 console.log(`model     ${r.model}`);
 console.log(`latency   ${r.latencyMs}ms    cost $${r.costUsd.toFixed(5)}    repaired ${r.repaired}`);
 console.log(`tokens    ${r.usage.inputTokens} in / ${r.usage.outputTokens} out`);
-console.log(`sites     ${r.plan.sites.join(", ") || "(none)"}\n`);
+console.log(`sites     ${r.plan.sites.join(", ") || "(none)"}`);
+for (const n of r.normalised) console.log(`normalised ${n.nodeId}: ${n.from} -> ${n.to}`);
+console.log("");
 
 function show(nodes: Node[], depth = ""): void {
   for (const n of nodes) {

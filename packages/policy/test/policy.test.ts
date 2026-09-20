@@ -9,8 +9,10 @@ const els: SnapshotElement[] = [
   { eid: "e1", role: "button", name: "Search" },
   { eid: "e2", role: "textbox", name: "Search query" },
   { eid: "e3", role: "link", name: "Submit application" },
+  // A field that must never be typed into, whatever any model says about it.
+  { eid: "e4", role: "textbox", name: "Password" },
 ];
-const nodes = { e1: 11, e2: 22, e3: 33 };
+const nodes = { e1: 11, e2: 22, e3: 33, e4: 44 };
 const space = buildActionSpace(els, nodes, { canScrollDown: true, canScrollUp: false });
 
 const snapshot: Snapshot = {
@@ -34,10 +36,15 @@ const choice = (c: string, probs: Record<string, number>, confidence = 0.9): Ans
   type: "choice", choice: c, probabilities: probs, confidence,
 });
 
+const NO_BLOCKER = choice("none", {
+  none: 1, captcha: 0, account_required: 0, login_required: 0,
+  credentials: 0, paywall: 0, unsupported: 0,
+});
+
 describe("action space", () => {
   it("gives each operation its own target set", () => {
-    expect(Object.keys(space.targets.TYPE_TEXT ?? {})).toEqual(["e2"]);
-    expect(Object.keys(space.targets.CLICK ?? {}).sort()).toEqual(["e1", "e2", "e3"]);
+    expect(Object.keys(space.targets.TYPE_TEXT ?? {}).sort()).toEqual(["e2", "e4"]);
+    expect(Object.keys(space.targets.CLICK ?? {}).sort()).toEqual(["e1", "e2", "e3", "e4"]);
   });
 
   it("a button is never offered as a typing target", () => {
@@ -58,7 +65,7 @@ describe("action space", () => {
 describe("fan-out", () => {
   it("asks operation, risk and every target head in ONE request", () => {
     expect(Object.keys(buildQuestions({ ...input, space })).sort()).toEqual([
-      "click_target", "operation", "risk", "type_text_target",
+      "blocker", "click_target", "operation", "risk", "type_text_target",
     ]);
   });
 
@@ -66,10 +73,11 @@ describe("fan-out", () => {
     const d = await decide(
       fakeJev({
         operation: choice("CLICK", { CLICK: 0.9, TYPE_TEXT: 0.04, SCROLL_DOWN: 0.02, WAIT: 0.02, DONE: 0.01, BLOCKED: 0.01 }),
-        click_target: choice("e1", { e1: 0.95, e2: 0.03, e3: 0.02 }),
+        click_target: choice("e1", { e1: 0.94, e2: 0.02, e3: 0.02, e4: 0.02 }),
         // A wrong value in an unused head must not reach the action.
-        type_text_target: choice("e2", { e2: 1 }),
+        type_text_target: choice("e2", { e2: 0.97, e4: 0.03 }),
         risk: choice("none", { none: 1, money: 0, message: 0, destroy: 0, settings: 0, auth: 0 }),
+        blocker: NO_BLOCKER,
       }),
       input,
     );
@@ -80,9 +88,10 @@ describe("fan-out", () => {
     const d = await decide(
       fakeJev({
         operation: choice("CLICK", { CLICK: 0.9, TYPE_TEXT: 0.04, SCROLL_DOWN: 0.02, WAIT: 0.02, DONE: 0.01, BLOCKED: 0.01 }),
-        click_target: choice("e1", { e1: 0.95, e2: 0.03, e3: 0.02 }),
+        click_target: choice("e1", { e1: 0.94, e2: 0.02, e3: 0.02, e4: 0.02 }),
         type_text_target: choice("nonsense", { nope: 5 }),
         risk: choice("none", { none: 1, money: 0, message: 0, destroy: 0, settings: 0, auth: 0 }),
+        blocker: NO_BLOCKER,
       }),
       input,
     );
@@ -93,9 +102,10 @@ describe("fan-out", () => {
     const d = await decide(
       fakeJev({
         operation: choice("TYPE_TEXT", { TYPE_TEXT: 0.9, CLICK: 0.04, SCROLL_DOWN: 0.02, WAIT: 0.02, DONE: 0.01, BLOCKED: 0.01 }),
-        type_text_target: choice("e2", { e2: 1 }),
-        click_target: choice("e1", { e1: 0.5, e2: 0.3, e3: 0.2 }),
+        type_text_target: choice("e2", { e2: 0.97, e4: 0.03 }),
+        click_target: choice("e1", { e1: 0.4, e2: 0.2, e3: 0.2, e4: 0.2 }),
         risk: choice("none", { none: 1, money: 0, message: 0, destroy: 0, settings: 0, auth: 0 }),
+        blocker: NO_BLOCKER,
       }),
       input,
     );
@@ -104,17 +114,67 @@ describe("fan-out", () => {
 });
 
 describe("safety", () => {
-  it("an irreversible-looking label forces confirmation even when risk says none", async () => {
+  const clickE3 = {
+    operation: choice("CLICK", { CLICK: 0.9, TYPE_TEXT: 0.04, SCROLL_DOWN: 0.02, WAIT: 0.02, DONE: 0.01, BLOCKED: 0.01 }),
+    click_target: choice("e3", { e1: 0.02, e2: 0.02, e3: 0.94, e4: 0.02 }),
+  };
+
+  it("requires confirmation whenever the model reports a risk", async () => {
     const d = await decide(
       fakeJev({
-        operation: choice("CLICK", { CLICK: 0.9, TYPE_TEXT: 0.04, SCROLL_DOWN: 0.02, WAIT: 0.02, DONE: 0.01, BLOCKED: 0.01 }),
-        click_target: choice("e3", { e1: 0.02, e2: 0.03, e3: 0.95 }),
-        risk: choice("none", { none: 1, money: 0, message: 0, destroy: 0, settings: 0, auth: 0 }),
+        ...clickE3,
+        risk: choice("message", { none: 0.05, money: 0, message: 0.95, destroy: 0, settings: 0, auth: 0 }),
+        blocker: NO_BLOCKER,
       }),
       input,
     );
-    expect(d.risk).toBe("none");
-    expect(d.requiresConfirmation).toBe(true); // label says "Submit application"
+    expect(d.requiresConfirmation).toBe(true);
+  });
+
+  it("does not gate an ordinary click just because the label reads dramatic", async () => {
+    // e3 is "Submit application". The old word list stopped runs here before they had
+    // done anything; risk is the model's judgement now.
+    const d = await decide(
+      fakeJev({
+        ...clickE3,
+        risk: choice("none", { none: 1, money: 0, message: 0, destroy: 0, settings: 0, auth: 0 }),
+        blocker: NO_BLOCKER,
+      }),
+      input,
+    );
+    expect(d.requiresConfirmation).toBe(false);
+  });
+
+  it("hands off when the page needs a human", async () => {
+    const d = await decide(
+      fakeJev({
+        ...clickE3,
+        risk: choice("none", { none: 1, money: 0, message: 0, destroy: 0, settings: 0, auth: 0 }),
+        blocker: choice("captcha", {
+          none: 0.02, captcha: 0.98, account_required: 0, login_required: 0,
+          credentials: 0, paywall: 0, unsupported: 0,
+        }),
+      }),
+      input,
+    );
+    expect(d.blocker).toBe("captcha");
+    expect(d.mustHandOff).toBe(true);
+  });
+
+  it("never types a secret, whatever the model says", async () => {
+    // Target e4 ("Password") while risk and blocker both report everything is fine.
+    const d = await decide(
+      fakeJev({
+        operation: choice("TYPE_TEXT", { TYPE_TEXT: 0.9, CLICK: 0.04, SCROLL_DOWN: 0.02, WAIT: 0.02, DONE: 0.01, BLOCKED: 0.01 }),
+        type_text_target: choice("e4", { e2: 0.02, e4: 0.98 }),
+        click_target: choice("e1", { e1: 0.4, e2: 0.2, e3: 0.2, e4: 0.2 }),
+        risk: choice("none", { none: 1, money: 0, message: 0, destroy: 0, settings: 0, auth: 0 }),
+        blocker: NO_BLOCKER,
+      }),
+      input,
+    );
+    expect(d.mustHandOff).toBe(true);
+    expect(d.requiresConfirmation).toBe(true);
   });
 });
 

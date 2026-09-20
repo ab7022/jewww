@@ -93,6 +93,7 @@ function fakeJev(ops: string[], target = "e1"): JevProvider {
       const answers: Record<string, Answer> = {
         operation: choice(op, optionsFor("operation")),
         risk: choice("none", optionsFor("risk")),
+        blocker: choice("none", optionsFor("blocker")),
       };
       for (const key of Object.keys(questions)) {
         if (!key.endsWith("_target")) continue;
@@ -168,23 +169,12 @@ describe("the interlock", () => {
     expect(events.some((e) => e.type === "suspend" && e.reason === "handoff")).toBe(true);
   });
 
-  it("requires confirmation for an irreversible label even when risk says none", async () => {
-    const { result, events } = await run(
-      plan([{ kind: "act", id: "a", intent: "i", success: "s" }]),
-      fakeJev(["CLICK"]),
-      fakeExecutor(["h1", "h2"], "Submit application"),
-    );
-    expect(result.status).toBe("suspended");
-    expect(events.some((e) => e.type === "suspend" && e.reason === "confirm")).toBe(true);
-  });
-
-  it("proceeds past an irreversible label once approved", async () => {
+  it("executes an ordinary click without interrupting the user", async () => {
     const ex = fakeExecutor(["h1", "h2", "h3"], "Submit application");
     const { result } = await run(
       plan([{ kind: "act", id: "a", intent: "i", success: "s" }]),
       fakeJev(["CLICK", "DONE"]),
       ex,
-      { approve: async () => true },
     );
     expect(result.status).toBe("done");
     expect(ex.acted[0]).toEqual({ kind: "click", eid: "e1" });

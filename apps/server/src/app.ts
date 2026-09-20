@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { fromEnv } from "@jev-browser/jev";
 import { compose, extract, makePlan } from "@jev-browser/planner";
-import { decide, fieldText } from "@jev-browser/policy";
+import { decide, fieldText, mapFields } from "@jev-browser/policy";
 import type { Snapshot } from "@jev-browser/shared";
 import express, { type Express, type NextFunction, type Request, type Response } from "express";
 import {
@@ -158,7 +158,7 @@ export function createApp(cfg: AppConfig): Express {
       updatedAt: now,
     });
 
-    const planned = await makePlan({ apiKey: cfg.openrouterKey, goal, start: url });
+    const planned = await makePlan({ apiKey: cfg.openrouterKey, goal, start: url, jev: jev() });
     const charge = await meter(store, uid(req), "plan", planned.costUsd, runId);
     res.json({ runId, plan: planned.plan, balance: charge.balance });
   });
@@ -226,6 +226,16 @@ export function createApp(cfg: AppConfig): Express {
     const r = await fieldText(req.body, { apiKey: cfg.openrouterKey });
     const charge = await meter(store, uid(req), "text", r.costUsd, run._id);
     res.json({ text: r.text, balance: charge.balance });
+  });
+
+  /** One call maps an entire form. See packages/policy/src/fields.ts. */
+  app.post("/api/runs/:id/fields", async (req: Authed, res) => {
+    const run = await ownRun(req, res);
+    if (!run) return;
+    await assertBalance(store, uid(req), 1);
+    const r = await mapFields(jev(), req.body);
+    const charge = await meter(store, uid(req), "decide", r.costUsd, run._id);
+    res.json({ mappings: r.mappings, balance: charge.balance });
   });
 
   app.post("/api/runs/:id/extract", async (req: Authed, res) => {

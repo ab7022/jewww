@@ -40,19 +40,26 @@ export class TabExecutor implements Executor {
     return "text" in res && res.ok ? res.text : "";
   }
 
-  async guardFor(node: number | null): Promise<Guard> {
-    const res = await this.send({ kind: "guard", node });
+  async guardFor(node: number | null, fp?: string): Promise<Guard> {
+    const res = await this.send({ kind: "guard", node, ...(fp ? { fp } : {}) });
     if (!("guard" in res) || !res.ok) return { pageKey: null, nodeGuard: null };
     return res.guard;
   }
 
-  async act(action: Action, node: number | null, guard: Guard, text?: string): Promise<void> {
+  async act(
+    action: Action,
+    node: number | null,
+    guard: Guard,
+    text?: string,
+    fp?: string,
+  ): Promise<void> {
     const res = await this.send({
       kind: "act",
       action,
       node,
       guard,
       ...(text !== undefined ? { text } : {}),
+      ...(fp ? { fp } : {}),
     });
     if (res.ok) return;
     if (res.stale) throw new StalePage(res.error);

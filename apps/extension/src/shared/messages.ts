@@ -7,8 +7,8 @@ import type { Action, RawSnapshot } from "@jev-browser/shared";
 export type ToContent =
   | { kind: "snapshot"; maxCandidates?: number }
   | { kind: "pageText"; maxChars?: number }
-  | { kind: "guard"; node: number | null }
-  | { kind: "act"; action: Action; node: number | null; guard: GuardPair; text?: string }
+  | { kind: "guard"; node: number | null; fp?: string }
+  | { kind: "act"; action: Action; node: number | null; guard: GuardPair; text?: string; fp?: string }
   | { kind: "settle"; node: number | null; isCombobox: boolean };
 
 export interface GuardPair {

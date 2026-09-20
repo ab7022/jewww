@@ -1,7 +1,10 @@
 import type { JevProvider } from "@jev-browser/jev";
 import {
   type Action,
-  IRREVERSIBLE_NAME,
+  BLOCKER as BLOCKER_CRITERIA,
+  type Blocker,
+  FORBIDDEN_FIELD,
+  MUST_HAND_OFF,
   type Questions,
   RISK as RISK_CRITERIA,
   type Risk,
@@ -16,10 +19,12 @@ import {
   type TargetEntry,
   targetHeadName,
 } from "./action-space.js";
-import { NEXT_OPERATION, RISK, TARGET } from "./instructions.js";
+import { BLOCKER, NEXT_OPERATION, RISK, TARGET } from "./instructions.js";
 
 export interface DecideInput {
   goal: string;
+  /** A local file the user has offered, which enables the ATTACH operation. */
+  attachable?: string;
   subgoal: string;
   success: string;
   snapshot: Snapshot;
@@ -35,6 +40,9 @@ export interface Decision {
   operation: Operation;
   target?: TargetEntry;
   risk: Risk;
+  /** Why the run must hand the browser back, if it must. */
+  blocker: Blocker;
+  mustHandOff: boolean;
   /** Probability of the chosen operation. */
   operationConfidence: number | undefined;
   targetConfidence: number | undefined;
@@ -69,6 +77,11 @@ export function buildQuestions(input: DecideInput & { space: ActionSpace }): Que
       instructions: `${context}\n\n${RISK}`,
       criteria: { ...RISK_CRITERIA },
     },
+    blocker: {
+      type: "choice",
+      instructions: `${context}\n\n${BLOCKER}`,
+      criteria: { ...BLOCKER_CRITERIA },
+    },
   };
 
   for (const [op, entries] of Object.entries(space.targets)) {
@@ -86,6 +99,7 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
   const space = buildActionSpace(input.snapshot.elements, input.nodes, {
     canScrollDown: input.snapshot.viewport.scrollY < input.snapshot.viewport.maxScrollY,
     canScrollUp: input.snapshot.viewport.scrollY > 0,
+    canAttach: Boolean(input.attachable),
   });
   const questions = buildQuestions({ ...input, space });
   const state = {
@@ -111,7 +125,7 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
   let target: TargetEntry | undefined;
   let targetConfidence: number | undefined;
 
-  const head = space.targets[operation as "CLICK" | "TYPE_TEXT" | "SELECT"];
+  const head = space.targets[operation as "CLICK" | "TYPE_TEXT" | "SELECT" | "ATTACH"];
   if (head) {
     // Validate ONLY the head the operation selected. An unused speculative head
     // cannot cause an action, so a malformed one must not fail the step either.
@@ -125,12 +139,18 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
   validateChoice(riskAnswer, Object.keys(RISK_CRITERIA));
   const risk = riskAnswer.choice as Risk;
 
-  const action = toAction(operation, target);
+  const blockerAnswer = r.answers.blocker;
+  validateChoice(blockerAnswer, Object.keys(BLOCKER_CRITERIA));
+  const blocker = blockerAnswer.choice as Blocker;
 
-  // The model's risk class is advisory. The label check is not: a page that talks
-  // Jev into `risk: none` still cannot get past a name that reads as irreversible.
-  const requiresConfirmation =
-    risk !== "none" || (target !== undefined && IRREVERSIBLE_NAME.test(target.label));
+  const action = toAction(operation, target, input.attachable ?? "");
+
+  // Confirmation is the model's call now — a word list only ever covered the sites
+  // whoever wrote it had looked at, and gating on "apply" stopped runs before they
+  // had done anything. The one exception below is not a judgement call.
+  const typingSecret =
+    action.kind === "type" && target !== undefined && FORBIDDEN_FIELD.test(target.label);
+  const requiresConfirmation = risk !== "none" || typingSecret;
 
   return {
     action,
@@ -138,6 +158,8 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
     operation,
     ...(target ? { target } : {}),
     risk,
+    blocker,
+    mustHandOff: MUST_HAND_OFF.includes(blocker) || typingSecret,
     operationConfidence: opAnswer.probabilities?.[opAnswer.choice],
     targetConfidence,
     selfConfidence: opAnswer.confidence,
@@ -148,16 +170,22 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
   };
 }
 
-/** True when either head is too uncertain to act on. */
-export function shouldEscalate(d: Decision, threshold = ACT_THRESHOLD): boolean {
-  const op = d.operationConfidence;
-  const tgt = d.targetConfidence;
-  if (op !== undefined && op < threshold) return true;
-  if (tgt !== undefined && tgt < threshold) return true;
-  return false;
+/** Names the head that is too uncertain to act on, or null when both are fine. */
+export function escalationReason(d: Decision, threshold = ACT_THRESHOLD): string | null {
+  if (d.operationConfidence !== undefined && d.operationConfidence < threshold) {
+    return `operation ${d.operation} at p=${d.operationConfidence.toFixed(2)}`;
+  }
+  if (d.targetConfidence !== undefined && d.targetConfidence < threshold) {
+    return `target at p=${d.targetConfidence.toFixed(2)}`;
+  }
+  return null;
 }
 
-function toAction(operation: Operation, target?: TargetEntry): Action {
+export function shouldEscalate(d: Decision, threshold = ACT_THRESHOLD): boolean {
+  return escalationReason(d, threshold) !== null;
+}
+
+function toAction(operation: Operation, target?: TargetEntry, file = ""): Action {
   switch (operation) {
     case "CLICK":
       if (!target) throw new Error("CLICK without a target");
@@ -169,6 +197,9 @@ function toAction(operation: Operation, target?: TargetEntry): Action {
     case "SELECT":
       if (!target) throw new Error("SELECT without a target");
       return { kind: "select", eid: target.eid, option: target.option ?? target.value ?? "" };
+    case "ATTACH":
+      if (!target) throw new Error("ATTACH without a target");
+      return { kind: "attach", eid: target.eid, file };
     case "SCROLL_DOWN":
       return { kind: "scroll", dir: "down" };
     case "SCROLL_UP":

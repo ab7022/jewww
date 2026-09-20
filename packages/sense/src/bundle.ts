@@ -45,9 +45,10 @@ export async function collectorSource(): Promise<string> {
 export const call = {
   snapshot: (maxCandidates = 2000) => `${GLOBAL_NAME}.snapshot(${maxCandidates})`,
   pageKey: () => `${GLOBAL_NAME}.pageKey()`,
-  nodeGuard: (node: number) => `${GLOBAL_NAME}.nodeGuard(${node})`,
-  resolvePoint: (node: number, kind: string, value?: string) =>
-    `JSON.stringify(${GLOBAL_NAME}.resolvePoint(${node}, ${JSON.stringify(kind)}, ${JSON.stringify(value ?? null)}))`,
+  nodeGuard: (node: number, fp?: string) =>
+    `${GLOBAL_NAME}.nodeGuard(${node}, ${JSON.stringify(fp ?? null)})`,
+  resolvePoint: (node: number, kind: string, value?: string, fp?: string) =>
+    `JSON.stringify(${GLOBAL_NAME}.resolvePoint(${node}, ${JSON.stringify(kind)}, ${JSON.stringify(value ?? null)}, ${JSON.stringify(fp ?? null)}))`,
   settle: (node: number | null, isCombobox: boolean) =>
     `${GLOBAL_NAME}.settle(${node === null ? "null" : node}, ${isCombobox})`,
 };

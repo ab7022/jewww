@@ -47,7 +47,7 @@ pnpm check:guards           # freshness + occlusion guards in a real browser
 pnpm check:extension        # build the extension and load it in a real Chrome
 
 pnpm server                 # Express API on :8787 (needs a local MongoDB)
-pnpm run-task --goal "..." --url https://...   # plan and execute, headless
+pnpm run-task --goal "..." --url https://... [--profile p.json]   # plan and execute
 #   --headed         watch it
 #   --auto-approve   read-only tasks only; this turns the safety gate OFF
 ```
@@ -66,6 +66,18 @@ Everything after `eval:capture` replays saved fixtures offline. A full sweep is 
 | Guard checks (real browser) | 9/9 | — |
 | JEV cost / latency | $0.042/M input, ~530ms warm | — |
 | Text helper | ~1.5s, $0.000026 per field | — |
+
+## Generalising, not special-casing
+
+The agent is meant to handle whatever a person does in a browser, so classification is
+the model's job, not a word list's. Whether a step is irreversible, whether a page is
+blocked by a CAPTCHA or an account wall, whether a planned step is really a form fill —
+all are JEV questions answered from the page. Earlier versions matched regexes for
+these; they worked on the pages I had looked at and silently failed everywhere else.
+
+Exactly one hard-coded check survives, deliberately: a password, card number or other
+secret is never typed. Not because a model could not classify it, but because that
+gate has to hold when the model is wrong or the page has manipulated it.
 
 ## Two design decisions worth knowing
 

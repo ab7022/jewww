@@ -12,6 +12,117 @@ import type { RawSnapshot } from "@jev-browser/shared";
  * each element's rect. Ranking is a separate, pure function that runs later in Node,
  * so the benchmark can retune ranking against saved fixtures without re-capturing.
  */
+export const SELECTOR = [
+  "a[href]",
+  "button",
+  "input:not([type=hidden])",
+  "select",
+  "textarea",
+  "summary",
+  "[role]",
+  "[onclick]",
+  "[tabindex]:not([tabindex='-1'])",
+  "[contenteditable]:not([contenteditable=false])",
+].join(",");
+
+const TAG_ROLE: Record<string, string> = {
+  A: "link", BUTTON: "button", SELECT: "combobox", TEXTAREA: "textbox",
+  SUMMARY: "disclosure", H1: "heading", H2: "heading", H3: "heading",
+};
+
+const INPUT_ROLE: Record<string, string> = {
+  checkbox: "checkbox", radio: "radio", submit: "button", button: "button",
+  reset: "button", file: "fileinput", range: "slider", email: "textbox",
+  tel: "textbox", url: "textbox", search: "searchbox", password: "password",
+  number: "spinbutton", date: "datepicker",
+};
+
+/** Tolerates non-strings: DOM clobbering makes `form.value` an Element. */
+export const clean = (s: unknown): string =>
+  typeof s === "string" ? s.replace(/\s+/g, " ").trim().slice(0, 120) : "";
+
+export function roleOf(el: Element): string {
+  const explicit = el.getAttribute("role");
+  if (explicit) return explicit.split(/\s+/)[0] ?? "generic";
+  if (el.tagName === "INPUT") {
+    const t = (el as HTMLInputElement).type.toLowerCase();
+    return INPUT_ROLE[t] ?? "textbox";
+  }
+  if ((el as HTMLElement).isContentEditable) return "textbox";
+  return TAG_ROLE[el.tagName] ?? "generic";
+}
+
+function labelText(el: Element): string {
+  const id = el.getAttribute("id");
+  if (id) {
+    const esc = id.replace(/["\\]/g, "\\$&");
+    const lbl = document.querySelector(`label[for="${esc}"]`);
+    if (lbl) return clean(lbl.textContent);
+  }
+  const wrapping = el.closest("label");
+  if (wrapping) return clean(wrapping.textContent);
+  // Common ATS pattern: the label is a sibling div, not a <label> at all.
+  const prev = el.previousElementSibling;
+  if (prev && /^(LABEL|SPAN|DIV|P)$/.test(prev.tagName)) {
+    const t = clean(prev.textContent);
+    if (t && t.length < 80) return t;
+  }
+  return "";
+}
+
+export function nameOf(el: Element): string {
+  const aria = clean(el.getAttribute("aria-label"));
+  if (aria) return aria;
+  const by = el.getAttribute("aria-labelledby");
+  if (by) {
+    const parts = by.split(/\s+/).map((i) => clean(document.getElementById(i)?.textContent)).filter(Boolean);
+    if (parts.length) return parts.join(" ");
+  }
+  const lbl = labelText(el);
+  if (lbl) return lbl;
+  const ph = clean(el.getAttribute("placeholder"));
+  if (ph) return ph;
+  const title = clean(el.getAttribute("title"));
+  if (title) return title;
+  if (el.tagName === "INPUT") {
+    const input = el as HTMLInputElement;
+    if (/^(submit|button|reset)$/.test(input.type)) {
+      const v = clean(input.value);
+      if (v) return v;
+    }
+    const nm = clean(input.getAttribute("name"));
+    if (nm) return nm.replace(/[_-]+/g, " ");
+  }
+  const alt = clean(el.querySelector("img[alt]")?.getAttribute("alt"));
+  if (alt) return alt;
+  const text = clean((el as HTMLElement).innerText || el.textContent);
+  if (text) return text;
+  return "";
+}
+
+/**
+ * Find the element a fingerprint describes, for when the original node has been
+ * replaced by a re-render.
+ *
+ * React and friends swap DOM nodes constantly — on a Greenhouse application form,
+ * every field was detached within the ~500ms a model call takes, so every action
+ * failed with "element left the document". The fingerprint is `role|name|nth`, which
+ * identifies the element by what it MEANS rather than by object identity, and that is
+ * the thing a re-render preserves.
+ */
+export function findByFingerprint(fp: string): Element | null {
+  const [role, name, nthRaw] = fp.split("|");
+  if (!role || name === undefined) return null;
+  const nth = Number(nthRaw ?? 0);
+  let seen = 0;
+  for (const el of document.querySelectorAll(SELECTOR)) {
+    if (roleOf(el) !== role) continue;
+    if (nameOf(el) !== name) continue;
+    if (seen++ === nth) return el;
+  }
+  return null;
+}
+
 export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
   // A code-owned identity per live DOM node, so a decision can name the element it
   // was made about and the executor can re-resolve that exact node later. These are
@@ -40,122 +151,14 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
   // Drop references to nodes the page has removed.
   for (const [id, el] of cache.nodes) if (!el.isConnected) cache.nodes.delete(id);
 
-  const SELECTOR = [
-    "a[href]",
-    "button",
-    "input:not([type=hidden])",
-    "select",
-    "textarea",
-    "summary",
-    "[role]",
-    "[onclick]",
-    "[tabindex]:not([tabindex='-1'])",
-    "[contenteditable]:not([contenteditable=false])",
-  ].join(",");
 
-  const TAG_ROLE: Record<string, string> = {
-    A: "link",
-    BUTTON: "button",
-    SELECT: "combobox",
-    TEXTAREA: "textbox",
-    SUMMARY: "disclosure",
-    H1: "heading",
-    H2: "heading",
-    H3: "heading",
-  };
 
-  const INPUT_ROLE: Record<string, string> = {
-    checkbox: "checkbox",
-    radio: "radio",
-    submit: "button",
-    button: "button",
-    reset: "button",
-    file: "fileinput",
-    range: "slider",
-    email: "textbox",
-    tel: "textbox",
-    url: "textbox",
-    search: "searchbox",
-    password: "password",
-    number: "spinbutton",
-    date: "datepicker",
-  };
 
   // Must tolerate non-strings: DOM clobbering means `form.value` can be an Element
   // when the form contains <input name="value">, and the same trick applies to any
   // property name. Arbitrary pages do this, sometimes on purpose.
-  const clean = (s: unknown): string =>
-    typeof s === "string" ? s.replace(/\s+/g, " ").trim().slice(0, 120) : "";
 
-  function roleOf(el: Element): string {
-    const explicit = el.getAttribute("role");
-    if (explicit) return explicit.split(/\s+/)[0] ?? "generic";
-    if (el.tagName === "INPUT") {
-      const t = (el as HTMLInputElement).type.toLowerCase();
-      return INPUT_ROLE[t] ?? "textbox";
-    }
-    if ((el as HTMLElement).isContentEditable) return "textbox";
-    return TAG_ROLE[el.tagName] ?? "generic";
-  }
 
-  function labelText(el: Element): string {
-    const id = el.getAttribute("id");
-    if (id) {
-      const esc = id.replace(/["\\]/g, "\\$&");
-      const lbl = document.querySelector(`label[for="${esc}"]`);
-      if (lbl) return clean(lbl.textContent);
-    }
-    const wrapping = el.closest("label");
-    if (wrapping) return clean(wrapping.textContent);
-    // Common ATS pattern: the label is a sibling div, not a <label> at all.
-    const prev = el.previousElementSibling;
-    if (prev && /^(LABEL|SPAN|DIV|P)$/.test(prev.tagName)) {
-      const t = clean(prev.textContent);
-      if (t && t.length < 80) return t;
-    }
-    return "";
-  }
-
-  function nameOf(el: Element): string {
-    const aria = clean(el.getAttribute("aria-label"));
-    if (aria) return aria;
-
-    const by = el.getAttribute("aria-labelledby");
-    if (by) {
-      const parts = by
-        .split(/\s+/)
-        .map((i) => clean(document.getElementById(i)?.textContent))
-        .filter(Boolean);
-      if (parts.length) return parts.join(" ");
-    }
-
-    const lbl = labelText(el);
-    if (lbl) return lbl;
-
-    const ph = clean(el.getAttribute("placeholder"));
-    if (ph) return ph;
-
-    const title = clean(el.getAttribute("title"));
-    if (title) return title;
-
-    if (el.tagName === "INPUT") {
-      const input = el as HTMLInputElement;
-      if (/^(submit|button|reset)$/.test(input.type)) {
-        const v = clean(input.value);
-        if (v) return v;
-      }
-      const nm = clean(input.getAttribute("name"));
-      if (nm) return nm.replace(/[_-]+/g, " ");
-    }
-
-    const alt = clean(el.querySelector("img[alt]")?.getAttribute("alt"));
-    if (alt) return alt;
-
-    const text = clean((el as HTMLElement).innerText || el.textContent);
-    if (text) return text;
-
-    return "";
-  }
 
   function ctxOf(el: Element): string {
     const landmark = el.closest("nav,header,footer,aside,main,form,dialog,[role=dialog]");
@@ -193,6 +196,13 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
   }
 
   function visible(el: Element): DOMRect | null {
+    // File inputs are hidden by design almost everywhere — sites style a button or
+    // label over an `opacity:0` input. Dropping them for being invisible means the
+    // agent can never upload anything, and it cannot click its way to the dialog
+    // either. They are collected regardless and uploaded through the driver.
+    if (el.tagName === "INPUT" && (el as HTMLInputElement).type === "file") {
+      return new DOMRect(0, 0, 1, 1);
+    }
     const r = el.getBoundingClientRect();
     if (r.width < 2 || r.height < 2) return null;
     const cs = getComputedStyle(el);

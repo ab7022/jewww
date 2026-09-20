@@ -1,12 +1,13 @@
 
-import type { Decision, DecideInput, TextContext } from "@jev-browser/policy";
-import { shouldEscalate } from "@jev-browser/policy";
-import { DEFAULT_CAP, rankedSnapshot } from "@jev-browser/sense";
+import type { Decision, DecideInput, FieldMapping, TextContext } from "@jev-browser/policy";
+import { escalationReason } from "@jev-browser/policy";
+import { DEFAULT_CAP, rankedSnapshot, toSnapshotElement } from "@jev-browser/sense";
 import {
+  BLOCKER,
   type Executor,
   FORBIDDEN_FIELD,
-  IRREVERSIBLE_NAME,
   type Node,
+  type SnapshotElement,
   type Plan,
   SCRATCH_REF,
   StalePage,
@@ -28,6 +29,12 @@ export interface Capabilities {
   text(ctx: TextContext): Promise<string>;
   extract(intent: string, schema: unknown, pageText: string): Promise<unknown>;
   compose(intent: string, inputs: Record<string, unknown>): Promise<unknown>;
+  /** Maps every field of a form to a profile key in ONE call. */
+  mapFields(input: {
+    page: { url: string; title: string };
+    fields: SnapshotElement[];
+    available?: string[];
+  }): Promise<{ mappings: FieldMapping[]; costUsd: number }>;
 }
 
 export interface RunOptions {
@@ -90,6 +97,9 @@ async function runNodes(
       case "act":
         status = await runActNode(node, opts, pad, state);
         break;
+      case "fill":
+        status = await runFillNode(node, opts, pad, state);
+        break;
       case "read":
         status = await runReadNode(node, opts, pad);
         break;
@@ -136,6 +146,7 @@ async function runActNode(
     if (raw.contentHash !== lastHash) repeats = 0;
     lastHash = raw.contentHash;
 
+    const profile = (pad.get("profile") ?? {}) as Record<string, string>;
     const d = await opts.capabilities.decide({
       goal: opts.plan.goal,
       subgoal: node.intent,
@@ -143,6 +154,8 @@ async function runActNode(
       snapshot: capped,
       nodes,
       recent: [],
+      // ATTACH only exists as an option when the user has actually offered a file.
+      ...(profile.resumeFile ? { attachable: profile.resumeFile } : {}),
     });
     state.cost += d.costUsd;
     state.steps += 1;
@@ -164,20 +177,41 @@ async function runActNode(
       opts.emit({ type: "warn", message: `${node.id}: ${d.action.reason}` });
       return "blocked";
     }
-    if (shouldEscalate(d)) {
-      opts.emit({ type: "escalate", nodeId: node.id, reason: "confidence below threshold" });
+    const shaky = escalationReason(d);
+    if (shaky) {
+      opts.emit({ type: "escalate", nodeId: node.id, reason: shaky });
       // Phase 2a surfaces the escalation rather than re-planning; the server owns
       // re-planning once it can meter the call.
     }
 
-    // The interlock. Runs before anything executes, on OUR constants, so neither the
-    // model's answer nor the page's text can route around it.
-    const label = d.target?.label ?? "";
-    if (d.action.kind === "type" && FORBIDDEN_FIELD.test(label)) {
-      opts.emit({ type: "suspend", nodeId: node.id, reason: "handoff", preview: `credential field: ${label}` });
+    // Something on the page needs a human — an account, a sign-in, a CAPTCHA, a
+    // payment. Classified by the model from the page rather than matched against a
+    // word list, so it works on sites nobody anticipated.
+    if (d.mustHandOff) {
+      opts.emit({
+        type: "suspend",
+        nodeId: node.id,
+        reason: "handoff",
+        preview: `this page needs you: ${BLOCKER[d.blocker]}`,
+      });
       return "suspended";
     }
-    if (d.requiresConfirmation || IRREVERSIBLE_NAME.test(label)) {
+
+    // The one check that is not a judgement call, kept here as well as in decide()
+    // and again in the content script: a secret must not be typed even if every
+    // layer above this one says to.
+    const label = d.target?.label ?? "";
+    if (d.action.kind === "type" && FORBIDDEN_FIELD.test(label)) {
+      opts.emit({
+        type: "suspend",
+        nodeId: node.id,
+        reason: "handoff",
+        preview: `refused to type into a credential field: ${label}`,
+      });
+      return "suspended";
+    }
+
+    if (d.requiresConfirmation) {
       const ok = opts.approve
         ? await opts.approve(`${d.operation} "${label}"`, d.risk)
         : false;
@@ -226,9 +260,10 @@ async function runActNode(
 
     // Guard is taken AFTER text generation, so the freshness check inside act()
     // compares against the moment we are actually about to touch the page.
-    const guard = await opts.executor.guardFor(d.node ?? null);
+    const fp = raw.elements.find((e) => e.eid === d.target?.eid)?.fp;
+    const guard = await opts.executor.guardFor(d.node ?? null, fp);
     try {
-      await opts.executor.act(d.action, d.node ?? null, guard, text);
+      await opts.executor.act(d.action, d.node ?? null, guard, text, fp);
     } catch (err) {
       if (err instanceof StalePage || err instanceof UnreachableTarget) {
         opts.emit({ type: "warn", message: `${node.id}: ${err.message}, re-observing` });
@@ -242,6 +277,120 @@ async function runActNode(
 
   opts.emit({ type: "warn", message: `${node.id}: exhausted ${MAX_STEPS_PER_NODE} steps` });
   return "blocked";
+}
+
+/**
+ * Things the agent must never do itself, detected from what is on the page.
+ *
+ * These are correct outcomes, not failures. Roughly half of enterprise ATS postings
+ * require creating an account, and a run that stops there and hands the browser back
+ * is behaving properly — a run that tries to get past it is not.
+ */
+/**
+ * Fill a whole form in one batched call.
+ *
+ * Only fields the model maps confidently are filled. A field it declines, or is
+ * unsure about, is reported and left blank — a wrong value in someone's job
+ * application is worse than a missing one, and the human is about to review it anyway.
+ */
+/** Profile entries that name a file rather than carry a value. */
+const NOT_TYPEABLE = new Set(["resumeFile"]);
+
+async function runFillNode(
+  node: Extract<Node, { kind: "fill" }>,
+  opts: RunOptions,
+  pad: Scratchpad,
+  state: LoopState,
+): Promise<RunStatus> {
+  const raw = await opts.executor.snapshot();
+
+  // Empty, enabled, non-credential inputs only.
+  const fields = raw.elements.filter(
+    (e) =>
+      e.fillable &&
+      !e.value &&
+      !e.st?.includes("disabled") &&
+      e.role !== "password" &&
+      !FORBIDDEN_FIELD.test(e.name),
+  );
+  if (!fields.length) {
+    opts.emit({ type: "node:done", id: node.id, detail: "no empty fields to fill" });
+    return "done";
+  }
+
+  const profile = (pad.get("profile") ?? {}) as Record<string, string>;
+  if (!Object.keys(profile).length) {
+    // Without a profile there is nothing to map fields ONTO, and every answer comes
+    // back __none. Saying so beats reporting "filled 0/26" as if the model failed.
+    opts.emit({
+      type: "warn",
+      message: `${node.id}: no profile loaded, so no field can be filled`,
+    });
+    return "blocked";
+  }
+  // `resumeFile` is a path on disk, not a value to type. Offering it as a mapping
+  // target put "/Users/…/resume.txt" into two text boxes on a real application.
+  // Files are attached through ATTACH, which is a separate operation for this reason.
+  const typeable = Object.keys(profile).filter((k) => !NOT_TYPEABLE.has(k));
+  const mapped = await opts.capabilities.mapFields({
+    page: { url: raw.url, title: raw.title },
+    fields: fields.map(toSnapshotElement),
+    available: typeable,
+  });
+  const mappings = mapped.mappings;
+  state.steps += 1;
+  state.cost += mapped.costUsd;
+
+  const byEid = new Map(raw.elements.map((e) => [e.eid, e]));
+  let filled = 0;
+  const skipped: string[] = [];
+
+  for (const m of mappings) {
+    const element = byEid.get(m.eid);
+    if (!element) continue;
+    if (m.skipped) {
+      skipped.push(m.label);
+      continue;
+    }
+    const value = node.extras?.[m.key] ? String(pad.resolve(node.extras[m.key] as string) ?? "") : profile[m.key];
+    if (!value) {
+      skipped.push(m.label);
+      continue;
+    }
+
+    const guard = await opts.executor.guardFor(element.node, element.fp);
+    try {
+      await opts.executor.act(
+        { kind: "type", eid: m.eid, text: value },
+        element.node,
+        guard,
+        value,
+        element.fp,
+      );
+      filled += 1;
+      opts.emit({
+        type: "text",
+        field: m.label,
+        value,
+        latencyMs: 0,
+        costUsd: 0,
+      });
+    } catch (err) {
+      if (err instanceof StalePage || err instanceof UnreachableTarget) {
+        skipped.push(`${m.label} (${err.message})`);
+        continue;
+      }
+      throw err;
+    }
+    await opts.executor.settle(element.node, false);
+  }
+
+  opts.emit({
+    type: "node:done",
+    id: node.id,
+    detail: `filled ${filled}/${fields.length}${skipped.length ? `, left for you: ${skipped.slice(0, 6).join(", ")}` : ""}`,
+  });
+  return filled > 0 || fields.length === 0 ? "done" : "blocked";
 }
 
 async function runReadNode(

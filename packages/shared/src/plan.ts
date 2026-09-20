@@ -29,6 +29,23 @@ export const ActNode = z.object({
   slots: z.record(z.string(), z.string()).optional(),
 });
 
+/**
+ * Fill a whole form in one shot.
+ *
+ * Distinct from `act` because the economics are completely different: a 26-field
+ * application form is ONE batched call that maps every field to a profile key at
+ * once (~200ms, ~$0.0004), versus 26 separate decide-and-type rounds. It is the
+ * single highest-leverage primitive for form-heavy work, which job applications are.
+ */
+export const FillNode = z.object({
+  ...Base,
+  kind: z.literal("fill"),
+  site: z.string().optional(),
+  success: z.string(),
+  /** Scratchpad keys holding values for fields the profile does not cover. */
+  extras: z.record(z.string(), z.string()).optional(),
+});
+
 /** Page -> structured data. An LLM extraction, written to the scratchpad. */
 export const ReadNode = z.object({
   ...Base,
@@ -58,6 +75,7 @@ export const ConfirmNode = z.object({
 
 export type Node =
   | z.infer<typeof ActNode>
+  | z.infer<typeof FillNode>
   | z.infer<typeof ReadNode>
   | z.infer<typeof ComposeNode>
   | z.infer<typeof ConfirmNode>
@@ -96,7 +114,9 @@ export const ForeachNode: z.ZodType<ForeachNode> = z.lazy(() =>
 );
 
 export const Node: z.ZodType<Node> = z.lazy(() =>
-  z.discriminatedUnion("kind", [ActNode, ReadNode, ComposeNode, ConfirmNode]).or(ForeachNode),
+  z
+    .discriminatedUnion("kind", [ActNode, FillNode, ReadNode, ComposeNode, ConfirmNode])
+    .or(ForeachNode),
 ) as z.ZodType<Node>;
 
 export const Plan = z.object({

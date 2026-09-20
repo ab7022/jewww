@@ -29,10 +29,41 @@ export const RISK = {
 export type Risk = keyof typeof RISK;
 
 /**
- * Deterministic backstop. Runs on the element name regardless of what the model
- * answered, so a page that talks JEV into `risk: none` still cannot get past it.
+ * Why the agent had to stop and hand the browser back.
+ *
+ * These are ordinary outcomes, not errors — roughly half of enterprise ATS postings
+ * require an account, and a run that stops there is behaving correctly. The model
+ * classifies this from the page rather than a word list, because a word list only
+ * covers the sites whoever wrote it happened to look at.
  */
-export const IRREVERSIBLE_NAME = /\b(pay|buy|purchase|order|checkout|submit|apply|send|post|publish|delete|remove|cancel|confirm|subscribe|transfer|withdraw)\b/i;
+export const BLOCKER = {
+  none: "nothing is blocking progress",
+  captcha: "an active CAPTCHA or human-verification challenge must be solved",
+  account_required: "an account must be created before continuing",
+  login_required: "the user must sign in before continuing",
+  credentials: "a password, card number, or other secret must be entered",
+  paywall: "payment is required to continue",
+  unsupported: "the page needs an interaction this agent cannot perform",
+} as const;
+export type Blocker = keyof typeof BLOCKER;
 
-/** Never typed into, by anything, ever. */
-export const FORBIDDEN_FIELD = /\b(password|passwd|cvv|cvc|card.?number|ssn|social.?security|otp|2fa|mfa|pin)\b/i;
+/** Blockers the agent must never attempt to get past itself. */
+export const MUST_HAND_OFF: readonly Blocker[] = [
+  "captcha",
+  "account_required",
+  "login_required",
+  "credentials",
+  "paywall",
+];
+
+/**
+ * The one deliberate hard-coded check in the system.
+ *
+ * Everything else about risk is now a model judgement, because word lists do not
+ * generalise. This does not become one — not because a model cannot classify a
+ * password field, but because this gate has to hold WHEN THE MODEL IS WRONG or when
+ * the page has manipulated it. A secret typed into the wrong box cannot be undone,
+ * and no amount of calibration justifies making that outcome reachable.
+ */
+export const FORBIDDEN_FIELD =
+  /\b(password|passwd|cvv|cvc|card.?number|ssn|social.?security|otp|2fa|mfa|\bpin\b)\b/i;

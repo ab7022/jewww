@@ -91,13 +91,20 @@ export class CdpExecutor implements Executor {
     return text ?? "";
   }
 
-  async guardFor(node: number | null): Promise<Guard> {
+  async guardFor(node: number | null, fp?: string): Promise<Guard> {
     const pageKey = (await this.evalOrNull(call.pageKey())) as string | null;
-    const nodeGuard = node === null ? null : ((await this.evalOrNull(call.nodeGuard(node))) as string | null);
+    const nodeGuard =
+      node === null ? null : ((await this.evalOrNull(call.nodeGuard(node, fp))) as string | null);
     return { pageKey, nodeGuard };
   }
 
-  async act(action: Action, node: number | null, guard: Guard, text?: string): Promise<void> {
+  async act(
+    action: Action,
+    node: number | null,
+    guard: Guard,
+    text?: string,
+    fp?: string,
+  ): Promise<void> {
     if (action.kind === "navigate") {
       await this.page.goto(action.url, { waitUntil: "domcontentloaded", timeout: 30_000 });
       return;
@@ -113,10 +120,36 @@ export class CdpExecutor implements Executor {
     }
     if (action.kind === "done" || action.kind === "blocked") return;
 
+    if (action.kind === "attach") {
+      if (node === null) throw new UnreachableTarget("attach without a node");
+      if (!action.file) throw new UnreachableTarget("no file to attach");
+      // A file input's value cannot be set from page JavaScript at all — the setter
+      // is privileged. This is the one action that genuinely needs driver access.
+      // Mark the exact element the model chose so we upload to that one, not merely
+      // the first file input on the page.
+      const marked = await this.page.evaluate(
+        `(() => {
+           const e = globalThis.__jevSenseCache?.nodes.get(${node});
+           if (!e || e.tagName !== 'INPUT' || e.type !== 'file') return false;
+           e.setAttribute('data-jev-upload', '1');
+           return true;
+         })()`,
+      );
+      if (!marked) throw new UnreachableTarget("chosen target is not a file input");
+      try {
+        await this.page.setInputFiles("input[data-jev-upload]", action.file, { timeout: 10_000 });
+      } finally {
+        await this.page
+          .evaluate(`document.querySelector('input[data-jev-upload]')?.removeAttribute('data-jev-upload')`)
+          .catch(() => {});
+      }
+      return;
+    }
+
     if (node === null) throw new UnreachableTarget(`${action.kind} without a node`);
 
     // 1. Freshness, immediately before input — not when the decision was made.
-    const now = await this.guardFor(node);
+    const now = await this.guardFor(node, fp);
     if (!stillFresh(guard, now)) {
       throw new StalePage("page changed since the decision; observe again");
     }
@@ -125,14 +158,17 @@ export class CdpExecutor implements Executor {
     //    performs the mutation, because a native select cannot be driven by a click.
     const kind = action.kind === "type" ? "fill" : action.kind === "select" ? "select" : "click";
     const option = action.kind === "select" ? action.option : undefined;
-    const raw = (await this.evalOrNull(call.resolvePoint(node, kind, option))) as string | null;
-    const point = raw && raw !== "null" ? (JSON.parse(raw) as { x: number; y: number }) : null;
-    if (!point) {
-      throw new UnreachableTarget("target is gone, disabled, off-screen, or covered");
+    const raw = await this.page
+      .evaluate(call.resolvePoint(node, kind, option, fp))
+      .catch((err: unknown) => ({ evalError: String(err).slice(0, 120) }));
+    if (typeof raw !== "string") {
+      throw new StalePage(`could not resolve the target: ${JSON.stringify(raw)}`);
     }
+    const resolution = JSON.parse(raw) as { x: number; y: number } | { refused: string };
+    if ("refused" in resolution) throw new UnreachableTarget(resolution.refused);
     if (kind === "select") return;
 
-    const { x, y } = point;
+    const { x, y } = resolution;
 
     // 3. Execute. No retries past this line.
     await this.page.mouse.click(x, y);

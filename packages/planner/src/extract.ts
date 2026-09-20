@@ -37,12 +37,19 @@ export async function extract(opts: {
   /** The user's own words. Trusted, unlike the page, and often the only place the
    *  specifics live — a node intent may merely refer to "the user's goal". */
   goal?: string | undefined;
+  /**
+   * Standing instructions the user saved in their details: tone, defaults, things to
+   * always or never do. Trusted — they are the user's own words, like the goal — and
+   * loaded on every run, so they are the place a preference outlives one prompt.
+   */
+  instructions?: string | undefined;
 }): Promise<{ value: unknown; costUsd: number; latencyMs: number }> {
   const r = await chat({
     apiKey: opts.apiKey,
     ...(opts.model ? { model: opts.model } : {}),
     system: EXTRACT_SYSTEM,
     user: JSON.stringify({
+      standing_instructions: opts.instructions,
       user_request: opts.goal,
       task: opts.intent,
       schema: opts.schema,
@@ -59,12 +66,19 @@ export async function compose(opts: {
   inputs: Record<string, unknown>;
   /** The user's own words. See `extract`. */
   goal?: string | undefined;
+  /**
+   * Standing instructions the user saved in their details: tone, defaults, things to
+   * always or never do. Trusted — they are the user's own words, like the goal — and
+   * loaded on every run, so they are the place a preference outlives one prompt.
+   */
+  instructions?: string | undefined;
 }): Promise<{ value: unknown; costUsd: number; latencyMs: number }> {
   const r = await chat({
     apiKey: opts.apiKey,
     ...(opts.model ? { model: opts.model } : {}),
     system: COMPOSE_SYSTEM,
     user: JSON.stringify({
+      standing_instructions: opts.instructions,
       user_request: opts.goal,
       task: opts.intent,
       untrusted_data: opts.inputs,

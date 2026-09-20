@@ -22,7 +22,10 @@ const api = new Api(API_BASE);
 let pendingApproval: ((approved: boolean) => void) | null = null;
 let aborted = false;
 
-const empty: PanelState = { signedIn: false, running: false, steps: [] };
+const empty: PanelState = { signedIn: false, running: false, steps: [], history: [] };
+
+/** Enough to find last week's run, not enough to make the panel a filing cabinet. */
+const HISTORY_MAX = 25;
 
 /**
  * Read the persisted panel state, tolerating a shape written by an older build.
@@ -39,6 +42,9 @@ async function getState(): Promise<PanelState> {
     ...stored,
     steps: Array.isArray(stored.steps)
       ? stored.steps.filter((s) => s && typeof s.id === "string" && Array.isArray(s.actions))
+      : [],
+    history: Array.isArray(stored.history)
+      ? stored.history.filter((h) => h && typeof h.goal === "string").slice(0, HISTORY_MAX)
       : [],
   };
 }
@@ -307,6 +313,18 @@ async function start(goal: string, tabId: number): Promise<void> {
       // Anything still running when the loop ends did not finish.
       steps: state.steps.map((s) => (s.status === "running" ? { ...s, status: "failed" as const } : s)),
       ...(me ? { credits: me.credits } : {}),
+      history: [
+        {
+          id: runId,
+          goal,
+          status: result.status,
+          steps: result.steps,
+          credits: Math.max(0, (balance ?? 0) - (me?.credits ?? balance ?? 0)),
+          seconds: Math.round(result.elapsedMs / 100) / 10,
+          at: Date.now(),
+        },
+        ...(state.history ?? []),
+      ].slice(0, HISTORY_MAX),
     });
   } finally {
     executor.detach();
@@ -342,9 +360,11 @@ chrome.runtime.onMessage.addListener((msg: ToWorker, _sender, sendResponse) => {
         await api.signOut();
         return sendResponse(await patch({ ...empty }));
       case "getProfile":
-        return sendResponse(await api.profile().catch(() => ({})));
+        return sendResponse(
+          await api.profile().catch(() => ({ fields: {}, instructions: "" })),
+        );
       case "saveProfile":
-        await api.saveProfile(msg.fields);
+        await api.saveProfile(msg.fields, msg.instructions);
         return sendResponse({ ok: true });
       case "approve": {
         const resolve = pendingApproval;
@@ -367,6 +387,20 @@ chrome.runtime.onMessage.addListener((msg: ToWorker, _sender, sendResponse) => {
         });
         resolve?.(msg.approved);
         return sendResponse({ ok: true });
+      }
+      case "reset": {
+        // Clear the run, keep the account and the record of past runs. The point is
+        // to unwedge a stuck run or clear a stale view — signing the user out would
+        // mean the whole OAuth dance again, and wiping history would make history
+        // pointless, since a reset is exactly what you do after a run.
+        const { signedIn, auth, email, credits, history } = await getState();
+        await chrome.storage.local.set({
+          [STATE]: { ...empty, signedIn, auth, email, credits, history },
+        });
+        await chrome.alarms.clear(KEEPALIVE).catch(() => {});
+        const cleared = await getState();
+        chrome.runtime.sendMessage({ kind: "state", state: cleared }).catch(() => {});
+        return sendResponse(cleared);
       }
       case "abort":
         aborted = true;

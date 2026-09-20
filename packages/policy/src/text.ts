@@ -21,6 +21,12 @@ export interface TextContext {
   recent: { action: string; text?: string | null }[];
   /** Known facts the value may legitimately be drawn from. */
   profile?: Record<string, string>;
+  /**
+   * Standing instructions the user saved in their details: tone, defaults, things to
+   * always or never do. Trusted — they are the user's own words, like the goal — and
+   * loaded on every run, so they are the place a preference outlives one prompt.
+   */
+  instructions?: string | undefined;
 }
 
 export interface TextResult {

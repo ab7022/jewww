@@ -31,6 +31,12 @@ export interface DecideInput {
   /** eid -> live DOM node id. The action space is built from this. */
   nodes: Record<string, number>;
   recent: { action: string; text?: string | null; pageChanged?: boolean | null }[];
+  /**
+   * Standing instructions the user saved in their details: tone, defaults, things to
+   * always or never do. Trusted — they are the user's own words, like the goal — and
+   * loaded on every run, so they are the place a preference outlives one prompt.
+   */
+  instructions?: string | undefined;
 }
 
 export interface Decision {
@@ -63,8 +69,10 @@ export const ACT_THRESHOLD = 0.7;
  * chosen operation is consumed; the rest cost nothing extra and save a round trip.
  */
 export function buildQuestions(input: DecideInput & { space: ActionSpace }): Questions {
-  const { space, goal, subgoal, success } = input;
-  const context = `Goal: ${goal}\nSubgoal: ${subgoal}\nSucceeds when: ${success}`;
+  const { space, goal, subgoal, success, instructions } = input;
+  const context =
+    (instructions ? `Standing instructions from the user: ${instructions}\n` : "") +
+    `Goal: ${goal}\nSubgoal: ${subgoal}\nSucceeds when: ${success}`;
 
   const questions: Questions = {
     operation: {
@@ -103,6 +111,7 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
   });
   const questions = buildQuestions({ ...input, space });
   const state = {
+    ...(input.instructions ? { standing_instructions: input.instructions } : {}),
     goal: input.goal,
     subgoal: input.subgoal,
     success_criteria: input.success,

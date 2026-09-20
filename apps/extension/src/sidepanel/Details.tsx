@@ -35,11 +35,15 @@ const LABEL: Partial<Record<ProfileKey, string>> = {
 
 export function Details({ onClose }: { onClose: () => void }) {
   const [fields, setFields] = useState<Record<string, string>>({});
+  const [instructions, setInstructions] = useState("");
   const [state, setState] = useState<"loading" | "ready" | "saving" | "saved">("loading");
 
   useEffect(() => {
-    void send<Record<string, string>>({ kind: "getProfile" }).then((f) => {
-      setFields(f ?? {});
+    void send<{ fields: Record<string, string>; instructions: string }>({
+      kind: "getProfile",
+    }).then((p) => {
+      setFields(p?.fields ?? {});
+      setInstructions(p?.instructions ?? "");
       setState("ready");
     });
   }, []);
@@ -49,7 +53,7 @@ export function Details({ onClose }: { onClose: () => void }) {
     const trimmed = Object.fromEntries(
       Object.entries(fields).map(([k, v]) => [k, v.trim()]).filter(([, v]) => v),
     );
-    await send({ kind: "saveProfile", fields: trimmed });
+    await send({ kind: "saveProfile", fields: trimmed, instructions: instructions.trim() });
     setState("saved");
     setTimeout(onClose, 500);
   };
@@ -83,6 +87,19 @@ export function Details({ onClose }: { onClose: () => void }) {
               </label>
             ))}
           </div>
+          <label className="standing">
+            <span>Always do this</span>
+            <textarea
+              rows={5}
+              value={instructions}
+              placeholder={"Anything that should hold for every task.\n\nFor example: keep replies short and plain. Never submit a form without asking me first. Dates are day/month. Sign off as Abdul."}
+              onChange={(e) => setInstructions(e.target.value)}
+            />
+          </label>
+          <p className="fine">
+            Loaded on every run — when it plans, when it writes, and at every step.
+          </p>
+
           <button className="primary block" onClick={() => void save()} disabled={state === "saving"}>
             {state === "saved" ? "Saved" : state === "saving" ? "Saving…" : `Save ${filled} details`}
           </button>

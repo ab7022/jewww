@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Details } from "./Details.js";
-import type { PanelState, ToWorker } from "../shared/messages.js";
+import { useDictation } from "./dictation.js";
+import type { HistoryEntry, PanelState, ToWorker } from "../shared/messages.js";
 import { elapsed, type TimelineStep } from "../shared/timeline.js";
 
 const send = <T,>(msg: ToWorker): Promise<T> => chrome.runtime.sendMessage(msg) as Promise<T>;
 
-const EMPTY: PanelState = { signedIn: false, running: false, steps: [] };
+const EMPTY: PanelState = { signedIn: false, running: false, steps: [], history: [] };
 
 const SUGGESTIONS = [
   "Summarise this page",
@@ -19,6 +20,15 @@ export function App(): JSX.Element {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showDetails, setShowDetails] = useState(false);
+  const [showHistory, setShowHistory] = useState(false);
+
+  // Dictation appends whole phrases rather than replacing the box, so speaking after
+  // typing adds to what is there instead of wiping it.
+  const dictation = useDictation(
+    useCallback((phrase: string) => {
+      setGoal((g) => (g.trim() ? `${g.trim()} ${phrase}` : phrase));
+    }, []),
+  );
 
   const refresh = useCallback(async () => {
     const next = await send<PanelState>({ kind: "state" });
@@ -125,10 +135,23 @@ export function App(): JSX.Element {
               Stop
             </button>
           )}
+          {dictation.supported && (
+            <button
+              className={dictation.listening ? "mic listening" : "mic"}
+              onClick={dictation.toggle}
+              disabled={state.running}
+              title={dictation.listening ? "Stop dictating" : "Dictate"}
+              aria-label={dictation.listening ? "Stop dictating" : "Dictate"}
+            >
+              <MicIcon />
+            </button>
+          )}
           <span className="hint">⌘ ↵</span>
         </div>
       </div>
 
+      {dictation.interim && <p className="interim">{dictation.interim}</p>}
+      {dictation.error && <Banner tone="bad">{dictation.error}</Banner>}
       {error && <Banner tone="bad">{error}</Banner>}
       {state.error && <Banner tone="bad">{state.error}</Banner>}
 
@@ -147,6 +170,33 @@ export function App(): JSX.Element {
         {state.result && <Result text={state.result} />}
         {state.queued?.length ? <Queued items={state.queued} /> : null}
         {state.summary && !state.running && <Summary {...state.summary} status={state.status} />}
+
+        {!state.running && (state.steps.length > 0 || state.history?.length) ? (
+          <div className="tray">
+            {state.history?.length ? (
+              <button className="ghost small" onClick={() => setShowHistory((v) => !v)}>
+                {showHistory ? "Hide history" : `History (${state.history.length})`}
+              </button>
+            ) : null}
+            {state.steps.length > 0 && (
+              <button
+                className="ghost small"
+                onClick={() => {
+                  setGoal("");
+                  setError(null);
+                  setShowHistory(false);
+                  void send<PanelState>({ kind: "reset" }).then(refresh);
+                }}
+              >
+                Reset
+              </button>
+            )}
+          </div>
+        ) : null}
+
+        {showHistory && state.history?.length ? (
+          <History items={state.history} onPick={(g) => { setGoal(g); setShowHistory(false); }} />
+        ) : null}
       </div>
     </div>
   );
@@ -386,5 +436,47 @@ function SignIn({
         {!state.auth && <p className="fine">Can't reach the server on localhost:8787.</p>}
       </div>
     </div>
+  );
+}
+
+/**
+ * Past runs. Tapping one puts its wording back in the box rather than re-running it:
+ * the page is almost never the one it ran against, so replaying blind would act on
+ * whatever happens to be open.
+ */
+function History({ items, onPick }: { items: HistoryEntry[]; onPick: (goal: string) => void }) {
+  return (
+    <ul className="history">
+      {items.map((h) => (
+        <li key={h.id}>
+          <button onClick={() => onPick(h.goal)} title="Put this back in the box">
+            <span className={`pip ${h.status === "done" ? "ok" : "bad"}`} />
+            <span className="history-goal">{h.goal}</span>
+            <span className="history-meta">{ago(h.at)}</span>
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Coarse on purpose: the exact second a run finished is never the question. */
+function ago(at: number): string {
+  const mins = Math.round((Date.now() - at) / 60000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins}m ago`;
+  const hours = Math.round(mins / 60);
+  if (hours < 24) return `${hours}h ago`;
+  return `${Math.round(hours / 24)}d ago`;
+}
+
+function MicIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none"
+      stroke="currentColor" strokeWidth="1.7" strokeLinecap="round">
+      <rect x="9" y="3" width="6" height="11" rx="3" />
+      <path d="M5 11a7 7 0 0 0 14 0" />
+      <path d="M12 18v3" />
+    </svg>
   );
 }

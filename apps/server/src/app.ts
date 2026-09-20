@@ -34,6 +34,9 @@ interface Authed extends Request {
   userId?: string;
 }
 
+/** Long enough for real preferences, short enough not to crowd out the task. */
+const INSTRUCTIONS_MAX = 4000;
+
 export function createApp(cfg: AppConfig): Express {
   const app = express();
   const { store } = cfg;
@@ -209,11 +212,13 @@ export function createApp(cfg: AppConfig): Express {
       updatedAt: now,
     });
 
+    const instructions = await standing(req);
     const planned = await makePlan({
       apiKey: cfg.openrouterKey,
       goal,
       start: url,
       jev: jev(),
+      instructions,
     });
 
     // Details the user stated in the request itself, so "fill this in with name
@@ -230,6 +235,18 @@ export function createApp(cfg: AppConfig): Express {
     const charge = await meter(store, uid(req), "plan", planned.costUsd + stated.costUsd, runId);
     res.json({ runId, plan: planned.plan, stated: stated.fields, balance: charge.balance });
   });
+
+  /**
+   * The user's standing instructions, read fresh on every model call.
+   *
+   * Loaded server-side rather than sent by the client: the extension cannot forget
+   * them, and a compromised client cannot rewrite the rules the user set. They are
+   * trusted input — the user's own saved words — unlike anything read off a page.
+   */
+  const standing = async (req: Authed): Promise<string | undefined> => {
+    const p = await store.profiles.findOne({ userId: uid(req) });
+    return p?.instructions?.trim() || undefined;
+  };
 
   /** Fails closed: a run that is not yours does not exist. */
   const ownRun = async (req: Authed, res: Response) => {
@@ -256,6 +273,7 @@ export function createApp(cfg: AppConfig): Express {
     await assertBalance(store, uid(req), 1);
 
     const d = await decide(jev(), {
+      instructions: await standing(req),
       goal: run.goal,
       subgoal: body.subgoal,
       success: body.success,
@@ -291,7 +309,10 @@ export function createApp(cfg: AppConfig): Express {
     const run = await ownRun(req, res);
     if (!run) return;
     await assertBalance(store, uid(req), 1);
-    const r = await fieldText(req.body, { apiKey: cfg.openrouterKey });
+    const r = await fieldText(
+      { ...req.body, instructions: await standing(req) },
+      { apiKey: cfg.openrouterKey },
+    );
     const charge = await meter(store, uid(req), "text", r.costUsd, run._id);
     // `null` means the model declined rather than invent a value; the caller asks
     // the person instead. It is an answer, not an error.
@@ -318,7 +339,14 @@ export function createApp(cfg: AppConfig): Express {
       goal?: string;
     };
     await assertBalance(store, uid(req), 1);
-    const r = await extract({ apiKey: cfg.openrouterKey, intent, schema, pageText, goal });
+    const r = await extract({
+      apiKey: cfg.openrouterKey,
+      intent,
+      schema,
+      pageText,
+      goal,
+      instructions: await standing(req),
+    });
     const charge = await meter(store, uid(req), "extract", r.costUsd, run._id);
     res.json({ value: r.value, balance: charge.balance });
   });
@@ -332,7 +360,13 @@ export function createApp(cfg: AppConfig): Express {
       goal?: string;
     };
     await assertBalance(store, uid(req), 1);
-    const r = await compose({ apiKey: cfg.openrouterKey, intent, inputs, goal });
+    const r = await compose({
+      apiKey: cfg.openrouterKey,
+      intent,
+      inputs,
+      goal,
+      instructions: await standing(req),
+    });
     const charge = await meter(store, uid(req), "compose", r.costUsd, run._id);
     res.json({ value: r.value, balance: charge.balance });
   });
@@ -358,9 +392,14 @@ export function createApp(cfg: AppConfig): Express {
 
   app.put("/api/profile", async (req: Authed, res) => {
     const fields = (req.body?.fields ?? {}) as Record<string, string>;
+    // Capped so one saved paragraph cannot quietly dominate every prompt.
+    const instructions = String(req.body?.instructions ?? "").slice(0, INSTRUCTIONS_MAX);
     await store.profiles.updateOne(
       { userId: uid(req) },
-      { $set: { fields, updatedAt: new Date() }, $setOnInsert: { _id: randomUUID() } },
+      {
+        $set: { fields, instructions, updatedAt: new Date() },
+        $setOnInsert: { _id: randomUUID() },
+      },
       { upsert: true },
     );
     res.json({ ok: true });
@@ -368,7 +407,7 @@ export function createApp(cfg: AppConfig): Express {
 
   app.get("/api/profile", async (req: Authed, res) => {
     const profile = await store.profiles.findOne({ userId: uid(req) });
-    res.json({ fields: profile?.fields ?? {} });
+    res.json({ fields: profile?.fields ?? {}, instructions: profile?.instructions ?? "" });
   });
 
   /** Development affordance. Stripe replaces this with a webhook. */

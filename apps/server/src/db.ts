@@ -69,6 +69,12 @@ export interface Profile {
   _id: string;
   userId: string;
   fields: Record<string, string>;
+  /**
+   * Standing instructions, kept OUT of `fields` on purpose. `fields` is the key space
+   * field mapping chooses from, so anything in it can end up typed into a form input;
+   * a paragraph of preferences must never be a candidate value.
+   */
+  instructions?: string;
   updatedAt: Date;
 }
 

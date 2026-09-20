@@ -93,11 +93,18 @@ export class TabExecutor implements Executor {
     try {
       await chrome.scripting.executeScript({ target: { tabId: this.tabId }, files });
     } catch (err) {
-      // Nearly always a missing host permission for this origin. Say so, rather than
-      // letting it surface later as an unexplained connection error.
-      throw new Error(
-        `cannot run on this tab: ${err instanceof Error ? err.message : String(err)}`,
-      );
+      const why = err instanceof Error ? err.message : String(err);
+      // The manifest is read fresh, so a missing file means the build on disk moved
+      // under a loaded extension: Vite re-hashes asset names, and Chrome keeps
+      // serving the manifest it read at load time until someone reloads it.
+      if (/could not load file/i.test(why)) {
+        throw new Error(
+          "the extension was rebuilt since Chrome loaded it — reload it at chrome://extensions, then try again",
+        );
+      }
+      // Otherwise nearly always a missing host permission for this origin. Say so,
+      // rather than letting it surface later as an unexplained connection error.
+      throw new Error(`cannot run on this tab: ${why}`);
     }
     // The loader imports the real module, so the listener is not registered yet.
     await new Promise((r) => setTimeout(r, 300));

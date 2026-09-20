@@ -34,7 +34,19 @@ export type ToWorker =
   | { kind: "signInDev" }
   | { kind: "signOut" }
   | { kind: "getProfile" }
-  | { kind: "saveProfile"; fields: Record<string, string> };
+  | { kind: "saveProfile"; fields: Record<string, string>; instructions: string }
+  | { kind: "reset" };
+
+/** One finished run, kept so the panel can show what was done earlier. */
+export interface HistoryEntry {
+  id: string;
+  goal: string;
+  status: string;
+  steps: number;
+  credits: number;
+  seconds: number;
+  at: number;
+}
 
 export interface PendingApproval {
   preview: string;
@@ -59,4 +71,6 @@ export interface PanelState {
   summary?: { steps: number; credits: number; seconds: number };
   /** Irreversible steps queued for review. */
   queued?: { preview: string; risk: string }[];
+  /** Finished runs, newest first. Survives the service worker dying. */
+  history?: HistoryEntry[];
 }

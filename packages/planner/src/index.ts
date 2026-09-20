@@ -39,13 +39,19 @@ export async function makePlan(opts: {
   model?: string;
   /** When supplied, the plan is canonicalised by asking JEV what each step is. */
   jev?: JevProvider;
+  /**
+   * Standing instructions the user saved in their details: tone, defaults, things to
+   * always or never do. Trusted — they are the user's own words, like the goal — and
+   * loaded on every run, so they are the place a preference outlives one prompt.
+   */
+  instructions?: string | undefined;
 }): Promise<PlanResult> {
   const model = opts.model ?? DEFAULT_PLANNER_MODEL;
   const first = await chat({
     apiKey: opts.apiKey,
     model,
     system: SYSTEM_PROMPT,
-    user: userPrompt(opts.goal, opts.start),
+    user: userPrompt(opts.goal, opts.start, opts.instructions),
   });
 
   const parsed = Plan.safeParse(coerceNodes(tryExtract(first.text)));

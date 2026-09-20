@@ -111,6 +111,12 @@ Reference them in slots as "$.profile.<key>". Do not copy their values into the 
 Return ONLY a JSON object, no prose and no code fence:
 { "goal": string, "sites": string[], "nodes": Node[] }`;
 
-export function userPrompt(goal: string, start: string): string {
-  return `Goal: ${goal}\nStarting page: ${start}\n\nCompile this into a program.`;
+export function userPrompt(goal: string, start: string, instructions?: string): string {
+  // Standing instructions come first and are stated as binding. They are the user's
+  // own saved words, so they carry the same authority as the goal — and when the two
+  // conflict, the goal is the more recent statement of intent.
+  const standing = instructions
+    ? `Standing instructions from the user, which apply to every task and are binding unless this goal contradicts them:\n${instructions}\n\n`
+    : "";
+  return `${standing}Goal: ${goal}\nStarting page: ${start}\n\nCompile this into a program.`;
 }

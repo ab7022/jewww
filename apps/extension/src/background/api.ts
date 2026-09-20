@@ -151,16 +151,20 @@ export class Api {
   mapFields = async (runId: string, input: unknown): Promise<FieldMapping[]> =>
     (await this.call<{ mappings: FieldMapping[] }>(`/api/runs/${runId}/fields`, input)).mappings;
 
-  profile = async (): Promise<Record<string, string>> =>
-    (await this.call<{ fields: Record<string, string> }>("/api/profile")).fields ?? {};
+  profile = async (): Promise<{ fields: Record<string, string>; instructions: string }> => {
+    const r = await this.call<{ fields: Record<string, string>; instructions?: string }>(
+      "/api/profile",
+    );
+    return { fields: r.fields ?? {}, instructions: r.instructions ?? "" };
+  };
 
-  saveProfile = async (fields: Record<string, string>): Promise<void> => {
+  saveProfile = async (fields: Record<string, string>, instructions: string): Promise<void> => {
     const tokens = await this.tokens();
     if (!tokens) throw new Error("not signed in");
     const res = await fetch(`${this.base}/api/profile`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${tokens.access}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ fields }),
+      body: JSON.stringify({ fields, instructions }),
     });
     if (!res.ok) throw new Error("could not save your details");
   };

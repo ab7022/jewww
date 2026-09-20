@@ -217,3 +217,94 @@ button.small { font-size: 13px; padding: 5px 12px; }
 
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-thumb { background: var(--fill); border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+
+/* --- dictation, history, reset ------------------------------------------- */
+
+.mic {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--separator);
+  background: var(--raised);
+  color: var(--label-2);
+  cursor: pointer;
+}
+.mic:hover:not(:disabled) { color: var(--label); }
+.mic:disabled { opacity: 0.4; cursor: default; }
+
+/* Listening is the one state that must read at a glance from across the desk. */
+.mic.listening {
+  background: var(--label);
+  border-color: var(--label);
+  color: var(--raised);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(0 0 0 / 22%); }
+  50%      { box-shadow: 0 0 0 5px rgb(0 0 0 / 0%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mic.listening { animation: none; }
+}
+
+.interim {
+  margin: 6px 16px 0;
+  font-size: 13px;
+  color: var(--label-2);
+  font-style: italic;
+}
+
+.tray { display: flex; gap: 8px; justify-content: flex-end; padding: 12px 0 4px; }
+
+.history { list-style: none; margin: 4px 0 0; padding: 0; }
+.history li + li { border-top: 1px solid var(--separator); }
+.history button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 2px;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--label);
+  font: inherit;
+}
+.history button:hover .history-goal { text-decoration: underline; }
+.history-goal {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+.history-meta { font-size: 12px; color: var(--label-2); flex: none; }
+
+.pip { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+.pip.ok { background: var(--green); }
+.pip.bad { background: var(--orange); }
+
+.standing { display: block; margin-top: 16px; }
+.standing > span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--label-2);
+}
+.standing textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 10px 12px;
+  border: 1px solid var(--separator);
+  border-radius: 10px;
+  background: var(--raised);
+  color: var(--label);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.standing textarea:focus { outline: none; border-color: var(--label-2); }

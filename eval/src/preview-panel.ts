@@ -109,6 +109,19 @@ const server = createServer((req, res) => {
 await new Promise<void>((r) => server.listen(0, r));
 const port = (server.address() as { port: number }).port;
 
+/**
+ * A finished run with earlier ones behind it. History and Reset only appear once a
+ * run has happened, so without this fixture neither is ever rendered in a preview.
+ */
+const WITH_HISTORY = {
+  ...FINISHED,
+  history: [
+    { id: "h1", goal: "Draft an email to abdul@dolze.ai saying hi", status: "done", steps: 11, credits: 5.1, seconds: 14, at: Date.now() - 9 * 60_000 },
+    { id: "h2", goal: "Create a dummy form and ask the user about sleeping habits", status: "blocked", steps: 6, credits: 2.1, seconds: 9, at: Date.now() - 3 * 3600_000 },
+    { id: "h3", goal: "Summarise this page", status: "done", steps: 4, credits: 1.2, seconds: 6, at: Date.now() - 2 * 86_400_000 },
+  ],
+};
+
 const browser = await chromium.launch();
 for (const [name, state, scheme] of [
   ["empty", EMPTY, "dark"],
@@ -117,6 +130,7 @@ for (const [name, state, scheme] of [
   ["finished", FINISHED, "dark"],
   ["finished-light", FINISHED, "light"],
   ["legacy-state", LEGACY, "dark"],
+  ["history", WITH_HISTORY, "dark"],
 ] as const) {
   const page = await browser.newPage({
     viewport: { width: 400, height: 760 },
@@ -139,7 +153,23 @@ for (const [name, state, scheme] of [
     `(document.getElementById('root')?.textContent ?? '').trim().length`,
   );
   if (!rendered) throw new Error(`${name}: the panel rendered nothing`);
-  await page.screenshot({ path: join(out, `${name}.png`) });
+
+  // The tray sits below the fold, so a screenshot alone would never show whether
+  // History and Reset are actually reachable after a run.
+  if (name === "history") {
+    const trayText = await page.evaluate(
+      `(document.querySelector('.tray')?.textContent ?? '').trim()`,
+    );
+    if (!String(trayText).includes("Reset") || !String(trayText).includes("History")) {
+      throw new Error(`history: expected History and Reset in the tray, got "${trayText}"`);
+    }
+    await page.click(".tray button");
+    await page.waitForTimeout(150);
+    const entries = await page.evaluate(`document.querySelectorAll('.history li').length`);
+    if (entries !== 3) throw new Error(`history: expected 3 past runs, got ${entries}`);
+  }
+
+  await page.screenshot({ path: join(out, `${name}.png`), fullPage: name === "history" });
   await page.close();
   console.log(`  ${name}.png`);
 }

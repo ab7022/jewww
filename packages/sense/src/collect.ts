@@ -386,13 +386,32 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
 
     const tag = el.tagName;
     const inputType = tag === "INPUT" ? (el as HTMLInputElement).type.toLowerCase() : "";
-    const fillable =
+    const editable =
       tag === "TEXTAREA" ||
       tag === "SELECT" ||
       (el as HTMLElement).isContentEditable ||
       (tag === "INPUT" && !/^(submit|button|reset|image)$/.test(inputType));
 
-    const value = fillable ? clean((el as HTMLInputElement).value) : "";
+    /**
+     * `fillable` decides whether TYPE_TEXT is offered for this element at all, so it
+     * has to mean "can take text right now", not "is a text-shaped tag".
+     *
+     * A read-only input that behaves as a button is a common pattern — AWS' console
+     * search is one — and offering it as a typing target meant the model chose it,
+     * reasonably, and the attempt was then refused at the last moment by the resolver.
+     * Making it unrepresentable is the fix; the element stays in the snapshot and
+     * stays clickable, which is what that pattern actually wants.
+     */
+    const inert =
+      (el as HTMLInputElement).readOnly === true ||
+      (el as HTMLInputElement).disabled === true ||
+      el.getAttribute("aria-readonly") === "true" ||
+      el.getAttribute("aria-disabled") === "true";
+    const fillable = editable && !inert;
+
+    // Read from anything text-shaped, including the inert ones: what a read-only
+    // field is displaying is often the answer to the question being asked.
+    const value = editable ? clean((el as HTMLInputElement).value) : "";
     const st = stateOf(el);
     const ctx = ctxOf(el);
 

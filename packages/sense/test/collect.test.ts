@@ -26,6 +26,30 @@ beforeEach(() => {
 });
 
 describe("collectSnapshot", () => {
+  /**
+   * `fillable` gates whether TYPE_TEXT is offered, so it must mean "can take text
+   * now". AWS' console search is a read-only input acting as a button: offering it
+   * as a typing target got it chosen and then refused by the resolver, when the
+   * right move was always to click it.
+   */
+  it("does not offer read-only or disabled fields as typing targets", () => {
+    document.body.innerHTML = `
+      <label for="ro">Search</label><input id="ro" readonly value="prod">
+      <label for="ar">Aria search</label><input id="ar" aria-readonly="true">
+      <label for="dis">Disabled</label><input id="dis" disabled>
+      <label for="ok">Normal</label><input id="ok">`;
+    const s = collectSnapshot();
+    expect(byName(s, "Search")?.fillable).toBe(false);
+    expect(byName(s, "Aria search")?.fillable).toBe(false);
+    expect(byName(s, "Disabled")?.fillable).toBe(false);
+    expect(byName(s, "Normal")?.fillable).toBe(true);
+  });
+
+  it("still reports what a read-only field is displaying", () => {
+    document.body.innerHTML = `<label for="ro">Region</label><input id="ro" readonly value="ap-south-1">`;
+    expect(byName(collectSnapshot(), "Region")?.value).toBe("ap-south-1");
+  });
+
   it("names inputs from their <label for>", () => {
     document.body.innerHTML = `
       <form>

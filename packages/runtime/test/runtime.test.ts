@@ -721,3 +721,63 @@ describe("the user's goal reaches the text helpers", () => {
     expect(seen).toBe("g");
   });
 });
+
+/**
+ * Telling the model a click was blocked was not enough on its own. The AWS console
+ * has two "AWS Amplify" links, one buried under the open services menu, and it kept
+ * choosing the buried one — reasonably, since it is still the best-named match. A
+ * covered element is not a judgement call: the hit test already proved it cannot be
+ * clicked, so it is taken out of the choices until the page moves.
+ */
+describe("a covered target is withdrawn from the choices", () => {
+  it("stops offering an element whose click was refused as covered", async () => {
+    const ex = fakeExecutor(["same", "same", "same", "same"]);
+    ex.act = async () => {
+      throw new UnreachableTarget('covered by dialog “Services”');
+    };
+
+    const offered: string[][] = [];
+    await run(
+      plan([{ kind: "act", id: "a", intent: "open amplify", success: "amplify is open" }]),
+      fakeJev(["CLICK"]),
+      ex,
+      {},
+      {
+        decide: async (input) => {
+          offered.push(input.snapshot.elements.map((e) => e.name));
+          return decide(fakeJev(["CLICK"]), input);
+        },
+      },
+    );
+
+    expect(offered.length).toBeGreaterThan(1);
+    expect(offered[0]).toContain("Go");
+    // Every later decision is made without the element that proved unclickable.
+    for (const round of offered.slice(1)) expect(round).not.toContain("Go");
+  });
+
+  it("offers it again once the page has moved", async () => {
+    const ex = fakeExecutor(["h1", "h2", "h3"]);
+    let attempt = 0;
+    ex.act = async () => {
+      // Covered the first time only; the page then changes underneath.
+      if (attempt++ === 0) throw new UnreachableTarget("covered by div");
+    };
+
+    const offered: string[][] = [];
+    await run(
+      plan([{ kind: "act", id: "a", intent: "open amplify", success: "amplify is open" }]),
+      fakeJev(["CLICK", "CLICK", "DONE"]),
+      ex,
+      {},
+      {
+        decide: async (input) => {
+          offered.push(input.snapshot.elements.map((e) => e.name));
+          return decide(fakeJev(["CLICK"]), input);
+        },
+      },
+    );
+
+    expect(offered[1]).toContain("Go");
+  });
+});

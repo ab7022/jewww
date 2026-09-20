@@ -55,6 +55,23 @@ describe("occlusion refusals name what is in the way", () => {
     expect(refuse(backdrop)).toBe("covered by an overlay, with the dialog “Got it” open");
   });
 
+  it("does not quote a container's run-together text as its name", () => {
+    target();
+    // AWS' services menu: an unlabelled nav column whose textContent is every link
+    // in it. `nameOf` happily returns that, and the refusal became unreadable.
+    const column = document.createElement("div");
+    for (const t of ["Analytics", "Application Integration", "Blockchain", "Compute"]) {
+      const a = document.createElement("a");
+      a.textContent = t;
+      column.append(a);
+    }
+    document.body.append(column);
+
+    const refusal = refuse(column);
+    expect(refusal).not.toMatch(/Analytics Application Integration/);
+    expect(refusal).toBe("covered by div");
+  });
+
   it("falls back to the DOM description when nothing is nameable", () => {
     target();
     // No id, no text, no aria: `nameOf` has nothing to offer, so the refusal keeps

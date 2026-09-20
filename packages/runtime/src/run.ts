@@ -214,11 +214,36 @@ async function runActNode(
    */
   const recent: { action: string; text?: string | null; pageChanged?: boolean | null }[] = [];
 
+  /**
+   * Targets that are physically covered on the page as it stands.
+   *
+   * Telling the model why a click failed was not enough on its own: AWS' console has
+   * two "AWS Amplify" links, one of them underneath the open services menu, and it
+   * kept choosing the buried one because that is still the best-named match for the
+   * goal. A covered element is not a judgement call — the hit test already proved it
+   * cannot be clicked — so it is withdrawn from the choices until the page changes.
+   * Keyed by fingerprint, since eids are only stable within one snapshot.
+   */
+  const covered = new Set<string>();
+
   for (let i = 0; i < MAX_STEPS_PER_NODE; i++) {
     if (state.steps >= state.budget) return "budget";
 
     const raw = await opts.executor.snapshot();
-    const capped = rankedSnapshot(raw, node.intent, DEFAULT_CAP);
+    // A page that moved may have uncovered things, so the evidence expires with it.
+    if (raw.contentHash !== lastHash) covered.clear();
+
+    const fpByEid = new Map(raw.elements.map((e) => [e.eid, e.fp]));
+    const ranked = rankedSnapshot(raw, node.intent, DEFAULT_CAP);
+    const capped = covered.size
+      ? {
+          ...ranked,
+          elements: ranked.elements.filter((e) => {
+            const fp = fpByEid.get(e.eid);
+            return !fp || !covered.has(fp);
+          }),
+        }
+      : ranked;
     const nodes = Object.fromEntries(raw.elements.map((e) => [e.eid, e.node]));
 
     // Identical page two steps running means the last action silently did nothing.
@@ -421,6 +446,8 @@ async function runActNode(
       if (err instanceof StalePage || err instanceof UnreachableTarget) {
         // Recorded as a FAILURE with its reason. "covered by a modal" is actionable —
         // the model can dismiss the overlay — but only if it is told.
+        // Covered is a fact the hit test established, not an opinion to re-litigate.
+        if (fp && /covered by/i.test(err.message)) covered.add(fp);
         recent.push({ action: `${describe} FAILED: ${err.message}`, pageChanged: false });
         opts.emit({ type: "warn", message: `${node.id}: ${err.message}, re-observing` });
         continue; // never retried; we go back and decide again from a fresh page

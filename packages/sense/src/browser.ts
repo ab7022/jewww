@@ -125,9 +125,19 @@ function describeOccluder(top: Element | null): string {
 
   for (let el: Element | null = top; el && el !== document.body; el = el.parentElement) {
     const role = roleOf(el);
+    if (role === "dialog" || role === "alertdialog") {
+      const named = nameOf(el).slice(0, 80);
+      return named ? `dialog \u201c${named}\u201d` : "a dialog";
+    }
+    // An unlabelled container has no name of its own, so `nameOf` falls back to its
+    // text — which for a nav column is every link in it run together. AWS' services
+    // menu reported 'generic "Analytics Application Integration Blockchain..."'.
+    // A name is only worth quoting when something actually labelled it.
+    const labelled =
+      el.hasAttribute("aria-label") || el.hasAttribute("aria-labelledby") || el.hasAttribute("title");
+    if (role === "generic" && !labelled) continue;
     const name = nameOf(el).slice(0, 80);
     if (name) return `${role} \u201c${name}\u201d`;
-    if (role === "dialog" || role === "alertdialog") return "a dialog";
   }
 
   const modal = [...document.querySelectorAll('[role="dialog"],[role="alertdialog"],[aria-modal="true"],dialog[open]')]

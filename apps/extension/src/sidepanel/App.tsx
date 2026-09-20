@@ -125,7 +125,7 @@ export function App(): JSX.Element {
               Stop
             </button>
           )}
-          <span className="hint">⌘↵</span>
+          <span className="hint">⌘ ↵</span>
         </div>
       </div>
 
@@ -186,12 +186,22 @@ function Header({
  * "running" were nearly identical in the panel, so several finished steps read as
  * still in progress.
  */
+/** What a risk class means, rather than its internal name. */
+const RISK_WORDS: Record<string, string> = {
+  money: "Spends money",
+  message: "Sends something",
+  destroy: "Deletes data",
+  settings: "Changes settings",
+  auth: "Signs in or out",
+  paywall: "Requires payment",
+};
+
 const ICON: Record<TimelineStep["status"], string> = {
   pending: "○",
-  running: "◆",
+  running: "●",
   done: "✓",
   failed: "✕",
-  waiting: "❯",
+  waiting: "!",
 };
 
 function Step({ step, onAnswer }: { step: TimelineStep; onAnswer: (ok: boolean) => void }) {
@@ -233,8 +243,10 @@ function Step({ step, onAnswer }: { step: TimelineStep; onAnswer: (ok: boolean) 
         {step.prompt && (
           <div className="prompt">
             <div className="prompt-head">
-              {step.prompt.reason === "handoff" ? "Needs you" : "Approve this?"}
-              {step.prompt.risk !== "none" && <span className="risk">{step.prompt.risk}</span>}
+              {step.prompt.reason === "handoff" ? "Needs you" : "Needs your approval"}
+              {step.prompt.risk !== "none" && (
+              <span className="risk">{RISK_WORDS[step.prompt.risk] ?? step.prompt.risk}</span>
+            )}
             </div>
             <p>{step.prompt.preview}</p>
             {step.prompt.reason === "confirm" ? (
@@ -270,13 +282,13 @@ function Result({ text }: { text: string }) {
 function Queued({ items }: { items: { preview: string; risk: string }[] }) {
   return (
     <section className="queued">
-      <h2>Held back for you · {items.length}</h2>
-      <p className="sub">Nothing here was carried out.</p>
+      <h2>Held back · {items.length}</h2>
+      <p className="fine">Nothing here was carried out.</p>
       <ul>
         {items.map((q, i) => (
           <li key={`${q.preview}-${i}`}>
             {q.preview}
-            {q.risk !== "none" && <span className="risk">{q.risk}</span>}
+            {q.risk !== "none" && <span className="risk">{RISK_WORDS[q.risk] ?? q.risk}</span>}
           </li>
         ))}
       </ul>
@@ -320,7 +332,9 @@ function Empty({ onPick }: { onPick: (s: string) => void }) {
       <p>Give it a goal for the page you're on.</p>
       <div className="chips">
         {SUGGESTIONS.map((s) => (
-          <button key={s} className="chip" onClick={() => onPick(s)}>{s}</button>
+          <button key={s} className="chip" onClick={() => onPick(s)}>
+            {s}
+          </button>
         ))}
       </div>
       <p className="fine">

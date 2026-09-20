@@ -33,6 +33,25 @@ export class Api {
    * never sees the Google password — it only receives our tokens back in the
    * redirect fragment.
    */
+  /** What sign-in the server actually supports right now. */
+  async config(): Promise<{ google: boolean; dev: boolean }> {
+    const res = await fetch(`${this.base}/auth/config`);
+    if (!res.ok) throw new Error("server unreachable");
+    return (await res.json()) as { google: boolean; dev: boolean };
+  }
+
+  /** Local development sign-in, offered only when the server says it is available. */
+  async signInDev(): Promise<void> {
+    const res = await fetch(`${this.base}/auth/dev`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "dev@localhost" }),
+    });
+    if (!res.ok) throw new Error("dev sign-in is not available on this server");
+    const { access, refresh } = (await res.json()) as { access: string; refresh: string };
+    await this.setTokens({ access, refresh });
+  }
+
   async signIn(): Promise<void> {
     const redirect = chrome.identity.getRedirectURL("google");
     const url = `${this.base}/auth/google/start?redirect=${encodeURIComponent(redirect)}`;

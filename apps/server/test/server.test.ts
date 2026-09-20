@@ -222,3 +222,34 @@ describe("http", () => {
     await request(app).get("/auth/google/start").expect(501);
   });
 });
+
+describe("dev sign-in", () => {
+  const withoutGoogle = createApp({
+    store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "http://localhost/app",
+  });
+  const withGoogle = createApp({
+    store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "http://localhost/app",
+    google: { clientId: "id", clientSecret: "secret", redirectUri: "http://localhost/cb" },
+  });
+
+  it("is advertised only when Google is not configured", async () => {
+    const a = await request(withoutGoogle).get("/auth/config").expect(200);
+    expect(a.body).toEqual({ google: false, dev: true });
+    const b = await request(withGoogle).get("/auth/config").expect(200);
+    expect(b.body).toEqual({ google: true, dev: false });
+  });
+
+  it("issues usable tokens", async () => {
+    const res = await request(withoutGoogle).post("/auth/dev").send({ email: "t@localhost" }).expect(200);
+    expect(res.body.access).toBeTruthy();
+    const me = await request(withoutGoogle)
+      .get("/api/me")
+      .set("Authorization", `Bearer ${res.body.access}`)
+      .expect(200);
+    expect(me.body.credits).toBeGreaterThan(0);
+  });
+
+  it("is refused once Google IS configured — a bypass must not survive deployment", async () => {
+    await request(withGoogle).post("/auth/dev").send({ email: "t2@localhost" }).expect(404);
+  });
+});

@@ -30,6 +30,16 @@ export function App(): JSX.Element {
     };
   }, [refresh]);
 
+  const signIn = async (kind: "signIn" | "signInDev") => {
+    setBusy(true);
+    try {
+      await send({ kind });
+      await refresh();
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const start = async () => {
     if (!goal.trim()) return;
     setBusy(true);
@@ -50,23 +60,33 @@ export function App(): JSX.Element {
         </header>
         <div className="body">
           <p className="muted">
-            Sign in to run tasks. Your model usage is billed against your credit balance.
+            Sign in to run tasks. Model usage is billed against your credit balance.
           </p>
-          <button
-            className="primary"
-            onClick={async () => {
-              setBusy(true);
-              try {
-                await send({ kind: "signIn" });
-                await refresh();
-              } finally {
-                setBusy(false);
-              }
-            }}
-            disabled={busy}
-          >
-            Sign in with Google
-          </button>
+          {state.auth?.google !== false && (
+            <button
+              className="primary"
+              onClick={() => void signIn("signIn")}
+              disabled={busy}
+            >
+              Sign in with Google
+            </button>
+          )}
+          {state.auth?.dev && (
+            <>
+              <button onClick={() => void signIn("signInDev")} disabled={busy}>
+                Continue as dev user
+              </button>
+              <p className="muted">
+                Google sign-in is not configured on the server, so this local account is
+                offered instead. It is refused in production.
+              </p>
+            </>
+          )}
+          {!state.auth && (
+            <p className="muted">
+              Cannot reach the server at localhost:8787 — start it with <code>pnpm server</code>.
+            </p>
+          )}
         </div>
       </div>
     );

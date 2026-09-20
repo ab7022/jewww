@@ -57,6 +57,29 @@ export function createApp(cfg: AppConfig): Express {
 
   // --- auth ---------------------------------------------------------------
 
+  /** Whether real sign-in is available, so a client can offer the right button. */
+  app.get("/auth/config", (_req, res) => {
+    res.json({ google: Boolean(cfg.google), dev: allowDevAuth() });
+  });
+
+  /**
+   * Development sign-in. Creates a local account and issues the same tokens Google
+   * sign-in would, so the extension can be exercised before OAuth credentials exist.
+   *
+   * Refuses in production and whenever Google IS configured — a bypass that survives
+   * into a deployment is a bypass someone will find.
+   */
+  app.post("/auth/dev", async (req, res) => {
+    if (!allowDevAuth()) return res.status(404).json({ error: "not_found" });
+    const email = String(req.body?.email ?? "dev@localhost");
+    const user = await upsertGoogleUser(store, { sub: `dev_${email}`, email, name: "Dev User" });
+    res.json({
+      access: signJwt({ sub: user._id }, cfg.jwtSecret),
+      refresh: await issueRefresh(store, user._id),
+      credits: user.credits,
+    });
+  });
+
   app.get("/auth/google/start", (req, res) => {
     if (!cfg.google) return res.status(501).json({ error: "google_not_configured" });
     // `state` carries the caller's return target and is signed, so another site
@@ -101,6 +124,10 @@ export function createApp(cfg: AppConfig): Express {
   });
 
   // --- everything below needs a user --------------------------------------
+
+  function allowDevAuth(): boolean {
+    return process.env.NODE_ENV !== "production" && !cfg.google;
+  }
 
   const requireAuth = (req: Authed, res: Response, next: NextFunction) => {
     const header = req.get("authorization") ?? "";

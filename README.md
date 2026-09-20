@@ -25,6 +25,8 @@ before any Chrome code exists.
 
 ## Setup
 
+**Running it yourself: [SETUP.md](SETUP.md).**
+
 ```bash
 pnpm i
 cp .env.example .env      # add OPENROUTER_API_KEY

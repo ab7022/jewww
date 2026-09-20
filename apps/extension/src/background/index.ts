@@ -136,17 +136,22 @@ chrome.runtime.onMessage.addListener((msg: ToWorker, _sender, sendResponse) => {
     switch (msg.kind) {
       case "state": {
         const state = await getState();
+        const auth = await api.config().catch(() => undefined);
         const tokens = await api.tokens();
-        if (!tokens) return sendResponse({ ...state, signedIn: false });
+        if (!tokens) return sendResponse({ ...state, signedIn: false, ...(auth ? { auth } : {}) });
         const me = await api.me().catch(() => null);
         return sendResponse({
           ...state,
           signedIn: true,
+          ...(auth ? { auth } : {}),
           ...(me ? { email: me.email, credits: me.credits } : {}),
         });
       }
       case "signIn":
         await api.signIn();
+        return sendResponse(await patch({ signedIn: true }));
+      case "signInDev":
+        await api.signInDev();
         return sendResponse(await patch({ signedIn: true }));
       case "signOut":
         await api.signOut();

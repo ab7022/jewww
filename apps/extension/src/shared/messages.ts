@@ -30,6 +30,7 @@ export type ToWorker =
   | { kind: "abort" }
   | { kind: "state" }
   | { kind: "signIn" }
+  | { kind: "signInDev" }
   | { kind: "signOut" };
 
 export interface PendingApproval {
@@ -39,6 +40,8 @@ export interface PendingApproval {
 
 export interface PanelState {
   signedIn: boolean;
+  /** Which sign-in the server offers. */
+  auth?: { google: boolean; dev: boolean };
   email?: string;
   credits?: number;
   running: boolean;

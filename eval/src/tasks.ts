@@ -62,8 +62,13 @@ export const TASKS: Task[] = [
     goal: "research iphone reviews", intent: "open the article about the iPhone 17 Pro" , target: "IPhone 17 Pro"},
   { slug: "npm-search", url: "https://www.npmjs.com/search?q=playwright", kind: "results",
     goal: "find the playwright package", intent: "open the top package result", settleMs: 3000 },
-  { slug: "gh-search", url: "https://github.com/search?q=browser+agent&type=repositories", kind: "results",
-    goal: "find a browser agent library", intent: "open the top repository result", settleMs: 4000 , target: "browser-use/browser-use"},
+  // Third choice for this slot. GitHub search hits a secondary rate limit on
+  // re-capture and PyPI serves a CAPTCHA to headless browsers — both unusable for a
+  // fixture that gets re-captured. Gutenberg is server-rendered and scraper-tolerant.
+  { slug: "book-search", url: "https://www.gutenberg.org/ebooks/search/?query=sherlock+holmes",
+    kind: "results", goal: "read a Sherlock Holmes book",
+    intent: "open the top search result", settleMs: 1500,
+    target: "The Adventures of Sherlock Holmes" },
 
   // --- content / navigation -------------------------------------------------
   { slug: "wiki-article", url: "https://en.wikipedia.org/wiki/Web_accessibility", kind: "nav",

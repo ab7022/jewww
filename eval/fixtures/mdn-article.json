@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "link",
       "name": "Skip to main content",
       "fp": "link|Skip to main content|0",
@@ -23,6 +24,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "link",
       "name": "Skip to search",
       "fp": "link|Skip to search|0",
@@ -36,6 +38,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "link",
       "name": "MDN",
       "ctx": "nav",
@@ -50,6 +53,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "button",
       "name": "HTML",
       "ctx": "nav",
@@ -65,6 +69,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "button",
       "name": "CSS",
       "ctx": "nav",
@@ -80,6 +85,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "button",
       "name": "JavaScript",
       "ctx": "nav",
@@ -95,6 +101,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "button",
       "name": "Web APIs",
       "ctx": "nav",
@@ -110,6 +117,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "button",
       "name": "All",
       "ctx": "nav",
@@ -125,6 +133,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "button",
       "name": "Learn",
       "ctx": "nav",
@@ -140,6 +149,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "button",
       "name": "Tools",
       "ctx": "nav",
@@ -155,6 +165,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "button",
       "name": "About",
       "ctx": "nav",
@@ -170,6 +181,7 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "link",
       "name": "Blog",
       "ctx": "nav",
@@ -184,6 +196,7 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "link",
       "name": "Web",
       "ctx": "header",
@@ -198,6 +211,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "link",
       "name": "Web APIs",
       "ctx": "header",
@@ -212,6 +226,7 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "link",
       "name": "Fetch API",
       "ctx": "header",
@@ -226,6 +241,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "link",
       "name": "XMLHttpRequest",
       "ctx": "Fetch API",
@@ -240,6 +256,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "link",
       "name": "Concepts and usage",
       "ctx": "nav",
@@ -254,6 +271,7 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "link",
       "name": "Interfaces",
       "ctx": "nav",
@@ -268,6 +286,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "link",
       "name": "HTTP headers",
       "ctx": "nav",
@@ -282,6 +301,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "link",
       "name": "Specifications",
       "ctx": "nav",
@@ -296,6 +316,7 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "link",
       "name": "Browser compatibility",
       "ctx": "nav",
@@ -310,6 +331,7 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "link",
       "name": "See also",
       "ctx": "nav",
@@ -324,6 +346,7 @@
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "link",
       "name": "Concepts and usage",
       "fp": "link|Concepts and usage|1",
@@ -337,6 +360,7 @@
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "link",
       "name": "Request",
       "ctx": "Concepts and usage",
@@ -351,6 +375,7 @@
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "link",
       "name": "Response",
       "ctx": "Concepts and usage",
@@ -365,6 +390,7 @@
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "link",
       "name": "fetch()",
       "ctx": "Concepts and usage",
@@ -379,6 +405,7 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "link",
       "name": "Window",
       "ctx": "Concepts and usage",
@@ -393,6 +420,7 @@
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "link",
       "name": "Worker",
       "ctx": "Concepts and usage",
@@ -407,6 +435,7 @@
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "link",
       "name": "Promise",
       "ctx": "Concepts and usage",
@@ -421,6 +450,7 @@
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "link",
       "name": "Response",
       "ctx": "Concepts and usage",
@@ -435,6 +465,7 @@
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "link",
       "name": "Request",
       "ctx": "Concepts and usage",
@@ -449,6 +480,7 @@
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "link",
       "name": "Response",
       "ctx": "Concepts and usage",
@@ -463,6 +495,7 @@
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "link",
       "name": "Request()",
       "ctx": "Concepts and usage",
@@ -477,6 +510,7 @@
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "link",
       "name": "Response()",
       "ctx": "Concepts and usage",
@@ -491,6 +525,7 @@
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "link",
       "name": "FetchEvent.respondWith()",
       "ctx": "Concepts and usage",
@@ -505,6 +540,7 @@
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "link",
       "name": "Using Fetch",
       "ctx": "Concepts and usage",
@@ -519,6 +555,7 @@
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "link",
       "name": "Deferred Fetch",
       "fp": "link|Deferred Fetch|0",
@@ -532,6 +569,7 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "link",
       "name": "fetchLater()",
       "ctx": "Deferred Fetch",
@@ -546,6 +584,7 @@
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "link",
       "name": "Using Deferred Fetch",
       "ctx": "Deferred Fetch",
@@ -560,6 +599,7 @@
     },
     {
       "eid": "e40",
+      "node": 40,
       "role": "link",
       "name": "Interfaces",
       "fp": "link|Interfaces|1",
@@ -573,6 +613,7 @@
     },
     {
       "eid": "e41",
+      "node": 41,
       "role": "link",
       "name": "Window.fetch()",
       "ctx": "Interfaces",
@@ -587,6 +628,7 @@
     },
     {
       "eid": "e42",
+      "node": 42,
       "role": "link",
       "name": "WorkerGlobalScope.fetch()",
       "ctx": "Interfaces",
@@ -601,6 +643,7 @@
     },
     {
       "eid": "e43",
+      "node": 43,
       "role": "link",
       "name": "Window.fetchLater()",
       "ctx": "Interfaces",
@@ -615,6 +658,7 @@
     },
     {
       "eid": "e44",
+      "node": 44,
       "role": "link",
       "name": "DeferredRequestInit",
       "ctx": "Interfaces",
@@ -629,6 +673,7 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "link",
       "name": "FetchLaterResult",
       "ctx": "Interfaces",
@@ -643,6 +688,7 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "link",
       "name": "Headers",
       "ctx": "Interfaces",
@@ -657,6 +703,7 @@
     },
     {
       "eid": "e47",
+      "node": 47,
       "role": "link",
       "name": "Request",
       "ctx": "Interfaces",
@@ -671,6 +718,7 @@
     },
     {
       "eid": "e48",
+      "node": 48,
       "role": "link",
       "name": "Response",
       "ctx": "Interfaces",
@@ -685,6 +733,7 @@
     },
     {
       "eid": "e49",
+      "node": 49,
       "role": "link",
       "name": "HTTP headers",
       "fp": "link|HTTP headers|1",
@@ -698,6 +747,7 @@
     },
     {
       "eid": "e50",
+      "node": 50,
       "role": "link",
       "name": "deferred-fetch",
       "ctx": "HTTP headers",
@@ -712,6 +762,7 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "link",
       "name": "top-level quota",
       "ctx": "HTTP headers",
@@ -726,6 +777,7 @@
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "link",
       "name": "deferred-fetch-minimal",
       "ctx": "HTTP headers",
@@ -740,6 +792,7 @@
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "link",
       "name": "shared cross-origin subframe quota",
       "ctx": "HTTP headers",
@@ -754,6 +807,7 @@
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "link",
       "name": "Specifications",
       "fp": "link|Specifications|1",
@@ -767,6 +821,7 @@
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "link",
       "name": "Fetch # fetch-method",
       "ctx": "Specifications",
@@ -781,6 +836,7 @@
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "link",
       "name": "Fetch # deferred-fetch",
       "ctx": "Specifications",
@@ -795,6 +851,7 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "link",
       "name": "Browser compatibility",
       "fp": "link|Browser compatibility|1",
@@ -808,6 +865,7 @@
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "link",
       "name": "api.fetch",
       "fp": "link|api.fetch|0",
@@ -821,6 +879,7 @@
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "link",
       "name": "api.Window.fetchLater",
       "fp": "link|api.Window.fetchLater|0",
@@ -834,6 +893,7 @@
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "link",
       "name": "See also",
       "fp": "link|See also|1",
@@ -847,6 +907,7 @@
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "link",
       "name": "Using Fetch",
       "ctx": "See also",
@@ -861,6 +922,7 @@
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "link",
       "name": "Service Worker API",
       "ctx": "See also",
@@ -875,6 +937,7 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "link",
       "name": "HTTP access control (CORS)",
       "ctx": "See also",
@@ -889,6 +952,7 @@
     },
     {
       "eid": "e64",
+      "node": 64,
       "role": "link",
       "name": "HTTP",
       "ctx": "See also",
@@ -903,6 +967,7 @@
     },
     {
       "eid": "e65",
+      "node": 65,
       "role": "link",
       "name": "Local network access",
       "ctx": "See also",
@@ -917,6 +982,7 @@
     },
     {
       "eid": "e66",
+      "node": 66,
       "role": "link",
       "name": "Learn how to contribute",
       "ctx": "Help improve MDN",
@@ -931,6 +997,7 @@
     },
     {
       "eid": "e67",
+      "node": 67,
       "role": "link",
       "name": "MDN contributors",
       "ctx": "Help improve MDN",
@@ -945,6 +1012,7 @@
     },
     {
       "eid": "e68",
+      "node": 68,
       "role": "link",
       "name": "Folder: en-us/web/api/fetch_api (Opens in a new tab)",
       "ctx": "Help improve MDN",
@@ -959,6 +1027,7 @@
     },
     {
       "eid": "e69",
+      "node": 69,
       "role": "link",
       "name": "This will take you to GitHub to file a new issue.",
       "ctx": "Help improve MDN",
@@ -973,6 +1042,7 @@
     },
     {
       "eid": "e70",
+      "node": 70,
       "role": "link",
       "name": "Fetch API",
       "ctx": "nav",
@@ -987,6 +1057,7 @@
     },
     {
       "eid": "e71",
+      "node": 71,
       "role": "disclosure",
       "name": "Guides",
       "ctx": "nav",
@@ -1001,6 +1072,7 @@
     },
     {
       "eid": "e72",
+      "node": 72,
       "role": "link",
       "name": "Using the Fetch API",
       "ctx": "nav",
@@ -1015,6 +1087,7 @@
     },
     {
       "eid": "e73",
+      "node": 73,
       "role": "link",
       "name": "Using Deferred Fetch",
       "ctx": "nav",
@@ -1029,6 +1102,7 @@
     },
     {
       "eid": "e74",
+      "node": 74,
       "role": "disclosure",
       "name": "Interfaces",
       "ctx": "nav",
@@ -1043,6 +1117,7 @@
     },
     {
       "eid": "e75",
+      "node": 75,
       "role": "link",
       "name": "DeferredRequestInit",
       "ctx": "nav",
@@ -1057,6 +1132,7 @@
     },
     {
       "eid": "e76",
+      "node": 76,
       "role": "img",
       "name": "Experimental",
       "ctx": "nav",
@@ -1071,6 +1147,7 @@
     },
     {
       "eid": "e77",
+      "node": 77,
       "role": "link",
       "name": "FetchLaterResult",
       "ctx": "nav",
@@ -1085,6 +1162,7 @@
     },
     {
       "eid": "e78",
+      "node": 78,
       "role": "img",
       "name": "Experimental",
       "ctx": "nav",
@@ -1099,6 +1177,7 @@
     },
     {
       "eid": "e79",
+      "node": 79,
       "role": "link",
       "name": "Headers",
       "ctx": "nav",
@@ -1113,6 +1192,7 @@
     },
     {
       "eid": "e80",
+      "node": 80,
       "role": "link",
       "name": "Request",
       "ctx": "nav",
@@ -1127,6 +1207,7 @@
     },
     {
       "eid": "e81",
+      "node": 81,
       "role": "link",
       "name": "RequestInit",
       "ctx": "nav",
@@ -1141,6 +1222,7 @@
     },
     {
       "eid": "e82",
+      "node": 82,
       "role": "link",
       "name": "Response",
       "ctx": "nav",
@@ -1155,6 +1237,7 @@
     },
     {
       "eid": "e83",
+      "node": 83,
       "role": "disclosure",
       "name": "Methods",
       "ctx": "nav",
@@ -1169,6 +1252,7 @@
     },
     {
       "eid": "e84",
+      "node": 84,
       "role": "link",
       "name": "Window.fetch()",
       "ctx": "nav",
@@ -1183,6 +1267,7 @@
     },
     {
       "eid": "e85",
+      "node": 85,
       "role": "link",
       "name": "WorkerGlobalScope.fetch()",
       "ctx": "nav",
@@ -1197,6 +1282,7 @@
     },
     {
       "eid": "e86",
+      "node": 86,
       "role": "link",
       "name": "Window.fetchLater()",
       "ctx": "nav",
@@ -1211,6 +1297,7 @@
     },
     {
       "eid": "e87",
+      "node": 87,
       "role": "img",
       "name": "Experimental",
       "ctx": "nav",
@@ -1225,6 +1312,7 @@
     },
     {
       "eid": "e88",
+      "node": 88,
       "role": "link",
       "name": "MDN logo",
       "ctx": "footer",
@@ -1239,6 +1327,7 @@
     },
     {
       "eid": "e89",
+      "node": 89,
       "role": "link",
       "name": "MDN on GitHub",
       "ctx": "footer",
@@ -1253,6 +1342,7 @@
     },
     {
       "eid": "e90",
+      "node": 90,
       "role": "link",
       "name": "MDN on Bluesky",
       "ctx": "footer",
@@ -1267,6 +1357,7 @@
     },
     {
       "eid": "e91",
+      "node": 91,
       "role": "link",
       "name": "MDN on X",
       "ctx": "footer",
@@ -1281,6 +1372,7 @@
     },
     {
       "eid": "e92",
+      "node": 92,
       "role": "link",
       "name": "MDN on Mastodon",
       "ctx": "footer",
@@ -1295,6 +1387,7 @@
     },
     {
       "eid": "e93",
+      "node": 93,
       "role": "link",
       "name": "MDN blog RSS feed",
       "ctx": "footer",
@@ -1309,6 +1402,7 @@
     },
     {
       "eid": "e94",
+      "node": 94,
       "role": "link",
       "name": "About",
       "ctx": "footer",
@@ -1323,6 +1417,7 @@
     },
     {
       "eid": "e95",
+      "node": 95,
       "role": "link",
       "name": "Blog",
       "ctx": "footer",
@@ -1337,6 +1432,7 @@
     },
     {
       "eid": "e96",
+      "node": 96,
       "role": "link",
       "name": "Mozilla careers",
       "ctx": "footer",
@@ -1351,6 +1447,7 @@
     },
     {
       "eid": "e97",
+      "node": 97,
       "role": "link",
       "name": "Advertise with us",
       "ctx": "footer",
@@ -1365,6 +1462,7 @@
     },
     {
       "eid": "e98",
+      "node": 98,
       "role": "link",
       "name": "MDN Plus",
       "ctx": "footer",
@@ -1379,6 +1477,7 @@
     },
     {
       "eid": "e99",
+      "node": 99,
       "role": "link",
       "name": "Product help",
       "ctx": "footer",
@@ -1393,6 +1492,7 @@
     },
     {
       "eid": "e100",
+      "node": 100,
       "role": "link",
       "name": "MDN Community",
       "ctx": "footer",
@@ -1407,6 +1507,7 @@
     },
     {
       "eid": "e101",
+      "node": 101,
       "role": "link",
       "name": "Community resources",
       "ctx": "footer",
@@ -1421,6 +1522,7 @@
     },
     {
       "eid": "e102",
+      "node": 102,
       "role": "link",
       "name": "Writing guidelines",
       "ctx": "footer",
@@ -1435,6 +1537,7 @@
     },
     {
       "eid": "e103",
+      "node": 103,
       "role": "link",
       "name": "MDN Discord",
       "ctx": "footer",
@@ -1449,6 +1552,7 @@
     },
     {
       "eid": "e104",
+      "node": 104,
       "role": "link",
       "name": "MDN on GitHub",
       "ctx": "footer",
@@ -1463,6 +1567,7 @@
     },
     {
       "eid": "e105",
+      "node": 105,
       "role": "link",
       "name": "Web technologies",
       "ctx": "footer",
@@ -1477,6 +1582,7 @@
     },
     {
       "eid": "e106",
+      "node": 106,
       "role": "link",
       "name": "Learn web development",
       "ctx": "footer",
@@ -1491,6 +1597,7 @@
     },
     {
       "eid": "e107",
+      "node": 107,
       "role": "link",
       "name": "Guides",
       "ctx": "footer",
@@ -1505,6 +1612,7 @@
     },
     {
       "eid": "e108",
+      "node": 108,
       "role": "link",
       "name": "Tutorials",
       "ctx": "footer",
@@ -1519,6 +1627,7 @@
     },
     {
       "eid": "e109",
+      "node": 109,
       "role": "link",
       "name": "Glossary",
       "ctx": "footer",
@@ -1533,6 +1642,7 @@
     },
     {
       "eid": "e110",
+      "node": 110,
       "role": "link",
       "name": "Hacks blog",
       "ctx": "footer",
@@ -1547,6 +1657,7 @@
     },
     {
       "eid": "e111",
+      "node": 111,
       "role": "link",
       "name": "Mozilla logo",
       "ctx": "footer",
@@ -1561,6 +1672,7 @@
     },
     {
       "eid": "e112",
+      "node": 112,
       "role": "link",
       "name": "Website Privacy Notice",
       "ctx": "footer",
@@ -1575,6 +1687,7 @@
     },
     {
       "eid": "e113",
+      "node": 113,
       "role": "link",
       "name": "Telemetry Settings",
       "ctx": "footer",
@@ -1589,6 +1702,7 @@
     },
     {
       "eid": "e114",
+      "node": 114,
       "role": "link",
       "name": "Legal",
       "ctx": "footer",
@@ -1603,6 +1717,7 @@
     },
     {
       "eid": "e115",
+      "node": 115,
       "role": "link",
       "name": "Community Participation Guidelines",
       "ctx": "footer",
@@ -1617,6 +1732,7 @@
     },
     {
       "eid": "e116",
+      "node": 116,
       "role": "link",
       "name": "a Creative Commons license",
       "ctx": "footer",

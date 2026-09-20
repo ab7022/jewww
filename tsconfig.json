@@ -11,6 +11,9 @@
       "path": "packages/jev"
     },
     {
+      "path": "packages/policy"
+    },
+    {
       "path": "packages/planner"
     },
     {

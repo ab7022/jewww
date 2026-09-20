@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "link",
       "name": "OpenRouter",
       "ctx": "nav",
@@ -24,6 +25,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "button",
       "name": "Search",
       "ctx": "nav",
@@ -38,6 +40,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "link",
       "name": "Models",
       "ctx": "nav",
@@ -52,6 +55,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "link",
       "name": "Benchmarks",
       "ctx": "nav",
@@ -66,6 +70,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "link",
       "name": "Chat",
       "ctx": "nav",
@@ -80,6 +85,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "link",
       "name": "Chat",
       "ctx": "nav",
@@ -94,6 +100,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "button",
       "name": "Rankings",
       "ctx": "nav",
@@ -108,6 +115,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "link",
       "name": "Apps",
       "ctx": "nav",
@@ -122,6 +130,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "link",
       "name": "Ori",
       "ctx": "nav",
@@ -136,6 +145,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "link",
       "name": "Pricing",
       "ctx": "nav",
@@ -150,6 +160,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "link",
       "name": "Docs",
       "ctx": "nav",
@@ -164,6 +175,7 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "button",
       "name": "Sign Up",
       "ctx": "nav",
@@ -178,6 +190,7 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "presentation",
       "name": "Input modalities Text Image File Audio Video Discounted Context length Prompt pricing Series Categories Supported parame",
       "ctx": "nav",
@@ -192,6 +205,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "presentation",
       "name": "Input modalities Text Image File Audio Video Discounted Context length Prompt pricing Series Categories Supported parame",
       "ctx": "nav",
@@ -206,6 +220,7 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "region",
       "name": "Input modalities Text Image File Audio Video",
       "ctx": "nav",
@@ -220,6 +235,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "button",
       "name": "Input modalities",
       "ctx": "nav",
@@ -235,6 +251,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "region",
       "name": "Input modalities",
       "ctx": "nav",
@@ -249,6 +266,7 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "checkbox",
       "name": "Text",
       "ctx": "nav",
@@ -263,6 +281,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "checkbox",
       "name": "Image",
       "ctx": "nav",
@@ -277,6 +296,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "checkbox",
       "name": "File",
       "ctx": "nav",
@@ -291,6 +311,7 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "checkbox",
       "name": "Audio",
       "ctx": "nav",
@@ -305,6 +326,7 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "checkbox",
       "name": "Video",
       "ctx": "nav",
@@ -319,6 +341,7 @@
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "region",
       "name": "Input modalitiesTextImageFileAudioVideo",
       "ctx": "nav",
@@ -333,6 +356,7 @@
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "button",
       "name": "Discounted",
       "ctx": "nav",
@@ -348,6 +372,7 @@
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "region",
       "name": "Discounted",
       "ctx": "nav",
@@ -362,6 +387,7 @@
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "button",
       "name": "Context length",
       "ctx": "nav",
@@ -377,6 +403,7 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "region",
       "name": "Context length",
       "ctx": "nav",
@@ -391,6 +418,7 @@
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "button",
       "name": "Prompt pricing",
       "ctx": "nav",
@@ -406,6 +434,7 @@
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "region",
       "name": "Prompt pricing",
       "ctx": "nav",
@@ -420,6 +449,7 @@
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "button",
       "name": "Series",
       "ctx": "nav",
@@ -435,6 +465,7 @@
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "region",
       "name": "Series",
       "ctx": "nav",
@@ -449,6 +480,7 @@
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "button",
       "name": "Categories",
       "ctx": "nav",
@@ -464,6 +496,7 @@
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "region",
       "name": "Categories",
       "ctx": "nav",
@@ -478,6 +511,7 @@
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "button",
       "name": "Supported parameters",
       "ctx": "nav",
@@ -493,6 +527,7 @@
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "region",
       "name": "Supported parameters",
       "ctx": "nav",
@@ -507,6 +542,7 @@
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "button",
       "name": "Distillable",
       "ctx": "nav",
@@ -522,6 +558,7 @@
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "region",
       "name": "Distillable",
       "ctx": "nav",
@@ -536,6 +573,7 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "button",
       "name": "Zero data retention",
       "ctx": "nav",
@@ -551,6 +589,7 @@
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "region",
       "name": "Zero data retention",
       "ctx": "nav",
@@ -565,6 +604,7 @@
     },
     {
       "eid": "e40",
+      "node": 40,
       "role": "button",
       "name": "In-region routing",
       "ctx": "nav",
@@ -580,6 +620,7 @@
     },
     {
       "eid": "e41",
+      "node": 41,
       "role": "button",
       "name": "Information",
       "ctx": "nav",
@@ -594,6 +635,7 @@
     },
     {
       "eid": "e42",
+      "node": 42,
       "role": "region",
       "name": "In-region routing",
       "ctx": "nav",
@@ -608,6 +650,7 @@
     },
     {
       "eid": "e43",
+      "node": 43,
       "role": "button",
       "name": "Output pricing",
       "ctx": "nav",
@@ -623,6 +666,7 @@
     },
     {
       "eid": "e44",
+      "node": 44,
       "role": "region",
       "name": "Output pricing",
       "ctx": "nav",
@@ -637,6 +681,7 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "button",
       "name": "Model age",
       "ctx": "nav",
@@ -652,6 +697,7 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "region",
       "name": "Model age",
       "ctx": "nav",
@@ -666,6 +712,7 @@
     },
     {
       "eid": "e47",
+      "node": 47,
       "role": "button",
       "name": "Tool calling",
       "ctx": "nav",
@@ -681,6 +728,7 @@
     },
     {
       "eid": "e48",
+      "node": 48,
       "role": "button",
       "name": "Information",
       "ctx": "nav",
@@ -695,6 +743,7 @@
     },
     {
       "eid": "e49",
+      "node": 49,
       "role": "region",
       "name": "Tool calling",
       "ctx": "nav",
@@ -709,6 +758,7 @@
     },
     {
       "eid": "e50",
+      "node": 50,
       "role": "button",
       "name": "Inactive models",
       "ctx": "nav",
@@ -724,6 +774,7 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "region",
       "name": "Inactive models",
       "ctx": "nav",
@@ -738,6 +789,7 @@
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "button",
       "name": "Artificial Analysis",
       "ctx": "nav",
@@ -753,6 +805,7 @@
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "region",
       "name": "Artificial Analysis",
       "ctx": "nav",
@@ -767,6 +820,7 @@
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "button",
       "name": "Design Arena",
       "ctx": "nav",
@@ -782,6 +836,7 @@
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "region",
       "name": "Design Arena",
       "ctx": "nav",
@@ -796,6 +851,7 @@
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "button",
       "name": "Providers",
       "ctx": "nav",
@@ -811,6 +867,7 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "region",
       "name": "Providers",
       "ctx": "nav",
@@ -825,6 +882,7 @@
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "button",
       "name": "Model authors",
       "ctx": "nav",
@@ -840,6 +898,7 @@
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "link",
       "name": "Compare",
       "ctx": "Models",
@@ -854,6 +913,7 @@
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "link",
       "name": "Favicon for anthropic",
       "ctx": "Models",
@@ -868,6 +928,7 @@
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "textbox",
       "name": "Search models...",
       "fp": "textbox|Search models...|0",
@@ -881,6 +942,7 @@
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "combobox",
       "name": "Newest",
       "ctx": "Models",
@@ -896,6 +958,7 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "combobox",
       "name": "All variants",
       "ctx": "Models",
@@ -911,6 +974,7 @@
     },
     {
       "eid": "e64",
+      "node": 64,
       "role": "button",
       "name": "Pinned",
       "ctx": "Models",
@@ -925,6 +989,7 @@
     },
     {
       "eid": "e65",
+      "node": 65,
       "role": "tablist",
       "name": "Models display format",
       "fp": "tablist|Models display format|0",
@@ -938,6 +1003,7 @@
     },
     {
       "eid": "e66",
+      "node": 66,
       "role": "tab",
       "name": "List view",
       "fp": "tab|List view|0",
@@ -951,6 +1017,7 @@
     },
     {
       "eid": "e67",
+      "node": 67,
       "role": "tab",
       "name": "Table view",
       "fp": "tab|Table view|0",
@@ -964,6 +1031,7 @@
     },
     {
       "eid": "e68",
+      "node": 68,
       "role": "tablist",
       "name": "Filter models by output modality",
       "ctx": "Models",
@@ -978,6 +1046,7 @@
     },
     {
       "eid": "e69",
+      "node": 69,
       "role": "tab",
       "name": "All",
       "ctx": "Models",
@@ -992,6 +1061,7 @@
     },
     {
       "eid": "e70",
+      "node": 70,
       "role": "tab",
       "name": "Text 446",
       "ctx": "Models",
@@ -1006,6 +1076,7 @@
     },
     {
       "eid": "e71",
+      "node": 71,
       "role": "tab",
       "name": "Image 52",
       "ctx": "Models",
@@ -1020,6 +1091,7 @@
     },
     {
       "eid": "e72",
+      "node": 72,
       "role": "tab",
       "name": "Video 29",
       "ctx": "Models",
@@ -1034,6 +1106,7 @@
     },
     {
       "eid": "e73",
+      "node": 73,
       "role": "tab",
       "name": "Speech 18",
       "ctx": "Models",
@@ -1048,6 +1121,7 @@
     },
     {
       "eid": "e74",
+      "node": 74,
       "role": "tab",
       "name": "Transcription 21",
       "ctx": "Models",
@@ -1062,6 +1136,7 @@
     },
     {
       "eid": "e75",
+      "node": 75,
       "role": "tab",
       "name": "Embeddings 37",
       "ctx": "Models",
@@ -1076,6 +1151,7 @@
     },
     {
       "eid": "e76",
+      "node": 76,
       "role": "tab",
       "name": "More",
       "ctx": "Models",
@@ -1091,6 +1167,7 @@
     },
     {
       "eid": "e77",
+      "node": 77,
       "role": "link",
       "name": "PrismML: Ternary Bonsai 2 27B",
       "fp": "link|PrismML: Ternary Bonsai 2 27B|0",
@@ -1104,6 +1181,7 @@
     },
     {
       "eid": "e78",
+      "node": 78,
       "role": "link",
       "name": "Favicon for prism-ml",
       "fp": "link|Favicon for prism-ml|0",
@@ -1117,6 +1195,7 @@
     },
     {
       "eid": "e79",
+      "node": 79,
       "role": "link",
       "name": "PrismML: Ternary Bonsai 2 27B",
       "fp": "link|PrismML: Ternary Bonsai 2 27B|1",
@@ -1130,6 +1209,7 @@
     },
     {
       "eid": "e80",
+      "node": 80,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|0",
@@ -1143,6 +1223,7 @@
     },
     {
       "eid": "e81",
+      "node": 81,
       "role": "link",
       "name": "Bonsai 2 27B is a 27B-parameter reasoning model from PrismML derived from Qwen3.8-27B. It supports coding, mathematics, ",
       "fp": "link|Bonsai 2 27B is a 27B-parameter reasoning model from PrismML derived from Qwen3.8-27B. It supports coding, mathematics, |0",
@@ -1156,6 +1237,7 @@
     },
     {
       "eid": "e82",
+      "node": 82,
       "role": "link",
       "name": "prism-ml",
       "fp": "link|prism-ml|0",
@@ -1169,6 +1251,7 @@
     },
     {
       "eid": "e83",
+      "node": 83,
       "role": "link",
       "name": "Z.ai: GLM 5.3 FlashX",
       "fp": "link|Z.ai: GLM 5.3 FlashX|0",
@@ -1182,6 +1265,7 @@
     },
     {
       "eid": "e84",
+      "node": 84,
       "role": "link",
       "name": "Favicon for z-ai",
       "fp": "link|Favicon for z-ai|0",
@@ -1195,6 +1279,7 @@
     },
     {
       "eid": "e85",
+      "node": 85,
       "role": "link",
       "name": "Z.ai: GLM 5.3 FlashX",
       "fp": "link|Z.ai: GLM 5.3 FlashX|1",
@@ -1208,6 +1293,7 @@
     },
     {
       "eid": "e86",
+      "node": 86,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|1",
@@ -1221,6 +1307,7 @@
     },
     {
       "eid": "e87",
+      "node": 87,
       "role": "link",
       "name": "GLM-5.3-FlashX is the high-speed variant of Z.ai's GLM-5.3-Flash, a native multimodal model delivering inference speeds ",
       "fp": "link|GLM-5.3-FlashX is the high-speed variant of Z.ai's GLM-5.3-Flash, a native multimodal model delivering inference speeds |0",
@@ -1234,6 +1321,7 @@
     },
     {
       "eid": "e88",
+      "node": 88,
       "role": "link",
       "name": "z-ai",
       "fp": "link|z-ai|0",
@@ -1247,6 +1335,7 @@
     },
     {
       "eid": "e89",
+      "node": 89,
       "role": "link",
       "name": "TypeSafe: Jev Latest",
       "fp": "link|TypeSafe: Jev Latest|0",
@@ -1260,6 +1349,7 @@
     },
     {
       "eid": "e90",
+      "node": 90,
       "role": "link",
       "name": "Favicon for typesafe",
       "fp": "link|Favicon for typesafe|0",
@@ -1273,6 +1363,7 @@
     },
     {
       "eid": "e91",
+      "node": 91,
       "role": "img",
       "name": "OpenRouter latest alias",
       "fp": "img|OpenRouter latest alias|0",
@@ -1286,6 +1377,7 @@
     },
     {
       "eid": "e92",
+      "node": 92,
       "role": "img",
       "name": "OpenRouter",
       "fp": "img|OpenRouter|0",
@@ -1299,6 +1391,7 @@
     },
     {
       "eid": "e93",
+      "node": 93,
       "role": "link",
       "name": "TypeSafe: Jev Latest",
       "fp": "link|TypeSafe: Jev Latest|1",
@@ -1312,6 +1405,7 @@
     },
     {
       "eid": "e94",
+      "node": 94,
       "role": "link",
       "name": "This model always redirects to the latest model in the Jev family.",
       "fp": "link|This model always redirects to the latest model in the Jev family.|0",
@@ -1325,6 +1419,7 @@
     },
     {
       "eid": "e95",
+      "node": 95,
       "role": "link",
       "name": "typesafe",
       "fp": "link|typesafe|0",
@@ -1338,6 +1433,7 @@
     },
     {
       "eid": "e96",
+      "node": 96,
       "role": "link",
       "name": "TypeSafe: Jev 1.13",
       "fp": "link|TypeSafe: Jev 1.13|0",
@@ -1351,6 +1447,7 @@
     },
     {
       "eid": "e97",
+      "node": 97,
       "role": "link",
       "name": "Favicon for typesafe",
       "fp": "link|Favicon for typesafe|1",
@@ -1364,6 +1461,7 @@
     },
     {
       "eid": "e98",
+      "node": 98,
       "role": "link",
       "name": "TypeSafe: Jev 1.13",
       "fp": "link|TypeSafe: Jev 1.13|1",
@@ -1377,6 +1475,7 @@
     },
     {
       "eid": "e99",
+      "node": 99,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|2",
@@ -1390,6 +1489,7 @@
     },
     {
       "eid": "e100",
+      "node": 100,
       "role": "link",
       "name": "Jev is a structured decision model from TypeSafe, and the first of its System One models. System One models make fast, s",
       "fp": "link|Jev is a structured decision model from TypeSafe, and the first of its System One models. System One models make fast, s|0",
@@ -1403,6 +1503,7 @@
     },
     {
       "eid": "e101",
+      "node": 101,
       "role": "link",
       "name": "typesafe",
       "fp": "link|typesafe|1",
@@ -1416,6 +1517,7 @@
     },
     {
       "eid": "e102",
+      "node": 102,
       "role": "link",
       "name": "Pareto",
       "fp": "link|Pareto|0",
@@ -1429,6 +1531,7 @@
     },
     {
       "eid": "e103",
+      "node": 103,
       "role": "link",
       "name": "Favicon for unbiased",
       "fp": "link|Favicon for unbiased|0",
@@ -1442,6 +1545,7 @@
     },
     {
       "eid": "e104",
+      "node": 104,
       "role": "link",
       "name": "Pareto",
       "fp": "link|Pareto|1",
@@ -1455,6 +1559,7 @@
     },
     {
       "eid": "e105",
+      "node": 105,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|3",
@@ -1468,6 +1573,7 @@
     },
     {
       "eid": "e106",
+      "node": 106,
       "role": "link",
       "name": "Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-leve",
       "fp": "link|Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-leve|0",
@@ -1481,6 +1587,7 @@
     },
     {
       "eid": "e107",
+      "node": 107,
       "role": "link",
       "name": "unbiased",
       "fp": "link|unbiased|0",
@@ -1494,6 +1601,7 @@
     },
     {
       "eid": "e108",
+      "node": 108,
       "role": "link",
       "name": "DeepSeek: DeepSeek Pro Latest",
       "fp": "link|DeepSeek: DeepSeek Pro Latest|0",
@@ -1507,6 +1615,7 @@
     },
     {
       "eid": "e109",
+      "node": 109,
       "role": "link",
       "name": "Favicon for deepseek",
       "fp": "link|Favicon for deepseek|0",
@@ -1520,6 +1629,7 @@
     },
     {
       "eid": "e110",
+      "node": 110,
       "role": "img",
       "name": "OpenRouter latest alias",
       "fp": "img|OpenRouter latest alias|1",
@@ -1533,6 +1643,7 @@
     },
     {
       "eid": "e111",
+      "node": 111,
       "role": "img",
       "name": "OpenRouter",
       "fp": "img|OpenRouter|1",
@@ -1546,6 +1657,7 @@
     },
     {
       "eid": "e112",
+      "node": 112,
       "role": "link",
       "name": "DeepSeek: DeepSeek Pro Latest",
       "fp": "link|DeepSeek: DeepSeek Pro Latest|1",
@@ -1559,6 +1671,7 @@
     },
     {
       "eid": "e113",
+      "node": 113,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|4",
@@ -1572,6 +1685,7 @@
     },
     {
       "eid": "e114",
+      "node": 114,
       "role": "link",
       "name": "This model always redirects to the latest model in the DeepSeek Pro family.",
       "fp": "link|This model always redirects to the latest model in the DeepSeek Pro family.|0",
@@ -1585,6 +1699,7 @@
     },
     {
       "eid": "e115",
+      "node": 115,
       "role": "link",
       "name": "deepseek",
       "fp": "link|deepseek|0",
@@ -1598,6 +1713,7 @@
     },
     {
       "eid": "e116",
+      "node": 116,
       "role": "link",
       "name": "DeepSeek: DeepSeek Flash Latest",
       "fp": "link|DeepSeek: DeepSeek Flash Latest|0",
@@ -1611,6 +1727,7 @@
     },
     {
       "eid": "e117",
+      "node": 117,
       "role": "link",
       "name": "Favicon for deepseek",
       "fp": "link|Favicon for deepseek|1",
@@ -1624,6 +1741,7 @@
     },
     {
       "eid": "e118",
+      "node": 118,
       "role": "img",
       "name": "OpenRouter latest alias",
       "fp": "img|OpenRouter latest alias|2",
@@ -1637,6 +1755,7 @@
     },
     {
       "eid": "e119",
+      "node": 119,
       "role": "img",
       "name": "OpenRouter",
       "fp": "img|OpenRouter|2",
@@ -1650,6 +1769,7 @@
     },
     {
       "eid": "e120",
+      "node": 120,
       "role": "link",
       "name": "DeepSeek: DeepSeek Flash Latest",
       "fp": "link|DeepSeek: DeepSeek Flash Latest|1",
@@ -1663,6 +1783,7 @@
     },
     {
       "eid": "e121",
+      "node": 121,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|5",
@@ -1676,6 +1797,7 @@
     },
     {
       "eid": "e122",
+      "node": 122,
       "role": "link",
       "name": "This model always redirects to the latest model in the DeepSeek Flash family.",
       "fp": "link|This model always redirects to the latest model in the DeepSeek Flash family.|0",
@@ -1689,6 +1811,7 @@
     },
     {
       "eid": "e123",
+      "node": 123,
       "role": "link",
       "name": "deepseek",
       "fp": "link|deepseek|1",
@@ -1702,6 +1825,7 @@
     },
     {
       "eid": "e124",
+      "node": 124,
       "role": "link",
       "name": "Inference.net: Schematron V2 Turbo",
       "fp": "link|Inference.net: Schematron V2 Turbo|0",
@@ -1715,6 +1839,7 @@
     },
     {
       "eid": "e125",
+      "node": 125,
       "role": "link",
       "name": "Favicon for inference-net",
       "fp": "link|Favicon for inference-net|0",
@@ -1728,6 +1853,7 @@
     },
     {
       "eid": "e126",
+      "node": 126,
       "role": "link",
       "name": "Inference.net: Schematron V2 Turbo",
       "fp": "link|Inference.net: Schematron V2 Turbo|1",
@@ -1741,6 +1867,7 @@
     },
     {
       "eid": "e127",
+      "node": 127,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|6",
@@ -1754,6 +1881,7 @@
     },
     {
       "eid": "e128",
+      "node": 128,
       "role": "link",
       "name": "Schematron V2 Turbo is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes throughput for hi",
       "fp": "link|Schematron V2 Turbo is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes throughput for hi|0",
@@ -1767,6 +1895,7 @@
     },
     {
       "eid": "e129",
+      "node": 129,
       "role": "link",
       "name": "inference-net",
       "fp": "link|inference-net|0",
@@ -1780,6 +1909,7 @@
     },
     {
       "eid": "e130",
+      "node": 130,
       "role": "link",
       "name": "Inference.net: Schematron V2 Small",
       "fp": "link|Inference.net: Schematron V2 Small|0",
@@ -1793,6 +1923,7 @@
     },
     {
       "eid": "e131",
+      "node": 131,
       "role": "link",
       "name": "Favicon for inference-net",
       "fp": "link|Favicon for inference-net|1",
@@ -1806,6 +1937,7 @@
     },
     {
       "eid": "e132",
+      "node": 132,
       "role": "link",
       "name": "Inference.net: Schematron V2 Small",
       "fp": "link|Inference.net: Schematron V2 Small|1",
@@ -1819,6 +1951,7 @@
     },
     {
       "eid": "e133",
+      "node": 133,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|7",
@@ -1832,6 +1965,7 @@
     },
     {
       "eid": "e134",
+      "node": 134,
       "role": "link",
       "name": "Schematron V2 Small is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes extraction qualit",
       "fp": "link|Schematron V2 Small is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes extraction qualit|0",
@@ -1845,6 +1979,7 @@
     },
     {
       "eid": "e135",
+      "node": 135,
       "role": "link",
       "name": "inference-net",
       "fp": "link|inference-net|1",
@@ -1858,6 +1993,7 @@
     },
     {
       "eid": "e136",
+      "node": 136,
       "role": "link",
       "name": "Meta: Muse Voice Transcribe 1.0",
       "fp": "link|Meta: Muse Voice Transcribe 1.0|0",
@@ -1871,6 +2007,7 @@
     },
     {
       "eid": "e137",
+      "node": 137,
       "role": "link",
       "name": "Favicon for meta",
       "fp": "link|Favicon for meta|0",
@@ -1884,6 +2021,7 @@
     },
     {
       "eid": "e138",
+      "node": 138,
       "role": "link",
       "name": "Meta: Muse Voice Transcribe 1.0",
       "fp": "link|Meta: Muse Voice Transcribe 1.0|1",
@@ -1897,6 +2035,7 @@
     },
     {
       "eid": "e139",
+      "node": 139,
       "role": "button",
       "name": "Characters transcribed in the last 7 days",
       "fp": "button|Characters transcribed in the last 7 days|0",
@@ -1910,6 +2049,7 @@
     },
     {
       "eid": "e140",
+      "node": 140,
       "role": "link",
       "name": "Muse Voice Transcribe 1.0 is a synchronous speech-to-text model from Meta. It is suited for push-to-talk, endpointing, a",
       "fp": "link|Muse Voice Transcribe 1.0 is a synchronous speech-to-text model from Meta. It is suited for push-to-talk, endpointing, a|0",
@@ -1923,6 +2063,7 @@
     },
     {
       "eid": "e141",
+      "node": 141,
       "role": "link",
       "name": "meta",
       "fp": "link|meta|0",
@@ -1936,6 +2077,7 @@
     },
     {
       "eid": "e142",
+      "node": 142,
       "role": "link",
       "name": "OpenAI: GPT Astra Latest",
       "fp": "link|OpenAI: GPT Astra Latest|0",
@@ -1949,6 +2091,7 @@
     },
     {
       "eid": "e143",
+      "node": 143,
       "role": "link",
       "name": "Favicon for openai",
       "fp": "link|Favicon for openai|0",
@@ -1962,6 +2105,7 @@
     },
     {
       "eid": "e144",
+      "node": 144,
       "role": "img",
       "name": "OpenRouter latest alias",
       "fp": "img|OpenRouter latest alias|3",
@@ -1975,6 +2119,7 @@
     },
     {
       "eid": "e145",
+      "node": 145,
       "role": "img",
       "name": "OpenRouter",
       "fp": "img|OpenRouter|3",
@@ -1988,6 +2133,7 @@
     },
     {
       "eid": "e146",
+      "node": 146,
       "role": "link",
       "name": "OpenAI: GPT Astra Latest",
       "fp": "link|OpenAI: GPT Astra Latest|1",
@@ -2001,6 +2147,7 @@
     },
     {
       "eid": "e147",
+      "node": 147,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|8",
@@ -2014,6 +2161,7 @@
     },
     {
       "eid": "e148",
+      "node": 148,
       "role": "link",
       "name": "This model always redirects to the latest model in the GPT Astra family.",
       "fp": "link|This model always redirects to the latest model in the GPT Astra family.|0",
@@ -2027,6 +2175,7 @@
     },
     {
       "eid": "e149",
+      "node": 149,
       "role": "link",
       "name": "openai",
       "fp": "link|openai|0",
@@ -2040,6 +2189,7 @@
     },
     {
       "eid": "e150",
+      "node": 150,
       "role": "link",
       "name": "OpenAI: GPT Sol Latest",
       "fp": "link|OpenAI: GPT Sol Latest|0",
@@ -2053,6 +2203,7 @@
     },
     {
       "eid": "e151",
+      "node": 151,
       "role": "link",
       "name": "Favicon for openai",
       "fp": "link|Favicon for openai|1",
@@ -2066,6 +2217,7 @@
     },
     {
       "eid": "e152",
+      "node": 152,
       "role": "img",
       "name": "OpenRouter latest alias",
       "fp": "img|OpenRouter latest alias|4",
@@ -2079,6 +2231,7 @@
     },
     {
       "eid": "e153",
+      "node": 153,
       "role": "img",
       "name": "OpenRouter",
       "fp": "img|OpenRouter|4",
@@ -2092,6 +2245,7 @@
     },
     {
       "eid": "e154",
+      "node": 154,
       "role": "link",
       "name": "OpenAI: GPT Sol Latest",
       "fp": "link|OpenAI: GPT Sol Latest|1",
@@ -2105,6 +2259,7 @@
     },
     {
       "eid": "e155",
+      "node": 155,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|9",
@@ -2118,6 +2273,7 @@
     },
     {
       "eid": "e156",
+      "node": 156,
       "role": "link",
       "name": "This model always redirects to the latest model in the GPT Sol family.",
       "fp": "link|This model always redirects to the latest model in the GPT Sol family.|0",
@@ -2131,6 +2287,7 @@
     },
     {
       "eid": "e157",
+      "node": 157,
       "role": "link",
       "name": "openai",
       "fp": "link|openai|1",
@@ -2144,6 +2301,7 @@
     },
     {
       "eid": "e158",
+      "node": 158,
       "role": "link",
       "name": "OpenAI: GPT Terra Latest",
       "fp": "link|OpenAI: GPT Terra Latest|0",
@@ -2157,6 +2315,7 @@
     },
     {
       "eid": "e159",
+      "node": 159,
       "role": "link",
       "name": "Favicon for openai",
       "fp": "link|Favicon for openai|2",
@@ -2170,6 +2329,7 @@
     },
     {
       "eid": "e160",
+      "node": 160,
       "role": "img",
       "name": "OpenRouter latest alias",
       "fp": "img|OpenRouter latest alias|5",
@@ -2183,6 +2343,7 @@
     },
     {
       "eid": "e161",
+      "node": 161,
       "role": "img",
       "name": "OpenRouter",
       "fp": "img|OpenRouter|5",
@@ -2196,6 +2357,7 @@
     },
     {
       "eid": "e162",
+      "node": 162,
       "role": "link",
       "name": "OpenAI: GPT Terra Latest",
       "fp": "link|OpenAI: GPT Terra Latest|1",
@@ -2209,6 +2371,7 @@
     },
     {
       "eid": "e163",
+      "node": 163,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|10",
@@ -2222,6 +2385,7 @@
     },
     {
       "eid": "e164",
+      "node": 164,
       "role": "link",
       "name": "This model always redirects to the latest model in the GPT Terra family.",
       "fp": "link|This model always redirects to the latest model in the GPT Terra family.|0",
@@ -2235,6 +2399,7 @@
     },
     {
       "eid": "e165",
+      "node": 165,
       "role": "link",
       "name": "openai",
       "fp": "link|openai|2",
@@ -2248,6 +2413,7 @@
     },
     {
       "eid": "e166",
+      "node": 166,
       "role": "link",
       "name": "OpenAI: GPT Luna Latest",
       "fp": "link|OpenAI: GPT Luna Latest|0",
@@ -2261,6 +2427,7 @@
     },
     {
       "eid": "e167",
+      "node": 167,
       "role": "link",
       "name": "Favicon for openai",
       "fp": "link|Favicon for openai|3",
@@ -2274,6 +2441,7 @@
     },
     {
       "eid": "e168",
+      "node": 168,
       "role": "img",
       "name": "OpenRouter latest alias",
       "fp": "img|OpenRouter latest alias|6",
@@ -2287,6 +2455,7 @@
     },
     {
       "eid": "e169",
+      "node": 169,
       "role": "img",
       "name": "OpenRouter",
       "fp": "img|OpenRouter|6",
@@ -2300,6 +2469,7 @@
     },
     {
       "eid": "e170",
+      "node": 170,
       "role": "link",
       "name": "OpenAI: GPT Luna Latest",
       "fp": "link|OpenAI: GPT Luna Latest|1",
@@ -2313,6 +2483,7 @@
     },
     {
       "eid": "e171",
+      "node": 171,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|11",
@@ -2326,6 +2497,7 @@
     },
     {
       "eid": "e172",
+      "node": 172,
       "role": "link",
       "name": "This model always redirects to the latest model in the GPT Luna family.",
       "fp": "link|This model always redirects to the latest model in the GPT Luna family.|0",
@@ -2339,6 +2511,7 @@
     },
     {
       "eid": "e173",
+      "node": 173,
       "role": "link",
       "name": "openai",
       "fp": "link|openai|3",
@@ -2352,6 +2525,7 @@
     },
     {
       "eid": "e174",
+      "node": 174,
       "role": "link",
       "name": "Sakana: Fugu Ultra v2",
       "fp": "link|Sakana: Fugu Ultra v2|0",
@@ -2365,6 +2539,7 @@
     },
     {
       "eid": "e175",
+      "node": 175,
       "role": "link",
       "name": "Favicon for sakana",
       "fp": "link|Favicon for sakana|0",
@@ -2378,6 +2553,7 @@
     },
     {
       "eid": "e176",
+      "node": 176,
       "role": "link",
       "name": "Sakana: Fugu Ultra v2",
       "fp": "link|Sakana: Fugu Ultra v2|1",
@@ -2391,6 +2567,7 @@
     },
     {
       "eid": "e177",
+      "node": 177,
       "role": "button",
       "name": "Tokens processed in the last 7 days",
       "fp": "button|Tokens processed in the last 7 days|12",
@@ -2404,6 +2581,7 @@
     },
     {
       "eid": "e178",
+      "node": 178,
       "role": "link",
       "name": "Fugu Ultra v2 is the higher-performance model in Sakana AI's Fugu family. Rather than a single monolithic model, Fugu is",
       "fp": "link|Fugu Ultra v2 is the higher-performance model in Sakana AI's Fugu family. Rather than a single monolithic model, Fugu is|0",
@@ -2417,6 +2595,7 @@
     },
     {
       "eid": "e179",
+      "node": 179,
       "role": "link",
       "name": "sakana",
       "fp": "link|sakana|0",
@@ -2430,6 +2609,7 @@
     },
     {
       "eid": "e180",
+      "node": 180,
       "role": "link",
       "name": "OpenRouter",
       "ctx": "footer",
@@ -2444,6 +2624,7 @@
     },
     {
       "eid": "e181",
+      "node": 181,
       "role": "link",
       "name": "Chat",
       "ctx": "footer",
@@ -2458,6 +2639,7 @@
     },
     {
       "eid": "e182",
+      "node": 182,
       "role": "link",
       "name": "Rankings",
       "ctx": "footer",
@@ -2472,6 +2654,7 @@
     },
     {
       "eid": "e183",
+      "node": 183,
       "role": "link",
       "name": "Benchmarks",
       "ctx": "footer",
@@ -2486,6 +2669,7 @@
     },
     {
       "eid": "e184",
+      "node": 184,
       "role": "link",
       "name": "Apps",
       "ctx": "footer",
@@ -2500,6 +2684,7 @@
     },
     {
       "eid": "e185",
+      "node": 185,
       "role": "link",
       "name": "Discover",
       "ctx": "footer",
@@ -2514,6 +2699,7 @@
     },
     {
       "eid": "e186",
+      "node": 186,
       "role": "link",
       "name": "Models",
       "ctx": "footer",
@@ -2528,6 +2714,7 @@
     },
     {
       "eid": "e187",
+      "node": 187,
       "role": "link",
       "name": "Collections",
       "ctx": "footer",
@@ -2542,6 +2729,7 @@
     },
     {
       "eid": "e188",
+      "node": 188,
       "role": "link",
       "name": "Providers",
       "ctx": "footer",
@@ -2556,6 +2744,7 @@
     },
     {
       "eid": "e189",
+      "node": 189,
       "role": "link",
       "name": "Pricing",
       "ctx": "footer",
@@ -2570,6 +2759,7 @@
     },
     {
       "eid": "e190",
+      "node": 190,
       "role": "link",
       "name": "Business",
       "ctx": "footer",
@@ -2584,6 +2774,7 @@
     },
     {
       "eid": "e191",
+      "node": 191,
       "role": "link",
       "name": "Enterprise",
       "ctx": "footer",
@@ -2598,6 +2789,7 @@
     },
     {
       "eid": "e192",
+      "node": 192,
       "role": "link",
       "name": "Labs",
       "ctx": "footer",
@@ -2612,6 +2804,7 @@
     },
     {
       "eid": "e193",
+      "node": 193,
       "role": "link",
       "name": "About",
       "ctx": "footer",
@@ -2626,6 +2819,7 @@
     },
     {
       "eid": "e194",
+      "node": 194,
       "role": "link",
       "name": "Blog",
       "ctx": "footer",
@@ -2640,6 +2834,7 @@
     },
     {
       "eid": "e195",
+      "node": 195,
       "role": "link",
       "name": "Careers Hiring",
       "ctx": "footer",
@@ -2654,6 +2849,7 @@
     },
     {
       "eid": "e196",
+      "node": 196,
       "role": "link",
       "name": "Privacy",
       "ctx": "footer",
@@ -2668,6 +2864,7 @@
     },
     {
       "eid": "e197",
+      "node": 197,
       "role": "link",
       "name": "Terms of Service",
       "ctx": "footer",
@@ -2682,6 +2879,7 @@
     },
     {
       "eid": "e198",
+      "node": 198,
       "role": "link",
       "name": "Trust Center",
       "ctx": "footer",
@@ -2696,6 +2894,7 @@
     },
     {
       "eid": "e199",
+      "node": 199,
       "role": "link",
       "name": "Support",
       "ctx": "footer",
@@ -2710,6 +2909,7 @@
     },
     {
       "eid": "e200",
+      "node": 200,
       "role": "link",
       "name": "Works With OR",
       "ctx": "footer",
@@ -2724,6 +2924,7 @@
     },
     {
       "eid": "e201",
+      "node": 201,
       "role": "link",
       "name": "Data",
       "ctx": "footer",
@@ -2738,6 +2939,7 @@
     },
     {
       "eid": "e202",
+      "node": 202,
       "role": "link",
       "name": "Brand",
       "ctx": "footer",
@@ -2752,6 +2954,7 @@
     },
     {
       "eid": "e203",
+      "node": 203,
       "role": "link",
       "name": "Documentation",
       "ctx": "footer",
@@ -2766,6 +2969,7 @@
     },
     {
       "eid": "e204",
+      "node": 204,
       "role": "link",
       "name": "API Reference",
       "ctx": "footer",
@@ -2780,6 +2984,7 @@
     },
     {
       "eid": "e205",
+      "node": 205,
       "role": "link",
       "name": "Developer Platform",
       "ctx": "footer",
@@ -2794,6 +2999,7 @@
     },
     {
       "eid": "e206",
+      "node": 206,
       "role": "link",
       "name": "Status",
       "ctx": "footer",
@@ -2808,6 +3014,7 @@
     },
     {
       "eid": "e207",
+      "node": 207,
       "role": "link",
       "name": "Discord",
       "ctx": "footer",
@@ -2822,6 +3029,7 @@
     },
     {
       "eid": "e208",
+      "node": 208,
       "role": "link",
       "name": "GitHub",
       "ctx": "footer",
@@ -2836,6 +3044,7 @@
     },
     {
       "eid": "e209",
+      "node": 209,
       "role": "link",
       "name": "LinkedIn",
       "ctx": "footer",
@@ -2850,6 +3059,7 @@
     },
     {
       "eid": "e210",
+      "node": 210,
       "role": "link",
       "name": "X",
       "ctx": "footer",
@@ -2864,6 +3074,7 @@
     },
     {
       "eid": "e211",
+      "node": 211,
       "role": "link",
       "name": "YouTube",
       "ctx": "footer",

@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "link",
       "name": "Anthropic Logo",
       "fp": "link|Anthropic Logo|0",
@@ -23,6 +24,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "link",
       "name": "Back to jobs",
       "fp": "link|Back to jobs|0",
@@ -36,6 +38,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "button",
       "name": "Apply",
       "fp": "button|Apply|0",
@@ -49,6 +52,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "link",
       "name": "anthropic.com/careers",
       "ctx": "Logistics",
@@ -63,6 +67,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "link",
       "name": "our policy",
       "ctx": "Come work with us!",
@@ -77,6 +82,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "link",
       "name": "Create alert",
       "fp": "link|Create alert|0",
@@ -90,6 +96,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "textbox",
       "name": "First Name",
       "ctx": "form",
@@ -105,6 +112,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "textbox",
       "name": "Last Name",
       "ctx": "form",
@@ -120,6 +128,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "textbox",
       "name": "Email",
       "ctx": "form",
@@ -135,6 +144,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "combobox",
       "name": "Country*",
       "ctx": "form",
@@ -150,6 +160,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -164,6 +175,7 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "textbox",
       "name": "Phone",
       "ctx": "form",
@@ -179,6 +191,7 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "group",
       "name": "Resume/CV*",
       "ctx": "form",
@@ -194,6 +207,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "button",
       "name": "Attach",
       "ctx": "form",
@@ -208,6 +222,7 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "button",
       "name": "Dropbox",
       "ctx": "form",
@@ -222,6 +237,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "button",
       "name": "Google Drive",
       "ctx": "form",
@@ -236,6 +252,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "button",
       "name": "Enter manually",
       "ctx": "form",
@@ -250,6 +267,7 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "group",
       "name": "Cover Letter",
       "ctx": "form",
@@ -264,6 +282,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "button",
       "name": "Attach",
       "ctx": "form",
@@ -278,6 +297,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "button",
       "name": "Dropbox",
       "ctx": "form",
@@ -292,6 +312,7 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "button",
       "name": "Google Drive",
       "ctx": "form",
@@ -306,6 +327,7 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "button",
       "name": "Enter manually",
       "ctx": "form",
@@ -320,6 +342,7 @@
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "textbox",
       "name": "Website",
       "ctx": "form",
@@ -334,6 +357,7 @@
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "textbox",
       "name": "LinkedIn Profile",
       "ctx": "form",
@@ -348,6 +372,7 @@
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "textbox",
       "name": "When is the earliest you would want to start working with us?",
       "ctx": "form",
@@ -362,6 +387,7 @@
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "textbox",
       "name": "Do you have any deadlines or timeline considerations we should be aware of?",
       "ctx": "form",
@@ -376,6 +402,7 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "combobox",
       "name": "Are you open to relocation for this role? *",
       "ctx": "form",
@@ -391,6 +418,7 @@
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -405,6 +433,7 @@
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "textbox",
       "name": "What is the address from which you plan on working? If you would need to relocate, please type \"relocating\".",
       "ctx": "form",
@@ -419,6 +448,7 @@
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "textbox",
       "name": "(Optional) Personal Preferences",
       "ctx": "form",
@@ -433,6 +463,7 @@
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "combobox",
       "name": "Are you open to working in-person in one of our offices 25% of the time?*",
       "ctx": "form",
@@ -448,6 +479,7 @@
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -462,6 +494,7 @@
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "combobox",
       "name": "AI Policy for Application*",
       "ctx": "form",
@@ -477,6 +510,7 @@
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -491,6 +525,7 @@
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "link",
       "name": "AI partnership guidelines for candidates",
       "ctx": "form",
@@ -505,6 +540,7 @@
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "textbox",
       "name": "Why Anthropic?",
       "ctx": "form",
@@ -520,6 +556,7 @@
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "combobox",
       "name": "Will you now or will you in the future require employment visa sponsorship to work in the country in which the job you'r",
       "ctx": "form",
@@ -535,6 +572,7 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -549,6 +587,7 @@
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "textbox",
       "name": "Additional Information",
       "ctx": "form",
@@ -563,6 +602,7 @@
     },
     {
       "eid": "e40",
+      "node": 40,
       "role": "combobox",
       "name": "Have you ever interviewed at Anthropic before?*",
       "ctx": "form",
@@ -578,6 +618,7 @@
     },
     {
       "eid": "e41",
+      "node": 41,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -592,6 +633,7 @@
     },
     {
       "eid": "e42",
+      "node": 42,
       "role": "textbox",
       "name": "Publications (e.g. Google Scholar) URL",
       "ctx": "form",
@@ -606,6 +648,7 @@
     },
     {
       "eid": "e43",
+      "node": 43,
       "role": "textbox",
       "name": "GitHub URL",
       "ctx": "form",
@@ -620,6 +663,7 @@
     },
     {
       "eid": "e44",
+      "node": 44,
       "role": "combobox",
       "name": "Please read the arbitration agreement below*",
       "ctx": "form",
@@ -635,6 +679,7 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -649,6 +694,7 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "link",
       "name": "https://www.jamsadr.com/rules-employment-arbitration",
       "ctx": "form",
@@ -663,6 +709,7 @@
     },
     {
       "eid": "e47",
+      "node": 47,
       "role": "link",
       "name": "www.google.com",
       "ctx": "form",
@@ -677,6 +724,7 @@
     },
     {
       "eid": "e48",
+      "node": 48,
       "role": "link",
       "name": "arbdemands@anthropic.com",
       "ctx": "form",
@@ -691,6 +739,7 @@
     },
     {
       "eid": "e49",
+      "node": 49,
       "role": "combobox",
       "name": "Agreement to Arbitrate*",
       "ctx": "form",
@@ -706,6 +755,7 @@
     },
     {
       "eid": "e50",
+      "node": 50,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -720,6 +770,7 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "combobox",
       "name": "Gender",
       "ctx": "form",
@@ -735,6 +786,7 @@
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -749,6 +801,7 @@
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "combobox",
       "name": "Are you Hispanic/Latino?",
       "ctx": "form",
@@ -764,6 +817,7 @@
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -778,6 +832,7 @@
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "link",
       "name": "Are you Hispanic/Latino?Select...",
       "ctx": "form",
@@ -792,6 +847,7 @@
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "combobox",
       "name": "Veteran Status",
       "ctx": "form",
@@ -807,6 +863,7 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -821,6 +878,7 @@
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "link",
       "name": "www.dol.gov/ofccp",
       "ctx": "form",
@@ -835,6 +893,7 @@
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "combobox",
       "name": "Disability Status",
       "ctx": "form",
@@ -850,6 +909,7 @@
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "button",
       "name": "Toggle flyout",
       "ctx": "form",
@@ -864,6 +924,7 @@
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "button",
       "name": "Submit application",
       "ctx": "form",
@@ -878,6 +939,7 @@
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "link",
       "name": "Powered by",
       "ctx": "footer",
@@ -892,6 +954,7 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "img",
       "name": "Greenhouse logo",
       "ctx": "footer",

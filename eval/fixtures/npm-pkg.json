@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "alert",
       "name": "npm tokens that bypass 2FA are being restricted — account changes (Aug 2026) and direct publishing (Jan 2027). Learn how",
       "fp": "alert|npm tokens that bypass 2FA are being restricted — account changes (Aug 2026) and direct publishing (Jan 2027). Learn how|0",
@@ -23,6 +24,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "link",
       "name": "Learn how to prepare for the npm bypass 2FA token deprecation",
       "fp": "link|Learn how to prepare for the npm bypass 2FA token deprecation|0",
@@ -36,6 +38,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "button",
       "name": "Close notification",
       "fp": "button|Close notification|0",
@@ -49,6 +52,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "link",
       "name": "skip to content",
       "ctx": "header",
@@ -63,6 +67,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "link",
       "name": "skip to package search",
       "ctx": "header",
@@ -77,6 +82,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "link",
       "name": "skip to sign in",
       "ctx": "header",
@@ -91,6 +97,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "button",
       "name": "Light mode — click for dark",
       "ctx": "header",
@@ -105,6 +112,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "link",
       "name": "Pro",
       "ctx": "nav: Product Navigation",
@@ -119,6 +127,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "link",
       "name": "Teams",
       "ctx": "nav: Product Navigation",
@@ -133,6 +142,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "link",
       "name": "Pricing",
       "ctx": "nav: Product Navigation",
@@ -147,6 +157,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "link",
       "name": "Documentation",
       "ctx": "nav: Product Navigation",
@@ -161,6 +172,7 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "link",
       "name": "Npm",
       "ctx": "header",
@@ -175,6 +187,7 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "combobox",
       "name": "Search packages",
       "ctx": "form",
@@ -190,6 +203,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "button",
       "name": "Search",
       "ctx": "form",
@@ -204,6 +218,7 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "link",
       "name": "Sign Up",
       "ctx": "header",
@@ -218,6 +233,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "link",
       "name": "Sign In",
       "ctx": "header",
@@ -232,6 +248,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "tablist",
       "name": "playwright1.63.0 • Public • Published 16 days ago",
       "fp": "tablist|playwright1.63.0 • Public • Published 16 days ago|0",
@@ -245,6 +262,7 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "presentation",
       "name": "Readme",
       "fp": "presentation|Readme|0",
@@ -258,6 +276,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "tab",
       "name": "Readme",
       "fp": "tab|Readme|0",
@@ -271,6 +290,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "presentation",
       "name": "Code Beta",
       "fp": "presentation|Code Beta|0",
@@ -284,6 +304,7 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "tab",
       "name": "Code Beta",
       "fp": "tab|Code Beta|0",
@@ -297,6 +318,7 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "presentation",
       "name": "1 Dependency",
       "fp": "presentation|1 Dependency|0",
@@ -310,6 +332,7 @@
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "tab",
       "name": "1 Dependency",
       "fp": "tab|1 Dependency|0",
@@ -323,6 +346,7 @@
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "presentation",
       "name": "5347 Dependents",
       "fp": "presentation|5347 Dependents|0",
@@ -336,6 +360,7 @@
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "tab",
       "name": "5347 Dependents",
       "fp": "tab|5347 Dependents|0",
@@ -349,6 +374,7 @@
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "presentation",
       "name": "5,692 Versions",
       "fp": "presentation|5,692 Versions|0",
@@ -362,6 +388,7 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "tab",
       "name": "5,692 Versions",
       "fp": "tab|5,692 Versions|0",
@@ -375,6 +402,7 @@
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "tabpanel",
       "name": "Readme",
       "fp": "tabpanel|Readme|0",
@@ -388,6 +416,7 @@
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "link",
       "name": "Permalink: 🎭 Playwright",
       "ctx": "🎭 Playwright",
@@ -402,6 +431,7 @@
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "link",
       "name": "npm version",
       "fp": "link|npm version|0",
@@ -415,6 +445,7 @@
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "link",
       "name": "Chromium version",
       "fp": "link|Chromium version|0",
@@ -428,6 +459,7 @@
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "link",
       "name": "Firefox version",
       "fp": "link|Firefox version|0",
@@ -441,6 +473,7 @@
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "link",
       "name": "WebKit version",
       "fp": "link|WebKit version|0",
@@ -454,6 +487,7 @@
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "link",
       "name": "Join Discord",
       "fp": "link|Join Discord|0",
@@ -467,6 +501,7 @@
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "link",
       "name": "Documentation",
       "fp": "link|Documentation|1",
@@ -480,6 +515,7 @@
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "link",
       "name": "API reference",
       "fp": "link|API reference|0",
@@ -493,6 +529,7 @@
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "link",
       "name": "Permalink: Documentation | API reference",
       "ctx": "Documentation | API reference",
@@ -507,6 +544,7 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "link",
       "name": "Permalink: Get Started",
       "ctx": "Get Started",
@@ -521,6 +559,7 @@
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "link",
       "name": "Playwright Test",
       "fp": "link|Playwright Test|0",
@@ -534,6 +573,7 @@
     },
     {
       "eid": "e40",
+      "node": 40,
       "role": "link",
       "name": "Playwright CLI",
       "fp": "link|Playwright CLI|0",
@@ -547,6 +587,7 @@
     },
     {
       "eid": "e41",
+      "node": 41,
       "role": "link",
       "name": "Playwright MCP",
       "fp": "link|Playwright MCP|0",
@@ -560,6 +601,7 @@
     },
     {
       "eid": "e42",
+      "node": 42,
       "role": "link",
       "name": "Playwright Library",
       "fp": "link|Playwright Library|0",
@@ -573,6 +615,7 @@
     },
     {
       "eid": "e43",
+      "node": 43,
       "role": "link",
       "name": "VS Code Extension",
       "fp": "link|VS Code Extension|0",
@@ -586,6 +629,7 @@
     },
     {
       "eid": "e44",
+      "node": 44,
       "role": "link",
       "name": "Install from Marketplace",
       "fp": "link|Install from Marketplace|0",
@@ -599,6 +643,7 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "link",
       "name": "Permalink: Playwright Test",
       "ctx": "Playwright Test",
@@ -613,6 +658,7 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "link",
       "name": "Permalink: Install",
       "ctx": "Install",
@@ -627,6 +673,7 @@
     },
     {
       "eid": "e47",
+      "node": 47,
       "role": "link",
       "name": "Permalink: Write a test",
       "ctx": "Write a test",
@@ -641,6 +688,7 @@
     },
     {
       "eid": "e48",
+      "node": 48,
       "role": "link",
       "name": "Permalink: Run tests",
       "ctx": "Run tests",
@@ -655,6 +703,7 @@
     },
     {
       "eid": "e49",
+      "node": 49,
       "role": "link",
       "name": "Permalink: Key capabilities",
       "ctx": "Key capabilities",
@@ -669,6 +718,7 @@
     },
     {
       "eid": "e50",
+      "node": 50,
       "role": "link",
       "name": "Trace Viewer",
       "fp": "link|Trace Viewer|0",
@@ -682,6 +732,7 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "link",
       "name": "Full testing documentation",
       "fp": "link|Full testing documentation|0",
@@ -695,6 +746,7 @@
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "link",
       "name": "Permalink: Playwright CLI",
       "ctx": "Playwright CLI",
@@ -709,6 +761,7 @@
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "link",
       "name": "Playwright CLI",
       "fp": "link|Playwright CLI|1",
@@ -722,6 +775,7 @@
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "link",
       "name": "Permalink: Install",
       "ctx": "Install",
@@ -736,6 +790,7 @@
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "link",
       "name": "Permalink: Usage",
       "ctx": "Usage",
@@ -750,6 +805,7 @@
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "link",
       "name": "Permalink: Session monitoring",
       "ctx": "Session monitoring",
@@ -764,6 +820,7 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "link",
       "name": "Full CLI documentation",
       "fp": "link|Full CLI documentation|0",
@@ -777,6 +834,7 @@
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "link",
       "name": "GitHub",
       "fp": "link|GitHub|0",
@@ -790,6 +848,7 @@
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "link",
       "name": "Permalink: Playwright MCP",
       "ctx": "Playwright MCP",
@@ -804,6 +863,7 @@
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "link",
       "name": "Playwright MCP server",
       "fp": "link|Playwright MCP server|0",
@@ -817,6 +877,7 @@
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "link",
       "name": "Model Context Protocol",
       "fp": "link|Model Context Protocol|0",
@@ -830,6 +891,7 @@
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "link",
       "name": "Permalink: Setup",
       "ctx": "Setup",
@@ -844,6 +906,7 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "link",
       "name": "Install in VS Code",
       "fp": "link|Install in VS Code|0",
@@ -857,6 +920,7 @@
     },
     {
       "eid": "e64",
+      "node": 64,
       "role": "link",
       "name": "Permalink: How it works",
       "ctx": "How it works",
@@ -871,6 +935,7 @@
     },
     {
       "eid": "e65",
+      "node": 65,
       "role": "link",
       "name": "Full MCP documentation",
       "fp": "link|Full MCP documentation|0",
@@ -884,6 +949,7 @@
     },
     {
       "eid": "e66",
+      "node": 66,
       "role": "link",
       "name": "GitHub",
       "fp": "link|GitHub|1",
@@ -897,6 +963,7 @@
     },
     {
       "eid": "e67",
+      "node": 67,
       "role": "link",
       "name": "Permalink: Playwright Library",
       "ctx": "Playwright Library",
@@ -911,6 +978,7 @@
     },
     {
       "eid": "e68",
+      "node": 68,
       "role": "link",
       "name": "Permalink: Install",
       "ctx": "Install",
@@ -925,6 +993,7 @@
     },
     {
       "eid": "e69",
+      "node": 69,
       "role": "link",
       "name": "Permalink: Examples",
       "ctx": "Examples",
@@ -939,6 +1008,7 @@
     },
     {
       "eid": "e70",
+      "node": 70,
       "role": "link",
       "name": "Library documentation",
       "fp": "link|Library documentation|0",
@@ -952,6 +1022,7 @@
     },
     {
       "eid": "e71",
+      "node": 71,
       "role": "link",
       "name": "API reference",
       "fp": "link|API reference|1",
@@ -965,6 +1036,7 @@
     },
     {
       "eid": "e72",
+      "node": 72,
       "role": "link",
       "name": "Permalink: VS Code Extension",
       "ctx": "VS Code Extension",
@@ -979,6 +1051,7 @@
     },
     {
       "eid": "e73",
+      "node": 73,
       "role": "link",
       "name": "Playwright VS Code extension",
       "fp": "link|Playwright VS Code extension|0",
@@ -992,6 +1065,7 @@
     },
     {
       "eid": "e74",
+      "node": 74,
       "role": "link",
       "name": "Install the extension",
       "fp": "link|Install the extension|0",
@@ -1005,6 +1079,7 @@
     },
     {
       "eid": "e75",
+      "node": 75,
       "role": "link",
       "name": "VS Code guide",
       "fp": "link|VS Code guide|0",
@@ -1018,6 +1093,7 @@
     },
     {
       "eid": "e76",
+      "node": 76,
       "role": "link",
       "name": "Permalink: Cross-Browser Support",
       "ctx": "Cross-Browser Support",
@@ -1032,6 +1108,7 @@
     },
     {
       "eid": "e77",
+      "node": 77,
       "role": "link",
       "name": "Chrome for Testing",
       "fp": "link|Chrome for Testing|0",
@@ -1045,6 +1122,7 @@
     },
     {
       "eid": "e78",
+      "node": 78,
       "role": "link",
       "name": "Permalink: Other Languages",
       "ctx": "Other Languages",
@@ -1059,6 +1137,7 @@
     },
     {
       "eid": "e79",
+      "node": 79,
       "role": "link",
       "name": "Python",
       "fp": "link|Python|0",
@@ -1072,6 +1151,7 @@
     },
     {
       "eid": "e80",
+      "node": 80,
       "role": "link",
       "name": ".NET",
       "fp": "link|.NET|0",
@@ -1085,6 +1165,7 @@
     },
     {
       "eid": "e81",
+      "node": 81,
       "role": "link",
       "name": "Java",
       "fp": "link|Java|0",
@@ -1098,6 +1179,7 @@
     },
     {
       "eid": "e82",
+      "node": 82,
       "role": "link",
       "name": "Permalink: Resources",
       "ctx": "Resources",
@@ -1112,6 +1194,7 @@
     },
     {
       "eid": "e83",
+      "node": 83,
       "role": "link",
       "name": "Documentation",
       "fp": "link|Documentation|2",
@@ -1125,6 +1208,7 @@
     },
     {
       "eid": "e84",
+      "node": 84,
       "role": "link",
       "name": "API reference",
       "fp": "link|API reference|2",
@@ -1138,6 +1222,7 @@
     },
     {
       "eid": "e85",
+      "node": 85,
       "role": "link",
       "name": "MCP server",
       "fp": "link|MCP server|0",
@@ -1151,6 +1236,7 @@
     },
     {
       "eid": "e86",
+      "node": 86,
       "role": "link",
       "name": "CLI for coding agents",
       "fp": "link|CLI for coding agents|0",
@@ -1164,6 +1250,7 @@
     },
     {
       "eid": "e87",
+      "node": 87,
       "role": "link",
       "name": "VS Code extension",
       "fp": "link|VS Code extension|0",
@@ -1177,6 +1264,7 @@
     },
     {
       "eid": "e88",
+      "node": 88,
       "role": "link",
       "name": "Contribution guide",
       "fp": "link|Contribution guide|0",
@@ -1190,6 +1278,7 @@
     },
     {
       "eid": "e89",
+      "node": 89,
       "role": "link",
       "name": "Changelog",
       "fp": "link|Changelog|0",
@@ -1203,6 +1292,7 @@
     },
     {
       "eid": "e90",
+      "node": 90,
       "role": "link",
       "name": "Discord",
       "fp": "link|Discord|0",
@@ -1216,6 +1306,7 @@
     },
     {
       "eid": "e91",
+      "node": 91,
       "role": "link",
       "name": "View build summary",
       "ctx": "aside",
@@ -1230,6 +1321,7 @@
     },
     {
       "eid": "e92",
+      "node": 92,
       "role": "link",
       "name": "Source Commit",
       "ctx": "aside",
@@ -1244,6 +1336,7 @@
     },
     {
       "eid": "e93",
+      "node": 93,
       "role": "link",
       "name": "Build File",
       "ctx": "aside",
@@ -1258,6 +1351,7 @@
     },
     {
       "eid": "e94",
+      "node": 94,
       "role": "link",
       "name": "Public Ledger",
       "ctx": "aside",
@@ -1272,6 +1366,7 @@
     },
     {
       "eid": "e95",
+      "node": 95,
       "role": "link",
       "name": "Share feedback",
       "ctx": "aside",
@@ -1286,6 +1381,7 @@
     },
     {
       "eid": "e96",
+      "node": 96,
       "role": "button",
       "name": "Copy install command line",
       "ctx": "aside: Package sidebar",
@@ -1300,6 +1396,7 @@
     },
     {
       "eid": "e97",
+      "node": 97,
       "role": "link",
       "name": "Repository github.com/microsoft/playwright",
       "ctx": "aside: Package sidebar",
@@ -1314,6 +1411,7 @@
     },
     {
       "eid": "e98",
+      "node": 98,
       "role": "link",
       "name": "Homepage playwright.dev",
       "ctx": "aside: Package sidebar",
@@ -1328,6 +1426,7 @@
     },
     {
       "eid": "e99",
+      "node": 99,
       "role": "button",
       "name": "Showing weekly downloads",
       "ctx": "aside: Package sidebar",
@@ -1342,6 +1441,7 @@
     },
     {
       "eid": "e100",
+      "node": 100,
       "role": "button",
       "name": "View more provenance details",
       "ctx": "aside: Package sidebar",
@@ -1356,6 +1456,7 @@
     },
     {
       "eid": "e101",
+      "node": 101,
       "role": "link",
       "name": "pavelfeldman",
       "ctx": "aside: Package sidebar",
@@ -1370,6 +1471,7 @@
     },
     {
       "eid": "e102",
+      "node": 102,
       "role": "link",
       "name": "yurys",
       "ctx": "aside: Package sidebar",
@@ -1384,6 +1486,7 @@
     },
     {
       "eid": "e103",
+      "node": 103,
       "role": "link",
       "name": "microsoft1es",
       "ctx": "aside: Package sidebar",
@@ -1398,6 +1501,7 @@
     },
     {
       "eid": "e104",
+      "node": 104,
       "role": "link",
       "name": "dgozman-ms",
       "ctx": "aside: Package sidebar",
@@ -1412,6 +1516,7 @@
     },
     {
       "eid": "e105",
+      "node": 105,
       "role": "link",
       "name": "microsoft-oss-releases",
       "ctx": "aside: Package sidebar",
@@ -1426,6 +1531,7 @@
     },
     {
       "eid": "e106",
+      "node": 106,
       "role": "link",
       "name": "Analyze security with Socket",
       "ctx": "aside: Package sidebar",
@@ -1440,6 +1546,7 @@
     },
     {
       "eid": "e107",
+      "node": 107,
       "role": "link",
       "name": "Check bundle size",
       "ctx": "aside: Package sidebar",
@@ -1454,6 +1561,7 @@
     },
     {
       "eid": "e108",
+      "node": 108,
       "role": "link",
       "name": "View package health",
       "ctx": "aside: Package sidebar",
@@ -1468,6 +1576,7 @@
     },
     {
       "eid": "e109",
+      "node": 109,
       "role": "link",
       "name": "Explore dependencies",
       "ctx": "aside: Package sidebar",
@@ -1482,6 +1591,7 @@
     },
     {
       "eid": "e110",
+      "node": 110,
       "role": "link",
       "name": "Report malware",
       "ctx": "aside: Package sidebar",
@@ -1496,6 +1606,7 @@
     },
     {
       "eid": "e111",
+      "node": 111,
       "role": "link",
       "name": "Visit npm GitHub page",
       "ctx": "footer",
@@ -1510,6 +1621,7 @@
     },
     {
       "eid": "e112",
+      "node": 112,
       "role": "link",
       "name": "GitHub",
       "ctx": "footer",
@@ -1524,6 +1636,7 @@
     },
     {
       "eid": "e113",
+      "node": 113,
       "role": "link",
       "name": "Help",
       "ctx": "footer",
@@ -1538,6 +1651,7 @@
     },
     {
       "eid": "e114",
+      "node": 114,
       "role": "link",
       "name": "Advisories",
       "ctx": "footer",
@@ -1552,6 +1666,7 @@
     },
     {
       "eid": "e115",
+      "node": 115,
       "role": "link",
       "name": "Status",
       "ctx": "footer",
@@ -1566,6 +1681,7 @@
     },
     {
       "eid": "e116",
+      "node": 116,
       "role": "link",
       "name": "Contact npm",
       "ctx": "footer",
@@ -1580,6 +1696,7 @@
     },
     {
       "eid": "e117",
+      "node": 117,
       "role": "link",
       "name": "About",
       "ctx": "footer",
@@ -1594,6 +1711,7 @@
     },
     {
       "eid": "e118",
+      "node": 118,
       "role": "link",
       "name": "Blog",
       "ctx": "footer",
@@ -1608,6 +1726,7 @@
     },
     {
       "eid": "e119",
+      "node": 119,
       "role": "link",
       "name": "Press",
       "ctx": "footer",
@@ -1622,6 +1741,7 @@
     },
     {
       "eid": "e120",
+      "node": 120,
       "role": "link",
       "name": "Policies",
       "ctx": "footer",
@@ -1636,6 +1756,7 @@
     },
     {
       "eid": "e121",
+      "node": 121,
       "role": "link",
       "name": "Terms of Use",
       "ctx": "footer",
@@ -1650,6 +1771,7 @@
     },
     {
       "eid": "e122",
+      "node": 122,
       "role": "link",
       "name": "Code of Conduct",
       "ctx": "footer",
@@ -1664,6 +1786,7 @@
     },
     {
       "eid": "e123",
+      "node": 123,
       "role": "link",
       "name": "Privacy",
       "ctx": "footer",

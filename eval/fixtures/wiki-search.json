@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "search",
       "name": "Search",
       "ctx": "header",
@@ -24,6 +25,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "searchbox",
       "name": "Search Wikipedia",
       "ctx": "form",
@@ -38,6 +40,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "button",
       "name": "Search",
       "ctx": "form",
@@ -52,6 +55,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "link",
       "name": "Donate",
       "ctx": "nav: Personal tools",
@@ -66,6 +70,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "link",
       "name": "You are encouraged to create an account and log in; however, it is not mandatory",
       "ctx": "nav: Personal tools",
@@ -80,6 +85,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "link",
       "name": "You're encouraged to log in; however, it's not mandatory. [ctrl-option-o]",
       "ctx": "nav: Personal tools",
@@ -94,6 +100,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "link",
       "name": "Help",
       "ctx": "header",
@@ -108,6 +115,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "button",
       "name": "Hide Appearance",
       "ctx": "nav: Appearance",
@@ -122,6 +130,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "combobox",
       "name": "Search Wikipedia",
       "value": "iphone review",
@@ -138,6 +147,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "button",
       "name": "Search",
       "ctx": "form",
@@ -152,6 +162,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "button",
       "name": "Advanced search:",
       "ctx": "form",
@@ -167,6 +178,7 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "button",
       "name": "Search in:",
       "ctx": "form",
@@ -182,6 +194,7 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "button",
       "name": "Remove",
       "ctx": "form",
@@ -196,6 +209,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "link",
       "name": "Iphone review (page does not exist)",
       "fp": "link|Iphone review (page does not exist)|0",
@@ -209,6 +223,7 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "link",
       "name": "Wikipedia:Article wizard",
       "fp": "link|Wikipedia:Article wizard|0",
@@ -222,6 +237,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "link",
       "name": "Wikipedia:Articles for creation/Redirects",
       "fp": "link|Wikipedia:Articles for creation/Redirects|0",
@@ -235,6 +251,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "combobox",
       "name": "20 items 50 items 100 items 250 items 500 items",
       "value": "20",
@@ -250,6 +267,7 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "button",
       "name": "First page",
       "fp": "button|First page|0",
@@ -263,6 +281,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "button",
       "name": "Previous page",
       "fp": "button|Previous page|0",
@@ -276,6 +295,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "button",
       "name": "Next page",
       "fp": "button|Next page|0",
@@ -289,6 +309,7 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "link",
       "name": "IPhone 17",
       "fp": "link|IPhone 17|0",
@@ -302,6 +323,7 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "link",
       "name": "IPhone 17",
       "fp": "link|IPhone 17|1",
@@ -315,6 +337,7 @@
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "link",
       "name": "IPhone (1st generation)",
       "fp": "link|IPhone (1st generation)|0",
@@ -328,6 +351,7 @@
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "link",
       "name": "IPhone (1st generation)",
       "fp": "link|IPhone (1st generation)|1",
@@ -341,6 +365,7 @@
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "link",
       "name": "IPhone 17 Pro",
       "fp": "link|IPhone 17 Pro|0",
@@ -354,6 +379,7 @@
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "link",
       "name": "IPhone 17 Pro",
       "fp": "link|IPhone 17 Pro|1",
@@ -367,9 +393,10 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "link",
-      "name": "IPhone 17e",
-      "fp": "link|IPhone 17e|0",
+      "name": "IPhone 16",
+      "fp": "link|IPhone 16|0",
       "rect": {
         "x": 44,
         "y": 929,
@@ -380,22 +407,24 @@
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "link",
-      "name": "IPhone 17e",
-      "fp": "link|IPhone 17e|1",
+      "name": "IPhone 16",
+      "fp": "link|IPhone 16|1",
       "rect": {
         "x": 148,
         "y": 896,
-        "w": 84,
+        "w": 75,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "link",
-      "name": "IPhone 16 Pro",
-      "fp": "link|IPhone 16 Pro|0",
+      "name": "IPhone 15",
+      "fp": "link|IPhone 15|0",
       "rect": {
         "x": 44,
         "y": 1064,
@@ -406,22 +435,24 @@
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "link",
-      "name": "IPhone 16 Pro",
-      "fp": "link|IPhone 16 Pro|1",
+      "name": "IPhone 15",
+      "fp": "link|IPhone 15|1",
       "rect": {
         "x": 148,
         "y": 1031,
-        "w": 105,
+        "w": 75,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "link",
-      "name": "IPhone 15",
-      "fp": "link|IPhone 15|0",
+      "name": "IPhone 17e",
+      "fp": "link|IPhone 17e|0",
       "rect": {
         "x": 44,
         "y": 1200,
@@ -432,22 +463,24 @@
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "link",
-      "name": "IPhone 15",
-      "fp": "link|IPhone 15|1",
+      "name": "IPhone 17e",
+      "fp": "link|IPhone 17e|1",
       "rect": {
         "x": 148,
         "y": 1167,
-        "w": 75,
+        "w": 84,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "link",
-      "name": "IPhone 16",
-      "fp": "link|IPhone 16|0",
+      "name": "IPhone Air",
+      "fp": "link|IPhone Air|0",
       "rect": {
         "x": 44,
         "y": 1336,
@@ -458,22 +491,24 @@
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "link",
-      "name": "IPhone 16",
-      "fp": "link|IPhone 16|1",
+      "name": "IPhone Air",
+      "fp": "link|IPhone Air|1",
       "rect": {
         "x": 148,
         "y": 1302,
-        "w": 75,
+        "w": 76,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "link",
-      "name": "IPhone Air",
-      "fp": "link|IPhone Air|0",
+      "name": "IPhone 8",
+      "fp": "link|IPhone 8|0",
       "rect": {
         "x": 44,
         "y": 1471,
@@ -484,22 +519,24 @@
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "link",
-      "name": "IPhone Air",
-      "fp": "link|IPhone Air|1",
+      "name": "IPhone 8",
+      "fp": "link|IPhone 8|1",
       "rect": {
         "x": 148,
         "y": 1438,
-        "w": 76,
+        "w": 67,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "link",
-      "name": "IPhone X",
-      "fp": "link|IPhone X|0",
+      "name": "IPhone 16 Pro",
+      "fp": "link|IPhone 16 Pro|0",
       "rect": {
         "x": 44,
         "y": 1607,
@@ -510,84 +547,91 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "link",
-      "name": "IPhone X",
-      "fp": "link|IPhone X|1",
+      "name": "IPhone 16 Pro",
+      "fp": "link|IPhone 16 Pro|1",
       "rect": {
         "x": 148,
         "y": 1573,
-        "w": 68,
+        "w": 105,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "link",
-      "name": "IPhone (trademark)",
-      "fp": "link|IPhone (trademark)|0",
+      "name": "IPhone 16e",
+      "fp": "link|IPhone 16e|0",
       "rect": {
-        "x": 148,
-        "y": 1709,
-        "w": 140,
+        "x": 44,
+        "y": 1742,
+        "w": 92,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e40",
-      "role": "link",
-      "name": "IPhone 8",
-      "fp": "link|IPhone 8|0",
-      "rect": {
-        "x": 44,
-        "y": 1878,
-        "w": 92,
-        "h": 18
-      },
-      "fillable": false
-    },
-    {
-      "eid": "e41",
-      "role": "link",
-      "name": "IPhone 8",
-      "fp": "link|IPhone 8|1",
-      "rect": {
-        "x": 148,
-        "y": 1844,
-        "w": 67,
-        "h": 18
-      },
-      "fillable": false
-    },
-    {
-      "eid": "e42",
-      "role": "link",
-      "name": "IPhone 16e",
-      "fp": "link|IPhone 16e|0",
-      "rect": {
-        "x": 44,
-        "y": 2013,
-        "w": 92,
-        "h": 18
-      },
-      "fillable": false
-    },
-    {
-      "eid": "e43",
+      "node": 40,
       "role": "link",
       "name": "IPhone 16e",
       "fp": "link|IPhone 16e|1",
       "rect": {
         "x": 148,
-        "y": 1980,
+        "y": 1709,
         "w": 84,
         "h": 18
       },
       "fillable": false
     },
     {
+      "eid": "e41",
+      "node": 41,
+      "role": "link",
+      "name": "IOS 26",
+      "fp": "link|IOS 26|0",
+      "rect": {
+        "x": 148,
+        "y": 1844,
+        "w": 50,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e42",
+      "node": 42,
+      "role": "link",
+      "name": "IPhone OS 26",
+      "fp": "link|IPhone OS 26|0",
+      "rect": {
+        "x": 284,
+        "y": 1844,
+        "w": 98,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e43",
+      "node": 43,
+      "role": "link",
+      "name": "IPhone (trademark)",
+      "fp": "link|IPhone (trademark)|0",
+      "rect": {
+        "x": 148,
+        "y": 1980,
+        "w": 140,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
       "eid": "e44",
+      "node": 44,
       "role": "link",
       "name": "IPhone 15 Pro",
       "fp": "link|IPhone 15 Pro|0",
@@ -601,6 +645,7 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "link",
       "name": "IPhone 15 Pro",
       "fp": "link|IPhone 15 Pro|1",
@@ -614,58 +659,63 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "link",
-      "name": "IOS version history",
-      "fp": "link|IOS version history|0",
-      "rect": {
-        "x": 148,
-        "y": 2251,
-        "w": 135,
-        "h": 18
-      },
-      "fillable": false
-    },
-    {
-      "eid": "e47",
-      "role": "link",
-      "name": "IPhone 2.0.2",
-      "fp": "link|IPhone 2.0.2|0",
-      "rect": {
-        "x": 370,
-        "y": 2251,
-        "w": 88,
-        "h": 17
-      },
-      "fillable": false
-    },
-    {
-      "eid": "e48",
-      "role": "link",
-      "name": "IPhone SE (3rd generation)",
-      "fp": "link|IPhone SE (3rd generation)|0",
+      "name": "IPhone X",
+      "fp": "link|IPhone X|0",
       "rect": {
         "x": 44,
-        "y": 2420,
+        "y": 2284,
         "w": 92,
         "h": 18
       },
       "fillable": false
     },
     {
-      "eid": "e49",
+      "eid": "e47",
+      "node": 47,
       "role": "link",
-      "name": "IPhone SE (3rd generation)",
-      "fp": "link|IPhone SE (3rd generation)|1",
+      "name": "IPhone X",
+      "fp": "link|IPhone X|1",
       "rect": {
         "x": 148,
-        "y": 2386,
-        "w": 197,
+        "y": 2251,
+        "w": 68,
         "h": 18
       },
       "fillable": false
     },
     {
+      "eid": "e48",
+      "node": 48,
+      "role": "link",
+      "name": "IOS version history",
+      "fp": "link|IOS version history|0",
+      "rect": {
+        "x": 148,
+        "y": 2386,
+        "w": 135,
+        "h": 18
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e49",
+      "node": 49,
+      "role": "link",
+      "name": "IPhone 2.0.2",
+      "fp": "link|IPhone 2.0.2|0",
+      "rect": {
+        "x": 370,
+        "y": 2386,
+        "w": 88,
+        "h": 17
+      },
+      "fillable": false
+    },
+    {
       "eid": "e50",
+      "node": 50,
       "role": "link",
       "name": "IPhone 13",
       "fp": "link|IPhone 13|0",
@@ -679,6 +729,7 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "link",
       "name": "IPhone 13",
       "fp": "link|IPhone 13|1",
@@ -692,35 +743,38 @@
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "link",
-      "name": "IOS 26",
-      "fp": "link|IOS 26|0",
+      "name": "IPhone 6",
+      "fp": "link|IPhone 6|0",
       "rect": {
-        "x": 148,
-        "y": 2657,
-        "w": 50,
+        "x": 44,
+        "y": 2691,
+        "w": 92,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "link",
-      "name": "IPhone OS 26",
-      "fp": "link|IPhone OS 26|0",
+      "name": "IPhone 6",
+      "fp": "link|IPhone 6|1",
       "rect": {
-        "x": 284,
+        "x": 148,
         "y": 2657,
-        "w": 98,
-        "h": 17
+        "w": 67,
+        "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "link",
-      "name": "IPhone 13 Pro",
-      "fp": "link|IPhone 13 Pro|0",
+      "name": "IPhone SE (3rd generation)",
+      "fp": "link|IPhone SE (3rd generation)|0",
       "rect": {
         "x": 44,
         "y": 2826,
@@ -731,22 +785,24 @@
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "link",
-      "name": "IPhone 13 Pro",
-      "fp": "link|IPhone 13 Pro|1",
+      "name": "IPhone SE (3rd generation)",
+      "fp": "link|IPhone SE (3rd generation)|1",
       "rect": {
         "x": 148,
         "y": 2793,
-        "w": 105,
+        "w": 197,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "link",
-      "name": "IPhone SE (2nd generation)",
-      "fp": "link|IPhone SE (2nd generation)|0",
+      "name": "IPhone 13 Pro",
+      "fp": "link|IPhone 13 Pro|0",
       "rect": {
         "x": 44,
         "y": 2962,
@@ -757,22 +813,24 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "link",
-      "name": "IPhone SE (2nd generation)",
-      "fp": "link|IPhone SE (2nd generation)|1",
+      "name": "IPhone 13 Pro",
+      "fp": "link|IPhone 13 Pro|1",
       "rect": {
         "x": 148,
         "y": 2929,
-        "w": 200,
+        "w": 105,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "link",
-      "name": "IPhone 6",
-      "fp": "link|IPhone 6|0",
+      "name": "IPhone 11",
+      "fp": "link|IPhone 11|0",
       "rect": {
         "x": 44,
         "y": 3097,
@@ -783,19 +841,21 @@
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "link",
-      "name": "IPhone 6",
-      "fp": "link|IPhone 6|1",
+      "name": "IPhone 11",
+      "fp": "link|IPhone 11|1",
       "rect": {
         "x": 148,
         "y": 3064,
-        "w": 67,
+        "w": 74,
         "h": 18
       },
       "fillable": false
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "link",
       "name": "Quotes from Wikiquote",
       "fp": "link|Quotes from Wikiquote|0",
@@ -809,6 +869,7 @@
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "link",
       "name": "q:Clarity",
       "fp": "link|q:Clarity|0",
@@ -822,6 +883,7 @@
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "link",
       "name": "See all results",
       "fp": "link|See all results|0",
@@ -835,6 +897,7 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "link",
       "name": "Texts from Wikisource",
       "fp": "link|Texts from Wikisource|0",
@@ -848,6 +911,7 @@
     },
     {
       "eid": "e64",
+      "node": 64,
       "role": "link",
       "name": "s:United States v. Meek (affidavit)",
       "fp": "link|s:United States v. Meek (affidavit)|0",
@@ -861,6 +925,7 @@
     },
     {
       "eid": "e65",
+      "node": 65,
       "role": "link",
       "name": "See all results",
       "fp": "link|See all results|1",
@@ -874,6 +939,7 @@
     },
     {
       "eid": "e66",
+      "node": 66,
       "role": "link",
       "name": "Textbooks from Wikibooks",
       "fp": "link|Textbooks from Wikibooks|0",
@@ -887,6 +953,7 @@
     },
     {
       "eid": "e67",
+      "node": 67,
       "role": "link",
       "name": "b:Professionalism/Apple, the FBI, Personal Data",
       "fp": "link|b:Professionalism/Apple, the FBI, Personal Data|0",
@@ -900,6 +967,7 @@
     },
     {
       "eid": "e68",
+      "node": 68,
       "role": "link",
       "name": "See all results",
       "fp": "link|See all results|2",
@@ -913,6 +981,7 @@
     },
     {
       "eid": "e69",
+      "node": 69,
       "role": "combobox",
       "name": "20 items 50 items 100 items 250 items 500 items",
       "value": "20",
@@ -928,6 +997,7 @@
     },
     {
       "eid": "e70",
+      "node": 70,
       "role": "button",
       "name": "First page",
       "fp": "button|First page|1",
@@ -941,6 +1011,7 @@
     },
     {
       "eid": "e71",
+      "node": 71,
       "role": "button",
       "name": "Previous page",
       "fp": "button|Previous page|1",
@@ -954,6 +1025,7 @@
     },
     {
       "eid": "e72",
+      "node": 72,
       "role": "button",
       "name": "Next page",
       "fp": "button|Next page|1",
@@ -967,6 +1039,7 @@
     },
     {
       "eid": "e73",
+      "node": 73,
       "role": "link",
       "name": "Privacy policy",
       "ctx": "footer",
@@ -981,6 +1054,7 @@
     },
     {
       "eid": "e74",
+      "node": 74,
       "role": "link",
       "name": "About Wikipedia",
       "ctx": "footer",
@@ -995,6 +1069,7 @@
     },
     {
       "eid": "e75",
+      "node": 75,
       "role": "link",
       "name": "Disclaimers",
       "ctx": "footer",
@@ -1009,6 +1084,7 @@
     },
     {
       "eid": "e76",
+      "node": 76,
       "role": "link",
       "name": "Contact Wikipedia",
       "ctx": "footer",
@@ -1023,6 +1099,7 @@
     },
     {
       "eid": "e77",
+      "node": 77,
       "role": "link",
       "name": "Legal & safety contacts",
       "ctx": "footer",
@@ -1037,6 +1114,7 @@
     },
     {
       "eid": "e78",
+      "node": 78,
       "role": "link",
       "name": "Code of Conduct",
       "ctx": "footer",
@@ -1051,6 +1129,7 @@
     },
     {
       "eid": "e79",
+      "node": 79,
       "role": "link",
       "name": "Developers",
       "ctx": "footer",
@@ -1065,6 +1144,7 @@
     },
     {
       "eid": "e80",
+      "node": 80,
       "role": "link",
       "name": "Statistics",
       "ctx": "footer",
@@ -1079,6 +1159,7 @@
     },
     {
       "eid": "e81",
+      "node": 81,
       "role": "link",
       "name": "Cookie statement",
       "ctx": "footer",
@@ -1093,6 +1174,7 @@
     },
     {
       "eid": "e82",
+      "node": 82,
       "role": "link",
       "name": "Mobile view",
       "ctx": "footer",
@@ -1107,6 +1189,7 @@
     },
     {
       "eid": "e83",
+      "node": 83,
       "role": "link",
       "name": "Wikimedia Foundation",
       "ctx": "footer",
@@ -1121,6 +1204,7 @@
     },
     {
       "eid": "e84",
+      "node": 84,
       "role": "link",
       "name": "Powered by MediaWiki",
       "ctx": "footer",
@@ -1135,6 +1219,6 @@
     }
   ],
   "text": "Search results Help Tools Appearance hide Text Small Standard Large This page always uses small font size Width Standard",
-  "contentHash": "r9m1c2",
+  "contentHash": "xmvtxg",
   "totalCandidates": 306
 }

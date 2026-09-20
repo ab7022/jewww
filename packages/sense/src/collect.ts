@@ -13,6 +13,33 @@ import type { RawSnapshot } from "@jev-browser/shared";
  * so the benchmark can retune ranking against saved fixtures without re-capturing.
  */
 export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
+  // A code-owned identity per live DOM node, so a decision can name the element it
+  // was made about and the executor can re-resolve that exact node later. These are
+  // OUR ids, never CDP backend node ids and never anything the model emits.
+  interface Cache {
+    ids: WeakMap<Element, number>;
+    nodes: Map<number, Element>;
+    next: number;
+    id(e: Element): number;
+  }
+  const g = globalThis as unknown as { __jevSenseCache?: Cache };
+  const cache: Cache = (g.__jevSenseCache ??= {
+    ids: new WeakMap<Element, number>(),
+    nodes: new Map<number, Element>(),
+    next: 1,
+    id(e: Element) {
+      let id = this.ids.get(e);
+      if (id === undefined) {
+        id = this.next++;
+        this.ids.set(e, id);
+      }
+      this.nodes.set(id, e);
+      return id;
+    },
+  });
+  // Drop references to nodes the page has removed.
+  for (const [id, el] of cache.nodes) if (!el.isConnected) cache.nodes.delete(id);
+
   const SELECTOR = [
     "a[href]",
     "button",
@@ -251,6 +278,7 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
 
     return {
       eid: `e${i + 1}`,
+      node: cache.id(el),
       role,
       name,
       ...(value ? { value } : {}),

@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "link",
       "name": "Vercel",
       "ctx": "header",
@@ -25,6 +26,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "button",
       "name": "Products",
       "ctx": "nav: Main navigation",
@@ -40,6 +42,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "button",
       "name": "Resources",
       "ctx": "nav: Main navigation",
@@ -55,6 +58,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "link",
       "name": "Enterprise",
       "ctx": "nav: Main navigation",
@@ -69,6 +73,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "link",
       "name": "Pricing",
       "ctx": "nav: Main navigation",
@@ -83,6 +88,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "link",
       "name": "Get a Demo",
       "ctx": "header",
@@ -97,6 +103,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "link",
       "name": "Log In",
       "ctx": "header",
@@ -111,6 +118,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "link",
       "name": "Sign Up",
       "ctx": "header",
@@ -125,6 +133,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "link",
       "name": "Start deploying",
       "fp": "link|Start deploying|0",
@@ -138,6 +147,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "link",
       "name": "Start a free trial",
       "fp": "link|Start a free trial|0",
@@ -151,6 +161,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "link",
       "name": "Get a demo",
       "fp": "link|Get a demo|0",
@@ -164,6 +175,7 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "link",
       "name": "Learn more about taxes",
       "fp": "link|Learn more about taxes|0",
@@ -177,6 +189,7 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "link",
       "name": "Learn about Fluid Compute No idle, no waste Only pay for actual execution time, not idle resources.",
       "fp": "link|Learn about Fluid Compute No idle, no waste Only pay for actual execution time, not idle resources.|0",
@@ -190,6 +203,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "link",
       "name": "LIMIT Learn about Spend Management Control your spending Set a limit, get alerts, and we'll stop usage before you go ove",
       "fp": "link|LIMIT Learn about Spend Management Control your spending Set a limit, get alerts, and we'll stop usage before you go ove|0",
@@ -203,6 +217,7 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "searchbox",
       "name": "Search",
       "fp": "searchbox|Search|0",
@@ -216,6 +231,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "link",
       "name": "Edge Requests",
       "fp": "link|Edge Requests|0",
@@ -229,6 +245,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "link",
       "name": "Fast Data Transfer",
       "fp": "link|Fast Data Transfer|0",
@@ -242,6 +259,7 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "link",
       "name": "Regional pricing ↗",
       "fp": "link|Regional pricing ↗|0",
@@ -255,6 +273,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "link",
       "name": "Regional pricing ↗",
       "fp": "link|Regional pricing ↗|1",
@@ -268,6 +287,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "link",
       "name": "Regional pricing ↗",
       "fp": "link|Regional pricing ↗|2",
@@ -281,6 +301,7 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "link",
       "name": "Active CPU pricing",
       "fp": "link|Active CPU pricing|0",
@@ -294,6 +315,7 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "link",
       "name": "Fast Origin Transfer",
       "fp": "link|Fast Origin Transfer|0",
@@ -307,6 +329,7 @@
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "link",
       "name": "Regional pricing ↗",
       "fp": "link|Regional pricing ↗|3",
@@ -320,6 +343,7 @@
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "link",
       "name": "Observability",
       "fp": "link|Observability|0",
@@ -333,6 +357,7 @@
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "link",
       "name": "Speed Insights Plus Events",
       "fp": "link|Speed Insights Plus Events|0",
@@ -346,6 +371,7 @@
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "link",
       "name": "Web Analytics Events",
       "fp": "link|Web Analytics Events|0",
@@ -359,6 +385,7 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "link",
       "name": "Runtime Logs",
       "fp": "link|Runtime Logs|0",
@@ -372,6 +399,7 @@
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "link",
       "name": "Session Tracing",
       "fp": "link|Session Tracing|0",
@@ -385,6 +413,7 @@
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "link",
       "name": "Drains Volume",
       "fp": "link|Drains Volume|0",
@@ -398,6 +427,7 @@
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "link",
       "name": "Regional pricing ↗",
       "fp": "link|Regional pricing ↗|4",
@@ -411,6 +441,7 @@
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "link",
       "name": "Passport",
       "fp": "link|Passport|0",
@@ -424,6 +455,7 @@
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "link",
       "name": "Static IPs (shared pool)",
       "fp": "link|Static IPs (shared pool)|0",
@@ -437,6 +469,7 @@
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "link",
       "name": "Secure Compute",
       "fp": "link|Secure Compute|0",
@@ -450,6 +483,7 @@
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "link",
       "name": "Sign up for free",
       "fp": "link|Sign up for free|0",
@@ -463,6 +497,7 @@
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "link",
       "name": "Start a free Pro trial",
       "fp": "link|Start a free Pro trial|0",
@@ -476,6 +511,7 @@
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "link",
       "name": "Contact Sales",
       "fp": "link|Contact Sales|0",
@@ -489,6 +525,7 @@
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "disclosure",
       "name": "01What currency are Vercel prices shown in, and do they include taxes?",
       "ctx": "Frequently asked questions",
@@ -503,6 +540,7 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "link",
       "name": "Learn more about taxes",
       "fp": "link|Learn more about taxes|1",
@@ -516,6 +554,7 @@
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "disclosure",
       "name": "02Which Vercel plan is right for me?",
       "ctx": "Frequently asked questions",
@@ -530,6 +569,7 @@
     },
     {
       "eid": "e40",
+      "node": 40,
       "role": "link",
       "name": "Contact our sales team",
       "fp": "link|Contact our sales team|0",
@@ -543,6 +583,7 @@
     },
     {
       "eid": "e41",
+      "node": 41,
       "role": "disclosure",
       "name": "03Do you offer custom invoicing?",
       "ctx": "Frequently asked questions",
@@ -557,6 +598,7 @@
     },
     {
       "eid": "e42",
+      "node": 42,
       "role": "link",
       "name": "Contact our sales team",
       "fp": "link|Contact our sales team|1",
@@ -570,6 +612,7 @@
     },
     {
       "eid": "e43",
+      "node": 43,
       "role": "disclosure",
       "name": "04What are the limits for each plan?",
       "ctx": "Frequently asked questions",
@@ -584,6 +627,7 @@
     },
     {
       "eid": "e44",
+      "node": 44,
       "role": "link",
       "name": "here",
       "fp": "link|here|0",
@@ -597,6 +641,7 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "link",
       "name": "Fair Use Policy",
       "fp": "link|Fair Use Policy|0",
@@ -610,6 +655,7 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "disclosure",
       "name": "05I went over my included credit. What can I do?",
       "ctx": "Frequently asked questions",
@@ -624,6 +670,7 @@
     },
     {
       "eid": "e47",
+      "node": 47,
       "role": "link",
       "name": "contact us",
       "fp": "link|contact us|0",
@@ -637,6 +684,7 @@
     },
     {
       "eid": "e48",
+      "node": 48,
       "role": "disclosure",
       "name": "06Can I buy additional usage?",
       "ctx": "Frequently asked questions",
@@ -651,6 +699,7 @@
     },
     {
       "eid": "e49",
+      "node": 49,
       "role": "link",
       "name": "in our documentation",
       "fp": "link|in our documentation|0",
@@ -664,6 +713,7 @@
     },
     {
       "eid": "e50",
+      "node": 50,
       "role": "disclosure",
       "name": "07I have a Hobby account, how do I upgrade to a paid plan?",
       "ctx": "Frequently asked questions",
@@ -678,6 +728,7 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "disclosure",
       "name": "08Is there a limit to how many teams I can have?",
       "ctx": "Frequently asked questions",
@@ -692,6 +743,7 @@
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "disclosure",
       "name": "09How does Vercel calculate usage?",
       "ctx": "Frequently asked questions",
@@ -706,6 +758,7 @@
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "link",
       "name": "documentation",
       "fp": "link|documentation|0",
@@ -719,6 +772,7 @@
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "disclosure",
       "name": "10I want to transfer a domain name to Vercel. Is there a fee?",
       "ctx": "Frequently asked questions",
@@ -733,6 +787,7 @@
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "disclosure",
       "name": "11Do cached responses affect usage?",
       "ctx": "Frequently asked questions",
@@ -747,6 +802,7 @@
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "link",
       "name": "cached",
       "fp": "link|cached|0",
@@ -760,6 +816,7 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "link",
       "name": "compresses",
       "fp": "link|compresses|0",
@@ -773,6 +830,7 @@
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "disclosure",
       "name": "12How can I manage my spend?",
       "ctx": "Frequently asked questions",
@@ -787,6 +845,7 @@
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "link",
       "name": "Spend Management",
       "fp": "link|Spend Management|0",
@@ -800,6 +859,7 @@
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "link",
       "name": "recursion protection",
       "fp": "link|recursion protection|0",
@@ -813,6 +873,7 @@
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "link",
       "name": "improved function defaults",
       "fp": "link|improved function defaults|0",
@@ -826,6 +887,7 @@
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "link",
       "name": "hard spend limits",
       "fp": "link|hard spend limits|0",
@@ -839,6 +901,7 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "link",
       "name": "Attack Challenge Mode",
       "fp": "link|Attack Challenge Mode|0",
@@ -852,6 +915,7 @@
     },
     {
       "eid": "e64",
+      "node": 64,
       "role": "disclosure",
       "name": "13What I can spend my included usage credit on?",
       "ctx": "Frequently asked questions",
@@ -866,6 +930,7 @@
     },
     {
       "eid": "e65",
+      "node": 65,
       "role": "link",
       "name": "vercel.com/docs/plans/pro-plan#monthly-credit",
       "fp": "link|vercel.com/docs/plans/pro-plan#monthly-credit|0",
@@ -879,6 +944,7 @@
     },
     {
       "eid": "e66",
+      "node": 66,
       "role": "disclosure",
       "name": "14What is Flat Rate CDN?",
       "ctx": "Frequently asked questions",
@@ -893,6 +959,7 @@
     },
     {
       "eid": "e67",
+      "node": 67,
       "role": "link",
       "name": "here.",
       "fp": "link|here.|0",
@@ -906,6 +973,7 @@
     },
     {
       "eid": "e68",
+      "node": 68,
       "role": "link",
       "name": "Talk to sales",
       "ctx": "Can't decide?",
@@ -920,6 +988,7 @@
     },
     {
       "eid": "e69",
+      "node": 69,
       "role": "link",
       "name": "Get started for free",
       "ctx": "Can't decide?",
@@ -934,6 +1003,7 @@
     },
     {
       "eid": "e70",
+      "node": 70,
       "role": "link",
       "name": "AI SDK",
       "ctx": "nav: Vercel Directory",
@@ -948,6 +1018,7 @@
     },
     {
       "eid": "e71",
+      "node": 71,
       "role": "link",
       "name": "AI Gateway",
       "ctx": "nav: Vercel Directory",
@@ -962,6 +1033,7 @@
     },
     {
       "eid": "e72",
+      "node": 72,
       "role": "link",
       "name": "Sandbox",
       "ctx": "nav: Vercel Directory",
@@ -976,6 +1048,7 @@
     },
     {
       "eid": "e73",
+      "node": 73,
       "role": "link",
       "name": "Workflows",
       "ctx": "nav: Vercel Directory",
@@ -990,6 +1063,7 @@
     },
     {
       "eid": "e74",
+      "node": 74,
       "role": "link",
       "name": "ConnectNew",
       "ctx": "nav: Vercel Directory",
@@ -1004,6 +1078,7 @@
     },
     {
       "eid": "e75",
+      "node": 75,
       "role": "link",
       "name": "PassportNew",
       "ctx": "nav: Vercel Directory",
@@ -1018,6 +1093,7 @@
     },
     {
       "eid": "e76",
+      "node": 76,
       "role": "link",
       "name": "eveNew",
       "ctx": "nav: Vercel Directory",
@@ -1032,6 +1108,7 @@
     },
     {
       "eid": "e77",
+      "node": 77,
       "role": "link",
       "name": "CI/CD",
       "ctx": "nav: Vercel Directory",
@@ -1046,6 +1123,7 @@
     },
     {
       "eid": "e78",
+      "node": 78,
       "role": "link",
       "name": "Content Delivery",
       "ctx": "nav: Vercel Directory",
@@ -1060,6 +1138,7 @@
     },
     {
       "eid": "e79",
+      "node": 79,
       "role": "link",
       "name": "Fluid Compute",
       "ctx": "nav: Vercel Directory",
@@ -1074,6 +1153,7 @@
     },
     {
       "eid": "e80",
+      "node": 80,
       "role": "link",
       "name": "Observability",
       "ctx": "nav: Vercel Directory",
@@ -1088,6 +1168,7 @@
     },
     {
       "eid": "e81",
+      "node": 81,
       "role": "link",
       "name": "Platform Security",
       "ctx": "nav: Vercel Directory",
@@ -1102,6 +1183,7 @@
     },
     {
       "eid": "e82",
+      "node": 82,
       "role": "link",
       "name": "WAF",
       "ctx": "nav: Vercel Directory",
@@ -1116,6 +1198,7 @@
     },
     {
       "eid": "e83",
+      "node": 83,
       "role": "link",
       "name": "Bot Management",
       "ctx": "nav: Vercel Directory",
@@ -1130,6 +1213,7 @@
     },
     {
       "eid": "e84",
+      "node": 84,
       "role": "link",
       "name": "BotID",
       "ctx": "nav: Vercel Directory",
@@ -1144,6 +1228,7 @@
     },
     {
       "eid": "e85",
+      "node": 85,
       "role": "link",
       "name": "Vercel DropNew",
       "ctx": "nav: Vercel Directory",
@@ -1158,6 +1243,7 @@
     },
     {
       "eid": "e86",
+      "node": 86,
       "role": "link",
       "name": "Vercel Agent",
       "ctx": "nav: Vercel Directory",
@@ -1172,6 +1258,7 @@
     },
     {
       "eid": "e87",
+      "node": 87,
       "role": "link",
       "name": "Vercel PluginNew",
       "ctx": "nav: Vercel Directory",
@@ -1186,6 +1273,7 @@
     },
     {
       "eid": "e88",
+      "node": 88,
       "role": "link",
       "name": "Agent Skills",
       "ctx": "nav: Vercel Directory",
@@ -1200,6 +1288,7 @@
     },
     {
       "eid": "e89",
+      "node": 89,
       "role": "link",
       "name": "Domains",
       "ctx": "nav: Vercel Directory",
@@ -1214,6 +1303,7 @@
     },
     {
       "eid": "e90",
+      "node": 90,
       "role": "link",
       "name": "v0",
       "ctx": "nav: Vercel Directory",
@@ -1228,6 +1318,7 @@
     },
     {
       "eid": "e91",
+      "node": 91,
       "role": "link",
       "name": "eveNew",
       "ctx": "nav: Vercel Directory",
@@ -1242,6 +1333,7 @@
     },
     {
       "eid": "e92",
+      "node": 92,
       "role": "link",
       "name": "Next.js",
       "ctx": "nav: Vercel Directory",
@@ -1256,6 +1348,7 @@
     },
     {
       "eid": "e93",
+      "node": 93,
       "role": "link",
       "name": "Nuxt",
       "ctx": "nav: Vercel Directory",
@@ -1270,6 +1363,7 @@
     },
     {
       "eid": "e94",
+      "node": 94,
       "role": "link",
       "name": "SvelteKit",
       "ctx": "nav: Vercel Directory",
@@ -1284,6 +1378,7 @@
     },
     {
       "eid": "e95",
+      "node": 95,
       "role": "link",
       "name": "Nitro",
       "ctx": "nav: Vercel Directory",
@@ -1298,6 +1393,7 @@
     },
     {
       "eid": "e96",
+      "node": 96,
       "role": "link",
       "name": "Turborepo",
       "ctx": "nav: Vercel Directory",
@@ -1312,6 +1408,7 @@
     },
     {
       "eid": "e97",
+      "node": 97,
       "role": "link",
       "name": "Tanstack Start",
       "ctx": "nav: Vercel Directory",
@@ -1326,6 +1423,7 @@
     },
     {
       "eid": "e98",
+      "node": 98,
       "role": "link",
       "name": "FastAPI",
       "ctx": "nav: Vercel Directory",
@@ -1340,6 +1438,7 @@
     },
     {
       "eid": "e99",
+      "node": 99,
       "role": "link",
       "name": "All frameworks",
       "ctx": "nav: Vercel Directory",
@@ -1354,6 +1453,7 @@
     },
     {
       "eid": "e100",
+      "node": 100,
       "role": "link",
       "name": "Vercel SDK",
       "ctx": "nav: Vercel Directory",
@@ -1368,6 +1468,7 @@
     },
     {
       "eid": "e101",
+      "node": 101,
       "role": "link",
       "name": "Workflow SDKNew",
       "ctx": "nav: Vercel Directory",
@@ -1382,6 +1483,7 @@
     },
     {
       "eid": "e102",
+      "node": 102,
       "role": "link",
       "name": "Flags SDK",
       "ctx": "nav: Vercel Directory",
@@ -1396,6 +1498,7 @@
     },
     {
       "eid": "e103",
+      "node": 103,
       "role": "link",
       "name": "Chat SDKNew",
       "ctx": "nav: Vercel Directory",
@@ -1410,6 +1513,7 @@
     },
     {
       "eid": "e104",
+      "node": 104,
       "role": "link",
       "name": "Queues SDKNew",
       "ctx": "nav: Vercel Directory",
@@ -1424,6 +1528,7 @@
     },
     {
       "eid": "e105",
+      "node": 105,
       "role": "link",
       "name": "Streamdown",
       "ctx": "nav: Vercel Directory",
@@ -1438,6 +1543,7 @@
     },
     {
       "eid": "e106",
+      "node": 106,
       "role": "link",
       "name": "AI Apps",
       "ctx": "nav: Vercel Directory",
@@ -1452,6 +1558,7 @@
     },
     {
       "eid": "e107",
+      "node": 107,
       "role": "link",
       "name": "Web Apps",
       "ctx": "nav: Vercel Directory",
@@ -1466,6 +1573,7 @@
     },
     {
       "eid": "e108",
+      "node": 108,
       "role": "link",
       "name": "Marketing Sites",
       "ctx": "nav: Vercel Directory",
@@ -1480,6 +1588,7 @@
     },
     {
       "eid": "e109",
+      "node": 109,
       "role": "link",
       "name": "Platforms",
       "ctx": "nav: Vercel Directory",
@@ -1494,6 +1603,7 @@
     },
     {
       "eid": "e110",
+      "node": 110,
       "role": "link",
       "name": "Commerce",
       "ctx": "nav: Vercel Directory",
@@ -1508,6 +1618,7 @@
     },
     {
       "eid": "e111",
+      "node": 111,
       "role": "link",
       "name": "Platform Engineers",
       "ctx": "nav: Vercel Directory",
@@ -1522,6 +1633,7 @@
     },
     {
       "eid": "e112",
+      "node": 112,
       "role": "link",
       "name": "Design Engineers",
       "ctx": "nav: Vercel Directory",
@@ -1536,6 +1648,7 @@
     },
     {
       "eid": "e113",
+      "node": 113,
       "role": "link",
       "name": "Docs",
       "ctx": "nav: Vercel Directory",
@@ -1550,6 +1663,7 @@
     },
     {
       "eid": "e114",
+      "node": 114,
       "role": "link",
       "name": "Blog",
       "ctx": "nav: Vercel Directory",
@@ -1564,6 +1678,7 @@
     },
     {
       "eid": "e115",
+      "node": 115,
       "role": "link",
       "name": "Changelog",
       "ctx": "nav: Vercel Directory",
@@ -1578,6 +1693,7 @@
     },
     {
       "eid": "e116",
+      "node": 116,
       "role": "link",
       "name": "Knowledge Base",
       "ctx": "nav: Vercel Directory",
@@ -1592,6 +1708,7 @@
     },
     {
       "eid": "e117",
+      "node": 117,
       "role": "link",
       "name": "Academy",
       "ctx": "nav: Vercel Directory",
@@ -1606,6 +1723,7 @@
     },
     {
       "eid": "e118",
+      "node": 118,
       "role": "link",
       "name": "Articles",
       "ctx": "nav: Vercel Directory",
@@ -1620,6 +1738,7 @@
     },
     {
       "eid": "e119",
+      "node": 119,
       "role": "link",
       "name": "Community",
       "ctx": "nav: Vercel Directory",
@@ -1634,6 +1753,7 @@
     },
     {
       "eid": "e120",
+      "node": 120,
       "role": "link",
       "name": "Is Agentic",
       "ctx": "nav: Vercel Directory",
@@ -1648,6 +1768,7 @@
     },
     {
       "eid": "e121",
+      "node": 121,
       "role": "link",
       "name": "Customers",
       "ctx": "nav: Vercel Directory",
@@ -1662,6 +1783,7 @@
     },
     {
       "eid": "e122",
+      "node": 122,
       "role": "link",
       "name": "Marketplace",
       "ctx": "nav: Vercel Directory",
@@ -1676,6 +1798,7 @@
     },
     {
       "eid": "e123",
+      "node": 123,
       "role": "link",
       "name": "Templates",
       "ctx": "nav: Vercel Directory",
@@ -1690,6 +1813,7 @@
     },
     {
       "eid": "e124",
+      "node": 124,
       "role": "link",
       "name": "Partner Finder",
       "ctx": "nav: Vercel Directory",
@@ -1704,6 +1828,7 @@
     },
     {
       "eid": "e125",
+      "node": 125,
       "role": "link",
       "name": "Vercel + AWS",
       "ctx": "nav: Vercel Directory",
@@ -1718,6 +1843,7 @@
     },
     {
       "eid": "e126",
+      "node": 126,
       "role": "link",
       "name": "About",
       "ctx": "nav: Vercel Directory",
@@ -1732,6 +1858,7 @@
     },
     {
       "eid": "e127",
+      "node": 127,
       "role": "link",
       "name": "Careers",
       "ctx": "nav: Vercel Directory",
@@ -1746,6 +1873,7 @@
     },
     {
       "eid": "e128",
+      "node": 128,
       "role": "link",
       "name": "Press",
       "ctx": "nav: Vercel Directory",
@@ -1760,6 +1888,7 @@
     },
     {
       "eid": "e129",
+      "node": 129,
       "role": "link",
       "name": "Events",
       "ctx": "nav: Vercel Directory",
@@ -1774,6 +1903,7 @@
     },
     {
       "eid": "e130",
+      "node": 130,
       "role": "link",
       "name": "Startups",
       "ctx": "nav: Vercel Directory",
@@ -1788,6 +1918,7 @@
     },
     {
       "eid": "e131",
+      "node": 131,
       "role": "link",
       "name": "Shipped on Vercel",
       "ctx": "nav: Vercel Directory",
@@ -1802,6 +1933,7 @@
     },
     {
       "eid": "e132",
+      "node": 132,
       "role": "link",
       "name": "Open Source Program",
       "ctx": "nav: Vercel Directory",
@@ -1816,6 +1948,7 @@
     },
     {
       "eid": "e133",
+      "node": 133,
       "role": "link",
       "name": "Enterprise",
       "ctx": "nav: Vercel Directory",
@@ -1830,6 +1963,7 @@
     },
     {
       "eid": "e134",
+      "node": 134,
       "role": "link",
       "name": "Pricing",
       "ctx": "nav: Vercel Directory",
@@ -1844,6 +1978,7 @@
     },
     {
       "eid": "e135",
+      "node": 135,
       "role": "link",
       "name": "Help",
       "ctx": "nav: Vercel Directory",
@@ -1858,6 +1993,7 @@
     },
     {
       "eid": "e136",
+      "node": 136,
       "role": "link",
       "name": "Privacy Policy",
       "ctx": "nav: Vercel Directory",
@@ -1872,6 +2008,7 @@
     },
     {
       "eid": "e137",
+      "node": 137,
       "role": "link",
       "name": "Terms of Service",
       "ctx": "nav: Vercel Directory",
@@ -1886,6 +2023,7 @@
     },
     {
       "eid": "e138",
+      "node": 138,
       "role": "link",
       "name": "Cookie Policy",
       "ctx": "nav: Vercel Directory",
@@ -1900,6 +2038,7 @@
     },
     {
       "eid": "e139",
+      "node": 139,
       "role": "link",
       "name": "DPA",
       "ctx": "nav: Vercel Directory",
@@ -1914,6 +2053,7 @@
     },
     {
       "eid": "e140",
+      "node": 140,
       "role": "link",
       "name": "Acceptable Use Policy",
       "ctx": "nav: Vercel Directory",
@@ -1928,6 +2068,7 @@
     },
     {
       "eid": "e141",
+      "node": 141,
       "role": "link",
       "name": "Legal (all documents)",
       "ctx": "nav: Vercel Directory",
@@ -1942,6 +2083,7 @@
     },
     {
       "eid": "e142",
+      "node": 142,
       "role": "link",
       "name": "Trust Center",
       "ctx": "nav: Vercel Directory",
@@ -1956,6 +2098,7 @@
     },
     {
       "eid": "e143",
+      "node": 143,
       "role": "link",
       "name": "Status",
       "ctx": "nav: Vercel Directory",
@@ -1970,6 +2113,7 @@
     },
     {
       "eid": "e144",
+      "node": 144,
       "role": "link",
       "name": "GitHub",
       "ctx": "nav: Vercel Directory",
@@ -1984,6 +2128,7 @@
     },
     {
       "eid": "e145",
+      "node": 145,
       "role": "link",
       "name": "X",
       "ctx": "nav: Vercel Directory",
@@ -1998,6 +2143,7 @@
     },
     {
       "eid": "e146",
+      "node": 146,
       "role": "link",
       "name": "LinkedIn",
       "ctx": "nav: Vercel Directory",
@@ -2012,6 +2158,7 @@
     },
     {
       "eid": "e147",
+      "node": 147,
       "role": "link",
       "name": "YouTube",
       "ctx": "nav: Vercel Directory",
@@ -2026,6 +2173,7 @@
     },
     {
       "eid": "e148",
+      "node": 148,
       "role": "link",
       "name": "Instagram",
       "ctx": "nav: Vercel Directory",
@@ -2040,6 +2188,7 @@
     },
     {
       "eid": "e149",
+      "node": 149,
       "role": "link",
       "name": "Vercel",
       "ctx": "nav: Vercel Directory",
@@ -2054,6 +2203,7 @@
     },
     {
       "eid": "e150",
+      "node": 150,
       "role": "link",
       "name": "Loading status…",
       "ctx": "footer",
@@ -2068,6 +2218,7 @@
     },
     {
       "eid": "e151",
+      "node": 151,
       "role": "button",
       "name": "View as AI agent",
       "ctx": "footer",

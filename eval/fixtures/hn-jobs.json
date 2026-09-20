@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "link",
       "name": "Hacker News",
       "fp": "link|Hacker News|0",
@@ -23,6 +24,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "link",
       "name": "new",
       "fp": "link|new|0",
@@ -36,6 +38,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "link",
       "name": "past",
       "fp": "link|past|0",
@@ -49,6 +52,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "link",
       "name": "comments",
       "fp": "link|comments|0",
@@ -62,6 +66,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "link",
       "name": "ask",
       "fp": "link|ask|0",
@@ -75,6 +80,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "link",
       "name": "show",
       "fp": "link|show|0",
@@ -88,6 +94,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "link",
       "name": "jobs",
       "fp": "link|jobs|0",
@@ -101,6 +108,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "link",
       "name": "jobs",
       "fp": "link|jobs|1",
@@ -114,6 +122,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "link",
       "name": "login",
       "fp": "link|login|0",
@@ -127,6 +136,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "link",
       "name": "ycombinator.com/jobs",
       "fp": "link|ycombinator.com/jobs|0",
@@ -140,6 +150,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "link",
       "name": "Supabase (YC S20) Is Hiring for OrioleDB",
       "fp": "link|Supabase (YC S20) Is Hiring for OrioleDB|0",
@@ -153,6 +164,7 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "link",
       "name": "supabase.link",
       "fp": "link|supabase.link|0",
@@ -166,9 +178,10 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "link",
-      "name": "21 hours ago",
-      "fp": "link|21 hours ago|0",
+      "name": "22 hours ago",
+      "fp": "link|22 hours ago|0",
       "rect": {
         "x": 139,
         "y": 94,
@@ -179,6 +192,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "link",
       "name": "Cekura (YC F24) Is Hiring",
       "fp": "link|Cekura (YC F24) Is Hiring|0",
@@ -192,6 +206,7 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|0",
@@ -205,6 +220,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "link",
       "name": "2 days ago",
       "fp": "link|2 days ago|0",
@@ -218,6 +234,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "link",
       "name": "Zettascale (YC S24) Is Hiring ASIC/FPGA Engineers to Build Chips for ASI",
       "fp": "link|Zettascale (YC S24) Is Hiring ASIC/FPGA Engineers to Build Chips for ASI|0",
@@ -231,6 +248,7 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "link",
       "name": "zscc.ai",
       "fp": "link|zscc.ai|0",
@@ -244,6 +262,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "link",
       "name": "2 days ago",
       "fp": "link|2 days ago|1",
@@ -257,6 +276,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "link",
       "name": "Kyber (YC W23) Is Hiring a Forward Deployed Engineer",
       "fp": "link|Kyber (YC W23) Is Hiring a Forward Deployed Engineer|0",
@@ -270,6 +290,7 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|1",
@@ -283,6 +304,7 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "link",
       "name": "4 days ago",
       "fp": "link|4 days ago|0",
@@ -296,6 +318,7 @@
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "link",
       "name": "Jiga (YC W21) Is Hiring Product Engineer (Remote/US)",
       "fp": "link|Jiga (YC W21) Is Hiring Product Engineer (Remote/US)|0",
@@ -309,6 +332,7 @@
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "link",
       "name": "jiga.io",
       "fp": "link|jiga.io|0",
@@ -322,6 +346,7 @@
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "link",
       "name": "4 days ago",
       "fp": "link|4 days ago|1",
@@ -335,6 +360,7 @@
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "link",
       "name": "Lingo.dev (YC F24) is hiring a senior content engineer (Remote, worldwide)",
       "fp": "link|Lingo.dev (YC F24) is hiring a senior content engineer (Remote, worldwide)|0",
@@ -348,6 +374,7 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "link",
       "name": "lingo.dev",
       "fp": "link|lingo.dev|0",
@@ -361,6 +388,7 @@
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "link",
       "name": "5 days ago",
       "fp": "link|5 days ago|0",
@@ -374,6 +402,7 @@
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "link",
       "name": "Cua (YC P25) Is Hiring a Founding Technical GTM Lead",
       "fp": "link|Cua (YC P25) Is Hiring a Founding Technical GTM Lead|0",
@@ -387,6 +416,7 @@
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|2",
@@ -400,6 +430,7 @@
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "link",
       "name": "5 days ago",
       "fp": "link|5 days ago|1",
@@ -413,6 +444,7 @@
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "link",
       "name": "Zep AI (YC W24) Is Hiring a Head of Forward Deployed Engineering",
       "fp": "link|Zep AI (YC W24) Is Hiring a Head of Forward Deployed Engineering|0",
@@ -426,6 +458,7 @@
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "link",
       "name": "getzep.com",
       "fp": "link|getzep.com|0",
@@ -439,6 +472,7 @@
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "link",
       "name": "8 days ago",
       "fp": "link|8 days ago|0",
@@ -452,6 +486,7 @@
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "link",
       "name": "Roame (YC S23) Is Hiring Viral Content Editor",
       "fp": "link|Roame (YC S23) Is Hiring Viral Content Editor|0",
@@ -465,6 +500,7 @@
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|3",
@@ -478,6 +514,7 @@
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "link",
       "name": "11 days ago",
       "fp": "link|11 days ago|0",
@@ -491,6 +528,7 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "link",
       "name": "Opalite Health (YC W26) Is Hiring – Founding GTM",
       "fp": "link|Opalite Health (YC W26) Is Hiring – Founding GTM|0",
@@ -504,6 +542,7 @@
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|4",
@@ -517,6 +556,7 @@
     },
     {
       "eid": "e40",
+      "node": 40,
       "role": "link",
       "name": "13 days ago",
       "fp": "link|13 days ago|0",
@@ -530,6 +570,7 @@
     },
     {
       "eid": "e41",
+      "node": 41,
       "role": "link",
       "name": "SubImage (YC W25) Is Hiring a Founding Engineer in SF",
       "fp": "link|SubImage (YC W25) Is Hiring a Founding Engineer in SF|0",
@@ -543,6 +584,7 @@
     },
     {
       "eid": "e42",
+      "node": 42,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|5",
@@ -556,6 +598,7 @@
     },
     {
       "eid": "e43",
+      "node": 43,
       "role": "link",
       "name": "16 days ago",
       "fp": "link|16 days ago|0",
@@ -569,6 +612,7 @@
     },
     {
       "eid": "e44",
+      "node": 44,
       "role": "link",
       "name": "Tasklet (YC P26) Is Hiring a Customer Success Engineer",
       "fp": "link|Tasklet (YC P26) Is Hiring a Customer Success Engineer|0",
@@ -582,6 +626,7 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "link",
       "name": "tasklet.ai",
       "fp": "link|tasklet.ai|0",
@@ -595,6 +640,7 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "link",
       "name": "16 days ago",
       "fp": "link|16 days ago|1",
@@ -608,6 +654,7 @@
     },
     {
       "eid": "e47",
+      "node": 47,
       "role": "link",
       "name": "Gooseworks (YC W23) Is Hiring – Founding Creative Engineer",
       "fp": "link|Gooseworks (YC W23) Is Hiring – Founding Creative Engineer|0",
@@ -621,6 +668,7 @@
     },
     {
       "eid": "e48",
+      "node": 48,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|6",
@@ -634,6 +682,7 @@
     },
     {
       "eid": "e49",
+      "node": 49,
       "role": "link",
       "name": "16 days ago",
       "fp": "link|16 days ago|2",
@@ -647,6 +696,7 @@
     },
     {
       "eid": "e50",
+      "node": 50,
       "role": "link",
       "name": "9 Mothers (YC P26) Is Hiring in Austin, TX",
       "fp": "link|9 Mothers (YC P26) Is Hiring in Austin, TX|0",
@@ -660,6 +710,7 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "link",
       "name": "9mothers.com",
       "fp": "link|9mothers.com|0",
@@ -673,6 +724,7 @@
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "link",
       "name": "17 days ago",
       "fp": "link|17 days ago|0",
@@ -686,6 +738,7 @@
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "link",
       "name": "Nango (YC W23) is hiring across eng, product and GTM (SF and remote)",
       "fp": "link|Nango (YC W23) is hiring across eng, product and GTM (SF and remote)|0",
@@ -699,6 +752,7 @@
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "link",
       "name": "nango.dev",
       "fp": "link|nango.dev|0",
@@ -712,6 +766,7 @@
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "link",
       "name": "17 days ago",
       "fp": "link|17 days ago|1",
@@ -725,6 +780,7 @@
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "link",
       "name": "Telli (YC F24) is hiring engineers and designers [Berlin, on-site]",
       "fp": "link|Telli (YC F24) is hiring engineers and designers [Berlin, on-site]|0",
@@ -738,6 +794,7 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "link",
       "name": "telli.com",
       "fp": "link|telli.com|0",
@@ -751,6 +808,7 @@
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "link",
       "name": "18 days ago",
       "fp": "link|18 days ago|0",
@@ -764,6 +822,7 @@
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "link",
       "name": "Quill (YC W20) Is Hiring a Fullstack SWE",
       "fp": "link|Quill (YC W20) Is Hiring a Fullstack SWE|0",
@@ -777,6 +836,7 @@
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "link",
       "name": "18 days ago",
       "fp": "link|18 days ago|1",
@@ -790,6 +850,7 @@
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "link",
       "name": "CollectWise (YC F24) Is Hiring",
       "fp": "link|CollectWise (YC F24) Is Hiring|0",
@@ -803,6 +864,7 @@
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|7",
@@ -816,6 +878,7 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "link",
       "name": "19 days ago",
       "fp": "link|19 days ago|0",
@@ -829,6 +892,7 @@
     },
     {
       "eid": "e64",
+      "node": 64,
       "role": "link",
       "name": "Autonomous (YC F25) is hiring engineers",
       "fp": "link|Autonomous (YC F25) is hiring engineers|0",
@@ -842,6 +906,7 @@
     },
     {
       "eid": "e65",
+      "node": 65,
       "role": "link",
       "name": "19 days ago",
       "fp": "link|19 days ago|1",
@@ -855,6 +920,7 @@
     },
     {
       "eid": "e66",
+      "node": 66,
       "role": "link",
       "name": "Weave (YC W25) is hiring ML, AI, product, & design engineers",
       "fp": "link|Weave (YC W25) is hiring ML, AI, product, & design engineers|0",
@@ -868,6 +934,7 @@
     },
     {
       "eid": "e67",
+      "node": 67,
       "role": "link",
       "name": "jobs.ashbyhq.com",
       "fp": "link|jobs.ashbyhq.com|0",
@@ -881,6 +948,7 @@
     },
     {
       "eid": "e68",
+      "node": 68,
       "role": "link",
       "name": "19 days ago",
       "fp": "link|19 days ago|2",
@@ -894,6 +962,7 @@
     },
     {
       "eid": "e69",
+      "node": 69,
       "role": "link",
       "name": "Artie (YC S23) Is Hiring Technical AES",
       "fp": "link|Artie (YC S23) Is Hiring Technical AES|0",
@@ -907,6 +976,7 @@
     },
     {
       "eid": "e70",
+      "node": 70,
       "role": "link",
       "name": "artie.com",
       "fp": "link|artie.com|0",
@@ -920,6 +990,7 @@
     },
     {
       "eid": "e71",
+      "node": 71,
       "role": "link",
       "name": "20 days ago",
       "fp": "link|20 days ago|0",
@@ -933,6 +1004,7 @@
     },
     {
       "eid": "e72",
+      "node": 72,
       "role": "link",
       "name": "Attimet (YC F24) Is Hiring Members of Technical Staff – Engineering and Research",
       "fp": "link|Attimet (YC F24) Is Hiring Members of Technical Staff – Engineering and Research|0",
@@ -946,6 +1018,7 @@
     },
     {
       "eid": "e73",
+      "node": 73,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|8",
@@ -959,6 +1032,7 @@
     },
     {
       "eid": "e74",
+      "node": 74,
       "role": "link",
       "name": "22 days ago",
       "fp": "link|22 days ago|0",
@@ -972,6 +1046,7 @@
     },
     {
       "eid": "e75",
+      "node": 75,
       "role": "link",
       "name": "GoGoGrandparent (YC S16) is hiring back end engineers",
       "fp": "link|GoGoGrandparent (YC S16) is hiring back end engineers|0",
@@ -985,6 +1060,7 @@
     },
     {
       "eid": "e76",
+      "node": 76,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|9",
@@ -998,6 +1074,7 @@
     },
     {
       "eid": "e77",
+      "node": 77,
       "role": "link",
       "name": "23 days ago",
       "fp": "link|23 days ago|0",
@@ -1011,6 +1088,7 @@
     },
     {
       "eid": "e78",
+      "node": 78,
       "role": "link",
       "name": "Bild AI (YC W25) is hiring product and AI engineers",
       "fp": "link|Bild AI (YC W25) is hiring product and AI engineers|0",
@@ -1024,6 +1102,7 @@
     },
     {
       "eid": "e79",
+      "node": 79,
       "role": "link",
       "name": "bild.ai",
       "fp": "link|bild.ai|0",
@@ -1037,6 +1116,7 @@
     },
     {
       "eid": "e80",
+      "node": 80,
       "role": "link",
       "name": "23 days ago",
       "fp": "link|23 days ago|1",
@@ -1050,6 +1130,7 @@
     },
     {
       "eid": "e81",
+      "node": 81,
       "role": "link",
       "name": "Adentris (YC P25) Is Hiring",
       "fp": "link|Adentris (YC P25) Is Hiring|0",
@@ -1063,6 +1144,7 @@
     },
     {
       "eid": "e82",
+      "node": 82,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|10",
@@ -1076,6 +1158,7 @@
     },
     {
       "eid": "e83",
+      "node": 83,
       "role": "link",
       "name": "24 days ago",
       "fp": "link|24 days ago|0",
@@ -1089,6 +1172,7 @@
     },
     {
       "eid": "e84",
+      "node": 84,
       "role": "link",
       "name": "Proliferate (YC S25) Is Hiring",
       "fp": "link|Proliferate (YC S25) Is Hiring|0",
@@ -1102,6 +1186,7 @@
     },
     {
       "eid": "e85",
+      "node": 85,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|11",
@@ -1115,6 +1200,7 @@
     },
     {
       "eid": "e86",
+      "node": 86,
       "role": "link",
       "name": "25 days ago",
       "fp": "link|25 days ago|0",
@@ -1128,6 +1214,7 @@
     },
     {
       "eid": "e87",
+      "node": 87,
       "role": "link",
       "name": "Clara (YC P26) is hiring a growth engineer to bring AI doctors to market",
       "fp": "link|Clara (YC P26) is hiring a growth engineer to bring AI doctors to market|0",
@@ -1141,6 +1228,7 @@
     },
     {
       "eid": "e88",
+      "node": 88,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|12",
@@ -1154,6 +1242,7 @@
     },
     {
       "eid": "e89",
+      "node": 89,
       "role": "link",
       "name": "25 days ago",
       "fp": "link|25 days ago|1",
@@ -1167,6 +1256,7 @@
     },
     {
       "eid": "e90",
+      "node": 90,
       "role": "link",
       "name": "Autostep (YC P26) Is Hiring AI/Fullstack Engineers and a Chief of Staff",
       "fp": "link|Autostep (YC P26) Is Hiring AI/Fullstack Engineers and a Chief of Staff|0",
@@ -1180,6 +1270,7 @@
     },
     {
       "eid": "e91",
+      "node": 91,
       "role": "link",
       "name": "dover.com",
       "fp": "link|dover.com|0",
@@ -1193,6 +1284,7 @@
     },
     {
       "eid": "e92",
+      "node": 92,
       "role": "link",
       "name": "26 days ago",
       "fp": "link|26 days ago|0",
@@ -1206,6 +1298,7 @@
     },
     {
       "eid": "e93",
+      "node": 93,
       "role": "link",
       "name": "SalesPatriot (YC W25) Is Hiring Forward Deployed Engineers",
       "fp": "link|SalesPatriot (YC W25) Is Hiring Forward Deployed Engineers|0",
@@ -1219,6 +1312,7 @@
     },
     {
       "eid": "e94",
+      "node": 94,
       "role": "link",
       "name": "ycombinator.com",
       "fp": "link|ycombinator.com|13",
@@ -1232,6 +1326,7 @@
     },
     {
       "eid": "e95",
+      "node": 95,
       "role": "link",
       "name": "29 days ago",
       "fp": "link|29 days ago|0",
@@ -1245,6 +1340,7 @@
     },
     {
       "eid": "e96",
+      "node": 96,
       "role": "link",
       "name": "LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers",
       "fp": "link|LiteLLM (YC W23) Is Hiring – Rust / Performance Engineers|0",
@@ -1258,6 +1354,7 @@
     },
     {
       "eid": "e97",
+      "node": 97,
       "role": "link",
       "name": "jobs.ashbyhq.com",
       "fp": "link|jobs.ashbyhq.com|1",
@@ -1271,6 +1368,7 @@
     },
     {
       "eid": "e98",
+      "node": 98,
       "role": "link",
       "name": "29 days ago",
       "fp": "link|29 days ago|1",
@@ -1284,6 +1382,7 @@
     },
     {
       "eid": "e99",
+      "node": 99,
       "role": "link",
       "name": "More",
       "fp": "link|More|0",
@@ -1297,6 +1396,7 @@
     },
     {
       "eid": "e100",
+      "node": 100,
       "role": "link",
       "name": "Guidelines",
       "fp": "link|Guidelines|0",
@@ -1310,6 +1410,7 @@
     },
     {
       "eid": "e101",
+      "node": 101,
       "role": "link",
       "name": "FAQ",
       "fp": "link|FAQ|0",
@@ -1323,6 +1424,7 @@
     },
     {
       "eid": "e102",
+      "node": 102,
       "role": "link",
       "name": "Lists",
       "fp": "link|Lists|0",
@@ -1336,6 +1438,7 @@
     },
     {
       "eid": "e103",
+      "node": 103,
       "role": "link",
       "name": "API",
       "fp": "link|API|0",
@@ -1349,6 +1452,7 @@
     },
     {
       "eid": "e104",
+      "node": 104,
       "role": "link",
       "name": "Security",
       "fp": "link|Security|0",
@@ -1362,6 +1466,7 @@
     },
     {
       "eid": "e105",
+      "node": 105,
       "role": "link",
       "name": "Legal",
       "fp": "link|Legal|0",
@@ -1375,6 +1480,7 @@
     },
     {
       "eid": "e106",
+      "node": 106,
       "role": "link",
       "name": "Apply to YC",
       "fp": "link|Apply to YC|0",
@@ -1388,6 +1494,7 @@
     },
     {
       "eid": "e107",
+      "node": 107,
       "role": "link",
       "name": "Contact",
       "fp": "link|Contact|0",
@@ -1401,6 +1508,7 @@
     },
     {
       "eid": "e108",
+      "node": 108,
       "role": "textbox",
       "name": "q",
       "ctx": "form",
@@ -1415,6 +1523,6 @@
     }
   ],
   "text": "Hacker Newsnew | past | comments | ask | show | jobs | submit login These are jobs at YC startups. See more at ycombinat",
-  "contentHash": "qihbdr",
+  "contentHash": "1imibgg",
   "totalCandidates": 109
 }

@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "alert",
       "name": "npm tokens that bypass 2FA are being restricted — account changes (Aug 2026) and direct publishing (Jan 2027). Learn how",
       "fp": "alert|npm tokens that bypass 2FA are being restricted — account changes (Aug 2026) and direct publishing (Jan 2027). Learn how|0",
@@ -23,6 +24,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "link",
       "name": "Learn how to prepare for the npm bypass 2FA token deprecation",
       "fp": "link|Learn how to prepare for the npm bypass 2FA token deprecation|0",
@@ -36,6 +38,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "button",
       "name": "Close notification",
       "fp": "button|Close notification|0",
@@ -49,6 +52,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "link",
       "name": "skip to content",
       "ctx": "header",
@@ -63,6 +67,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "link",
       "name": "skip to package search",
       "ctx": "header",
@@ -77,6 +82,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "link",
       "name": "skip to sign in",
       "ctx": "header",
@@ -91,6 +97,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "button",
       "name": "Light mode — click for dark",
       "ctx": "header",
@@ -105,6 +112,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "link",
       "name": "Pro",
       "ctx": "nav: Product Navigation",
@@ -119,6 +127,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "link",
       "name": "Teams",
       "ctx": "nav: Product Navigation",
@@ -133,6 +142,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "link",
       "name": "Pricing",
       "ctx": "nav: Product Navigation",
@@ -147,6 +157,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "link",
       "name": "Documentation",
       "ctx": "nav: Product Navigation",
@@ -161,6 +172,7 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "link",
       "name": "Npm",
       "ctx": "header",
@@ -175,6 +187,7 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "combobox",
       "name": "Search packages",
       "value": "playwright",
@@ -191,6 +204,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "button",
       "name": "Clear search",
       "ctx": "form",
@@ -205,6 +219,7 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "button",
       "name": "Search",
       "ctx": "form",
@@ -219,6 +234,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "link",
       "name": "Sign Up",
       "ctx": "header",
@@ -233,6 +249,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "link",
       "name": "Sign In",
       "ctx": "header",
@@ -247,6 +264,7 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "disclosure",
       "name": "Sort by: Default. Press Enter to open dropdown",
       "ctx": "Search results",
@@ -261,6 +279,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "listbox",
       "name": "Sort options",
       "ctx": "Search results",
@@ -275,6 +294,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "option",
       "name": "Default, currently selected",
       "ctx": "Search results",
@@ -289,6 +309,7 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "option",
       "name": "Most downloaded this week",
       "ctx": "Search results",
@@ -303,6 +324,7 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "option",
       "name": "Most downloaded this month",
       "ctx": "Search results",
@@ -317,6 +339,7 @@
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "option",
       "name": "Most dependents",
       "ctx": "Search results",
@@ -331,6 +354,7 @@
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "option",
       "name": "Recently published",
       "ctx": "Search results",
@@ -345,6 +369,7 @@
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|0",
@@ -358,6 +383,7 @@
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|0",
@@ -371,6 +397,7 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|0",
@@ -384,6 +411,7 @@
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "link",
       "name": "@playwright/mcp",
       "fp": "link|@playwright/mcp|0",
@@ -397,6 +425,7 @@
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|1",
@@ -410,6 +439,7 @@
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|1",
@@ -423,6 +453,7 @@
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "link",
       "name": "@vitest/browser-playwright",
       "fp": "link|@vitest/browser-playwright|0",
@@ -436,6 +467,7 @@
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "link",
       "name": "browser",
       "fp": "link|browser|0",
@@ -449,6 +481,7 @@
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|1",
@@ -462,6 +495,7 @@
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "link",
       "name": "component",
       "fp": "link|component|0",
@@ -475,6 +509,7 @@
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "link",
       "name": "mocks",
       "fp": "link|mocks|0",
@@ -488,6 +523,7 @@
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "link",
       "name": "test",
       "fp": "link|test|0",
@@ -501,6 +537,7 @@
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "link",
       "name": "testing",
       "fp": "link|testing|0",
@@ -514,6 +551,7 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|2",
@@ -527,6 +565,7 @@
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|2",
@@ -540,6 +579,7 @@
     },
     {
       "eid": "e40",
+      "node": 40,
       "role": "link",
       "name": "allure-playwright",
       "fp": "link|allure-playwright|0",
@@ -553,6 +593,7 @@
     },
     {
       "eid": "e41",
+      "node": 41,
       "role": "link",
       "name": "allure",
       "fp": "link|allure|0",
@@ -566,6 +607,7 @@
     },
     {
       "eid": "e42",
+      "node": 42,
       "role": "link",
       "name": "html",
       "fp": "link|html|0",
@@ -579,6 +621,7 @@
     },
     {
       "eid": "e43",
+      "node": 43,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|2",
@@ -592,6 +635,7 @@
     },
     {
       "eid": "e44",
+      "node": 44,
       "role": "link",
       "name": "report",
       "fp": "link|report|0",
@@ -605,6 +649,7 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "link",
       "name": "reporter",
       "fp": "link|reporter|0",
@@ -618,6 +663,7 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "link",
       "name": "test",
       "fp": "link|test|1",
@@ -631,6 +677,7 @@
     },
     {
       "eid": "e47",
+      "node": 47,
       "role": "link",
       "name": "testing",
       "fp": "link|testing|1",
@@ -644,6 +691,7 @@
     },
     {
       "eid": "e48",
+      "node": 48,
       "role": "link",
       "name": "testops",
       "fp": "link|testops|0",
@@ -657,6 +705,7 @@
     },
     {
       "eid": "e49",
+      "node": 49,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|3",
@@ -670,6 +719,7 @@
     },
     {
       "eid": "e50",
+      "node": 50,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|3",
@@ -683,6 +733,7 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "link",
       "name": "@playwright/cli",
       "fp": "link|@playwright/cli|0",
@@ -696,6 +747,7 @@
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|4",
@@ -709,6 +761,7 @@
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|4",
@@ -722,6 +775,7 @@
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "link",
       "name": "eslint-plugin-playwright",
       "fp": "link|eslint-plugin-playwright|0",
@@ -735,6 +789,7 @@
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|5",
@@ -748,6 +803,7 @@
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|5",
@@ -761,6 +817,7 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "link",
       "name": "playwright-extra",
       "fp": "link|playwright-extra|0",
@@ -774,6 +831,7 @@
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|3",
@@ -787,6 +845,7 @@
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "link",
       "name": "playwright-extra",
       "fp": "link|playwright-extra|1",
@@ -800,6 +859,7 @@
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "link",
       "name": "stealth",
       "fp": "link|stealth|0",
@@ -813,6 +873,7 @@
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "link",
       "name": "recaptcha",
       "fp": "link|recaptcha|0",
@@ -826,6 +887,7 @@
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "link",
       "name": "user-preferences",
       "fp": "link|user-preferences|0",
@@ -839,6 +901,7 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "link",
       "name": "chrome",
       "fp": "link|chrome|0",
@@ -852,6 +915,7 @@
     },
     {
       "eid": "e64",
+      "node": 64,
       "role": "link",
       "name": "headless",
       "fp": "link|headless|0",
@@ -865,6 +929,7 @@
     },
     {
       "eid": "e65",
+      "node": 65,
       "role": "link",
       "name": "pupeteer",
       "fp": "link|pupeteer|0",
@@ -878,6 +943,7 @@
     },
     {
       "eid": "e66",
+      "node": 66,
       "role": "link",
       "name": "publisher berstend",
       "fp": "link|publisher berstend|0",
@@ -891,6 +957,7 @@
     },
     {
       "eid": "e67",
+      "node": 67,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|6",
@@ -904,6 +971,7 @@
     },
     {
       "eid": "e68",
+      "node": 68,
       "role": "link",
       "name": "playwright-bdd",
       "fp": "link|playwright-bdd|0",
@@ -917,6 +985,7 @@
     },
     {
       "eid": "e69",
+      "node": 69,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|4",
@@ -930,6 +999,7 @@
     },
     {
       "eid": "e70",
+      "node": 70,
       "role": "link",
       "name": "cucumber",
       "fp": "link|cucumber|0",
@@ -943,6 +1013,7 @@
     },
     {
       "eid": "e71",
+      "node": 71,
       "role": "link",
       "name": "gherkin",
       "fp": "link|gherkin|0",
@@ -956,6 +1027,7 @@
     },
     {
       "eid": "e72",
+      "node": 72,
       "role": "link",
       "name": "bdd",
       "fp": "link|bdd|0",
@@ -969,6 +1041,7 @@
     },
     {
       "eid": "e73",
+      "node": 73,
       "role": "link",
       "name": "testing",
       "fp": "link|testing|2",
@@ -982,6 +1055,7 @@
     },
     {
       "eid": "e74",
+      "node": 74,
       "role": "link",
       "name": "e2e",
       "fp": "link|e2e|0",
@@ -995,6 +1069,7 @@
     },
     {
       "eid": "e75",
+      "node": 75,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|6",
@@ -1008,6 +1083,7 @@
     },
     {
       "eid": "e76",
+      "node": 76,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|7",
@@ -1021,6 +1097,7 @@
     },
     {
       "eid": "e77",
+      "node": 77,
       "role": "link",
       "name": "playwright-lighthouse",
       "fp": "link|playwright-lighthouse|0",
@@ -1034,6 +1111,7 @@
     },
     {
       "eid": "e78",
+      "node": 78,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|5",
@@ -1047,6 +1125,7 @@
     },
     {
       "eid": "e79",
+      "node": 79,
       "role": "link",
       "name": "playwright-lighthouse",
       "fp": "link|playwright-lighthouse|1",
@@ -1060,6 +1139,7 @@
     },
     {
       "eid": "e80",
+      "node": 80,
       "role": "link",
       "name": "playwright-audit",
       "fp": "link|playwright-audit|0",
@@ -1073,6 +1153,7 @@
     },
     {
       "eid": "e81",
+      "node": 81,
       "role": "link",
       "name": "publisher abhinaba-ghosh",
       "fp": "link|publisher abhinaba-ghosh|0",
@@ -1086,6 +1167,7 @@
     },
     {
       "eid": "e82",
+      "node": 82,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|8",
@@ -1099,6 +1181,7 @@
     },
     {
       "eid": "e83",
+      "node": 83,
       "role": "link",
       "name": "@playwright/browser-chromium",
       "fp": "link|@playwright/browser-chromium|0",
@@ -1112,6 +1195,7 @@
     },
     {
       "eid": "e84",
+      "node": 84,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|7",
@@ -1125,6 +1209,7 @@
     },
     {
       "eid": "e85",
+      "node": 85,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|9",
@@ -1138,6 +1223,7 @@
     },
     {
       "eid": "e86",
+      "node": 86,
       "role": "link",
       "name": "axe-playwright",
       "fp": "link|axe-playwright|0",
@@ -1151,6 +1237,7 @@
     },
     {
       "eid": "e87",
+      "node": 87,
       "role": "link",
       "name": "a11y",
       "fp": "link|a11y|0",
@@ -1164,6 +1251,7 @@
     },
     {
       "eid": "e88",
+      "node": 88,
       "role": "link",
       "name": "accessibility",
       "fp": "link|accessibility|0",
@@ -1177,6 +1265,7 @@
     },
     {
       "eid": "e89",
+      "node": 89,
       "role": "link",
       "name": "axe",
       "fp": "link|axe|0",
@@ -1190,6 +1279,7 @@
     },
     {
       "eid": "e90",
+      "node": 90,
       "role": "link",
       "name": "axe-core",
       "fp": "link|axe-core|0",
@@ -1203,6 +1293,7 @@
     },
     {
       "eid": "e91",
+      "node": 91,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|6",
@@ -1216,6 +1307,7 @@
     },
     {
       "eid": "e92",
+      "node": 92,
       "role": "link",
       "name": "publisher abhinaba-ghosh",
       "fp": "link|publisher abhinaba-ghosh|1",
@@ -1229,6 +1321,7 @@
     },
     {
       "eid": "e93",
+      "node": 93,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|10",
@@ -1242,6 +1335,7 @@
     },
     {
       "eid": "e94",
+      "node": 94,
       "role": "link",
       "name": "@msw/playwright",
       "fp": "link|@msw/playwright|0",
@@ -1255,6 +1349,7 @@
     },
     {
       "eid": "e95",
+      "node": 95,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|7",
@@ -1268,6 +1363,7 @@
     },
     {
       "eid": "e96",
+      "node": 96,
       "role": "link",
       "name": "api",
       "fp": "link|api|0",
@@ -1281,6 +1377,7 @@
     },
     {
       "eid": "e97",
+      "node": 97,
       "role": "link",
       "name": "mock",
       "fp": "link|mock|0",
@@ -1294,6 +1391,7 @@
     },
     {
       "eid": "e98",
+      "node": 98,
       "role": "link",
       "name": "msw",
       "fp": "link|msw|0",
@@ -1307,6 +1405,7 @@
     },
     {
       "eid": "e99",
+      "node": 99,
       "role": "link",
       "name": "request",
       "fp": "link|request|0",
@@ -1320,6 +1419,7 @@
     },
     {
       "eid": "e100",
+      "node": 100,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|8",
@@ -1333,6 +1433,7 @@
     },
     {
       "eid": "e101",
+      "node": 101,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|11",
@@ -1346,6 +1447,7 @@
     },
     {
       "eid": "e102",
+      "node": 102,
       "role": "link",
       "name": "playwright-qase-reporter",
       "fp": "link|playwright-qase-reporter|0",
@@ -1359,6 +1461,7 @@
     },
     {
       "eid": "e103",
+      "node": 103,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|9",
@@ -1372,6 +1475,7 @@
     },
     {
       "eid": "e104",
+      "node": 104,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|12",
@@ -1385,6 +1489,7 @@
     },
     {
       "eid": "e105",
+      "node": 105,
       "role": "link",
       "name": "@playwright/browser-webkit",
       "fp": "link|@playwright/browser-webkit|0",
@@ -1398,6 +1503,7 @@
     },
     {
       "eid": "e106",
+      "node": 106,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|10",
@@ -1411,6 +1517,7 @@
     },
     {
       "eid": "e107",
+      "node": 107,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|13",
@@ -1424,6 +1531,7 @@
     },
     {
       "eid": "e108",
+      "node": 108,
       "role": "link",
       "name": "@azure/playwright",
       "fp": "link|@azure/playwright|0",
@@ -1437,6 +1545,7 @@
     },
     {
       "eid": "e109",
+      "node": 109,
       "role": "link",
       "name": "azure",
       "fp": "link|azure|0",
@@ -1450,6 +1559,7 @@
     },
     {
       "eid": "e110",
+      "node": 110,
       "role": "link",
       "name": "cloud",
       "fp": "link|cloud|0",
@@ -1463,6 +1573,7 @@
     },
     {
       "eid": "e111",
+      "node": 111,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|8",
@@ -1476,6 +1587,7 @@
     },
     {
       "eid": "e112",
+      "node": 112,
       "role": "link",
       "name": "playwright workspaces",
       "fp": "link|playwright workspaces|0",
@@ -1489,6 +1601,7 @@
     },
     {
       "eid": "e113",
+      "node": 113,
       "role": "link",
       "name": "publisher microsoft1es",
       "fp": "link|publisher microsoft1es|0",
@@ -1502,6 +1615,7 @@
     },
     {
       "eid": "e114",
+      "node": 114,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|14",
@@ -1515,6 +1629,7 @@
     },
     {
       "eid": "e115",
+      "node": 115,
       "role": "link",
       "name": "@argos-ci/playwright",
       "fp": "link|@argos-ci/playwright|0",
@@ -1528,6 +1643,7 @@
     },
     {
       "eid": "e116",
+      "node": 116,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|9",
@@ -1541,6 +1657,7 @@
     },
     {
       "eid": "e117",
+      "node": 117,
       "role": "link",
       "name": "playwright-reporter",
       "fp": "link|playwright-reporter|0",
@@ -1554,6 +1671,7 @@
     },
     {
       "eid": "e118",
+      "node": 118,
       "role": "link",
       "name": "reporter",
       "fp": "link|reporter|1",
@@ -1567,6 +1685,7 @@
     },
     {
       "eid": "e119",
+      "node": 119,
       "role": "link",
       "name": "playwright-plugin",
       "fp": "link|playwright-plugin|0",
@@ -1580,6 +1699,7 @@
     },
     {
       "eid": "e120",
+      "node": 120,
       "role": "link",
       "name": "argos",
       "fp": "link|argos|0",
@@ -1593,6 +1713,7 @@
     },
     {
       "eid": "e121",
+      "node": 121,
       "role": "link",
       "name": "testing",
       "fp": "link|testing|3",
@@ -1606,6 +1727,7 @@
     },
     {
       "eid": "e122",
+      "node": 122,
       "role": "link",
       "name": "visual testing",
       "fp": "link|visual testing|0",
@@ -1619,6 +1741,7 @@
     },
     {
       "eid": "e123",
+      "node": 123,
       "role": "link",
       "name": "regression",
       "fp": "link|regression|0",
@@ -1632,6 +1755,7 @@
     },
     {
       "eid": "e124",
+      "node": 124,
       "role": "link",
       "name": "visual regression",
       "fp": "link|visual regression|0",
@@ -1645,6 +1769,7 @@
     },
     {
       "eid": "e125",
+      "node": 125,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|11",
@@ -1658,6 +1783,7 @@
     },
     {
       "eid": "e126",
+      "node": 126,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|15",
@@ -1671,6 +1797,7 @@
     },
     {
       "eid": "e127",
+      "node": 127,
       "role": "link",
       "name": "@reportportal/agent-js-playwright",
       "fp": "link|@reportportal/agent-js-playwright|0",
@@ -1684,6 +1811,7 @@
     },
     {
       "eid": "e128",
+      "node": 128,
       "role": "link",
       "name": "epam",
       "fp": "link|epam|0",
@@ -1697,6 +1825,7 @@
     },
     {
       "eid": "e129",
+      "node": 129,
       "role": "link",
       "name": "reports",
       "fp": "link|reports|0",
@@ -1710,6 +1839,7 @@
     },
     {
       "eid": "e130",
+      "node": 130,
       "role": "link",
       "name": "portal",
       "fp": "link|portal|0",
@@ -1723,6 +1853,7 @@
     },
     {
       "eid": "e131",
+      "node": 131,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|10",
@@ -1736,6 +1867,7 @@
     },
     {
       "eid": "e132",
+      "node": 132,
       "role": "link",
       "name": "reporters",
       "fp": "link|reporters|0",
@@ -1749,6 +1881,7 @@
     },
     {
       "eid": "e133",
+      "node": 133,
       "role": "link",
       "name": "reportportal",
       "fp": "link|reportportal|0",
@@ -1762,6 +1895,7 @@
     },
     {
       "eid": "e134",
+      "node": 134,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|12",
@@ -1775,6 +1909,7 @@
     },
     {
       "eid": "e135",
+      "node": 135,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|16",
@@ -1788,6 +1923,7 @@
     },
     {
       "eid": "e136",
+      "node": 136,
       "role": "link",
       "name": "@chromatic-com/playwright",
       "fp": "link|@chromatic-com/playwright|0",
@@ -1801,6 +1937,7 @@
     },
     {
       "eid": "e137",
+      "node": 137,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|13",
@@ -1814,6 +1951,7 @@
     },
     {
       "eid": "e138",
+      "node": 138,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|17",
@@ -1827,6 +1965,7 @@
     },
     {
       "eid": "e139",
+      "node": 139,
       "role": "link",
       "name": "playwright-teamcity-reporter",
       "fp": "link|playwright-teamcity-reporter|0",
@@ -1840,6 +1979,7 @@
     },
     {
       "eid": "e140",
+      "node": 140,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|11",
@@ -1853,6 +1993,7 @@
     },
     {
       "eid": "e141",
+      "node": 141,
       "role": "link",
       "name": "teamcity",
       "fp": "link|teamcity|0",
@@ -1866,6 +2007,7 @@
     },
     {
       "eid": "e142",
+      "node": 142,
       "role": "link",
       "name": "reporter",
       "fp": "link|reporter|2",
@@ -1879,6 +2021,7 @@
     },
     {
       "eid": "e143",
+      "node": 143,
       "role": "link",
       "name": "publisher artemrudenko",
       "fp": "link|publisher artemrudenko|0",
@@ -1892,6 +2035,7 @@
     },
     {
       "eid": "e144",
+      "node": 144,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|18",
@@ -1905,6 +2049,7 @@
     },
     {
       "eid": "e145",
+      "node": 145,
       "role": "link",
       "name": "@currents/playwright",
       "fp": "link|@currents/playwright|0",
@@ -1918,6 +2063,7 @@
     },
     {
       "eid": "e146",
+      "node": 146,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|12",
@@ -1931,6 +2077,7 @@
     },
     {
       "eid": "e147",
+      "node": 147,
       "role": "link",
       "name": "playwright dashboard",
       "fp": "link|playwright dashboard|0",
@@ -1944,6 +2091,7 @@
     },
     {
       "eid": "e148",
+      "node": 148,
       "role": "link",
       "name": "cloud dashboard",
       "fp": "link|cloud dashboard|0",
@@ -1957,6 +2105,7 @@
     },
     {
       "eid": "e149",
+      "node": 149,
       "role": "link",
       "name": "reporter",
       "fp": "link|reporter|3",
@@ -1970,6 +2119,7 @@
     },
     {
       "eid": "e150",
+      "node": 150,
       "role": "link",
       "name": "currents",
       "fp": "link|currents|0",
@@ -1983,6 +2133,7 @@
     },
     {
       "eid": "e151",
+      "node": 151,
       "role": "link",
       "name": "tests reporter",
       "fp": "link|tests reporter|0",
@@ -1996,6 +2147,7 @@
     },
     {
       "eid": "e152",
+      "node": 152,
       "role": "link",
       "name": "sorry cypress",
       "fp": "link|sorry cypress|0",
@@ -2009,6 +2161,7 @@
     },
     {
       "eid": "e153",
+      "node": 153,
       "role": "link",
       "name": "ci",
       "fp": "link|ci|0",
@@ -2022,6 +2175,7 @@
     },
     {
       "eid": "e154",
+      "node": 154,
       "role": "link",
       "name": "publisher GitHub Actions",
       "fp": "link|publisher GitHub Actions|14",
@@ -2035,6 +2189,7 @@
     },
     {
       "eid": "e155",
+      "node": 155,
       "role": "img",
       "name": "Download statistics",
       "fp": "img|Download statistics|19",
@@ -2048,6 +2203,7 @@
     },
     {
       "eid": "e156",
+      "node": 156,
       "role": "navigation",
       "name": "Pagination Navigation",
       "ctx": "nav: Pagination Navigation",
@@ -2062,6 +2218,7 @@
     },
     {
       "eid": "e157",
+      "node": 157,
       "role": "link",
       "name": "Current page, page 1",
       "ctx": "nav: Pagination Navigation",
@@ -2076,6 +2233,7 @@
     },
     {
       "eid": "e158",
+      "node": 158,
       "role": "link",
       "name": "Go to page 2",
       "ctx": "nav: Pagination Navigation",
@@ -2090,6 +2248,7 @@
     },
     {
       "eid": "e159",
+      "node": 159,
       "role": "link",
       "name": "Go to page 3",
       "ctx": "nav: Pagination Navigation",
@@ -2104,6 +2263,7 @@
     },
     {
       "eid": "e160",
+      "node": 160,
       "role": "link",
       "name": "Go to page 50",
       "ctx": "nav: Pagination Navigation",
@@ -2118,6 +2278,7 @@
     },
     {
       "eid": "e161",
+      "node": 161,
       "role": "link",
       "name": "Next page",
       "ctx": "nav: Pagination Navigation",
@@ -2132,6 +2293,7 @@
     },
     {
       "eid": "e162",
+      "node": 162,
       "role": "link",
       "name": "Visit npm GitHub page",
       "ctx": "footer",
@@ -2146,6 +2308,7 @@
     },
     {
       "eid": "e163",
+      "node": 163,
       "role": "link",
       "name": "GitHub",
       "ctx": "footer",
@@ -2160,6 +2323,7 @@
     },
     {
       "eid": "e164",
+      "node": 164,
       "role": "link",
       "name": "Help",
       "ctx": "footer",
@@ -2174,6 +2338,7 @@
     },
     {
       "eid": "e165",
+      "node": 165,
       "role": "link",
       "name": "Advisories",
       "ctx": "footer",
@@ -2188,6 +2353,7 @@
     },
     {
       "eid": "e166",
+      "node": 166,
       "role": "link",
       "name": "Status",
       "ctx": "footer",
@@ -2202,6 +2368,7 @@
     },
     {
       "eid": "e167",
+      "node": 167,
       "role": "link",
       "name": "Contact npm",
       "ctx": "footer",
@@ -2216,6 +2383,7 @@
     },
     {
       "eid": "e168",
+      "node": 168,
       "role": "link",
       "name": "About",
       "ctx": "footer",
@@ -2230,6 +2398,7 @@
     },
     {
       "eid": "e169",
+      "node": 169,
       "role": "link",
       "name": "Blog",
       "ctx": "footer",
@@ -2244,6 +2413,7 @@
     },
     {
       "eid": "e170",
+      "node": 170,
       "role": "link",
       "name": "Press",
       "ctx": "footer",
@@ -2258,6 +2428,7 @@
     },
     {
       "eid": "e171",
+      "node": 171,
       "role": "link",
       "name": "Policies",
       "ctx": "footer",
@@ -2272,6 +2443,7 @@
     },
     {
       "eid": "e172",
+      "node": 172,
       "role": "link",
       "name": "Terms of Use",
       "ctx": "footer",
@@ -2286,6 +2458,7 @@
     },
     {
       "eid": "e173",
+      "node": 173,
       "role": "link",
       "name": "Code of Conduct",
       "ctx": "footer",
@@ -2300,6 +2473,7 @@
     },
     {
       "eid": "e174",
+      "node": 174,
       "role": "link",
       "name": "Privacy",
       "ctx": "footer",

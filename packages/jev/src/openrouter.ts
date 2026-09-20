@@ -12,13 +12,17 @@ interface WireAnswer {
   choice?: string;
   score?: number;
   probabilities?: Record<string, number>;
+  confidence?: number;
 }
 
 function fromWire(a: WireAnswer): Answer {
-  if (a.type === "noul") return { type: "boolean", probability: a.noul ?? 0 };
+  // `confidence` is a separate signal from the distribution and must be carried
+  // through — dropping it discards the model's own read on its decision.
+  const conf = a.confidence !== undefined ? { confidence: a.confidence } : {};
+  if (a.type === "noul") return { type: "boolean", probability: a.noul ?? 0, ...conf };
   if (a.type === "choice")
-    return { type: "choice", choice: a.choice ?? "", probabilities: a.probabilities };
-  return { type: "score", score: a.score ?? 0, probabilities: a.probabilities };
+    return { type: "choice", choice: a.choice ?? "", probabilities: a.probabilities, ...conf };
+  return { type: "score", score: a.score ?? 0, probabilities: a.probabilities, ...conf };
 }
 
 export function openrouter(opts: {

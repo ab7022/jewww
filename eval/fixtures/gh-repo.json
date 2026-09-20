@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "banner",
       "name": "Navigation Menu Platform Solutions Resources Open Source Enterprise Pricing Sign in Sign up",
       "ctx": "header",
@@ -24,6 +25,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "link",
       "name": "Homepage",
       "ctx": "header",
@@ -38,6 +40,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "button",
       "name": "Platform",
       "ctx": "nav: Global",
@@ -53,6 +56,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "button",
       "name": "Solutions",
       "ctx": "nav: Global",
@@ -68,6 +72,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "button",
       "name": "Resources",
       "ctx": "nav: Global",
@@ -83,6 +88,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "button",
       "name": "Open Source",
       "ctx": "nav: Global",
@@ -98,6 +104,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "button",
       "name": "Enterprise",
       "ctx": "nav: Global",
@@ -113,6 +120,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "link",
       "name": "Pricing",
       "ctx": "nav: Global",
@@ -127,6 +135,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "button",
       "name": "Search or jump to, type / to search",
       "ctx": "header",
@@ -142,6 +151,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "link",
       "name": "Sign in",
       "ctx": "header",
@@ -156,6 +166,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "link",
       "name": "Sign in",
       "ctx": "header",
@@ -170,6 +181,7 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "button",
       "name": "Appearance settings",
       "ctx": "header",
@@ -184,6 +196,7 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "link",
       "name": "microsoft",
       "fp": "link|microsoft|0",
@@ -197,6 +210,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "link",
       "name": "playwright",
       "fp": "link|playwright|0",
@@ -210,6 +224,7 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "link",
       "name": "You must be signed in to change notification settings",
       "fp": "link|You must be signed in to change notification settings|0",
@@ -223,6 +238,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "link",
       "name": "Fork 6.5k",
       "fp": "link|Fork 6.5k|0",
@@ -236,6 +252,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "link",
       "name": "You must be signed in to star a repository",
       "fp": "link|You must be signed in to star a repository|0",
@@ -249,6 +266,7 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "link",
       "name": "Code",
       "ctx": "nav: Repository",
@@ -263,6 +281,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "link",
       "name": "Issues 185",
       "ctx": "nav: Repository",
@@ -277,6 +296,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "link",
       "name": "Pull requests 34",
       "ctx": "nav: Repository",
@@ -291,6 +311,7 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "link",
       "name": "Actions",
       "ctx": "nav: Repository",
@@ -305,6 +326,7 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "link",
       "name": "Security and quality",
       "ctx": "nav: Repository",
@@ -319,6 +341,7 @@
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "link",
       "name": "Insights",
       "ctx": "nav: Repository",
@@ -333,6 +356,7 @@
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "button",
       "name": "main branch",
       "st": "collapsed",
@@ -347,6 +371,7 @@
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "link",
       "name": "178 Branches",
       "fp": "link|178 Branches|0",
@@ -360,6 +385,7 @@
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "link",
       "name": "166 Tags",
       "fp": "link|166 Tags|0",
@@ -373,6 +399,7 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "combobox",
       "name": "Go to file",
       "st": "collapsed",
@@ -387,6 +414,7 @@
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "button",
       "name": "Go to file",
       "st": "collapsed",
@@ -401,6 +429,7 @@
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "link",
       "name": "yury-s",
       "ctx": "Latest commit",
@@ -415,6 +444,7 @@
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "link",
       "name": "commits by yury-s",
       "ctx": "Latest commit",
@@ -429,6 +459,7 @@
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "link",
       "name": "chore(coverage): istanbul instrumentation for the trace viewer and ht…",
       "ctx": "Latest commit",
@@ -443,6 +474,7 @@
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "button",
       "name": "Open commit details",
       "ctx": "Latest commit",
@@ -458,6 +490,7 @@
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "button",
       "name": "failure",
       "ctx": "Latest commit",
@@ -472,6 +505,7 @@
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "link",
       "name": "Commit 07f1a61",
       "ctx": "Latest commit",
@@ -486,6 +520,7 @@
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "link",
       "name": "17,916 Commits",
       "ctx": "History",
@@ -500,6 +535,7 @@
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "link",
       "name": ".azure-pipelines, (Directory)",
       "fp": "link|.azure-pipelines, (Directory)|0",
@@ -513,6 +549,7 @@
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "link",
       "name": "devops: restore npm publishing from GitHub Actions (#42550)",
       "fp": "link|devops: restore npm publishing from GitHub Actions (#42550)|0",
@@ -526,6 +563,7 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "link",
       "name": "#42550",
       "fp": "link|#42550|0",
@@ -539,6 +577,7 @@
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "link",
       "name": "devops: restore npm publishing from GitHub Actions (#42550)",
       "fp": "link|devops: restore npm publishing from GitHub Actions (#42550)|1",
@@ -552,6 +591,7 @@
     },
     {
       "eid": "e40",
+      "node": 40,
       "role": "link",
       "name": ".claude/skills, (Directory)",
       "fp": "link|.claude/skills, (Directory)|0",
@@ -565,6 +605,7 @@
     },
     {
       "eid": "e41",
+      "node": 41,
       "role": "link",
       "name": "chore(skills): add cherry-pick skill for release branches (#42667)",
       "fp": "link|chore(skills): add cherry-pick skill for release branches (#42667)|0",
@@ -578,6 +619,7 @@
     },
     {
       "eid": "e42",
+      "node": 42,
       "role": "link",
       "name": "#42667",
       "fp": "link|#42667|0",
@@ -591,6 +633,7 @@
     },
     {
       "eid": "e43",
+      "node": 43,
       "role": "link",
       "name": "chore(skills): add cherry-pick skill for release branches (#42667)",
       "fp": "link|chore(skills): add cherry-pick skill for release branches (#42667)|1",
@@ -604,6 +647,7 @@
     },
     {
       "eid": "e44",
+      "node": 44,
       "role": "link",
       "name": ".github, (Directory)",
       "fp": "link|.github, (Directory)|0",
@@ -617,6 +661,7 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "link",
       "name": "devops(bidi): fix publishing when a single csv report is uploaded (#42764)",
       "fp": "link|devops(bidi): fix publishing when a single csv report is uploaded (#42764)|0",
@@ -630,6 +675,7 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "link",
       "name": "#4…",
       "fp": "link|#4…|0",
@@ -643,6 +689,7 @@
     },
     {
       "eid": "e47",
+      "node": 47,
       "role": "link",
       "name": "browser_patches, (Directory)",
       "fp": "link|browser_patches, (Directory)|0",
@@ -656,6 +703,7 @@
     },
     {
       "eid": "e48",
+      "node": 48,
       "role": "link",
       "name": "feat(firefox): roll to r1549 (#42767)",
       "fp": "link|feat(firefox): roll to r1549 (#42767)|0",
@@ -669,6 +717,7 @@
     },
     {
       "eid": "e49",
+      "node": 49,
       "role": "link",
       "name": "#42767",
       "fp": "link|#42767|0",
@@ -682,6 +731,7 @@
     },
     {
       "eid": "e50",
+      "node": 50,
       "role": "link",
       "name": "feat(firefox): roll to r1549 (#42767)",
       "fp": "link|feat(firefox): roll to r1549 (#42767)|1",
@@ -695,6 +745,7 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "link",
       "name": "docs/src, (Directory)",
       "fp": "link|docs/src, (Directory)|0",
@@ -708,6 +759,7 @@
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "link",
       "name": "feat(mcp): offer page-registered WebMCP tools as MCP tools (#42671)",
       "fp": "link|feat(mcp): offer page-registered WebMCP tools as MCP tools (#42671)|0",
@@ -721,6 +773,7 @@
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "link",
       "name": "#42671",
       "fp": "link|#42671|0",
@@ -734,6 +787,7 @@
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "link",
       "name": "feat(mcp): offer page-registered WebMCP tools as MCP tools (#42671)",
       "fp": "link|feat(mcp): offer page-registered WebMCP tools as MCP tools (#42671)|1",
@@ -747,6 +801,7 @@
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "link",
       "name": "examples, (Directory)",
       "fp": "link|examples, (Directory)|0",
@@ -760,6 +815,7 @@
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "link",
       "name": "test(components): restore web and html-reporter component tests (#41889)",
       "fp": "link|test(components): restore web and html-reporter component tests (#41889)|0",
@@ -773,6 +829,7 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "link",
       "name": "#41889",
       "fp": "link|#41889|0",
@@ -786,6 +843,7 @@
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "link",
       "name": "test(components): restore web and html-reporter component tests (#41889)",
       "fp": "link|test(components): restore web and html-reporter component tests (#41889)|1",
@@ -799,6 +857,7 @@
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "link",
       "name": "packages, (Directory)",
       "fp": "link|packages, (Directory)|0",
@@ -812,6 +871,7 @@
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "link",
       "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
       "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|0",
@@ -825,6 +885,7 @@
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "link",
       "name": "tests, (Directory)",
       "fp": "link|tests, (Directory)|0",
@@ -838,6 +899,7 @@
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "link",
       "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
       "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|1",
@@ -851,6 +913,7 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "link",
       "name": "utils, (Directory)",
       "fp": "link|utils, (Directory)|0",
@@ -864,6 +927,7 @@
     },
     {
       "eid": "e64",
+      "node": 64,
       "role": "link",
       "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
       "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|2",
@@ -877,6 +941,7 @@
     },
     {
       "eid": "e65",
+      "node": 65,
       "role": "link",
       "name": ".editorconfig, (File)",
       "fp": "link|.editorconfig, (File)|0",
@@ -890,6 +955,7 @@
     },
     {
       "eid": "e66",
+      "node": 66,
       "role": "link",
       "name": "Initial commit",
       "fp": "link|Initial commit|0",
@@ -903,6 +969,7 @@
     },
     {
       "eid": "e67",
+      "node": 67,
       "role": "link",
       "name": ".gitattributes, (File)",
       "fp": "link|.gitattributes, (File)|0",
@@ -916,6 +983,7 @@
     },
     {
       "eid": "e68",
+      "node": 68,
       "role": "link",
       "name": "feat: implement a new image comparison function (#19166) This patch implements a new image comparison function, codename",
       "fp": "link|feat: implement a new image comparison function (#19166) This patch implements a new image comparison function, codename|0",
@@ -929,6 +997,7 @@
     },
     {
       "eid": "e69",
+      "node": 69,
       "role": "link",
       "name": "#19166",
       "fp": "link|#19166|0",
@@ -942,6 +1011,7 @@
     },
     {
       "eid": "e70",
+      "node": 70,
       "role": "link",
       "name": "feat: implement a new image comparison function (#19166) This patch implements a new image comparison function, codename",
       "fp": "link|feat: implement a new image comparison function (#19166) This patch implements a new image comparison function, codename|1",
@@ -955,6 +1025,7 @@
     },
     {
       "eid": "e71",
+      "node": 71,
       "role": "link",
       "name": ".gitignore, (File)",
       "fp": "link|.gitignore, (File)|0",
@@ -968,6 +1039,7 @@
     },
     {
       "eid": "e72",
+      "node": 72,
       "role": "link",
       "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
       "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|3",
@@ -981,6 +1053,7 @@
     },
     {
       "eid": "e73",
+      "node": 73,
       "role": "link",
       "name": "CLAUDE.md, (File)",
       "fp": "link|CLAUDE.md, (File)|0",
@@ -994,6 +1067,7 @@
     },
     {
       "eid": "e74",
+      "node": 74,
       "role": "link",
       "name": "chore: remove experimental component testing (#42168)",
       "fp": "link|chore: remove experimental component testing (#42168)|0",
@@ -1007,6 +1081,7 @@
     },
     {
       "eid": "e75",
+      "node": 75,
       "role": "link",
       "name": "#42168",
       "fp": "link|#42168|0",
@@ -1020,6 +1095,7 @@
     },
     {
       "eid": "e76",
+      "node": 76,
       "role": "link",
       "name": "chore: remove experimental component testing (#42168)",
       "fp": "link|chore: remove experimental component testing (#42168)|1",
@@ -1033,6 +1109,7 @@
     },
     {
       "eid": "e77",
+      "node": 77,
       "role": "link",
       "name": "CODE_OF_CONDUCT.md, (File)",
       "fp": "link|CODE_OF_CONDUCT.md, (File)|0",
@@ -1046,6 +1123,7 @@
     },
     {
       "eid": "e78",
+      "node": 78,
       "role": "link",
       "name": "Revert \"chore: rework the crlf in md fix\" This reverts commit b5914e0982091b5138d11d23514470acede33ede.",
       "fp": "link|Revert \"chore: rework the crlf in md fix\" This reverts commit b5914e0982091b5138d11d23514470acede33ede.|0",
@@ -1059,6 +1137,7 @@
     },
     {
       "eid": "e79",
+      "node": 79,
       "role": "link",
       "name": "CONTRIBUTING.md, (File)",
       "fp": "link|CONTRIBUTING.md, (File)|0",
@@ -1072,6 +1151,7 @@
     },
     {
       "eid": "e80",
+      "node": 80,
       "role": "link",
       "name": "chore: update contributors' guide (#40541)",
       "fp": "link|chore: update contributors' guide (#40541)|0",
@@ -1085,6 +1165,7 @@
     },
     {
       "eid": "e81",
+      "node": 81,
       "role": "link",
       "name": "#40541",
       "fp": "link|#40541|0",
@@ -1098,6 +1179,7 @@
     },
     {
       "eid": "e82",
+      "node": 82,
       "role": "link",
       "name": "chore: update contributors' guide (#40541)",
       "fp": "link|chore: update contributors' guide (#40541)|1",
@@ -1111,6 +1193,7 @@
     },
     {
       "eid": "e83",
+      "node": 83,
       "role": "link",
       "name": "FILING_ISSUES.md, (File)",
       "fp": "link|FILING_ISSUES.md, (File)|0",
@@ -1124,6 +1207,7 @@
     },
     {
       "eid": "e84",
+      "node": 84,
       "role": "link",
       "name": "docs: issue guide (#34457)",
       "fp": "link|docs: issue guide (#34457)|0",
@@ -1137,6 +1221,7 @@
     },
     {
       "eid": "e85",
+      "node": 85,
       "role": "link",
       "name": "#34457",
       "fp": "link|#34457|0",
@@ -1150,6 +1235,7 @@
     },
     {
       "eid": "e86",
+      "node": 86,
       "role": "link",
       "name": "docs: issue guide (#34457)",
       "fp": "link|docs: issue guide (#34457)|1",
@@ -1163,6 +1249,7 @@
     },
     {
       "eid": "e87",
+      "node": 87,
       "role": "link",
       "name": "LICENSE, (File)",
       "fp": "link|LICENSE, (File)|0",
@@ -1176,6 +1263,7 @@
     },
     {
       "eid": "e88",
+      "node": 88,
       "role": "link",
       "name": "chore(license): use Apache 2.0 (#389)",
       "fp": "link|chore(license): use Apache 2.0 (#389)|0",
@@ -1189,6 +1277,7 @@
     },
     {
       "eid": "e89",
+      "node": 89,
       "role": "link",
       "name": "#389",
       "fp": "link|#389|0",
@@ -1202,6 +1291,7 @@
     },
     {
       "eid": "e90",
+      "node": 90,
       "role": "link",
       "name": "chore(license): use Apache 2.0 (#389)",
       "fp": "link|chore(license): use Apache 2.0 (#389)|1",
@@ -1215,6 +1305,7 @@
     },
     {
       "eid": "e91",
+      "node": 91,
       "role": "link",
       "name": "NOTICE, (File)",
       "fp": "link|NOTICE, (File)|0",
@@ -1228,6 +1319,7 @@
     },
     {
       "eid": "e92",
+      "node": 92,
       "role": "link",
       "name": "chore(license): add NOTICE (#309)",
       "fp": "link|chore(license): add NOTICE (#309)|0",
@@ -1241,6 +1333,7 @@
     },
     {
       "eid": "e93",
+      "node": 93,
       "role": "link",
       "name": "#309",
       "fp": "link|#309|0",
@@ -1254,6 +1347,7 @@
     },
     {
       "eid": "e94",
+      "node": 94,
       "role": "link",
       "name": "chore(license): add NOTICE (#309)",
       "fp": "link|chore(license): add NOTICE (#309)|1",
@@ -1267,6 +1361,7 @@
     },
     {
       "eid": "e95",
+      "node": 95,
       "role": "link",
       "name": "README.md, (File)",
       "fp": "link|README.md, (File)|0",
@@ -1280,6 +1375,7 @@
     },
     {
       "eid": "e96",
+      "node": 96,
       "role": "link",
       "name": "feat(firefox): roll to r1549 (#42767)",
       "fp": "link|feat(firefox): roll to r1549 (#42767)|2",
@@ -1293,6 +1389,7 @@
     },
     {
       "eid": "e97",
+      "node": 97,
       "role": "link",
       "name": "#42767",
       "fp": "link|#42767|1",
@@ -1306,6 +1403,7 @@
     },
     {
       "eid": "e98",
+      "node": 98,
       "role": "link",
       "name": "feat(firefox): roll to r1549 (#42767)",
       "fp": "link|feat(firefox): roll to r1549 (#42767)|3",
@@ -1319,6 +1417,7 @@
     },
     {
       "eid": "e99",
+      "node": 99,
       "role": "link",
       "name": "SECURITY.md, (File)",
       "fp": "link|SECURITY.md, (File)|0",
@@ -1332,6 +1431,7 @@
     },
     {
       "eid": "e100",
+      "node": 100,
       "role": "link",
       "name": "chore(policy files): Update SECURITY.md to V0.0.9 (#31775) Prompted by https://github.com/microsoft/playwright/pull/3173",
       "fp": "link|chore(policy files): Update SECURITY.md to V0.0.9 (#31775) Prompted by https://github.com/microsoft/playwright/pull/3173|0",
@@ -1345,6 +1445,7 @@
     },
     {
       "eid": "e101",
+      "node": 101,
       "role": "link",
       "name": "#31775",
       "fp": "link|#31775|0",
@@ -1358,6 +1459,7 @@
     },
     {
       "eid": "e102",
+      "node": 102,
       "role": "link",
       "name": "chore(policy files): Update SECURITY.md to V0.0.9 (#31775) Prompted by https://github.com/microsoft/playwright/pull/3173",
       "fp": "link|chore(policy files): Update SECURITY.md to V0.0.9 (#31775) Prompted by https://github.com/microsoft/playwright/pull/3173|1",
@@ -1371,6 +1473,7 @@
     },
     {
       "eid": "e103",
+      "node": 103,
       "role": "link",
       "name": "SUPPORT.md, (File)",
       "fp": "link|SUPPORT.md, (File)|0",
@@ -1384,6 +1487,7 @@
     },
     {
       "eid": "e104",
+      "node": 104,
       "role": "link",
       "name": "docs: add SUPPORT.md (#32362)",
       "fp": "link|docs: add SUPPORT.md (#32362)|0",
@@ -1397,6 +1501,7 @@
     },
     {
       "eid": "e105",
+      "node": 105,
       "role": "link",
       "name": "#32362",
       "fp": "link|#32362|0",
@@ -1410,6 +1515,7 @@
     },
     {
       "eid": "e106",
+      "node": 106,
       "role": "link",
       "name": "docs: add SUPPORT.md (#32362)",
       "fp": "link|docs: add SUPPORT.md (#32362)|1",
@@ -1423,6 +1529,7 @@
     },
     {
       "eid": "e107",
+      "node": 107,
       "role": "link",
       "name": "eslint.config.mjs, (File)",
       "fp": "link|eslint.config.mjs, (File)|0",
@@ -1436,6 +1543,7 @@
     },
     {
       "eid": "e108",
+      "node": 108,
       "role": "link",
       "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
       "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|4",
@@ -1449,6 +1557,7 @@
     },
     {
       "eid": "e109",
+      "node": 109,
       "role": "link",
       "name": "package-lock.json, (File)",
       "fp": "link|package-lock.json, (File)|0",
@@ -1462,6 +1571,7 @@
     },
     {
       "eid": "e110",
+      "node": 110,
       "role": "link",
       "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
       "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|5",
@@ -1475,6 +1585,7 @@
     },
     {
       "eid": "e111",
+      "node": 111,
       "role": "link",
       "name": "package.json, (File)",
       "fp": "link|package.json, (File)|0",
@@ -1488,6 +1599,7 @@
     },
     {
       "eid": "e112",
+      "node": 112,
       "role": "link",
       "name": "chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)",
       "fp": "link|chore(coverage): istanbul instrumentation for the trace viewer and html reporter (#42785)|6",
@@ -1501,6 +1613,7 @@
     },
     {
       "eid": "e113",
+      "node": 113,
       "role": "link",
       "name": "tsconfig.json, (File)",
       "fp": "link|tsconfig.json, (File)|0",
@@ -1514,6 +1627,7 @@
     },
     {
       "eid": "e114",
+      "node": 114,
       "role": "link",
       "name": "feat(ct): type mount() story ids through a generated Stories registry (#42518)",
       "fp": "link|feat(ct): type mount() story ids through a generated Stories registry (#42518)|0",
@@ -1527,6 +1641,7 @@
     },
     {
       "eid": "e115",
+      "node": 115,
       "role": "link",
       "name": "…",
       "fp": "link|…|0",
@@ -1540,6 +1655,7 @@
     },
     {
       "eid": "e116",
+      "node": 116,
       "role": "list",
       "name": "README Code of conduct Contributing Apache-2.0 license Security",
       "ctx": "nav: Repository files",
@@ -1554,6 +1670,7 @@
     },
     {
       "eid": "e117",
+      "node": 117,
       "role": "link",
       "name": "README",
       "ctx": "nav: Repository files",
@@ -1568,6 +1685,7 @@
     },
     {
       "eid": "e118",
+      "node": 118,
       "role": "link",
       "name": "Code of conduct",
       "ctx": "nav: Repository files",
@@ -1582,6 +1700,7 @@
     },
     {
       "eid": "e119",
+      "node": 119,
       "role": "link",
       "name": "Contributing",
       "ctx": "nav: Repository files",
@@ -1596,6 +1715,7 @@
     },
     {
       "eid": "e120",
+      "node": 120,
       "role": "link",
       "name": "Apache-2.0 license",
       "ctx": "nav: Repository files",
@@ -1610,6 +1730,7 @@
     },
     {
       "eid": "e121",
+      "node": 121,
       "role": "link",
       "name": "Security",
       "ctx": "nav: Repository files",
@@ -1624,6 +1745,7 @@
     },
     {
       "eid": "e122",
+      "node": 122,
       "role": "button",
       "name": "Outline",
       "ctx": "Repository files navigation",
@@ -1639,6 +1761,7 @@
     },
     {
       "eid": "e123",
+      "node": 123,
       "role": "link",
       "name": "npm version",
       "fp": "link|npm version|0",
@@ -1652,6 +1775,7 @@
     },
     {
       "eid": "e124",
+      "node": 124,
       "role": "link",
       "name": "Chromium version",
       "fp": "link|Chromium version|0",
@@ -1665,6 +1789,7 @@
     },
     {
       "eid": "e125",
+      "node": 125,
       "role": "link",
       "name": "Firefox version",
       "fp": "link|Firefox version|0",
@@ -1678,6 +1803,7 @@
     },
     {
       "eid": "e126",
+      "node": 126,
       "role": "link",
       "name": "WebKit version",
       "fp": "link|WebKit version|0",
@@ -1691,6 +1817,7 @@
     },
     {
       "eid": "e127",
+      "node": 127,
       "role": "link",
       "name": "Join Discord",
       "fp": "link|Join Discord|0",
@@ -1704,6 +1831,7 @@
     },
     {
       "eid": "e128",
+      "node": 128,
       "role": "link",
       "name": "Documentation",
       "fp": "link|Documentation|0",
@@ -1717,6 +1845,7 @@
     },
     {
       "eid": "e129",
+      "node": 129,
       "role": "link",
       "name": "API reference",
       "fp": "link|API reference|0",
@@ -1730,6 +1859,7 @@
     },
     {
       "eid": "e130",
+      "node": 130,
       "role": "link",
       "name": "Playwright Test",
       "fp": "link|Playwright Test|0",
@@ -1743,6 +1873,7 @@
     },
     {
       "eid": "e131",
+      "node": 131,
       "role": "link",
       "name": "Playwright CLI",
       "fp": "link|Playwright CLI|0",
@@ -1756,6 +1887,7 @@
     },
     {
       "eid": "e132",
+      "node": 132,
       "role": "link",
       "name": "Playwright MCP",
       "fp": "link|Playwright MCP|0",
@@ -1769,6 +1901,7 @@
     },
     {
       "eid": "e133",
+      "node": 133,
       "role": "link",
       "name": "Playwright Library",
       "fp": "link|Playwright Library|0",
@@ -1782,6 +1915,7 @@
     },
     {
       "eid": "e134",
+      "node": 134,
       "role": "link",
       "name": "VS Code Extension",
       "fp": "link|VS Code Extension|0",
@@ -1795,6 +1929,7 @@
     },
     {
       "eid": "e135",
+      "node": 135,
       "role": "link",
       "name": "Install from Marketplace",
       "fp": "link|Install from Marketplace|0",
@@ -1808,6 +1943,7 @@
     },
     {
       "eid": "e136",
+      "node": 136,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|0",
@@ -1821,6 +1957,7 @@
     },
     {
       "eid": "e137",
+      "node": 137,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|1",
@@ -1834,6 +1971,7 @@
     },
     {
       "eid": "e138",
+      "node": 138,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|2",
@@ -1847,6 +1985,7 @@
     },
     {
       "eid": "e139",
+      "node": 139,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|3",
@@ -1860,6 +1999,7 @@
     },
     {
       "eid": "e140",
+      "node": 140,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|4",
@@ -1873,6 +2013,7 @@
     },
     {
       "eid": "e141",
+      "node": 141,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|5",
@@ -1886,6 +2027,7 @@
     },
     {
       "eid": "e142",
+      "node": 142,
       "role": "link",
       "name": "Trace Viewer",
       "fp": "link|Trace Viewer|0",
@@ -1899,6 +2041,7 @@
     },
     {
       "eid": "e143",
+      "node": 143,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|6",
@@ -1912,6 +2055,7 @@
     },
     {
       "eid": "e144",
+      "node": 144,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|7",
@@ -1925,6 +2069,7 @@
     },
     {
       "eid": "e145",
+      "node": 145,
       "role": "link",
       "name": "Full testing documentation",
       "fp": "link|Full testing documentation|0",
@@ -1938,6 +2083,7 @@
     },
     {
       "eid": "e146",
+      "node": 146,
       "role": "link",
       "name": "Playwright CLI",
       "fp": "link|Playwright CLI|1",
@@ -1951,6 +2097,7 @@
     },
     {
       "eid": "e147",
+      "node": 147,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|8",
@@ -1964,6 +2111,7 @@
     },
     {
       "eid": "e148",
+      "node": 148,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|9",
@@ -1977,6 +2125,7 @@
     },
     {
       "eid": "e149",
+      "node": 149,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|10",
@@ -1990,6 +2139,7 @@
     },
     {
       "eid": "e150",
+      "node": 150,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|11",
@@ -2003,6 +2153,7 @@
     },
     {
       "eid": "e151",
+      "node": 151,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|12",
@@ -2016,6 +2167,7 @@
     },
     {
       "eid": "e152",
+      "node": 152,
       "role": "link",
       "name": "Full CLI documentation",
       "fp": "link|Full CLI documentation|0",
@@ -2029,6 +2181,7 @@
     },
     {
       "eid": "e153",
+      "node": 153,
       "role": "link",
       "name": "GitHub",
       "fp": "link|GitHub|0",
@@ -2042,6 +2195,7 @@
     },
     {
       "eid": "e154",
+      "node": 154,
       "role": "link",
       "name": "Playwright MCP server",
       "fp": "link|Playwright MCP server|0",
@@ -2055,6 +2209,7 @@
     },
     {
       "eid": "e155",
+      "node": 155,
       "role": "link",
       "name": "Model Context Protocol",
       "fp": "link|Model Context Protocol|0",
@@ -2068,6 +2223,7 @@
     },
     {
       "eid": "e156",
+      "node": 156,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|13",
@@ -2081,6 +2237,7 @@
     },
     {
       "eid": "e157",
+      "node": 157,
       "role": "link",
       "name": "Install in VS Code",
       "fp": "link|Install in VS Code|0",
@@ -2094,6 +2251,7 @@
     },
     {
       "eid": "e158",
+      "node": 158,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|14",
@@ -2107,6 +2265,7 @@
     },
     {
       "eid": "e159",
+      "node": 159,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|15",
@@ -2120,6 +2279,7 @@
     },
     {
       "eid": "e160",
+      "node": 160,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|16",
@@ -2133,6 +2293,7 @@
     },
     {
       "eid": "e161",
+      "node": 161,
       "role": "link",
       "name": "Full MCP documentation",
       "fp": "link|Full MCP documentation|0",
@@ -2146,6 +2307,7 @@
     },
     {
       "eid": "e162",
+      "node": 162,
       "role": "link",
       "name": "GitHub",
       "fp": "link|GitHub|1",
@@ -2159,6 +2321,7 @@
     },
     {
       "eid": "e163",
+      "node": 163,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|17",
@@ -2172,6 +2335,7 @@
     },
     {
       "eid": "e164",
+      "node": 164,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|18",
@@ -2185,6 +2349,7 @@
     },
     {
       "eid": "e165",
+      "node": 165,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|19",
@@ -2198,6 +2363,7 @@
     },
     {
       "eid": "e166",
+      "node": 166,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|20",
@@ -2211,6 +2377,7 @@
     },
     {
       "eid": "e167",
+      "node": 167,
       "role": "button",
       "name": "Copy code to clipboard",
       "fp": "button|Copy code to clipboard|21",
@@ -2224,6 +2391,7 @@
     },
     {
       "eid": "e168",
+      "node": 168,
       "role": "link",
       "name": "Library documentation",
       "fp": "link|Library documentation|0",
@@ -2237,6 +2405,7 @@
     },
     {
       "eid": "e169",
+      "node": 169,
       "role": "link",
       "name": "API reference",
       "fp": "link|API reference|1",
@@ -2250,6 +2419,7 @@
     },
     {
       "eid": "e170",
+      "node": 170,
       "role": "link",
       "name": "Playwright VS Code extension",
       "fp": "link|Playwright VS Code extension|0",
@@ -2263,6 +2433,7 @@
     },
     {
       "eid": "e171",
+      "node": 171,
       "role": "link",
       "name": "Install the extension",
       "fp": "link|Install the extension|0",
@@ -2276,6 +2447,7 @@
     },
     {
       "eid": "e172",
+      "node": 172,
       "role": "link",
       "name": "VS Code guide",
       "fp": "link|VS Code guide|0",
@@ -2289,6 +2461,7 @@
     },
     {
       "eid": "e173",
+      "node": 173,
       "role": "link",
       "name": "Chrome for Testing",
       "fp": "link|Chrome for Testing|0",
@@ -2302,6 +2475,7 @@
     },
     {
       "eid": "e174",
+      "node": 174,
       "role": "link",
       "name": "Python",
       "fp": "link|Python|0",
@@ -2315,6 +2489,7 @@
     },
     {
       "eid": "e175",
+      "node": 175,
       "role": "link",
       "name": ".NET",
       "fp": "link|.NET|0",
@@ -2328,6 +2503,7 @@
     },
     {
       "eid": "e176",
+      "node": 176,
       "role": "link",
       "name": "Java",
       "fp": "link|Java|0",
@@ -2341,6 +2517,7 @@
     },
     {
       "eid": "e177",
+      "node": 177,
       "role": "link",
       "name": "Documentation",
       "fp": "link|Documentation|1",
@@ -2354,6 +2531,7 @@
     },
     {
       "eid": "e178",
+      "node": 178,
       "role": "link",
       "name": "API reference",
       "fp": "link|API reference|2",
@@ -2367,6 +2545,7 @@
     },
     {
       "eid": "e179",
+      "node": 179,
       "role": "link",
       "name": "MCP server",
       "fp": "link|MCP server|0",
@@ -2380,6 +2559,7 @@
     },
     {
       "eid": "e180",
+      "node": 180,
       "role": "link",
       "name": "CLI for coding agents",
       "fp": "link|CLI for coding agents|0",
@@ -2393,6 +2573,7 @@
     },
     {
       "eid": "e181",
+      "node": 181,
       "role": "link",
       "name": "VS Code extension",
       "fp": "link|VS Code extension|0",
@@ -2406,6 +2587,7 @@
     },
     {
       "eid": "e182",
+      "node": 182,
       "role": "link",
       "name": "Contribution guide",
       "fp": "link|Contribution guide|0",
@@ -2419,6 +2601,7 @@
     },
     {
       "eid": "e183",
+      "node": 183,
       "role": "link",
       "name": "Changelog",
       "fp": "link|Changelog|0",
@@ -2432,6 +2615,7 @@
     },
     {
       "eid": "e184",
+      "node": 184,
       "role": "link",
       "name": "Discord",
       "fp": "link|Discord|0",
@@ -2445,6 +2629,7 @@
     },
     {
       "eid": "e185",
+      "node": 185,
       "role": "link",
       "name": "playwright.dev",
       "ctx": "About",
@@ -2459,6 +2644,7 @@
     },
     {
       "eid": "e186",
+      "node": 186,
       "role": "link",
       "name": "automation",
       "ctx": "Topics",
@@ -2473,6 +2659,7 @@
     },
     {
       "eid": "e187",
+      "node": 187,
       "role": "link",
       "name": "chrome",
       "ctx": "Topics",
@@ -2487,6 +2674,7 @@
     },
     {
       "eid": "e188",
+      "node": 188,
       "role": "link",
       "name": "chromium",
       "ctx": "Topics",
@@ -2501,6 +2689,7 @@
     },
     {
       "eid": "e189",
+      "node": 189,
       "role": "link",
       "name": "e2e-testing",
       "ctx": "Topics",
@@ -2515,6 +2704,7 @@
     },
     {
       "eid": "e190",
+      "node": 190,
       "role": "link",
       "name": "electron",
       "ctx": "Topics",
@@ -2529,6 +2719,7 @@
     },
     {
       "eid": "e191",
+      "node": 191,
       "role": "link",
       "name": "end-to-end-testing",
       "ctx": "Topics",
@@ -2543,6 +2734,7 @@
     },
     {
       "eid": "e192",
+      "node": 192,
       "role": "link",
       "name": "firefox",
       "ctx": "Topics",
@@ -2557,6 +2749,7 @@
     },
     {
       "eid": "e193",
+      "node": 193,
       "role": "link",
       "name": "javascript",
       "ctx": "Topics",
@@ -2571,6 +2764,7 @@
     },
     {
       "eid": "e194",
+      "node": 194,
       "role": "link",
       "name": "playwright",
       "ctx": "Topics",
@@ -2585,6 +2779,7 @@
     },
     {
       "eid": "e195",
+      "node": 195,
       "role": "link",
       "name": "test",
       "ctx": "Topics",
@@ -2599,6 +2794,7 @@
     },
     {
       "eid": "e196",
+      "node": 196,
       "role": "link",
       "name": "test-automation",
       "ctx": "Topics",
@@ -2613,6 +2809,7 @@
     },
     {
       "eid": "e197",
+      "node": 197,
       "role": "link",
       "name": "testing",
       "ctx": "Topics",
@@ -2627,6 +2824,7 @@
     },
     {
       "eid": "e198",
+      "node": 198,
       "role": "link",
       "name": "testing-tools",
       "ctx": "Topics",
@@ -2641,6 +2839,7 @@
     },
     {
       "eid": "e199",
+      "node": 199,
       "role": "link",
       "name": "web",
       "ctx": "Topics",
@@ -2655,6 +2854,7 @@
     },
     {
       "eid": "e200",
+      "node": 200,
       "role": "link",
       "name": "webkit",
       "ctx": "Topics",
@@ -2669,6 +2869,7 @@
     },
     {
       "eid": "e201",
+      "node": 201,
       "role": "link",
       "name": "Readme",
       "ctx": "Resources",
@@ -2683,6 +2884,7 @@
     },
     {
       "eid": "e202",
+      "node": 202,
       "role": "link",
       "name": "Apache-2.0 license",
       "ctx": "Resources",
@@ -2697,6 +2899,7 @@
     },
     {
       "eid": "e203",
+      "node": 203,
       "role": "link",
       "name": "Code of conduct",
       "ctx": "Code of conduct",
@@ -2711,6 +2914,7 @@
     },
     {
       "eid": "e204",
+      "node": 204,
       "role": "link",
       "name": "Contributing",
       "ctx": "Contributing",
@@ -2725,6 +2929,7 @@
     },
     {
       "eid": "e205",
+      "node": 205,
       "role": "link",
       "name": "Security policy",
       "ctx": "Security policy",
@@ -2739,6 +2944,7 @@
     },
     {
       "eid": "e206",
+      "node": 206,
       "role": "link",
       "name": "Activity",
       "ctx": "Security policy",
@@ -2753,6 +2959,7 @@
     },
     {
       "eid": "e207",
+      "node": 207,
       "role": "link",
       "name": "Custom properties",
       "ctx": "Security policy",
@@ -2767,6 +2974,7 @@
     },
     {
       "eid": "e208",
+      "node": 208,
       "role": "link",
       "name": "6.5k forks",
       "ctx": "Forks",
@@ -2781,6 +2989,7 @@
     },
     {
       "eid": "e209",
+      "node": 209,
       "role": "link",
       "name": "Report repository",
       "ctx": "Forks",
@@ -2795,6 +3004,7 @@
     },
     {
       "eid": "e210",
+      "node": 210,
       "role": "link",
       "name": "Releases",
       "fp": "link|Releases|0",
@@ -2808,6 +3018,7 @@
     },
     {
       "eid": "e211",
+      "node": 211,
       "role": "link",
       "name": "v1.63.0 Latest",
       "ctx": "Releases166 (166)",
@@ -2822,6 +3033,7 @@
     },
     {
       "eid": "e212",
+      "node": 212,
       "role": "link",
       "name": "+ 165 releases",
       "ctx": "Releases166 (166)",
@@ -2836,6 +3048,7 @@
     },
     {
       "eid": "e213",
+      "node": 213,
       "role": "link",
       "name": "Used by",
       "fp": "link|Used by|0",
@@ -2849,10 +3062,11 @@
     },
     {
       "eid": "e214",
+      "node": 214,
       "role": "link",
-      "name": "@artuntan",
+      "name": "@TarasovArtem",
       "ctx": "Used by510K (510K)",
-      "fp": "link|@artuntan|0",
+      "fp": "link|@TarasovArtem|0",
       "rect": {
         "x": 976,
         "y": 1105,
@@ -2863,6 +3077,7 @@
     },
     {
       "eid": "e215",
+      "node": 215,
       "role": "link",
       "name": "Contributors",
       "fp": "link|Contributors|0",
@@ -2876,6 +3091,7 @@
     },
     {
       "eid": "e216",
+      "node": 216,
       "role": "link",
       "name": "@pavelfeldman",
       "ctx": "Contributors796 (796)",
@@ -2890,6 +3106,7 @@
     },
     {
       "eid": "e217",
+      "node": 217,
       "role": "link",
       "name": "@dgozman",
       "ctx": "Contributors796 (796)",
@@ -2904,6 +3121,7 @@
     },
     {
       "eid": "e218",
+      "node": 218,
       "role": "link",
       "name": "@yury-s",
       "ctx": "Contributors796 (796)",
@@ -2918,6 +3136,7 @@
     },
     {
       "eid": "e219",
+      "node": 219,
       "role": "link",
       "name": "@mxschmitt",
       "ctx": "Contributors796 (796)",
@@ -2932,6 +3151,7 @@
     },
     {
       "eid": "e220",
+      "node": 220,
       "role": "link",
       "name": "@aslushnikov",
       "ctx": "Contributors796 (796)",
@@ -2946,6 +3166,7 @@
     },
     {
       "eid": "e221",
+      "node": 221,
       "role": "link",
       "name": "@github-actions[bot]",
       "ctx": "Contributors796 (796)",
@@ -2960,6 +3181,7 @@
     },
     {
       "eid": "e222",
+      "node": 222,
       "role": "link",
       "name": "@playwrightmachine",
       "ctx": "Contributors796 (796)",
@@ -2974,6 +3196,7 @@
     },
     {
       "eid": "e223",
+      "node": 223,
       "role": "link",
       "name": "@Skn0tt",
       "ctx": "Contributors796 (796)",
@@ -2988,6 +3211,7 @@
     },
     {
       "eid": "e224",
+      "node": 224,
       "role": "link",
       "name": "@JoelEinbinder",
       "ctx": "Contributors796 (796)",
@@ -3002,6 +3226,7 @@
     },
     {
       "eid": "e225",
+      "node": 225,
       "role": "link",
       "name": "@microsoft-playwright-automation[bot]",
       "ctx": "Contributors796 (796)",
@@ -3016,6 +3241,7 @@
     },
     {
       "eid": "e226",
+      "node": 226,
       "role": "link",
       "name": "@agg23",
       "ctx": "Contributors796 (796)",
@@ -3030,6 +3256,7 @@
     },
     {
       "eid": "e227",
+      "node": 227,
       "role": "link",
       "name": "@debs-obrien",
       "ctx": "Contributors796 (796)",
@@ -3044,6 +3271,7 @@
     },
     {
       "eid": "e228",
+      "node": 228,
       "role": "link",
       "name": "@rwoll",
       "ctx": "Contributors796 (796)",
@@ -3058,6 +3286,7 @@
     },
     {
       "eid": "e229",
+      "node": 229,
       "role": "link",
       "name": "@sand4rt",
       "ctx": "Contributors796 (796)",
@@ -3072,6 +3301,7 @@
     },
     {
       "eid": "e230",
+      "node": 230,
       "role": "link",
       "name": "+ 782 contributors",
       "ctx": "Contributors796 (796)",
@@ -3086,6 +3316,7 @@
     },
     {
       "eid": "e231",
+      "node": 231,
       "role": "progressbar",
       "name": "TypeScript: 91.7%",
       "ctx": "Languages",
@@ -3100,6 +3331,7 @@
     },
     {
       "eid": "e232",
+      "node": 232,
       "role": "progressbar",
       "name": "HTML: 3.6%",
       "ctx": "Languages",
@@ -3114,6 +3346,7 @@
     },
     {
       "eid": "e233",
+      "node": 233,
       "role": "progressbar",
       "name": "CSS: 2.4%",
       "ctx": "Languages",
@@ -3128,6 +3361,7 @@
     },
     {
       "eid": "e234",
+      "node": 234,
       "role": "link",
       "name": "TypeScript 91.7%",
       "ctx": "Languages",
@@ -3142,6 +3376,7 @@
     },
     {
       "eid": "e235",
+      "node": 235,
       "role": "link",
       "name": "HTML 3.6%",
       "ctx": "Languages",
@@ -3156,6 +3391,7 @@
     },
     {
       "eid": "e236",
+      "node": 236,
       "role": "link",
       "name": "CSS 2.4%",
       "ctx": "Languages",
@@ -3170,6 +3406,7 @@
     },
     {
       "eid": "e237",
+      "node": 237,
       "role": "link",
       "name": "C++ 0.7%",
       "ctx": "Languages",
@@ -3184,6 +3421,7 @@
     },
     {
       "eid": "e238",
+      "node": 238,
       "role": "link",
       "name": "Objective-C 0.5%",
       "ctx": "Languages",
@@ -3198,6 +3436,7 @@
     },
     {
       "eid": "e239",
+      "node": 239,
       "role": "link",
       "name": "Shell 0.4%",
       "ctx": "Languages",
@@ -3212,6 +3451,7 @@
     },
     {
       "eid": "e240",
+      "node": 240,
       "role": "link",
       "name": "Other 0.7%",
       "ctx": "Languages",
@@ -3226,6 +3466,7 @@
     },
     {
       "eid": "e241",
+      "node": 241,
       "role": "contentinfo",
       "name": "Footer © 2026 GitHub, Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not ",
       "ctx": "footer",
@@ -3240,6 +3481,7 @@
     },
     {
       "eid": "e242",
+      "node": 242,
       "role": "link",
       "name": "GitHub Homepage",
       "ctx": "footer",
@@ -3254,6 +3496,7 @@
     },
     {
       "eid": "e243",
+      "node": 243,
       "role": "link",
       "name": "Terms",
       "ctx": "nav: Footer",
@@ -3268,6 +3511,7 @@
     },
     {
       "eid": "e244",
+      "node": 244,
       "role": "link",
       "name": "Privacy",
       "ctx": "nav: Footer",
@@ -3282,6 +3526,7 @@
     },
     {
       "eid": "e245",
+      "node": 245,
       "role": "link",
       "name": "Security",
       "ctx": "nav: Footer",
@@ -3296,6 +3541,7 @@
     },
     {
       "eid": "e246",
+      "node": 246,
       "role": "link",
       "name": "Status",
       "ctx": "nav: Footer",
@@ -3310,6 +3556,7 @@
     },
     {
       "eid": "e247",
+      "node": 247,
       "role": "link",
       "name": "Community",
       "ctx": "nav: Footer",
@@ -3324,6 +3571,7 @@
     },
     {
       "eid": "e248",
+      "node": 248,
       "role": "link",
       "name": "Docs",
       "ctx": "nav: Footer",
@@ -3338,6 +3586,7 @@
     },
     {
       "eid": "e249",
+      "node": 249,
       "role": "link",
       "name": "Contact",
       "ctx": "nav: Footer",
@@ -3352,6 +3601,7 @@
     },
     {
       "eid": "e250",
+      "node": 250,
       "role": "button",
       "name": "Manage cookies",
       "ctx": "nav: Footer",
@@ -3366,6 +3616,7 @@
     },
     {
       "eid": "e251",
+      "node": 251,
       "role": "button",
       "name": "Do not share my personal information",
       "ctx": "nav: Footer",
@@ -3380,6 +3631,6 @@
     }
   ],
   "text": "microsoft / playwright Public Notifications Fork 6.5k Star 96.4k Code Issues 185 Pull requests 34 Actions Security and q",
-  "contentHash": "twasn6",
+  "contentHash": "8rp1aa",
   "totalCandidates": 412
 }

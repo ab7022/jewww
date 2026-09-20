@@ -14,8 +14,8 @@
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fromEnv } from "@jev-browser/jev";
+import { buildActionSpace, decide, targetHeadName } from "@jev-browser/policy";
 import { DEFAULT_CAP, rankElements, rankedSnapshot } from "@jev-browser/sense";
-import { describeElement, type Questions } from "@jev-browser/shared";
 import { acceptableEids, labelledTasks } from "./targets.js";
 
 const recallOnly = process.argv.includes("--recall");
@@ -82,37 +82,35 @@ let cost = 0;
 for (const { task, target, snap } of rows) {
   const capped = rankedSnapshot(snap, task.intent, DEFAULT_CAP);
   const ok = new Set(acceptableEids(snap, target));
+
   if (!capped.elements.some((e) => ok.has(e.eid))) {
     console.log(`${task.slug.padEnd(20)} skipped — target below the cap`);
     continue;
   }
 
-  const questions: Questions = {
-    target: {
-      type: "choice",
-      instructions: `Which element should be acted on to achieve this subgoal: "${task.intent}"?`,
-      criteria: Object.fromEntries(capped.elements.map((e) => [e.eid, describeElement(e)])),
-    },
-  };
+  // The real decision path: one request carrying the operation head, every
+  // per-operation target head, and the risk head. Benchmarking anything else would
+  // measure a code path that will never ship.
+  const nodes = Object.fromEntries(snap.elements.map((e) => [e.eid, e.node]));
+  const space = buildActionSpace(capped.elements, nodes, {
+    canScrollDown: capped.viewport.scrollY < capped.viewport.maxScrollY,
+    canScrollUp: capped.viewport.scrollY > 0,
+  });
 
-  const r = await jev.evaluate(
-    {
-      goal: task.goal,
-      subgoal: task.intent,
-      page: { url: capped.url, title: capped.title, text: capped.text },
-      scroll: capped.viewport,
-      elements: capped.elements,
-    },
-    questions,
-  );
-  cost += r.costUsd;
+  const d = await decide(jev, {
+    goal: task.goal,
+    subgoal: task.intent,
+    success: `the intent "${task.intent}" has visibly been carried out`,
+    snapshot: capped,
+    space,
+    recent: [],
+  });
+  cost += d.costUsd;
 
-  const a = r.answers.target;
-  const isChoice = a !== undefined && a.type === "choice";
-  const chose = isChoice ? a.choice : "?";
-  const p = isChoice ? (a.probabilities?.[chose] ?? 0) : 0;
+  const chose = d.target?.eid ?? "-";
+  const p = d.targetConfidence ?? 0;
   const correct = ok.has(chose);
-  const choseName = snap.elements.find((e) => e.eid === chose)?.name ?? "?";
+  const choseName = snap.elements.find((e) => e.eid === chose)?.name ?? d.operation;
   picks.push({
     slug: task.slug,
     correct,
@@ -120,13 +118,16 @@ for (const { task, target, snap } of rows) {
     choseName,
     wantNames: snap.elements.filter((e) => ok.has(e.eid)).map((e) => e.name),
     p,
-    latencyMs: r.latencyMs,
+    latencyMs: d.latencyMs,
   });
 
+  const heads = Object.keys(space.targets).map(targetHeadName).length + 2;
   console.log(
-    `${correct ? "ok " : "MISS"} ${task.slug.padEnd(20)} p=${p.toFixed(2)} ` +
-      `${String(capped.elements.length).padStart(3)} opts ${String(r.usage.inputTokens).padStart(5)} tok ` +
-      `${r.latencyMs}ms  ${correct ? "" : `chose "${choseName.slice(0, 40)}"`}`,
+    `${correct ? "ok " : "MISS"} ${task.slug.padEnd(18)} ${d.operation.padEnd(10)} p=${p.toFixed(2)} ` +
+      `self=${d.selfConfidence?.toFixed(2) ?? " n/a"} ${heads} heads ` +
+      `${String(d.inputTokens).padStart(5)} tok ${String(d.latencyMs).padStart(4)}ms` +
+      `${d.requiresConfirmation ? "  [confirm]" : ""}` +
+      `${correct ? "" : `  chose "${choseName.slice(0, 34)}"`}`,
   );
 }
 

@@ -47,13 +47,23 @@ function flatten(nodes: Node[]): Node[] {
 const IRREVERSIBLE_SUCCESS =
   /\b(confirmation (page|number|email|message)|order (number|confirmation)|a receipt (is|was) (shown|issued)|(has been|was|is visibly|successfully) (sent|submitted|posted|published|placed|deleted|removed|cancelled|canceled|booked|transferred)|no longer (appears|exists|listed)|is live|now public)\b/i;
 
+/**
+ * Scratchpad keys are written inconsistently — a node may declare `into: "summary"`
+ * or `into: "$.summary"`, and a reference is always `"$.summary.field"`. Both spell
+ * the same key, so normalise to the bare root before comparing. Comparing them raw
+ * reports coherent plans as dangling.
+ */
+function scratchKey(raw: string): string {
+  return raw.replace(/^\$\./, "").split(".")[0] ?? raw;
+}
+
 function scratchKeysBefore(flat: Node[], index: number): Set<string> {
   const keys = new Set<string>(["profile"]);
   for (let i = 0; i < index; i++) {
     const n = flat[i];
     if (!n) continue;
-    if (n.kind === "read" || n.kind === "compose") keys.add(n.into);
-    if (n.kind === "foreach") keys.add(n.as);
+    if (n.kind === "read" || n.kind === "compose") keys.add(scratchKey(n.into));
+    if (n.kind === "foreach") keys.add(scratchKey(n.as));
   }
   return keys;
 }
@@ -125,8 +135,9 @@ export function runChecks(plan: Plan, uc: UseCase): CheckResult[] {
 
   add("uniqueIds", true, new Set(all.map((n) => n.id)).size === all.length);
 
-  // Every $.ref must be produced by something earlier. A dangling reference means
-  // the agent reaches a type step with no text to type.
+  // Every $.ref must be produced by something earlier. Literal values are no longer
+  // the planner's job — the runtime text model writes those — but a dangling
+  // reference still means a step reaches for composed text that was never authored.
   const dangling: string[] = [];
   for (let i = 0; i < flat.length; i++) {
     const n = flat[i];
@@ -134,7 +145,7 @@ export function runChecks(plan: Plan, uc: UseCase): CheckResult[] {
     const known = scratchKeysBefore(flat, i);
     for (const [slot, value] of Object.entries(n.slots)) {
       if (!SCRATCH_REF.test(value)) continue;
-      const root = value.slice(2).split(".")[0];
+      const root = scratchKey(value);
       if (root && !known.has(root)) dangling.push(`${n.id}.${slot}=${value}`);
     }
   }
@@ -158,7 +169,7 @@ export function runChecks(plan: Plan, uc: UseCase): CheckResult[] {
   const badLoop = foreaches.filter((f) => {
     if (f.kind !== "foreach") return false;
     const idx = flat.indexOf(f);
-    return !scratchKeysBefore(flat, idx).has(f.over.replace(/^\$\./, "").split(".")[0] ?? f.over);
+    return !scratchKeysBefore(flat, idx).has(scratchKey(f.over));
   });
   add("loopSourced", foreaches.length > 0, badLoop.length === 0,
     badLoop.map((f) => f.id).join(","));

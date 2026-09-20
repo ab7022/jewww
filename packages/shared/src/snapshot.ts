@@ -9,6 +9,8 @@ import { z } from "zod";
  */
 export const RawElement = z.object({
   eid: z.string(),
+  /** Code-owned identity of the live DOM node, for re-resolution before input. */
+  node: z.number(),
   role: z.string(),
   name: z.string(),
   value: z.string().optional(),

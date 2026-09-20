@@ -56,6 +56,29 @@ export function createApp(cfg: AppConfig): Express {
     res.json({ ok: true });
   });
 
+  /**
+   * Nothing may hang a client forever.
+   *
+   * A handler that falls through without responding leaves the caller waiting with
+   * no indication anything is wrong — an edit once removed the body of /api/runs and
+   * the panel simply said "working out how to do this" until someone gave up. Model
+   * calls are slow, so the ceiling is generous; it exists to bound the pathological
+   * case, not to police latency.
+   */
+  app.use((req, res, next) => {
+    const timer = setTimeout(() => {
+      if (res.headersSent) return;
+      console.error(`no response from ${req.method} ${req.path} after 180s`);
+      res.status(504).json({
+        error: "no_response",
+        message: "the server did not answer in time — try again",
+      });
+    }, 180_000);
+    res.on("finish", () => clearTimeout(timer));
+    res.on("close", () => clearTimeout(timer));
+    next();
+  });
+
   // --- auth ---------------------------------------------------------------
 
   /** Whether real sign-in is available, so a client can offer the right button. */
@@ -186,7 +209,26 @@ export function createApp(cfg: AppConfig): Express {
       updatedAt: now,
     });
 
+    const planned = await makePlan({
+      apiKey: cfg.openrouterKey,
+      goal,
+      start: url,
+      jev: jev(),
+    });
 
+    // Details the user stated in the request itself, so "fill this in with name
+    // John, email john@x.com" works without anyone having saved a profile first.
+    // Only asked for when the plan actually fills a form.
+    const fillsAForm = planned.plan.nodes.some((n) => n.kind === "fill");
+    const stated = fillsAForm
+      ? await extractDetails({ apiKey: cfg.openrouterKey, goal }).catch(() => ({
+          fields: {},
+          costUsd: 0,
+        }))
+      : { fields: {} as Record<string, string>, costUsd: 0 };
+
+    const charge = await meter(store, uid(req), "plan", planned.costUsd + stated.costUsd, runId);
+    res.json({ runId, plan: planned.plan, stated: stated.fields, balance: charge.balance });
   });
 
   /** Fails closed: a run that is not yours does not exist. */

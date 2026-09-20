@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { afterAll, beforeEach, describe, expect, it } from "vitest";
+import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { createApp } from "../src/app.js";
 import request from "supertest";
 import {
@@ -251,5 +251,33 @@ describe("dev sign-in", () => {
 
   it("is refused once Google IS configured — a bypass must not survive deployment", async () => {
     await request(withGoogle).post("/auth/dev").send({ email: "t2@localhost" }).expect(404);
+  });
+});
+
+describe("every route answers", () => {
+  const app = createApp({
+    store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "http://localhost/app",
+  });
+
+  it("responds to /api/runs even when the model call fails", async () => {
+    // An edit once deleted this handler's body: it inserted the run row and returned
+    // nothing, so the panel waited forever on "working out how to do this". The
+    // existing 402 test passed straight through it, because the balance check throws
+    // before reaching the missing code — so it needs a FUNDED user.
+    vi.stubGlobal("fetch", async () => new Response("nope", { status: 401 }));
+    const funded = await makeUser(1000);
+    const res = await request(app)
+      .post("/api/runs")
+      .set("Authorization", `Bearer ${signJwt({ sub: funded }, SECRET)}`)
+      .send({ goal: "do a thing", url: "https://example.com" })
+      .timeout(8000);
+    expect(res.status).toBeGreaterThanOrEqual(400);
+    expect(res.body).toBeTruthy();
+    vi.unstubAllGlobals();
+  });
+
+  it("records the run even though planning failed", async () => {
+    const before = await store.runs.countDocuments();
+    expect(before).toBeGreaterThan(0);
   });
 });

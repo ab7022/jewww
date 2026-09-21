@@ -1,0 +1,12 @@
+.env
+.env.*
+.data
+.vercel
+node_modules
+**/node_modules
+**/dist
+**/dist-test
+**/dist-types
+eval/results
+plans
+results

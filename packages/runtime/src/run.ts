@@ -22,6 +22,7 @@ import {
   PROFILE_FIELDS,
   type ProfileKey,
   type Plan,
+  type RawSnapshot,
   type RecentAction,
   SCRATCH_REF,
   StalePage,
@@ -242,6 +243,7 @@ async function runActNode(
   opts: Ctx,
   pad: Scratchpad,
   state: LoopState,
+  form?: FormPass,
 ): Promise<RunStatus> {
   await arrive(node, urlSlot(node.slots, pad), opts);
 
@@ -286,6 +288,14 @@ async function runActNode(
     const raw = await opts.executor.snapshot();
     // A page that moved may have uncovered things, so the evidence expires with it.
     if (raw.contentHash !== lastHash) covered.clear();
+
+    // A fill node: fields that appeared since the last look are batch-filled before
+    // anything is decided about them, then the page is looked at afresh.
+    if (form && batchable(raw, form.seen).length) {
+      const stopped = await batchFill(form, raw, opts, pad, state);
+      if (stopped) return stopped;
+      continue;
+    }
 
     const fpByEid = new Map(raw.elements.map((e) => [e.eid, e.fp]));
     const ranked = rankedSnapshot(raw, node.intent, DEFAULT_CAP);
@@ -590,14 +600,6 @@ async function runActNode(
  * application is worse than a missing one, and the human is about to review it anyway.
  */
 /** Complete a fill node through the general loop after its batch pass. */
-function finish(
-  node: Extract<Node, { kind: "fill" }>,
-  opts: Ctx,
-  pad: Scratchpad,
-  state: LoopState,
-): Promise<RunStatus> {
-  return runActNode({ kind: "act", id: node.id, intent: node.intent, success: node.success }, opts, pad, state);
-}
 
 /**
  * A step's intent, plus the loop item it is working on.
@@ -637,20 +639,6 @@ function draftsIn(pad: Scratchpad): { drafts?: Record<string, string> } {
 }
 
 /** Run a fill node through the general act loop, keeping its intent and success. */
-function asAct(
-  node: Extract<Node, { kind: "fill" }>,
-  opts: Ctx,
-  pad: Scratchpad,
-  state: LoopState,
-): Promise<RunStatus> {
-  opts.emit({ type: "warn", nodeId: node.id, message: "no form to batch-fill here — working through it step by step" });
-  return runActNode(
-    { kind: "act", id: node.id, intent: node.intent, success: node.success },
-    opts,
-    pad,
-    state,
-  );
-}
 
 /** Profile entries that name a file rather than carry a value. */
 const NOT_TYPEABLE = new Set(["resumeFile"]);
@@ -670,23 +658,54 @@ async function runFillNode(
   pad: Scratchpad,
   state: LoopState,
 ): Promise<RunStatus> {
-  await arrive(node, null, opts);
-  const raw = await opts.executor.snapshot();
+  // One loop, with the batch pass attached to it. The batch pass used to run once, on
+  // arrival: a form still behind "Easy Apply" had no fields then, so every field the
+  // button revealed was typed one decision at a time — and a question only the user
+  // could answer ("Why do you want to join?") ended the node BLOCKED, because only the
+  // batch pass can ask. Now whenever the page shows fillable fields this node has not
+  // yet seen — on arrival, behind a button, on a wizard's next page — they are mapped,
+  // asked about and filled in one pass, and the loop carries on around them.
+  // Batch filling maps fields to facts about THE USER; a recipient, a subject or a
+  // message body is task content the loop writes from the goal, and it is the loop
+  // that decides the node is done.
+  return runActNode(
+    { kind: "act", id: node.id, intent: node.intent, success: node.success, ...(node.site ? { site: node.site } : {}) },
+    opts,
+    pad,
+    state,
+    { node, seen: new Set() },
+  );
+}
 
-  // Empty, enabled, non-credential inputs only.
-  const fields = raw.elements.filter(
+/** Fields a fill node can batch: empty, enabled, never a credential. */
+function batchable(raw: RawSnapshot, seen: Set<string>): RawSnapshot["elements"] {
+  return raw.elements.filter(
     (e) =>
       e.fillable &&
       !e.value &&
       !e.st?.includes("disabled") &&
       e.role !== "password" &&
-      !FORBIDDEN_FIELD.test(e.name),
+      !FORBIDDEN_FIELD.test(e.name) &&
+      !seen.has(e.fp),
   );
-  // Nothing to batch-fill: the form may sit behind a button ("Easy Apply",
-  // "Compose"), or the request needs clicks as well as typing. `fill` is the fast
-  // path for a visible form; when it cannot apply, the general step loop does the
-  // same job instead of the node reporting a success it never achieved.
-  if (!fields.length) return asAct(node, opts, pad, state);
+}
+
+/**
+ * The batch pass over the fields visible now that this node has not seen before:
+ * map them all to what is known in ONE call, ask the user once for what is not, fill.
+ * Every field it considers is marked seen, filled or not, so a field is mapped and
+ * asked about once per node however many times the loop comes back.
+ */
+async function batchFill(
+  form: FormPass,
+  raw: RawSnapshot,
+  opts: Ctx,
+  pad: Scratchpad,
+  state: LoopState,
+): Promise<RunStatus | null> {
+  const { node } = form;
+  const fields = batchable(raw, form.seen);
+  for (const f of fields) form.seen.add(f.fp);
 
   const profile = (pad.get("profile") ?? {}) as Record<string, string>;
   // `resumeFile` is a path on disk, not a value to type. Offering it as a mapping
@@ -818,19 +837,19 @@ async function runFillNode(
     await opts.executor.settle(element.node, false);
   }
 
-  // Progress, not completion: the finishing loop below still has to run.
   opts.emit({
     type: "warn",
     nodeId: node.id,
     message: `filled ${filled}/${fields.length}${skipped.length ? `, left blank: ${skipped.slice(0, 5).join(", ")}` : ""}`,
   });
-  // Then finish the node with the general loop. Batch filling maps fields to facts
-  // about THE USER; a recipient, a subject, a message body or a search term is task
-  // content that only the goal can supply. Reporting done at this point once "filled"
-  // an email's To field with the user's own address and left the message empty. The
-  // loop sees what is still missing against the node's success criterion — and when
-  // nothing is, the first decision is simply DONE.
-  return finish(node, opts, pad, state);
+  return null;
+}
+
+/** A fill node's batch pass, riding along with the step loop that finishes the node. */
+interface FormPass {
+  node: Extract<Node, { kind: "fill" }>;
+  /** Fingerprints of fields already mapped (or asked about) in this node. */
+  seen: Set<string>;
 }
 
 async function runReadNode(

@@ -459,6 +459,39 @@ describe("asking for what it does not know", () => {
     expect(result.status).toBe("done");
   });
 
+  it("batch-fills a form that only appears after a click, and still asks", async () => {
+    // The root of a flaky job-application run: when the form sat behind "Easy Apply",
+    // the batch pass ran once on arrival, saw no fields, and the step loop typed the
+    // rest one decision at a time — then stopped BLOCKED at the question only the user
+    // could answer, because only the batch pass can ask.
+    const ex = fakeFillExecutor();
+    const withForm = ex.snapshot.bind(ex);
+    let opened = false;
+    ex.snapshot = async () => {
+      const s = await withForm();
+      return opened
+        ? s
+        : { ...s, contentHash: "closed", elements: [{ eid: "e9", node: 9, role: "button", name: "Easy Apply", fp: "button|Easy Apply|0", rect: { x: 0, y: 0, w: 10, h: 10 }, fillable: false }] };
+    };
+    const act = ex.act.bind(ex);
+    ex.act = async (action, ...rest) => {
+      if (action.kind === "click") opened = true;
+      return act(action, ...rest);
+    };
+    let asked: string[] = [];
+    const { result } = await run(
+      form, fakeJev(["CLICK", "DONE"]), ex, { profile, ask: async (m) => {
+        asked = m.map((x) => x.label);
+        return Object.fromEntries(m.map((x) => [x.key, "the work"]));
+      } },
+      caps(),
+    );
+    const typed = ex.acted.filter((a) => a.kind === "type").map((a) => (a as { text: string }).text);
+    expect(asked).toEqual(["Why do you want this job?"]);
+    expect(typed).toEqual(expect.arrayContaining(["Test", "the work"]));
+    expect(result.status).toBe("done");
+  });
+
   it("fills a field from the answer the user just gave", async () => {
     const ex = fakeFillExecutor();
     await run(form, fakeJev(["DONE"]), ex, {

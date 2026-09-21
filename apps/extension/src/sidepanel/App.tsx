@@ -570,7 +570,14 @@ function SignIn({
             </p>
           </>
         )}
-        {!state.auth && <p className="fine">Can't reach the Jev server ({API_HOST}).</p>}
+        {!state.auth && (
+          // The server answers only extension ids on its allow-list, and a refused one
+          // looks exactly like an unreachable server from in here — so show which id
+          // this copy is running as, to compare with the one the server expects.
+          <p className="fine">
+            Can't reach the Jev server ({API_HOST}). This copy of Jev is {chrome.runtime.id}.
+          </p>
+        )}
       </div>
     </div>
   );

@@ -365,3 +365,185 @@ describe("the website's session and CORS", () => {
     expect(res.body.message).toMatch(/url/);
   });
 });
+
+/**
+ * Payments. The properties that matter are about money: credits come only from our own
+ * pack table, only for a payment Dodo vouches for, and exactly once however many times
+ * the news arrives.
+ */
+describe("payments", async () => {
+  const { signWebhook, verifyWebhook, settle } = await import("../src/billing.js");
+  const WHSEC = `whsec_${Buffer.from("a-webhook-secret-for-tests").toString("base64")}`;
+  const dodo = {
+    apiKey: "sk_test",
+    webhookSecret: WHSEC,
+    mode: "test" as const,
+    products: { starter: "pdt_starter", pro: "pdt_pro", team: "pdt_team" },
+  };
+  const app = createApp({ store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "http://localhost:5173", dodo });
+  const bearer = (u: string) => `Bearer ${signJwt({ sub: u }, SECRET)}`;
+
+  /** Stand in for Dodo's API: checkout creation and payment lookup. */
+  const payments = new Map<string, unknown>();
+  const stubDodo = () =>
+    vi.stubGlobal("fetch", async (url: string, init?: RequestInit) => {
+      if (url.endsWith("/checkouts")) {
+        const body = JSON.parse(String(init?.body));
+        return Response.json({ session_id: `cks_${body.metadata.order_id}`, checkout_url: "https://test.checkout.dodopayments.com/x" });
+      }
+      const id = decodeURIComponent(url.split("/payments/")[1] ?? "");
+      const p = payments.get(id);
+      return p ? Response.json(p) : new Response("not found", { status: 404 });
+    });
+
+  const deliver = (event: unknown, secret = WHSEC, at = Math.floor(Date.now() / 1000)) => {
+    const raw = JSON.stringify(event);
+    const id = `msg_${randomUUID()}`;
+    return request(app)
+      .post("/webhooks/dodo")
+      .set("Content-Type", "application/json")
+      .set("webhook-id", id)
+      .set("webhook-timestamp", String(at))
+      .set("webhook-signature", signWebhook(secret, id, String(at), raw))
+      .send(raw);
+  };
+
+  async function buy(u: string, packId = "pro") {
+    stubDodo();
+    const res = await request(app).post("/api/billing/checkout").set("Authorization", bearer(u)).send({ packId });
+    vi.unstubAllGlobals();
+    expect(res.status).toBe(200);
+    return res.body as { orderId: string; url: string };
+  }
+  const paid = (orderId: string, over: Record<string, unknown> = {}) => ({
+    payment_id: `pay_${orderId}`,
+    status: "succeeded",
+    total_amount: 2900,
+    currency: "USD",
+    checkout_session_id: `cks_${orderId}`,
+    metadata: { order_id: orderId },
+    product_cart: [{ product_id: "pdt_pro", quantity: 1 }],
+    ...over,
+  });
+
+  it("verifies Standard Webhooks signatures, and refuses stale or forged ones", () => {
+    const body = '{"a":1}';
+    const now = Date.now();
+    const ts = String(Math.floor(now / 1000));
+    const sig = signWebhook(WHSEC, "msg_1", ts, body);
+    expect(verifyWebhook(WHSEC, { id: "msg_1", timestamp: ts, signature: sig }, body, now)).toBe(true);
+    // Rotation: several signatures, one of them ours.
+    expect(verifyWebhook(WHSEC, { id: "msg_1", timestamp: ts, signature: `v1,AAAA ${sig}` }, body, now)).toBe(true);
+    expect(verifyWebhook(WHSEC, { id: "msg_1", timestamp: ts, signature: sig }, '{"a":2}', now)).toBe(false);
+    expect(verifyWebhook(WHSEC, { id: "msg_2", timestamp: ts, signature: sig }, body, now)).toBe(false);
+    expect(verifyWebhook(WHSEC, { id: "msg_1", timestamp: ts, signature: sig }, body, now + 10 * 60_000)).toBe(false);
+    expect(verifyWebhook(WHSEC, { id: "msg_1", timestamp: ts }, body, now)).toBe(false);
+  });
+
+  it("creates an order and hands back Dodo's checkout", async () => {
+    const u = await makeUser(0);
+    const { orderId, url } = await buy(u);
+    expect(url).toMatch(/^https:\/\/test\.checkout\.dodopayments\.com/);
+    const order = await store.orders.findOne({ _id: orderId });
+    expect(order).toMatchObject({ userId: u, packId: "pro", credits: 40_000, status: "pending", sessionId: `cks_${orderId}` });
+  });
+
+  it("grants the pack's credits once, however many times the webhook arrives", async () => {
+    const u = await makeUser(0);
+    const { orderId } = await buy(u);
+    const event = { type: "payment.succeeded", data: paid(orderId, { total_amount: 1 }) };
+    for (let i = 0; i < 3; i++) expect((await deliver(event)).status).toBe(200);
+    const user = await store.users.findOne({ _id: u });
+    // From our table: 40,000 for Pro — not anything the payment body said.
+    expect(user?.credits).toBe(40_000);
+    expect(await store.ledger.countDocuments({ userId: u, kind: "topup" })).toBe(1);
+    expect((await store.orders.findOne({ _id: orderId }))?.status).toBe("paid");
+  });
+
+  it("concurrent deliveries still grant once", async () => {
+    const u = await makeUser(0);
+    const { orderId } = await buy(u);
+    const results = await Promise.all(Array.from({ length: 6 }, () => settle(store, dodo, paid(orderId))));
+    expect(results.filter((r) => r === "credited")).toHaveLength(1);
+    expect((await store.users.findOne({ _id: u }))?.credits).toBe(40_000);
+  });
+
+  it("refuses an unsigned or wrongly signed webhook, and grants nothing", async () => {
+    const u = await makeUser(0);
+    const { orderId } = await buy(u);
+    const forged = await deliver({ type: "payment.succeeded", data: paid(orderId) }, `whsec_${Buffer.from("wrong").toString("base64")}`);
+    expect(forged.status).toBe(401);
+    const unsigned = await request(app).post("/webhooks/dodo").set("Content-Type", "application/json").send(JSON.stringify({ type: "payment.succeeded", data: paid(orderId) }));
+    expect(unsigned.status).toBe(401);
+    expect((await store.users.findOne({ _id: u }))?.credits).toBe(0);
+  });
+
+  it("does not settle an order with a payment for a different product or checkout", async () => {
+    const u = await makeUser(0);
+    const { orderId } = await buy(u, "team");
+    expect(await settle(store, dodo, paid(orderId, { product_cart: [{ product_id: "pdt_starter" }], checkout_session_id: `cks_${orderId}` }))).toBe("mismatch");
+    expect(await settle(store, dodo, paid(orderId, { product_cart: [{ product_id: "pdt_team" }], checkout_session_id: "cks_other" }))).toBe("mismatch");
+    expect((await store.users.findOne({ _id: u }))?.credits).toBe(0);
+  });
+
+  it("a late failure never undoes a success", async () => {
+    const u = await makeUser(0);
+    const { orderId } = await buy(u);
+    await deliver({ type: "payment.succeeded", data: paid(orderId) });
+    await deliver({ type: "payment.failed", data: paid(orderId, { status: "failed" }) });
+    expect((await store.orders.findOne({ _id: orderId }))?.status).toBe("paid");
+  });
+
+  it("the return page completes a purchase by asking Dodo, not by trusting the URL", async () => {
+    const u = await makeUser(0);
+    const { orderId } = await buy(u);
+    stubDodo();
+    // Not yet paid at Dodo: the URL may say succeeded; nothing is granted.
+    payments.set(`pay_${orderId}`, paid(orderId, { status: "processing" }));
+    let res = await request(app).post(`/api/orders/${orderId}/reconcile`).set("Authorization", bearer(u)).send({ paymentId: `pay_${orderId}` });
+    expect(res.body.order.status).toBe("pending");
+    expect(res.body.credits).toBe(0);
+    // Now it is.
+    payments.set(`pay_${orderId}`, paid(orderId));
+    res = await request(app).post(`/api/orders/${orderId}/reconcile`).set("Authorization", bearer(u)).send({ paymentId: `pay_${orderId}` });
+    vi.unstubAllGlobals();
+    expect(res.body.order.status).toBe("paid");
+    expect(res.body.order.invoiceUrl).toBe(`https://test.dodopayments.com/invoices/payments/pay_${orderId}`);
+    expect(res.body.credits).toBe(40_000);
+  });
+
+  it("someone else's payment id cannot settle your order, nor yours theirs", async () => {
+    const mine = await makeUser(0);
+    const theirs = await makeUser(0);
+    const a = await buy(mine);
+    const b = await buy(theirs);
+    stubDodo();
+    payments.set(`pay_${b.orderId}`, paid(b.orderId));
+    // Reconciling MY order with THEIR paid payment: the payment names their order.
+    await request(app).post(`/api/orders/${a.orderId}/reconcile`).set("Authorization", bearer(mine)).send({ paymentId: `pay_${b.orderId}` });
+    // …which is settled to them, correctly — but never to me.
+    expect((await store.users.findOne({ _id: mine }))?.credits).toBe(0);
+    const other = await request(app).post(`/api/orders/${b.orderId}/reconcile`).set("Authorization", bearer(mine)).send({});
+    vi.unstubAllGlobals();
+    expect(other.status).toBe(404);
+  });
+
+  it("lists only your own orders", async () => {
+    const u = await makeUser(0);
+    await buy(u, "starter");
+    await buy(await makeUser(0), "team");
+    const res = await request(app).get("/api/orders").set("Authorization", bearer(u));
+    expect(res.body.orders).toHaveLength(1);
+    expect(res.body.orders[0]).toMatchObject({ packId: "starter", packName: "Starter", credits: 10_000, status: "pending" });
+  });
+
+  it("says plainly when payments are not switched on", async () => {
+    const off = createApp({ store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "http://localhost:5173" });
+    const u = await makeUser(0);
+    const res = await request(off).post("/api/billing/checkout").set("Authorization", `Bearer ${signJwt({ sub: u }, SECRET)}`).send({ packId: "pro" });
+    expect(res.status).toBe(503);
+    const cfg = await request(off).get("/api/billing").set("Authorization", `Bearer ${signJwt({ sub: u }, SECRET)}`);
+    expect(cfg.body).toMatchObject({ enabled: false, mode: null });
+    expect(cfg.body.packs).toHaveLength(3);
+  });
+});

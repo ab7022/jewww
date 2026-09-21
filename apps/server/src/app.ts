@@ -17,8 +17,20 @@ import {
   upsertGoogleUser,
   verifyJwt,
 } from "./auth.js";
+import {
+  DodoEvent,
+  type DodoConfig,
+  DodoPayment,
+  fetchPayment,
+  invoiceUrl,
+  PaymentsUnavailable,
+  settle,
+  startCheckout,
+  verifyWebhook,
+} from "./billing.js";
 import { assertBalance, InsufficientCredits, meter, topUp } from "./credits.js";
-import type { LedgerEntry, Run, Store } from "./db.js";
+import type { LedgerEntry, Order, Run, Store } from "./db.js";
+import { packById, PACKS, type OrderSummary } from "@jev-browser/shared";
 
 export interface AppConfig {
   store: Store;
@@ -40,6 +52,8 @@ export interface AppConfig {
   /** Serve the built website from here, when present. */
   webDir?: string;
   production?: boolean;
+  /** Dodo Payments. Absent: buying credits is off and says so. */
+  dodo?: DodoConfig;
 }
 
 /** `userId` is set by requireAuth and is present on every /api handler. */
@@ -61,6 +75,28 @@ export function createApp(cfg: AppConfig): Express {
   const jev = () => (provider ??= fromEnv("openrouter"));
 
   app.disable("x-powered-by");
+
+  /**
+   * Dodo's webhook. Registered BEFORE the JSON parser: the signature is over the raw
+   * bytes, and a body that has been parsed and re-serialised no longer matches it.
+   * Unauthenticated by design — the signature is the authentication.
+   */
+  app.post("/webhooks/dodo", express.raw({ type: () => true, limit: "1mb" }), async (req, res) => {
+    if (!cfg.dodo) return res.status(404).json({ error: "not_found" });
+    const raw = Buffer.isBuffer(req.body) ? req.body.toString("utf8") : "";
+    const ok = verifyWebhook(
+      cfg.dodo.webhookSecret,
+      { id: req.get("webhook-id"), timestamp: req.get("webhook-timestamp"), signature: req.get("webhook-signature") },
+      raw,
+    );
+    if (!ok) return res.status(401).json({ error: "bad_signature" });
+    const event = DodoEvent.parse(JSON.parse(raw));
+    if (!/^payment\./.test(event.type)) return res.json({ ok: true, ignored: event.type });
+    const payment = DodoPayment.parse(event.data);
+    const outcome = await settle(store, cfg.dodo, payment);
+    res.json({ ok: true, outcome });
+  });
+
   app.use(express.json({ limit: "4mb" }));
 
   /**
@@ -565,7 +601,68 @@ export function createApp(cfg: AppConfig): Express {
     return { ok: true as const };
   });
 
-  /** Development affordance. Stripe replaces this with a webhook. */
+  // --- billing --------------------------------------------------------------
+
+  const summary = (o: Order): OrderSummary => {
+    const invoice = invoiceUrl(cfg.dodo, o);
+    return {
+    id: o._id,
+    packId: o.packId,
+    packName: packById(o.packId)?.name ?? o.packId,
+    credits: o.credits,
+    priceUsd: o.priceUsd,
+    status: o.status,
+    createdAt: o.createdAt.toISOString(),
+    ...(o.paidAt ? { paidAt: o.paidAt.toISOString() } : {}),
+    ...(o.amount != null ? { amount: o.amount } : {}),
+    ...(o.currency ? { currency: o.currency } : {}),
+    ...(invoice ? { invoiceUrl: invoice } : {}),
+    };
+  };
+
+  const payments = (): DodoConfig => {
+    if (!cfg.dodo) throw new HttpError(503, "payments_unavailable", "buying credits is not switched on for this server yet");
+    return cfg.dodo;
+  };
+
+  handle("billing", async () => ({
+    enabled: Boolean(cfg.dodo),
+    mode: cfg.dodo?.mode ?? null,
+    packs: [...PACKS],
+  }));
+
+  handle("checkout", async (req, body) => {
+    const dodo = payments();
+    const user = await store.users.findOne({ _id: uid(req) });
+    if (!user) throw new HttpError(401, "unauthorized");
+    return startCheckout(store, dodo, user, body.packId, `${appOrigin}/account`);
+  });
+
+  handle("listOrders", async (req) => {
+    const orders = await store.orders.find({ userId: uid(req) }).sort({ createdAt: -1 }).limit(100).toArray();
+    return { orders: orders.map(summary) };
+  });
+
+  /**
+   * The return page's "did it work?". The payment id from the URL only says which
+   * payment to ask Dodo about; what Dodo answers is what counts. This is also what
+   * makes a purchase complete where no webhook can reach — a laptop, a preview.
+   */
+  handle("reconcileOrder", async (req, body, params) => {
+    const order = await store.orders.findOne({ _id: params.id, userId: uid(req) });
+    if (!order) throw new HttpError(404, "not_found", "no such order");
+    if (order.status === "pending" && body.paymentId && cfg.dodo) {
+      const payment = await fetchPayment(cfg.dodo, body.paymentId);
+      await settle(store, cfg.dodo, payment);
+    }
+    const [fresh, user] = await Promise.all([
+      store.orders.findOne({ _id: order._id }),
+      store.users.findOne({ _id: uid(req) }),
+    ]);
+    return { order: summary(fresh ?? order), credits: user?.credits ?? 0 };
+  });
+
+  /** Development affordance: credits without a purchase. Never in production. */
   app.post("/api/dev/topup", async (req: Authed, res) => {
     if (production) return res.status(404).json({ error: "not_found" });
     res.json({ balance: await topUp(store, uid(req), Math.min(10_000, Number(req.body?.credits ?? 100))) });
@@ -600,6 +697,10 @@ export function createApp(cfg: AppConfig): Express {
     }
     if (err instanceof HttpError) {
       return res.status(err.status).json({ error: err.code, message: err.message });
+    }
+    if (err instanceof PaymentsUnavailable) {
+      console.error(`payments: ${err.message}`);
+      return res.status(502).json({ error: "payments_unavailable", message: "the payment provider could not be reached — try again" });
     }
     if (err instanceof InsufficientCredits) {
       return res.status(402).json({ error: "insufficient_credits", balance: err.balance });

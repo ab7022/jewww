@@ -118,6 +118,34 @@ export function explainText(r: ExplainResult): string {
   return [r.summary, notes.join("\n")].filter(Boolean).join("\n\n");
 }
 
+export const CheckoutRequest = z.object({
+  packId: z.enum(["starter", "pro", "team"]),
+});
+export type CheckoutRequest = z.infer<typeof CheckoutRequest>;
+
+/**
+ * The payment id Dodo put on the return URL. Only a hint of WHICH payment to look up:
+ * the server fetches it from Dodo itself before believing anything about it.
+ */
+export const ReconcileRequest = z.object({
+  paymentId: z.string().min(1).max(200).optional(),
+});
+export type ReconcileRequest = z.infer<typeof ReconcileRequest>;
+
+export interface OrderSummary {
+  id: string;
+  packId: string;
+  packName: string;
+  credits: number;
+  priceUsd: number;
+  status: "pending" | "paid" | "failed" | "cancelled";
+  createdAt: string;
+  paidAt?: string;
+  amount?: number;
+  currency?: string;
+  invoiceUrl?: string;
+}
+
 export const ComposeRequest = z.object({
   intent: z.string().min(1).max(2000),
   inputs: z.record(z.string(), z.unknown()),

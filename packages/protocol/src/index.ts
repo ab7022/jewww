@@ -1,6 +1,10 @@
 import type { Decision, FieldMapping } from "@jev-browser/policy";
 import {
+  CheckoutRequest,
   ComposeRequest,
+  type OrderSummary,
+  type Pack,
+  ReconcileRequest,
   CreateRunRequest,
   DecideRequest,
   type Explanation,
@@ -80,6 +84,10 @@ export interface Endpoints {
     result: { mappings: FieldMapping[]; costUsd: number; balance: number };
   };
   finish: { params: { id: string }; body: FinishRunRequest; result: { ok: true } };
+  billing: { params: Record<never, never>; body: undefined; result: { enabled: boolean; mode: "test" | "live" | null; packs: Pack[] } };
+  checkout: { params: Record<never, never>; body: CheckoutRequest; result: { orderId: string; url: string } };
+  listOrders: { params: Record<never, never>; body: undefined; result: { orders: OrderSummary[] } };
+  reconcileOrder: { params: { id: string }; body: ReconcileRequest; result: { order: OrderSummary; credits: number } };
   getProfile: { params: Record<never, never>; body: undefined; result: Profile };
   putProfile: { params: Record<never, never>; body: ProfileUpdate; result: { ok: true } };
 }
@@ -107,11 +115,15 @@ export const ROUTES: { readonly [K in EndpointName]: Route } = {
   explain: { method: "POST", path: "/api/runs/:id/explain", schema: ExplainRequest },
   fields: { method: "POST", path: "/api/runs/:id/fields", schema: MapFieldsRequest },
   finish: { method: "POST", path: "/api/runs/:id/finish", schema: FinishRunRequest },
+  billing: { method: "GET", path: "/api/billing", schema: null },
+  checkout: { method: "POST", path: "/api/billing/checkout", schema: CheckoutRequest },
+  listOrders: { method: "GET", path: "/api/orders", schema: null },
+  reconcileOrder: { method: "POST", path: "/api/orders/:id/reconcile", schema: ReconcileRequest },
   getProfile: { method: "GET", path: "/api/profile", schema: null },
   putProfile: { method: "PUT", path: "/api/profile", schema: ProfileUpdate },
 };
 
-export type { RunOutcome };
+export type { OrderSummary, RunOutcome };
 
 // --- client ------------------------------------------------------------------
 

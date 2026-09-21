@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createApp } from "./app.js";
+import { dodoFromEnv } from "./billing.js";
 import { connect } from "./db.js";
 
 const port = Number(process.env.PORT ?? 8787);
@@ -35,6 +36,9 @@ const google =
 // The website is served from here when it has been built.
 const webDir = join(dirname(fileURLToPath(import.meta.url)), "../../web/dist");
 
+const dodo = dodoFromEnv();
+if (production && dodo?.mode === "test") console.warn("payments are in TEST mode on a production server");
+
 const store = await connect(
   process.env.MONGO_URI ?? "mongodb://127.0.0.1:27017",
   process.env.MONGO_DB ?? "jevbrowser",
@@ -48,6 +52,7 @@ createApp({
   appUrl: process.env.APP_URL ?? `http://localhost:${port}`,
   extensionIds,
   production,
+  ...(dodo ? { dodo } : {}),
   ...(existsSync(join(webDir, "index.html")) ? { webDir } : {}),
 }).listen(port, () => {
   console.log(`server on http://localhost:${port}`);
@@ -57,4 +62,5 @@ createApp({
       : "google sign-in NOT configured — dev sign-in is available (set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET for real sign-in)",
   );
   if (existsSync(join(webDir, "index.html"))) console.log(`website: http://localhost:${port}/`);
+  console.log(dodo ? `payments: Dodo (${dodo.mode} mode)` : "payments NOT configured — set DODO_API_KEY, DODO_WEBHOOK_SECRET and DODO_PRODUCT_{STARTER,PRO,TEAM}");
 });

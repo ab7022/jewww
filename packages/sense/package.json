@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./bundle": "./src/bundle.ts"
+    "./bundle": "./src/bundle.ts",
+    "./ink": "./src/ink.ts"
   },
   "dependencies": {
     "@jev-browser/shared": "workspace:*"

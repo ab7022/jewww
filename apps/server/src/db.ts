@@ -9,7 +9,30 @@ export interface User {
   picture?: string;
   /** Balance in credits. 1 credit = $0.001 of underlying model spend. */
   credits: number;
+  /** Orders whose credits have been granted — the guard that makes a grant happen once. */
+  creditedOrders?: string[];
   createdAt: Date;
+}
+
+/** One purchase of a credit pack. */
+export interface Order {
+  _id: string;
+  userId: string;
+  packId: "starter" | "pro" | "team";
+  /** What the person was shown and will be granted, fixed when they chose it. */
+  credits: number;
+  priceUsd: number;
+  status: "pending" | "paid" | "failed" | "cancelled";
+  provider: "dodo";
+  mode: "test" | "live";
+  sessionId?: string;
+  paymentId?: string;
+  /** As charged, in the currency's smallest unit (tax included). */
+  amount?: number;
+  currency?: string;
+  createdAt: Date;
+  updatedAt: Date;
+  paidAt?: Date;
 }
 
 export interface Session {
@@ -31,6 +54,8 @@ export interface LedgerEntry {
   /** Negative for spend, positive for a top-up. */
   credits: number;
   costUsd: number;
+  /** The purchase a top-up came from. */
+  orderId?: string;
   at: Date;
 }
 
@@ -92,6 +117,7 @@ export interface Store {
   runs: Collection<Run>;
   steps: Collection<Step>;
   profiles: Collection<Profile>;
+  orders: Collection<Order>;
   close(): Promise<void>;
 }
 
@@ -108,6 +134,7 @@ export async function connect(uri: string, dbName = "jevbrowser"): Promise<Store
     runs: db.collection<Run>("runs"),
     steps: db.collection<Step>("steps"),
     profiles: db.collection<Profile>("profiles"),
+    orders: db.collection<Order>("orders"),
     close: () => client.close(),
   };
 
@@ -120,6 +147,7 @@ export async function connect(uri: string, dbName = "jevbrowser"): Promise<Store
     store.runs.createIndex({ userId: 1, createdAt: -1 }),
     store.steps.createIndex({ runId: 1, at: 1 }),
     store.profiles.createIndex({ userId: 1 }, { unique: true }),
+    store.orders.createIndex({ userId: 1, createdAt: -1 }),
   ]);
 
   return store;

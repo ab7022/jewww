@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Logo } from "../components/Nav.js";
 import { Link, navigate } from "../router.js";
 import { api, signOut, useSession } from "../session.js";
+import { Billing } from "./Billing.js";
 
 const DETAIL_FIELDS: [key: string, label: string, placeholder: string][] = [
   ["fullName", "Full name", "Abdul Bayees"],
@@ -68,10 +69,14 @@ export function Dashboard() {
           <div className="credits-card">
             <strong>{Math.floor(me.credits).toLocaleString()}</strong>
             <span>credits · about {me.approxTasks} tasks</span>
+            <Link className="credits-top" href="/account#billing">
+              Add credits
+            </Link>
           </div>
         </section>
 
         <div className="dash-grid">
+          <Billing onCredits={session.refresh} />
           <Install />
           <Instructions />
           <Details />

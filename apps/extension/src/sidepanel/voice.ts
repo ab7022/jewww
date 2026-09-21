@@ -48,6 +48,12 @@ export interface Voice {
   /** Words heard but not yet final, shown live. */
   interim: string;
   error: string | null;
+  /**
+   * The microphone has not been granted to Jev. A side panel cannot show Chrome's
+   * permission prompt, so it is asked for on an extension page instead (`grantMic`).
+   */
+  needsMic: boolean;
+  grantMic(): void;
   /** Mic button: start or stop dictation. `andRun` runs the request after a pause. */
   dictate(andRun?: boolean): void;
   stop(): void;
@@ -64,6 +70,7 @@ export function useVoice(opts: {
   const [state, setState] = useState<VoiceState>("off");
   const [interim, setInterim] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [needsMic, setNeedsMic] = useState(false);
 
   const rec = useRef<Recognition | null>(null);
   const mode = useRef<VoiceState>("off");
@@ -80,8 +87,16 @@ export function useVoice(opts: {
     setState(m);
   };
 
-  const start = useCallback((m: VoiceState) => {
+  const start = useCallback(async (m: VoiceState) => {
     if (!Ctor) return;
+    // Starting recognition without a grant fails instantly in a side panel — Chrome
+    // cannot prompt there. So look first, and say what to do instead of failing.
+    if ((await micPermission()) !== "granted") {
+      setNeedsMic(true);
+      setMode("off");
+      return;
+    }
+    setNeedsMic(false);
     rec.current?.abort();
     const r = new Ctor();
     r.lang = navigator.language || "en-US";
@@ -135,10 +150,13 @@ export function useVoice(opts: {
     r.onerror = (e) => {
       // Ordinary ends to a session, not failures to show anyone.
       if (e.error === "aborted" || e.error === "no-speech") return;
+      if (e.error === "not-allowed" || e.error === "service-not-allowed") {
+        setNeedsMic(true);
+        setMode("off");
+        return;
+      }
       setError(
-        e.error === "not-allowed" || e.error === "service-not-allowed"
-          ? "Microphone access is blocked for Jev. Allow it in Chrome's site settings for this extension."
-          : e.error === "network"
+        e.error === "network"
             ? "Speech recognition could not reach its service. This Chrome build may not include it."
             : `Voice stopped: ${e.error}`,
       );
@@ -153,12 +171,12 @@ export function useVoice(opts: {
       // mode is meant to be always on while enabled, so it resumes; dictation does not.
       if ((mode.current === "wake" || mode.current === "armed") && cb.current.wake) {
         setTimeout(() => {
-          if (!rec.current && (mode.current === "wake" || mode.current === "armed")) start("wake");
+          if (!rec.current && (mode.current === "wake" || mode.current === "armed")) void start("wake");
         }, 300);
         return;
       }
       setMode(cb.current.wake ? "wake" : "off");
-      if (cb.current.wake) setTimeout(() => !rec.current && start("wake"), 300);
+      if (cb.current.wake) setTimeout(() => !rec.current && void start("wake"), 300);
     };
 
     try {
@@ -183,24 +201,58 @@ export function useVoice(opts: {
   // Wake mode follows the setting: on when enabled and the mic is free, off when not.
   useEffect(() => {
     if (!Ctor) return;
-    if (opts.wake && mode.current === "off") start("wake");
+    if (opts.wake && mode.current === "off") void start("wake");
     if (!opts.wake && (mode.current === "wake" || mode.current === "armed")) stop();
   }, [opts.wake, start, stop]);
 
   useEffect(() => () => rec.current?.abort(), []);
 
+  // Granted on the permission page: pick up where the person left off, without them
+  // having to find the panel's button again.
+  useEffect(() => {
+    let status: PermissionStatus | undefined;
+    void navigator.permissions
+      ?.query({ name: "microphone" as PermissionName })
+      .then((s) => {
+        status = s;
+        s.onchange = () => {
+          if (s.state !== "granted") return;
+          setNeedsMic(false);
+          setError(null);
+          if (cb.current.wake && mode.current === "off") void start("wake");
+        };
+      })
+      .catch(() => {});
+    return () => {
+      if (status) status.onchange = null;
+    };
+  }, [start]);
+
+  const grantMic = useCallback(() => {
+    void chrome.tabs.create({ url: chrome.runtime.getURL("src/mic/index.html") });
+  }, []);
+
   const dictate = useCallback(
     (andRun = false) => {
       if (mode.current === "dictating") {
         stop();
-        if (cb.current.wake) start("wake");
+        if (cb.current.wake) void start("wake");
         return;
       }
       runAfter.current = andRun;
-      start("dictating");
+      void start("dictating");
     },
     [start, stop],
   );
 
-  return { supported: Boolean(Ctor), state, interim, error, dictate, stop };
+  return { supported: Boolean(Ctor), state, interim, error, needsMic, grantMic, dictate, stop };
+}
+
+/** "granted", "denied" or "prompt"; "prompt" where the Permissions API cannot say. */
+async function micPermission(): Promise<PermissionState> {
+  try {
+    return (await navigator.permissions.query({ name: "microphone" as PermissionName })).state;
+  } catch {
+    return "prompt";
+  }
 }

@@ -195,6 +195,14 @@ export function App() {
         </p>
       )}
       {voice.interim && <p className="interim">{voice.interim}</p>}
+      {voice.needsMic && (
+        <div className="mic-needed">
+          <p>Jev needs your permission to use the microphone. Chrome can only ask on a page, so this opens one — allow it once and voice works here.</p>
+          <button type="button" className="ghost" onClick={voice.grantMic}>
+            Allow microphone
+          </button>
+        </div>
+      )}
       {voice.error && <Banner tone="bad">{voice.error}</Banner>}
       {error && <Banner tone="bad">{error}</Banner>}
       {state.error && <Banner tone="bad">{state.error}</Banner>}

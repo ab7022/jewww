@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jev — microphone</title>
+    <style>
+      :root { color-scheme: light dark; --bg: #f4f1ea; --ink: #141414; --muted: #57534b; --spark: #ff8a00; }
+      @media (prefers-color-scheme: dark) { :root { --bg: #141414; --ink: #f4f1ea; --muted: #a8a397; } }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--ink);
+        font: 16px/1.5 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      main { max-width: 440px; padding: 32px; text-align: center; }
+      h1 { font-size: 24px; margin: 18px 0 8px; letter-spacing: -0.02em; }
+      p { color: var(--muted); margin: 0 0 22px; }
+      button { font: 600 16px/1 inherit; font-family: inherit; padding: 13px 22px; border-radius: 999px; border: 0;
+        background: var(--ink); color: var(--bg); cursor: pointer; }
+      .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--spark); margin: 0 auto; box-shadow: 0 0 0 7px rgb(255 138 0 / 18%); }
+      .ok .dot { background: #30b35c; box-shadow: 0 0 0 7px rgb(48 179 92 / 18%); }
+      code { font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <main id="root">
+      <div class="dot"></div>
+      <h1>Let Jev hear you</h1>
+      <p>Chrome only asks for the microphone on a page like this one — not in the side panel. Allow it once and voice works in Jev from then on. Speech is recognised by Chrome; no audio is sent to Jev.</p>
+      <button id="allow" type="button">Allow microphone</button>
+    </main>
+    <script type="module" src="./mic.ts"></script>
+  </body>
+</html>

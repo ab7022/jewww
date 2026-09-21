@@ -364,3 +364,6 @@ kbd {
   font: 600 11px/18px -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   color: var(--label-2);
 }
+
+.mic-needed { display: grid; gap: 10px; margin: 10px 0; padding: 12px 14px; border-radius: 12px; background: rgb(255 138 0 / 12%); font-size: 13px; line-height: 1.4; }
+.mic-needed button { justify-self: start; }

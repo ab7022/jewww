@@ -12,6 +12,12 @@ export function SignIn() {
 
   useEffect(() => {
     void authConfig().then(setConfig);
+    // Back from a sign-in that did not complete: the server says why in the fragment.
+    const back = new URLSearchParams(location.hash.slice(1));
+    if (back.get("error")) {
+      setError(back.get("message") ?? "Sign-in didn't complete. Please try again.");
+      history.replaceState(null, "", location.pathname + location.search);
+    }
   }, []);
   useEffect(() => {
     if (session.status === "signedIn") navigate("/dashboard");

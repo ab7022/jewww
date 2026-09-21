@@ -122,6 +122,14 @@ export function googleAuthUrl(cfg: GoogleConfig, state: string): string {
   return `https://accounts.google.com/o/oauth2/v2/auth?${params}`;
 }
 
+/** Google declined to complete a sign-in: a bad, expired or reused code. The person's to retry. */
+export class GoogleRefused extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "GoogleRefused";
+  }
+}
+
 export async function exchangeGoogleCode(
   cfg: GoogleConfig,
   code: string,
@@ -137,9 +145,9 @@ export async function exchangeGoogleCode(
       grant_type: "authorization_code",
     }),
   });
-  if (!res.ok) throw new Error(`google token exchange failed: ${res.status}`);
+  if (!res.ok) throw new GoogleRefused(`token exchange answered ${res.status}: ${(await res.text()).slice(0, 200)}`);
   const { id_token } = (await res.json()) as { id_token?: string };
-  if (!id_token) throw new Error("google returned no id_token");
+  if (!id_token) throw new GoogleRefused("no id_token in Google's answer");
 
   // This token came straight from Google's own endpoint, over TLS, in response to our
   // client_secret — the transport is the trust anchor. An id_token accepted from
@@ -154,7 +162,7 @@ export async function exchangeGoogleCode(
     picture?: string;
   };
   if (!claims.email || claims.email_verified === false) {
-    throw new Error("google account has no verified email");
+    throw new GoogleRefused("google account has no verified email");
   }
   return {
     sub: claims.sub,

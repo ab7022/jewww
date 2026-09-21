@@ -333,6 +333,43 @@ describe("where sign-in may send tokens", () => {
   });
 });
 
+/**
+ * A sign-in that does not complete is an ordinary outcome — Cancel pressed, a code
+ * expired or reused, an unverified account — and goes back where it started with a
+ * reason both the website and the extension show. It used to be a raw 500.
+ */
+describe("a sign-in that does not complete", () => {
+  const google = { clientId: "id", clientSecret: "secret", redirectUri: "https://jev.app/auth/google/callback" };
+  const EXT = "c".repeat(32);
+  const app = createApp({ store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "https://jev.app", google, production: true, extensionIds: [EXT] });
+  const state = (r: string) => signJwt({ r }, SECRET, 600);
+  const reason = (location: string | undefined) => Object.fromEntries(new URLSearchParams(new URL(String(location)).hash.slice(1)));
+
+  it("Cancel on Google's page returns the website to sign-in, saying so", async () => {
+    const res = await request(app).get("/auth/google/callback").query({ error: "access_denied", state: state("https://jev.app/dashboard") }).expect(302);
+    expect(res.headers.location).toMatch(/^https:\/\/jev\.app\/signin#/);
+    expect(reason(res.headers.location)).toMatchObject({ error: "cancelled" });
+  });
+
+  it("a code Google refuses goes back to the extension with a reason, not a 500", async () => {
+    vi.stubGlobal("fetch", async () => new Response('{"error":"invalid_grant"}', { status: 400 }));
+    const back = `https://${EXT}.chromiumapp.org/google`;
+    const res = await request(app).get("/auth/google/callback").query({ code: "expired", state: state(back) }).expect(302);
+    vi.unstubAllGlobals();
+    expect(String(res.headers.location).startsWith(back)).toBe(true);
+    expect(reason(res.headers.location).error).toBe("google_refused");
+    expect(reason(res.headers.location).access).toBeUndefined();
+  });
+
+  it("an account without a verified email is refused the same way", async () => {
+    const idToken = `x.${Buffer.from(JSON.stringify({ sub: "1", email: "a@b.c", email_verified: false })).toString("base64url")}.y`;
+    vi.stubGlobal("fetch", async () => Response.json({ id_token: idToken }));
+    const res = await request(app).get("/auth/google/callback").query({ code: "c", state: state("https://jev.app/dashboard") }).expect(302);
+    vi.unstubAllGlobals();
+    expect(reason(res.headers.location).error).toBe("google_refused");
+  });
+});
+
 describe("the website's session and CORS", () => {
   const app = createApp({ store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "http://localhost:5173" });
 

@@ -63,6 +63,8 @@ export class Api {
     const done = await chrome.identity.launchWebAuthFlow({ url, interactive: true });
     if (!done) throw new Error("sign-in was cancelled");
     const params = new URLSearchParams(new URL(done).hash.replace(/^#/, ""));
+    const failed = params.get("error");
+    if (failed) throw new Error(params.get("message") ?? failed);
     const access = params.get("access");
     const refresh = params.get("refresh");
     if (!access || !refresh) throw new Error("sign-in returned no tokens");

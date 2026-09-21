@@ -16,4 +16,4 @@ apps/web/dist-types/
 .vercel/
 .vercel
 .env*
-apps/extension/dist-prod/
+apps/extension/dist-local/

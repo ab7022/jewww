@@ -8,6 +8,7 @@ import express, { type Express, type NextFunction, type Request, type Response }
 import { ZodError } from "zod";
 import {
   exchangeGoogleCode,
+  GoogleRefused,
   type GoogleConfig,
   googleAuthUrl,
   issueRefresh,
@@ -238,7 +239,7 @@ export function createApp(cfg: AppConfig): Express {
     if (!cfg.google) return res.status(501).json({ error: "google_not_configured" });
     const code = String(req.query.code ?? "");
     const state = String(req.query.state ?? "");
-    if (!code || !state) return res.status(400).json({ error: "missing_code_or_state" });
+    if (!state) return res.status(400).json({ error: "missing_state" });
 
     const claims = verifyJwt(state, cfg.jwtSecret);
     // Checked again here, not only at /start: a state minted before an allow-list
@@ -246,7 +247,28 @@ export function createApp(cfg: AppConfig): Express {
     const target = claims ? allowedReturn(String(claims.r ?? cfg.appUrl)) : null;
     if (!target) return res.status(400).json({ error: "bad_state" });
 
-    const profile = await exchangeGoogleCode(cfg.google, code);
+    /**
+     * A sign-in that did not happen goes back where it started, saying why, in the
+     * fragment — where the website's sign-in page and the extension's auth flow both
+     * look. Pressing Cancel on Google's page, an expired or reused code: these are
+     * ordinary outcomes of a person signing in, and used to surface as a raw 500.
+     */
+    const fail = (error: string, message: string) => {
+      const back = target.origin === appOrigin ? new URL("/signin", appOrigin) : target;
+      back.hash = new URLSearchParams({ error, message }).toString();
+      return res.redirect(back.toString());
+    };
+    if (req.query.error) return fail("cancelled", "Sign-in was cancelled.");
+    if (!code) return fail("no_code", "Google didn't finish the sign-in — please try again.");
+
+    let profile: Awaited<ReturnType<typeof exchangeGoogleCode>>;
+    try {
+      profile = await exchangeGoogleCode(cfg.google, code);
+    } catch (err) {
+      if (!(err instanceof GoogleRefused)) throw err;
+      console.error(`google sign-in refused: ${err.message}`);
+      return fail("google_refused", "Google didn't accept that sign-in — it may have expired. Please try again.");
+    }
     const user = await upsertGoogleUser(store, profile);
     const refresh = await issueRefresh(store, user._id);
     const access = signJwt({ sub: user._id }, cfg.jwtSecret);

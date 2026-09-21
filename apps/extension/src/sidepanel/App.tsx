@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { API_HOST } from "../shared/config.js";
 import { Details } from "./Details.js";
 import { useVoice } from "./voice.js";
 import type { ToWorker } from "../shared/messages.js";
@@ -569,7 +570,7 @@ function SignIn({
             </p>
           </>
         )}
-        {!state.auth && <p className="fine">Can't reach the server on localhost:8787.</p>}
+        {!state.auth && <p className="fine">Can't reach the Jev server ({API_HOST}).</p>}
       </div>
     </div>
   );

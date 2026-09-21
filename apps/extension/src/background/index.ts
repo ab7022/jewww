@@ -2,6 +2,7 @@ import { runPlan } from "@jev-browser/runtime";
 import type { MissingField, RunStatus } from "@jev-browser/runtime";
 import { ExplainResult, explainText } from "@jev-browser/shared";
 import { ApiError } from "@jev-browser/protocol";
+import { API_BASE } from "../shared/config.js";
 import { Api } from "./api.js";
 import { hasHostPermission, TabExecutor } from "./executor.js";
 import type { ToWorker } from "../shared/messages.js";
@@ -15,7 +16,6 @@ import { applyEvent, stepTitle } from "../shared/timeline.js";
  * chrome.storage.local after every event, an alarm keeps the worker warm while a run
  * is active, and the server holds the authoritative run record.
  */
-const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8787";
 const STATE = "panelState";
 const KEEPALIVE = "jev-keepalive";
 /** Enough to find last week's run, not enough to make the panel a filing cabinet. */

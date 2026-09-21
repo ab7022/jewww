@@ -30,7 +30,8 @@
     "gauntlet": "pnpm --filter @jev-browser/extension build:test && tsx eval/src/gauntlet/conformance.ts",
     "build:web": "pnpm --filter @jev-browser/web build",
     "gauntlet:agent": "tsx --env-file-if-exists=.env eval/src/gauntlet/agent.ts",
-    "build:vercel": "pnpm build:web && tsx apps/server/scripts/vercel-build.ts"
+    "build:vercel": "pnpm build:web && tsx apps/server/scripts/vercel-build.ts",
+    "build:extension:prod": "VITE_API_BASE=https://jev-olive.vercel.app pnpm --filter @jev-browser/extension build --outDir dist-prod"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",

@@ -14,3 +14,6 @@ apps/extension/dist-test/
 apps/web/dist/
 apps/web/dist-types/
 .vercel/
+.vercel
+.env*
+apps/extension/dist-prod/

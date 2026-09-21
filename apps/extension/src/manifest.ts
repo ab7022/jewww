@@ -22,6 +22,13 @@ export default defineManifest((env) => ({
   name: "Jev Browser Agent",
   version: "0.1.0",
   description: "Give it a goal. It does the browsing. You approve anything irreversible.",
+  // Pins the extension id (nmkjaahglibmbpdhbchpokcodmbphcna) on every machine and every
+  // build, unpacked or not: the server hands sign-in tokens only to ids on its
+  // EXTENSION_IDS list, and an unpacked id otherwise depends on the folder it was
+  // loaded from. This is the PUBLIC half; the private key is kept outside the repo.
+  // When the store listing exists, replace it with the dashboard's public key (the
+  // store id then applies) and update EXTENSION_IDS to match.
+  key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAljNrbsozGx67lhZkGS9jWO8dfTlD9EEHTHx7Gk2iDggTf8zI6DnulGcZOP6789PfkGfa6cdtHbjGi/p9oIqr0Rkw9DF8zJhPw+xbex/w1PAK1KytVbP/D2USZUor/Dk+3GA0pxBsKzw2pBu8ONC5MpmO7UApbrplsiE9uDZAtIymiK9Zca5KLcBI/fzGRMF3gC/BRogjiGeytm9vhpDcAT1F/wm03+WAVWlL7cxY8aXzOQf/7ylgW0BDHsHVKPrTQxNT+V0UnX/S+BOo1EATJjuXoJ0b00RW3Dbmi+REA310xmTRXwM70vubwGh3d85AG/jp+9/XHNEYhxLIUwlNVwIDAQAB",
   permissions: ["storage", "tabs", "scripting", "sidePanel", "alarms", "identity"],
   optional_permissions: ["debugger"],
   host_permissions: env.mode === "test" ? ["http://127.0.0.1/*"] : [],

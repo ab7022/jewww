@@ -11,3 +11,4 @@ apps/extension/dist-types/
 
 # extension test build (conformance gauntlet)
 apps/extension/dist-test/
+apps/web/dist/

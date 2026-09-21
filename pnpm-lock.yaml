@@ -137,6 +137,34 @@ importers:
         specifier: ^7.0.0
         version: 7.2.2
 
+  apps/web:
+    dependencies:
+      '@jev-browser/protocol':
+        specifier: workspace:*
+        version: link:../../packages/protocol
+      '@jev-browser/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+      react:
+        specifier: ^19.0.0
+        version: 19.3.0
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.3.0(react@19.3.0)
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.3.0(@types/react@19.3.0)
+      '@vitejs/plugin-react':
+        specifier: ^4.3.0
+        version: 4.7.0(vite@6.4.3(@types/node@24.13.6)(tsx@4.23.13))
+      vite:
+        specifier: ^6.0.0
+        version: 6.4.3(@types/node@24.13.6)(tsx@4.23.13)
+
   eval:
     dependencies:
       '@jev-browser/executor':
@@ -3204,7 +3232,7 @@ snapshots:
       debug: 4.4.3
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 7.3.6(@types/node@24.13.6)(tsx@4.23.13)
+      vite: 6.4.3(@types/node@24.13.6)(tsx@4.23.13)
     transitivePeerDependencies:
       - '@types/node'
       - jiti

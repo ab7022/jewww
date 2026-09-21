@@ -150,6 +150,9 @@ export function createApp(cfg: AppConfig): Express {
       path: "/auth",
       maxAge: 30 * 24 * 3600 * 1000,
     });
+    // Not a credential — only a hint the page CAN read, so a signed-out visitor does
+    // not fire a failing refresh on every page load. The real token stays httpOnly.
+    res.cookie("jev_signed_in", "1", { secure: production, sameSite: "lax", path: "/", maxAge: 30 * 24 * 3600 * 1000 });
   }
 
   function refreshFromCookie(req: Request): string {
@@ -236,6 +239,7 @@ export function createApp(cfg: AppConfig): Express {
     const refresh = String(req.body?.refresh ?? "") || refreshFromCookie(req);
     if (refresh) await revokeRefresh(store, refresh);
     res.clearCookie(REFRESH_COOKIE, { path: "/auth" });
+    res.clearCookie("jev_signed_in", { path: "/" });
     res.json({ ok: true });
   });
 

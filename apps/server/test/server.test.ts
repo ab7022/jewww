@@ -296,3 +296,72 @@ describe("every route answers", () => {
     expect(before).toBeGreaterThan(0);
   });
 });
+
+/**
+ * Sign-in used to deliver tokens to whatever `?redirect=` named, because the server
+ * signed the caller's value into `state` itself — so a link to /auth/google/start with
+ * an attacker's URL handed over a working session. These pin the allow-list.
+ */
+describe("where sign-in may send tokens", () => {
+  const google = { clientId: "id", clientSecret: "secret", redirectUri: "http://localhost/cb" };
+  const EXT = "a".repeat(32);
+  const dev = createApp({ store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "https://jev.app", google, production: false });
+  const prod = createApp({
+    store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "https://jev.app", google, production: true, extensionIds: [EXT],
+  });
+
+  it("refuses to send tokens to another site", async () => {
+    const res = await request(prod).get("/auth/google/start").query({ redirect: "https://attacker.example/steal" }).expect(400);
+    expect(res.body.error).toBe("redirect_not_allowed");
+  });
+
+  it("allows the website and the published extension", async () => {
+    await request(prod).get("/auth/google/start").query({ redirect: "https://jev.app/dashboard" }).expect(302);
+    await request(prod).get("/auth/google/start").query({ redirect: `https://${EXT}.chromiumapp.org/google` }).expect(302);
+  });
+
+  it("refuses an unknown extension in production, accepts it in development", async () => {
+    const other = `https://${"b".repeat(32)}.chromiumapp.org/google`;
+    await request(prod).get("/auth/google/start").query({ redirect: other }).expect(400);
+    await request(dev).get("/auth/google/start").query({ redirect: other }).expect(302);
+  });
+
+  it("re-checks the target at the callback, so an old state cannot outlive the rule", async () => {
+    const forged = signJwt({ r: "https://attacker.example/steal" }, SECRET, 600);
+    const res = await request(prod).get("/auth/google/callback").query({ code: "c", state: forged }).expect(400);
+    expect(res.body.error).toBe("bad_state");
+  });
+});
+
+describe("the website's session and CORS", () => {
+  const app = createApp({ store, jwtSecret: SECRET, openrouterKey: "unused", appUrl: "http://localhost:5173" });
+
+  it("keeps the website's refresh token in an httpOnly cookie, not the response", async () => {
+    const res = await request(app).post("/auth/dev").send({ email: "web@x.test", client: "web" }).expect(200);
+    expect(res.body.refresh).toBe("");
+    const cookies = ([] as string[]).concat(res.headers["set-cookie"] ?? []);
+    expect(cookies.find((c) => c.startsWith("jev_refresh="))).toMatch(/HttpOnly/i);
+    expect(cookies.some((c) => c.startsWith("jev_signed_in=1"))).toBe(true);
+
+    const refresh = cookies.find((c) => c.startsWith("jev_refresh="))?.split(";")[0] ?? "";
+    const again = await request(app).post("/auth/refresh").set("Cookie", refresh).send({}).expect(200);
+    expect(again.body.access).toBeTruthy();
+  });
+
+  it("answers CORS for the website and the extension only", async () => {
+    const site = await request(app).get("/health").set("Origin", "http://localhost:5173");
+    expect(site.headers["access-control-allow-origin"]).toBe("http://localhost:5173");
+    const ext = await request(app).get("/health").set("Origin", `chrome-extension://${"c".repeat(32)}`);
+    expect(ext.headers["access-control-allow-credentials"]).toBe("true");
+    const evil = await request(app).get("/health").set("Origin", "https://evil.example");
+    expect(evil.headers["access-control-allow-origin"]).toBeUndefined();
+  });
+
+  it("rejects a malformed request with the field named, before any model call", async () => {
+    const auth = `Bearer ${signJwt({ sub: "someone" }, SECRET)}`;
+    const res = await request(app).post("/api/runs").set("Authorization", auth).send({ goal: "", url: "not a url" }).expect(400);
+    expect(res.body.error).toBe("invalid_request");
+    expect(res.body.message).toMatch(/goal/);
+    expect(res.body.message).toMatch(/url/);
+  });
+});

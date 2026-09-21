@@ -124,6 +124,48 @@ manifest it read at load time. Rebuilding under a loaded extension produced
 "the extension was rebuilt — reload it" instead of failing obscurely. Stable (unhashed)
 content-script entry names would remove the skew entirely; not done yet.
 
+### 8. State that does not survive how the code is loaded
+
+The CDP driver evaluates the sense bundle before every call, and each evaluation made
+a fresh copy of every module. The element registry had already been moved onto a
+global to survive this — a per-case fix — but the cursor's position and the ink drawn
+on the page had not: the cursor re-entered from the corner on every action, and a click
+could not clear an explanation drawn one call earlier. The conformance gauntlet caught
+it as drift (it passed in the extension, which loads once).
+
+**Structural fix — the bundle installs once per document** (`if (!globalThis.__jevSense)`
+around it). All module state now lives exactly as long as the page, in both executors.
+
+### 9. One bad model answer ending a whole task
+
+A structurally invalid answer (probabilities not summing to one, a choice that is not
+the argmax) is refused, never coerced — correct. But the refusal propagated as a node
+failure, so one unreadable response ended a run one keystroke from done.
+
+**Structural fix — the scope of a refusal matches the scope of the fault.** `decide`
+asks the same question again, at most three times, every attempt paid for; judgements
+that have a safe default (field mapping, autonomy, mode) fall back to it per answer. An
+answer is still never acted on unless it validates.
+
+### 10. Configuration read in more than one place
+
+The local server and the deployed function each reading the environment is how one of
+them ends up accepting any extension or starting without a secret. A provider resolved
+twice inside one `Promise.all` left a rejected promise with nobody listening.
+
+**Structural fix — `apps/server/src/config.ts` reads it once, for every entry point, and
+refuses unsafe production configurations** (no Google sign-in, no `EXTENSION_IDS`, a
+short JWT secret, no Mongo URI). The deployed function answers 503 and logs the reason
+rather than running open. Model providers are resolved once per request, before work.
+
+### 11. Money
+
+Credits bought through Dodo Payments come only from our own pack table; only a payment
+Dodo vouches for (a signed webhook, or one we fetched ourselves) counts; and a grant is
+ONE atomic update of the user row guarded by the order id, so retried, duplicated or
+concurrent deliveries credit exactly once and a late failure never undoes a success.
+Eleven server tests hold these properties.
+
 ---
 
 ## What the gauntlet found on its first run
@@ -176,3 +218,27 @@ back with a sentence saying why. A run that stops at one of these is working.
 | 5 State schema | versioned zod panel state | `apps/extension/src/shared/state.ts` |
 | 6 Event identity | `at` / `nodeId` / `iteration` on every event | `runtime/events.ts`, timeline |
 | 7 Build skew | mismatch detected and explained (mitigation) | `background/executor.ts` |
+| 8 Load-time state | bundle installs once per document | `sense/bundle.ts` |
+| 9 Refusal scope | bounded re-ask in `decide`; safe defaults elsewhere | `policy/decide.ts` |
+| 10 Config | one reader, production refuses unsafe config | `server/config.ts` |
+| 11 Money | pack table, verified payments, idempotent grant | `server/billing.ts` |
+
+## Evidence (last run)
+
+| Gate | Result |
+|---|---|
+| Unit + integration (`pnpm verify`) | 197 / 197 |
+| Conformance, both executors (`pnpm gauntlet`) | 34 / 34 — no drift |
+| Guards in a real browser (`pnpm check:guards`) | 9 / 9 |
+| Extension load checks | 14 / 14 |
+| Field mapping on real ATS forms (`eval:fields`) | 98.3 % |
+| **End to end through the server, real models (`pnpm gauntlet:agent`)** | 8 cases: 7/8 in a full run, then the failing case 5/5 on re-runs |
+
+The end-to-end cases are graded on what happened in the page (what was submitted,
+sent, typed), never on what the agent says: apply to two jobs with saved details;
+draft but do not send; send without asking when told to; never type a password even
+when given one; point instead of click for "where"; read and answer; explain a bill by
+drawing on it; create a Google-Forms-style form through a mousedown-only tile and a
+welcome dialog. The one intermittent failure (the job loop reporting BLOCKED after
+filling, on one plan shape out of several) did not reproduce in five further runs and
+is tracked, not declared fixed.

@@ -69,6 +69,15 @@ none, so it can never intercept a real click):
 The cursor is the trust surface. People forgive a slow agent they can watch; they do
 not forgive one that clicks things they did not see.
 
+## Drawing on the page ("explain")
+
+Ask *what am I looking at*, *walk me through this bill*, *which plan should I pick*,
+and Jev answers ON the page: hand-drawn loops around what matters, numbered in reading
+order, each with a short note and an arrow. It touches nothing. Notes avoid covering
+other controls, follow the page when it scrolls, and clear on Esc or on Jev's next
+action. In Show-me mode the target of each step is circled the same way. It is a plan
+node (`explain`), so it combines with everything else — read a page, then explain it.
+
 ## Use-case catalogue
 
 Tiers: **A** works today end to end · **B** works with known limits · **C** hard stop
@@ -142,6 +151,8 @@ by design · **D** not yet.
 | How do I enable 2FA on this site? | A |
 | Walk me through creating a pivot table | B — multi-step guide, one pointer at a time |
 
+| What am I looking at? / Walk me through this bill | A — `explain` draws numbered notes |
+
 ### Never (tier C, by design)
 Typing a password, card number, CVV, SSN, OTP or PIN · creating accounts · solving a
 CAPTCHA · entering payment details · 2FA. The agent hands over with one sentence
@@ -168,8 +179,12 @@ a default ("never submit anything without asking me").
   accounts and credits as the extension.
 - **Dashboard** — credits and usage, run history, standing instructions, saved
   details, install / connect the extension, sign out.
-- **Pricing** — Free (credits on sign-up), Pro, Max. Stripe is additive later; the
-  credit ledger already exists.
+- **Pricing** — 500 free credits on sign-up; one-time packs (Starter $9, Pro $29,
+  Team $99) through Dodo Payments, merchant of record. **Credits & orders** on the
+  account page: buy, status of every order, invoice links.
+- **Deployed** — https://jev-olive.vercel.app (static site + the API as one Vercel
+  function). The API needs `MONGO_URI`, Google OAuth and `EXTENSION_IDS` in the Vercel
+  project before sign-in works; until then it answers 503 by design.
 
 ## Success metrics
 

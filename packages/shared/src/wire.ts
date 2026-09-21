@@ -91,6 +91,10 @@ export type CreateRunRequest = z.infer<typeof CreateRunRequest>;
 export const Autonomy = z.enum(["full", "confirm", "never"]);
 export type AutonomyLevel = z.infer<typeof Autonomy>;
 
+/** Do the task, or show the person how. See policy/constraints.ts. */
+export const RunMode = z.enum(["do", "show"]);
+export type RunMode = z.infer<typeof RunMode>;
+
 /** What a finished run ended as. Anything else is a client bug, not a status. */
 export const RunOutcome = z.enum(["done", "blocked", "suspended", "budget", "aborted", "error"]);
 export type RunOutcome = z.infer<typeof RunOutcome>;
@@ -107,6 +111,7 @@ export const RunContext = z.object({
   runId: z.string(),
   plan: Plan,
   autonomy: Autonomy,
+  mode: RunMode,
   /** Saved details overlaid with anything stated in the request itself. */
   profile: z.record(z.string(), z.string()),
   balance: z.number(),

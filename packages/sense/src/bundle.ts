@@ -52,6 +52,11 @@ export const call = {
     `${GLOBAL_NAME}.preflight(${node}, ${JSON.stringify(kind)}, ${JSON.stringify(value ?? null)}, ${JSON.stringify(fp ?? null)})`,
   resolvePoint: (node: number, kind: string, value?: string, fp?: string) =>
     `JSON.stringify(${GLOBAL_NAME}.resolvePoint(${node}, ${JSON.stringify(kind)}, ${JSON.stringify(value ?? null)}, ${JSON.stringify(fp ?? null)}))`,
+  approach: (node: number, kind: string, value?: string, fp?: string) =>
+    `${GLOBAL_NAME}.approach(${node}, ${JSON.stringify(kind)}, ${JSON.stringify(value ?? null)}, ${JSON.stringify(fp ?? null)}).then((r) => JSON.stringify(r))`,
+  point: (node: number, message: string, fp?: string) =>
+    `${GLOBAL_NAME}.point(${node}, ${JSON.stringify(message)}, ${JSON.stringify(fp ?? null)})`,
+  cursorHide: () => `${GLOBAL_NAME}.cursorHide()`,
   settle: (node: number | null, isCombobox: boolean) =>
     `${GLOBAL_NAME}.settle(${node === null ? "null" : node}, ${isCombobox})`,
 };

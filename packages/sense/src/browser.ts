@@ -1,5 +1,6 @@
 import { FORBIDDEN_FIELD } from "@jev-browser/shared";
 import type { RawSnapshot } from "@jev-browser/shared";
+import { cursorClick, cursorHighlight, cursorTo } from "./cursor.js";
 import {
   collectSnapshot,
   composedContains,
@@ -289,6 +290,52 @@ export function resolvePoint(
   }
   return { x, y };
 }
+
+/** What the cursor's label says while it heads for an element. */
+function cursorLabel(kind: "click" | "fill" | "select", el: Element | undefined, value?: string): string {
+  const name = el ? nameOf(el) : "";
+  const quoted = name ? `\u201c${name.length > 40 ? `${name.slice(0, 39)}\u2026` : name}\u201d` : "";
+  if (kind === "fill") return quoted ? `Typing into ${quoted}` : "Typing";
+  if (kind === "select") return `Choosing \u201c${value ?? ""}\u201d${quoted ? ` in ${quoted}` : ""}`;
+  return quoted ? `Clicking ${quoted}` : "Clicking";
+}
+
+/**
+ * Resolve the target, glide the cursor to it, then resolve AGAIN and return that.
+ *
+ * The second resolve is the one acted on: the glide takes a few hundred milliseconds,
+ * the page can move in that time, and acting on a point measured before the animation
+ * would click whatever slid under it. Both executors call this instead of resolving
+ * directly, so both show the cursor and neither can skip the re-check.
+ */
+export async function approach(
+  node: number,
+  kind: "click" | "fill" | "select",
+  value?: string,
+  fp?: string,
+): Promise<Resolution> {
+  const first = resolvePoint(node, kind, value, fp, true);
+  if ("refused" in first) return first;
+  await cursorTo(first.x, first.y, cursorLabel(kind, elementFor(node, fp), value), kind === "fill" ? "type" : "click");
+  const final = resolvePoint(node, kind, value, fp);
+  if (!("refused" in final) && kind === "click") cursorClick();
+  return final;
+}
+
+/**
+ * Show mode: point at the element and say what to do, without touching it.
+ * Returns the reason it could not be pointed at, or null.
+ */
+export async function point(node: number, message: string, fp?: string): Promise<string | null> {
+  const r = resolvePoint(node, "click", undefined, fp, true);
+  if ("refused" in r) return r.refused;
+  const el = elementFor(node, fp);
+  await cursorTo(r.x, r.y, message, "point");
+  cursorHighlight(el ? topRect(el) : null);
+  return null;
+}
+
+export { cursorClick, cursorHide, cursorHighlight, cursorListening, cursorTo } from "./cursor.js";
 
 /**
  * Could this be acted on right now? The reason it could not, or null.

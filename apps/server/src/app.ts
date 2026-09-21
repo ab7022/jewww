@@ -399,6 +399,7 @@ export function createApp(cfg: AppConfig): Express {
       runId,
       plan: planned.plan,
       autonomy: constraints.autonomy,
+      mode: constraints.mode,
       // What was just typed is more specific than a saved default.
       profile: { ...(saved?.fields ?? {}), ...stated.fields },
       balance: charge.balance,

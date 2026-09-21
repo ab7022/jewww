@@ -8,12 +8,16 @@ export {
   topRect,
 } from "./collect.js";
 export {
+  approach,
+  cursorHide,
+  cursorListening,
   editableWithin,
   elementFor,
   isCredentialField,
   nodeGuard,
   pageKey,
   pageText,
+  point,
   preflight,
   resolvePoint,
   settle,

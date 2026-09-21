@@ -83,6 +83,14 @@ export interface RunOptions {
    * on clicking and typing in the user's tab.
    */
   signal?: AbortSignal;
+  /**
+   * "do" carries the task out. "show" makes the same decisions but, instead of acting,
+   * points the cursor at each target and waits for the person to do it — how someone
+   * learns a tool. Read from the user's own words on the server.
+   */
+  mode?: "do" | "show";
+  /** Show mode: how long to wait for the person before treating the point as the answer. */
+  showWaitMs?: number;
 }
 
 export interface RunResult {
@@ -107,6 +115,7 @@ export async function runPlan(options: RunOptions): Promise<RunResult> {
     pending: [],
     currentItem: undefined,
     iteration: undefined,
+    finished: false,
   };
 
   // The ONE place events get their time and loop position. Call sites emit bare
@@ -144,6 +153,8 @@ interface LoopState {
   currentItem: unknown;
   /** Loop position stamped onto events; see `Stamp.iteration`. */
   iteration: string | undefined;
+  /** Set when the run has reached its answer early (show mode, pointing done). */
+  finished: boolean;
 }
 
 /** Run options as the interpreter sees them: `emit` takes bare payloads. */
@@ -156,6 +167,7 @@ async function runNodes(
   state: LoopState,
 ): Promise<RunStatus> {
   for (const node of nodes) {
+    if (state.finished) return "done";
     if (opts.signal?.aborted) return "aborted";
     if (state.steps >= state.budget) return "budget";
     opts.emit({ type: "node:start", id: node.id, kind: node.kind, intent: node.intent });
@@ -370,6 +382,30 @@ async function runActNode(
         preview: `refused to type into a credential field: ${label}`,
       });
       return "suspended";
+    }
+
+    // Show mode: the same decision, but the person acts. Nothing on the page is
+    // touched, so no approval applies.
+    if (opts.mode === "show" && d.node !== undefined && isPointable(d.action)) {
+      const targetFp = raw.elements.find((e) => e.eid === d.target?.eid)?.fp;
+      const message = showMessage(d.action, label);
+      const refusal = await opts.executor.point(d.node, message, targetFp);
+      if (refusal) {
+        if (targetFp && PHYSICALLY_UNREACHABLE.test(refusal)) covered.add(targetFp);
+        recent.push({ action: `point at "${label}" FAILED: ${refusal}`, pageChanged: false });
+        opts.emit({ type: "warn", nodeId: node.id, message: `${refusal}, re-observing` });
+        continue;
+      }
+      opts.emit({ type: "point", nodeId: node.id, message, ...(label ? { target: label } : {}) });
+      const acted = await waitForPerson(opts, raw.contentHash);
+      if (acted === "aborted") return "aborted";
+      if (!acted) {
+        // They looked and did not click: for "where is…" the pointing WAS the answer.
+        state.finished = true;
+        return "done";
+      }
+      recent.push({ action: `showed the person "${label}" and they did it`, pageChanged: true });
+      continue;
     }
 
     const autonomy = opts.autonomy ?? "confirm";
@@ -848,6 +884,33 @@ async function runForeachNode(
     return "blocked";
   }
   return "done";
+}
+
+function isPointable(action: { kind: string }): boolean {
+  return action.kind === "click" || action.kind === "type" || action.kind === "select";
+}
+
+/** What the cursor says in show mode: an instruction to the person, not a log line. */
+function showMessage(action: { kind: string; option?: string }, label: string): string {
+  const quoted = label ? `\u201c${label}\u201d` : "";
+  if (action.kind === "type") return quoted ? `Type in ${quoted}` : "Type here";
+  if (action.kind === "select") return `Choose \u201c${action.option ?? ""}\u201d${quoted ? ` in ${quoted}` : ""}`;
+  return quoted ? `Click ${quoted}` : "Click here";
+}
+
+/**
+ * Show mode: wait for the person to do what the cursor points at — the page changing
+ * is how we know. Polls rather than listening, so it works the same in both executors.
+ */
+async function waitForPerson(opts: Ctx, before: string): Promise<boolean | "aborted"> {
+  const deadline = Date.now() + (opts.showWaitMs ?? 45_000);
+  while (Date.now() < deadline) {
+    if (opts.signal?.aborted) return "aborted";
+    await new Promise((r) => setTimeout(r, Math.min(800, opts.showWaitMs ?? 800)));
+    const now = await opts.executor.snapshot().catch(() => null);
+    if (now && now.contentHash !== before) return true;
+  }
+  return false;
 }
 
 /**

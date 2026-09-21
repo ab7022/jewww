@@ -60,6 +60,11 @@ export interface Executor {
    * approvals in a row for a click that was blocked every time.
    */
   preflight(action: Action, node: number | null, fp?: string): Promise<string | null>;
+  /**
+   * Show mode: move the agent's cursor to the element and outline it, with `message`
+   * as its label — without touching it. Returns why it could not, or null.
+   */
+  point(node: number, message: string, fp?: string): Promise<string | null>;
   /** Wait for the page to be worth observing again. */
   settle(node: number | null, isCombobox: boolean): Promise<void>;
   /**

@@ -164,6 +164,17 @@ export class TabExecutor implements Executor {
     return tab.pendingUrl ?? tab.url ?? "";
   }
 
+  async point(node: number, message: string, fp?: string): Promise<string | null> {
+    const res = await this.send({ kind: "point", node, message, ...(fp ? { fp } : {}) });
+    if (!res.ok) return res.error;
+    return "refusal" in res ? res.refusal : null;
+  }
+
+  /** Put the agent's cursor away; the run is over. Never fails a run. */
+  async hideCursor(): Promise<void> {
+    await chrome.tabs.sendMessage(this.tabId, { kind: "cursor", hide: true }).catch(() => {});
+  }
+
   async preflight(action: Action, node: number | null, fp?: string): Promise<string | null> {
     const res = await this.send({ kind: "preflight", action, node, ...(fp ? { fp } : {}) });
     if (!res.ok) return res.error;

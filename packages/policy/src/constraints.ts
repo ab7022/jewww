@@ -19,8 +19,23 @@ export const AUTONOMY = {
 } as const;
 export type Autonomy = keyof typeof AUTONOMY;
 
+/**
+ * Whether the person wants the task DONE, or wants to be SHOWN how to do it.
+ *
+ * Read from their words by the model, in the same call as authority — "where do I turn
+ * on two-factor?" and "turn on two-factor" name the same target and want opposite
+ * things. In show mode the agent finds the same element it would have clicked, points
+ * the cursor at it, and leaves the click to the person.
+ */
+export const MODE = {
+  do: "the user wants the task carried out for them",
+  show: "the user wants to be shown or taught where or how to do it themselves — a question like 'where is…' or 'how do I…', or an explicit 'show me'",
+} as const;
+export type Mode = keyof typeof MODE;
+
 export interface Constraints {
   autonomy: Autonomy;
+  mode: Mode;
   confidence: number;
   costUsd: number;
 }
@@ -38,18 +53,36 @@ export async function readConstraints(jev: JevProvider, goal: string): Promise<C
       instructions: `${INSTRUCTIONS}\n\nThe user's goal: "${goal}"`,
       criteria: { ...AUTONOMY },
     },
+    mode: {
+      type: "choice",
+      instructions: `Does the user want this done for them, or to be shown how to do it themselves?\n\nThe user's goal: "${goal}"`,
+      criteria: { ...MODE },
+    },
   };
 
   const r = await jev.evaluate({ goal }, questions);
+
+  // Each answer is read independently: an unreadable one falls back to its cautious
+  // default without discarding the other.
+  let mode: Mode = "do";
+  try {
+    const m = r.answers.mode;
+    validateChoice(m, Object.keys(MODE));
+    mode = m.choice as Mode;
+  } catch {
+    // "do" is the default reading of an imperative request.
+  }
+
   const answer = r.answers.autonomy;
   try {
     validateChoice(answer, Object.keys(AUTONOMY));
   } catch {
     // Unreadable answer: assume the cautious reading rather than acting freely.
-    return { autonomy: "confirm", confidence: 0, costUsd: r.costUsd };
+    return { autonomy: "confirm", mode, confidence: 0, costUsd: r.costUsd };
   }
   return {
     autonomy: answer.choice as Autonomy,
+    mode,
     confidence: answer.probabilities?.[answer.choice] ?? 1,
     costUsd: r.costUsd,
   };

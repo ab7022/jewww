@@ -187,6 +187,9 @@ class RemoteExecutor implements Executor {
   preflight(action: Action, node: number | null, fp?: string): Promise<string | null> {
     return this.call("preflight", fp === undefined ? [action, node] : [action, node, fp]);
   }
+  point(node: number, message: string, fp?: string): Promise<string | null> {
+    return this.call("point", fp === undefined ? [node, message] : [node, message, fp]);
+  }
   settle(node: number | null, isCombobox: boolean): Promise<void> {
     return this.call("settle", [node, isCombobox]);
   }

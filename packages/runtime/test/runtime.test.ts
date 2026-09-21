@@ -86,6 +86,9 @@ function fakeExecutor(hashes: string[], name?: string): Executor & { acted: Acti
     async preflight() {
       return null;
     },
+    async point() {
+      return null;
+    },
     async settle() {},
     async url() {
       return "https://x.test/p";
@@ -749,5 +752,77 @@ describe("a covered target is withdrawn from the choices", () => {
     );
 
     expect(offered[1]).toContain("Go");
+  });
+});
+
+/**
+ * Show mode makes the same decisions as do mode, but the person acts: the cursor points
+ * at the target and the agent waits. "Where is the export button?" wants a pointer, not
+ * a click — and a run that clicks it anyway has done something the user did not ask for.
+ */
+describe("show mode", () => {
+  const pointing = (hashes: string[]) => {
+    const ex = fakeExecutor(hashes);
+    const pointed: string[] = [];
+    ex.point = async (_node, message) => {
+      pointed.push(message);
+      return null;
+    };
+    return Object.assign(ex, { pointed });
+  };
+
+  it("points at the target and never acts on it", async () => {
+    // The page never changes: the person looked, and did not click.
+    const ex = pointing(["same"]);
+    const { result } = await run(
+      plan([{ kind: "act", id: "a", intent: "show me the button", success: "s" }]),
+      fakeJev(["CLICK"]),
+      ex,
+      { mode: "show", showWaitMs: 30 },
+    );
+    expect(ex.acted).toHaveLength(0);
+    expect(ex.pointed).toEqual(["Click “Go”"]);
+    expect(result.status).toBe("done");
+  });
+
+  it("treats an un-clicked point as the answer and stops there", async () => {
+    const ex = pointing(["same"]);
+    const { events } = await run(
+      plan([
+        { kind: "act", id: "a", intent: "where is it", success: "s" },
+        { kind: "act", id: "b", intent: "then this", success: "s" },
+      ]),
+      fakeJev(["CLICK"]),
+      ex,
+      { mode: "show", showWaitMs: 30 },
+    );
+    expect(events.some((e) => e.type === "node:start" && e.id === "b")).toBe(false);
+  });
+
+  it("carries on guiding once the person has done it", async () => {
+    // h1 when pointed, h2 after the person clicks, then the model says DONE.
+    const ex = pointing(["h1", "h2", "h2", "h2"]);
+    const { result, events } = await run(
+      plan([{ kind: "act", id: "a", intent: "walk me through it", success: "s" }]),
+      fakeJev(["CLICK", "DONE"]),
+      ex,
+      { mode: "show", showWaitMs: 2000 },
+    );
+    expect(result.status).toBe("done");
+    expect(ex.acted).toHaveLength(0);
+    expect(events.filter((e) => e.type === "point")).toHaveLength(1);
+  });
+
+  it("stops waiting the moment Stop is pressed", async () => {
+    const ex = pointing(["same"]);
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 20);
+    const { result } = await run(
+      plan([{ kind: "act", id: "a", intent: "show me", success: "s" }]),
+      fakeJev(["CLICK"]),
+      ex,
+      { mode: "show", showWaitMs: 10_000, signal: controller.signal },
+    );
+    expect(result.status).toBe("aborted");
   });
 });

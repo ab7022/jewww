@@ -153,6 +153,7 @@ async function start(goal: string, tabId: number): Promise<void> {
       executor,
       plan: context.plan,
       autonomy: context.autonomy,
+      mode: context.mode,
       signal: controller.signal,
       emit: (e) => {
         void update((s) => ({ steps: applyEvent(s.steps, e) }));
@@ -184,6 +185,7 @@ async function start(goal: string, tabId: number): Promise<void> {
     status = controller.signal.aborted ? "aborted" : "error";
     await patch({ error: explain(err) });
   } finally {
+    await executor.hideCursor();
     executor.detach();
     await chrome.alarms.clear(KEEPALIVE).catch(() => {});
     active = null;

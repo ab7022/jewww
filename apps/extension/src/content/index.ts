@@ -1,4 +1,7 @@
 import {
+  approach,
+  cursorHide,
+  cursorListening,
   deepElementFromPoint,
   editableWithin,
   elementFor,
@@ -6,8 +9,8 @@ import {
   nodeGuard,
   pageKey,
   pageText,
+  point,
   preflight,
-  resolvePoint,
   settle,
   snapshot,
   stillFresh,
@@ -92,6 +95,14 @@ async function handle(msg: ToContent): Promise<FromContent> {
       await settle(msg.node, msg.isCombobox);
       return { ok: true };
 
+    case "point":
+      return { ok: true, refusal: await point(msg.node, msg.message, msg.fp) };
+
+    case "cursor":
+      if (msg.hide) cursorHide();
+      if (msg.listening !== undefined) cursorListening(msg.listening);
+      return { ok: true };
+
     case "preflight": {
       const { action, node, fp } = msg;
       if (node === null) return { ok: true, refusal: null };
@@ -131,16 +142,18 @@ async function handle(msg: ToContent): Promise<FromContent> {
 
       const kind = action.kind === "type" ? "fill" : action.kind === "select" ? "select" : "click";
       const option = action.kind === "select" ? action.option : undefined;
-      const point = resolvePoint(node, kind, option, fp);
-      if ("refused" in point) return { ok: false, error: point.refused, unreachable: true };
+      // Glides the agent's cursor to the target, then re-resolves: the point acted on
+      // is measured after the cursor arrives, not before.
+      const at = await approach(node, kind, option, fp);
+      if ("refused" in at) return { ok: false, error: at.refused, unreachable: true };
       if (kind === "select") return { ok: true };
 
-      // `resolvePoint` has just proved the chosen element is what sits at this point.
+      // `approach` has just proved the chosen element is what sits at this point.
       // `hit` is the innermost element there — events are dispatched on it so they
       // bubble the real path. Text goes to the CHOSEN element: climbing from the hit
       // to the nearest `[role]` once landed on a dialog wrapper and set `.value` on a
       // div, which does nothing.
-      const hit = deepElementFromPoint(point.x, point.y) as HTMLElement | null;
+      const hit = deepElementFromPoint(at.x, at.y) as HTMLElement | null;
       const chosen = elementFor(node, fp) as HTMLElement | undefined;
       const target = chosen ?? hit;
       if (!target || !hit) return { ok: false, error: "nothing at the resolved point", unreachable: true };
@@ -157,7 +170,7 @@ async function handle(msg: ToContent): Promise<FromContent> {
         }
         // Click first, exactly as a person would: comboboxes, masked inputs and rich
         // editors initialise on focus/pointerdown, and some only accept text after it.
-        pressAt(hit, target, point.x, point.y);
+        pressAt(hit, target, at.x, at.y);
         setFieldValue(field, text ?? "");
         if (action.submit) {
           for (const type of ["keydown", "keypress", "keyup"]) {
@@ -177,7 +190,7 @@ async function handle(msg: ToContent): Promise<FromContent> {
         return { ok: true };
       }
 
-      pressAt(hit, target, point.x, point.y);
+      pressAt(hit, target, at.x, at.y);
       return { ok: true };
     }
   }

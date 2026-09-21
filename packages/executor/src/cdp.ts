@@ -118,6 +118,15 @@ export class CdpExecutor implements Executor {
     return this.page.url();
   }
 
+  async point(node: number, message: string, fp?: string): Promise<string | null> {
+    try {
+      await this.page.evaluate(this.source);
+      return (await this.page.evaluate(call.point(node, message, fp))) as string | null;
+    } catch (err) {
+      return `could not point at the target: ${String(err).slice(0, 100)}`;
+    }
+  }
+
   async preflight(action: Action, node: number | null, fp?: string): Promise<string | null> {
     if (node === null) return null;
     if (action.kind !== "click" && action.kind !== "type" && action.kind !== "select") return null;
@@ -252,8 +261,10 @@ export class CdpExecutor implements Executor {
     //    performs the mutation, because a native select cannot be driven by a click.
     const kind = action.kind === "type" ? "fill" : action.kind === "select" ? "select" : "click";
     const option = action.kind === "select" ? action.option : undefined;
+    // `approach` glides the agent's cursor to the target and re-resolves on arrival:
+    // the same browser-side code the extension runs, so both show it and both re-check.
     const raw = await this.page
-      .evaluate(call.resolvePoint(node, kind, option, fp))
+      .evaluate(call.approach(node, kind, option, fp))
       .catch((err: unknown) => ({ evalError: String(err).slice(0, 120) }));
     if (typeof raw !== "string") {
       throw new StalePage(`could not resolve the target: ${JSON.stringify(raw)}`);

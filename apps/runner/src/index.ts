@@ -117,6 +117,7 @@ try {
     // --auto-approve exists ONLY so a read-only task can run unattended. It must
     // never be the default: it turns the safety gate off.
     autonomy: constraints.autonomy,
+    mode: constraints.mode,
     // Anything the agent cannot answer is asked ONCE and remembered, so the same
     // question on the next nine applications fills itself.
     ...(flag("no-ask")

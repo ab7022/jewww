@@ -10,6 +10,9 @@ export type ToContent =
   | { kind: "guard"; node: number | null; fp?: string }
   | { kind: "act"; action: Action; node: number | null; guard: GuardPair; text?: string; fp?: string }
   | { kind: "preflight"; action: Action; node: number | null; fp?: string }
+  | { kind: "point"; node: number; message: string; fp?: string }
+  /** The agent's on-page cursor: hide it, or show the listening pill. */
+  | { kind: "cursor"; hide?: boolean; listening?: boolean }
   | { kind: "settle"; node: number | null; isCombobox: boolean };
 
 export interface GuardPair {

@@ -235,4 +235,33 @@ export const SCENARIOS: Scenario[] = [
       t.expect((await s.probe("document.body.dataset.outcome")) === "submitted", "iframe button not clicked");
     },
   },
+  {
+    name: "the agent's cursor is drawn but never collected or in the way",
+    page: "tile.html",
+    why: "the trust surface must never become a target, block a hit test, or read as page content",
+    async run(s, t) {
+      const tile = await t.find("button", "Blank form");
+      await t.click(tile);
+      t.expect((await s.probe(`!!document.querySelector("jev-agent-overlay")`)) === true, "no cursor was drawn");
+      const snap = await t.snapshot();
+      t.expect(!snap.elements.some((e) => /Jev|Clicking/.test(e.name)), "the cursor's label was collected as page content");
+      t.expect(!/Clicking/.test(snap.text), "the cursor's label leaked into the page text");
+      const hit = (await s.probe(
+        `(() => { const r = document.querySelector(".tile").getBoundingClientRect();
+          return document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2)?.tagName; })()`,
+      )) as string;
+      t.expect(hit !== "JEV-AGENT-OVERLAY", "the overlay intercepts hit tests");
+    },
+  },
+  {
+    name: "show mode points at a target without touching it",
+    page: "tile.html",
+    why: "'where is Blank form?' wants a pointer; clicking it anyway does what nobody asked",
+    async run(s, t) {
+      const tile = await t.find("button", "Blank form");
+      const refusal = await s.exec.point(tile.node, "Click \u201cBlank form\u201d", tile.fp);
+      t.expect(refusal === null, `could not point: ${refusal}`);
+      t.expect((await s.probe("document.body.dataset.outcome")) !== "created", "pointing clicked the tile");
+    },
+  },
 ];

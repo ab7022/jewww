@@ -218,6 +218,10 @@ export function applyEvent(steps: TimelineStep[], e: StampedEvent): TimelineStep
       byId(e.nodeId)?.actions.push({ kind: "note", text: `Held back for you: ${e.preview}` });
       return next;
 
+    case "point":
+      byId(e.nodeId)?.actions.push({ kind: "act", text: `Showed you: ${e.message}` });
+      return next;
+
     case "asked":
       byId(e.nodeId)?.actions.push({
         kind: "note",

@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/supertest": "^6.0.2",
+    "esbuild": "^0.28.0",
     "supertest": "^7.0.0"
   }
 }

@@ -29,7 +29,8 @@
     "verify": "pnpm typecheck && pnpm test",
     "gauntlet": "pnpm --filter @jev-browser/extension build:test && tsx eval/src/gauntlet/conformance.ts",
     "build:web": "pnpm --filter @jev-browser/web build",
-    "gauntlet:agent": "tsx --env-file-if-exists=.env eval/src/gauntlet/agent.ts"
+    "gauntlet:agent": "tsx --env-file-if-exists=.env eval/src/gauntlet/agent.ts",
+    "build:vercel": "pnpm build:web && tsx apps/server/scripts/vercel-build.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",

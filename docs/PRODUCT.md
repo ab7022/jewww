@@ -183,8 +183,9 @@ a default ("never submit anything without asking me").
   Team $99) through Dodo Payments, merchant of record. **Credits & orders** on the
   account page: buy, status of every order, invoice links.
 - **Deployed** — https://jev-olive.vercel.app (static site + the API as one Vercel
-  function). The API needs `MONGO_URI`, Google OAuth and `EXTENSION_IDS` in the Vercel
-  project before sign-in works; until then it answers 503 by design.
+  function), with MongoDB Atlas, Google sign-in and live Dodo payments configured.
+  The extension's id is pinned by a manifest key (`nmkjaahglibmbpdhbchpokcodmbphcna`);
+  `pnpm build:extension:prod` builds it against the live server.
 
 ## Success metrics
 

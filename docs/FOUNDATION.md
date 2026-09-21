@@ -158,6 +158,16 @@ refuses unsafe production configurations** (no Google sign-in, no `EXTENSION_IDS
 short JWT secret, no Mongo URI). The deployed function answers 503 and logs the reason
 rather than running open. Model providers are resolved once per request, before work.
 
+### 12. A capability bound to the moment a node starts
+
+The fill node's batch pass (map every field in one call, ask the user once, fill) ran
+only on arrival. Anything a form revealed later — behind a button, on a wizard's next
+page, in an expanding section — fell to the one-field-at-a-time loop, which cannot ask.
+
+**Structural fix — a fill node is the step loop with the batch pass attached.** Every
+time the page shows fillable fields the node has not seen, they get the batch pass, then
+the loop carries on. One path instead of "batch, else fall back".
+
 ### 11. Money
 
 Credits bought through Dodo Payments come only from our own pack table; only a payment
@@ -222,23 +232,26 @@ back with a sentence saying why. A run that stops at one of these is working.
 | 9 Refusal scope | bounded re-ask in `decide`; safe defaults elsewhere | `policy/decide.ts` |
 | 10 Config | one reader, production refuses unsafe config | `server/config.ts` |
 | 11 Money | pack table, verified payments, idempotent grant | `server/billing.ts` |
+| 12 Late forms | batch pass on every newly revealed field | `runtime/run.ts` (`runFillNode`) |
 
 ## Evidence (last run)
 
 | Gate | Result |
 |---|---|
-| Unit + integration (`pnpm verify`) | 197 / 197 |
+| Unit + integration (`pnpm verify`) | 198 / 198 |
 | Conformance, both executors (`pnpm gauntlet`) | 34 / 34 — no drift |
 | Guards in a real browser (`pnpm check:guards`) | 9 / 9 |
 | Extension load checks | 14 / 14 |
 | Field mapping on real ATS forms (`eval:fields`) | 98.3 % |
-| **End to end through the server, real models (`pnpm gauntlet:agent`)** | 8 cases: 7/8 in a full run, then the failing case 5/5 on re-runs |
+| **End to end through the server, real models (`pnpm gauntlet:agent`)** | 8 / 8, in two consecutive full runs |
 
 The end-to-end cases are graded on what happened in the page (what was submitted,
 sent, typed), never on what the agent says: apply to two jobs with saved details;
 draft but do not send; send without asking when told to; never type a password even
 when given one; point instead of click for "where"; read and answer; explain a bill by
 drawing on it; create a Google-Forms-style form through a mousedown-only tile and a
-welcome dialog. The one intermittent failure (the job loop reporting BLOCKED after
-filling, on one plan shape out of several) did not reproduce in five further runs and
-is tracked, not declared fixed.
+welcome dialog. The job-application loop used to fail on one plan shape. The server's step log
+showed why, deterministically: the form sat behind "Easy Apply", the fill node's batch
+pass ran once on arrival and saw no fields, and the step loop then typed the fields
+itself and stopped BLOCKED at "Why do you want to join?" — only the batch pass can ask
+the user. Fixed as class 12 below.

@@ -41,6 +41,8 @@ export type ToWorker =
   | { kind: "saveProfile"; fields: Record<string, string>; instructions: string }
   | { kind: "reset" }
   /** Answers to the questions a form asked; an empty value leaves that field blank. */
-  | { kind: "answer"; values: Record<string, string> };
+  | { kind: "answer"; values: Record<string, string> }
+  /** The panel's microphone is taking a request: show the pill on the page. */
+  | { kind: "listening"; on: boolean };
 
 export type { HistoryEntry, PanelState, Question } from "./state.js";

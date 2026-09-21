@@ -40,5 +40,13 @@ export default defineManifest((env) => ({
     },
   ],
   side_panel: { default_path: "src/sidepanel/index.html" },
+  // ⌥J opens Jev. A keyboard command counts as a user gesture, which is what Chrome
+  // requires before it will open a side panel — a voice alone cannot.
+  commands: {
+    _execute_action: {
+      suggested_key: { default: "Alt+J", mac: "Alt+J" },
+      description: "Open Jev",
+    },
+  },
   action: { default_title: "Jev Browser Agent" },
 }));

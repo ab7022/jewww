@@ -294,6 +294,15 @@ chrome.runtime.onMessage.addListener((msg: ToWorker, _sender, sendResponse) => {
         return sendResponse({ ok: true });
       }
 
+      case "listening": {
+        // Best effort: a tab we have no access to simply shows no pill.
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        if (tab?.id) {
+          await chrome.tabs.sendMessage(tab.id, { kind: "cursor", listening: msg.on }).catch(() => {});
+        }
+        return sendResponse({ ok: true });
+      }
+
       case "start":
         start(msg.goal, msg.tabId).catch(async (err: unknown) => {
           await patch({ running: false, status: "error", error: explain(err) });

@@ -19,7 +19,9 @@ class Boundary extends Component<{ children: ReactNode }, { error: Error | null 
     const { error } = this.state;
     if (!error) return this.props.children;
     return (
-      <div className="app">
+      // `data-crashed` is what the preview harness checks: a crash screen is not an
+      // empty page, so "rendered something" was never proof the panel worked.
+      <div className="app" data-crashed="true">
         <div className="signin">
           <h1>Something broke in the panel</h1>
           <div className="banner bad">{error.message}</div>

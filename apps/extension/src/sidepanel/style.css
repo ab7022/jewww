@@ -308,3 +308,59 @@ button.small { font-size: 13px; padding: 5px 12px; }
   line-height: 1.45;
 }
 .standing textarea:focus { outline: none; border-color: var(--label-2); }
+
+/* --- voice -------------------------------------------------------------- */
+
+.wake {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 16px 0;
+  font-size: 13px;
+  color: var(--label-2);
+}
+.wake-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  animation: blink 1.6s ease-in-out infinite;
+}
+@keyframes blink { 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) {
+  .wake-dot { animation: none; }
+}
+
+.voice-settings {
+  margin: 20px 0 8px;
+  padding: 4px 14px;
+  border-radius: var(--radius);
+  background: var(--raised);
+}
+.voice-settings h3 {
+  margin: 10px 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--label-2);
+}
+.toggle {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.toggle + .toggle { border-top: 1px solid var(--separator); }
+.toggle input { margin-top: 3px; accent-color: var(--label); }
+.toggle > span { display: flex; flex-direction: column; gap: 2px; font-size: 14px; color: var(--label); }
+.toggle-title { display: block; }
+.toggle small { font-size: 12px; color: var(--label-2); }
+kbd {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 5px;
+  border-radius: 5px;
+  background: var(--fill);
+  font: 600 11px/18px -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: var(--label-2);
+}

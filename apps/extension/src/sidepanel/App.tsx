@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Details } from "./Details.js";
-import { useDictation } from "./dictation.js";
+import { useVoice } from "./voice.js";
 import type { ToWorker } from "../shared/messages.js";
 import { EMPTY_STATE, type HistoryEntry, type PanelState, parseState, type Question } from "../shared/state.js";
 import { elapsed, type TimelineStep } from "../shared/timeline.js";
@@ -11,6 +11,7 @@ const SUGGESTIONS = [
   "Summarise this page",
   "Find the pricing and tell me what the top plan costs",
   "Fill in this form with my details, but don't submit it",
+  "Where do I change my password here?",
 ];
 
 export function App() {
@@ -20,14 +21,46 @@ export function App() {
   const [error, setError] = useState<string | null>(null);
   const [showDetails, setShowDetails] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
+  const runRef = useRef<(text?: string, source?: "click" | "voice") => Promise<void>>(async () => {});
 
-  // Dictation appends whole phrases rather than replacing the box, so speaking after
-  // typing adds to what is there instead of wiping it.
-  const dictation = useDictation(
-    useCallback((phrase: string) => {
+  // Not `loaded` until storage answers, so listen-on-open never acts on the defaults.
+  const [voiceSettings, setVoiceSettings] = useState<VoiceSettings>({ ...VOICE_DEFAULTS, loaded: false });
+  useEffect(() => {
+    void chrome.storage.local.get(VOICE_KEY).then((v) => {
+      setVoiceSettings({ ...VOICE_DEFAULTS, ...((v[VOICE_KEY] as Partial<VoiceSettings>) ?? {}), loaded: true });
+    });
+  }, []);
+  const saveVoice = (next: VoiceSettings) => {
+    setVoiceSettings(next);
+    void chrome.storage.local.set({ [VOICE_KEY]: next });
+  };
+
+  // Phrases append rather than replace, so speaking after typing adds to the box.
+  // A complete spoken request — after "Hey Jev", or a pause in talk-to-run — runs.
+  const voice = useVoice({
+    onPhrase: useCallback((phrase: string) => {
       setGoal((g) => (g.trim() ? `${g.trim()} ${phrase}` : phrase));
     }, []),
-  );
+    onCommand: useCallback((request: string) => {
+      setGoal(request);
+      void runRef.current(request, "voice");
+    }, []),
+    // Never listen for the wake phrase while a task is running.
+    wake: voiceSettings.wake && !state.running,
+  });
+
+  // The page shows a "Listening…" pill whenever the microphone is taking a request.
+  useEffect(() => {
+    void send({ kind: "listening", on: voice.state === "dictating" || voice.state === "armed" }).catch(() => {});
+  }, [voice.state]);
+
+  // ⌥J then talk: when enabled, opening the panel starts listening straight away.
+  const opened = useRef(false);
+  useEffect(() => {
+    if (opened.current || !voiceSettings.loaded || !state.signedIn || state.running) return;
+    opened.current = true;
+    if (voiceSettings.listenOnOpen && voice.supported) voice.dictate(true);
+  }, [voiceSettings, state.signedIn, state.running, voice]);
 
   const refresh = useCallback(async () => {
     // Parsed, not trusted: a shape this build does not know is repaired field by field
@@ -63,8 +96,9 @@ export function App() {
     }
   };
 
-  const run = async () => {
-    if (!goal.trim() || state.running) return;
+  const run = async (text = goal, source: "click" | "voice" = "click") => {
+    const request = text.trim();
+    if (!request || state.running) return;
     setError(null);
     setBusy(true);
     try {
@@ -77,14 +111,20 @@ export function App() {
       // Asked here, synchronously in the click: chrome.permissions.request only works
       // during a user gesture, never from the worker after an await.
       const origin = `${new URL(url).origin}/*`;
-      const granted =
-        (await chrome.permissions.contains({ origins: [origin] })) ||
-        (await chrome.permissions.request({ origins: [origin] }));
+      const already = await chrome.permissions.contains({ origins: [origin] });
+      // Chrome only shows the permission prompt in response to a click. A spoken
+      // request has no click behind it, so for a site not yet granted, the request
+      // waits in the box for one press of Run rather than failing obscurely.
+      if (!already && source === "voice") {
+        setError(`Press Run once to let Jev work on ${new URL(url).host} — after that, voice alone is enough.`);
+        return;
+      }
+      const granted = already || (await chrome.permissions.request({ origins: [origin] }));
       if (!granted) {
         setError(`Access to ${new URL(url).host} was declined.`);
         return;
       }
-      await send({ kind: "start", goal: goal.trim(), tabId: tab.id });
+      await send({ kind: "start", goal: request, tabId: tab.id });
       await refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
@@ -92,6 +132,8 @@ export function App() {
       setBusy(false);
     }
   };
+
+  runRef.current = run;
 
   if (!state.signedIn) return <SignIn state={state} busy={busy} error={error} onSignIn={signIn} />;
 
@@ -130,13 +172,13 @@ export function App() {
               Stop
             </button>
           )}
-          {dictation.supported && (
+          {voice.supported && (
             <button
-              className={dictation.listening ? "mic listening" : "mic"}
-              onClick={dictation.toggle}
+              className={voice.state === "dictating" ? "mic listening" : "mic"}
+              onClick={() => voice.dictate(false)}
               disabled={state.running}
-              title={dictation.listening ? "Stop dictating" : "Dictate"}
-              aria-label={dictation.listening ? "Stop dictating" : "Dictate"}
+              title={voice.state === "dictating" ? "Stop dictating" : "Dictate"}
+              aria-label={voice.state === "dictating" ? "Stop dictating" : "Dictate"}
             >
               <MicIcon />
             </button>
@@ -145,13 +187,25 @@ export function App() {
         </div>
       </div>
 
-      {dictation.interim && <p className="interim">{dictation.interim}</p>}
-      {dictation.error && <Banner tone="bad">{dictation.error}</Banner>}
+      {voice.supported && voice.state !== "dictating" && (voice.state === "wake" || voice.state === "armed") && (
+        <p className="wake">
+          <span className="wake-dot" />
+          {voice.state === "armed" ? "Yes? I'm listening…" : "Listening for \u201cHey Jev\u201d"}
+        </p>
+      )}
+      {voice.interim && <p className="interim">{voice.interim}</p>}
+      {voice.error && <Banner tone="bad">{voice.error}</Banner>}
       {error && <Banner tone="bad">{error}</Banner>}
       {state.error && <Banner tone="bad">{state.error}</Banner>}
 
       <div className="stream">
-        {!state.steps.length && !state.running && <Empty onPick={setGoal} />}
+        {!state.steps.length && !state.running && (
+          <Empty
+            onPick={setGoal}
+            voice={voice.supported ? voiceSettings : null}
+            onVoice={saveVoice}
+          />
+        )}
         {state.status === "planning" && <Planning />}
         {state.questions?.length ? (
           <Questions
@@ -421,10 +475,24 @@ function Planning() {
   );
 }
 
-function Empty({ onPick }: { onPick: (s: string) => void }) {
+interface VoiceSettings {
+  loaded: boolean;
+  /** Start listening as soon as the panel opens — ⌥J, then just talk. */
+  listenOnOpen: boolean;
+  /** Listen for "Hey Jev" while the panel is open. */
+  wake: boolean;
+}
+const VOICE_KEY = "voiceSettings";
+// Both off until the person turns them on: a microphone prompt the first time someone
+// opens a side panel is a bad first impression, and always-on listening is a choice.
+const VOICE_DEFAULTS: VoiceSettings = { loaded: true, listenOnOpen: false, wake: false };
+
+function Empty({
+  onPick, voice, onVoice,
+}: { onPick: (s: string) => void; voice: VoiceSettings | null; onVoice: (v: VoiceSettings) => void }) {
   return (
     <div className="empty">
-      <p>Give it a goal for the page you're on.</p>
+      <p>Give it a goal for the page you're on — or ask it where something is.</p>
       <div className="chips">
         {SUGGESTIONS.map((s) => (
           <button key={s} className="chip" onClick={() => onPick(s)}>
@@ -432,6 +500,29 @@ function Empty({ onPick }: { onPick: (s: string) => void }) {
           </button>
         ))}
       </div>
+      {voice && (
+        <div className="voice-settings">
+          <h3>Talk to Jev</h3>
+          <label className="toggle">
+            <input
+              type="checkbox"
+              checked={voice.listenOnOpen}
+              onChange={(e) => onVoice({ ...voice, listenOnOpen: e.target.checked })}
+            />
+            <span>
+              <span className="toggle-title">Listen when I open Jev <kbd>⌥J</kbd></span>
+              <small>Open, say what you want, pause — it runs.</small>
+            </span>
+          </label>
+          <label className="toggle">
+            <input type="checkbox" checked={voice.wake} onChange={(e) => onVoice({ ...voice, wake: e.target.checked })} />
+            <span>
+              <span className="toggle-title">Answer to “Hey Jev”</span>
+              <small>Only while this panel is open. The microphone stays on, and says so.</small>
+            </span>
+          </label>
+        </div>
+      )}
       <p className="fine">
         It asks before anything it cannot undo — unless you tell it not to. It never types a
         password. To fill forms, add your details from the header.

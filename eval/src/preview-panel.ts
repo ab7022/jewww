@@ -143,6 +143,13 @@ for (const [name, state, scheme] of [
       onMessage: { addListener() {}, removeListener() {} },
       getManifest: () => ({}),
     },
+    // The panel reads its own settings from storage; a mock without it only ever
+    // rendered the crash screen.
+    storage: { local: {
+      get: async () => ({}),
+      set: async () => {},
+      remove: async () => {},
+    } },
     tabs: { query: async () => [{ id: 1, url: "https://example.com" }] },
     permissions: { contains: async () => true, request: async () => true },
   };`);
@@ -153,6 +160,12 @@ for (const [name, state, scheme] of [
     `(document.getElementById('root')?.textContent ?? '').trim().length`,
   );
   if (!rendered) throw new Error(`${name}: the panel rendered nothing`);
+  // A crash screen is not an empty page. Rendering SOMETHING never proved the panel
+  // worked: every state here once showed the error boundary and passed.
+  const crashed = await page.evaluate(
+    `document.querySelector('[data-crashed]')?.textContent ?? ''`,
+  );
+  if (crashed) throw new Error(`${name}: the panel crashed — ${String(crashed).slice(0, 160)}`);
 
   // The tray sits below the fold, so a screenshot alone would never show whether
   // History and Reset are actually reachable after a run.

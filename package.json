@@ -9,7 +9,7 @@
   "scripts": {
     "check": "biome check .",
     "fix": "biome check --write .",
-    "typecheck": "tsc -b",
+    "typecheck": "tsc -b && tsc -p tsconfig.tests.json",
     "test": "vitest run",
     "smoke": "tsx --env-file-if-exists=.env packages/jev/test/smoke.ts",
     "eval:capture": "tsx --env-file-if-exists=.env eval/src/capture.ts",
@@ -25,7 +25,8 @@
     "build:extension": "pnpm --filter @jev-browser/extension build",
     "check:extension": "pnpm build:extension && tsx apps/extension/test/load-check.ts",
     "check:executor": "tsx eval/src/check-executor.ts",
-    "preview:panel": "pnpm build:extension && tsx eval/src/preview-panel.ts"
+    "preview:panel": "pnpm build:extension && tsx eval/src/preview-panel.ts",
+    "verify": "pnpm typecheck && pnpm test"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",

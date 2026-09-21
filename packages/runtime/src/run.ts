@@ -1,49 +1,53 @@
 
-import type {
-  Autonomy,
-  Decision,
-  DecideInput,
-  FieldMapping,
-  TextContext,
-} from "@jev-browser/policy";
+import type { Autonomy, Decision, FieldMapping } from "@jev-browser/policy";
 import { escalationReason } from "@jev-browser/policy";
 import { DEFAULT_CAP, rankedSnapshot, toSnapshotElement } from "@jev-browser/sense";
 import {
   BLOCKER,
+  type ComposeRequest,
+  type DecideRequest,
   type Executor,
+  type ExtractRequest,
   FORBIDDEN_FIELD,
+  type MapFieldsRequest,
   type Node,
   NO_FIELD,
+  PHYSICALLY_UNREACHABLE,
   PROFILE_FIELDS,
   type ProfileKey,
-  type SnapshotElement,
   type Plan,
+  type RecentAction,
   SCRATCH_REF,
   StalePage,
+  type TextRequest,
   UnreachableTarget,
 } from "@jev-browser/shared";
-import type { Ask, Emit, GatedAction, MissingField, RunStatus } from "./events.js";
+import type { Ask, Emit, GatedAction, MissingField, RunEvent, RunStatus } from "./events.js";
 import { Scratchpad } from "./scratchpad.js";
 
 /**
  * Everything the loop needs a model for, injected rather than called directly.
  *
- * The CLI wires these straight to the model packages; the extension wires them to the
- * server, which is the only place an API key exists. Same loop either way — and it is
- * what lets the extension avoid bundling any model client at all.
+ * The CLI binds these to the model packages (`@jev-browser/runtime/models`); the
+ * extension binds them to the server, which is the only place an API key exists.
+ * Same loop either way — and it is what lets the extension avoid bundling any model
+ * client at all.
+ *
+ * A set of capabilities is BOUND TO ONE RUN: the goal and the user's standing
+ * instructions are supplied when it is built, never passed per call. They used to be
+ * positional arguments, and each time one was added some caller did not forward it —
+ * compose got the goal and extract did not, in both the CLI and the extension. The
+ * request types are the wire schemas in `@jev-browser/shared`, so the server parses
+ * exactly what the runtime sends.
  */
 export interface Capabilities {
-  decide(input: DecideInput): Promise<Decision>;
+  decide(request: DecideRequest): Promise<Decision>;
   /** Text for a TYPE_TEXT step, written with the page in front of the model. */
-  text(ctx: TextContext): Promise<string | null>;
-  extract(intent: string, schema: unknown, pageText: string, goal: string): Promise<unknown>;
-  compose(intent: string, inputs: Record<string, unknown>, goal: string): Promise<unknown>;
+  text(request: TextRequest): Promise<string | null>;
+  extract(request: ExtractRequest): Promise<unknown>;
+  compose(request: ComposeRequest): Promise<unknown>;
   /** Maps every field of a form to a profile key in ONE call. */
-  mapFields(input: {
-    page: { url: string; title: string };
-    fields: SnapshotElement[];
-    criteria: Record<string, string>;
-  }): Promise<{ mappings: FieldMapping[]; costUsd: number }>;
+  mapFields(request: MapFieldsRequest): Promise<{ mappings: FieldMapping[]; costUsd: number }>;
 }
 
 export interface RunOptions {
@@ -73,6 +77,12 @@ export interface RunOptions {
    * run possible at all: suspending on the first gate abandons the other nine.
    */
   batchApprovals?: boolean;
+  /**
+   * Stop means stop. Checked before every node and every step, and before anything
+   * touches the page — Stop used to reject only a pending approval while the loop went
+   * on clicking and typing in the user's tab.
+   */
+  signal?: AbortSignal;
 }
 
 export interface RunResult {
@@ -87,15 +97,28 @@ export interface RunResult {
 
 const MAX_STEPS_PER_NODE = 25;
 
-export async function runPlan(opts: RunOptions): Promise<RunResult> {
+export async function runPlan(options: RunOptions): Promise<RunResult> {
   const started = performance.now();
-  const pad = new Scratchpad(opts.profile ? { profile: opts.profile } : {});
+  const pad = new Scratchpad(options.profile ? { profile: options.profile } : {});
   const state: LoopState = {
     steps: 0,
     cost: 0,
-    budget: opts.maxSteps ?? 120,
+    budget: options.maxSteps ?? 120,
     pending: [],
     currentItem: undefined,
+    iteration: undefined,
+  };
+
+  // The ONE place events get their time and loop position. Call sites emit bare
+  // payloads and cannot stamp them wrongly, because they cannot stamp them at all.
+  const opts: Ctx = {
+    ...options,
+    emit: (e) =>
+      options.emit({
+        ...e,
+        at: Date.now(),
+        ...(state.iteration !== undefined ? { iteration: state.iteration } : {}),
+      }),
   };
 
   const status = await runNodes(opts.plan.nodes, opts, pad, state);
@@ -119,15 +142,21 @@ interface LoopState {
   pending: GatedAction[];
   /** The foreach item being processed, for attributing a queued action. */
   currentItem: unknown;
+  /** Loop position stamped onto events; see `Stamp.iteration`. */
+  iteration: string | undefined;
 }
+
+/** Run options as the interpreter sees them: `emit` takes bare payloads. */
+type Ctx = Omit<RunOptions, "emit"> & { emit(event: RunEvent): void };
 
 async function runNodes(
   nodes: Node[],
-  opts: RunOptions,
+  opts: Ctx,
   pad: Scratchpad,
   state: LoopState,
 ): Promise<RunStatus> {
   for (const node of nodes) {
+    if (opts.signal?.aborted) return "aborted";
     if (state.steps >= state.budget) return "budget";
     opts.emit({ type: "node:start", id: node.id, kind: node.kind, intent: node.intent });
 
@@ -159,6 +188,7 @@ async function runNodes(
       // must not be lost to one bad page.
       opts.emit({
         type: "warn",
+        nodeId: node.id,
         message: err instanceof Error ? err.message : String(err),
       });
       status = "blocked";
@@ -173,7 +203,7 @@ async function runNodes(
 /** JEV-driven step loop until the node's success criteria hold. */
 async function runActNode(
   node: Extract<Node, { kind: "act" }>,
-  opts: RunOptions,
+  opts: Ctx,
   pad: Scratchpad,
   state: LoopState,
 ): Promise<RunStatus> {
@@ -181,8 +211,9 @@ async function runActNode(
   // model what to do instead left every iteration of a loop on the previous item's
   // page — eight applications in a row were filled against the same company,
   // because "an application form is visible" was true of the page it never left.
-  const destination = urlSlot(node.slots, pad) ?? siteUrl(node.site, opts.executor.url());
-  if (destination && destination !== opts.executor.url()) {
+  const here = await opts.executor.url();
+  const destination = urlSlot(node.slots, pad) ?? siteUrl(node.site, here);
+  if (destination && destination !== here) {
     await opts.executor.act({ kind: "navigate", url: destination }, null, {
       pageKey: null,
       nodeGuard: null,
@@ -212,7 +243,7 @@ async function runActNode(
    * loop guard killed the run. Telling it what failed and why is what lets it try
    * dismissing the overlay instead.
    */
-  const recent: { action: string; text?: string | null; pageChanged?: boolean | null }[] = [];
+  const recent: RecentAction[] = [];
 
   /**
    * Targets that are physically covered on the page as it stands.
@@ -226,7 +257,17 @@ async function runActNode(
    */
   const covered = new Set<string>();
 
+  /**
+   * Approvals already given in this node, keyed by (element, operation).
+   *
+   * An approved click that is then blocked — a dialog in the way — comes straight back
+   * as the same decision once the dialog is gone. Asking again for something the
+   * person just said yes to is the gate malfunctioning, not the gate working.
+   */
+  const approved = new Set<string>();
+
   for (let i = 0; i < MAX_STEPS_PER_NODE; i++) {
+    if (opts.signal?.aborted) return "aborted";
     if (state.steps >= state.budget) return "budget";
 
     const raw = await opts.executor.snapshot();
@@ -249,17 +290,24 @@ async function runActNode(
     // Identical page two steps running means the last action silently did nothing.
     // Free to detect, and it is the most common failure mode.
     if (raw.contentHash === lastHash && ++repeats >= 3) {
-      opts.emit({ type: "warn", message: `${node.id}: page unchanged for 3 steps, giving up` });
+      opts.emit({ type: "warn", nodeId: node.id, message: "page unchanged for 3 steps, giving up" });
       return "blocked";
     }
     if (raw.contentHash !== lastHash) repeats = 0;
     const last = recent[recent.length - 1];
-    if (last && last.pageChanged === undefined) last.pageChanged = raw.contentHash !== lastHash;
+    if (last && last.pageChanged === undefined) {
+      last.pageChanged = raw.contentHash !== lastHash;
+      // Said in words as well as the flag. A click that "succeeded" with no visible
+      // effect is the most common silent failure there is (Google's tiles ignored a
+      // synthetic click for exactly this reason), and the model has to treat it as a
+      // failure to try something else.
+      if (!last.pageChanged) last.action = `${last.action} — had no visible effect on the page`;
+    }
     lastHash = raw.contentHash;
 
     const profile = (pad.get("profile") ?? {}) as Record<string, string>;
     const d = await opts.capabilities.decide({
-      goal: opts.plan.goal,
+      nodeId: node.id,
       subgoal: node.intent,
       success: node.success,
       snapshot: capped,
@@ -285,7 +333,7 @@ async function runActNode(
 
     if (d.action.kind === "done") return "done";
     if (d.action.kind === "blocked") {
-      opts.emit({ type: "warn", message: `${node.id}: ${d.action.reason}` });
+      opts.emit({ type: "warn", nodeId: node.id, message: d.action.reason });
       return "blocked";
     }
     const shaky = escalationReason(d);
@@ -355,15 +403,31 @@ async function runActNode(
         opts.emit({ type: "queued", nodeId: node.id, preview, risk: d.risk });
         return "done";
       }
-      opts.emit({
-        type: "approval",
-        nodeId: node.id,
-        preview,
-        risk: d.risk,
-        action: d.action,
-        ...(label ? { target: label } : {}),
-      });
-      const ok = opts.approve ? await opts.approve(preview, d.risk) : false;
+      // Never ask a person to approve something that cannot happen right now.
+      const targetFp = raw.elements.find((e) => e.eid === d.target?.eid)?.fp;
+      const refusal = await opts.executor.preflight(d.action, d.node ?? null, targetFp);
+      if (refusal) {
+        if (targetFp && PHYSICALLY_UNREACHABLE.test(refusal)) covered.add(targetFp);
+        recent.push({ action: `${d.operation}${label ? ` "${label}"` : ""} FAILED: ${refusal}`, pageChanged: false });
+        opts.emit({ type: "warn", nodeId: node.id, message: `${refusal}, re-observing` });
+        continue;
+      }
+
+      const approvalKey = `${targetFp ?? label}|${d.operation}`;
+      const ok = approved.has(approvalKey)
+        ? true
+        : await (async () => {
+            opts.emit({
+              type: "approval",
+              nodeId: node.id,
+              preview,
+              risk: d.risk,
+              action: d.action,
+              ...(label ? { target: label } : {}),
+            });
+            return opts.approve ? opts.approve(preview, d.risk) : false;
+          })();
+      if (ok) approved.add(approvalKey);
       if (!ok) {
         opts.emit({
           type: "suspend",
@@ -388,15 +452,13 @@ async function runActNode(
       } else {
         const started = Date.now();
         const written = await opts.capabilities.text({
-          goal: opts.plan.goal,
           subgoal: node.intent,
           field: {
             label: d.target?.label ?? "",
             role: d.target?.role ?? "textbox",
             ...(d.target?.value ? { value: d.target.value } : {}),
           },
-          page: { title: capped.title, text: capped.text },
-          recent: [],
+          page: { title: capped.title, text: capped.text.slice(0, 8000) },
           ...(opts.profile ? { profile: opts.profile } : {}),
         });
 
@@ -415,7 +477,7 @@ async function runActNode(
           const answer = given[key];
           if (!answer?.trim()) {
             recent.push({ action: `type into "${field}" skipped: no value available`, pageChanged: false });
-            opts.emit({ type: "warn", message: `nothing to put in “${field}”` });
+            opts.emit({ type: "warn", nodeId: node.id, message: `nothing to put in “${field}”` });
             continue;
           }
           if (!known) pad.set("answers", { ...answers, [key]: { question: field, value: answer } });
@@ -434,6 +496,9 @@ async function runActNode(
       }
     }
 
+    // A model call can take seconds; Stop pressed during it must still win.
+    if (opts.signal?.aborted) return "aborted";
+
     // Guard is taken AFTER text generation, so the freshness check inside act()
     // compares against the moment we are actually about to touch the page.
     const fp = raw.elements.find((e) => e.eid === d.target?.eid)?.fp;
@@ -447,9 +512,9 @@ async function runActNode(
         // Recorded as a FAILURE with its reason. "covered by a modal" is actionable —
         // the model can dismiss the overlay — but only if it is told.
         // Covered is a fact the hit test established, not an opinion to re-litigate.
-        if (fp && /covered by/i.test(err.message)) covered.add(fp);
+        if (fp && PHYSICALLY_UNREACHABLE.test(err.message)) covered.add(fp);
         recent.push({ action: `${describe} FAILED: ${err.message}`, pageChanged: false });
-        opts.emit({ type: "warn", message: `${node.id}: ${err.message}, re-observing` });
+        opts.emit({ type: "warn", nodeId: node.id, message: `${err.message}, re-observing` });
         continue; // never retried; we go back and decide again from a fresh page
       }
       throw err;
@@ -468,7 +533,7 @@ async function runActNode(
     }
   }
 
-  opts.emit({ type: "warn", message: `${node.id}: exhausted ${MAX_STEPS_PER_NODE} steps` });
+  opts.emit({ type: "warn", nodeId: node.id, message: `exhausted ${MAX_STEPS_PER_NODE} steps` });
   return "blocked";
 }
 
@@ -500,7 +565,7 @@ function stableKey(label: string): string {
 
 async function runFillNode(
   node: Extract<Node, { kind: "fill" }>,
-  opts: RunOptions,
+  opts: Ctx,
   pad: Scratchpad,
   state: LoopState,
 ): Promise<RunStatus> {
@@ -607,6 +672,7 @@ async function runFillNode(
         .filter((m) => answers[m.key]);
 
   for (const m of fillable) {
+    if (opts.signal?.aborted) return "aborted";
     const element = byEid.get(m.eid);
     if (!element) continue;
 
@@ -657,17 +723,16 @@ async function runFillNode(
 
 async function runReadNode(
   node: Extract<Node, { kind: "read" }>,
-  opts: RunOptions,
+  opts: Ctx,
   pad: Scratchpad,
 ): Promise<RunStatus> {
   const raw = await opts.executor.snapshot();
   const body = await opts.executor.pageText();
-  const value = await opts.capabilities.extract(
-    node.intent,
-    node.schema,
-    `${raw.title}\n${raw.url}\n\n${body}`,
-    opts.plan.goal,
-  );
+  const value = await opts.capabilities.extract({
+    intent: node.intent,
+    schema: node.schema,
+    pageText: `${raw.title}\n${raw.url}\n\n${body}`.slice(0, 60_000),
+  });
   pad.set(node.into, value);
   opts.emit({
     type: "node:done",
@@ -679,21 +744,20 @@ async function runReadNode(
 
 async function runComposeNode(
   node: Extract<Node, { kind: "compose" }>,
-  opts: RunOptions,
+  opts: Ctx,
   pad: Scratchpad,
 ): Promise<RunStatus> {
   const inputs = Object.fromEntries(node.from.map((k) => [k, pad.get(k)]));
-  // The goal goes too. A compose node's intent routinely refers to the goal rather
-  // than restating it ("write the body from the user's goal"), and with an empty
-  // scratchpad — nothing read yet — the model had literally nothing to write from.
-  // It answered "I don't have enough information", which was true.
-  pad.set(node.into, await opts.capabilities.compose(node.intent, inputs, opts.plan.goal));
+  // The goal is not passed here: capabilities are bound to the run and carry it. It
+  // used to be an argument, and the model once answered "I don't have enough
+  // information" because a caller had not forwarded it.
+  pad.set(node.into, await opts.capabilities.compose({ intent: node.intent, inputs }));
   return "done";
 }
 
 async function runConfirmNode(
   node: Extract<Node, { kind: "confirm" }>,
-  opts: RunOptions,
+  opts: Ctx,
   pad: Scratchpad,
 ): Promise<RunStatus> {
   const preview = SCRATCH_REF.test(node.preview)
@@ -737,13 +801,13 @@ function asCollection(value: unknown): unknown[] {
 /** `min` counts SUCCESSES, not attempts — a failing site must not reduce the count. */
 async function runForeachNode(
   node: Extract<Node, { kind: "foreach" }>,
-  opts: RunOptions,
+  opts: Ctx,
   pad: Scratchpad,
   state: LoopState,
 ): Promise<RunStatus> {
   const items = asCollection(pad.resolve(node.over));
   if (!items.length) {
-    opts.emit({ type: "warn", message: `${node.id}: "${node.over}" is empty or missing` });
+    opts.emit({ type: "warn", nodeId: node.id, message: `"${node.over}" is empty or missing` });
     return "blocked";
   }
 
@@ -751,7 +815,8 @@ async function runForeachNode(
   let succeeded = 0;
   const max = node.max ?? items.length;
 
-  for (const item of items) {
+  const outer = state.iteration;
+  for (const [index, item] of items.entries()) {
     if (succeeded >= max) break;
     if (state.steps >= state.budget) return "budget";
 
@@ -764,17 +829,21 @@ async function runForeachNode(
     pad.set(node.as, item);
     const previousItem = state.currentItem;
     state.currentItem = item;
-    const status = await runNodes(node.do, opts, pad, state);
+    state.iteration = outer === undefined ? String(index) : `${outer}.${index}`;
+    const status = await runNodes(node.do, opts, pad, state).finally(() => {
+      state.iteration = outer;
+    });
     state.currentItem = previousItem;
-    if (status === "suspended" || status === "budget") return status;
+    if (status === "suspended" || status === "budget" || status === "aborted") return status;
     if (status === "done") succeeded += 1;
-    else opts.emit({ type: "warn", message: `${node.id}: one iteration did not complete` });
+    else opts.emit({ type: "warn", nodeId: node.id, message: "one iteration did not complete" });
   }
 
   if (node.min !== undefined && succeeded < node.min) {
     opts.emit({
       type: "warn",
-      message: `${node.id}: only ${succeeded} of ${node.min} required iterations succeeded`,
+      nodeId: node.id,
+      message: `only ${succeeded} of ${node.min} required iterations succeeded`,
     });
     return "blocked";
   }

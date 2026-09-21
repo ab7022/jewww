@@ -114,8 +114,21 @@ export class CdpExecutor implements Executor {
     return executor;
   }
 
-  url(): string {
+  async url(): Promise<string> {
     return this.page.url();
+  }
+
+  async preflight(action: Action, node: number | null, fp?: string): Promise<string | null> {
+    if (node === null) return null;
+    if (action.kind !== "click" && action.kind !== "type" && action.kind !== "select") return null;
+    const kind = action.kind === "type" ? "fill" : action.kind === "select" ? "select" : "click";
+    const option = action.kind === "select" ? action.option : undefined;
+    try {
+      await this.page.evaluate(this.source);
+      return (await this.page.evaluate(call.preflight(node, kind, option, fp))) as string | null;
+    } catch (err) {
+      return `could not check the target: ${String(err).slice(0, 100)}`;
+    }
   }
 
   /** Run arbitrary setup in the page. For tests and diagnostics only. */

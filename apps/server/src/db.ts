@@ -27,7 +27,7 @@ export interface LedgerEntry {
   _id: string;
   userId: string;
   runId?: string;
-  kind: "plan" | "decide" | "text" | "extract" | "compose" | "topup";
+  kind: "plan" | "decide" | "text" | "extract" | "compose" | "fields" | "topup";
   /** Negative for spend, positive for a top-up. */
   credits: number;
   costUsd: number;
@@ -39,8 +39,14 @@ export interface Run {
   userId: string;
   goal: string;
   startUrl: string;
-  status: "running" | "done" | "blocked" | "suspended" | "budget";
+  status: "running" | "done" | "blocked" | "suspended" | "budget" | "aborted" | "error";
+  /** Read from the user's own words when the run was created; the client does not set it. */
+  autonomy: "full" | "confirm" | "never";
   creditsSpent: number;
+  /** Decisions made, as reported when the run finished. */
+  steps: number;
+  /** What the run produced, for history. */
+  summary?: string;
   createdAt: Date;
   updatedAt: Date;
 }

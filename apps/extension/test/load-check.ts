@@ -1,3 +1,4 @@
+/// <reference types="chrome" />
 /**
  * Loads the BUILT extension into a real Chrome and checks the parts that only exist
  * at runtime: that the content script is injected, that it answers the worker's

@@ -30,6 +30,12 @@
     },
     {
       "path": "apps/server"
+    },
+    {
+      "path": "packages/protocol"
+    },
+    {
+      "path": "apps/extension"
     }
   ]
 }

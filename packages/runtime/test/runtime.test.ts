@@ -1,8 +1,8 @@
-import type { Executor, Guard } from "@jev-browser/executor";
+import type { Executor, Guard } from "@jev-browser/shared";
 import { decide } from "@jev-browser/policy";
 import { UnreachableTarget } from "@jev-browser/shared";
 import type { JevProvider } from "@jev-browser/jev";
-import type { Action, Answer, Plan, RawSnapshot } from "@jev-browser/shared";
+import type { Action, Answer, DecideRequest, Plan, RawSnapshot } from "@jev-browser/shared";
 import { describe, expect, it } from "vitest";
 import type { RunEvent } from "../src/events.js";
 import { type Capabilities, runPlan } from "../src/run.js";
@@ -83,8 +83,11 @@ function fakeExecutor(hashes: string[], name?: string): Executor & { acted: Acti
       acted.push(action);
       if (typeof text === "string") typed.push(text);
     },
+    async preflight() {
+      return null;
+    },
     async settle() {},
-    url() {
+    async url() {
       return "https://x.test/p";
     },
     async close() {},
@@ -151,9 +154,18 @@ function fakeJevRisky(ops: string[], target = "e1"): JevProvider {
  * to the model packages and the extension to the server. Tests wire `decide` to a
  * scripted JEV and everything else to a stub.
  */
+/**
+ * `decide` bound to a run, as `bindModels` binds it in production: the request never
+ * carries the goal, the binding supplies it.
+ */
+const decideWith = (jev: JevProvider) => (request: DecideRequest) => {
+  const { nodeId: _nodeId, ...rest } = request;
+  return decide(jev, { ...rest, goal: "g" });
+};
+
 function capabilities(jev: JevProvider, over: Partial<Capabilities> = {}): Capabilities {
   return {
-    decide: (input) => decide(jev, input),
+    decide: (input) => decideWith(jev)(input),
     text: async () => "typed text",
     extract: async () => [],
     compose: async () => "composed",
@@ -285,7 +297,7 @@ describe("foreach", () => {
     ]);
     const { result } = await run(p, fakeJev(["DONE"]), fakeExecutor(["h1"]), {}, {
       extract: async () => [{ company: "A" }, { company: "A" }, { company: "B" }],
-      compose: async (_i, inputs) => {
+      compose: async ({ inputs }) => {
         seen.push(inputs);
         return "x";
       },
@@ -506,7 +518,7 @@ describe("reaching another site", () => {
 
   it("does not navigate when already on that site", async () => {
     const ex = fakeExecutor(["h1", "h2"]);
-    ex.url = () => "https://x.test/page";
+    ex.url = async () => "https://x.test/page";
     await run(
       plan([{ kind: "act", id: "a", intent: "do a thing", success: "s", site: "https://x.test" }]),
       fakeJev(["DONE"]), ex,
@@ -539,7 +551,7 @@ describe("feedback into the next decision", () => {
     await run(plan([{ kind: "act", id: "a", intent: "i", success: "s" }]), fakeJev(["CLICK"]), ex, {}, {
       decide: async (input) => {
         seen.push(input.recent as { action: string }[]);
-        return decide(fakeJev(["CLICK"]), input);
+        return decideWith(fakeJev(["CLICK"]))(input);
       },
     });
     const later = seen.find((r) => r.length > 0);
@@ -553,7 +565,7 @@ describe("feedback into the next decision", () => {
       fakeExecutor(["same"]), {}, {
         decide: async (input) => {
           seen.push(input.recent as { pageChanged?: boolean | null }[]);
-          return decide(fakeJev(["CLICK"]), input);
+          return decideWith(fakeJev(["CLICK"]))(input);
         },
       });
     const withHistory = seen.find((r) => r.length > 0);
@@ -566,7 +578,7 @@ describe("not navigating away from where you already are", () => {
     // The tab executor reported "" for its URL, so this check always failed and a
     // step marked site:google.com navigated away from google.com/travel/flights.
     const ex = fakeExecutor(["h1", "h2"]);
-    ex.url = () => "https://www.google.com/travel/flights";
+    ex.url = async () => "https://www.google.com/travel/flights";
     await run(
       plan([{ kind: "act", id: "a", intent: "search flights", success: "s", site: "https://www.google.com" }]),
       fakeJev(["DONE"]), ex,
@@ -576,7 +588,7 @@ describe("not navigating away from where you already are", () => {
 
   it("does not report the step finished just for navigating", async () => {
     const ex = fakeExecutor(["h1", "h2"]);
-    ex.url = () => "https://elsewhere.test";
+    ex.url = async () => "https://elsewhere.test";
     const { events } = await run(
       plan([{ kind: "act", id: "a", intent: "go there", success: "s", site: "https://in.bookmyshow.com" }]),
       fakeJev(["DONE"]), ex,
@@ -681,48 +693,6 @@ describe("asking for approval", () => {
 });
 
 /**
- * A node's intent routinely refers to the goal rather than restating it — the planner
- * writes "write the body from the user's goal". With an empty scratchpad the compose
- * call then had no goal and no data, and answered "I don't have enough information",
- * which was the honest response to what it was sent. Both helpers get the goal now.
- */
-describe("the user's goal reaches the text helpers", () => {
-  it("passes the goal to compose", async () => {
-    let seen: string | undefined;
-    await run(
-      plan([{ kind: "compose", id: "m", intent: "write the body from the user's goal", from: [], into: "$.body" }]),
-      fakeJev(["DONE"]),
-      fakeExecutor(["h1"]),
-      {},
-      {
-        compose: async (_intent, _inputs, goal) => {
-          seen = goal;
-          return "hi";
-        },
-      },
-    );
-    expect(seen).toBe("g");
-  });
-
-  it("passes the goal to extract", async () => {
-    let seen: string | undefined;
-    await run(
-      plan([{ kind: "read", id: "r", intent: "pull it out", schema: {}, into: "$.out" }]),
-      fakeJev(["DONE"]),
-      fakeExecutor(["h1"]),
-      {},
-      {
-        extract: async (_intent, _schema, _pageText, goal) => {
-          seen = goal;
-          return {};
-        },
-      },
-    );
-    expect(seen).toBe("g");
-  });
-});
-
-/**
  * Telling the model a click was blocked was not enough on its own. The AWS console
  * has two "AWS Amplify" links, one buried under the open services menu, and it kept
  * choosing the buried one — reasonably, since it is still the best-named match. A
@@ -745,7 +715,7 @@ describe("a covered target is withdrawn from the choices", () => {
       {
         decide: async (input) => {
           offered.push(input.snapshot.elements.map((e) => e.name));
-          return decide(fakeJev(["CLICK"]), input);
+          return decideWith(fakeJev(["CLICK"]))(input);
         },
       },
     );
@@ -773,7 +743,7 @@ describe("a covered target is withdrawn from the choices", () => {
       {
         decide: async (input) => {
           offered.push(input.snapshot.elements.map((e) => e.name));
-          return decide(fakeJev(["CLICK"]), input);
+          return decideWith(fakeJev(["CLICK"]))(input);
         },
       },
     );

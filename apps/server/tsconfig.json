@@ -1,9 +1,33 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": { "outDir": "dist", "rootDir": "src", "types": ["node"] },
-  "include": ["src/**/*.ts"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
   "references": [
-    { "path": "../../packages/shared" }, { "path": "../../packages/jev" },
-    { "path": "../../packages/policy" }, { "path": "../../packages/planner" }
+    {
+      "path": "../../packages/shared"
+    },
+    {
+      "path": "../../packages/jev"
+    },
+    {
+      "path": "../../packages/policy"
+    },
+    {
+      "path": "../../packages/planner"
+    },
+    {
+      "path": "../../packages/protocol"
+    },
+    {
+      "path": "../../packages/runtime"
+    }
   ]
 }

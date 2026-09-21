@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./models": "./src/models.ts"
   },
   "dependencies": {
     "@jev-browser/jev": "workspace:*",
@@ -12,8 +13,5 @@
     "@jev-browser/policy": "workspace:*",
     "@jev-browser/sense": "workspace:*",
     "@jev-browser/shared": "workspace:*"
-  },
-  "devDependencies": {
-    "@jev-browser/policy": "workspace:*"
   }
 }

@@ -39,24 +39,17 @@ console.log(`  model     ${a.model}`);
 console.log(`  latency   ${a.latencyMs}ms`);
 console.log(`  cost      $${a.costUsd}`);
 
-let refused = false;
-let got = "";
-try {
-  const b = await fieldText(notDerivable, { apiKey });
-  got = b.text;
-} catch (err) {
-  refused = true;
-  console.log(`\nundeducible field`);
-  console.log(`  refused   ${err instanceof Error ? err.message : String(err)}`);
-}
-if (!refused) {
-  console.log(`\nundeducible field`);
-  console.log(`  RETURNED  "${got}"  <-- invented personal data`);
-}
+// A refusal is `text: null` — the helper declining to invent a value is an answer,
+// not an error. (This script predates that and treated only a throw as a refusal, so
+// it would have reported a correct refusal as "invented personal data".)
+const b = await fieldText(notDerivable, { apiKey });
+const refused = b.text === null;
+console.log(`\nundeducible field`);
+console.log(refused ? "  refused   (null, as it should)" : `  RETURNED  "${b.text}"  <-- invented personal data`);
 
 const problems: string[] = [];
-if (!a.text.trim()) problems.push("derivable field produced no text");
-if (!/head|phone|noise|cancel/i.test(a.text)) {
+if (!a.text?.trim()) problems.push("derivable field produced no text");
+if (!/head|phone|noise|cancel/i.test(a.text ?? "")) {
   problems.push(`derivable text looks unrelated to the goal: "${a.text}"`);
 }
 if (!refused) problems.push("helper invented a value it could not know — BLOCKS shipping");

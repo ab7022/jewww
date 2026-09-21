@@ -35,6 +35,9 @@ importers:
       '@jev-browser/policy':
         specifier: workspace:*
         version: link:../../packages/policy
+      '@jev-browser/protocol':
+        specifier: workspace:*
+        version: link:../../packages/protocol
       '@jev-browser/runtime':
         specifier: workspace:*
         version: link:../../packages/runtime
@@ -50,6 +53,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.3.0(react@19.3.0)
+      zod:
+        specifier: ^4.0.0
+        version: 4.6.5
     devDependencies:
       '@crxjs/vite-plugin':
         specifier: ^2.0.0-beta.28
@@ -102,6 +108,12 @@ importers:
       '@jev-browser/policy':
         specifier: workspace:*
         version: link:../../packages/policy
+      '@jev-browser/protocol':
+        specifier: workspace:*
+        version: link:../../packages/protocol
+      '@jev-browser/runtime':
+        specifier: workspace:*
+        version: link:../../packages/runtime
       '@jev-browser/shared':
         specifier: workspace:*
         version: link:../../packages/shared
@@ -111,6 +123,9 @@ importers:
       mongodb:
         specifier: ^6.12.0
         version: 6.21.0
+      zod:
+        specifier: ^4.0.0
+        version: 4.6.5
     devDependencies:
       '@types/express':
         specifier: ^5.0.0
@@ -186,6 +201,18 @@ importers:
       '@jev-browser/shared':
         specifier: workspace:*
         version: link:../shared
+
+  packages/protocol:
+    dependencies:
+      '@jev-browser/policy':
+        specifier: workspace:*
+        version: link:../policy
+      '@jev-browser/shared':
+        specifier: workspace:*
+        version: link:../shared
+      zod:
+        specifier: ^4.0.0
+        version: 4.6.5
 
   packages/runtime:
     dependencies:

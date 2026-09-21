@@ -471,7 +471,17 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
     },
     elements,
     text,
-    contentHash: hash(location.pathname + elements.map((e) => e.fp).join("~") + text.slice(0, 200)),
+    // The runtime reads "same hash" as "the last action did nothing", so the hash has
+    // to cover what an action can change: the full URL (a search often changes only
+    // `?q=`), each control's value and state (typing, ticking, expanding), and all the
+    // visible text. It used to be pathname + element identities + 200 characters of
+    // text — so three fields typed in a row looked like three no-ops, and the loop
+    // guard ended a node that was working.
+    contentHash: hash(
+      location.href +
+        elements.map((e) => `${e.fp}=${e.value ?? ""}|${e.st ?? ""}`).join("~") +
+        text,
+    ),
     totalCandidates: all.length,
   };
 }

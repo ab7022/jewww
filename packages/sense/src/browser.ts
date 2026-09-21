@@ -1,3 +1,4 @@
+import { FORBIDDEN_FIELD } from "@jev-browser/shared";
 import type { RawSnapshot } from "@jev-browser/shared";
 import { collectSnapshot, findByFingerprint, nameOf, roleOf } from "./collect.js";
 
@@ -33,7 +34,55 @@ const cache = (): Cache | undefined =>
  * by role, accessible name and ordinal, which is what a re-render preserves, and the
  * re-found element is written back so later steps do not pay for the search again.
  */
-function elementFor(node: number, fp?: string): Element | undefined {
+/**
+ * The element that actually takes text. The model may choose a wrapper — a labelled
+ * container around an input, or a composer whose editable surface is a child — and
+ * the text belongs in the editable thing inside it, not on the wrapper.
+ */
+export function editableWithin(el: HTMLElement): HTMLElement {
+  if (
+    el instanceof HTMLInputElement ||
+    el instanceof HTMLTextAreaElement ||
+    el instanceof HTMLSelectElement ||
+    el.isContentEditable
+  ) {
+    return el;
+  }
+  return (
+    el.querySelector<HTMLElement>('input:not([type=hidden]),textarea,[contenteditable=""],[contenteditable="true"]') ??
+    el
+  );
+}
+
+/**
+ * The name of the credential this field asks for, or "" if it is not one.
+ *
+ * Reads every label a page might use — autocomplete tokens included, since a card
+ * field is often marked only `autocomplete="cc-number"`. This is the one deliberate
+ * hard-coded check in the product: it must hold when the model is wrong or the page
+ * has been built to manipulate it.
+ */
+export function isCredentialField(el: HTMLElement): string {
+  const input = el as HTMLInputElement;
+  if (input.type === "password") return "password";
+  const autocomplete = el.getAttribute("autocomplete") ?? "";
+  if (/\b(current-password|new-password|one-time-code|cc-number|cc-csc)\b/i.test(autocomplete)) {
+    return autocomplete;
+  }
+  const label = [
+    el.getAttribute("aria-label"),
+    el.getAttribute("name"),
+    el.id,
+    el.getAttribute("placeholder"),
+    input.labels?.[0]?.textContent,
+  ]
+    .filter(Boolean)
+    .join(" ");
+  return FORBIDDEN_FIELD.test(label) ? label.trim().slice(0, 60) : "";
+}
+
+/** The live element behind a node id, re-found by fingerprint after a re-render. */
+export function elementFor(node: number, fp?: string): Element | undefined {
   const c = cache();
   if (!c) return undefined;
   const existing = c.nodes.get(node);
@@ -157,6 +206,8 @@ export function resolvePoint(
   kind: "click" | "fill" | "select",
   value?: string,
   fp?: string,
+  /** Check everything, perform nothing. See `preflight`. */
+  dryRun = false,
 ): Resolution {
   const e = elementFor(node, fp) as (HTMLInputElement & { options?: HTMLOptionElement[] }) | undefined;
   // Every refusal names its reason. A bare null turned "the form is below the fold"
@@ -175,6 +226,14 @@ export function resolvePoint(
   if (isFileInput) return { x: 0, y: 0 };
   if (kind === "fill" && (e.readOnly || e.getAttribute("aria-readonly") === "true")) {
     return { refused: "field is read-only" };
+  }
+  if (kind === "fill") {
+    // Here, in the shared resolver, so BOTH executors refuse at the last moment
+    // before a keystroke — the CDP driver used to rely on the model's label alone.
+    const credential =
+      isCredentialField(editableWithin(e as unknown as HTMLElement)) ||
+      isCredentialField(e as unknown as HTMLElement);
+    if (credential) return { refused: `refused to type into a credential field: ${credential}` };
   }
 
   let r = e.getBoundingClientRect();
@@ -214,11 +273,29 @@ export function resolvePoint(
       (o) => o.value === value && !o.disabled && !o.closest("optgroup[disabled]"),
     );
     if (!ok) return { refused: `no selectable option "${value}"` };
+    if (dryRun) return { x, y };
     select.value = value ?? "";
     select.dispatchEvent(new Event("input", { bubbles: true }));
     select.dispatchEvent(new Event("change", { bubbles: true }));
   }
   return { x, y };
+}
+
+/**
+ * Could this be acted on right now? The reason it could not, or null.
+ *
+ * The same code path as `resolvePoint` with the mutation switched off, so a
+ * pre-flight and the real action can never disagree about what is reachable. It may
+ * scroll the element into view — the page key excludes scroll, so that is harmless.
+ */
+export function preflight(
+  node: number,
+  kind: "click" | "fill" | "select",
+  value?: string,
+  fp?: string,
+): string | null {
+  const r = resolvePoint(node, kind, value, fp, true);
+  return "refused" in r ? r.refused : null;
 }
 
 /**

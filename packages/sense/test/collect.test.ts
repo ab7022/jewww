@@ -1,5 +1,6 @@
 // @vitest-environment happy-dom
 import { beforeEach, describe, expect, it } from "vitest";
+import type { RawElement } from "@jev-browser/shared";
 import { collectSnapshot } from "../src/collect.js";
 import { rankElements, rankedSnapshot, rankOf, tokenize } from "../src/rank.js";
 
@@ -17,7 +18,7 @@ function stubLayout() {
   };
 }
 
-const byName = (s: { elements: { name: string; role: string; eid: string }[] }, n: string) =>
+const byName = (s: { elements: RawElement[] }, n: string) =>
   s.elements.find((e) => e.name === n);
 
 beforeEach(() => {

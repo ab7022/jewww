@@ -39,10 +39,13 @@ export type RunEvent =
     }
   | { type: "asked"; nodeId: string; count: number; answered: number }
   | { type: "reused"; field: string; from: string }
-  | { type: "warn"; message: string }
+  /** Something went wrong inside a node. `nodeId` is always set when one is known, so
+   *  the interface never has to guess which step a warning belongs to. */
+  | { type: "warn"; nodeId?: string; message: string }
   | { type: "finish"; status: RunStatus; steps: number; costUsd: number; elapsedMs: number };
 
-export type RunStatus = "done" | "blocked" | "suspended" | "budget";
+/** "aborted" = the person pressed Stop; nothing further was done after it. */
+export type RunStatus = "done" | "blocked" | "suspended" | "budget" | "aborted";
 
 /**
  * An irreversible step that was queued instead of executed.
@@ -71,7 +74,29 @@ export interface MissingField {
   required: boolean;
 }
 
-export type Emit = (event: RunEvent) => void;
+/**
+ * Identity and time, added by the runtime to every event it emits — never by the call
+ * site, so no call site can get them wrong.
+ *
+ * Without them, a `foreach` re-entering the same node ids made iteration 2 inherit
+ * iteration 1's end time, and the panel showed "−26223ms"; and timestamps were taken
+ * whenever the UI's storage write got round to the event, not when it happened.
+ */
+export interface Stamp {
+  /** Epoch ms, taken when the runtime emitted the event. */
+  at: number;
+  /**
+   * Position inside enclosing loops, outermost first: "3" is the fourth item of a
+   * foreach, "3.0" the first item of a loop nested in it. Absent outside any loop.
+   * A node INSTANCE is `nodeId` + `iteration`; that, not the node id, is what a
+   * timeline step is.
+   */
+  iteration?: string;
+}
+
+export type StampedEvent = RunEvent & Stamp;
+
+export type Emit = (event: StampedEvent) => void;
 
 /**
  * Ask the user for what the agent does not know.

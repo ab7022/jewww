@@ -1,8 +1,12 @@
 export { collectSnapshot } from "./collect.js";
 export {
+  editableWithin,
+  elementFor,
+  isCredentialField,
   nodeGuard,
   pageKey,
   pageText,
+  preflight,
   resolvePoint,
   settle,
   snapshot,

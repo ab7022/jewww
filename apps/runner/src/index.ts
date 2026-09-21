@@ -13,6 +13,7 @@ import { fromEnv } from "@jev-browser/jev";
 import { compose, extract, makePlan } from "@jev-browser/planner";
 import { decide, fieldText, mapFields, readConstraints } from "@jev-browser/policy";
 import { type Capabilities, runPlan } from "@jev-browser/runtime";
+import { bindModels } from "@jev-browser/runtime/models";
 import type { RunEvent } from "@jev-browser/runtime";
 
 function arg(name: string): string | undefined {
@@ -102,26 +103,9 @@ for (const n of planned.normalised) {
 
 const executor = await CdpExecutor.launch(url, { headless: !flag("headed") });
 try {
-  // The CLI talks to the models directly. The extension wires these same four to
-  // the server instead, which is the only place an API key exists.
-  const capabilities: Capabilities = {
-    decide: (input) => decide(jev, input),
-    text: async (ctx) => (await fieldText(ctx, { apiKey })).text,
-    extract: async (intent, schema, pageText) =>
-      (await extract({ apiKey, intent, schema, pageText })).value,
-    compose: async (intent, inputs, goal) => (await compose({ apiKey, intent, inputs, goal })).value,
-    mapFields: async (input) => {
-      const r = await mapFields(jev, input);
-      if (process.env.DEBUG_FIELDS) {
-        console.log(`\n  [fields] ${input.fields.length} fields, ${Object.keys(input.criteria).length} candidate values`);
-        for (const m of r.mappings.slice(0, 8)) {
-          console.log(`  [fields] ${m.skipped ? "skip" : "MAP "} ${m.label.slice(0, 34).padEnd(36)} -> ${m.key} p=${m.confidence.toFixed(2)}`);
-        }
-        console.log(`  [fields] cost $${r.costUsd.toFixed(6)} latency ${r.latencyMs}ms\n`);
-      }
-      return { mappings: r.mappings, costUsd: r.costUsd };
-    },
-  };
+  // The CLI talks to the models directly; the extension goes through the server. Both
+  // bind capabilities to the run ONCE — goal and instructions are never per-call.
+  const capabilities: Capabilities = bindModels({ apiKey, jev, goal });
 
   const result = await runPlan({
     capabilities,

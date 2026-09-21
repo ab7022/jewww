@@ -85,8 +85,8 @@ describe("credits", () => {
     const u = await makeUser(100);
     const runId = randomUUID();
     await store.runs.insertOne({
-      _id: runId, userId: u, goal: "g", startUrl: "u", status: "running",
-      creditsSpent: 0, createdAt: new Date(), updatedAt: new Date(),
+      _id: runId, userId: u, goal: "g", startUrl: "u", status: "running", autonomy: "confirm",
+      creditsSpent: 0, steps: 0, createdAt: new Date(), updatedAt: new Date(),
     });
     await meter(store, u, "decide", 0.002, runId);
     await meter(store, u, "text", 0.001, runId);
@@ -191,13 +191,28 @@ describe("http", () => {
   it("treats another user's run as nonexistent", async () => {
     const runId = randomUUID();
     await store.runs.insertOne({
-      _id: runId, userId: "someone-else", goal: "g", startUrl: "u",
-      status: "running", creditsSpent: 0, createdAt: new Date(), updatedAt: new Date(),
+      _id: runId, userId: "someone-else", goal: "g", startUrl: "u", status: "running",
+      autonomy: "confirm", creditsSpent: 0, steps: 0, createdAt: new Date(), updatedAt: new Date(),
     });
+    // A well-formed request, so this tests ownership and not validation.
     await request(app)
       .post(`/api/runs/${runId}/decide`)
       .set("Authorization", auth)
-      .send({ subgoal: "s", success: "s", nodeId: "n", nodes: {}, snapshot: {} })
+      .send({
+        subgoal: "s",
+        success: "s",
+        nodeId: "n",
+        nodes: {},
+        recent: [],
+        snapshot: {
+          url: "https://x.test",
+          title: "t",
+          viewport: { w: 1, h: 1, scrollY: 0, maxScrollY: 0 },
+          elements: [],
+          text: "",
+          contentHash: "h",
+        },
+      })
       .expect(404);
     await request(app).get(`/api/runs/${runId}`).set("Authorization", auth).expect(404);
   });

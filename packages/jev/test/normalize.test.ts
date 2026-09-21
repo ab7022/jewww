@@ -34,7 +34,7 @@ describe("openrouter adapter", () => {
     await openrouter({ apiKey: "k" }).evaluate("s", {
       q: { type: "boolean", instructions: "?" },
     });
-    const body = JSON.parse((f.mock.calls[0]?.[1] as RequestInit).body as string);
+    const body = JSON.parse((f.mock.calls[0] as unknown as [string, RequestInit])[1].body as string);
     expect(body.questions.q.type).toBe("noul");
     expect(body.model).toBe("jev-1.13");
   });
@@ -46,7 +46,7 @@ describe("openrouter adapter", () => {
       a: { type: "choice", instructions: "?", criteria: { x: "x" } },
       b: { type: "score", instructions: "?", criteria: ["lo", "hi"] },
     });
-    const body = JSON.parse((f.mock.calls[0]?.[1] as RequestInit).body as string);
+    const body = JSON.parse((f.mock.calls[0] as unknown as [string, RequestInit])[1].body as string);
     expect(body.questions.a.type).toBe("choice");
     expect(body.questions.b.type).toBe("score");
   });

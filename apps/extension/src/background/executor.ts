@@ -29,29 +29,17 @@ export class TabExecutor implements Executor {
     this.onCreated = (tab) => {
       if (tab.openerTabId !== this.tabId || !tab.id) return;
       this.tabId = tab.id;
-      this.lastUrl = tab.url ?? "";
     };
     chrome.tabs.onCreated.addListener(this.onCreated);
   }
 
-  private onCreated?: (tab: chrome.tabs.Tab) => void;
+  private onCreated: ((tab: chrome.tabs.Tab) => void) | undefined;
 
   /** Stop following; the tab belongs to the user once the run ends. */
   detach(): void {
     if (this.onCreated) chrome.tabs.onCreated.removeListener(this.onCreated);
     this.onCreated = undefined;
   }
-
-  /**
-   * Where the tab currently is.
-   *
-   * `url()` is synchronous on the interface but chrome.tabs.get is not, so this is
-   * kept up to date from each observation. It returned "" before, which made the
-   * runtime think it was never on the target site — so a step marked
-   * `site: google.com` navigated away from google.com/travel/flights to the
-   * homepage, throwing away the page the user was already on.
-   */
-  private lastUrl = "";
 
   constructor(private tabId: number) {
     this.watchForNewTabs();
@@ -127,7 +115,6 @@ export class TabExecutor implements Executor {
   async snapshot(): Promise<RawSnapshot> {
     const res = await this.send({ kind: "snapshot" });
     if (!("snapshot" in res) || !res.ok) throw new StalePage("could not observe the page");
-    this.lastUrl = res.snapshot.url;
     return res.snapshot;
   }
 
@@ -149,7 +136,6 @@ export class TabExecutor implements Executor {
     text?: string,
     fp?: string,
   ): Promise<void> {
-    if (action.kind === "navigate") this.lastUrl = action.url;
     const res = await this.send({
       kind: "act",
       action,
@@ -168,8 +154,20 @@ export class TabExecutor implements Executor {
     await this.send({ kind: "settle", node, isCombobox }).catch(() => undefined);
   }
 
-  url(): string {
-    return this.lastUrl;
+  /**
+   * Asked of Chrome every time rather than cached. The cached copy was "" for a tab a
+   * click had just opened, and the runtime — believing it was on the wrong site —
+   * navigated away from the page the user was on.
+   */
+  async url(): Promise<string> {
+    const tab = await chrome.tabs.get(this.tabId);
+    return tab.pendingUrl ?? tab.url ?? "";
+  }
+
+  async preflight(action: Action, node: number | null, fp?: string): Promise<string | null> {
+    const res = await this.send({ kind: "preflight", action, node, ...(fp ? { fp } : {}) });
+    if (!res.ok) return res.error;
+    return "refusal" in res ? res.refusal : null;
   }
 
   async close(): Promise<void> {

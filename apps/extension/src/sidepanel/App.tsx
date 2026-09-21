@@ -1,12 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Details } from "./Details.js";
 import { useDictation } from "./dictation.js";
-import type { HistoryEntry, PanelState, ToWorker } from "../shared/messages.js";
+import type { ToWorker } from "../shared/messages.js";
+import { EMPTY_STATE, type HistoryEntry, type PanelState, parseState, type Question } from "../shared/state.js";
 import { elapsed, type TimelineStep } from "../shared/timeline.js";
 
 const send = <T,>(msg: ToWorker): Promise<T> => chrome.runtime.sendMessage(msg) as Promise<T>;
-
-const EMPTY: PanelState = { signedIn: false, running: false, steps: [], history: [] };
 
 const SUGGESTIONS = [
   "Summarise this page",
@@ -14,8 +13,8 @@ const SUGGESTIONS = [
   "Fill in this form with my details, but don't submit it",
 ];
 
-export function App(): JSX.Element {
-  const [state, setState] = useState<PanelState>(EMPTY);
+export function App() {
+  const [state, setState] = useState<PanelState>(EMPTY_STATE);
   const [goal, setGoal] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -31,21 +30,17 @@ export function App(): JSX.Element {
   );
 
   const refresh = useCallback(async () => {
-    const next = await send<PanelState>({ kind: "state" });
-    // Belt and braces against a state shape this build does not know: a panel that
-    // throws renders nothing at all, with no indication of why.
-    setState({ ...EMPTY, ...next, steps: Array.isArray(next?.steps) ? next.steps : [] });
+    // Parsed, not trusted: a shape this build does not know is repaired field by field
+    // rather than rendered — a panel that throws shows nothing at all.
+    setState(parseState(await send<unknown>({ kind: "state" })));
   }, []);
 
   useEffect(() => {
     void refresh();
     // The worker pushes after every event, but MV3 can restart it at any moment, so
     // a slow poll keeps the panel honest rather than stuck on a stale view.
-    const listener = (msg: { kind?: string; state?: PanelState }) => {
-      if (msg?.kind === "state" && msg.state) {
-        const s = msg.state;
-        setState({ ...EMPTY, ...s, steps: Array.isArray(s.steps) ? s.steps : [] });
-      }
+    const listener = (msg: { kind?: string; state?: unknown }) => {
+      if (msg?.kind === "state" && msg.state) setState(parseState(msg.state));
     };
     chrome.runtime.onMessage.addListener(listener);
     const timer = setInterval(() => void refresh(), 1200);
@@ -158,6 +153,12 @@ export function App(): JSX.Element {
       <div className="stream">
         {!state.steps.length && !state.running && <Empty onPick={setGoal} />}
         {state.status === "planning" && <Planning />}
+        {state.questions?.length ? (
+          <Questions
+            items={state.questions}
+            onSubmit={(values) => void send({ kind: "answer", values }).then(refresh)}
+          />
+        ) : null}
 
         {state.steps.length > 0 && (
           <ol className="timeline">
@@ -206,7 +207,7 @@ export function App(): JSX.Element {
 
 function Header({
   email, credits, onDetails,
-}: { email?: string; credits?: number; onDetails?: () => void }) {
+}: { email?: string | undefined; credits?: number | undefined; onDetails?: () => void }) {
   return (
     <header>
       <div className="brand">
@@ -274,6 +275,9 @@ function Step({ step, onAnswer }: { step: TimelineStep; onAnswer: (ok: boolean) 
       <div className="step-body">
         <div className="step-head">
           <span className="step-title">{step.title}</span>
+          {step.iteration !== undefined && step.status === "running" && (
+            <span className="iteration">Item {Number(step.iteration.split(".").pop()) + 1}</span>
+          )}
           {time && <span className="time">{time}</span>}
         </div>
 
@@ -351,12 +355,13 @@ const OUTCOME: Record<string, string> = {
   blocked: "Stopped early",
   suspended: "Waiting on you",
   budget: "Hit the step limit",
+  aborted: "Stopped",
   error: "Failed",
 };
 
 function Summary({
   steps, credits, seconds, status,
-}: { steps: number; credits: number; seconds: number; status?: string }) {
+}: { steps: number; credits: number; seconds: number; status?: string | undefined }) {
   return (
     <div className={`summary ${status ?? ""}`}>
       <strong>{OUTCOME[status ?? ""] ?? "Finished"}</strong>
@@ -364,6 +369,46 @@ function Summary({
       <span>{seconds}s</span>
       <span>{credits.toFixed(1)} credits</span>
     </div>
+  );
+}
+
+/**
+ * Questions a form asked that only the person can answer. Answered once: the agent
+ * keeps the answers for the rest of the run, so the next nine applications that ask
+ * the same thing are filled without asking again.
+ */
+function Questions({
+  items, onSubmit,
+}: { items: Question[]; onSubmit: (values: Record<string, string>) => void }) {
+  const [values, setValues] = useState<Record<string, string>>({});
+  return (
+    <form
+      className="questions"
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit(values);
+      }}
+    >
+      <h2>A few things only you know</h2>
+      <p className="fine">Leave anything blank to skip it. Your answers are reused for the rest of this task.</p>
+      {items.map((q) => (
+        <label key={q.key}>
+          <span>
+            {q.label}
+            {q.required && <em> · required</em>}
+          </span>
+          <input
+            value={values[q.key] ?? ""}
+            onChange={(e) => setValues({ ...values, [q.key]: e.target.value })}
+            autoComplete="off"
+          />
+        </label>
+      ))}
+      <div className="prompt-row">
+        <button className="primary" type="submit">Continue</button>
+        <button className="ghost" type="button" onClick={() => onSubmit({})}>Skip all</button>
+      </div>
+    </form>
   );
 }
 

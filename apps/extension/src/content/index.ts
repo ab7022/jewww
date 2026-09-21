@@ -1,13 +1,16 @@
 import {
+  editableWithin,
+  elementFor,
+  isCredentialField,
   nodeGuard,
   pageKey,
   pageText,
+  preflight,
   resolvePoint,
   settle,
   snapshot,
   stillFresh,
 } from "@jev-browser/sense";
-import { FORBIDDEN_FIELD } from "@jev-browser/shared";
 import type { FromContent, GuardPair, ToContent } from "../shared/messages.js";
 import { pressAt } from "./press.js";
 
@@ -83,6 +86,19 @@ async function handle(msg: ToContent): Promise<FromContent> {
       await settle(msg.node, msg.isCombobox);
       return { ok: true };
 
+    case "preflight": {
+      const { action, node, fp } = msg;
+      if (node === null) return { ok: true, refusal: null };
+      if (action.kind !== "click" && action.kind !== "type" && action.kind !== "select") {
+        return { ok: true, refusal: null };
+      }
+      const kind = action.kind === "type" ? "fill" : action.kind === "select" ? "select" : "click";
+      return {
+        ok: true,
+        refusal: preflight(node, kind, action.kind === "select" ? action.option : undefined, fp),
+      };
+    }
+
     case "act": {
       const { action, node, guard, text, fp } = msg;
 
@@ -113,26 +129,33 @@ async function handle(msg: ToContent): Promise<FromContent> {
       if ("refused" in point) return { ok: false, error: point.refused, unreachable: true };
       if (kind === "select") return { ok: true };
 
-      const el = document.elementFromPoint(point.x, point.y) as HTMLElement | null;
-      const target = (el?.closest("a,button,input,select,textarea,[role],[onclick]") ??
-        el) as HTMLElement | null;
-      if (!target) return { ok: false, error: "nothing at the resolved point", unreachable: true };
+      // `resolvePoint` has just proved the chosen element is what sits at this point.
+      // `hit` is the innermost element there — events are dispatched on it so they
+      // bubble the real path. Text goes to the CHOSEN element: climbing from the hit
+      // to the nearest `[role]` once landed on a dialog wrapper and set `.value` on a
+      // div, which does nothing.
+      const hit = document.elementFromPoint(point.x, point.y) as HTMLElement | null;
+      const chosen = elementFor(node, fp) as HTMLElement | undefined;
+      const target = chosen ?? hit;
+      if (!target || !hit) return { ok: false, error: "nothing at the resolved point", unreachable: true };
 
       if (action.kind === "type") {
         // Last line of defence. The worker checks this too, but the check that
-        // matters is the one closest to the keystroke.
-        const label =
-          target.getAttribute("aria-label") ?? target.getAttribute("name") ?? target.id ?? "";
-        if (
-          (target as HTMLInputElement).type === "password" ||
-          FORBIDDEN_FIELD.test(label)
-        ) {
-          return { ok: false, error: `refused to type into a credential field: ${label}` };
+        // matters is the one closest to the keystroke — so it runs on the element
+        // that will actually RECEIVE the text, not the one the model named. Checking
+        // a wrapper would let the password field inside it through.
+        const field = editableWithin(target);
+        const credential = isCredentialField(field) || isCredentialField(target);
+        if (credential) {
+          return { ok: false, error: `refused to type into a credential field: ${credential}` };
         }
-        setFieldValue(target, text ?? "");
+        // Click first, exactly as a person would: comboboxes, masked inputs and rich
+        // editors initialise on focus/pointerdown, and some only accept text after it.
+        pressAt(hit, target, point.x, point.y);
+        setFieldValue(field, text ?? "");
         if (action.submit) {
           for (const type of ["keydown", "keypress", "keyup"]) {
-            target.dispatchEvent(
+            field.dispatchEvent(
               new KeyboardEvent(type, {
                 key: "Enter",
                 code: "Enter",
@@ -148,7 +171,7 @@ async function handle(msg: ToContent): Promise<FromContent> {
         return { ok: true };
       }
 
-      pressAt(el ?? target, target, point.x, point.y);
+      pressAt(hit, target, point.x, point.y);
       return { ok: true };
     }
   }

@@ -48,6 +48,8 @@ export const call = {
   pageText: (maxChars = 40_000) => `${GLOBAL_NAME}.pageText(${maxChars})`,
   nodeGuard: (node: number, fp?: string) =>
     `${GLOBAL_NAME}.nodeGuard(${node}, ${JSON.stringify(fp ?? null)})`,
+  preflight: (node: number, kind: string, value?: string, fp?: string) =>
+    `${GLOBAL_NAME}.preflight(${node}, ${JSON.stringify(kind)}, ${JSON.stringify(value ?? null)}, ${JSON.stringify(fp ?? null)})`,
   resolvePoint: (node: number, kind: string, value?: string, fp?: string) =>
     `JSON.stringify(${GLOBAL_NAME}.resolvePoint(${node}, ${JSON.stringify(kind)}, ${JSON.stringify(value ?? null)}, ${JSON.stringify(fp ?? null)}))`,
   settle: (node: number | null, isCombobox: boolean) =>

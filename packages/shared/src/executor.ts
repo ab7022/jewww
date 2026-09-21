@@ -51,8 +51,30 @@ export interface Executor {
    * generation, which takes seconds during which the page moves on.
    */
   act(action: Action, node: number | null, guard: Guard, text?: string, fp?: string): Promise<void>;
+  /**
+   * Would `act` be able to perform this right now? Returns the reason it could not
+   * (covered, read-only, disabled, gone…) or null. Performs no input.
+   *
+   * Exists so a person is never asked to approve something that cannot happen: the
+   * gate used to come first, and LinkedIn's post-submit dialog produced five
+   * approvals in a row for a click that was blocked every time.
+   */
+  preflight(action: Action, node: number | null, fp?: string): Promise<string | null>;
   /** Wait for the page to be worth observing again. */
   settle(node: number | null, isCombobox: boolean): Promise<void>;
-  url(): string;
+  /**
+   * Where the driven tab is NOW. Async on purpose: the extension used to answer from a
+   * cached value that was "" for a freshly opened tab, and the runtime — believing it
+   * was on the wrong site — navigated away from the page the user was on.
+   */
+  url(): Promise<string>;
   close(): Promise<void>;
 }
+
+/**
+ * What `preflight` / `act` refusals mean for the next decision. A refusal of one of
+ * these kinds is a fact about the element as the page stands, not a judgement to
+ * re-litigate, so the runtime withdraws that element until the page changes.
+ */
+export const PHYSICALLY_UNREACHABLE =
+  /covered by|not visible|has no size|is disabled|left the document|not in the registry/i;

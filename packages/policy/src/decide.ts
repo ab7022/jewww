@@ -8,7 +8,7 @@ import {
   type Questions,
   RISK as RISK_CRITERIA,
   type Risk,
-  type Snapshot,
+  type DecideRequest,
   validateChoice,
 } from "@jev-browser/shared";
 import {
@@ -21,23 +21,20 @@ import {
 } from "./action-space.js";
 import { BLOCKER, NEXT_OPERATION, RISK, TARGET } from "./instructions.js";
 
-export interface DecideInput {
+/**
+ * A decision request as the policy sees it: the wire request (see
+ * `@jev-browser/shared/wire.ts`) plus the run context that whoever built the
+ * capabilities bound in. Derived, not restated — the two used to be written out
+ * separately and disagreed about which fields were optional.
+ */
+export type DecideInput = Omit<DecideRequest, "nodeId"> & {
   goal: string;
-  /** A local file the user has offered, which enables the ATTACH operation. */
-  attachable?: string;
-  subgoal: string;
-  success: string;
-  snapshot: Snapshot;
-  /** eid -> live DOM node id. The action space is built from this. */
-  nodes: Record<string, number>;
-  recent: { action: string; text?: string | null; pageChanged?: boolean | null }[];
   /**
    * Standing instructions the user saved in their details: tone, defaults, things to
-   * always or never do. Trusted — they are the user's own words, like the goal — and
-   * loaded on every run, so they are the place a preference outlives one prompt.
+   * always or never do. Trusted — the user's own words, like the goal.
    */
   instructions?: string | undefined;
-}
+};
 
 export interface Decision {
   action: Action;

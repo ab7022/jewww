@@ -1,4 +1,5 @@
 import { postWithRetry } from "@jev-browser/jev";
+import type { TextRequest } from "@jev-browser/shared";
 import { TEXT_VALUE } from "./instructions.js";
 
 /**
@@ -13,21 +14,12 @@ import { TEXT_VALUE } from "./instructions.js";
  * Scratchpad references ($.summary) are resolved BEFORE this is called — composed
  * prose still comes from the compose node, not from here.
  */
-export interface TextContext {
+export type TextContext = TextRequest & {
   goal: string;
-  subgoal: string;
-  field: { label: string; role: string; value?: string };
-  page: { title: string; text: string };
   recent: { action: string; text?: string | null }[];
-  /** Known facts the value may legitimately be drawn from. */
-  profile?: Record<string, string>;
-  /**
-   * Standing instructions the user saved in their details: tone, defaults, things to
-   * always or never do. Trusted — they are the user's own words, like the goal — and
-   * loaded on every run, so they are the place a preference outlives one prompt.
-   */
+  /** Standing instructions from the user's saved details. Trusted, like the goal. */
   instructions?: string | undefined;
-}
+};
 
 export interface TextResult {
   /**

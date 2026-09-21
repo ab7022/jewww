@@ -1,43 +1,43 @@
-import type { Decision, DecideInput, FieldMapping, TextContext } from "@jev-browser/policy";
-import type { Plan } from "@jev-browser/shared";
+import type { Capabilities } from "@jev-browser/runtime";
+import { ApiClient, type RunOutcome, type TokenStore, type Tokens } from "@jev-browser/protocol";
 
 /**
- * Server client.
+ * The extension's view of the server.
  *
- * The extension holds NO model key — every model call is a server call, which is the
- * whole reason the server exists. It holds only a bearer token, and refreshes it
- * transparently when it expires.
+ * Every endpoint call goes through `ApiClient`, whose request and result types come
+ * from the same table the server registers its handlers from — the extension no longer
+ * spells out any request shape itself. That is what stopped the drift: the subgoal in
+ * the `nodeId` slot, `attachable` never forwarded, a profile read in its old shape.
+ *
+ * The extension holds NO model key. It holds a bearer token and a refresh token, and
+ * refreshes transparently.
  */
 const TOKENS = "tokens";
 
-interface Tokens {
-  access: string;
-  refresh: string;
-}
-
-export class Api {
-  constructor(private readonly base: string) {}
-
-  async tokens(): Promise<Tokens | null> {
+const chromeTokens: TokenStore = {
+  async get() {
     const stored = await chrome.storage.local.get(TOKENS);
     return (stored[TOKENS] as Tokens | undefined) ?? null;
-  }
-
-  async setTokens(tokens: Tokens | null): Promise<void> {
+  },
+  async set(tokens) {
     if (tokens) await chrome.storage.local.set({ [TOKENS]: tokens });
     else await chrome.storage.local.remove(TOKENS);
+  },
+};
+
+export class Api {
+  readonly client: ApiClient;
+
+  constructor(private readonly base: string) {
+    this.client = new ApiClient(base, chromeTokens);
   }
 
-  /**
-   * Sign in through the user's own browser via launchWebAuthFlow. The extension
-   * never sees the Google password — it only receives our tokens back in the
-   * redirect fragment.
-   */
-  /** What sign-in the server actually supports right now. */
-  async config(): Promise<{ google: boolean; dev: boolean }> {
-    const res = await fetch(`${this.base}/auth/config`);
-    if (!res.ok) throw new Error("server unreachable");
-    return (await res.json()) as { google: boolean; dev: boolean };
+  tokens(): Promise<Tokens | null> {
+    return chromeTokens.get();
+  }
+
+  config() {
+    return this.client.call("authConfig");
   }
 
   /** Local development sign-in, offered only when the server says it is available. */
@@ -48,25 +48,29 @@ export class Api {
       body: JSON.stringify({ email: "dev@localhost" }),
     });
     if (!res.ok) throw new Error("dev sign-in is not available on this server");
-    const { access, refresh } = (await res.json()) as { access: string; refresh: string };
-    await this.setTokens({ access, refresh });
+    const { access, refresh } = (await res.json()) as Tokens;
+    await chromeTokens.set({ access, refresh });
   }
 
+  /**
+   * Sign in through the user's own browser via launchWebAuthFlow. The extension never
+   * sees the Google password — only our tokens, in the redirect fragment. The server
+   * accepts this redirect only for an allow-listed extension id.
+   */
   async signIn(): Promise<void> {
     const redirect = chrome.identity.getRedirectURL("google");
     const url = `${this.base}/auth/google/start?redirect=${encodeURIComponent(redirect)}`;
     const done = await chrome.identity.launchWebAuthFlow({ url, interactive: true });
     if (!done) throw new Error("sign-in was cancelled");
-    const fragment = new URL(done).hash.replace(/^#/, "");
-    const params = new URLSearchParams(fragment);
+    const params = new URLSearchParams(new URL(done).hash.replace(/^#/, ""));
     const access = params.get("access");
     const refresh = params.get("refresh");
     if (!access || !refresh) throw new Error("sign-in returned no tokens");
-    await this.setTokens({ access, refresh });
+    await chromeTokens.set({ access, refresh });
   }
 
   async signOut(): Promise<void> {
-    const tokens = await this.tokens();
+    const tokens = await chromeTokens.get();
     if (tokens) {
       await fetch(`${this.base}/auth/logout`, {
         method: "POST",
@@ -74,101 +78,48 @@ export class Api {
         body: JSON.stringify({ refresh: tokens.refresh }),
       }).catch(() => {});
     }
-    await this.setTokens(null);
+    await chromeTokens.set(null);
   }
 
-  /** One retry after a refresh, so an expired access token is invisible to callers. */
-  private async call<T>(path: string, body?: unknown, retried = false): Promise<T> {
-    const tokens = await this.tokens();
-    if (!tokens) throw new Error("not signed in");
+  me() {
+    return this.client.call("me");
+  }
 
-    const res = await fetch(`${this.base}${path}`, {
-      method: body === undefined ? "GET" : "POST",
-      headers: {
-        Authorization: `Bearer ${tokens.access}`,
-        ...(body === undefined ? {} : { "Content-Type": "application/json" }),
+  createRun(goal: string, url: string) {
+    return this.client.call("createRun", { goal, url });
+  }
+
+  finish(runId: string, status: RunOutcome, steps: number, summary?: string) {
+    return this.client.call(
+      "finish",
+      { id: runId },
+      { status, steps, ...(summary ? { summary: summary.slice(0, 8000) } : {}) },
+    );
+  }
+
+  profile() {
+    return this.client.call("getProfile");
+  }
+
+  saveProfile(fields: Record<string, string>, instructions: string) {
+    return this.client.call("putProfile", { fields, instructions });
+  }
+
+  /**
+   * The runtime's capabilities for one run, routed through the server. The goal and the
+   * user's instructions are NOT sent: the server reads them from the run itself.
+   */
+  capabilities(runId: string): Capabilities {
+    const id = { id: runId };
+    return {
+      decide: async (request) => (await this.client.call("decide", id, request)).decision,
+      text: async (request) => (await this.client.call("text", id, request)).text,
+      extract: async (request) => (await this.client.call("extract", id, request)).value,
+      compose: async (request) => (await this.client.call("compose", id, request)).value,
+      mapFields: async (request) => {
+        const r = await this.client.call("fields", id, request);
+        return { mappings: r.mappings, costUsd: r.costUsd };
       },
-      ...(body === undefined ? {} : { body: JSON.stringify(body) }),
-    });
-
-    if (res.status === 401 && !retried) {
-      const refreshed = await fetch(`${this.base}/auth/refresh`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ refresh: tokens.refresh }),
-      });
-      if (!refreshed.ok) {
-        await this.setTokens(null);
-        throw new Error("session expired, sign in again");
-      }
-      const { access } = (await refreshed.json()) as { access: string };
-      await this.setTokens({ ...tokens, access });
-      return this.call<T>(path, body, true);
-    }
-
-    if (res.status === 402) {
-      const { balance } = (await res.json()) as { balance: number };
-      throw new Error(`out of credits (${balance} left)`);
-    }
-    if (!res.ok) {
-      const body = (await res.json().catch(() => ({}))) as { message?: string; error?: string };
-      throw new Error(body.message ?? body.error ?? `${path} failed with ${res.status}`);
-    }
-    return (await res.json()) as T;
+    };
   }
-
-  me = () =>
-    this.call<{ email: string; credits: number; approxTasks: number }>("/api/me");
-
-  createRun = (goal: string, url: string) =>
-    this.call<{ runId: string; plan: Plan; stated?: Record<string, string>; balance: number }>(
-      "/api/runs",
-      { goal, url },
-    );
-
-  decide = async (runId: string, nodeId: string, input: DecideInput): Promise<Decision> =>
-    (
-      await this.call<{ decision: Decision }>(`/api/runs/${runId}/decide`, {
-        nodeId,
-        subgoal: input.subgoal,
-        success: input.success,
-        snapshot: input.snapshot,
-        nodes: input.nodes,
-        recent: input.recent,
-      })
-    ).decision;
-
-  text = async (runId: string, ctx: TextContext): Promise<string | null> =>
-    (await this.call<{ text: string | null }>(`/api/runs/${runId}/text`, ctx)).text;
-
-  extract = async (runId: string, intent: string, schema: unknown, pageText: string) =>
-    (await this.call<{ value: unknown }>(`/api/runs/${runId}/extract`, { intent, schema, pageText }))
-      .value;
-
-  compose = async (runId: string, intent: string, inputs: Record<string, unknown>, goal: string) =>
-    (await this.call<{ value: unknown }>(`/api/runs/${runId}/compose`, { intent, inputs, goal })).value;
-
-  mapFields = async (runId: string, input: unknown): Promise<FieldMapping[]> =>
-    (await this.call<{ mappings: FieldMapping[] }>(`/api/runs/${runId}/fields`, input)).mappings;
-
-  profile = async (): Promise<{ fields: Record<string, string>; instructions: string }> => {
-    const r = await this.call<{ fields: Record<string, string>; instructions?: string }>(
-      "/api/profile",
-    );
-    return { fields: r.fields ?? {}, instructions: r.instructions ?? "" };
-  };
-
-  saveProfile = async (fields: Record<string, string>, instructions: string): Promise<void> => {
-    const tokens = await this.tokens();
-    if (!tokens) throw new Error("not signed in");
-    const res = await fetch(`${this.base}/api/profile`, {
-      method: "PUT",
-      headers: { Authorization: `Bearer ${tokens.access}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ fields, instructions }),
-    });
-    if (!res.ok) throw new Error("could not save your details");
-  };
-
-  finish = (runId: string, status: string) =>
-    this.call<{ ok: true }>(`/api/runs/${runId}/finish`, { status });
 }

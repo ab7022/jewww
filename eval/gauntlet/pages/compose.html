@@ -1,0 +1,11 @@
+<!doctype html><html><head><title>New message</title><link rel="stylesheet" href="_base.css"></head><body>
+<!-- Gmail-style composer: a search box that competes for "type the recipient", an
+     input for To, and a contenteditable body with no `value` property at all. -->
+<input aria-label="Search mail" placeholder="Search mail">
+<div role="dialog" aria-label="New Message">
+  <label>To <input aria-label="To recipients" id="to"></label>
+  <label>Subject <input aria-label="Subject" id="subject"></label>
+  <div id="body" contenteditable="true" role="textbox" aria-label="Message Body" style="min-height:80px;border:1px solid #ccc"></div>
+  <button>Send</button>
+</div>
+</body></html>

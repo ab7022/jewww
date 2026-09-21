@@ -1,0 +1,15 @@
+<!doctype html><html><head><title>Jobs</title><link rel="stylesheet" href="_base.css"></head><body>
+<h1>Frontend Engineer</h1>
+<button id="apply">Easy Apply</button>
+<!-- LinkedIn-style success dialog left open over the page after the previous submit. -->
+<div class="dialog-backdrop" id="bd">
+  <div class="dialog" role="dialog" aria-modal="true" aria-label="Your application was sent">
+    <p>Your application was sent to Quik Hire Staffing!</p>
+    <button id="notnow">Not now</button> <button>Update profile</button>
+  </div>
+</div>
+<script>
+  document.getElementById("notnow").addEventListener("click", () => document.getElementById("bd").remove());
+  document.getElementById("apply").addEventListener("click", () => (document.body.dataset.outcome = "applied"));
+</script>
+</body></html>

@@ -1,0 +1,14 @@
+<!doctype html><html><head><title>Component app</title><link rel="stylesheet" href="_base.css"></head><body>
+<!-- Web components (Salesforce, many design systems) put controls in shadow roots,
+     which document.querySelectorAll never sees. -->
+<app-shell></app-shell>
+<script>
+  customElements.define("app-shell", class extends HTMLElement {
+    connectedCallback() {
+      const root = this.attachShadow({ mode: "open" });
+      root.innerHTML = '<label>Opportunity name <input aria-label="Opportunity name"></label> <button id="b">Save record</button>';
+      root.getElementById("b").addEventListener("click", () => (document.body.dataset.outcome = "saved"));
+    }
+  });
+</script>
+</body></html>

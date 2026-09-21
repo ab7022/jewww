@@ -17,8 +17,23 @@
  * focus goes to the resolved target, which is the thing a user would be focusing.
  */
 export function pressAt(hit: HTMLElement, target: HTMLElement, x: number, y: number): void {
-  const base = { bubbles: true, cancelable: true, composed: true, view: window, clientX: x, clientY: y, button: 0, detail: 1 };
+  // `x`/`y` are top-viewport coordinates. An element inside a frame is in another
+  // window: its events carry THAT window as their view, coordinates local to it, and
+  // are built from its own constructors.
+  const view = (hit.ownerDocument.defaultView ?? window) as typeof window;
+  const local = toLocal(view, x, y);
+  const base = {
+    bubbles: true,
+    cancelable: true,
+    composed: true,
+    view,
+    clientX: local.x,
+    clientY: local.y,
+    button: 0,
+    detail: 1,
+  };
   const pointer = { ...base, pointerId: 1, pointerType: "mouse", isPrimary: true };
+  const { PointerEvent, MouseEvent } = view;
 
   // Hover first: menus and tiles that reveal their real target on hover need it.
   hit.dispatchEvent(new PointerEvent("pointerover", { ...pointer, buttons: 0 }));
@@ -39,4 +54,21 @@ export function pressAt(hit: HTMLElement, target: HTMLElement, x: number, y: num
   hit.dispatchEvent(new PointerEvent("pointerup", { ...pointer, buttons: 0 }));
   hit.dispatchEvent(new MouseEvent("mouseup", { ...base, buttons: 0 }));
   hit.dispatchEvent(new MouseEvent("click", { ...base, buttons: 0 }));
+}
+
+/** A top-viewport point, in the coordinates of a (possibly nested) frame's window. */
+function toLocal(view: Window, x: number, y: number): { x: number; y: number } {
+  let lx = x;
+  let ly = y;
+  const chain: HTMLElement[] = [];
+  for (let v: Window | null = view; v && v !== window.top && v.frameElement; ) {
+    chain.push(v.frameElement as HTMLElement);
+    v = (v.frameElement as HTMLElement).ownerDocument.defaultView;
+  }
+  for (const frame of chain.reverse()) {
+    const r = frame.getBoundingClientRect();
+    lx -= r.left + frame.clientLeft;
+    ly -= r.top + frame.clientTop;
+  }
+  return { x: lx, y: ly };
 }

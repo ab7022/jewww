@@ -1,0 +1,13 @@
+<!doctype html><html><head><title>Console home</title><link rel="stylesheet" href="_base.css"></head><body>
+<!-- AWS-style: the visible search box is read-only and opens a real search on click. -->
+<input readonly aria-label="Search" placeholder="Search [Option+S]" style="width:300px">
+<div id="overlay" class="dialog-backdrop" style="display:none"><div class="dialog">
+  <label>Search services <input id="real" aria-label="Search services"></label>
+</div></div>
+<script>
+  document.querySelector("input[readonly]").addEventListener("click", () => {
+    document.getElementById("overlay").style.display = "grid";
+    document.getElementById("real").focus();
+  });
+</script>
+</body></html>

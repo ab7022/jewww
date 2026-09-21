@@ -33,6 +33,27 @@ describe("collectSnapshot", () => {
    * as a typing target got it chosen and then refused by the resolver, when the
    * right move was always to click it.
    */
+  /**
+   * A button is named by its own text. The sibling-label heuristic (for ATS inputs)
+   * used to run for everything, and named LinkedIn's "Not now" after the sentence
+   * above it — so the dismiss button was never offered to the model at all.
+   */
+  it("names a button by its own text, not the paragraph before it", () => {
+    document.body.innerHTML = `
+      <div role="dialog" aria-label="Sent">
+        <p>Your application was sent to Quik Hire Staffing!</p>
+        <button>Not now</button>
+      </div>`;
+    const s = collectSnapshot();
+    expect(byName(s, "Not now")?.role).toBe("button");
+    expect(byName(s, "Your application was sent to Quik Hire Staffing!")).toBeUndefined();
+  });
+
+  it("still names a field from the sibling label ATS forms use", () => {
+    document.body.innerHTML = `<div><div>Years of experience</div><input></div>`;
+    expect(byName(collectSnapshot(), "Years of experience")?.role).toBe("textbox");
+  });
+
   it("does not offer read-only or disabled fields as typing targets", () => {
     document.body.innerHTML = `
       <label for="ro">Search</label><input id="ro" readonly value="prod">

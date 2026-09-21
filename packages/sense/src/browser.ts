@@ -1,6 +1,16 @@
 import { FORBIDDEN_FIELD } from "@jev-browser/shared";
 import type { RawSnapshot } from "@jev-browser/shared";
-import { collectSnapshot, findByFingerprint, nameOf, roleOf } from "./collect.js";
+import {
+  collectSnapshot,
+  composedContains,
+  deepElementFromPoint,
+  deepQueryAll,
+  findByFingerprint,
+  nameOf,
+  reachableRoots,
+  roleOf,
+  topRect,
+} from "./collect.js";
 
 /**
  * The browser-side surface, as real functions.
@@ -40,14 +50,9 @@ const cache = (): Cache | undefined =>
  * the text belongs in the editable thing inside it, not on the wrapper.
  */
 export function editableWithin(el: HTMLElement): HTMLElement {
-  if (
-    el instanceof HTMLInputElement ||
-    el instanceof HTMLTextAreaElement ||
-    el instanceof HTMLSelectElement ||
-    el.isContentEditable
-  ) {
-    return el;
-  }
+  // Tag names, not `instanceof`: an input inside a frame belongs to another realm and
+  // is not an instance of THIS window's HTMLInputElement.
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable) return el;
   return (
     el.querySelector<HTMLElement>('input:not([type=hidden]),textarea,[contenteditable=""],[contenteditable="true"]') ??
     el
@@ -105,7 +110,7 @@ export function pageKey(): string | null {
   return JSON.stringify([
     location.href,
     document.title,
-    Array.from(document.querySelectorAll("input,textarea,select"))
+    deepQueryAll("input,textarea,select")
       .filter((e) => safe(e as HTMLInputElement))
       .map((e) => {
         const i = e as HTMLInputElement & { selectedIndex?: number };
@@ -189,7 +194,7 @@ function describeOccluder(top: Element | null): string {
     if (name) return `${role} \u201c${name}\u201d`;
   }
 
-  const modal = [...document.querySelectorAll('[role="dialog"],[role="alertdialog"],[aria-modal="true"],dialog[open]')]
+  const modal = deepQueryAll('[role="dialog"],[role="alertdialog"],[aria-modal="true"],dialog[open]')
     .find((d) => d.getBoundingClientRect().width > 0);
   if (modal) {
     const name = nameOf(modal).slice(0, 80);
@@ -236,7 +241,9 @@ export function resolvePoint(
     if (credential) return { refused: `refused to type into a credential field: ${credential}` };
   }
 
-  let r = e.getBoundingClientRect();
+  // Top-viewport geometry throughout: an element inside a frame measures relative to
+  // the frame, and the point we act on is in the top page.
+  let r = topRect(e);
   if (!r.width || !r.height) return { refused: "element has no size" };
 
   // Bring it into view before measuring. Refusing anything below the fold made every
@@ -252,7 +259,7 @@ export function resolvePoint(
     // then re-measured before anything has moved, and every element below the fold
     // resolves as unreachable. Greenhouse does exactly this.
     e.scrollIntoView({ block: "center", inline: "nearest", behavior: "instant" });
-    r = e.getBoundingClientRect();
+    r = topRect(e);
   }
 
   const x = r.x + r.width / 2;
@@ -261,8 +268,10 @@ export function resolvePoint(
     return { refused: `off-screen after scrolling (${Math.round(x)},${Math.round(y)})` };
   }
   // Still covered after scrolling: something is genuinely on top of it.
-  const top = document.elementFromPoint(x, y);
-  if (!e.contains(top)) {
+  // Hit-tested through shadow roots and frames: `document.elementFromPoint` returns
+  // the shadow host or the iframe, and every control inside one read as covered.
+  const top = deepElementFromPoint(x, y);
+  if (!composedContains(e, top)) {
     return { refused: `covered by ${describeOccluder(top)}` };
   }
 
@@ -324,11 +333,14 @@ export function settle(node: number | null, isCombobox: boolean): Promise<boolea
       )
         .split(/\s+/)
         .filter(Boolean);
-      const roots: ParentNode[] = ids.length
-        ? ids.map((i) => document.getElementById(i)).filter((n): n is HTMLElement => Boolean(n))
-        : [document];
-      const visibleOption = roots
-        .flatMap((root) => Array.from(root.querySelectorAll('[role="option"]')))
+      const home = (field?.getRootNode() ?? document) as Document | ShadowRoot;
+      const options = ids.length
+        ? ids
+            .map((i) => home.getElementById(i))
+            .filter((n): n is HTMLElement => Boolean(n))
+            .flatMap((n) => Array.from(n.querySelectorAll('[role="option"]')))
+        : deepQueryAll('[role="option"]');
+      const visibleOption = options
         .some((o) => {
           const r = o.getBoundingClientRect();
           return (
@@ -356,11 +368,25 @@ export function settle(node: number | null, isCombobox: boolean): Promise<boolea
  */
 export function pageText(maxChars = 40_000): string {
   const main = document.querySelector("main,article,[role=main]") ?? document.body;
-  const body = ((main as HTMLElement).innerText ?? "").replace(/\n{3,}/g, "\n\n").trim();
+  // innerText does not include what lives in shadow roots or frames; read those too.
+  // `nodeType`, not `instanceof Document`: a frame's document belongs to another realm
+  // and is not an instance of this window's Document.
+  const extra = reachableRoots()
+    .slice(1)
+    .map((root) =>
+      root.nodeType === Node.DOCUMENT_NODE
+        ? ((root as Document).body?.innerText ?? "")
+        : (root.textContent ?? ""),
+    )
+    .filter((t) => t.trim());
+  const body = [(main as HTMLElement).innerText ?? "", ...extra]
+    .join("\n\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 
   const seen = new Set<string>();
   const links: string[] = [];
-  for (const a of document.querySelectorAll<HTMLAnchorElement>("a[href]")) {
+  for (const a of deepQueryAll("a[href]") as HTMLAnchorElement[]) {
     const href = a.href;
     if (!href || !/^https?:/.test(href) || seen.has(href)) continue;
     if (!a.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) continue;

@@ -1,0 +1,14 @@
+<!doctype html><html><head><title>Movies</title><link rel="stylesheet" href="_base.css"></head><body>
+<h1>Now showing</h1>
+<a href="#" id="movies">Movies</a>
+<!-- BookMyShow-style bottom sheet whose only close control is a bare div with a JS
+     listener: no role, no tag semantics — only `cursor: pointer` gives it away. -->
+<div id="sheet" style="position:fixed;left:0;right:0;bottom:0;height:60%;background:#fff;box-shadow:0 -4px 20px #0003;z-index:5">
+  <div id="bottomSheet-model-close" style="cursor:pointer;width:32px;height:32px;margin:8px;border:1px solid #999" title="Close"></div>
+  <p>Get the app for the best experience</p>
+</div>
+<script>
+  document.getElementById("bottomSheet-model-close").addEventListener("click", () => document.getElementById("sheet").remove());
+  document.getElementById("movies").addEventListener("click", (e) => { e.preventDefault(); document.body.dataset.outcome = "movies"; });
+</script>
+</body></html>

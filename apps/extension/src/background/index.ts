@@ -22,6 +22,12 @@ const HISTORY_MAX = 25;
 
 const api = new Api(API_BASE);
 
+// The conformance gauntlet drives the real TabExecutor from here. Present only in the
+// test build; Vite removes this branch from the shipped one.
+if (import.meta.env.MODE === "test") {
+  (globalThis as unknown as { __jevTest: unknown }).__jevTest = { TabExecutor };
+}
+
 /** The run in flight, if any. One at a time. */
 let active: {
   controller: AbortController;

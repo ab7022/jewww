@@ -1,0 +1,14 @@
+<!doctype html><html><head><title>Forms home</title><link rel="stylesheet" href="_base.css"></head><body>
+<h1>Start a new form</h1>
+<!-- Google-style tile: jsaction listens on mousedown, never on click. A synthetic
+     el.click() does nothing here, which is how "Blank form" never opened. -->
+<div class="tile" role="button" tabindex="0" aria-label="Blank form" style="width:160px;height:120px;border:1px solid #ccc;cursor:pointer">
+  <span>Blank form</span>
+</div>
+<script>
+  document.querySelector(".tile").addEventListener("mousedown", () => {
+    document.body.dataset.outcome = "created";
+    document.querySelector("h1").textContent = "Untitled form";
+  });
+</script>
+</body></html>

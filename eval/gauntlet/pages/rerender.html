@@ -1,0 +1,22 @@
+<!doctype html><html><head><title>Signup form</title><link rel="stylesheet" href="_base.css"></head><body>
+<!-- React-style: every render replaces the input element, detaching whatever node the
+     agent was holding. The value survives in "state"; the element does not. -->
+<div id="root"></div>
+<script>
+  let state = { city: "" };
+  function render() {
+    const root = document.getElementById("root");
+    root.innerHTML = "";
+    const label = document.createElement("label");
+    label.textContent = "City ";
+    const input = document.createElement("input");
+    input.setAttribute("aria-label", "City");
+    input.value = state.city;
+    input.addEventListener("input", (e) => { state.city = e.target.value; });
+    label.append(input);
+    root.append(label);
+  }
+  render();
+  document.addEventListener("rerender", render);
+</script>
+</body></html>

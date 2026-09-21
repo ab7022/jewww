@@ -67,11 +67,138 @@ export function roleOf(el: Element): string {
   return TAG_ROLE[el.tagName] ?? "generic";
 }
 
+// --- reach -----------------------------------------------------------------------
+//
+// Everything the agent can see into: the document, every OPEN shadow root, and every
+// same-origin frame, recursively. The collector, the fingerprint re-finder, the text
+// reader and the hit test all go through these, so they agree about what exists.
+//
+// They each used `document.querySelectorAll` / `document.elementFromPoint` before, so
+// a control inside a web component (Salesforce, most design systems) or an embedded
+// same-origin form did not exist to the agent at all — the snapshot was simply empty.
+// Cross-origin frames stay out of reach of a top-frame script; see docs/FOUNDATION.md.
+
+const MAX_ROOTS = 500;
+
+/** The document plus every open shadow root and same-origin frame document under it. */
+export function reachableRoots(): (Document | ShadowRoot)[] {
+  const roots: (Document | ShadowRoot)[] = [document];
+  for (let i = 0; i < roots.length && roots.length < MAX_ROOTS; i++) {
+    const root = roots[i] as Document | ShadowRoot;
+    for (const el of root.querySelectorAll("*")) {
+      const shadow = (el as HTMLElement).shadowRoot;
+      if (shadow) roots.push(shadow);
+      if (el.tagName === "IFRAME" || el.tagName === "FRAME") {
+        try {
+          const doc = (el as HTMLIFrameElement).contentDocument;
+          if (doc?.documentElement) roots.push(doc);
+        } catch {
+          // Cross-origin: unreachable by design.
+        }
+      }
+    }
+  }
+  return roots;
+}
+
+/** `querySelectorAll` across every reachable root, in document order within each. */
+export function deepQueryAll(selector: string): Element[] {
+  return reachableRoots().flatMap((root) => [...root.querySelectorAll(selector)]);
+}
+
+/** Where an element's own document sits inside the top viewport. */
+export function frameOffset(el: Element): { x: number; y: number } {
+  let x = 0;
+  let y = 0;
+  let view = el.ownerDocument.defaultView;
+  while (view && view !== window.top && view.frameElement) {
+    const frame = view.frameElement as HTMLElement;
+    const r = frame.getBoundingClientRect();
+    x += r.left + frame.clientLeft;
+    y += r.top + frame.clientTop;
+    view = frame.ownerDocument.defaultView;
+  }
+  return { x, y };
+}
+
+/** The element's rect in TOP-viewport coordinates, whichever frame it lives in. */
+export function topRect(el: Element): DOMRect {
+  const r = el.getBoundingClientRect();
+  const o = frameOffset(el);
+  return new DOMRect(r.x + o.x, r.y + o.y, r.width, r.height);
+}
+
+/**
+ * The innermost element at a top-viewport point, descending through open shadow roots
+ * and same-origin frames. `document.elementFromPoint` stops at a shadow host or an
+ * iframe, which made every control inside one read as "covered by" its own container.
+ */
+export function deepElementFromPoint(x: number, y: number): Element | null {
+  let root: Document | ShadowRoot = document;
+  let localX = x;
+  let localY = y;
+  let hit: Element | null = null;
+  for (let depth = 0; depth < 32; depth++) {
+    const next: Element | null = root.elementFromPoint(localX, localY);
+    if (!next || next === hit) break;
+    hit = next;
+    const shadow: ShadowRoot | null = (next as HTMLElement).shadowRoot;
+    if (shadow) {
+      root = shadow;
+      continue;
+    }
+    if (next.tagName === "IFRAME" || next.tagName === "FRAME") {
+      let doc: Document | null = null;
+      try {
+        doc = (next as HTMLIFrameElement).contentDocument;
+      } catch {
+        doc = null;
+      }
+      if (!doc) break;
+      const r = next.getBoundingClientRect();
+      localX -= r.left + (next as HTMLElement).clientLeft;
+      localY -= r.top + (next as HTMLElement).clientTop;
+      root = doc;
+      continue;
+    }
+    break;
+  }
+  return hit;
+}
+
+/** `ancestor.contains(node)`, but across shadow boundaries. */
+export function composedContains(ancestor: Element, node: Node | null): boolean {
+  for (let n: Node | null = node; n; ) {
+    if (n === ancestor) return true;
+    // Out of a shadow root, the next step up is its host; out of a document, nothing.
+    n = n.parentNode ?? (n as Partial<ShadowRoot>).host ?? null;
+  }
+  return false;
+}
+
+/** Computed style from the element's OWN window — right for elements inside frames. */
+export function styleOf(el: Element): CSSStyleDeclaration {
+  return (el.ownerDocument.defaultView ?? window).getComputedStyle(el);
+}
+
+/**
+ * A control that takes a value rather than being named by its content: the only kind
+ * the label heuristics below apply to.
+ */
+function isField(el: Element): boolean {
+  const tag = el.tagName;
+  if (tag === "TEXTAREA" || tag === "SELECT") return true;
+  if (tag === "INPUT") return !/^(submit|button|reset|image)$/i.test((el as HTMLInputElement).type);
+  if ((el as HTMLElement).isContentEditable) return true;
+  return /^(textbox|searchbox|combobox|listbox|spinbutton|slider)$/.test(el.getAttribute("role") ?? "");
+}
+
 function labelText(el: Element): string {
   const id = el.getAttribute("id");
   if (id) {
     const esc = id.replace(/["\\]/g, "\\$&");
-    const lbl = document.querySelector(`label[for="${esc}"]`);
+    // The label lives in the element's own root — a shadow root or a frame document.
+    const lbl = (el.getRootNode() as Document | ShadowRoot).querySelector(`label[for="${esc}"]`);
     if (lbl) return clean(lbl.textContent);
   }
   const wrapping = el.closest("label");
@@ -109,10 +236,23 @@ export function nameOf(el: Element): string {
   if (aria) return aria;
   const by = el.getAttribute("aria-labelledby");
   if (by) {
-    const parts = by.split(/\s+/).map((i) => clean(document.getElementById(i)?.textContent)).filter(Boolean);
+    const root = el.getRootNode() as Document | ShadowRoot;
+    const parts = by.split(/\s+/).map((i) => clean(root.getElementById(i)?.textContent)).filter(Boolean);
     if (parts.length) return parts.join(" ");
   }
-  const lbl = labelText(el);
+  // A control that is named by its content — a button, a link, a menu item — is named
+  // by its content, exactly as the accessible-name algorithm says. Label heuristics are
+  // for fields, which have no content to be named by.
+  //
+  // They used to run for everything, and the "previous sibling paragraph" heuristic
+  // (written for ATS inputs) named buttons after the sentence above them: LinkedIn's
+  // "Not now" became "Your application was sent to Quik Hire Staffing!", so the model
+  // was never offered a way to dismiss the dialog it was stuck behind.
+  if (!isField(el)) {
+    const own = clean((el as HTMLElement).innerText || el.textContent);
+    if (own) return own;
+  }
+  const lbl = isField(el) ? labelText(el) : "";
   if (lbl) return lbl;
   const ph = clean(el.getAttribute("placeholder"));
   if (ph) return ph;
@@ -155,7 +295,7 @@ export function findByFingerprint(fp: string): Element | null {
   if (!role || name === undefined) return null;
   const nth = Number(nthRaw ?? 0);
   let seen = 0;
-  for (const el of document.querySelectorAll(SELECTOR)) {
+  for (const el of deepQueryAll(SELECTOR)) {
     if (roleOf(el) !== role) continue;
     if (nameOf(el) !== name) continue;
     if (seen++ === nth) return el;
@@ -230,7 +370,7 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
     if (any.checked === true || el.getAttribute("aria-checked") === "true") s.push("checked");
     const exp = el.getAttribute("aria-expanded");
     if (exp) s.push(exp === "true" ? "expanded" : "collapsed");
-    if (el === document.activeElement) s.push("focused");
+    if ((el.getRootNode() as Document | ShadowRoot).activeElement === el) s.push("focused");
     if (any.required === true || el.getAttribute("aria-required") === "true") s.push("required");
     return s.join(" ");
   }
@@ -257,9 +397,9 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
     if (el.tagName === "INPUT" && (el as HTMLInputElement).type === "file") {
       return new DOMRect(0, 0, 1, 1);
     }
-    const r = el.getBoundingClientRect();
+    const r = topRect(el);
     if (r.width < 2 || r.height < 2) return null;
-    const cs = getComputedStyle(el);
+    const cs = styleOf(el);
     if (cs.display === "none" || cs.visibility === "hidden") return null;
     // Guard the empty string: Number("") is 0, which would drop every element on
     // any engine that does not resolve opacity to a number.
@@ -295,14 +435,14 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
    */
   function pointerCandidates(): Element[] {
     const out: Element[] = [];
-    const scan = document.querySelectorAll("div,span,li,td,label,i,svg,p,section,header");
+    const scan = deepQueryAll("div,span,li,td,label,i,svg,p,section,header");
     const limit = Math.min(scan.length, 1500);
     for (let i = 0; i < limit && out.length < 80; i++) {
       const el = scan[i];
       if (!el || el.matches(SELECTOR)) continue;
       const r = el.getBoundingClientRect();
       if (r.width < 8 || r.height < 8 || r.width > 480 || r.height > 240) continue;
-      if (getComputedStyle(el).cursor !== "pointer") continue;
+      if (styleOf(el).cursor !== "pointer") continue;
       // A clickable wrapper around other clickables is the card, not the control.
       if (el.querySelector(SELECTOR)) continue;
       out.push(el);
@@ -310,7 +450,7 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
     return out;
   }
 
-  const all = [...document.querySelectorAll(SELECTOR), ...pointerCandidates()];
+  const all = [...deepQueryAll(SELECTOR), ...pointerCandidates()];
   const kept: { el: Element; role: string; name: string; rect: DOMRect; promoted: boolean }[] = [];
 
   for (const el of all) {
@@ -334,7 +474,7 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
       const actionable =
         el.hasAttribute("onclick") ||
         el.hasAttribute("tabindex") ||
-        getComputedStyle(el).cursor === "pointer";
+        styleOf(el).cursor === "pointer";
       // A container the page made clickable is usable, but it is NOT a label for
       // what is inside it — collapsing its children into it deletes the real
       // controls. Tracked so the dedupe below can tell the two apart.
@@ -442,21 +582,34 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
   // for the field it had already filled until the loop guard killed the run.
   const words: string[] = [];
   let textLength = 0;
-  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-  const range = document.createRange();
-  let textNode = walker.nextNode();
-  while (textNode && textLength < 2000) {
-    const value = (textNode.textContent ?? "").trim();
-    const parent = textNode.parentElement;
-    textNode = walker.nextNode();
-    if (!value || !parent) continue;
-    if (parent.closest("script,style,noscript,template")) continue;
-    range.selectNodeContents(textNode ? parent : parent);
-    const r = range.getBoundingClientRect();
-    if (r.width <= 0 || r.height <= 0) continue;
-    if (r.bottom <= 0 || r.top >= innerHeight || r.right <= 0 || r.left >= innerWidth) continue;
-    words.push(value);
-    textLength += value.length;
+  // Every reachable root, so text inside a web component or an embedded same-origin
+  // form is readable too — positioned in the top viewport, like everything else.
+  for (const root of reachableRoots()) {
+    if (textLength >= 2000) break;
+    // `nodeType`, not `instanceof`: a frame's document is from another realm.
+    const isDoc = root.nodeType === Node.DOCUMENT_NODE;
+    const start = isDoc ? (root as Document).body : root;
+    if (!start) continue;
+    const doc = isDoc ? (root as Document) : (root.ownerDocument as Document);
+    const walker = doc.createTreeWalker(start, NodeFilter.SHOW_TEXT);
+    const range = doc.createRange();
+    let textNode = walker.nextNode();
+    while (textNode && textLength < 2000) {
+      const value = (textNode.textContent ?? "").trim();
+      const parent = textNode.parentElement;
+      textNode = walker.nextNode();
+      if (!value || !parent) continue;
+      if (parent.closest("script,style,noscript,template")) continue;
+      range.selectNodeContents(parent);
+      const local = range.getBoundingClientRect();
+      if (local.width <= 0 || local.height <= 0) continue;
+      const o = frameOffset(parent);
+      const top = local.top + o.y;
+      const left = local.left + o.x;
+      if (top + local.height <= 0 || top >= innerHeight || left + local.width <= 0 || left >= innerWidth) continue;
+      words.push(value);
+      textLength += value.length;
+    }
   }
   const text = words.join("\n").slice(0, 2000);
 

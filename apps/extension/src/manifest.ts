@@ -11,19 +11,29 @@ import { defineManifest } from "@crxjs/vite-plugin";
  * `debugger` is optional and requested only for file upload, which cannot be done
  * from page JS at all — it needs DOM.setFileInputFiles over CDP.
  */
-export default defineManifest({
+/**
+ * The test build (`vite build --mode test`, used only by the conformance gauntlet)
+ * differs in exactly one way: it is granted the local fixture origin up front, because
+ * a permission prompt needs a human to click it. The shipped manifest is untouched, and
+ * the load check asserts its host permissions are still empty.
+ */
+export default defineManifest((env) => ({
   manifest_version: 3,
   name: "Jev Browser Agent",
   version: "0.1.0",
   description: "Give it a goal. It does the browsing. You approve anything irreversible.",
   permissions: ["storage", "tabs", "scripting", "sidePanel", "alarms", "identity"],
   optional_permissions: ["debugger"],
-  host_permissions: [],
-  optional_host_permissions: ["https://*/*"],
+  host_permissions: env.mode === "test" ? ["http://127.0.0.1/*"] : [],
+  // http as well as https: intranet tools, admin panels and local dev servers are
+  // plain http, and the extension used to fail on them with "Receiving end does not
+  // exist" — its content script's module was web-accessible to https pages only.
+  // Still opt-in per origin: nothing is granted until a run asks for it.
+  optional_host_permissions: ["https://*/*", "http://*/*"],
   background: { service_worker: "src/background/index.ts", type: "module" },
   content_scripts: [
     {
-      matches: ["https://*/*"],
+      matches: ["https://*/*", "http://*/*"],
       js: ["src/content/index.ts"],
       run_at: "document_idle",
       all_frames: false,
@@ -31,4 +41,4 @@ export default defineManifest({
   ],
   side_panel: { default_path: "src/sidepanel/index.html" },
   action: { default_title: "Jev Browser Agent" },
-});
+}));

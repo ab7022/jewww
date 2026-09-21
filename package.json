@@ -26,7 +26,8 @@
     "check:extension": "pnpm build:extension && tsx apps/extension/test/load-check.ts",
     "check:executor": "tsx eval/src/check-executor.ts",
     "preview:panel": "pnpm build:extension && tsx eval/src/preview-panel.ts",
-    "verify": "pnpm typecheck && pnpm test"
+    "verify": "pnpm typecheck && pnpm test",
+    "gauntlet": "pnpm --filter @jev-browser/extension build:test && tsx eval/src/gauntlet/conformance.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",

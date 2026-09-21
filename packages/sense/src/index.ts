@@ -1,4 +1,12 @@
-export { collectSnapshot } from "./collect.js";
+export {
+  collectSnapshot,
+  composedContains,
+  deepElementFromPoint,
+  deepQueryAll,
+  frameOffset,
+  reachableRoots,
+  topRect,
+} from "./collect.js";
 export {
   editableWithin,
   elementFor,

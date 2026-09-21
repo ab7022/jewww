@@ -120,6 +120,33 @@ failing on a tab.
 
 ---
 
+## What the gauntlet found on its first run
+
+`pnpm gauntlet` runs 13 scenarios against both executors. Its first run passed 9/26,
+and every failure was a real product bug rather than a test problem:
+
+- **The extension could not run on any `http://` page.** Its content script's module
+  was web-accessible to https pages only; intranet tools and local dev servers failed
+  with "Receiving end does not exist". Both schemes are now opt-in origins.
+- **Buttons were named after the paragraph above them.** A label heuristic meant for
+  ATS inputs ran on every element, so LinkedIn's "Not now" was offered to the model as
+  "Your application was sent to Quik Hire Staffing!" — the dismiss button did not
+  exist under its own name. Content-named roles are now named by content.
+- **Shadow DOM and same-origin iframes were invisible.** Every lookup and hit test was
+  `document`-scoped. One set of reach primitives (`reachableRoots`, `deepQueryAll`,
+  `topRect`, `deepElementFromPoint`, `composedContains`) is now used everywhere, and
+  realm-sensitive code no longer relies on `instanceof`.
+
+## Known gaps (tracked, not hidden)
+
+- **Cross-origin iframes** — Stripe card fields, some embedded ATS boards. A top-frame
+  script cannot reach into them; supporting them needs `all_frames` content scripts
+  and frame-addressed messages. Card fields are refused anyway (FORBIDDEN_FIELD).
+- **Closed shadow roots** — unreachable by design of the platform.
+- **Canvas-drawn UIs** (Figma, Google Sheets' grid) — there is no DOM to act on.
+- **`humanize` parses runtime strings** to word them for people. Stringly typed; a
+  structured event payload would remove the coupling.
+
 ## What stays deliberately hard-coded
 
 Exactly one thing: `FORBIDDEN_FIELD` — a password, card number, CVV, SSN, OTP or PIN

@@ -8,3 +8,6 @@ results/
 .data/
 apps/extension/dist/
 apps/extension/dist-types/
+
+# extension test build (conformance gauntlet)
+apps/extension/dist-test/

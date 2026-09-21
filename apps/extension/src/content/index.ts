@@ -1,4 +1,5 @@
 import {
+  deepElementFromPoint,
   editableWithin,
   elementFor,
   isCredentialField,
@@ -37,38 +38,43 @@ function currentGuard(node: number | null, fp?: string): GuardPair {
  * has to arrive as a real input event rather than a DOM mutation.
  */
 function setFieldValue(el: HTMLElement, value: string): void {
+  // Everything from the element's OWN document and window. An input inside a frame
+  // belongs to another realm: `instanceof HTMLInputElement` is false for it, and this
+  // window's selection and execCommand do not reach into its document.
+  const doc = el.ownerDocument;
+  const view = (doc.defaultView ?? window) as typeof window;
   el.focus();
 
   if (el.isContentEditable) {
-    const range = document.createRange();
+    const range = doc.createRange();
     range.selectNodeContents(el);
-    const selection = window.getSelection();
+    const selection = view.getSelection();
     selection?.removeAllRanges();
     selection?.addRange(range);
     // execCommand is deprecated but remains the only thing rich editors reliably
     // observe: it produces the same beforeinput/input pair a keystroke would.
-    const inserted = document.execCommand("insertText", false, value);
+    const inserted = doc.execCommand("insertText", false, value);
     if (!inserted) {
       el.textContent = value;
-      el.dispatchEvent(new InputEvent("input", { bubbles: true, data: value, inputType: "insertText" }));
+      el.dispatchEvent(new view.InputEvent("input", { bubbles: true, data: value, inputType: "insertText" }));
     }
     return;
   }
 
   const proto =
-    el instanceof HTMLTextAreaElement
-      ? HTMLTextAreaElement.prototype
-      : el instanceof HTMLSelectElement
-        ? HTMLSelectElement.prototype
-        : HTMLInputElement.prototype;
-  const setter = Object.getOwnPropertyDescriptor(proto, "value")?.set;
-  if (setter && (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement || el instanceof HTMLSelectElement)) {
-    setter.call(el, value);
-  } else {
-    (el as HTMLInputElement).value = value;
-  }
-  el.dispatchEvent(new Event("input", { bubbles: true }));
-  el.dispatchEvent(new Event("change", { bubbles: true }));
+    el.tagName === "TEXTAREA"
+      ? view.HTMLTextAreaElement.prototype
+      : el.tagName === "SELECT"
+        ? view.HTMLSelectElement.prototype
+        : el.tagName === "INPUT"
+          ? view.HTMLInputElement.prototype
+          : null;
+  // The NATIVE setter: React installs its own on the instance and ignores assignment.
+  const setter = proto ? Object.getOwnPropertyDescriptor(proto, "value")?.set : undefined;
+  if (setter) setter.call(el, value);
+  else (el as HTMLInputElement).value = value;
+  el.dispatchEvent(new view.Event("input", { bubbles: true }));
+  el.dispatchEvent(new view.Event("change", { bubbles: true }));
 }
 
 async function handle(msg: ToContent): Promise<FromContent> {
@@ -134,7 +140,7 @@ async function handle(msg: ToContent): Promise<FromContent> {
       // bubble the real path. Text goes to the CHOSEN element: climbing from the hit
       // to the nearest `[role]` once landed on a dialog wrapper and set `.value` on a
       // div, which does nothing.
-      const hit = document.elementFromPoint(point.x, point.y) as HTMLElement | null;
+      const hit = deepElementFromPoint(point.x, point.y) as HTMLElement | null;
       const chosen = elementFor(node, fp) as HTMLElement | undefined;
       const target = chosen ?? hit;
       if (!target || !hit) return { ok: false, error: "nothing at the resolved point", unreachable: true };

@@ -97,6 +97,28 @@ describe("coerceNodes", () => {
     expect(Plan.safeParse(fixed).success).toBe(true);
   });
 
+  it("drops notes a planner left in a reference map instead of losing the plan", () => {
+    // Seen live: one boolean in `extras` invalidated the fill node, its loop, and the
+    // whole job-application plan before the run started.
+    const fixed = coerceNodes(
+      raw([
+        {
+          kind: "foreach", id: "l", intent: "each role", over: "$.roles", as: "role",
+          do: [
+            {
+              kind: "fill", id: "f", intent: "fill the form", success: "filled",
+              extras: { role: "$.role", doNotAttachResume: true, fields: ["$.profile.email"] },
+            },
+            { kind: "confirm", id: "c", intent: "approve submitting", mode: "batch", risk: "message" },
+          ],
+        },
+      ]),
+    ) as { nodes: { do: { extras?: Record<string, string>; preview?: string }[] }[] };
+    expect(Plan.safeParse(fixed).success).toBe(true);
+    expect(fixed.nodes[0]?.do[0]?.extras).toEqual({ role: "$.role" });
+    expect(fixed.nodes[0]?.do[1]?.preview).toBe("approve submitting");
+  });
+
   it("keeps a supplied success criterion", () => {
     const fixed = coerceNodes(
       raw([{ kind: "verify", id: "v", intent: "check it", success: "the badge is visible" }]),

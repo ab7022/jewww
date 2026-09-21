@@ -44,8 +44,24 @@ const PAGES = join(here, "../../gauntlet/pages");
 const TYPES: Record<string, string> = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript" };
 
 /** Serve the fixture pages on 127.0.0.1 — the origin the extension's test build is granted. */
+/** What fixture apps reported — the ground truth the agent cases are graded on. */
+export const fixtureEvents: Record<string, unknown>[] = [];
+
 export async function serveFixtures(): Promise<{ base: string; server: Server }> {
   const server = createServer((req, res) => {
+    if (req.url === "/__event" && req.method === "POST") {
+      let body = "";
+      req.on("data", (c) => (body += c));
+      req.on("end", () => {
+        try {
+          fixtureEvents.push(JSON.parse(body) as Record<string, unknown>);
+        } catch {
+          // ignore malformed
+        }
+        res.writeHead(204).end();
+      });
+      return;
+    }
     const path = join(PAGES, decodeURIComponent((req.url ?? "/").split("?")[0] ?? "/"));
     if (!path.startsWith(PAGES) || !existsSync(path) || statSync(path).isDirectory()) {
       res.writeHead(404).end("not found");

@@ -2,7 +2,7 @@ import { Plan } from "@jev-browser/shared";
 import type { JevProvider } from "@jev-browser/jev";
 import { coerceNodes, type Normalisation, normalizePlan } from "./normalize.js";
 import { type ChatResult, chat, DEFAULT_PLANNER_MODEL } from "./llm.js";
-import { SYSTEM_PROMPT, userPrompt } from "./prompt.js";
+import { type Known, SYSTEM_PROMPT, userPrompt } from "./prompt.js";
 
 export { SYSTEM_PROMPT, DEFAULT_PLANNER_MODEL };
 export { compose, extract } from "./extract.js";
@@ -45,18 +45,20 @@ export async function makePlan(opts: {
    * loaded on every run, so they are the place a preference outlives one prompt.
    */
   instructions?: string | undefined;
+  /** What the user has on file, so the plan does not rely on things that do not exist. */
+  known?: Known | undefined;
 }): Promise<PlanResult> {
   const model = opts.model ?? DEFAULT_PLANNER_MODEL;
   const first = await chat({
     apiKey: opts.apiKey,
     model,
     system: SYSTEM_PROMPT,
-    user: userPrompt(opts.goal, opts.start, opts.instructions),
+    user: userPrompt(opts.goal, opts.start, opts.instructions, opts.known),
   });
 
   const parsed = Plan.safeParse(coerceNodes(tryExtract(first.text)));
   if (parsed.success) {
-    const norm = await canonicalise(parsed.data, opts.jev);
+    const norm = await canonicalise(parsed.data, opts.jev, opts.known?.resume ?? true);
     return {
       ...toResult(first),
       plan: norm.plan,
@@ -77,7 +79,7 @@ export async function makePlan(opts: {
       `Previous answer:\n${first.text.slice(0, 4000)}\n\nReturn corrected JSON only.`,
   });
 
-  const norm = await canonicalise(Plan.parse(coerceNodes(tryExtract(second.text))), opts.jev);
+  const norm = await canonicalise(Plan.parse(coerceNodes(tryExtract(second.text))), opts.jev, opts.known?.resume ?? true);
   return {
     plan: norm.plan,
     normalised: norm.changes,
@@ -93,11 +95,11 @@ export async function makePlan(opts: {
   };
 }
 
-async function canonicalise(plan: Plan, jev?: JevProvider) {
+async function canonicalise(plan: Plan, jev: JevProvider | undefined, canAttach: boolean) {
   if (!jev) return { plan, changes: [] as Normalisation[], costUsd: 0 };
   // A failure here must not lose a usable plan — canonicalisation is an improvement,
   // not a precondition.
-  return normalizePlan(jev, plan).catch(() => ({ plan, changes: [] as Normalisation[], costUsd: 0 }));
+  return normalizePlan(jev, plan, canAttach).catch(() => ({ plan, changes: [] as Normalisation[], costUsd: 0 }));
 }
 
 function tryExtract(text: string): unknown {

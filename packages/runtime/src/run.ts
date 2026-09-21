@@ -13,6 +13,7 @@ import {
   type Node,
   NO_FIELD,
   PHYSICALLY_UNREACHABLE,
+  TASK_FIELD,
   PROFILE_FIELDS,
   type ProfileKey,
   type Plan,
@@ -21,9 +22,10 @@ import {
   StalePage,
   type TextRequest,
   UnreachableTarget,
+  walk,
 } from "@jev-browser/shared";
 import type { Ask, Emit, GatedAction, MissingField, RunEvent, RunStatus } from "./events.js";
-import { Scratchpad } from "./scratchpad.js";
+import { Scratchpad, scratchKey } from "./scratchpad.js";
 
 /**
  * Everything the loop needs a model for, injected rather than called directly.
@@ -116,6 +118,7 @@ export async function runPlan(options: RunOptions): Promise<RunResult> {
     currentItem: undefined,
     iteration: undefined,
     finished: false,
+    skipNext: false,
   };
 
   // The ONE place events get their time and loop position. Call sites emit bare
@@ -155,6 +158,11 @@ interface LoopState {
   iteration: string | undefined;
   /** Set when the run has reached its answer early (show mode, pointing done). */
   finished: boolean;
+  /**
+   * The step right after a gate the user closed ("don't submit"). Skipped, not the
+   * whole run: filling ten applications and submitting none must still fill ten.
+   */
+  skipNext: boolean;
 }
 
 /** Run options as the interpreter sees them: `emit` takes bare payloads. */
@@ -168,6 +176,12 @@ async function runNodes(
 ): Promise<RunStatus> {
   for (const node of nodes) {
     if (state.finished) return "done";
+    if (state.skipNext) {
+      state.skipNext = false;
+      opts.emit({ type: "node:start", id: node.id, kind: node.kind, intent: node.intent });
+      opts.emit({ type: "node:done", id: node.id, detail: "held back — you asked for this not to be done" });
+      continue;
+    }
     if (opts.signal?.aborted) return "aborted";
     if (state.steps >= state.budget) return "budget";
     opts.emit({ type: "node:start", id: node.id, kind: node.kind, intent: node.intent });
@@ -188,7 +202,7 @@ async function runNodes(
           status = await runComposeNode(node, opts, pad);
           break;
         case "confirm":
-          status = await runConfirmNode(node, opts, pad);
+          status = await runConfirmNode(node, opts, pad, state);
           break;
         case "foreach":
           status = await runForeachNode(node, opts, pad, state);
@@ -219,30 +233,7 @@ async function runActNode(
   pad: Scratchpad,
   state: LoopState,
 ): Promise<RunStatus> {
-  // A step that already carries a URL is a navigation, not a decision. Asking the
-  // model what to do instead left every iteration of a loop on the previous item's
-  // page — eight applications in a row were filled against the same company,
-  // because "an application form is visible" was true of the page it never left.
-  const here = await opts.executor.url();
-  const destination = urlSlot(node.slots, pad) ?? siteUrl(node.site, here);
-  if (destination && destination !== here) {
-    await opts.executor.act({ kind: "navigate", url: destination }, null, {
-      pageKey: null,
-      nodeGuard: null,
-    });
-    await opts.executor.settle(null, false);
-    // Progress, not completion: emitting node:done here marked the step finished in
-    // the UI after 38ms, before it had done any of the work it was for.
-    opts.emit({
-      type: "step",
-      nodeId: node.id,
-      action: { kind: "navigate", url: destination },
-      operation: "NAVIGATE",
-      risk: "none",
-      latencyMs: 0,
-      costUsd: 0,
-    });
-  }
+  await arrive(node, urlSlot(node.slots, pad), opts);
 
   let lastHash = "";
   let repeats = 0;
@@ -320,7 +311,7 @@ async function runActNode(
     const profile = (pad.get("profile") ?? {}) as Record<string, string>;
     const d = await opts.capabilities.decide({
       nodeId: node.id,
-      subgoal: node.intent,
+      subgoal: withItem(node.intent, state),
       success: node.success,
       snapshot: capped,
       nodes,
@@ -488,7 +479,7 @@ async function runActNode(
       } else {
         const started = Date.now();
         const written = await opts.capabilities.text({
-          subgoal: node.intent,
+          subgoal: withItem(node.intent, state),
           field: {
             label: d.target?.label ?? "",
             role: d.target?.role ?? "textbox",
@@ -496,6 +487,7 @@ async function runActNode(
           },
           page: { title: capped.title, text: capped.text.slice(0, 8000) },
           ...(opts.profile ? { profile: opts.profile } : {}),
+          ...draftsIn(pad),
         });
 
         if (written === null) {
@@ -587,6 +579,69 @@ async function runActNode(
  * unsure about, is reported and left blank — a wrong value in someone's job
  * application is worse than a missing one, and the human is about to review it anyway.
  */
+/** Complete a fill node through the general loop after its batch pass. */
+function finish(
+  node: Extract<Node, { kind: "fill" }>,
+  opts: Ctx,
+  pad: Scratchpad,
+  state: LoopState,
+): Promise<RunStatus> {
+  return runActNode({ kind: "act", id: node.id, intent: node.intent, success: node.success }, opts, pad, state);
+}
+
+/**
+ * A step's intent, plus the loop item it is working on.
+ *
+ * Inside a loop the plan says "open the application for the selected role", and the
+ * item that says WHICH role sat in the scratchpad where the model never saw it — so
+ * every iteration picked the most plausible role, which was always the first, and
+ * "apply to two jobs" applied to one of them twice.
+ */
+function withItem(intent: string, state: LoopState): string {
+  if (state.currentItem === undefined) return intent;
+  const item = typeof state.currentItem === "string" ? state.currentItem : JSON.stringify(state.currentItem);
+  return `${intent}\n\nThe item this step is working on: ${item.slice(0, 600)}`;
+}
+
+/** Scratchpad keys some foreach iterates over. */
+function loopsOver(nodes: Node[]): Set<string> {
+  const keys = new Set<string>();
+  for (const n of walk(nodes)) if (n.kind === "foreach") keys.add(scratchKey(n.over));
+  return keys;
+}
+
+/** Prose prepared earlier in the run, for the text step to use rather than rewrite. */
+function draftsIn(pad: Scratchpad): { drafts?: Record<string, string> } {
+  const drafts: Record<string, string> = {};
+  for (const [key, value] of Object.entries(pad.snapshot())) {
+    if (key === "profile" || key === "answers") continue;
+    if (typeof value === "string" && value.trim()) drafts[key] = value.slice(0, 8000);
+    else if (value && typeof value === "object" && !Array.isArray(value)) {
+      // A compose node often returns { subject, body }: offer each string part.
+      for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
+        if (typeof v === "string" && v.trim()) drafts[`${key}.${k}`] = v.slice(0, 8000);
+      }
+    }
+  }
+  return Object.keys(drafts).length ? { drafts } : {};
+}
+
+/** Run a fill node through the general act loop, keeping its intent and success. */
+function asAct(
+  node: Extract<Node, { kind: "fill" }>,
+  opts: Ctx,
+  pad: Scratchpad,
+  state: LoopState,
+): Promise<RunStatus> {
+  opts.emit({ type: "warn", nodeId: node.id, message: "no form to batch-fill here — working through it step by step" });
+  return runActNode(
+    { kind: "act", id: node.id, intent: node.intent, success: node.success },
+    opts,
+    pad,
+    state,
+  );
+}
+
 /** Profile entries that name a file rather than carry a value. */
 const NOT_TYPEABLE = new Set(["resumeFile"]);
 
@@ -605,6 +660,7 @@ async function runFillNode(
   pad: Scratchpad,
   state: LoopState,
 ): Promise<RunStatus> {
+  await arrive(node, null, opts);
   const raw = await opts.executor.snapshot();
 
   // Empty, enabled, non-credential inputs only.
@@ -616,10 +672,11 @@ async function runFillNode(
       e.role !== "password" &&
       !FORBIDDEN_FIELD.test(e.name),
   );
-  if (!fields.length) {
-    opts.emit({ type: "node:done", id: node.id, detail: "no empty fields to fill" });
-    return "done";
-  }
+  // Nothing to batch-fill: the form may sit behind a button ("Easy Apply",
+  // "Compose"), or the request needs clicks as well as typing. `fill` is the fast
+  // path for a visible form; when it cannot apply, the general step loop does the
+  // same job instead of the node reporting a success it never achieved.
+  if (!fields.length) return asAct(node, opts, pad, state);
 
   const profile = (pad.get("profile") ?? {}) as Record<string, string>;
   // `resumeFile` is a path on disk, not a value to type. Offering it as a mapping
@@ -662,6 +719,9 @@ async function runFillNode(
   // as though the model had failed.
   const nothingKnown = !Object.keys(criteria).length;
   for (const m of nothingKnown ? fields.map((f) => ({ eid: f.eid, label: f.name, key: NO_FIELD, confidence: 0, skipped: true })) : mappings) {
+    // Content the request supplies (a recipient, a message) is not the user's to be
+    // asked: the finishing loop writes it from the goal.
+    if (m.key === TASK_FIELD) continue;
     if (!m.skipped && valueFor(m.key)) continue;
     // Already answered once. The model matches a differently-worded question to the
     // stored answer through `criteria`; this catches the identical wording, which is
@@ -748,13 +808,19 @@ async function runFillNode(
     await opts.executor.settle(element.node, false);
   }
 
+  // Progress, not completion: the finishing loop below still has to run.
   opts.emit({
-    type: "node:done",
-    id: node.id,
-    detail: `filled ${filled}/${fields.length}${skipped.length ? `, left blank: ${skipped.slice(0, 5).join(", ")}` : ""}`,
+    type: "warn",
+    nodeId: node.id,
+    message: `filled ${filled}/${fields.length}${skipped.length ? `, left blank: ${skipped.slice(0, 5).join(", ")}` : ""}`,
   });
-  // Having filled nothing is only a failure when there was something to fill.
-  return filled > 0 || fields.length === 0 ? "done" : "blocked";
+  // Then finish the node with the general loop. Batch filling maps fields to facts
+  // about THE USER; a recipient, a subject, a message body or a search term is task
+  // content that only the goal can supply. Reporting done at this point once "filled"
+  // an email's To field with the user's own address and left the message empty. The
+  // loop sees what is still missing against the node's success criterion — and when
+  // nothing is, the first decision is simply DONE.
+  return finish(node, opts, pad, state);
 }
 
 async function runReadNode(
@@ -762,10 +828,16 @@ async function runReadNode(
   opts: Ctx,
   pad: Scratchpad,
 ): Promise<RunStatus> {
+  await arrive(node, null, opts);
   const raw = await opts.executor.snapshot();
   const body = await opts.executor.pageText();
+  // A list that a loop will walk needs each item's link, or the loop cannot reach the
+  // items: ask for it whatever shape the planner sketched.
+  const feedsLoop = loopsOver(opts.plan.nodes).has(scratchKey(node.into));
   const value = await opts.capabilities.extract({
-    intent: node.intent,
+    intent: feedsLoop
+      ? `${node.intent}\n\nFor every item, include "url": the absolute link that opens that item, taken from the page's links.`
+      : node.intent,
     schema: node.schema,
     pageText: `${raw.title}\n${raw.url}\n\n${body}`.slice(0, 60_000),
   });
@@ -795,17 +867,43 @@ async function runConfirmNode(
   node: Extract<Node, { kind: "confirm" }>,
   opts: Ctx,
   pad: Scratchpad,
+  state: LoopState,
 ): Promise<RunStatus> {
   const preview = SCRATCH_REF.test(node.preview)
     ? String(pad.resolve(node.preview) ?? node.preview)
     : node.preview;
-  opts.emit({
-    type: "approval",
-    nodeId: node.id,
-    preview,
-    risk: node.risk ?? "none",
-  });
-  const ok = opts.approve ? await opts.approve(preview, node.risk ?? "none") : false;
+  const risk = node.risk ?? "none";
+
+  // A hand-off is not an approval: sign-ins, credentials, CAPTCHAs need the person to
+  // act, whatever authority they granted — "go ahead" cannot mean "type my password".
+  const handoff = risk === "auth";
+
+  // Otherwise the plan says WHERE the gates are and the user's words say whether to
+  // ask. Confirm nodes used to ask unconditionally, so "email Sam to say the build is
+  // ready" still stopped for approval — the same policy the act loop already applied,
+  // missing here.
+  const autonomy = opts.autonomy ?? "confirm";
+  if (!handoff && autonomy === "full") {
+    opts.emit({ type: "warn", nodeId: node.id, message: `went ahead without asking — you asked for it to be done` });
+    return "done";
+  }
+  if (!handoff && (autonomy === "never" || opts.batchApprovals)) {
+    // Held for the person: the gated step is skipped, and everything else goes on.
+    state.pending.push({
+      nodeId: node.id,
+      url: await opts.executor.url(),
+      operation: "CONFIRM",
+      target: preview,
+      risk,
+      ...(state.currentItem !== undefined ? { item: state.currentItem } : {}),
+    });
+    opts.emit({ type: "queued", nodeId: node.id, preview, risk });
+    state.skipNext = true;
+    return "done";
+  }
+
+  opts.emit({ type: "approval", nodeId: node.id, preview, risk });
+  const ok = !handoff && opts.approve ? await opts.approve(preview, risk) : false;
   if (ok) return "done";
   opts.emit({
     type: "suspend",
@@ -852,6 +950,10 @@ async function runForeachNode(
   const max = node.max ?? items.length;
 
   const outer = state.iteration;
+  // Every iteration is independent and starts in the same place: at the item's own
+  // link when it has one, otherwise where the loop began (the list). The second of two
+  // job applications once "started" on the first job's page, and applied there again.
+  const home = await opts.executor.url();
   for (const [index, item] of items.entries()) {
     if (succeeded >= max) break;
     if (state.steps >= state.budget) return "budget";
@@ -866,6 +968,8 @@ async function runForeachNode(
     const previousItem = state.currentItem;
     state.currentItem = item;
     state.iteration = outer === undefined ? String(index) : `${outer}.${index}`;
+    const at = itemUrl(item) ?? home;
+    if (at && at !== (await opts.executor.url())) await navigateTo(at, node.id, opts);
     const status = await runNodes(node.do, opts, pad, state).finally(() => {
       state.iteration = outer;
     });
@@ -911,6 +1015,58 @@ async function waitForPerson(opts: Ctx, before: string): Promise<boolean | "abor
     if (now && now.contentHash !== before) return true;
   }
   return false;
+}
+
+/**
+ * Go where a node happens before doing it.
+ *
+ * ONE rule for every node that touches a page — act, fill and read alike. It used to
+ * live inside the act node only, so a fill or read node marked with a `site` simply
+ * ran on whatever page happened to be open: a job application's form was "filled" on
+ * the listings page, found nothing, and reported success.
+ *
+ * A step that already carries a URL is a navigation, not a decision: asking the model
+ * instead left every iteration of a loop on the previous item's page.
+ */
+async function arrive(
+  node: { id: string; site?: string | undefined },
+  explicit: string | null,
+  opts: Ctx,
+): Promise<void> {
+  const here = await opts.executor.url();
+  const destination = explicit ?? siteUrl(node.site, here);
+  if (!destination || destination === here) return;
+  await navigateTo(destination, node.id, opts);
+}
+
+async function navigateTo(url: string, nodeId: string, opts: Ctx): Promise<void> {
+  await opts.executor.act({ kind: "navigate", url }, null, { pageKey: null, nodeGuard: null });
+  await opts.executor.settle(null, false);
+  // Progress, not completion: emitting node:done here marked the step finished in the
+  // UI after 38ms, before it had done any of the work it was for.
+  opts.emit({
+    type: "step",
+    nodeId,
+    action: { kind: "navigate", url },
+    operation: "NAVIGATE",
+    risk: "none",
+    latencyMs: 0,
+    costUsd: 0,
+  });
+}
+
+/**
+ * Where a loop item lives, if it says. Items extracted from a list — jobs, products,
+ * posts — usually carry their own link, and "process each one" starts THERE. A body
+ * whose first node forgot to navigate otherwise processed the list page N times.
+ */
+function itemUrl(item: unknown): string | null {
+  if (!item || typeof item !== "object") return null;
+  for (const [key, value] of Object.entries(item as Record<string, unknown>)) {
+    if (!/url|link|href/i.test(key) || typeof value !== "string") continue;
+    if (/^https?:\/\//.test(value)) return value;
+  }
+  return null;
 }
 
 /**

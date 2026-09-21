@@ -78,9 +78,10 @@ when you are writing the plan.
    transfer. For these, emit a confirm node that hands control to the human and stop.
    Planning around them is worse than stopping.
 
-4. PREFER A DEEP LINK OVER DOM AUTOMATION. If a task can be done by navigating to a
-   URL that pre-fills state (wa.me/?text=, mailto:, a calendar event URL, a search
-   query string), plan that instead of clicking through an app. Fewer steps fail.
+4. PREFER A DEEP LINK OVER DOM AUTOMATION. If a task can be done by navigating to an
+   https URL that pre-fills state (wa.me/?text=, a calendar event URL, a search query
+   string), plan that instead of clicking through an app. Never mailto: — it opens a
+   desktop mail program, not the web app the user is working in.
 
 5. READ BEFORE YOU LOOP. A foreach needs its collection to already be in the
    scratchpad, so a read node must populate it first.
@@ -111,12 +112,28 @@ Reference them in slots as "$.profile.<key>". Do not copy their values into the 
 Return ONLY a JSON object, no prose and no code fence:
 { "goal": string, "sites": string[], "nodes": Node[] }`;
 
-export function userPrompt(goal: string, start: string, instructions?: string): string {
+/** What the user has on file — so the plan does not depend on things that do not exist. */
+export interface Known {
+  /** Profile keys with a saved value (names only; values stay out of the prompt). */
+  details: string[];
+  /** Whether a resume or other file is available to attach. */
+  resume: boolean;
+}
+
+export function userPrompt(goal: string, start: string, instructions?: string, known?: Known): string {
   // Standing instructions come first and are stated as binding. They are the user's
   // own saved words, so they carry the same authority as the goal — and when the two
   // conflict, the goal is the more recent statement of intent.
   const standing = instructions
     ? `Standing instructions from the user, which apply to every task and are binding unless this goal contradicts them:\n${instructions}\n\n`
     : "";
-  return `${standing}Goal: ${goal}\nStarting page: ${start}\n\nCompile this into a program.`;
+  // Planning blind to what the user has produced steps that could only fail: an
+  // "attach the resume" node for someone with no resume blocked every iteration of a
+  // job-application loop.
+  const has = known
+    ? `What the user has on file: ${known.details.length ? known.details.join(", ") : "no saved details"}. ${
+        known.resume ? "A resume is available to attach." : "No resume or file is available — do not plan to attach one."
+      }\n\n`
+    : "";
+  return `${standing}${has}Goal: ${goal}\nStarting page: ${start}\n\nCompile this into a program.`;
 }

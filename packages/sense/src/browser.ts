@@ -338,6 +338,25 @@ export async function point(node: number, message: string, fp?: string): Promise
 export { cursorClick, cursorHide, cursorHighlight, cursorListening, cursorTo } from "./cursor.js";
 
 /**
+ * Commit what was just typed, the way leaving a field does: fire `change`.
+ *
+ * Apps commit on change or blur — Google Forms saves a title that way — and the CDP
+ * driver types with keystrokes that fire only `input`, so a value could sit in a field
+ * that the page never registered. The extension's typing already fired `change`; this
+ * brings the two executors to the same behaviour. It does not blur, so a combobox's
+ * suggestion list stays open for the next step.
+ */
+export function commit(node: number, fp?: string): boolean {
+  const chosen = elementFor(node, fp) as HTMLElement | undefined;
+  if (!chosen) return false;
+  const field = editableWithin(chosen);
+  if (!/^(INPUT|TEXTAREA|SELECT)$/.test(field.tagName)) return false;
+  const view = (field.ownerDocument.defaultView ?? window) as typeof window;
+  field.dispatchEvent(new view.Event("change", { bubbles: true }));
+  return true;
+}
+
+/**
  * Could this be acted on right now? The reason it could not, or null.
  *
  * The same code path as `resolvePoint` with the mutation switched off, so a

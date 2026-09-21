@@ -28,7 +28,8 @@
     "preview:panel": "pnpm build:extension && tsx eval/src/preview-panel.ts",
     "verify": "pnpm typecheck && pnpm test",
     "gauntlet": "pnpm --filter @jev-browser/extension build:test && tsx eval/src/gauntlet/conformance.ts",
-    "build:web": "pnpm --filter @jev-browser/web build"
+    "build:web": "pnpm --filter @jev-browser/web build",
+    "gauntlet:agent": "tsx --env-file-if-exists=.env eval/src/gauntlet/agent.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",

@@ -1,0 +1,12 @@
+<!doctype html><html><head><title>Untitled form - Forms</title><link rel="stylesheet" href="../_base.css"><script src="_log.js"></script></head><body>
+<!-- A welcome dialog covers the editor on first open, like Google Forms'. -->
+<div id="welcome" class="dialog-backdrop"><div class="dialog" role="dialog" aria-label="Familiar and easier access control"><p>You can now manage responder permissions.</p><button id="ok">Got it</button></div></div>
+<label>Form title <input id="title" aria-label="Form title" value="Untitled form"></label>
+<label>Form description <input id="desc" aria-label="Form description"></label>
+<button id="save">Save</button>
+<script>
+  document.getElementById("ok").onclick = () => document.getElementById("welcome").remove();
+  document.getElementById("save").onclick = () => __log("saved", { title: title.value, desc: desc.value });
+  document.getElementById("title").addEventListener("change", () => __log("titled", { title: title.value }));
+</script>
+</body></html>

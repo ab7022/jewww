@@ -1,0 +1,16 @@
+<!doctype html><html><head><title>Inbox — Mail</title><link rel="stylesheet" href="../_base.css"><script src="_log.js"></script></head><body>
+<input aria-label="Search mail" placeholder="Search mail" id="search" style="width:320px">
+<button id="compose">Compose</button>
+<p>Inbox (12)</p>
+<div id="box" role="dialog" aria-label="New Message" hidden style="border:1px solid #ccc;padding:12px;max-width:520px">
+  <label>To <input aria-label="To recipients" id="to"></label>
+  <label>Subject <input aria-label="Subject" id="subject"></label>
+  <div id="body" contenteditable="true" role="textbox" aria-label="Message Body" style="min-height:90px;border:1px solid #ddd"></div>
+  <button id="send">Send</button>
+</div>
+<script>
+  document.getElementById("compose").onclick = () => (document.getElementById("box").hidden = false);
+  document.getElementById("send").onclick = () => __log("sent", { to: to.value, subject: subject.value, body: body.textContent });
+  document.getElementById("search").addEventListener("change", (e) => __log("searched", { q: e.target.value }));
+</script>
+</body></html>

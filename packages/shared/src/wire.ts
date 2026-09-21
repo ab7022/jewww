@@ -55,6 +55,11 @@ export const TextRequest = z.object({
   page: z.object({ title: z.string().max(500), text: z.string().max(8000) }),
   /** Facts the value may legitimately be drawn from. */
   profile: z.record(z.string(), z.string()).optional(),
+  /**
+   * Text prepared earlier in this task — a compose node's draft. Without it the text
+   * step wrote the message body from scratch, or declined, while the draft sat unused.
+   */
+  drafts: z.record(z.string(), z.string().max(8000)).optional(),
 });
 export type TextRequest = z.infer<typeof TextRequest>;
 

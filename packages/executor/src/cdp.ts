@@ -283,6 +283,8 @@ export class CdpExecutor implements Executor {
       // Replace rather than append: the field may already hold a previous attempt.
       await this.page.keyboard.press(process.platform === "darwin" ? "Meta+A" : "Control+A");
       await this.page.keyboard.insertText(text);
+      // Commit it, as the extension's typing does: apps save on `change`.
+      await this.page.evaluate(call.commit(node, fp)).catch(() => {});
       if (action.submit) await this.page.keyboard.press("Enter");
     }
   }

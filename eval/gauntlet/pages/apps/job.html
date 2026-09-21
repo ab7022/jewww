@@ -1,0 +1,28 @@
+<!doctype html><html><head><title>Apply — Northwind</title><link rel="stylesheet" href="../_base.css"><script src="_log.js"></script></head><body>
+<h1 id="t"></h1>
+<p>Build interfaces people enjoy.</p>
+<button id="apply">Easy Apply</button>
+<form id="f" hidden onsubmit="return false">
+  <label>Full name <input name="name" id="name" required></label>
+  <label>Email <input name="email" id="email" type="email" required></label>
+  <label>Phone <input name="phone" id="phone"></label>
+  <label>Why do you want to join Northwind? <textarea id="why"></textarea></label>
+  <button id="submit" type="submit">Submit application</button>
+</form>
+<!-- The dialog LinkedIn leaves open after a submit, covering the page. -->
+<div id="sent" class="dialog-backdrop" style="display:none"><div class="dialog" role="dialog" aria-modal="true" aria-label="Application sent">
+  <p>Your application was sent to Northwind!</p><button id="close">Not now</button> <button>Update profile</button>
+</div></div>
+<script>
+  const id = new URLSearchParams(location.search).get("id");
+  document.getElementById("t").textContent = { fe: "Frontend Engineer", ui: "UI Engineer", pe: "Platform Engineer" }[id] ?? "Role";
+  document.getElementById("apply").onclick = () => (document.getElementById("f").hidden = false);
+  document.getElementById("submit").onclick = () => {
+    const v = (x) => document.getElementById(x).value;
+    if (!v("name") || !v("email")) return;
+    __log("applied", { job: id, name: v("name"), email: v("email"), phone: v("phone"), why: v("why") });
+    document.getElementById("sent").style.display = "grid";
+  };
+  document.getElementById("close").onclick = () => (document.getElementById("sent").style.display = "none");
+</script>
+</body></html>

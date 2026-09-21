@@ -276,7 +276,15 @@ export function createApp(cfg: AppConfig): Express {
     const route = ROUTES[name];
     const method = route.method.toLowerCase() as "get" | "post" | "put";
     app[method](route.path, async (req: Authed, res: Response) => {
-      const body = (route.schema ? route.schema.parse(req.body) : undefined) as Endpoints[K]["body"];
+      // Only THIS parse is the caller's fault. A ZodError from anywhere else — a plan
+      // the model produced wrong — used to reach the client as "invalid request", which
+      // sent the person looking at their own input for a fault that was ours.
+      let body: Endpoints[K]["body"] = undefined as Endpoints[K]["body"];
+      if (route.schema) {
+        const parsed = route.schema.safeParse(req.body);
+        if (!parsed.success) throw new RequestInvalid(parsed.error);
+        body = parsed.data as Endpoints[K]["body"];
+      }
       const result = await fn(req, body, req.params as Endpoints[K]["params"]);
       res.json(result);
     });
@@ -377,9 +385,24 @@ export function createApp(cfg: AppConfig): Express {
     // Standing instructions can set a default ("never submit without asking me");
     // the goal, being the more recent statement of intent, is read alongside them.
     const authorityText = instructions ? `${goal}\n\n(Standing instructions: ${instructions})` : goal;
+    // Resolved once, before any work starts: a missing provider must fail the request,
+    // not strand a half-started promise that rejects with nobody listening.
+    const model = jev();
     const [planned, constraints, saved] = await Promise.all([
-      makePlan({ apiKey: cfg.openrouterKey, goal, start: url, jev: jev(), instructions }),
-      readConstraints(jev(), authorityText),
+      store.profiles.findOne({ userId: uid(req) }).then((saved) =>
+        makePlan({
+          apiKey: cfg.openrouterKey,
+          goal,
+          start: url,
+          jev: model,
+          instructions,
+          known: {
+            details: Object.keys(saved?.fields ?? {}).filter((k) => k !== "resumeFile"),
+            resume: Boolean(saved?.fields?.resumeFile),
+          },
+        }),
+      ),
+      readConstraints(model, authorityText),
       store.profiles.findOne({ userId: uid(req) }),
     ]);
 
@@ -553,11 +576,19 @@ export function createApp(cfg: AppConfig): Express {
 
   // Express 5 forwards rejected promises here, so async handlers need no try/catch.
   app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-    if (err instanceof ZodError) {
+    if (err instanceof RequestInvalid) {
       return res.status(400).json({
         error: "invalid_request",
-        message: err.issues.map((i) => `${i.path.join(".") || "body"}: ${i.message}`).join("; "),
-        issues: err.issues,
+        message: err.zod.issues.map((i) => `${i.path.join(".") || "body"}: ${i.message}`).join("; "),
+        issues: err.zod.issues,
+      });
+    }
+    if (err instanceof ZodError) {
+      // A model's output failed validation after repair: ours to own, and worth a retry.
+      console.error("unusable model output:", err.issues.slice(0, 5));
+      return res.status(502).json({
+        error: "unusable_model_output",
+        message: "the planner produced a plan that could not be used — try again",
       });
     }
     if (err instanceof HttpError) {
@@ -585,6 +616,13 @@ export function createApp(cfg: AppConfig): Express {
   });
 
   return app;
+}
+
+/** The request body did not match its schema — the one validation failure that is the caller's. */
+class RequestInvalid extends Error {
+  constructor(readonly zod: ZodError) {
+    super("invalid request");
+  }
 }
 
 class HttpError extends Error {

@@ -551,7 +551,14 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
 
     // Read from anything text-shaped, including the inert ones: what a read-only
     // field is displaying is often the answer to the question being asked.
-    const value = editable ? clean((el as HTMLInputElement).value) : "";
+    // A contenteditable (Gmail's body, X's composer) has no `.value`: read its text.
+    // Reading `.value` reported the body as empty after typing into it, so the model
+    // typed the same message again until the loop guard gave up.
+    const value = !editable
+      ? ""
+      : (el as HTMLElement).isContentEditable
+        ? clean((el as HTMLElement).innerText)
+        : clean((el as HTMLInputElement).value);
     const st = stateOf(el);
     const ctx = ctxOf(el);
 

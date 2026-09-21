@@ -826,3 +826,153 @@ describe("show mode", () => {
     expect(result.status).toBe("aborted");
   });
 });
+
+/**
+ * The plan says WHERE the gates are; the user's words say whether to ask. Confirm
+ * nodes used to ask unconditionally, so "email Sam to say the build is ready" stopped
+ * for approval; and a closed gate must hold back only the step it guards, or "fill ten
+ * applications, don't submit" would fill one.
+ */
+describe("one approval policy, for act gates and confirm nodes alike", () => {
+  const confirm = (risk: "message" | "auth" = "message") =>
+    ({ kind: "confirm", id: "c", intent: "send it", preview: "send it", mode: "single", risk }) as const;
+  const after = { kind: "act", id: "after", intent: "the gated step", success: "s" } as const;
+
+  it("goes ahead without asking when the user asked for it to be done", async () => {
+    let asked = 0;
+    const { result, events } = await run(plan([confirm(), after]), fakeJev(["DONE"]), fakeExecutor(["h1"]), {
+      autonomy: "full",
+      approve: async () => {
+        asked++;
+        return true;
+      },
+    });
+    expect(asked).toBe(0);
+    expect(result.status).toBe("done");
+    expect(events.some((e) => e.type === "node:start" && e.id === "after")).toBe(true);
+  });
+
+  it("holds back only the gated step when the user said not to, and carries on", async () => {
+    const tail = { kind: "act", id: "tail", intent: "the next item", success: "s" } as const;
+    const { result, events } = await run(plan([confirm(), after, tail]), fakeJev(["DONE"]), fakeExecutor(["h1"]), {
+      autonomy: "never",
+    });
+    expect(result.status).toBe("done");
+    const detail = events.find((e) => e.type === "node:done" && e.id === "after");
+    expect(detail && "detail" in detail ? detail.detail : "").toMatch(/held back/);
+    expect(events.some((e) => e.type === "node:start" && e.id === "tail")).toBe(true);
+    expect(result.pending).toHaveLength(1);
+  });
+
+  it("always hands a sign-in back, whatever authority was granted", async () => {
+    const { result } = await run(plan([confirm("auth"), after]), fakeJev(["DONE"]), fakeExecutor(["h1"]), {
+      autonomy: "full",
+      approve: async () => true,
+    });
+    expect(result.status).toBe("suspended");
+  });
+});
+
+describe("every page-touching node arrives before it works", () => {
+  it("a fill node goes to its site first", async () => {
+    const ex = fakeExecutor(["h1", "h2"]);
+    ex.url = async () => "https://x.test/p";
+    await run(
+      plan([{ kind: "fill", id: "f", intent: "fill the form", success: "s", site: "https://forms.example" }]),
+      fakeJev(["DONE"]),
+      ex,
+    );
+    expect(ex.acted[0]).toEqual({ kind: "navigate", url: "https://forms.example/" });
+  });
+
+  it("each loop iteration starts at its item's own link", async () => {
+    const ex = fakeExecutor(["h1", "h2", "h3", "h4"]);
+    await run(
+      plan([
+        { kind: "read", id: "r", intent: "list jobs", schema: {}, into: "$.jobs" },
+        {
+          kind: "foreach", id: "l", intent: "each", over: "$.jobs", as: "job",
+          do: [{ kind: "act", id: "a", intent: "apply", success: "s" }],
+        },
+      ]),
+      fakeJev(["DONE"]),
+      ex,
+      {},
+      { extract: async () => [{ title: "FE", url: "https://jobs.example/fe" }, { title: "UI", url: "https://jobs.example/ui" }] },
+    );
+    const navs = ex.acted.filter((a) => a.kind === "navigate").map((a) => (a as { url: string }).url);
+    expect(navs).toEqual(["https://jobs.example/fe", "https://jobs.example/ui"]);
+  });
+
+  it("a fill node with no form to fill falls back to working through it", async () => {
+    let decided = 0;
+    await run(
+      plan([{ kind: "fill", id: "f", intent: "open the form and fill it", success: "s" }]),
+      fakeJev(["DONE"]),
+      fakeExecutor(["h1"]),
+      {},
+      {
+        decide: async (input) => {
+          decided++;
+          return decideWith(fakeJev(["DONE"]))(input);
+        },
+      },
+    );
+    expect(decided).toBeGreaterThan(0);
+  });
+});
+
+/**
+ * Typing is reversible: it changes a field and nothing else. Gating it on the task's
+ * risk made "draft an email — don't send it" unable to type the recipient.
+ */
+describe("only actions that can commit are gated", () => {
+  it("types into a field under 'never' even when the task is risky", async () => {
+    const ex = fakeFillExecutor();
+    const { result } = await run(
+      plan([{ kind: "act", id: "a", intent: "write the draft", success: "s" }]),
+      fakeJevRisky(["TYPE_TEXT", "DONE"]),
+      ex,
+      { autonomy: "never" },
+    );
+    expect(ex.typed.length).toBeGreaterThan(0);
+    expect(result.pending).toHaveLength(0);
+  });
+
+  it("still holds back a risky click under 'never'", async () => {
+    const ex = fakeExecutor(["h1", "h2"]);
+    const { result } = await run(
+      plan([{ kind: "act", id: "a", intent: "send it", success: "s" }]),
+      fakeJevRisky(["CLICK"]),
+      ex,
+      { autonomy: "never" },
+    );
+    expect(ex.acted.filter((a) => a.kind === "click")).toHaveLength(0);
+    expect(result.pending).toHaveLength(1);
+  });
+});
+
+describe("a loop tells each step which item it is on", () => {
+  it("puts the current item in the decision's subgoal", async () => {
+    const subgoals: string[] = [];
+    await run(
+      plan([
+        { kind: "read", id: "r", intent: "list", schema: {}, into: "$.roles" },
+        { kind: "foreach", id: "l", intent: "each", over: "$.roles", as: "role",
+          do: [{ kind: "act", id: "a", intent: "open the selected role", success: "s" }] },
+      ]),
+      fakeJev(["DONE"]),
+      fakeExecutor(["h1", "h2", "h3"]),
+      {},
+      {
+        extract: async () => [{ title: "Frontend Engineer" }, { title: "UI Engineer" }],
+        decide: async (input) => {
+          subgoals.push(input.subgoal);
+          return decideWith(fakeJev(["DONE"]))(input);
+        },
+      },
+    );
+    expect(subgoals[0]).toContain("Frontend Engineer");
+    expect(subgoals[1]).toContain("UI Engineer");
+  });
+});

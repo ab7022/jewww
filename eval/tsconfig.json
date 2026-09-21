@@ -28,6 +28,12 @@
     },
     {
       "path": "../packages/executor"
+    },
+    {
+      "path": "../packages/protocol"
+    },
+    {
+      "path": "../packages/runtime"
     }
   ]
 }

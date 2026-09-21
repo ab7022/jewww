@@ -143,6 +143,10 @@ export const SCENARIOS: Scenario[] = [
         `got ${JSON.stringify(got)}`,
       );
       t.expect((await s.probe(`document.querySelector('[aria-label="Search mail"]').value`)) === "", "typed into the search box");
+      // What the model is shown must match what is there: a contenteditable reported as
+      // empty after typing made the model type the same message again and again.
+      const body = await t.find(null, "Message Body");
+      t.expect(body.value === "hi there", `the body is reported as "${body.value ?? ""}"`);
     },
   },
   {
@@ -191,6 +195,15 @@ export const SCENARIOS: Scenario[] = [
       await t.click(await t.find(null, "Newsletter"));
       const h2 = (await t.snapshot()).contentHash;
       t.expect(h2 !== h1, "ticking a checkbox did not change the fingerprint");
+    },
+  },
+  {
+    name: "a typed value is committed, as leaving the field would",
+    page: "multifield.html",
+    why: "the CDP driver fired only input; apps that save on change (Google Forms' title) never saw the value",
+    async run(s, t) {
+      await t.type(await t.find(null, "Email"), "abdul@dolze.ai");
+      t.expect((await s.probe("document.body.dataset.committed")) === "abdul@dolze.ai", "the page never received a change");
     },
   },
   {

@@ -21,6 +21,7 @@ const KIND_CRITERIA: Record<string, string> = {
   act: "drives the page one interaction at a time — clicking, navigating, opening something, or entering a single specific value",
   fill: "enters values into SEVERAL fields of a form at once, such as an application, checkout, or signup form",
   read: "only reads information off the page without changing anything",
+  attach: "attaches or uploads a file, such as a resume or a document",
 };
 
 const KNOWN_KINDS = new Set(["act", "fill", "read", "compose", "confirm", "foreach"]);
@@ -46,6 +47,28 @@ export function coerceNodes(raw: unknown): unknown {
       if (!n || typeof n !== "object") return [];
       const node = { ...(n as Record<string, unknown>) };
       if (node.kind === "foreach" && Array.isArray(node.do)) node.do = fix(node.do);
+      // Reference maps hold strings — "$.key" references or literals. The planner
+      // sometimes leaves itself notes there ({ doNotAttachResume: true, fields: [...] }),
+      // and one non-string value invalidated the node, then its loop, then the WHOLE
+      // plan: a job-application run died before it started. Keep what fits, drop the rest.
+      for (const key of ["slots", "extras"] as const) {
+        const map = node[key];
+        if (map === undefined) continue;
+        if (!map || typeof map !== "object" || Array.isArray(map)) {
+          delete node[key];
+          continue;
+        }
+        const kept = Object.entries(map as Record<string, unknown>).filter(([, v]) => typeof v === "string");
+        if (kept.length) node[key] = Object.fromEntries(kept);
+        else delete node[key];
+      }
+      // Required fields a node can do without: filled in rather than failing the plan.
+      if ((node.kind === "act" || node.kind === "fill") && typeof node.success !== "string" && typeof node.intent === "string") {
+        node.success = `the step "${node.intent}" has visibly been carried out`;
+      }
+      if (node.kind === "confirm" && typeof node.preview !== "string" && typeof node.intent === "string") {
+        node.preview = node.intent;
+      }
       if (typeof node.kind === "string" && KNOWN_KINDS.has(node.kind)) return [node];
       // An unrecognised kind that still names an outcome is an act node.
       if (typeof node.intent === "string") {
@@ -74,7 +97,12 @@ export interface NormalizeResult {
   costUsd: number;
 }
 
-export async function normalizePlan(jev: JevProvider, plan: Plan): Promise<NormalizeResult> {
+export async function normalizePlan(
+  jev: JevProvider,
+  plan: Plan,
+  /** Whether the user has a file to attach. When they do not, attach steps are dropped. */
+  canAttach = true,
+): Promise<NormalizeResult> {
   const acts = walk(plan.nodes).filter(
     (n): n is Extract<Node, { kind: "act" }> => n.kind === "act",
   );
@@ -137,11 +165,22 @@ export async function normalizePlan(jev: JevProvider, plan: Plan): Promise<Norma
   }
 
   const rewrite = new Map<string, Normalisation>();
+  /**
+   * Steps that attach a file, when the user has none. Told plainly that no resume was
+   * available, the planner still emitted "attach the resume" inside a job-application
+   * loop, and that step blocked every iteration. The same question JEV already answers
+   * for every step identifies them, and they are removed before the run starts.
+   */
+  const dropped = new Set<string>();
   for (const node of acts) {
     const answer = r.answers[node.id];
     try {
       validateChoice(answer, Object.keys(KIND_CRITERIA));
     } catch {
+      continue;
+    }
+    if (answer.choice === "attach" && !canAttach && (answer.probabilities?.attach ?? 1) >= 0.6) {
+      dropped.add(node.id);
       continue;
     }
     // Only `fill` is worth rewriting to: it is the one kind with different mechanics
@@ -155,7 +194,7 @@ export async function normalizePlan(jev: JevProvider, plan: Plan): Promise<Norma
   }
 
   const apply = (nodes: Node[]): Node[] =>
-    nodes.map((node) => {
+    nodes.filter((node) => !dropped.has(node.id)).map((node) => {
       if (node.kind === "foreach") return { ...node, do: apply(node.do) };
       if (node.kind !== "act") return node;
       const site = node.site ?? sites.get(node.id);
@@ -167,7 +206,10 @@ export async function normalizePlan(jev: JevProvider, plan: Plan): Promise<Norma
 
   return {
     plan: { ...plan, nodes: apply(plan.nodes) },
-    changes: [...rewrite.values()],
+    changes: [
+      ...rewrite.values(),
+      ...[...dropped].map((nodeId) => ({ nodeId, from: "act", to: "dropped: nothing to attach", confidence: 1 })),
+    ],
     costUsd: r.costUsd,
   };
 }

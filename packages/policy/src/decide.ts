@@ -57,6 +57,16 @@ export interface Decision {
   inputTokens: number;
 }
 
+/**
+ * Whether an action can have an effect beyond the page's own editable state.
+ * Clicking can send, pay or delete; typing can only when it also presses Enter.
+ * Selecting, scrolling, navigating and attaching change nothing that is not undone
+ * by doing them again.
+ */
+export function canCommit(action: Action): boolean {
+  return action.kind === "click" || (action.kind === "type" && action.submit === true);
+}
+
 /** Below this on either head, hand the step back to the planner instead of acting. */
 export const ACT_THRESHOLD = 0.7;
 
@@ -156,7 +166,12 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
   // had done anything. The one exception below is not a judgement call.
   const typingSecret =
     action.kind === "type" && target !== undefined && FORBIDDEN_FIELD.test(target.label);
-  const requiresConfirmation = risk !== "none" || typingSecret;
+  // The risk class says what the TASK could lead to; whether THIS action can commit
+  // anything is a fact about the operation. Typing changes a field and nothing else —
+  // it is undone by typing again — so it is gated only when it also submits. Gating
+  // on risk alone held back typing the recipient of a draft ("don't send it" made
+  // the To field untouchable), and the draft was never written.
+  const requiresConfirmation = (risk !== "none" && canCommit(action)) || typingSecret;
 
   return {
     action,

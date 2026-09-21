@@ -4,11 +4,13 @@
  * descriptions that read like something a form label would mean.
  */
 export const PROFILE_FIELDS = {
-  fullName: "the candidate's full name",
-  firstName: "given name only",
-  lastName: "family name or surname only",
-  email: "email address",
-  phone: "phone or mobile number",
+  // Whose data it is, said outright: "email address" alone matched an email's "To"
+  // box, and the user's own address was typed in as the recipient.
+  fullName: "the user's own full name",
+  firstName: "the user's own given name only",
+  lastName: "the user's own family name or surname only",
+  email: "the user's own email address — never someone they are writing to",
+  phone: "the user's own phone or mobile number",
 
   addressLine1: "street address",
   city: "city or town",
@@ -51,6 +53,16 @@ export const NO_FIELD = "__none" as const;
 
 export const NO_FIELD_DESC =
   "no profile field fits this input — it asks for something the profile does not contain";
+
+/**
+ * A field whose value the REQUEST supplies rather than the user's details: who a
+ * message goes to, the message itself, a subject, a search term, a quantity. Neither
+ * filled from the profile nor asked of the user — the goal-aware step loop writes it.
+ */
+export const TASK_FIELD = "__task" as const;
+
+export const TASK_FIELD_DESC =
+  "content the request itself determines, not a fact about the user — a recipient, a message or its subject, a search term, a quantity";
 
 export type Profile = Partial<Record<ProfileKey, string>>;
 

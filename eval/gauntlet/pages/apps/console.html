@@ -1,0 +1,10 @@
+<!doctype html><html><head><title>Amplify — All apps</title><link rel="stylesheet" href="../_base.css"><script src="_log.js"></script></head><body>
+<nav style="float:left;width:180px;display:grid;gap:6px">
+  <a href="#" data-n="overview">Overview</a><a href="#" data-n="branches">Branches</a>
+  <a href="#" data-n="deployments">Deployments</a><a href="#" data-n="domains">Domains</a><a href="#" data-n="logs">Logs</a>
+</nav>
+<main style="margin-left:200px"><h1>All apps</h1><p>dolze-webapp-core-prod · main · Deployed</p><p>dolze-admin-panel-prod · main · Deployed</p></main>
+<script>
+  for (const a of document.querySelectorAll("nav a")) a.onclick = (e) => { e.preventDefault(); __log("clicked", { item: a.dataset.n }); };
+</script>
+</body></html>

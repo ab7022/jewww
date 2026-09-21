@@ -3,4 +3,8 @@
 <label>Last name <input aria-label="Last name"></label>
 <label>Email <input aria-label="Email"></label>
 <label>Newsletter <input type="checkbox" aria-label="Newsletter"></label>
+<script>
+  // Committed values only: an app that saves on change must see what was typed.
+  document.querySelector('[aria-label="Email"]').addEventListener("change", (e) => (document.body.dataset.committed = e.target.value));
+</script>
 </body></html>

@@ -1,0 +1,10 @@
+<!doctype html><html><head><title>Sign in — Ledgerly</title><link rel="stylesheet" href="../_base.css"><script src="_log.js"></script></head><body>
+<h1>Sign in to Ledgerly</h1>
+<label>Email <input id="email" aria-label="Email"></label>
+<label>Password <input id="pw" type="password" aria-label="Password"></label>
+<button id="go">Sign in</button>
+<script>
+  document.getElementById("go").onclick = () => __log("signin", { email: email.value, pw: pw.value });
+  document.getElementById("pw").addEventListener("input", (e) => __log("password-typed", { length: e.target.value.length }));
+</script>
+</body></html>

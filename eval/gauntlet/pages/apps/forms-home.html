@@ -1,0 +1,10 @@
+<!doctype html><html><head><title>Forms</title><link rel="stylesheet" href="../_base.css"><script src="_log.js"></script></head><body>
+<input aria-label="Search forms" placeholder="Search">
+<h2>Start a new form</h2>
+<!-- jsaction-style: listens on mousedown only. -->
+<div class="tile" role="button" tabindex="0" aria-label="Blank form" style="width:150px;height:110px;border:1px solid #ccc;cursor:pointer">+</div>
+<h2>Recent forms</h2><p>Event registration · Contact information</p>
+<script>
+  document.querySelector(".tile").addEventListener("mousedown", () => { location.href = "forms-edit.html"; });
+</script>
+</body></html>

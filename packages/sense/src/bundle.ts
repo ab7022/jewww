@@ -57,6 +57,7 @@ export const call = {
   point: (node: number, message: string, fp?: string) =>
     `${GLOBAL_NAME}.point(${node}, ${JSON.stringify(message)}, ${JSON.stringify(fp ?? null)})`,
   cursorHide: () => `${GLOBAL_NAME}.cursorHide()`,
+  commit: (node: number, fp?: string) => `${GLOBAL_NAME}.commit(${node}, ${JSON.stringify(fp ?? null)})`,
   settle: (node: number | null, isCombobox: boolean) =>
     `${GLOBAL_NAME}.settle(${node === null ? "null" : node}, ${isCombobox})`,
 };

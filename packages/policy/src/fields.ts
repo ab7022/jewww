@@ -1,5 +1,5 @@
 import type { JevProvider } from "@jev-browser/jev";
-import {
+import { TASK_FIELD, TASK_FIELD_DESC,
   NO_FIELD,
   NO_FIELD_DESC,
   type Questions,
@@ -57,12 +57,14 @@ export async function mapFields(
     return { mappings: [], costUsd: 0, latencyMs: 0, inputTokens: 0 };
   }
 
-  const criteria = { ...input.criteria, [NO_FIELD]: NO_FIELD_DESC };
+  const criteria = { ...input.criteria, [TASK_FIELD]: TASK_FIELD_DESC, [NO_FIELD]: NO_FIELD_DESC };
   const questions: Questions = {};
   for (const f of input.fields) {
     questions[f.eid] = {
       type: "choice",
-      instructions: `Which profile field belongs in the form input labelled "${f.name}"?`,
+      instructions:
+        `What belongs in the form input labelled "${f.name}": one of the user's own saved details, ` +
+        `content the request itself supplies, or a detail about the user that is not on file?`,
       criteria,
     };
   }

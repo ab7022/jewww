@@ -89,6 +89,9 @@ function fakeExecutor(hashes: string[], name?: string): Executor & { acted: Acti
     async point() {
       return null;
     },
+    async annotate(marks) {
+      return { drawn: marks.length, refused: [] };
+    },
     async settle() {},
     async url() {
       return "https://x.test/p";
@@ -172,6 +175,7 @@ function capabilities(jev: JevProvider, over: Partial<Capabilities> = {}): Capab
     text: async () => "typed text",
     extract: async () => [],
     compose: async () => "composed",
+    explain: async () => ({ summary: "", notes: [] }),
     mapFields: async () => ({ mappings: [], costUsd: 0 }),
     ...over,
   };
@@ -974,5 +978,66 @@ describe("a loop tells each step which item it is on", () => {
     );
     expect(subgoals[0]).toContain("Frontend Engineer");
     expect(subgoals[1]).toContain("UI Engineer");
+  });
+});
+
+/**
+ * Explain draws the answer on the page. The model may only mark what it was shown, the
+ * marks are numbered in the order it gave them, and the explanation is the run's result.
+ */
+describe("explain", () => {
+  const drawing = () => {
+    const ex = fakeExecutor(["h"]);
+    const drawn: { node: number; n: number; note: string }[][] = [];
+    ex.annotate = async (marks) => {
+      drawn.push(marks.map(({ node, n, note }) => ({ node, n, note })));
+      return { drawn: marks.length, refused: [] };
+    };
+    return Object.assign(ex, { drawn });
+  };
+
+  it("marks only elements it was shown, once each, numbered in reading order", async () => {
+    const ex = drawing();
+    const { result, events } = await run(
+      plan([{ kind: "explain", id: "x", intent: "walk me through this page" }]),
+      fakeJev([]),
+      ex,
+      {},
+      {
+        explain: async (r) => {
+          const [a, b] = r.elements;
+          return {
+            summary: "Two things matter here.",
+            notes: [
+              { eid: String(b?.eid), note: "look here first" },
+              { eid: "not-on-the-page", note: "invented" },
+              { eid: String(a?.eid), note: "then this" },
+              { eid: String(b?.eid), note: "said twice" },
+            ],
+          };
+        },
+      },
+    );
+    expect(ex.drawn).toHaveLength(1);
+    expect(ex.drawn[0]?.map((m) => [m.n, m.note])).toEqual([
+      [1, "look here first"],
+      [2, "then this"],
+    ]);
+    expect(ex.acted).toHaveLength(0);
+    const shown = events.find((e) => e.type === "explain");
+    expect(shown && "summary" in shown ? shown.summary : "").toBe("Two things matter here.");
+    expect(result.data.x).toMatchObject({ summary: "Two things matter here.", notes: [{ n: 1 }, { n: 2 }] });
+  });
+
+  it("stores the explanation where a later step asked for it", async () => {
+    const ex = drawing();
+    const { result } = await run(
+      plan([{ kind: "explain", id: "x", intent: "explain", into: "tour" }]),
+      fakeJev([]),
+      ex,
+      {},
+      { explain: async () => ({ summary: "s", notes: [] }) },
+    );
+    expect(result.data.tour).toEqual({ summary: "s", notes: [] });
   });
 });

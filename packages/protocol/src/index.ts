@@ -3,6 +3,8 @@ import {
   ComposeRequest,
   CreateRunRequest,
   DecideRequest,
+  type Explanation,
+  ExplainRequest,
   ExtractRequest,
   FinishRunRequest,
   MapFieldsRequest,
@@ -71,6 +73,7 @@ export interface Endpoints {
   text: { params: { id: string }; body: TextRequest; result: { text: string | null; balance: number } };
   extract: { params: { id: string }; body: ExtractRequest; result: { value: unknown; balance: number } };
   compose: { params: { id: string }; body: ComposeRequest; result: { value: unknown; balance: number } };
+  explain: { params: { id: string }; body: ExplainRequest; result: { explanation: Explanation; balance: number } };
   fields: {
     params: { id: string };
     body: MapFieldsRequest;
@@ -101,6 +104,7 @@ export const ROUTES: { readonly [K in EndpointName]: Route } = {
   text: { method: "POST", path: "/api/runs/:id/text", schema: TextRequest },
   extract: { method: "POST", path: "/api/runs/:id/extract", schema: ExtractRequest },
   compose: { method: "POST", path: "/api/runs/:id/compose", schema: ComposeRequest },
+  explain: { method: "POST", path: "/api/runs/:id/explain", schema: ExplainRequest },
   fields: { method: "POST", path: "/api/runs/:id/fields", schema: MapFieldsRequest },
   finish: { method: "POST", path: "/api/runs/:id/finish", schema: FinishRunRequest },
   getProfile: { method: "GET", path: "/api/profile", schema: null },

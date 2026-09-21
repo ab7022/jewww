@@ -5,7 +5,7 @@ import { RISK } from "./action.js";
  * A plan is a small PROGRAM, not a to-do list. The LLM compiles a goal into these
  * nodes once; JEV then executes every decision inside them.
  *
- * Five node kinds is the whole language. Everything the product must do — apply to
+ * Seven node kinds is the whole language. Everything the product must do — apply to
  * ten jobs, summarise reviews and draft a message, compare prices across sites —
  * has to compile into exactly these.
  */
@@ -64,6 +64,22 @@ export const ComposeNode = z.object({
   into: z.string(),
 });
 
+/**
+ * Explain the page by drawing on it: circle the elements that answer the intent and
+ * number them with short notes, like someone marking up a screenshot for a colleague.
+ *
+ * The answer to "what am I looking at", "walk me through this dashboard", "which of
+ * these plans should I pick" — questions where the reply is ABOUT the page, so it
+ * belongs on the page, not in a chat bubble beside it. Touches nothing.
+ */
+export const ExplainNode = z.object({
+  ...Base,
+  kind: z.literal("explain"),
+  site: z.string().optional(),
+  /** Scratchpad key for the notes, when a later node needs them. */
+  into: z.string().optional(),
+});
+
 /** Human gate. Mandatory before anything irreversible. */
 export const ConfirmNode = z.object({
   ...Base,
@@ -78,6 +94,7 @@ export type Node =
   | z.infer<typeof FillNode>
   | z.infer<typeof ReadNode>
   | z.infer<typeof ComposeNode>
+  | z.infer<typeof ExplainNode>
   | z.infer<typeof ConfirmNode>
   | ForeachNode;
 
@@ -115,7 +132,7 @@ export const ForeachNode: z.ZodType<ForeachNode> = z.lazy(() =>
 
 export const Node: z.ZodType<Node> = z.lazy(() =>
   z
-    .discriminatedUnion("kind", [ActNode, FillNode, ReadNode, ComposeNode, ConfirmNode])
+    .discriminatedUnion("kind", [ActNode, FillNode, ReadNode, ComposeNode, ExplainNode, ConfirmNode])
     .or(ForeachNode),
 ) as z.ZodType<Node>;
 

@@ -1,0 +1,13 @@
+<!doctype html><html><head><title>Billing — explain fixture</title><link rel="stylesheet" href="_base.css">
+<style>
+  .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 12px 0; max-width: 520px; }
+  .far { margin-top: 1600px; }
+</style></head><body>
+<h1>Billing</h1>
+<div class="card"><h2>Balance due</h2><p>$42.00, due 1 October</p><button id="pay">Pay now</button></div>
+<div class="card"><h2>Plan</h2><p>Pro, monthly</p><button id="change">Change plan</button></div>
+<div class="card far"><h2>Invoices</h2><a href="#" id="invoices">Download invoices</a></div>
+<script>
+  for (const id of ["pay", "change"]) document.getElementById(id).onclick = () => (document.body.dataset.outcome = id);
+</script>
+</body></html>

@@ -10,6 +10,7 @@ import {
   pageKey,
   pageText,
   point,
+  annotate,
   preflight,
   settle,
   snapshot,
@@ -97,6 +98,9 @@ async function handle(msg: ToContent): Promise<FromContent> {
 
     case "point":
       return { ok: true, refusal: await point(msg.node, msg.message, msg.fp) };
+
+    case "annotate":
+      return { ok: true, ...annotate(msg.marks) };
 
     case "cursor":
       if (msg.hide) cursorHide();

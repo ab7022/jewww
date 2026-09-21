@@ -1,4 +1,4 @@
-import type { Action, RawSnapshot } from "@jev-browser/shared";
+import type { Action, Mark, RawSnapshot } from "@jev-browser/shared";
 
 /**
  * Typed messages between the three extension contexts. Every payload crosses a
@@ -11,6 +11,7 @@ export type ToContent =
   | { kind: "act"; action: Action; node: number | null; guard: GuardPair; text?: string; fp?: string }
   | { kind: "preflight"; action: Action; node: number | null; fp?: string }
   | { kind: "point"; node: number; message: string; fp?: string }
+  | { kind: "annotate"; marks: Mark[] }
   /** The agent's on-page cursor: hide it, or show the listening pill. */
   | { kind: "cursor"; hide?: boolean; listening?: boolean }
   | { kind: "settle"; node: number | null; isCombobox: boolean };
@@ -25,6 +26,7 @@ export type FromContent =
   | { ok: true; text: string }
   | { ok: true; guard: GuardPair }
   | { ok: true; refusal: string | null }
+  | { ok: true; drawn: number; refused: string[] }
   | { ok: true }
   | { ok: false; error: string; stale?: boolean; unreachable?: boolean };
 

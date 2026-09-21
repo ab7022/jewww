@@ -116,6 +116,7 @@ export class Api {
       text: async (request) => (await this.client.call("text", id, request)).text,
       extract: async (request) => (await this.client.call("extract", id, request)).value,
       compose: async (request) => (await this.client.call("compose", id, request)).value,
+      explain: async (request) => (await this.client.call("explain", id, request)).explanation,
       mapFields: async (request) => {
         const r = await this.client.call("fields", id, request);
         return { mappings: r.mappings, costUsd: r.costUsd };

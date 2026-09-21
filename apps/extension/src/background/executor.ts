@@ -5,6 +5,7 @@ import {
   type RawSnapshot,
   StalePage,
   UnreachableTarget,
+  type Mark,
 } from "@jev-browser/shared";
 import type { FromContent, ToContent } from "../shared/messages.js";
 
@@ -168,6 +169,12 @@ export class TabExecutor implements Executor {
     const res = await this.send({ kind: "point", node, message, ...(fp ? { fp } : {}) });
     if (!res.ok) return res.error;
     return "refusal" in res ? res.refusal : null;
+  }
+
+  async annotate(marks: Mark[]): Promise<{ drawn: number; refused: string[] }> {
+    const res = await this.send({ kind: "annotate", marks });
+    if (!res.ok) return { drawn: 0, refused: [res.error] };
+    return "drawn" in res ? { drawn: res.drawn, refused: res.refused } : { drawn: 0, refused: ["no answer from the page"] };
   }
 
   /** Put the agent's cursor away; the run is over. Never fails a run. */

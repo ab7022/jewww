@@ -1,5 +1,5 @@
 import type { JevProvider } from "@jev-browser/jev";
-import { compose, extract } from "@jev-browser/planner";
+import { compose, explain, extract } from "@jev-browser/planner";
 import { decide, fieldText, mapFields } from "@jev-browser/policy";
 import type { Capabilities } from "./run.js";
 
@@ -25,7 +25,7 @@ export interface RunBinding {
   onCost?: (kind: ModelCall, costUsd: number) => void | Promise<void>;
 }
 
-export type ModelCall = "decide" | "text" | "extract" | "compose" | "fields";
+export type ModelCall = "decide" | "text" | "extract" | "compose" | "explain" | "fields";
 
 export function bindModels(b: RunBinding): Capabilities {
   const charge = async (kind: ModelCall, costUsd: number) => {
@@ -60,6 +60,17 @@ export function bindModels(b: RunBinding): Capabilities {
       const r = await compose({ apiKey: b.apiKey, ...request, goal: b.goal, instructions });
       await charge("compose", r.costUsd);
       return r.value;
+    },
+
+    async explain(request) {
+      const { costUsd, latencyMs: _latency, ...explanation } = await explain({
+        apiKey: b.apiKey,
+        request,
+        goal: b.goal,
+        instructions,
+      });
+      await charge("explain", costUsd);
+      return explanation;
     },
 
     async mapFields(request) {

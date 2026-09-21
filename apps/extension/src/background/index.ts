@@ -1,5 +1,6 @@
 import { runPlan } from "@jev-browser/runtime";
 import type { MissingField, RunStatus } from "@jev-browser/runtime";
+import { ExplainResult, explainText } from "@jev-browser/shared";
 import { ApiError } from "@jev-browser/protocol";
 import { Api } from "./api.js";
 import { hasHostPermission, TabExecutor } from "./executor.js";
@@ -83,7 +84,10 @@ function describeResult(data: Record<string, unknown>): string | undefined {
   const parts: string[] = [];
   for (const [key, value] of Object.entries(data)) {
     if (key === "profile" || key === "answers") continue;
-    parts.push(typeof value === "string" ? value : JSON.stringify(value, null, 2));
+    const explained = ExplainResult.safeParse(value);
+    parts.push(
+      explained.success ? explainText(explained.data) : typeof value === "string" ? value : JSON.stringify(value, null, 2),
+    );
   }
   const text = parts.join("\n\n").trim();
   return text ? text.slice(0, 4000) : undefined;

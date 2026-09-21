@@ -218,6 +218,13 @@ export function applyEvent(steps: TimelineStep[], e: StampedEvent): TimelineStep
       byId(e.nodeId)?.actions.push({ kind: "note", text: `Held back for you: ${e.preview}` });
       return next;
 
+    case "explain":
+      byId(e.nodeId)?.actions.push(
+        { kind: "note", text: e.summary },
+        ...e.notes.map((x) => ({ kind: "act" as const, text: `${x.n}. ${x.note}`, detail: x.target })),
+      );
+      return next;
+
     case "point":
       byId(e.nodeId)?.actions.push({ kind: "act", text: `Showed you: ${e.message}` });
       return next;

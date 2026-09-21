@@ -510,6 +510,13 @@ export function createApp(cfg: AppConfig): Express {
     return { value: await caps.compose(body), balance: balance() };
   });
 
+  handle("explain", async (req, body, params) => {
+    const run = await ownRun(req, params.id);
+    await assertBalance(store, uid(req), 1);
+    const { caps, balance } = await capabilitiesFor(req, run);
+    return { explanation: await caps.explain(body), balance: balance() };
+  });
+
   handle("finish", async (req, body, params) => {
     const run = await ownRun(req, params.id);
     await store.runs.updateOne(

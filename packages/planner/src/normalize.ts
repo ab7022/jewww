@@ -24,7 +24,7 @@ const KIND_CRITERIA: Record<string, string> = {
   attach: "attaches or uploads a file, such as a resume or a document",
 };
 
-const KNOWN_KINDS = new Set(["act", "fill", "read", "compose", "confirm", "foreach"]);
+const KNOWN_KINDS = new Set(["act", "fill", "read", "compose", "explain", "confirm", "foreach"]);
 
 /**
  * Repair a raw plan before it is validated.

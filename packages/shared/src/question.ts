@@ -89,6 +89,14 @@ export function confidenceOf(a: Answer): number | undefined {
   return p.length ? Math.max(...p) : undefined;
 }
 
+/** A model answer that is not structurally valid. Never acted on; may be asked again. */
+export class UnreadableAnswer extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "UnreadableAnswer";
+  }
+}
+
 /**
  * Structural validation of a choice answer before anything acts on it.
  *
@@ -101,26 +109,26 @@ export function validateChoice(
   answer: Answer | undefined,
   offered: readonly string[],
 ): asserts answer is Extract<Answer, { type: "choice" }> {
-  if (!answer || answer.type !== "choice") throw new Error("expected a choice answer");
+  if (!answer || answer.type !== "choice") throw new UnreadableAnswer("expected a choice answer");
   const ids = new Set(offered);
-  if (!ids.has(answer.choice)) throw new Error(`chose "${answer.choice}", which was not offered`);
+  if (!ids.has(answer.choice)) throw new UnreadableAnswer(`chose "${answer.choice}", which was not offered`);
 
   const probs = answer.probabilities;
   if (!probs) return; // distribution is optional; the choice itself is still usable
 
   const keys = Object.keys(probs);
   if (keys.length !== ids.size || keys.some((k) => !ids.has(k))) {
-    throw new Error("probability keys do not match the offered options");
+    throw new UnreadableAnswer("probability keys do not match the offered options");
   }
   const values = Object.values(probs);
   if (answer.confidence !== undefined) values.push(answer.confidence);
   if (values.some((n) => !Number.isFinite(n) || n < 0 || n > 1)) {
-    throw new Error("probability outside [0,1] or not finite");
+    throw new UnreadableAnswer("probability outside [0,1] or not finite");
   }
   const total = Object.values(probs).reduce((a, b) => a + b, 0);
-  if (Math.abs(total - 1) > 0.02) throw new Error(`probabilities sum to ${total.toFixed(3)}, not 1`);
+  if (Math.abs(total - 1) > 0.02) throw new UnreadableAnswer(`probabilities sum to ${total.toFixed(3)}, not 1`);
   const best = Math.max(...Object.values(probs));
   if ((probs[answer.choice] ?? 0) < best - 1e-6) {
-    throw new Error("chosen option is not the most probable one");
+    throw new UnreadableAnswer("chosen option is not the most probable one");
   }
 }

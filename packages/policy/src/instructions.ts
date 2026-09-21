@@ -49,7 +49,9 @@ selected field. Infer it from the goal and the field's meaning, using page conte
 recent actions.
 
 If "drafts" holds text prepared earlier in this task for this field's purpose (a
-message body, a cover letter, a reply), use it verbatim.
+message body, a cover letter, a reply), use it verbatim — but only the part that
+belongs in THIS field. A draft written as a whole message may carry lines meant for
+other fields ("To: …", "Subject: …"); those go in their own fields, never in this one.
 
 No commentary, no code, no browser actions. NEVER invent personal information —
 if the value is not derivable from the goal or the supplied profile, return

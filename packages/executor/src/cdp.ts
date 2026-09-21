@@ -7,6 +7,7 @@ import {
   type RawSnapshot,
   StalePage,
   UnreachableTarget,
+  type Mark,
 } from "@jev-browser/shared";
 import type { Browser, BrowserContext, Page } from "playwright";
 import { chromium } from "playwright";
@@ -124,6 +125,15 @@ export class CdpExecutor implements Executor {
       return (await this.page.evaluate(call.point(node, message, fp))) as string | null;
     } catch (err) {
       return `could not point at the target: ${String(err).slice(0, 100)}`;
+    }
+  }
+
+  async annotate(marks: Mark[]): Promise<{ drawn: number; refused: string[] }> {
+    try {
+      await this.page.evaluate(this.source);
+      return (await this.page.evaluate(call.annotate(marks))) as { drawn: number; refused: string[] };
+    } catch (err) {
+      return { drawn: 0, refused: [`could not draw: ${String(err).slice(0, 100)}`] };
     }
   }
 

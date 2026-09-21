@@ -1,6 +1,6 @@
 import { FORBIDDEN_FIELD } from "@jev-browser/shared";
 import type { RawSnapshot } from "@jev-browser/shared";
-import { cursorClick, cursorHighlight, cursorTo } from "./cursor.js";
+import { cursorClick, cursorTo, inkClear, inkDraw } from "./cursor.js";
 import {
   collectSnapshot,
   composedContains,
@@ -316,6 +316,8 @@ export async function approach(
 ): Promise<Resolution> {
   const first = resolvePoint(node, kind, value, fp, true);
   if ("refused" in first) return first;
+  // Acting on the page makes any explanation drawn over it stale.
+  inkClear();
   await cursorTo(first.x, first.y, cursorLabel(kind, elementFor(node, fp), value), kind === "fill" ? "type" : "click");
   const final = resolvePoint(node, kind, value, fp);
   if (!("refused" in final) && kind === "click") cursorClick();
@@ -331,11 +333,44 @@ export async function point(node: number, message: string, fp?: string): Promise
   if ("refused" in r) return r.refused;
   const el = elementFor(node, fp);
   await cursorTo(r.x, r.y, message, "point");
-  cursorHighlight(el ? topRect(el) : null);
+  // Circled in ink rather than boxed: the circle follows the element if the page
+  // scrolls while the person is finding it.
+  inkDraw(el ? [{ rect: () => (el.isConnected ? topRect(el) : null), n: null, note: "" }] : []);
   return null;
 }
 
-export { cursorClick, cursorHide, cursorHighlight, cursorListening, cursorTo } from "./cursor.js";
+/**
+ * Draw an explanation on the page: numbered loops and notes, in reading order.
+ * Replaces what was drawn before. Elements that cannot be found or are not visible
+ * are skipped and named in `refused`; the first mark is scrolled into view.
+ */
+export function annotate(
+  marks: { node: number; fp?: string | undefined; n: number; note: string }[],
+): { drawn: number; refused: string[] } {
+  const refused: string[] = [];
+  const found: { el: Element; n: number; note: string }[] = [];
+  for (const m of marks) {
+    const el = elementFor(m.node, m.fp);
+    if (!el?.isConnected) {
+      refused.push(`${m.n}: element is gone`);
+      continue;
+    }
+    if (!el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) {
+      refused.push(`${m.n}: element is not visible`);
+      continue;
+    }
+    found.push({ el, n: m.n, note: m.note });
+  }
+  const first = found[0]?.el;
+  if (first) {
+    const r = topRect(first);
+    if (r.bottom < 0 || r.top > innerHeight) first.scrollIntoView({ block: "center", behavior: "instant" });
+  }
+  inkDraw(found.map((f) => ({ rect: () => (f.el.isConnected ? topRect(f.el) : null), n: f.n, note: f.note })));
+  return { drawn: found.length, refused };
+}
+
+export { cursorClick, cursorHide, cursorHighlight, cursorListening, cursorTo, inkClear, inkCount } from "./cursor.js";
 
 /**
  * Commit what was just typed, the way leaving a field does: fire `change`.

@@ -40,6 +40,8 @@ export type RunEvent =
   | { type: "asked"; nodeId: string; count: number; answered: number }
   /** Show mode: the cursor is pointing at what the person should do next. */
   | { type: "point"; nodeId: string; message: string; target?: string }
+  /** An explanation drawn on the page: the summary, and each numbered note. */
+  | { type: "explain"; nodeId: string; summary: string; notes: { n: number; note: string; target: string }[] }
   | { type: "reused"; field: string; from: string }
   /** Something went wrong inside a node. `nodeId` is always set when one is known, so
    *  the interface never has to guess which step a warning belongs to. */

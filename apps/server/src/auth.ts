@@ -1,4 +1,5 @@
 import { createHash, createHmac, randomBytes, randomUUID, timingSafeEqual } from "node:crypto";
+import { SIGNUP_CREDITS } from "@jev-browser/shared";
 import type { Store, User } from "./db.js";
 
 /**
@@ -70,7 +71,7 @@ export async function revokeRefresh(store: Store, token: string): Promise<void> 
 }
 
 /** New users start with enough credits to actually try the product. */
-export const SIGNUP_CREDITS = 500;
+export { SIGNUP_CREDITS };
 
 export async function upsertGoogleUser(
   store: Store,

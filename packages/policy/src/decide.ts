@@ -9,6 +9,7 @@ import {
   RISK as RISK_CRITERIA,
   type Risk,
   type DecideRequest,
+  UnreadableAnswer,
   validateChoice,
 } from "@jev-browser/shared";
 import {
@@ -132,8 +133,33 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
     recent_actions: input.recent.slice(-10),
   };
 
-  const r = await jev.evaluate(state, questions);
+  // A structurally unreadable answer — probabilities that do not sum to one, a choice
+  // that is not the argmax — is refused, never coerced (see `validateChoice`). But it
+  // is a fault in ONE response, not in the page or the task: the same question asked
+  // again is normally answered cleanly. It used to end the node, and with it a run
+  // that was one keystroke from done. Asked again here, a bounded number of times,
+  // with every attempt paid for.
+  let spent = 0;
+  for (let attempt = 1; ; attempt++) {
+    const r = await jev.evaluate(state, questions);
+    spent += r.costUsd;
+    try {
+      return read(r, space, input, spent);
+    } catch (err) {
+      if (!(err instanceof UnreadableAnswer) || attempt >= DECIDE_ATTEMPTS) throw err;
+    }
+  }
+}
 
+/** How many times one decision is asked before an unreadable answer is an error. */
+const DECIDE_ATTEMPTS = 3;
+
+function read(
+  r: Awaited<ReturnType<JevProvider["evaluate"]>>,
+  space: ReturnType<typeof buildActionSpace>,
+  input: DecideInput,
+  costUsd: number,
+): Decision {
   const opAnswer = r.answers.operation;
   validateChoice(opAnswer, Object.keys(space.operations));
   const operation = opAnswer.choice as Operation;
@@ -186,7 +212,7 @@ export async function decide(jev: JevProvider, input: DecideInput): Promise<Deci
     selfConfidence: opAnswer.confidence,
     requiresConfirmation,
     latencyMs: r.latencyMs,
-    costUsd: r.costUsd,
+    costUsd,
     inputTokens: r.usage.inputTokens,
   };
 }

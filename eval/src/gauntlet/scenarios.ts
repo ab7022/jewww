@@ -275,6 +275,41 @@ export const SCENARIOS: Scenario[] = [
       const refusal = await s.exec.point(tile.node, "Click \u201cBlank form\u201d", tile.fp);
       t.expect(refusal === null, `could not point: ${refusal}`);
       t.expect((await s.probe("document.body.dataset.outcome")) !== "created", "pointing clicked the tile");
+      t.expect((await s.probe(INK)) === "1", "pointing did not circle the target");
+    },
+  },
+  {
+    name: "explains a page by drawing numbered marks, touching nothing",
+    page: "explain.html",
+    why: "'walk me through my bill' is answered ON the page — and drawing must never click, block, or outlive an action",
+    async run(s, t) {
+      const pay = await t.find("button", "Pay now");
+      const change = await t.find("button", "Change plan");
+      const far = await t.find("link", "Download invoices");
+      const r = await s.exec.annotate([
+        { node: pay.node, fp: pay.fp, n: 1, note: "what you owe, and when" },
+        { node: change.node, fp: change.fp, n: 2, note: "switch plans here" },
+        { node: far.node, fp: far.fp, n: 3, note: "past invoices, further down" },
+        { node: 999_999, n: 4, note: "not on the page" },
+      ]);
+      t.expect(r.drawn === 3, `drew ${r.drawn} of 3 real marks`);
+      t.expect(r.refused.length === 1 && /4:/.test(r.refused[0] ?? ""), `refusals: ${JSON.stringify(r.refused)}`);
+      t.expect((await s.probe(INK)) === "3", "the marks are not on the page");
+      t.expect(!(await s.probe("document.body.dataset.outcome")), "drawing clicked something");
+      const hit = (await s.probe(
+        `(() => { const r = document.getElementById("pay").getBoundingClientRect();
+          return document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2)?.id; })()`,
+      )) as string;
+      t.expect(hit === "pay", `the ink is in the way of the button (hit ${hit})`);
+      const snap = await t.snapshot();
+      t.expect(!/owe, and when/.test(snap.text), "a note leaked into the page text");
+      // Acting on the page makes the explanation stale: it is wiped, and the click lands.
+      await t.click(await t.find("button", "Change plan"));
+      t.expect((await s.probe("document.body.dataset.outcome")) === "change", "the click after drawing did not land");
+      t.expect((await s.probe(INK)) === "0", "the ink outlived an action on the page");
     },
   },
 ];
+
+/** How many marks the overlay has drawn, read from its host (the root is closed). */
+const INK = `document.querySelector("jev-agent-overlay")?.getAttribute("data-ink") ?? "none"`;

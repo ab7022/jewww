@@ -120,6 +120,19 @@ const CASES: Case[] = [
     },
   },
   {
+    name: "explains a bill by drawing on it, clicking nothing",
+    page: "apps/billing.html",
+    goal: "walk me through this bill — why is it so high?",
+    async check(o) {
+      if (of(o, "clicked").length) return `clicked ${JSON.stringify(of(o, "clicked"))}`;
+      const ink = Number(await o.probe(`document.querySelector("jev-agent-overlay")?.getAttribute("data-ink") ?? 0`));
+      if (ink < 2) return `drew ${ink} marks`;
+      const said = JSON.stringify(o.result.data);
+      if (!/overage|bandwidth/i.test(said)) return `the explanation never mentions the overage: ${said.slice(0, 240)}`;
+      return null;
+    },
+  },
+  {
     name: "creates a form: mousedown-only tile, welcome dialog, then the title",
     page: "apps/forms-home.html",
     goal: "create a new blank form titled Sleep survey",
@@ -170,6 +183,7 @@ for (const c of CASES.filter((x) => !only || x.name.includes(only) || x.page.inc
       text: async (r) => (await client.call("text", id, r)).text,
       extract: async (r) => (await client.call("extract", id, r)).value,
       compose: async (r) => (await client.call("compose", id, r)).value,
+      explain: async (r) => (await client.call("explain", id, r)).explanation,
       mapFields: async (r) => {
         const x = await client.call("fields", id, r);
         return { mappings: x.mappings, costUsd: x.costUsd };
@@ -199,6 +213,7 @@ for (const c of CASES.filter((x) => !only || x.name.includes(only) || x.page.inc
           e.type === "step" ? `step ${e.operation} ${e.target ?? ""}` :
           e.type === "warn" ? `warn ${e.message}` :
           e.type === "point" ? `point ${e.message}` :
+          e.type === "explain" ? `explain ${e.summary} ${e.notes.map((x) => `[${x.n}] ${x.note}`).join(" ")}` :
           e.type === "node:start" ? `node ${e.id} ${e.kind}: ${e.intent}` :
           e.type === "suspend" ? `suspend ${e.reason}: ${e.preview}` :
           e.type === "approval" ? `approval ${e.preview}` :

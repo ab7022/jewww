@@ -1,0 +1,56 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Billing — Nimbus Cloud</title><script src="_log.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; color: #1d2433; background: #f5f6f8; }
+  header { display: flex; align-items: center; gap: 24px; padding: 0 28px; height: 56px; background: #fff; border-bottom: 1px solid #e3e6eb; }
+  header b { font-size: 16px; } header nav { display: flex; gap: 18px; color: #5b6475; }
+  header nav a { color: inherit; text-decoration: none; } header nav a.on { color: #1d2433; font-weight: 600; }
+  main { max-width: 1060px; margin: 0 auto; padding: 28px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; }
+  h1 { grid-column: 1 / -1; margin: 0; font-size: 24px; }
+  .card { background: #fff; border: 1px solid #e3e6eb; border-radius: 12px; padding: 20px; }
+  .card h2 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: #6a7385; }
+  .big { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; }
+  .muted { color: #6a7385; }
+  .warn { display: inline-block; margin-top: 8px; padding: 3px 9px; border-radius: 999px; background: #fff3e0; color: #a35a00; font-size: 12px; font-weight: 600; }
+  button { font: inherit; font-weight: 600; border-radius: 8px; padding: 9px 16px; border: 1px solid #d5d9e0; background: #fff; cursor: pointer; }
+  button.primary { background: #2451d6; border-color: #2451d6; color: #fff; }
+  .row { display: flex; gap: 10px; margin-top: 16px; }
+  table { width: 100%; border-collapse: collapse; } td { padding: 9px 0; border-top: 1px solid #eef0f3; }
+  td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  .bar { height: 8px; background: #eef0f3; border-radius: 99px; overflow: hidden; margin: 10px 0 4px; } .bar i { display: block; height: 100%; width: 86%; background: #e58a00; }
+</style></head><body>
+<header><b>Nimbus</b><nav><a href="#">Projects</a><a href="#">Usage</a><a href="#" class="on">Billing</a><a href="#">Settings</a></nav></header>
+<main>
+  <h1>Billing</h1>
+  <section class="card">
+    <h2>Amount due</h2>
+    <div class="big">$1,284.60</div>
+    <div class="muted">Due 1 October · card ending 4242</div>
+    <span class="warn">Includes $312.40 in overage</span>
+    <div class="row"><button class="primary" id="pay">Pay now</button><button id="method">Update payment method</button></div>
+  </section>
+  <section class="card">
+    <h2>Plan</h2>
+    <div style="font-size:20px;font-weight:700">Team · $49 / seat</div>
+    <div class="muted">18 seats · renews monthly</div>
+    <div class="row"><button id="change">Change plan</button></div>
+  </section>
+  <section class="card">
+    <h2>This month's charges</h2>
+    <table>
+      <tr><td>Team plan (18 seats)</td><td>$882.00</td></tr>
+      <tr><td>Bandwidth overage — 2.4 TB</td><td>$312.40</td></tr>
+      <tr><td>Build minutes</td><td>$90.20</td></tr>
+    </table>
+  </section>
+  <section class="card">
+    <h2>Bandwidth</h2>
+    <div class="bar"><i></i></div>
+    <div class="muted">8.6 TB of 10 TB included · resets in 9 days</div>
+    <div class="row"><button id="alerts">Set usage alert</button></div>
+  </section>
+</main>
+<script>
+  for (const b of document.querySelectorAll("button")) b.onclick = () => __log("clicked", { id: b.id });
+</script>
+</body></html>

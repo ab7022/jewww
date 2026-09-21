@@ -30,10 +30,17 @@ export async function collectorSource(): Promise<string> {
     target: "chrome120",
     keepNames: false,
     minify: false,
+    // Installed ONCE per document. The CDP driver evaluates this before every call, and
+    // each evaluation used to create a fresh copy of every module — so state held in
+    // one (the cursor's position, the ink drawn on the page) was invisible to the next
+    // call: the cursor re-entered from the corner on every action, and an action could
+    // not clear an explanation drawn one call earlier. The element registry had been
+    // moved onto the global to survive this; installing once fixes it for all state.
+    banner: { js: `if (!globalThis.${GLOBAL_NAME}) {` },
     // esbuild's IIFE binds `var __jevSense`, and an evaluated string is wrapped in a
     // function scope by both Playwright and CDP — so the binding never reaches the
     // global object unless we put it there.
-    footer: { js: `globalThis.${GLOBAL_NAME} = ${GLOBAL_NAME};` },
+    footer: { js: `globalThis.${GLOBAL_NAME} = ${GLOBAL_NAME};\n}` },
   });
   const out = result.outputFiles?.[0]?.text;
   if (!out) throw new Error("browser bundle produced no output");
@@ -57,6 +64,9 @@ export const call = {
   point: (node: number, message: string, fp?: string) =>
     `${GLOBAL_NAME}.point(${node}, ${JSON.stringify(message)}, ${JSON.stringify(fp ?? null)})`,
   cursorHide: () => `${GLOBAL_NAME}.cursorHide()`,
+  annotate: (marks: { node: number; fp?: string | undefined; n: number; note: string }[]) =>
+    `${GLOBAL_NAME}.annotate(${JSON.stringify(marks)})`,
+  inkCount: () => `${GLOBAL_NAME}.inkCount()`,
   commit: (node: number, fp?: string) => `${GLOBAL_NAME}.commit(${node}, ${JSON.stringify(fp ?? null)})`,
   settle: (node: number | null, isCombobox: boolean) =>
     `${GLOBAL_NAME}.settle(${node === null ? "null" : node}, ${isCombobox})`,

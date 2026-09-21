@@ -2,6 +2,10 @@ import { z } from "zod";
 import { Plan } from "./plan.js";
 import { Snapshot, SnapshotElement } from "./snapshot.js";
 
+/** How many elements the explain model is shown, and how many it may mark. */
+export const DEFAULT_EXPLAIN_CAP = 80;
+export const MAX_NOTES = 6;
+
 /**
  * Every request that crosses a process boundary, defined ONCE.
  *
@@ -69,6 +73,50 @@ export const ExtractRequest = z.object({
   pageText: z.string().max(60_000),
 });
 export type ExtractRequest = z.infer<typeof ExtractRequest>;
+
+/**
+ * The page as the explain model sees it: the ranked elements (ids only — it may name
+ * nothing it was not shown) and a text excerpt for context.
+ */
+export const ExplainRequest = z.object({
+  intent: z.string().min(1).max(2000),
+  page: z.object({ url: z.string(), title: z.string() }),
+  elements: z.array(SnapshotElement).max(DEFAULT_EXPLAIN_CAP),
+  text: z.string().max(12_000),
+});
+export type ExplainRequest = z.infer<typeof ExplainRequest>;
+
+/** One mark on the page: which element, and what to say about it. */
+export const Note = z.object({
+  eid: z.string(),
+  note: z.string().min(1).max(160),
+});
+export type Note = z.infer<typeof Note>;
+
+export const Explanation = z.object({
+  /** One or two sentences that answer the question on their own. */
+  summary: z.string().max(600),
+  /** In reading order: note 1 is what to look at first. */
+  notes: z.array(Note).max(MAX_NOTES),
+});
+export type Explanation = z.infer<typeof Explanation>;
+
+/**
+ * What an explain node leaves behind: the summary, and the notes as drawn (numbered,
+ * with the name of what each one marks). The run's result for "explain this page",
+ * so every surface that shows a result can render it as prose, not JSON.
+ */
+export const ExplainResult = z.object({
+  summary: z.string(),
+  notes: z.array(z.object({ n: z.number(), note: z.string(), target: z.string() })),
+});
+export type ExplainResult = z.infer<typeof ExplainResult>;
+
+/** "summary\n\n1. note (target)\n2. …" — the explanation as plain text. */
+export function explainText(r: ExplainResult): string {
+  const notes = r.notes.map((x) => `${x.n}. ${x.note}${x.target ? ` — “${x.target}”` : ""}`);
+  return [r.summary, notes.join("\n")].filter(Boolean).join("\n\n");
+}
 
 export const ComposeRequest = z.object({
   intent: z.string().min(1).max(2000),

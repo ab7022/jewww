@@ -11,6 +11,7 @@ import {
   type RawSnapshot,
   StalePage,
   UnreachableTarget,
+  type Mark,
 } from "@jev-browser/shared";
 import { type BrowserContext, chromium, type Page, type Worker } from "playwright";
 
@@ -205,6 +206,9 @@ class RemoteExecutor implements Executor {
   }
   point(node: number, message: string, fp?: string): Promise<string | null> {
     return this.call("point", fp === undefined ? [node, message] : [node, message, fp]);
+  }
+  annotate(marks: Mark[]): Promise<{ drawn: number; refused: string[] }> {
+    return this.call("annotate", [marks]);
   }
   settle(node: number | null, isCombobox: boolean): Promise<void> {
     return this.call("settle", [node, isCombobox]);

@@ -39,6 +39,14 @@ when you are writing the plan.
 "compose" Turn scratchpad data into text or new data. Touches no page. This is the
           ONLY place prose gets written. { kind, id, intent, from: [keys], into }
 
+"explain" Answer a question ABOUT a page by drawing on it: circle the elements that
+          matter and number them with short notes, in reading order. Touches
+          nothing. { kind, id, intent, site?, into? }
+          Use it when the answer is a place or a layout, not a value: "what am I
+          looking at", "walk me through this dashboard", "which plan should I pick",
+          "what do I need to fill in here", "explain this page". A question with a
+          single factual answer ("how much is Pro?") is a "read", not this.
+
 "confirm" Stop and ask the human. { kind, id, intent, preview, mode, risk }
           mode "batch" accumulates many pending actions into one review.
 
@@ -98,6 +106,13 @@ when you are writing the plan.
 
 9. Set "site" on any node whose origin differs from the one before it, and list every
    origin in "sites" so permissions can be requested up front.
+
+10. UNDERSTANDING IS NOT DOING. If the user only asks to understand what is in front
+   of them — what is this, which one, why, explain, walk me through — plan a single
+   "read" (for a fact) or "explain" (for the page), and nothing that clicks.
+   "Where is X" and "how do I X" are different: they are about getting somewhere, so
+   plan the act nodes that get there — the runtime points instead of clicking when
+   the user wants to be shown.
 
 ## Profile keys available for form filling
 

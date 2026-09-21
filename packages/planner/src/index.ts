@@ -6,6 +6,7 @@ import { type Known, SYSTEM_PROMPT, userPrompt } from "./prompt.js";
 
 export { SYSTEM_PROMPT, DEFAULT_PLANNER_MODEL };
 export { compose, extract } from "./extract.js";
+export { explain } from "./explain.js";
 export { extractDetails } from "./details.js";
 export { normalizePlan, type Normalisation } from "./normalize.js";
 export type { ChatResult };

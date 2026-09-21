@@ -32,6 +32,14 @@ export class UnreachableTarget extends Error {
   }
 }
 
+/** One annotation to draw: the element (as for `act`), its number, and the note. */
+export interface Mark {
+  node: number;
+  fp?: string | undefined;
+  n: number;
+  note: string;
+}
+
 export interface Executor {
   /** Current page as a snapshot, with live node identities. */
   snapshot(): Promise<RawSnapshot>;
@@ -65,6 +73,12 @@ export interface Executor {
    * as its label — without touching it. Returns why it could not, or null.
    */
   point(node: number, message: string, fp?: string): Promise<string | null>;
+  /**
+   * Draw on the page: a hand-drawn circle around each element and a numbered note
+   * beside it. Replaces whatever was drawn before; an empty list clears the ink.
+   * Returns how many were drawn and, for each that could not be, why.
+   */
+  annotate(marks: Mark[]): Promise<{ drawn: number; refused: string[] }>;
   /** Wait for the page to be worth observing again. */
   settle(node: number | null, isCombobox: boolean): Promise<void>;
   /**

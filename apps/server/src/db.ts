@@ -27,7 +27,7 @@ export interface LedgerEntry {
   _id: string;
   userId: string;
   runId?: string;
-  kind: "plan" | "decide" | "text" | "extract" | "compose" | "fields" | "topup";
+  kind: "plan" | "decide" | "text" | "extract" | "compose" | "explain" | "fields" | "topup";
   /** Negative for spend, positive for a top-up. */
   credits: number;
   costUsd: number;

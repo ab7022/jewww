@@ -98,6 +98,40 @@ describe("fan-out", () => {
     expect(d.action.kind).toBe("click");
   });
 
+  it("asks again when an answer is unreadable, and pays for every attempt", async () => {
+    const good = {
+      operation: choice("CLICK", { CLICK: 0.9, TYPE_TEXT: 0.04, SCROLL_DOWN: 0.02, WAIT: 0.02, DONE: 0.01, BLOCKED: 0.01 }),
+      click_target: choice("e1", { e1: 0.94, e2: 0.02, e3: 0.02, e4: 0.02 }),
+      risk: choice("none", { none: 1, money: 0, message: 0, destroy: 0, settings: 0, auth: 0 }),
+      blocker: NO_BLOCKER,
+    };
+    // The chosen option is not the argmax: refused, not coerced — then asked again.
+    const bad = { ...good, click_target: choice("e2", { e1: 0.94, e2: 0.02, e3: 0.02, e4: 0.02 }) };
+    const replies = [bad, good];
+    let calls = 0;
+    const jev = {
+      name: "openrouter",
+      evaluate: (async () => ({ answers: replies[calls++], usage: { inputTokens: 1, outputTokens: 0 }, costUsd: 0.001, model: "m", latencyMs: 1 })) as any,
+    } as JevProvider;
+    const d = await decide(jev, input);
+    expect(calls).toBe(2);
+    expect(d.action).toEqual({ kind: "click", eid: "e1" });
+    expect(d.costUsd).toBeCloseTo(0.002);
+  });
+
+  it("gives up after three unreadable answers", async () => {
+    let calls = 0;
+    const jev = {
+      name: "openrouter",
+      evaluate: (async () => {
+        calls++;
+        return { answers: { operation: choice("CLICK", { CLICK: 0.1, WAIT: 0.9 }) }, usage: { inputTokens: 1, outputTokens: 0 }, costUsd: 0, model: "m", latencyMs: 1 };
+      }) as any,
+    } as JevProvider;
+    await expect(decide(jev, input)).rejects.toThrow();
+    expect(calls).toBe(3);
+  });
+
   it("never emits typed text itself — the inline helper supplies it", async () => {
     const d = await decide(
       fakeJev({

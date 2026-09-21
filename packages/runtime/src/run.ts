@@ -6,6 +6,11 @@ import {
   BLOCKER,
   type ComposeRequest,
   type DecideRequest,
+  DEFAULT_EXPLAIN_CAP,
+  type Explanation,
+  type ExplainRequest,
+  type ExplainResult,
+  MAX_NOTES,
   type Executor,
   type ExtractRequest,
   FORBIDDEN_FIELD,
@@ -48,6 +53,8 @@ export interface Capabilities {
   text(request: TextRequest): Promise<string | null>;
   extract(request: ExtractRequest): Promise<unknown>;
   compose(request: ComposeRequest): Promise<unknown>;
+  /** Which elements answer the intent, and a short note for each. */
+  explain(request: ExplainRequest): Promise<Explanation>;
   /** Maps every field of a form to a profile key in ONE call. */
   mapFields(request: MapFieldsRequest): Promise<{ mappings: FieldMapping[]; costUsd: number }>;
 }
@@ -200,6 +207,9 @@ async function runNodes(
           break;
         case "compose":
           status = await runComposeNode(node, opts, pad);
+          break;
+        case "explain":
+          status = await runExplainNode(node, opts, pad, state);
           break;
         case "confirm":
           status = await runConfirmNode(node, opts, pad, state);
@@ -847,6 +857,55 @@ async function runReadNode(
     id: node.id,
     detail: `-> ${node.into} (${body.length} chars from ${new URL(raw.url).pathname})`,
   });
+  return "done";
+}
+
+/**
+ * Draw the answer on the page. The model is shown the ranked elements and may only
+ * mark those — an id it was not shown is dropped, not guessed at — and the marks are
+ * numbered in the order it gave them, which is the order the person should read.
+ */
+async function runExplainNode(
+  node: Extract<Node, { kind: "explain" }>,
+  opts: Ctx,
+  pad: Scratchpad,
+  state: LoopState,
+): Promise<RunStatus> {
+  await arrive(node, null, opts);
+  const raw = await opts.executor.snapshot();
+  const ranked = rankedSnapshot(raw, node.intent, DEFAULT_EXPLAIN_CAP);
+  const text = await opts.executor.pageText(12_000);
+  const answer = await opts.capabilities.explain({
+    intent: withItem(node.intent, state),
+    page: { url: raw.url, title: raw.title },
+    elements: ranked.elements,
+    text,
+  });
+
+  const shown = new Set(ranked.elements.map((e) => e.eid));
+  const byEid = new Map(raw.elements.map((e) => [e.eid, e]));
+  const seen = new Set<string>();
+  const notes = answer.notes
+    .filter((n) => shown.has(n.eid) && !seen.has(n.eid) && Boolean(seen.add(n.eid)))
+    .slice(0, MAX_NOTES)
+    .flatMap((n) => {
+      const el = byEid.get(n.eid);
+      return el ? [{ el, note: n.note.trim() }] : [];
+    });
+
+  const drawn = await opts.executor.annotate(
+    notes.map((n, i) => ({ node: n.el.node, fp: n.el.fp, n: i + 1, note: n.note })),
+  );
+  for (const r of drawn.refused) opts.emit({ type: "warn", nodeId: node.id, message: `could not mark ${r}` });
+
+  const result: ExplainResult = {
+    summary: answer.summary,
+    notes: notes.map((n, i) => ({ n: i + 1, note: n.note, target: n.el.name })),
+  };
+  // Stored even without `into`: for "what am I looking at" the explanation IS the result.
+  pad.set(node.into ?? node.id, result);
+  opts.emit({ type: "explain", nodeId: node.id, ...result });
+  opts.emit({ type: "node:done", id: node.id, detail: `marked ${drawn.drawn} on the page` });
   return "done";
 }
 

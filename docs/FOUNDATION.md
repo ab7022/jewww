@@ -54,10 +54,13 @@ never updated.
 1. Everything the server can know about a run (goal, standing instructions, autonomy,
    the user's profile and resume) it loads from the run record itself. A client
    cannot forget to send what it is never asked to send.
-2. Every endpoint has one zod schema in `packages/shared/src/api.ts`. The server
-   `parse`s requests with it (unknown or missing fields are a 400, not a silent
-   `undefined`); the client's types are `z.infer` of the same schema. Changing a shape
-   breaks the build on both sides at once.
+2. Every request shape is one zod schema in `packages/shared/src/wire.ts`, and the
+   `@jev-browser/protocol` package holds one endpoint table. The server registers its
+   handlers from that table and `parse`s every body (a bad field is a 400 naming it);
+   the extension, website and tests all call through one typed client generated from
+   the same table. Changing a shape breaks the build on both sides at once.
+3. Capabilities are bound to a run (`runtime/models.ts`): goal and instructions are
+   supplied once, where the capabilities are built, never per call.
 
 ### 3. Refusing late instead of being unrepresentable
 
@@ -82,10 +85,12 @@ does not re-ask.
 "page unchanged for 3 steps". Any action whose effect is not observed will, sooner or
 later, report success for nothing.
 
-**Structural fix — every action reports what it observed.** After acting, the
-executor compares the page before and after (content hash, URL, focused element,
-the target's own state) and returns an `Effect`. The runtime feeds "no visible
-effect" back to the model as a failure with a reason, on the very next step.
+**Structural fix — "no visible effect" is detected and said in words.** The page
+fingerprint (`contentHash`) now covers the full URL, every control's value and state,
+and all visible text — it used to ignore values, so typing looked like nothing. The
+runtime compares fingerprints across steps and tells the model, in plain words, that
+its last action "had no visible effect on the page". The executors do not yet return
+an explicit per-action effect; the fingerprint comparison is the mechanism.
 
 ### 5. Persisted state without a schema
 
@@ -104,9 +109,10 @@ iteration 2 inherited iteration 1's `endedAt` → negative durations ("−26223m
 Timestamps were taken when storage got round to the event, not when it happened.
 `warn` events carried no node id, so they were attributed to "whatever looks current".
 
-**Structural fix — every event carries `at` (monotonic, stamped by the runtime) and
-`nodeId`, and events inside a loop carry `iteration`.** The timeline keys steps by
-node *instance*, and durations are computed from runtime timestamps only.
+**Structural fix — the runtime stamps every event, in one place, with `at` and (inside
+a loop) `iteration`; warnings carry `nodeId`.** The timeline keeps one step per node,
+replaces it (rather than merging) when a loop re-enters it, shows which item it is on,
+and computes durations from runtime timestamps only.
 
 ### 7. Build/runtime skew
 
@@ -114,9 +120,9 @@ Vite re-hashes asset names on every build; a loaded unpacked extension keeps the
 manifest it read at load time. Rebuilding under a loaded extension produced
 "Could not load file 'assets/index.ts-loader-Bz0seLeD.js'".
 
-**Structural fix.** Content-script entry names are stable (not hashed), and the
-worker detects a manifest/build mismatch and says "reload the extension" rather than
-failing on a tab.
+**Mitigation, not yet a structural fix.** The worker detects the mismatch and says
+"the extension was rebuilt — reload it" instead of failing obscurely. Stable (unhashed)
+content-script entry names would remove the skew entirely; not done yet.
 
 ---
 
@@ -164,9 +170,9 @@ back with a sentence saying why. A run that stops at one of these is working.
 | Class | Guard | Where |
 |---|---|---|
 | 1 Drift | conformance gauntlet, both executors | `eval/src/gauntlet/` |
-| 2 Missing context | server-owned context + zod wire | `packages/shared/src/api.ts`, `apps/server/src/app.ts` |
+| 2 Missing context | server-owned context, zod wire, one endpoint table, run-bound capabilities | `shared/wire.ts`, `protocol/`, `runtime/models.ts` |
 | 3 Late refusal | live affordances, pre-flight, approval memory | `sense/collect.ts`, `runtime/run.ts` |
-| 4 Silent success | `Effect` from every action | `shared/executor.ts`, both executors |
+| 4 Silent success | fingerprint covers values/state/URL; "no visible effect" fed back | `sense/collect.ts`, `runtime/run.ts` |
 | 5 State schema | versioned zod panel state | `apps/extension/src/shared/state.ts` |
 | 6 Event identity | `at` / `nodeId` / `iteration` on every event | `runtime/events.ts`, timeline |
-| 7 Build skew | stable entry names + mismatch detection | `apps/extension/vite.config.ts` |
+| 7 Build skew | mismatch detected and explained (mitigation) | `background/executor.ts` |

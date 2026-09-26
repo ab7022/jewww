@@ -10,3 +10,4 @@ node_modules
 eval/results
 plans
 results
+apps/extension/dist-local

@@ -52,6 +52,19 @@ const INPUT_ROLE: Record<string, string> = {
   number: "spinbutton", date: "datepicker",
 };
 
+/**
+ * An input whose content is a credential: a password, a one-time code, a card number.
+ * Decided from what the page declares about the field (its type and autocomplete
+ * token), which is what browsers and password managers rely on too.
+ */
+export function isSecretInput(el: Element): boolean {
+  if (el.tagName !== "INPUT") return false;
+  const input = el as HTMLInputElement;
+  if (input.type === "password") return true;
+  const auto = (input.getAttribute("autocomplete") ?? "").toLowerCase();
+  return /\b(current-password|new-password|one-time-code|cc-number|cc-csc)\b/.test(auto);
+}
+
 /** Tolerates non-strings: DOM clobbering makes `form.value` an Element. */
 export const clean = (s: unknown): string =>
   typeof s === "string" ? s.replace(/\s+/g, " ").trim().slice(0, 120) : "";
@@ -554,7 +567,10 @@ export function collectSnapshot(maxCandidates = 2000): RawSnapshot {
     // A contenteditable (Gmail's body, X's composer) has no `.value`: read its text.
     // Reading `.value` reported the body as empty after typing into it, so the model
     // typed the same message again until the loop guard gave up.
-    const value = !editable
+    // A secret's content is never read at all — not sent, not hashed, not logged.
+    // The field is still listed (the agent must know a password box is there, to hand
+    // over), only its value is withheld.
+    const value = !editable || isSecretInput(el)
       ? ""
       : (el as HTMLElement).isContentEditable
         ? clean((el as HTMLElement).innerText)

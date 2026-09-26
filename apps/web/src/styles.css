@@ -312,3 +312,18 @@ textarea { resize: vertical; }
   .orders-row { grid-template-columns: 1fr 1fr 1fr; }
   .orders-row.head { display: none; }
 }
+
+/* --- privacy, terms, refunds ------------------------------------------------ */
+.legal { min-height: 100vh; background: var(--bg); }
+.legal-top { max-width: 760px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.legal-top nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.legal-top nav a { padding: 6px 12px; border-radius: 999px; font-size: 14px; color: var(--label-2); text-decoration: none; }
+.legal-top nav a.on { background: var(--fill); color: var(--label); font-weight: 600; }
+.legal-body { max-width: 760px; margin: 0 auto; padding: 16px 24px 80px; font-size: 16px; line-height: 1.6; }
+.legal-body h1 { font-size: 36px; letter-spacing: -0.03em; margin: 20px 0 4px; }
+.legal-body h2 { font-size: 19px; margin: 34px 0 8px; letter-spacing: -0.01em; }
+.legal-body p, .legal-body ul { margin: 0 0 14px; color: var(--label); }
+.legal-body ul { padding-left: 22px; display: grid; gap: 8px; }
+.legal-body a { color: var(--orange); }
+.legal-note { text-align: center; }
+.legal-note a { color: inherit; }

@@ -279,6 +279,18 @@ export const SCENARIOS: Scenario[] = [
     },
   },
   {
+    name: "what a person typed into a password field is never read",
+    page: "credentials.html",
+    why: "the page summary carried every field's value to the server — a password the person had typed included",
+    async run(s, t) {
+      await s.probe(`document.getElementById("pw").value = "hunter2-secret"; document.getElementById("inner").value = "hunter2-secret"`);
+      const snap = await t.snapshot();
+      t.expect(!JSON.stringify(snap).includes("hunter2"), "a typed password is in the page snapshot");
+      t.expect(snap.elements.some((e) => e.role === "password"), "the password field itself should still be listed");
+      t.expect(!(await s.exec.pageText()).includes("hunter2"), "a typed password is in the page text");
+    },
+  },
+  {
     name: "after navigating, the next look is at the NEW page",
     page: "tile.html",
     why: "the extension set location and answered at once; the old page answered the next snapshot, so a run decided about the site it had just left",

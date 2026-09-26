@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Logo } from "../components/Nav.js";
-import { navigate } from "../router.js";
+import { Link, navigate } from "../router.js";
 import { authConfig, signInDev, signInWithGoogle, useSession } from "../session.js";
 
 export function SignIn() {
@@ -81,6 +81,9 @@ export function SignIn() {
             )}
           </>
         )}
+        <p className="fine legal-note">
+          By continuing you agree to the <Link href="/terms">terms</Link> and <Link href="/privacy">privacy policy</Link>.
+        </p>
       </div>
     </div>
   );

@@ -342,6 +342,9 @@ export function Landing() {
           <a href="#never">safety</a>
           <a href="#pricing">pricing</a>
           <a href="#history">questions</a>
+          <Link href="/privacy">privacy</Link>
+          <Link href="/terms">terms</Link>
+          <Link href="/refunds">refunds</Link>
           <Link href="/signin">sign in</Link>
         </nav>
       </footer>

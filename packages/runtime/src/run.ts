@@ -955,6 +955,13 @@ async function runConfirmNode(
   // A hand-off is not an approval: sign-ins, credentials, CAPTCHAs need the person to
   // act, whatever authority they granted — "go ahead" cannot mean "type my password".
   const handoff = risk === "auth";
+  // A hand-off is not a question. It used to be shown as one: the panel offered an
+  // approve button that nothing was waiting on, "You approved this" appeared, and the
+  // run sat at "Waiting on you". The person's move is on the page, not in the panel.
+  if (handoff) {
+    opts.emit({ type: "suspend", nodeId: node.id, reason: "handoff", preview, risk });
+    return "suspended";
+  }
 
   // Otherwise the plan says WHERE the gates are and the user's words say whether to
   // ask. Confirm nodes used to ask unconditionally, so "email Sam to say the build is

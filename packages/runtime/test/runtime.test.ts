@@ -797,6 +797,22 @@ describe("a covered target is withdrawn from the choices", () => {
  * at the target and the agent waits. "Where is the export button?" wants a pointer, not
  * a click — and a run that clicks it anyway has done something the user did not ask for.
  */
+describe("a hand-off", () => {
+  it("suspends for the person without asking for an approval nothing waits on", async () => {
+    let asked = 0;
+    const { events, result } = await run(
+      plan([{ kind: "confirm", id: "h", intent: "sign in", preview: "Sign in with Google", mode: "single", risk: "auth" }]),
+      fakeJev([]),
+      fakeExecutor(["h"]),
+      { autonomy: "full", approve: async () => (asked++, true) },
+    );
+    expect(asked).toBe(0);
+    expect(events.some((e) => e.type === "approval")).toBe(false);
+    expect(events.find((e) => e.type === "suspend")).toMatchObject({ reason: "handoff" });
+    expect(result.status).toBe("suspended");
+  });
+});
+
 describe("show mode", () => {
   const pointing = (hashes: string[]) => {
     const ex = fakeExecutor(hashes);

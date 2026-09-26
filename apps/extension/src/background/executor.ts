@@ -14,6 +14,9 @@ import type { FromContent, ToContent } from "../shared/messages.js";
  * implements, so `runPlan` cannot tell the difference — which is what made this a
  * one-file swap rather than a rewrite.
  */
+/** Longest a navigation is waited for before the page is observed as it stands. */
+const NAVIGATION_TIMEOUT_MS = 20_000;
+
 export class TabExecutor implements Executor {
   /**
    * Follow a tab the page opens.
@@ -137,6 +140,15 @@ export class TabExecutor implements Executor {
     text?: string,
     fp?: string,
   ): Promise<void> {
+    // Navigation is the worker's job, not the page's. The content script used to set
+    // `location` and answer "done" at once — and the OLD document keeps answering
+    // messages until Chrome replaces it, so the next observation described the page
+    // being left: "Opened calendar.google.com", then a decision about vercel.com.
+    if (action.kind === "navigate") {
+      await chrome.tabs.update(this.tabId, { url: action.url });
+      await this.loaded(action.url);
+      return;
+    }
     const res = await this.send({
       kind: "act",
       action,
@@ -153,6 +165,31 @@ export class TabExecutor implements Executor {
 
   async settle(node: number | null, isCombobox: boolean): Promise<void> {
     await this.send({ kind: "settle", node, isCombobox }).catch(() => undefined);
+    // A click that navigates leaves the same window open: the page settles (it is being
+    // torn down) while Chrome is still loading the next one.
+    await this.loaded();
+  }
+
+  /**
+   * Resolve once the tab has finished loading — and, when `url` is given, loading THAT
+   * page, since straight after `tabs.update` the tab may still report the old page as
+   * complete. Bounded: a page that never finishes loading is still observed, as is.
+   */
+  private async loaded(url?: string): Promise<void> {
+    const want = url ? new URL(url) : undefined;
+    const deadline = Date.now() + NAVIGATION_TIMEOUT_MS;
+    while (Date.now() < deadline) {
+      const tab = await chrome.tabs.get(this.tabId).catch(() => undefined);
+      if (!tab) return;
+      const at = tab.url ? new URL(tab.url) : undefined;
+      // Same site is enough: sites redirect (calendar.google.com → /calendar/u/0/r).
+      const arrived = !want || (at !== undefined && at.host === want.host && !tab.pendingUrl);
+      if (arrived && tab.status === "complete") {
+        if (url) await this.ensureContentScript();
+        return;
+      }
+      await new Promise((r) => setTimeout(r, 150));
+    }
   }
 
   /**

@@ -68,8 +68,13 @@ export async function serveFixtures(): Promise<{ base: string; server: Server }>
       res.writeHead(404).end("not found");
       return;
     }
-    res.writeHead(200, { "content-type": TYPES[extname(path)] ?? "application/octet-stream" });
-    createReadStream(path).pipe(res);
+    // ?slow=ms holds the response back, as a real site's server does: a local page
+    // that loads instantly hides every race between leaving a page and arriving.
+    const slow = Number(new URL(req.url ?? "/", "http://x").searchParams.get("slow") ?? 0);
+    setTimeout(() => {
+      res.writeHead(200, { "content-type": TYPES[extname(path)] ?? "application/octet-stream" });
+      createReadStream(path).pipe(res);
+    }, Math.min(slow, 10_000));
   });
   await new Promise<void>((r) => server.listen(0, "127.0.0.1", r));
   const { port } = server.address() as { port: number };

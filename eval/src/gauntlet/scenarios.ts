@@ -279,6 +279,20 @@ export const SCENARIOS: Scenario[] = [
     },
   },
   {
+    name: "after navigating, the next look is at the NEW page",
+    page: "tile.html",
+    why: "the extension set location and answered at once; the old page answered the next snapshot, so a run decided about the site it had just left",
+    async run(s, t) {
+      const from = await t.snapshot();
+      const to = from.url.replace("tile.html", "explain.html?slow=1500");
+      await s.exec.act({ kind: "navigate", url: to }, null, { pageKey: null, nodeGuard: null });
+      await s.exec.settle(null, false);
+      const now = await t.snapshot();
+      t.expect(now.url === to, `observed ${now.url} after navigating to ${to}`);
+      t.expect(now.elements.some((e) => e.name === "Pay now"), "the snapshot is not of the new page");
+    },
+  },
+  {
     name: "explains a page by drawing numbered marks, touching nothing",
     page: "explain.html",
     why: "'walk me through my bill' is answered ON the page — and drawing must never click, block, or outlive an action",

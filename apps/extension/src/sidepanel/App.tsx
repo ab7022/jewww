@@ -137,7 +137,7 @@ export function App() {
       }
       const granted = already || (await chrome.permissions.request({ origins: [origin] }));
       if (!granted) {
-        setError(`Access to ${new URL(url).host} was declined.`);
+        setError(`Access to ${new URL(url).host} was declined. To stop being asked per site, turn on “Work on any site without asking” below.`);
         return;
       }
       await send({ kind: "start", goal: request, tabId: tab.id });
@@ -524,6 +524,7 @@ function Empty({
           </button>
         ))}
       </div>
+      <SiteAccess />
       {voice && (
         <div className="voice-settings">
           <h3>Talk to Jev</h3>
@@ -551,6 +552,56 @@ function Empty({
         It asks before anything it cannot undo — unless you tell it not to. It never types a
         password. To fill forms, add your details from the header.
       </p>
+    </div>
+  );
+}
+
+/** Every site, as Chrome words it — the patterns in `optional_host_permissions`. */
+const ALL_SITES = ["https://*/*", "http://*/*"];
+
+/**
+ * Site access, chosen once.
+ *
+ * Jev ships with access to no site and asks per site on the first run there — the
+ * safe default, and the reason Chrome's prompt appears on every new site. Someone who
+ * uses Jev everywhere can grant all sites in one prompt instead; turning it off hands
+ * the access back. Either way it is Chrome's own permission, visible and revocable on
+ * chrome://extensions.
+ */
+function SiteAccess() {
+  const [all, setAll] = useState<boolean | null>(null);
+  useEffect(() => {
+    const check = () => void chrome.permissions.contains({ origins: ALL_SITES }).then(setAll);
+    check();
+    chrome.permissions.onAdded.addListener(check);
+    chrome.permissions.onRemoved.addListener(check);
+    return () => {
+      chrome.permissions.onAdded.removeListener(check);
+      chrome.permissions.onRemoved.removeListener(check);
+    };
+  }, []);
+  if (all === null) return null;
+  return (
+    <div className="voice-settings">
+      <h3>Sites</h3>
+      <label className="toggle">
+        <input
+          type="checkbox"
+          checked={all}
+          onChange={(e) => {
+            // Requested inside the click: Chrome shows its prompt only for a user gesture.
+            const want = e.target.checked;
+            void (want
+              ? chrome.permissions.request({ origins: ALL_SITES })
+              : chrome.permissions.remove({ origins: ALL_SITES })
+            ).then(() => chrome.permissions.contains({ origins: ALL_SITES }).then(setAll));
+          }}
+        />
+        <span>
+          <span className="toggle-title">Work on any site without asking</span>
+          <small>One Chrome prompt instead of one per site. Jev still only reads a page when you give it a task there.</small>
+        </span>
+      </label>
     </div>
   );
 }

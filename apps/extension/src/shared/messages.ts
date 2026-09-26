@@ -36,6 +36,7 @@ export type ToWorker =
   | { kind: "approve"; approved: boolean }
   | { kind: "abort" }
   | { kind: "state" }
+  | { kind: "account" }
   | { kind: "signIn" }
   | { kind: "signInDev" }
   | { kind: "signOut" }

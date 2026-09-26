@@ -99,6 +99,13 @@ export interface Route {
   path: string;
   /** The body schema, or null for a request without one. */
   schema: z.ZodType | null;
+  /**
+   * False when sending it twice would do something twice. Everything else is retried
+   * when the request did not get through, because it is safe to: reads, model calls
+   * (the page is only touched by the client, after a decision arrives) and writes that
+   * set rather than add.
+   */
+  retry?: false;
 }
 
 export const ROUTES: { readonly [K in EndpointName]: Route } = {
@@ -116,7 +123,8 @@ export const ROUTES: { readonly [K in EndpointName]: Route } = {
   fields: { method: "POST", path: "/api/runs/:id/fields", schema: MapFieldsRequest },
   finish: { method: "POST", path: "/api/runs/:id/finish", schema: FinishRunRequest },
   billing: { method: "GET", path: "/api/billing", schema: null },
-  checkout: { method: "POST", path: "/api/billing/checkout", schema: CheckoutRequest },
+  // A second checkout is a second order: the person retries it themselves.
+  checkout: { method: "POST", path: "/api/billing/checkout", schema: CheckoutRequest, retry: false },
   listOrders: { method: "GET", path: "/api/orders", schema: null },
   reconcileOrder: { method: "POST", path: "/api/orders/:id/reconcile", schema: ReconcileRequest },
   getProfile: { method: "GET", path: "/api/profile", schema: null },
@@ -168,6 +176,24 @@ type CallArgs<K extends EndpointName> = Endpoints[K]["body"] extends undefined
     ? [body: Endpoints[K]["body"]]
     : [params: Endpoints[K]["params"], body: Endpoints[K]["body"]];
 
+/** Waits between attempts after a request did not get through: ~8s in all. */
+const RETRY_DELAYS_MS = [500, 1500, 4000, 2000];
+const GATEWAY = new Set([502, 503, 504]);
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * Did our server write this error, rather than a gateway in front of it? Ours is JSON
+ * with an `error` code and means what it says; a platform's timeout page does not.
+ */
+async function ownAnswer(res: Response): Promise<boolean> {
+  try {
+    const body = (await res.clone().json()) as { error?: unknown };
+    return typeof body.error === "string";
+  } catch {
+    return false;
+  }
+}
+
 export class ApiClient {
   constructor(
     private readonly base: string,
@@ -189,7 +215,7 @@ export class ApiClient {
 
   private async send<T>(route: Route, path: string, body: unknown, retried: boolean): Promise<T> {
     const tokens = await this.tokens.get();
-    const res = await this.fetchImpl(`${this.base}${path}`, {
+    const res = await this.deliver(route, path, {
       method: route.method,
       credentials: "include",
       headers: {
@@ -215,6 +241,36 @@ export class ApiClient {
       throw new ApiError(res.status, code, message, payload.issues ?? payload.detail);
     }
     return payload as T;
+  }
+
+  /**
+   * Send, and send again when the request did not get through.
+   *
+   * One dropped connection used to end a whole run: the browser's bare "Failed to
+   * fetch" became the step's error, twenty seconds into scheduling a meeting, though
+   * the server was up and the next attempt would have worked. A network failure, or a
+   * gateway answering in the server's place (502/503/504 — the function never ran or
+   * never finished), is retried with backoff for routes where that is safe; a refusal
+   * from the server itself is its answer and is never retried.
+   */
+  private async deliver(route: Route, path: string, init: RequestInit): Promise<Response> {
+    const attempts = route.retry === false ? 1 : RETRY_DELAYS_MS.length + 1;
+    for (let attempt = 1; ; attempt++) {
+      try {
+        const res = await this.fetchImpl(`${this.base}${path}`, init);
+        if (attempt < attempts && GATEWAY.has(res.status) && !(await ownAnswer(res))) {
+          await sleep(RETRY_DELAYS_MS[attempt - 1] ?? 0);
+          continue;
+        }
+        return res;
+      } catch (err) {
+        if (!(err instanceof TypeError)) throw err;
+        if (attempt >= attempts) {
+          throw new ApiError(0, "unreachable", `Couldn't reach Jev (${new URL(this.base || "http://x").host}) — check your connection and try again.`);
+        }
+        await sleep(RETRY_DELAYS_MS[attempt - 1] ?? 0);
+      }
+    }
   }
 
   /** Exchange the refresh token (body or cookie) for a new access token. */

@@ -220,18 +220,23 @@ async function start(goal: string, tabId: number): Promise<void> {
 chrome.runtime.onMessage.addListener((msg: ToWorker, _sender, sendResponse) => {
   (async () => {
     switch (msg.kind) {
-      case "state": {
-        const state = await getState();
+      // Local only. The panel polls this every second or so to stay honest across
+      // worker restarts; it used to make two server calls each time — thousands a day
+      // from one idle panel, every one a chance for a network hiccup to show up.
+      case "state":
+        return sendResponse(await getState());
+      // The account, from the server: when the panel opens, after signing in or out,
+      // and when a run ends (credits changed). Stored, so `state` carries it.
+      case "account": {
         const auth = await api.config().catch(() => undefined);
-        const tokens = await api.tokens();
-        if (!tokens) return sendResponse({ ...state, signedIn: false, ...(auth ? { auth } : {}) });
-        const me = await api.me().catch(() => null);
-        return sendResponse({
-          ...state,
-          signedIn: me !== null,
-          ...(auth ? { auth } : {}),
-          ...(me ? { email: me.email, credits: me.credits } : {}),
-        });
+        const me = (await api.tokens()) ? await api.me().catch(() => null) : null;
+        return sendResponse(
+          await patch({
+            signedIn: me !== null,
+            ...(auth ? { auth } : {}),
+            ...(me ? { email: me.email, credits: me.credits } : {}),
+          }),
+        );
       }
       case "signIn":
         await api.signIn();

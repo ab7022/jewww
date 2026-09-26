@@ -69,6 +69,21 @@ export function App() {
     setState(parseState(await send<unknown>({ kind: "state" })));
   }, []);
 
+  const refreshAccount = useCallback(async () => {
+    setState(parseState(await send<unknown>({ kind: "account" })));
+  }, []);
+
+  useEffect(() => {
+    void refreshAccount();
+  }, [refreshAccount]);
+
+  // A finished run changed the balance.
+  const wasRunning = useRef(false);
+  useEffect(() => {
+    if (wasRunning.current && !state.running) void refreshAccount();
+    wasRunning.current = state.running;
+  }, [state.running, refreshAccount]);
+
   useEffect(() => {
     void refresh();
     // The worker pushes after every event, but MV3 can restart it at any moment, so
@@ -89,7 +104,7 @@ export function App() {
     setError(null);
     try {
       await send({ kind });
-      await refresh();
+      await refreshAccount();
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {

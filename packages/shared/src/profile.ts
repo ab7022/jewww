@@ -52,17 +52,23 @@ export type ProfileKey = keyof typeof PROFILE_FIELDS;
 export const NO_FIELD = "__none" as const;
 
 export const NO_FIELD_DESC =
-  "no profile field fits this input — it asks for something the profile does not contain";
+  "a question the page asks ABOUT THE USER that no saved detail answers — only the user can answer it (e.g. \"why do you want to join?\", \"years of experience\")";
 
 /**
- * A field whose value the REQUEST supplies rather than the user's details: who a
- * message goes to, the message itself, a subject, a search term, a quantity. Neither
- * filled from the profile nor asked of the user — the goal-aware step loop writes it.
+ * A field that is NOT a question for the user: its value comes from the request (who a
+ * message goes to, the message, a subject, a search term, a quantity), or it is not a
+ * form question at all (an app's own search box or editing control — Google Sheets'
+ * "cell input", a menu search). Neither filled from the profile nor asked of the user;
+ * the goal-aware step loop deals with it if the task needs it.
+ *
+ * The second half is what the mapper lacked: its only other answer for "none of your
+ * details" was NO_FIELD, which means "ask the person" — so on Google Sheets they were
+ * asked to type into "Menus", "cell input" and "trix offscreen".
  */
 export const TASK_FIELD = "__task" as const;
 
 export const TASK_FIELD_DESC =
-  "content the request itself determines, not a fact about the user — a recipient, a message or its subject, a search term, a quantity";
+  "not a question for the user — content the request itself determines (a recipient, a message or its subject, a search term, a quantity, data to enter), or an input that is part of the app rather than a form question (a search box, an editor's or spreadsheet's own input, a menu search)";
 
 export type Profile = Partial<Record<ProfileKey, string>>;
 

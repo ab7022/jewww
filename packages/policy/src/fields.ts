@@ -63,8 +63,9 @@ export async function mapFields(
     questions[f.eid] = {
       type: "choice",
       instructions:
-        `What belongs in the form input labelled "${f.name}": one of the user's own saved details, ` +
-        `content the request itself supplies, or a detail about the user that is not on file?`,
+        `What belongs in the input labelled "${f.name}": one of the user's own saved details; ` +
+        `a question about the user that no saved detail answers; or is it not a question for the user at all ` +
+        `(content the request supplies, or an input that belongs to the app itself)?`,
       criteria,
     };
   }

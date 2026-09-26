@@ -4,7 +4,7 @@ import { ExplainResult, explainText } from "@jev-browser/shared";
 import { ApiError } from "@jev-browser/protocol";
 import { API_BASE } from "../shared/config.js";
 import { Api } from "./api.js";
-import { hasHostPermission, TabExecutor } from "./executor.js";
+import { canRunOn, TabExecutor } from "./executor.js";
 import type { ToWorker } from "../shared/messages.js";
 import { EMPTY_STATE, type PanelState, parseState, type TimelineStep } from "../shared/state.js";
 import { applyEvent, stepTitle } from "../shared/timeline.js";
@@ -103,7 +103,7 @@ async function start(goal: string, tabId: number): Promise<void> {
   const tab = await chrome.tabs.get(tabId);
   const url = tab.url ?? "";
   if (!/^https?:/.test(url)) throw new Error(`this tab is on ${url || "an internal page"}`);
-  if (!(await hasHostPermission(url))) {
+  if (!(await canRunOn(tabId))) {
     throw new Error(`No access to ${new URL(url).host}. Grant it when asked, then run again.`);
   }
 

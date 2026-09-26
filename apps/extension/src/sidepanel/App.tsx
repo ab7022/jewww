@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { canRunOn } from "../shared/access.js";
 import { API_HOST } from "../shared/config.js";
 import { Details } from "./Details.js";
 import { useVoice } from "./voice.js";
@@ -127,7 +128,7 @@ export function App() {
       // Asked here, synchronously in the click: chrome.permissions.request only works
       // during a user gesture, never from the worker after an await.
       const origin = `${new URL(url).origin}/*`;
-      const already = await chrome.permissions.contains({ origins: [origin] });
+      const already = await canRunOn(tab.id);
       // Chrome only shows the permission prompt in response to a click. A spoken
       // request has no click behind it, so for a site not yet granted, the request
       // waits in the box for one press of Run rather than failing obscurely.

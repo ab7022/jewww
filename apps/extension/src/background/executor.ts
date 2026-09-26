@@ -236,6 +236,4 @@ export class TabExecutor implements Executor {
  * panel's click handler, because chrome.permissions.request needs a user gesture and
  * a service worker resuming after an await does not have one.
  */
-export async function hasHostPermission(url: string): Promise<boolean> {
-  return chrome.permissions.contains({ origins: [`${new URL(url).origin}/*`] });
-}
+export { canRunOn } from "../shared/access.js";
